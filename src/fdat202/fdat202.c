@@ -180,7 +180,15 @@ s32 func_8004F024(Sub8007618C *arg0, Sub8004DE88 *arg1) {
     return n & 0xFF;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004F080);
+s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1) {
+    u8 n;
+
+    func_8004ECA8(arg0);
+    func_8004EFB8(arg0, arg1);
+    n = arg0->unk2 - 1;
+    arg0->unk2 = n;
+    return n & 0xFF;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004F0D4);
 
