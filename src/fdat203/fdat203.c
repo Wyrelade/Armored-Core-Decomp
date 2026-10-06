@@ -113,7 +113,26 @@ s32 func_8004EE14(Obj8004EE14 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004EE68);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004EEC4);
+void func_8004EEC4(Obj8004EE14 *arg0) {
+    s32 tbl;
+    s16 step;
+    s16 pos;
+    s16 pos2;
+
+    step = arg0->unkC;
+    if (step > 0) {
+        tbl = (s32)arg0->unk1C;
+        pos = arg0->unkA;
+        if (pos < ((Elem8004EE14 *)(((Sub8004EE14 *)tbl)->unkC[arg0->unk0] + tbl))->unk10 - 1) {
+            arg0->unkA = pos + step;
+        }
+    } else {
+        pos2 = arg0->unkA;
+        if (pos2 > 0) {
+            arg0->unkA = pos2 + step;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004EF38);
 
