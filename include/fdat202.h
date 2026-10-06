@@ -23,10 +23,24 @@ typedef struct Obj8007618C {
     s32 unk15C;
 } Obj8007618C;
 
+typedef struct Obj80078CFC {
+    u8 _pad0[0xE];
+    s16 unkE;
+} Obj80078CFC;
+
+typedef struct Sub80078CFC {
+    u8 _pad0[0x20];
+    void (*unk20[1])(Obj80078CFC *);
+} Sub80078CFC;
+
 /* @externs */
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
 void func_80075B3C(Obj8007618C *arg0);
 void func_8004EC4C(Sub8007618C *arg0);
+extern Sub80078CFC *D_8019F51C;
+extern u8 D_8019FB68[];
+Obj80078CFC *func_80078A2C(void);
+void func_80078B14(Obj80078CFC *arg0, u8 *arg1);
 
 #endif /* FDAT202_H */
