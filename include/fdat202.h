@@ -42,5 +42,7 @@ extern Sub80078CFC *D_8019F51C;
 extern u8 D_8019FB68[];
 Obj80078CFC *func_80078A2C(void);
 void func_80078B14(Obj80078CFC *arg0, u8 *arg1);
+s32 func_80078ADC(void);
+void func_80078D78(s32 arg0, s32 arg1);
 
 #endif /* FDAT202_H */
