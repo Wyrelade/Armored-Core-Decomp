@@ -48,5 +48,6 @@ void func_8004EDAC(Sub8007618C *arg0, u8 *arg1);
 void func_8004ECA8(Sub8007618C *arg0);
 void func_80079CDC(Obj8007618C *arg0);
 void func_80079DE4(Obj8007618C *arg0);
+extern u16 D_8004125E;
 
 #endif /* FDAT202_H */
