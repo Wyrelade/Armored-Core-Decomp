@@ -6,6 +6,6 @@
 /* @types */
 
 /* @externs */
-void func_8002A3C8(u32 *arg0);
+void free2(u32 *arg0);
 
 #endif /* MAIN_H */

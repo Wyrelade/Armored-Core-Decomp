@@ -282,7 +282,7 @@ void func_8004EDA8(Obj8004EDA8 *arg0);
 void func_8005343C(Elem80053658 *arg0);
 extern Elem80056180 D_801B419C[8];
 extern s32 D_801B4114;
-s32 func_8002701C(s32 arg0);
+s32 rsin(s32 arg0);
 void func_800613F4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 extern u32 D_801EE0B0[3][0x400];
 void func_80015538(void *arg0, s32 arg1, s32 arg2);
@@ -332,14 +332,14 @@ extern s8 D_80041BCB;
 extern s8 D_80041BCC;
 extern s8 D_80041BCD;
 extern s8 D_80041BCE;
-void func_8001EE10(s32 arg0, s32 arg1);
+void SsSetMVol(s32 arg0, s32 arg1);
 void func_80016DA8(void);
-void func_8001C1F0(void);
+void SsEnd(void);
 void func_80016114(void *arg0);
 s32 func_8001628C(void);
-s32 func_8002A4A0(void);
+s32 rand(void);
 extern u8 D_80031A94[];
-void func_800279F4(s32 *arg0);
-void func_80020440(s32 arg0, s16 arg1, s16 arg2);
+void MulRotMatrix(s32 *arg0);
+void SsSetSerialVol(s32 arg0, s16 arg1, s16 arg2);
 
 #endif /* FDAT204_H */

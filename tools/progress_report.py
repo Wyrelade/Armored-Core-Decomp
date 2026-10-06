@@ -93,6 +93,9 @@ def main():
         return 1
     with open(os.path.join(ROOT, "progress", "report.json")) as f:
         rep = json.load(f)
+    rep = exclude_psyq(rep)
+    with open(os.path.join(ROOT, "progress", "report.json"), "w") as f:
+        json.dump(rep, f, separators=(",", ":"))
     m = rep.get("measures", {})
     print("report: %s/%s functions matched (%.2f%%), %s/%s code bytes" % (
         m.get("matched_functions", 0), m.get("total_functions", 0),
@@ -102,8 +105,49 @@ def main():
     return 0
 
 
+PSYQ = os.path.join(ROOT, "configs", "USA", "psyq_funcs.txt")
+
+
+def psyq_names():
+    if not os.path.exists(PSYQ):
+        return set()
+    return {l.split()[0] for l in open(PSYQ) if l.strip() and not l.startswith("#")}
+
+
+def measure(funcs):
+    """objdiff function measures for a list of report functions."""
+    total = sum(int(f.get("size", 0)) for f in funcs)
+    matched = [f for f in funcs if float(f.get("fuzzy_match_percent", 0.0)) == 100.0]
+    mcode = sum(int(f.get("size", 0)) for f in matched)
+    fuzzy = sum(int(f.get("size", 0)) * float(f.get("fuzzy_match_percent", 0.0)) for f in funcs)
+    pct = lambda a, b: (100.0 * a / b) if b else 100.0
+    return {"total_code": str(total), "matched_code": str(mcode),
+            "matched_code_percent": pct(mcode, total),
+            "fuzzy_match_percent": (fuzzy / total) if total else 100.0,
+            "total_functions": len(funcs), "matched_functions": len(matched),
+            "matched_functions_percent": pct(len(matched), len(funcs))}
+
+
+def exclude_psyq(rep):
+    """Drop PsyQ library functions (configs/USA/psyq_funcs.txt) from every unit and recompute
+    unit, category and total measures. Library code is kept as asm and never counts."""
+    psyq = psyq_names()
+    allf, bycat = [], {}
+    for u in rep["units"]:
+        if u["name"].startswith("main/"):
+            u["functions"] = [f for f in u.get("functions", []) if f["name"] not in psyq]
+        u["measures"].update(measure(u.get("functions", [])))
+        allf += u.get("functions", [])
+        for c in u.get("metadata", {}).get("progress_categories", []):
+            bycat.setdefault(c, []).extend(u.get("functions", []))
+    for c in rep.get("categories", []):
+        c["measures"].update(measure(bycat.get(c["id"], [])))
+    rep["measures"].update(measure(allf))
+    return rep
+
+
 README_ROWS = [
-    ("main", "**Main executable** (`SCUS_941.82`, incl. PsyQ libraries)"),
+    ("main", "**Main executable** (`SCUS_941.82`, game code)"),
     ("programs", "**Program overlays** (`FDAT.T`)"),
     ("fdat201", "&nbsp;&nbsp;└ `FDAT_201`"),
     ("fdat202", "&nbsp;&nbsp;└ `FDAT_202`"),
@@ -136,6 +180,8 @@ def update_readme(rep):
     lines = ["| Component | Functions | Matched | Progress |", "|---|---:|---:|---|"]
     lines += [row(label, cats[cid]) for cid, label in README_ROWS if cid in cats]
     lines.append("| **Mission overlays** (`FDAT.T`, 58) | not split yet | | |")
+    lines.append("| PsyQ 3.7 libraries (`configs/USA/psyq_funcs.txt`, kept as asm, not counted) | %d | | |"
+                 % len(psyq_names()))
     lines.append(row("**Total**", m))
     text = re.sub(r"(<!-- PROGRESS:BADGE -->\n).*?(\n<!-- /PROGRESS:BADGE -->)",
                   lambda x: x.group(1) + badge + x.group(2), text, flags=re.S)

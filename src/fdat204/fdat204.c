@@ -49,9 +49,9 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004C8EC);
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004C9B4);
 
 void func_8004C9F0(void) {
-    func_8001EE10(0, 0);
+    SsSetMVol(0, 0);
     func_80016DA8();
-    func_8001C1F0();
+    SsEnd();
 }
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004CA24);
@@ -89,7 +89,7 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004D658);
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004D710);
 
 void func_8004DA48(s16 arg0) {
-    func_80020440(0, arg0, arg0);
+    SsSetSerialVol(0, arg0, arg0);
 }
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004DA74);
@@ -523,7 +523,7 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800613A0);
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800613F4);
 
 void func_800614C8(void) {
-    func_800613F4(0, 1, 8, (func_8002701C(D_801B4114 << 9) + 0x1400) >> 1);
+    func_800613F4(0, 1, 8, (rsin(D_801B4114 << 9) + 0x1400) >> 1);
 }
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80061508);
@@ -1388,7 +1388,7 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8008597C);
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80085ACC);
 
 s32 func_80085C28(s32 arg0) {
-    return ((func_8002A4A0() * arg0) >> 15) - (arg0 >> 1);
+    return ((rand() * arg0) >> 15) - (arg0 >> 1);
 }
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80085C64);
@@ -1523,5 +1523,5 @@ void func_80089354(void) {
 void func_800893A0(void) {
     s32 sp10[8];
 
-    func_800279F4(sp10);
+    MulRotMatrix(sp10);
 }
