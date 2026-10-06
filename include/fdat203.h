@@ -134,5 +134,13 @@ void func_800787B0(Obj800732FC *arg0);
 void func_800788C0(Obj800732FC *arg0);
 void func_8004EF78(Obj8004EE14 *arg0);
 void func_8007CB90(void);
+extern u8 D_80194739;
+extern u8 D_8019473A;
+extern s32 *D_8019473C;
+extern u16 D_80194742;
+extern u16 D_80194744;
+extern u16 D_80194746;
+extern u16 D_80194748;
+extern s32 D_8019474C;
 
 #endif /* FDAT203_H */
