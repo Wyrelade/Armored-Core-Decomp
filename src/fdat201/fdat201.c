@@ -450,7 +450,18 @@ void func_8005552C(Obj8005552C *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80055580);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800556A8);
+void func_800556A8(Obj8005552C *arg0) {
+    Sub8005552C *sub;
+
+    if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
+        sub = arg0->unk7C;
+        arg0->unk1 = 1;
+        if (sub->unk70 == func_800A2D0C) {
+            sub->unk9C = 0x4E;
+        }
+        arg0->unk7C->unk74 = arg0->unk80;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005571C);
 
