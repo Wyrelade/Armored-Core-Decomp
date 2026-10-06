@@ -302,5 +302,11 @@ extern u32 D_801EA790[3][0x400];
 void func_80015538(void *arg0, s32 arg1, s32 arg2);
 void func_8006DA20(void);
 s32 func_8001628C(void);
+extern s32 D_801A26B8[0x5C0];
+extern s32 *D_801A5DB8;
+extern s32 D_801A5DC4;
+extern s32 D_801A5DC8;
+void func_8007398C(s32 arg0);
+void func_8007399C(s32 arg0);
 
 #endif /* FDAT202_H */
