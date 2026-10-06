@@ -441,5 +441,6 @@ void func_8008B7C8(Obj8004DEB0 *);
 extern u8 D_800B8AE0[];
 Obj8004DEB0 *func_8005CAE0(u8 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8008B8C8(void);
+void func_8008B968(Obj8004DEB0 *);
 
 #endif /* FDAT201_H */
