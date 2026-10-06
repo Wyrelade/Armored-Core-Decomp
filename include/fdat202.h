@@ -168,6 +168,12 @@ typedef struct Elem80052338 {
     s32 unk10;
 } Elem80052338;
 
+typedef struct Elem8005460C {
+    u8 _pad0[0x12];
+    s16 unk12;
+    u8 _pad14[0x68];
+} Elem8005460C;
+
 /* @externs */
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
@@ -253,5 +259,6 @@ extern s16 D_801ED848;
 extern s16 D_801ED84A;
 extern s16 D_801ED84C;
 extern Elem80052338 D_801ED840[];
+void func_800543F0(Elem8005460C *arg0);
 
 #endif /* FDAT202_H */
