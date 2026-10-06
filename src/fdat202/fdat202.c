@@ -1443,4 +1443,11 @@ s32 func_8008D668(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008D69C);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008D8DC);
+void func_8008D8DC(void) {
+    D_801ED794 = 0xFA0;
+    D_801ED792 = 0;
+    D_801ED790 = 0;
+    D_801ED798 = 0x200;
+    D_801ED79C = 0;
+    D_801ED79A = 0;
+}
