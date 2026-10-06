@@ -227,6 +227,21 @@ typedef struct Obj8007281C {
     u8 unk7C;
 } Obj8007281C;
 
+typedef struct Sub80080080 {
+    u8 _pad0[0x80];
+    s8 unk80;
+    u8 _pad81[0xB];
+    u8 unk8C;
+    u8 unk8D;
+} Sub80080080;
+
+typedef struct Obj80080080 {
+    u8 _pad0[0x4C];
+    s32 unk4C;
+    u8 _pad50[0x2C];
+    Sub80080080 *unk7C;
+} Obj80080080;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
