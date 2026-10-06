@@ -133,5 +133,6 @@ void func_80081914(u16 arg0, u16 arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s
 void func_800787B0(Obj800732FC *arg0);
 void func_800788C0(Obj800732FC *arg0);
 void func_8004EF78(Obj8004EE14 *arg0);
+void func_8007CB90(void);
 
 #endif /* FDAT203_H */
