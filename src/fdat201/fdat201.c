@@ -248,7 +248,13 @@ void func_800513F0(u16 arg0, u16 arg1, void (*arg2)()) {
     func_80015B78(0x10, &loc, size, func_80050FC4(size), arg2);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80051450);
+void func_80051450(u16 arg0, u16 arg1) {
+    Obj800513F0 loc;
+    s32 size;
+
+    size = func_80015C9C(arg0, arg1, &loc);
+    func_80015B78(0x10, &loc, size, func_80050FC4(size + 4), func_80051830);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800514AC);
 
