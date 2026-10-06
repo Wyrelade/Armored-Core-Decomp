@@ -1564,7 +1564,13 @@ void func_8008382C(Obj80081BEC *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80083894);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80083958);
+void func_80083958(Obj80056FC4 *arg0) {
+    s32 y;
+
+    y = *arg0->unk80 * 0x10 + 4;
+    arg0->unk48 = *arg0->unk7C * 0x10 + 8;
+    arg0->unk4C = y;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80083984);
 
