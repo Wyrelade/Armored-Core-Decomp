@@ -2168,7 +2168,18 @@ void func_80090C58(Obj8004DEB0 *arg0) {
     arg0->unk1 = 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80090C9C);
+void func_80090C9C(void) {
+    Obj8004DEB0 *obj;
+
+    obj = func_800501BC(8);
+    obj->unk70 = func_80090C9C;
+    obj->unk74 = func_80090CEC;
+    obj->unk78 = func_800507F4;
+    obj->unk2 = 0;
+    obj->unk3 = 0;
+    obj->unk6C = 0;
+    obj->unk5 = 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80090CEC);
 

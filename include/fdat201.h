@@ -469,5 +469,6 @@ void func_80090668(void);
 void func_800908F8(void);
 void func_80090C38(Obj8004DEB0 *arg0);
 void func_80051628(void);
+void func_80090CEC(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
