@@ -9,7 +9,7 @@
 # Armored Core Decompilation
 
 <!-- PROGRESS:BADGE -->
-![matched](https://img.shields.io/badge/matched-514%2F3018%20(17.03%25)-1f6feb)
+![matched](https://img.shields.io/badge/matched-573%2F5786%20(9.90%25)-1f6feb)
 <!-- /PROGRESS:BADGE -->
 ![build](https://img.shields.io/badge/build-byte--identical-2ea043)
 ![platform](https://img.shields.io/badge/platform-PS1%20(SCUS--94182)-8957e5)
@@ -26,7 +26,7 @@ moddable full-source tree.
 | Disc (USA) | `SCUS-94182` |
 | Main executable | `SCUS_941.82`, SHA-1 `ee884a2cb3ce30bc13255142fecd5a2f02ba04ad` (169984 bytes), loaded at `0x80011000` |
 | Program overlays | `GG/COM/FDAT.T` entries 201-204, loaded at `0x8004ADA0` |
-| Mission overlays | 58 more code entries in `FDAT.T` (`0x801C4B40` / `0x801B8xxx`) |
+| Mission overlays | 58 more code entries in `FDAT.T` (`0x801C4B40` / `0x801C8460` / `0x801B80C8`) |
 | Compiler | PsyQ 4.0: `CC1PSX` GCC 2.7.2 (SN32 3.7.0002) + ASPSX 2.56 |
 | License (project code) | CC0 1.0 |
 
@@ -36,7 +36,8 @@ moddable full-source tree.
 
 ## Status
 
-Bring-up is done. The executable and the four program overlays are split, every unit
+Bring-up is done. The executable, the four program overlays and the 58 mission overlays
+(57 unique; one pair is byte-identical and built once) are split, every unit
 relinks **byte-identical** from the split (C files with `INCLUDE_ASM` stubs plus data), the
 C compile pipeline is live, and the compiler is pinned. Matching has started.
 
@@ -51,15 +52,15 @@ C compile pipeline is live, and the compiler is pinned. Matching has started.
 | &nbsp;&nbsp;└ `FDAT_202` | 619 | 75 | `▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 12.12% |
 | &nbsp;&nbsp;└ `FDAT_203` | 579 | 66 | `▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 11.40% |
 | &nbsp;&nbsp;└ `FDAT_204` | 582 | 63 | `▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 10.82% |
-| **Mission overlays** (`FDAT.T`, 58) | not split yet | | |
+| **Mission overlays** (`FDAT.T`, 58 entries, 57 unique) | 2768 | 59 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 2.13% |
 | PsyQ 3.7 libraries (`configs/USA/psyq_funcs.txt`, kept as asm, not counted) | 528 | | |
-| **Total** | 3018 | 514 | `▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 17.03% |
+| **Total** | 5786 | 573 | `▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 9.90% |
 <!-- /PROGRESS:TABLE -->
 
 Counts come from objdiff (`tools/progress_report.py`, published to decomp.dev by
-`.github/workflows/progress.yml`). The 44 one-instruction stubs splat already wrote as C count
-as matched. Counts include PsyQ library code, which will be separated and excluded from
-progress (as in other PS1 decomps) once identified.
+`.github/workflows/progress.yml`). The empty `jr ra` stubs splat already wrote as C count
+as matched. PsyQ library code (528 functions, identified by signature, listed in
+`configs/USA/psyq_funcs.txt`) stays as asm and is excluded from the counts.
 
 ## Findings so far
 
@@ -74,7 +75,8 @@ sector offsets). Of its 205 entries, 62 contain code:
 | 203 | `0x8004ADA0` | program, 0x41800 bytes, 579 functions (variant of 202) |
 | 204 | `0x8004ADA0` | program, 0x41800 bytes, 582 functions (variant of 202) |
 | 0-98, 120, 140 (even) | `0x801C4B40` | per-mission code overlay, followed by its data entry |
-| 160-188 (even) | `0x801B8xxx` | small per-mission code overlays |
+| 160-168 (even) | `0x801C8460` | small per-mission code overlays (base from FDAT_204's loader) |
+| 180-186 (even) | `0x801B80C8` | small per-mission code overlays (base from FDAT_203's loader) |
 
 `0x8004ADA0` is exactly the end of the exe's `.bss` (crt0 clears `0x80039CB8-0x8004ADA0`), so
 the four programs share one slot and replace each other. Load addresses were found from the
