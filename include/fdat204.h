@@ -53,5 +53,6 @@ s16 func_8004F074(Sub8004F0B8 *arg0, s16 arg1, u8 arg2);
 void func_8004EEAC(void);
 void func_8004ED4C(Obj8004EDA8 *arg0);
 s32 func_8004F0B8(Obj8004EDA8 *arg0, Obj8004F0B8 *arg1);
+void func_8004EDA8(Obj8004EDA8 *arg0);
 
 #endif /* FDAT204_H */
