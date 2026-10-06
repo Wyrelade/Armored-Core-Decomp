@@ -184,5 +184,6 @@ extern s16 D_801ED79C;
 extern s8 D_8008D920;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
 void func_8004C1BC(void);
+extern s32 D_8019F524;
 
 #endif /* FDAT202_H */
