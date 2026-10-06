@@ -1706,7 +1706,12 @@ void func_80086E04(void) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80086E34);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80086E80);
+void func_80086E80(void) {
+    while (func_800517C8() != 0) {
+    }
+    D_801F37C8 = 1;
+    func_800513F0(0x13, 0, func_80086E34);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80086EC8);
 
