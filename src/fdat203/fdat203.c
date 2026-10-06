@@ -303,7 +303,14 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055238);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055268);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800552A4);
+void func_800552A4(Obj800558A8 *arg0) {
+    arg0->unk0 = 0;
+    *arg0->unk24 = 0;
+    if (arg0->unk20 != NULL) {
+        func_80016114(arg0->unk20);
+        arg0->unk20 = NULL;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800552F0);
 
