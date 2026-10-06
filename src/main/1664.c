@@ -228,7 +228,9 @@ void func_800161B8(u32 *arg0) {
     func_8002A3C8(arg0);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800161D8);
+void func_800161D8(u32 *arg0) {
+    func_8002A3C8(arg0);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800161F8);
 
