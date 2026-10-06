@@ -67,6 +67,24 @@ typedef struct Obj80085394 {
     u16 unkBA;
 } Obj80085394;
 
+typedef struct Obj80085510 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x12];
+    u16 unk18;
+    u16 unk1A;
+    u16 unk1C;
+    u8 _pad1E[0x2];
+    u16 unk20;
+    u16 unk22;
+    u16 unk24;
+    u8 _pad26[0xA0];
+    u16 unkC6;
+    u16 unkC8;
+    u16 unkCA;
+} Obj80085510;
+
 /* @externs */
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
