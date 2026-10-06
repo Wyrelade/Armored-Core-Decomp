@@ -844,7 +844,17 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80073FDC);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80074094);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80074314);
+s32 func_80074314(Obj80074314 *arg0, s32 arg1) {
+    s32 val;
+
+    val = (arg1 * 50) / arg0->unk164;
+    if (val <= 0) {
+        val = 1;
+    } else if (val >= 0x1F) {
+        val = 0x1E;
+    }
+    return val;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8007435C);
 
