@@ -131,5 +131,8 @@ extern s8 D_801A2570;
 extern s32 D_801A2574;
 extern s8 D_801A2578;
 extern s8 D_801A2579;
+void func_80029B40(void);
+void func_80029B50(void);
+void func_8002A3C8(u32 *arg0);
 
 #endif /* FDAT201_H */
