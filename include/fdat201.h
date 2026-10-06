@@ -592,5 +592,6 @@ void func_800A7808();
 extern u8 D_8004D388[];
 void func_800A7880(void);
 void func_800A6EA0(void);
+void func_800A7908(void);
 
 #endif /* FDAT201_H */
