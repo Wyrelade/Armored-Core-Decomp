@@ -258,7 +258,7 @@ void func_8004BE10(void);
 extern s32 D_8019B48C;
 extern u16 D_8019B490;
 extern u8 D_80041BC0;
-void func_8004DB64(s32 arg0);
+void func_8004DB64(s16 arg0);
 void func_8004DB90(void);
 s16 func_8004F190(Elem8004F1D4 *arg0, s16 arg1, u8 arg2);
 void func_8004EFC8(void);
@@ -336,5 +336,6 @@ void func_80016114(void *arg0);
 s32 func_8001628C(void);
 s32 func_8002A4A0(void);
 extern u8 D_80031A94[];
+void func_80020440(s32 arg0, s16 arg1, s16 arg2);
 
 #endif /* FDAT203_H */
