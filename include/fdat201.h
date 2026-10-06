@@ -487,5 +487,6 @@ void func_80094EC0(Obj8004DEB0 *arg0);
 extern s8 D_8017F794;
 void func_800963A0(void);
 extern u32 *D_80180860;
+void func_80097D24(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
