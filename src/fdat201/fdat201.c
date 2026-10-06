@@ -3436,7 +3436,12 @@ void func_800B3E7C(Obj8004DEB0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B3E98);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B3FFC);
+void func_800B3FFC(Obj8004DEB0 *arg0) {
+    if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
+        func_800B2584(arg0);
+        arg0->unk74 = func_800B26C8;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B4054);
 
