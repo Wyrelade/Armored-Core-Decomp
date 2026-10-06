@@ -1788,7 +1788,19 @@ void func_8008A2F0(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008A338);
+Obj8004DEB0 *func_8008A338(void) {
+    Obj8004DEB0 *task;
+
+    task = func_800501BC(6);
+    task->unk70 = func_8008A338;
+    task->unk74 = func_8008A388;
+    task->unk78 = func_800507F4;
+    task->unk2 = 0;
+    task->unk3 = 0;
+    task->unk6C = 0;
+    task->unk5 = 0;
+    return task;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008A388);
 
