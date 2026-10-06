@@ -2323,7 +2323,11 @@ void func_8009406C(void) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800940A4);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80094DC0);
+void func_80094DC0(Obj8004DEB0 *arg0) {
+    if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
+        arg0->unk1 = 1;
+    }
+}
 
 void func_80094E08(void) {
     Obj8004DEB0 *obj;
