@@ -1,8 +1,14 @@
 #include "common.h"
+#include "fdat201.h"
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8004DCC0);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8004DEB0);
+void func_8004DEB0(Obj8004DEB0 *arg0) {
+    if (func_80050078(func_8004F924) == &D_801BC4F8) {
+        arg0->unk7C->unk74 = func_8004F294;
+        arg0->unk74 = func_8004DF10;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8004DF10);
 
