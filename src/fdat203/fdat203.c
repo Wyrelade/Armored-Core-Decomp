@@ -310,7 +310,18 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056668);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800567D0);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056B30);
+void func_80056B30(void) {
+    s32 i;
+    Elem80056B30 *p;
+
+    i = 8;
+    p = D_801A3E2C;
+    do {
+        p->unk0 = 0xFF;
+        i--;
+        p++;
+    } while (i != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056B58);
 
