@@ -1,0 +1,70 @@
+name: Main Executable (SCUS_941.82)
+sha1: ee884a2cb3ce30bc13255142fecd5a2f02ba04ad
+options:
+  basename: main
+  target_path: dumps/disc/SCUS_941.82
+  base_path: ../..
+  platform: psx
+  compiler: PSYQ
+
+  asm_path: asm/USA/main
+  src_path: src/main
+  build_path: build/USA
+  ld_script_path: linkers/USA/main.ld
+  elf_path: build/USA/main.elf
+  ld_dependencies: True
+
+  find_file_boundaries: True
+  migrate_rodata_to_functions: True
+  pair_rodata_to_text: False
+  gp_value: 0x80039C5C
+
+  o_as_suffix: False
+  use_legacy_include_asm: False
+
+  asm_function_macro: glabel
+  asm_jtbl_label_macro: jlabel
+  asm_data_macro: dlabel
+  generate_asm_macros_files: False
+
+  dump_symbols: True
+  dump_symbols_references: True
+
+  section_order: [".rodata", ".text", ".data", ".sdata", ".sbss", ".bss"]
+
+  symbol_addrs_path:
+    - configs/USA/sym.main.txt
+  reloc_addrs_path:
+    - configs/USA/rel.main.txt
+
+  undefined_funcs_auto_path: linkers/USA/undefined_funcs_auto.main.txt
+  undefined_syms_auto_path: linkers/USA/undefined_syms_auto.main.txt
+
+  subalign: 4
+
+  string_encoding: ASCII
+  data_string_encoding: ASCII
+  rodata_string_guesser_level: 2
+  data_string_guesser_level: 2
+
+  ld_bss_is_noload: True
+
+# PS-X EXE: t_addr 0x80011000, t_size 0x29000, entry 0x80011E6C (PsyQ crt0, clears
+# .bss 0x80039CB8-0x8004ADA0, sets gp 0x80039C5C). The FDAT.T programs load at the
+# .bss end (0x8004ADA0).
+segments:
+  - name: header
+    type: header
+    start: 0x0
+
+  - name: main
+    type: code
+    start: 0x800
+    vram: 0x80011000
+    align: 4
+    subalign: 4
+    subsegments:
+      - [0x800, rodata, 800]
+      - [0x1664, c, 1664]      # first function (func_80011E64), crt0 at 0x80011E6C
+      - [0x20DB4, data, 20DB4]   # after the BIOS A0/B0/C0 call stubs
+  - [0x29800]

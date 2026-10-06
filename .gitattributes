@@ -1,0 +1,16 @@
+# Append-only records. Every session adds entries from the same base commit, so
+# a merge or cherry-pick between two sessions conflicts at the end of the file
+# every time - even though both sides' content should simply be kept. The union
+# driver concatenates instead of conflicting, which is the correct resolution
+# here and turns a manual reconcile into a no-op.
+DECOMPILATION_LEARNINGS.md  merge=union
+tools/difficult_functions   merge=union
+
+# Third-party tools vendored for the build. Keep them out of the GitHub language stats.
+tools/m2c/** linguist-vendored
+tools/decomp-permuter/** linguist-vendored
+tools/maspsx/** linguist-vendored
+tools/asm-differ/** linguist-vendored
+tools/windows/** linguist-vendored
+tools/linux/** linguist-vendored
+tools/macos/** linguist-vendored
