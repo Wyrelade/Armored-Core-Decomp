@@ -165,6 +165,13 @@ typedef struct Obj8004DE88 {
     Sub8004EFB8 unk30;
 } Obj8004DE88;
 
+typedef struct Obj800558A8 {
+    s16 unk0;
+    u8 _pad2[0x1E];
+    void *unk20;
+    s32 *unk24;
+} Obj800558A8;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -235,5 +242,6 @@ extern s8 D_80041BCE;
 void func_8001EE10(s32 arg0, s32 arg1);
 void func_80016DA8(void);
 void func_8001C1F0(void);
+void func_80016114(void *arg0);
 
 #endif /* FDAT204_H */
