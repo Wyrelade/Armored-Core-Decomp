@@ -859,7 +859,9 @@ u16 func_80073904(void) {
     return func_8001628C();
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80073924);
+s32 func_80073924(s32 arg0) {
+    return (func_8001628C() & 0xFFFF) - (arg0 & 0xFFFF);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80073958);
 
