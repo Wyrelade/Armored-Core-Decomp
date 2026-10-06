@@ -885,7 +885,10 @@ void func_80068988(void) {
     func_80029AF0(D_8017E5D0);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800689E0);
+void func_800689E0(void) {
+    func_8002C17C(D_800B7FC4, 0, 0, 0);
+    func_8006C1B4(&D_801BC4F8);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80068A20);
 

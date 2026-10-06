@@ -250,5 +250,7 @@ extern s32 D_8017E5C4;
 extern s32 D_8017E5C8;
 extern s32 D_8017E5CC;
 extern s32 D_8017E5D0;
+extern u8 D_800B7FC4[];
+void func_8006C1B4(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
