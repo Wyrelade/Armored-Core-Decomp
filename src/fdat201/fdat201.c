@@ -3405,7 +3405,16 @@ void func_800B2EC4(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B2F18);
+s32 func_800B2F18(u16 arg0) {
+    Obj800513F0 loc;
+    s32 a;
+    s32 b;
+
+    a = func_80015C9C(4, arg0, &loc);
+    b = func_80050FC4(a);
+    func_80015B78(0x10, &loc, a, b, 0);
+    return b;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B2F74);
 
