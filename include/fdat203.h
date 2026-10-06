@@ -61,5 +61,8 @@ s32 func_8004EE68(Obj8004EE14 *arg0);
 void func_8004F1D4(Obj8004EE14 *arg0, Sub8004F1D4 *arg1);
 void func_80053DEC(Elem80054008 *arg0);
 extern Elem80056B30 D_801A3E2C[8];
+extern s32 D_801A3DA4;
+s32 func_8002701C(s32 arg0);
+void func_80061CA8(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT203_H */
