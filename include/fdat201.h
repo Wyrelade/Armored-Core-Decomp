@@ -117,5 +117,19 @@ extern s16 D_801A2318;
 s16 func_800263F8(u32 *arg0, s32 arg1);
 void func_80026B2C(u32 *arg0, s16 arg1);
 void func_80026EC4(s32 arg0);
+extern s32 D_801A2550;
+extern s16 D_801A2554;
+extern s16 D_801A2556;
+extern s32 D_801A2558;
+extern s16 D_801A255C;
+extern s16 D_801A255E;
+extern s16 D_801A2560;
+extern s32 D_801A2564;
+extern s32 D_801A2568;
+extern s32 D_801A256C;
+extern s8 D_801A2570;
+extern s32 D_801A2574;
+extern s8 D_801A2578;
+extern s8 D_801A2579;
 
 #endif /* FDAT201_H */
