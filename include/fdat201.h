@@ -585,5 +585,6 @@ extern u8 D_8017F4BD;
 extern u8 D_8017F4BE;
 extern u8 D_8017F4BF;
 void func_800A737C();
+void func_800A75A0();
 
 #endif /* FDAT201_H */
