@@ -4,6 +4,41 @@
 #include "common.h"
 
 /* @types */
+typedef struct Elem8004EDA8 {
+    u8 _pad0[0x10];
+    s16 unk10;
+} Elem8004EDA8;
+
+typedef struct Sub8004EDA8 {
+    u8 _pad0[0xC];
+    u16 unkC[1];
+} Sub8004EDA8;
+
+typedef struct Sub8004F0B8 {
+    u8 _pad0[0x8];
+} Sub8004F0B8;
+
+typedef struct Obj8004EDA8 {
+    u8 unk0;
+    u8 _pad1;
+    u8 unk2;
+    u8 unk3;
+    u8 _pad4[0x6];
+    s16 unkA;
+    s16 unkC;
+    u8 _padE[0xE];
+    Sub8004EDA8 *unk1C;
+    Sub8004F0B8 unk20;
+    Sub8004F0B8 unk28;
+    Sub8004F0B8 unk30;
+} Obj8004EDA8;
+
+typedef struct Obj8004F0B8 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Obj8004F0B8;
 
 /* @externs */
 extern s8 D_800893C4;
