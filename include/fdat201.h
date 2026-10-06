@@ -172,6 +172,26 @@ typedef struct Obj8006DCEC {
     Sub8006DCEC *unk98;
 } Obj8006DCEC;
 
+typedef struct Elem8006FE38 {
+    u8 _pad0[0xC];
+} Elem8006FE38;
+
+typedef struct Sub8006FE38 {
+    u8 _pad0[0x86];
+    u8 unk86;
+    u8 _pad87[0x5];
+    u8 unk8C;
+} Sub8006FE38;
+
+typedef struct Obj8006FE38 {
+    u8 _pad0[0xC];
+    Elem8006FE38 *unkC;
+    u8 _pad10[0x38];
+    s32 unk48;
+    u8 _pad4C[0x30];
+    Sub8006FE38 *unk7C;
+} Obj8006FE38;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
