@@ -3492,7 +3492,16 @@ s32 func_800B508C(s32 arg0) {
     return ret;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B50C8);
+s32 func_800B50C8(s32 arg0) {
+    s32 ret;
+
+    if (arg0 == 0) {
+        ret = func_800B5404();
+    } else {
+        ret = (func_800B549C() >> 0x18) & 1;
+    }
+    return ret;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B5104);
 
