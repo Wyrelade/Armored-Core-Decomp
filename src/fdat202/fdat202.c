@@ -708,7 +708,9 @@ void func_8006E308(u32 *arg0, s32 arg1) {
     arg0[arg1 >> 5] |= 1 << (arg1 & 0x1F);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006E330);
+void func_8006E330(u32 *arg0, s32 arg1) {
+    arg0[arg1 >> 5] &= ~(1 << (arg1 & 0x1F));
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006E35C);
 
