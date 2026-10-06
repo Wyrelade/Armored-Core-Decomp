@@ -191,6 +191,13 @@ typedef struct Elem80057134 {
     u8 _pad1[0x17];
 } Elem80057134;
 
+typedef struct Obj80070A00 {
+    u8 _pad0[0x4];
+    s32 unk4[8];
+    s32 unk24[8];
+    s32 unk44[8];
+} Obj80070A00;
+
 /* @externs */
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
