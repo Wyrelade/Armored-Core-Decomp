@@ -104,7 +104,11 @@ void func_8004DCBC(void) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004DCF8);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004DE88);
+void func_8004DE88(Obj8004DE88 *arg0, Sub8004DE88 *arg1) {
+    arg1->unk0 = arg0->unk20.unk0;
+    arg1->unk2 = arg0->unk28.unk0;
+    arg1->unk4 = arg0->unk30.unk0;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004DEAC);
 
