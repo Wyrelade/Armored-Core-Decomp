@@ -175,5 +175,9 @@ void func_80087EE0(Obj8008800C *arg0, Sub8008800C *arg1, s16 arg2, s16 arg3, s32
 extern s16 D_801AB68C;
 extern s8 D_801D4464;
 extern s16 D_801D4466;
+extern s8 D_801B4198;
+extern s8 D_801B4199;
+extern s8 D_801B419A;
+extern s8 D_801B419B;
 
 #endif /* FDAT204_H */
