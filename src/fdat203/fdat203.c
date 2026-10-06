@@ -148,7 +148,16 @@ void func_8004F1D4(Obj8004EE14 *arg0, Sub8004F1D4 *arg1) {
     arg1->unk4 = func_8004F190(&arg0->unk20[2], arg1->unk4, arg0->unk3);
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004F240);
+s32 func_8004F240(Obj8004EE14 *arg0, Sub8004F1D4 *arg1) {
+    u8 count;
+
+    func_8004EFC8();
+    func_8004EE68(arg0);
+    func_8004F1D4(arg0, arg1);
+    count = arg0->unk2 - 1;
+    arg0->unk2 = count;
+    return count;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004F29C);
 
