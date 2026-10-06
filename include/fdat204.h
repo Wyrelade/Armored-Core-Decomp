@@ -319,5 +319,6 @@ void func_80016DA8(void);
 void func_8001C1F0(void);
 void func_80016114(void *arg0);
 s32 func_8001628C(void);
+s32 func_8002A4A0(void);
 
 #endif /* FDAT204_H */
