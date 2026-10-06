@@ -159,5 +159,8 @@ extern s8 D_801AC8A0;
 extern s8 D_801AC8A1;
 extern s8 D_801AC8A2;
 extern s8 D_801AC8A3;
+extern s8 D_80090920;
+extern s8 D_80090921;
+extern s8 D_80090922;
 
 #endif /* FDAT202_H */
