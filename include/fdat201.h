@@ -643,5 +643,6 @@ void func_800ABB10();
 void func_800AD780(Obj8004DEB0 *arg0);
 void func_800210F8(s16 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_800ACCC0();
+void func_800AD198();
 
 #endif /* FDAT201_H */
