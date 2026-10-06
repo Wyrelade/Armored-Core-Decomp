@@ -2063,7 +2063,16 @@ void func_8008F274(u8 arg0, u8 arg1, u8 arg2) {
     func_8002BFE8(0);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008F2D0);
+void func_8008F2D0(u8 arg0, u8 arg1, u8 arg2) {
+    u8 buf[8];
+    s32 y;
+
+    func_8008EC30(func_8008F08C(arg0, arg1), buf);
+    y = arg2 * 0x10 + 0x80;
+    func_8005D15C(D_8004CD18, 0x3EC, y);
+    func_8005D15C(buf, 0x3EC, y);
+    func_8002BFE8(0);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008F344);
 
