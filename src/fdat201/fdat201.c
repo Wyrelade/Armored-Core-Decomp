@@ -2903,7 +2903,20 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A7160);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A7244);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A730C);
+void func_800A730C(Obj8004DEB0 *arg0) {
+    D_8017F4B9 = 0x41;
+    D_8017F4BA = 0x43;
+    D_8017F4B1 = 0;
+    D_8017F4B2 = 0;
+    D_8017F4BB = 0;
+    D_8017F4BC = 0;
+    D_8017F4BD = 0;
+    D_8017F4BE = 0;
+    D_8017F4BF = 0;
+    D_8017F4B8 = 0;
+    D_800BDCCC = 0;
+    arg0->unk74 = func_800A737C;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A737C);
 

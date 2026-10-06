@@ -573,5 +573,17 @@ void func_800A6AC4(Obj8004DEB0 *arg0);
 void func_800A6B24(Obj8004DEB0 *arg0);
 void func_800A6520(Obj8004DEB0 *arg0);
 void func_800A6DFC();
+extern s32 D_800BDCCC;
+extern u8 D_8017F4B1;
+extern u8 D_8017F4B2;
+extern u8 D_8017F4B8;
+extern u8 D_8017F4B9;
+extern u8 D_8017F4BA;
+extern u8 D_8017F4BB;
+extern u8 D_8017F4BC;
+extern u8 D_8017F4BD;
+extern u8 D_8017F4BE;
+extern u8 D_8017F4BF;
+void func_800A737C();
 
 #endif /* FDAT201_H */
