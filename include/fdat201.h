@@ -113,5 +113,9 @@ void func_80050944(u32 *arg0);
 void func_8002BFE8(s32 arg0);
 void func_80051078(u32 *arg0);
 void func_800B597C(s32 arg0);
+extern s16 D_801A2318;
+s16 func_800263F8(u32 *arg0, s32 arg1);
+void func_80026B2C(u32 *arg0, s16 arg1);
+void func_80026EC4(s32 arg0);
 
 #endif /* FDAT201_H */
