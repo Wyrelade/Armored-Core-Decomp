@@ -18,6 +18,7 @@ in both. objdiff-cli is the Linux build in tools/objdiff, so it runs under WSL o
 import json
 import os
 import platform
+import re
 import shutil
 import subprocess
 import sys
@@ -96,8 +97,52 @@ def main():
     print("report: %s/%s functions matched (%.2f%%), %s/%s code bytes" % (
         m.get("matched_functions", 0), m.get("total_functions", 0),
         float(m.get("matched_functions_percent", 0.0)), m.get("matched_code", 0), m.get("total_code", 0)))
-    print("wrote progress/report.json - commit it, the workflow uploads it")
+    update_readme(rep)
+    print("wrote progress/report.json and the README progress section - commit both")
     return 0
+
+
+README_ROWS = [
+    ("main", "**Main executable** (`SCUS_941.82`, incl. PsyQ libraries)"),
+    ("programs", "**Program overlays** (`FDAT.T`)"),
+    ("fdat201", "&nbsp;&nbsp;└ `FDAT_201`"),
+    ("fdat202", "&nbsp;&nbsp;└ `FDAT_202`"),
+    ("fdat203", "&nbsp;&nbsp;└ `FDAT_203`"),
+    ("fdat204", "&nbsp;&nbsp;└ `FDAT_204`"),
+]
+
+
+def bar(pct, segments=20):
+    filled = max(0, min(segments, int(round(pct / 100.0 * segments))))
+    return "▰" * filled + "▱" * (segments - filled)
+
+
+def row(label, m):
+    done, total = int(m.get("matched_functions", 0)), int(m.get("total_functions", 0))
+    pct = float(m.get("matched_functions_percent", 0.0))
+    return "| %s | %d | %d | `%s` %.2f%% |" % (label, total, done, bar(pct), pct)
+
+
+def update_readme(rep):
+    """Rewrite the PROGRESS:BADGE and PROGRESS:TABLE blocks of README.md from the report."""
+    path = os.path.join(ROOT, "README.md")
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    m = rep["measures"]
+    cats = {c["id"]: c["measures"] for c in rep.get("categories", [])}
+    pct = float(m.get("matched_functions_percent", 0.0))
+    badge = "![matched](https://img.shields.io/badge/matched-%d%%2F%d%%20(%.2f%%25)-1f6feb)" % (
+        int(m["matched_functions"]), int(m["total_functions"]), pct)
+    lines = ["| Component | Functions | Matched | Progress |", "|---|---:|---:|---|"]
+    lines += [row(label, cats[cid]) for cid, label in README_ROWS if cid in cats]
+    lines.append("| **Mission overlays** (`FDAT.T`, 58) | not split yet | | |")
+    lines.append(row("**Total**", m))
+    text = re.sub(r"(<!-- PROGRESS:BADGE -->\n).*?(\n<!-- /PROGRESS:BADGE -->)",
+                  lambda x: x.group(1) + badge + x.group(2), text, flags=re.S)
+    text = re.sub(r"(<!-- PROGRESS:TABLE -->\n).*?(\n<!-- /PROGRESS:TABLE -->)",
+                  lambda x: x.group(1) + "\n".join(lines) + x.group(2), text, flags=re.S)
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(text)
 
 
 if __name__ == "__main__":
