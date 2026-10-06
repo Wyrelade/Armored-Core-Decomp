@@ -1,8 +1,12 @@
 #include "common.h"
+#include "fdat204.h"
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004BDB8);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004BDFC);
+void func_8004BDFC(void) {
+    D_800893C4 = 0;
+    func_800309A8(4, 0, func_8004BDB8);
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004BE30);
 
