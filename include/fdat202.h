@@ -220,6 +220,11 @@ typedef struct Obj800745D0 {
     Obj8004DE88 unk64;
 } Obj800745D0;
 
+typedef struct Obj80075750 {
+    u8 _pad0[0x164];
+    u16 unk164;
+} Obj80075750;
+
 /* @externs */
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
