@@ -9,7 +9,7 @@
 # Armored Core Decompilation
 
 <!-- PROGRESS:BADGE -->
-![matched](https://img.shields.io/badge/matched-1%2F3546%20(0.03%25)-1f6feb)
+![matched](https://img.shields.io/badge/matched-45%2F3546%20(1.27%25)-1f6feb)
 <!-- /PROGRESS:BADGE -->
 ![build](https://img.shields.io/badge/build-byte--identical-2ea043)
 ![platform](https://img.shields.io/badge/platform-PS1%20(SCUS--94182)-8957e5)
@@ -45,18 +45,20 @@ C compile pipeline is live, and the compiler is pinned. Matching has started.
 <!-- PROGRESS:TABLE -->
 | Component | Functions | Matched | Progress |
 |---|---:|---:|---|
-| **Main executable** (`SCUS_941.82`, incl. PsyQ libraries) | 675 | 0 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.00% |
-| **Program overlays** (`FDAT.T`) | 2871 | 1 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.03% |
-| &nbsp;&nbsp;└ `FDAT_201` | 1091 | 0 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.00% |
-| &nbsp;&nbsp;└ `FDAT_202` | 619 | 1 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.16% |
-| &nbsp;&nbsp;└ `FDAT_203` | 579 | 0 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.00% |
-| &nbsp;&nbsp;└ `FDAT_204` | 582 | 0 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.00% |
+| **Main executable** (`SCUS_941.82`, incl. PsyQ libraries) | 675 | 7 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 1.04% |
+| **Program overlays** (`FDAT.T`) | 2871 | 38 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 1.32% |
+| &nbsp;&nbsp;└ `FDAT_201` | 1091 | 31 | `▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 2.84% |
+| &nbsp;&nbsp;└ `FDAT_202` | 619 | 3 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.48% |
+| &nbsp;&nbsp;└ `FDAT_203` | 579 | 2 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.35% |
+| &nbsp;&nbsp;└ `FDAT_204` | 582 | 2 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.34% |
 | **Mission overlays** (`FDAT.T`, 58) | not split yet | | |
-| **Total** | 3546 | 1 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 0.03% |
+| **Total** | 3546 | 45 | `▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱` 1.27% |
 <!-- /PROGRESS:TABLE -->
 
-Counts include PsyQ library code, which will be separated and excluded from progress (as in
-other PS1 decomps) once identified.
+Counts come from objdiff (`tools/progress_report.py`, published to decomp.dev by
+`.github/workflows/progress.yml`). The 44 one-instruction stubs splat already wrote as C count
+as matched. Counts include PsyQ library code, which will be separated and excluded from
+progress (as in other PS1 decomps) once identified.
 
 ## Findings so far
 

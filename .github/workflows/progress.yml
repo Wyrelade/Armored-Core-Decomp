@@ -1,0 +1,38 @@
+# Uploads the decomp.dev progress report for Armored Core (SCUS-94182).
+#
+# The repository holds no disassembly, so CI cannot build the target objects. The report
+# is generated locally by tools/progress_report.py (full build + objdiff-cli) and committed
+# as progress/report.json; this workflow only publishes it as the "<game_id>_report"
+# artifact that decomp.dev ingests.
+name: Progress
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "progress/report.json"
+      - ".github/workflows/progress.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        game_id: [SCUS-94182]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check report
+        run: |
+          test -s progress/report.json
+          head -c 400 progress/report.json; echo
+
+      - name: Upload progress report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.game_id }}_report
+          path: progress/report.json
