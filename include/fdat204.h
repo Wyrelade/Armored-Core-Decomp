@@ -9,5 +9,7 @@
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
 void func_8004BDB8(void);
+extern s32 D_801AB684;
+extern u16 D_801AB688;
 
 #endif /* FDAT204_H */
