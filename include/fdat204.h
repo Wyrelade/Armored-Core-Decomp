@@ -134,5 +134,6 @@ void func_800815DC(u16 arg0, u16 arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s
 void func_80078460(Obj80073138 *arg0);
 void func_80078570(Obj80073138 *arg0);
 void func_8004EE5C(Obj8004EDA8 *arg0);
+void func_8007C83C(void);
 
 #endif /* FDAT204_H */
