@@ -97,6 +97,15 @@ typedef struct Obj800513F0 {
     u8 unk3;
 } Obj800513F0;
 
+typedef struct Obj80051C20 {
+    u8 _pad0[0x48];
+    s32 unk48;
+    s32 unk4C;
+    u8 _pad50[0x2C];
+    s8 *unk7C;
+    s8 *unk80;
+} Obj80051C20;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
