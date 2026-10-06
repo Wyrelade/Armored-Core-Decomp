@@ -509,5 +509,6 @@ extern u8 D_8018E46A;
 void func_80028394(s32 arg0, s32 arg1, s32 arg2);
 void func_800283D4(s32 arg0, s32 arg1);
 void func_800283F4(s32 arg0);
+extern s32 D_80039D14;
 
 #endif /* FDAT201_H */
