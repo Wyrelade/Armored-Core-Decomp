@@ -78,5 +78,11 @@ void func_800613F4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 extern u32 D_801EE0B0[3][0x400];
 void func_80015538(void *arg0, s32 arg1, s32 arg2);
 void func_8006CCFC(void);
+extern u32 D_801AB748[0xB8];
+extern u32 *D_801ADA28;
+extern s32 D_801ADA34;
+extern s32 D_801ADA38;
+void func_8007295C(s32 arg0);
+void func_8007296C(s32 arg0);
 
 #endif /* FDAT204_H */
