@@ -1192,7 +1192,11 @@ Obj800709D4 *func_80072838(void) {
     return task;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800728A8);
+void func_800728A8(Obj8004DEB0 *arg0) {
+    if (arg0->unk1 == 0) {
+        func_800728F8();
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800728D8);
 
