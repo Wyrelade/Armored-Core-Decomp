@@ -252,5 +252,6 @@ extern Elem80052338 *D_801ED844;
 extern s16 D_801ED848;
 extern s16 D_801ED84A;
 extern s16 D_801ED84C;
+extern Elem80052338 D_801ED840[];
 
 #endif /* FDAT202_H */

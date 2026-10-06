@@ -218,7 +218,13 @@ void func_8005239C(s16 arg0) {
     D_801ED84C = 0;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800523BC);
+Elem80052338 *func_800523BC(Elem80052338 *arg0) {
+    arg0++;
+    if (arg0 == D_801ED840) {
+        arg0 -= 8;
+    }
+    return arg0;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800523DC);
 
