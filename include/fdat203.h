@@ -109,5 +109,6 @@ void func_80074D40(void);
 s32 func_8004F240(Obj8004EE14 *arg0, Sub8004F1D4 *arg1);
 s32 func_8004F2F0(Obj8004EE14 *arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2);
 s32 func_8004F29C(Obj8004EE14 *arg0, Sub8004F1D4 *arg1);
+void func_800748BC(Obj800732FC *arg0);
 
 #endif /* FDAT203_H */
