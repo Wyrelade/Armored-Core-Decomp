@@ -171,5 +171,8 @@ extern s32 D_8019474C;
 void func_80086444(s32 arg0, Obj800825D4 *arg1, Sub8004F1D4 *arg2, u8 arg3, s32 arg4);
 s16 func_8006DB54(s16 arg0, Obj8008825C *arg1);
 void func_80088130(Obj8008825C *arg0, Sub8004F1D4 *arg1, s16 arg2, s16 arg3, s32 arg4, s32 arg5);
+extern s16 D_8019B494;
+extern s8 D_801C40CC;
+extern s16 D_801C40CE;
 
 #endif /* FDAT203_H */
