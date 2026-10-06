@@ -45,6 +45,17 @@ typedef struct Obj8007A19C {
     u8 unk1000[1];
 } Obj8007A19C;
 
+typedef struct Obj80083928 {
+    u8 _pad0[0x8];
+    s32 unk8;
+    u8 _padC[0xC];
+    s16 unk18[3];
+    u8 unk1E;
+    u8 unk1F;
+    u8 unk20;
+    u8 unk21;
+} Obj80083928;
+
 /* @externs */
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
@@ -75,5 +86,6 @@ extern s16 D_801987DC;
 extern s16 D_801987DE;
 extern s16 D_801987E0;
 extern s32 D_801987E4;
+void func_80087798(s32 arg0, Obj80083928 *arg1, s16 *arg2, u8 arg3, s32 arg4);
 
 #endif /* FDAT202_H */
