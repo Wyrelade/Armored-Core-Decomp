@@ -1,0 +1,61 @@
+name: Mission overlay FDAT.T entry 20
+sha1: ed56762e7daf1a586f10fb6b99b4f100d240aac1
+options:
+  basename: fdat020
+  target_path: dumps/fdat/FDAT_020.BIN
+  base_path: ../..
+  platform: psx
+  compiler: PSYQ
+
+  asm_path: asm/USA/fdat020
+  src_path: src/fdat020
+  build_path: build/USA
+  ld_script_path: linkers/USA/fdat020.ld
+  elf_path: build/USA/fdat020.elf
+  ld_dependencies: False
+
+  find_file_boundaries: True
+  migrate_rodata_to_functions: True
+  pair_rodata_to_text: False
+  gp_value: 0x80039C5C
+
+  o_as_suffix: False
+  use_legacy_include_asm: False
+
+  asm_function_macro: glabel
+  asm_jtbl_label_macro: jlabel
+  asm_data_macro: dlabel
+  generate_asm_macros_files: False
+
+  section_order: [".rodata", ".text", ".data", ".sdata", ".sbss", ".bss"]
+
+  symbol_addrs_path:
+    - configs/USA/sym.main.txt
+    - configs/USA/sym.fdat020.txt
+
+  undefined_funcs_auto_path: linkers/USA/undefined_funcs_auto.fdat020.txt
+  undefined_syms_auto_path: linkers/USA/undefined_syms_auto.fdat020.txt
+
+  subalign: 4
+
+  string_encoding: ASCII
+  data_string_encoding: ASCII
+  rodata_string_guesser_level: 2
+  data_string_guesser_level: 2
+
+  ld_bss_is_noload: True
+
+# Mission overlay: GG/COM/FDAT.T entry 20 (tools/acdisc.py -> dumps/fdat/FDAT_020.BIN),
+# loaded at 0x801C4B40 (tools/gen_mission_configs.py). Generated; edit the generator.
+segments:
+  - name: fdat020
+    type: code
+    start: 0x0
+    vram: 0x801C4B40
+    align: 4
+    subalign: 4
+    subsegments:
+      - [0x0, rodata, fdat020_rodata]
+      - [0x780, c, fdat020]
+      - [0x5EFC, data, fdat020_data]
+  - [0x7000]

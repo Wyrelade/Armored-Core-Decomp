@@ -34,11 +34,16 @@ CATEGORIES = [
     {"id": "fdat202", "name": "FDAT_202"},
     {"id": "fdat203", "name": "FDAT_203"},
     {"id": "fdat204", "name": "FDAT_204"},
+    {"id": "missions", "name": "Mission Overlays (FDAT.T 0-186)"},
 ]
 
 
 def categories_for(unit):
-    return ["main"] if unit == "main" else ["programs", unit]
+    if unit == "main":
+        return ["main"]
+    if unit in ("fdat201", "fdat202", "fdat203", "fdat204"):
+        return ["programs", unit]
+    return ["missions"]
 
 
 def wsl_path(p):
@@ -153,6 +158,7 @@ README_ROWS = [
     ("fdat202", "&nbsp;&nbsp;└ `FDAT_202`"),
     ("fdat203", "&nbsp;&nbsp;└ `FDAT_203`"),
     ("fdat204", "&nbsp;&nbsp;└ `FDAT_204`"),
+    ("missions", "**Mission overlays** (`FDAT.T`, 58 entries, 57 unique)"),
 ]
 
 
@@ -179,7 +185,6 @@ def update_readme(rep):
         int(m["matched_functions"]), int(m["total_functions"]), pct)
     lines = ["| Component | Functions | Matched | Progress |", "|---|---:|---:|---|"]
     lines += [row(label, cats[cid]) for cid, label in README_ROWS if cid in cats]
-    lines.append("| **Mission overlays** (`FDAT.T`, 58) | not split yet | | |")
     lines.append("| PsyQ 3.7 libraries (`configs/USA/psyq_funcs.txt`, kept as asm, not counted) | %d | | |"
                  % len(psyq_names()))
     lines.append(row("**Total**", m))

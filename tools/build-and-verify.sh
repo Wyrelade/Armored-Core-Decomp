@@ -18,7 +18,7 @@ done
 LOG="$(mktemp)"
 status=0
 "$PYTHON" tools/build_ac.py "$@" >"$LOG" 2>&1 || status=$?
-grep -E "out/.*: (OK|FAIL|MISMATCH)|error|Error|undefined reference|multiple definition" "$LOG" | head -60
+grep -E "out/.*: (OK|FAIL|MISMATCH)|error|Error|undefined reference|multiple definition" "$LOG" | head -200
 
 if [[ $status -ne 0 ]] || grep -qE "FAIL|MISMATCH|undefined reference|multiple definition" "$LOG" \
    || ! grep -q "build/USA/out/SCUS_941.82: OK" "$LOG"; then
