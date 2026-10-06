@@ -336,5 +336,6 @@ void func_80016114(void *arg0);
 s32 func_8001628C(void);
 s32 func_8002A4A0(void);
 extern u8 D_80031A94[];
+void func_800279F4(s32 *arg0);
 
 #endif /* FDAT204_H */
