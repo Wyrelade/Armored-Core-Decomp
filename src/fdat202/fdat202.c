@@ -48,7 +48,11 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004C854);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004C91C);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004C958);
+void func_8004C958(void) {
+    func_8001EE10(0, 0);
+    func_80016DA8();
+    func_8001C1F0();
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004C98C);
 
