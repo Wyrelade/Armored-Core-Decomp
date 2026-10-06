@@ -181,5 +181,6 @@ extern u8 D_801A3E2B;
 extern u16 D_8019B492;
 void func_800893A4(void);
 void func_800894B4(void);
+void func_800279F4(s32 *arg0);
 
 #endif /* FDAT203_H */

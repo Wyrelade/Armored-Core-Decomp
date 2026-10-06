@@ -1414,4 +1414,8 @@ void func_80089558(void) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800895A4);
+void func_800895A4(void) {
+    s32 sp10[8];
+
+    func_800279F4(sp10);
+}
