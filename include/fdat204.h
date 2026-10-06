@@ -128,6 +128,43 @@ typedef struct Obj8008800C {
     s16 unk2A;
 } Obj8008800C;
 
+typedef struct Sub8004DE88 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub8004DE88;
+
+typedef struct Sub8004EFB8 {
+    s16 unk0;
+    u8 _pad2[0x6];
+} Sub8004EFB8;
+
+typedef struct Elem8004ECA8 {
+    u8 _pad0[0x10];
+    s16 unk10;
+} Elem8004ECA8;
+
+typedef struct Sub8004ECA8 {
+    u8 _pad0[0xC];
+    u16 unkC[1];
+} Sub8004ECA8;
+
+typedef struct Obj8004DE88 {
+    u8 unk0;
+    u8 _pad1;
+    u8 unk2;
+    u8 unk3;
+    u8 _pad4[0x6];
+    s16 unkA;
+    s16 unkC;
+    u8 _padE[0xE];
+    Sub8004ECA8 *unk1C;
+    Sub8004EFB8 unk20;
+    Sub8004EFB8 unk28;
+    Sub8004EFB8 unk30;
+} Obj8004DE88;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
