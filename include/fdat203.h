@@ -130,5 +130,6 @@ void func_80077AF8(s32 arg0, s32 arg1);
 extern Obj800781F0 *D_80039D18;
 extern Obj800781F0 *D_80039D30;
 void func_80081914(u16 arg0, u16 arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 *arg7);
+void func_800787B0(Obj800732FC *arg0);
 
 #endif /* FDAT203_H */
