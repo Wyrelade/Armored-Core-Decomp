@@ -50,5 +50,8 @@ extern u8 D_80041BC0;
 void func_8004DA48(s32 arg0);
 void func_8004DA74(void);
 s16 func_8004F074(Sub8004F0B8 *arg0, s16 arg1, u8 arg2);
+void func_8004EEAC(void);
+void func_8004ED4C(Obj8004EDA8 *arg0);
+s32 func_8004F0B8(Obj8004EDA8 *arg0, Obj8004F0B8 *arg1);
 
 #endif /* FDAT204_H */
