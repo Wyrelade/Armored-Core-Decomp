@@ -249,5 +249,8 @@ void func_8004D948(s16 arg0);
 void func_8004D974(void);
 s16 func_8004EF74(Sub8004EFB8 *arg0, s16 arg1, u8 arg2);
 extern Elem80052338 *D_801ED844;
+extern s16 D_801ED848;
+extern s16 D_801ED84A;
+extern s16 D_801ED84C;
 
 #endif /* FDAT202_H */
