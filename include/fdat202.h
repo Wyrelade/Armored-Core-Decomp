@@ -27,5 +27,6 @@ typedef struct Obj8007618C {
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
 void func_80075B3C(Obj8007618C *arg0);
+void func_8004EC4C(Sub8007618C *arg0);
 
 #endif /* FDAT202_H */
