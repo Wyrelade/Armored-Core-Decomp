@@ -174,5 +174,9 @@ void func_80088130(Obj8008825C *arg0, Sub8004F1D4 *arg1, s16 arg2, s16 arg3, s32
 extern s16 D_8019B494;
 extern s8 D_801C40CC;
 extern s16 D_801C40CE;
+extern u8 D_801A3E28;
+extern u8 D_801A3E29;
+extern u8 D_801A3E2A;
+extern u8 D_801A3E2B;
 
 #endif /* FDAT203_H */

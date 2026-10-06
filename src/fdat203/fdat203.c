@@ -1383,7 +1383,21 @@ void func_80089310(s16 arg0, s16 arg1, s8 arg2) {
     D_801C40CC = arg2;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80089330);
+void func_80089330(s32 arg0) {
+    u8 val;
+
+    if (arg0 < 0x15) {
+        if (arg0 == 0x14) {
+            D_801A3E2B = 0;
+            return;
+        }
+        D_801A3E2B = 2;
+        val = (((0x14 - arg0) << 8) - 0xA) / 20;
+        D_801A3E2A = val;
+        D_801A3E29 = val;
+        D_801A3E28 = val;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800893A4);
 
