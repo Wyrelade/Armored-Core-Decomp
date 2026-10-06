@@ -3090,7 +3090,9 @@ void func_800A7928(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A7990);
+void func_800A7990(void) {
+    func_800A6EA0();
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A79B0);
 
