@@ -246,5 +246,9 @@ extern s32 D_8017E5B8;
 extern s32 D_8017E5BC;
 extern s32 D_8017E5C0;
 void func_80029AF0(s32 arg0);
+extern s32 D_8017E5C4;
+extern s32 D_8017E5C8;
+extern s32 D_8017E5CC;
+extern s32 D_8017E5D0;
 
 #endif /* FDAT201_H */
