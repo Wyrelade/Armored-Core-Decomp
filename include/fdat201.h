@@ -242,6 +242,11 @@ typedef struct Obj80080080 {
     Sub80080080 *unk7C;
 } Obj80080080;
 
+typedef struct Elem80081260 {
+    u8 unk0;
+    u8 unk1;
+} Elem80081260;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());

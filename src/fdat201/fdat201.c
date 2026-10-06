@@ -1493,7 +1493,16 @@ void func_800810C0(Obj80080080 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800810F0);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80081260);
+u8 func_80081260(Elem80081260 *arg0) {
+    s32 count;
+
+    count = 0;
+    while (arg0->unk0 != 0x3E) {
+        arg0++;
+        count++;
+    }
+    return count;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80081290);
 
