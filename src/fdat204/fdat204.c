@@ -23,7 +23,24 @@ void func_8004BF14(s32 arg0) {
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004BF3C);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004C7C8);
+void func_8004C7C8(void) {
+    s32 ff;
+    s32 f0;
+
+    ff = 0xFF;
+    D_80041BCE = ff;
+    D_80041BCD = ff;
+    D_80041BCC = ff;
+    D_80041BCB = ff;
+    D_80041BCA = ff;
+    D_80041BC9 = ff;
+    f0 = 0xF0;
+    D_80041BC8 = ff;
+    D_80041BA0 = 0;
+    D_80041BC2 = f0;
+    D_80041BBB = D_80041BB8;
+    D_80041BBD = D_80041BBA;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004C840);
 

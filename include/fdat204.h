@@ -182,5 +182,18 @@ extern s8 D_801B419B;
 extern u16 D_801AB68A;
 void func_80089154(void);
 void func_800892F0(void);
+extern s32 D_80041BA0;
+extern u8 D_80041BB8;
+extern u8 D_80041BBA;
+extern u8 D_80041BBB;
+extern u8 D_80041BBD;
+extern s8 D_80041BC2;
+extern s8 D_80041BC8;
+extern s8 D_80041BC9;
+extern s8 D_80041BCA;
+extern s8 D_80041BCB;
+extern s8 D_80041BCC;
+extern s8 D_80041BCD;
+extern s8 D_80041BCE;
 
 #endif /* FDAT204_H */
