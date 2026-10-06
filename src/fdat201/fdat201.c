@@ -1938,7 +1938,11 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008BC10);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008BC58);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008BD48);
+void func_8008BD48(Obj8004DEB0 *arg0) {
+    func_8005D15C(D_8004CC08, 0x380, 0);
+    func_8002BFE8(0);
+    arg0->unk74 = func_8008BD94;
+}
 
 void func_8008BD94(void) {
 }
