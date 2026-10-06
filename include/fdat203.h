@@ -161,6 +161,17 @@ typedef struct Obj800558A8 {
     s32 *unk24;
 } Obj800558A8;
 
+typedef struct Elem8005460C {
+    u8 _pad0[0x12];
+    s16 unk12;
+    u8 _pad14[0x68];
+} Elem8005460C;
+
+typedef struct Obj80055E20 {
+    u8 _pad0[0x20];
+    Elem8005460C *unk20;
+} Obj80055E20;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
