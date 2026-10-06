@@ -2569,7 +2569,11 @@ void func_8009A15C(Obj8004DEB0 *arg0) {
 void func_8009A1C8(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8009A1D0);
+void func_8009A1D0(Obj8004DEB0 *arg0) {
+    if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
+        arg0->unk1 = 1;
+    }
+}
 
 void func_8009A218(void) {
     Obj8004DEB0 *task;
