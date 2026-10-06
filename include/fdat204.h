@@ -179,5 +179,8 @@ extern s8 D_801B4198;
 extern s8 D_801B4199;
 extern s8 D_801B419A;
 extern s8 D_801B419B;
+extern u16 D_801AB68A;
+void func_80089154(void);
+void func_800892F0(void);
 
 #endif /* FDAT204_H */
