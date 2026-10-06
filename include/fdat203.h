@@ -31,6 +31,12 @@ typedef struct Elem8004EE14 {
     s16 unk10;
 } Elem8004EE14;
 
+typedef struct Sub8004F1D4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+} Sub8004F1D4;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -40,5 +46,6 @@ extern u16 D_8019B490;
 extern u8 D_80041BC0;
 void func_8004DB64(s32 arg0);
 void func_8004DB90(void);
+s16 func_8004F190(Elem8004F1D4 *arg0, s16 arg1, u8 arg2);
 
 #endif /* FDAT203_H */
