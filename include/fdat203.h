@@ -104,5 +104,6 @@ extern s32 D_8019D840;
 void func_80072B20(s32 arg0);
 void func_80072B30(s32 arg0);
 void func_80055420(s32 arg0, s32 arg1, Sub8004F1D4 *arg2, Sub8004F1D4 *arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8);
+void func_8004EEC4(Obj8004EE14 *arg0);
 
 #endif /* FDAT203_H */
