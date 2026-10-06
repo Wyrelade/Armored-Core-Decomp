@@ -202,5 +202,8 @@ void func_8001EE10(s32 arg0, s32 arg1);
 void func_80016DA8(void);
 void func_8001C1F0(void);
 void func_80020440(s32 arg0, s16 arg1, s16 arg2);
+extern u8 D_80041BC0;
+void func_8004D948(s16 arg0);
+void func_8004D974(void);
 
 #endif /* FDAT202_H */
