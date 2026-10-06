@@ -238,5 +238,8 @@ void func_800685E8(void);
 void func_80016F7C(void);
 void func_80016ED8(void);
 void func_80016FB4(void);
+void func_80068930(void);
+void func_80016EE8(s32 arg0);
+s32 func_80068828(void);
 
 #endif /* FDAT201_H */
