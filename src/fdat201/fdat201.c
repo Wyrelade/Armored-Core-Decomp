@@ -3445,7 +3445,16 @@ void func_800B3FFC(Obj8004DEB0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B4054);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B4370);
+s32 func_800B4370(u8 *arg0) {
+    s32 sum;
+    u32 i;
+
+    sum = 0;
+    for (i = 0; i < 0x38E2; i++) {
+        sum += *arg0++;
+    }
+    return sum;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B4398);
 
