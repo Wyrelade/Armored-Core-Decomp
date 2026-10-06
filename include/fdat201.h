@@ -550,5 +550,6 @@ void func_800A5118(Obj8004DEB0 *arg0);
 void func_8005EB80(s32 arg0);
 void func_80074A18(void);
 void func_800A5170(Obj8004DEB0 *arg0);
+void func_800A51B8(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
