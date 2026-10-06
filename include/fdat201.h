@@ -377,5 +377,6 @@ void func_8007D6E8(Obj8004DEB0 *arg0);
 void func_8007D254();
 void func_8007C6FC(Obj8004DEB0 *);
 void func_8007C7D8();
+void func_8007F30C(Obj8004DEB0 *);
 
 #endif /* FDAT201_H */
