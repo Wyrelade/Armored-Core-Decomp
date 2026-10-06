@@ -67,5 +67,13 @@ void func_8004CE44(s32 arg0, u8 *arg1, s32 arg2, s32 arg3);
 void func_8004CC30(s32 arg0, u8 *arg1, u8 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_8004ED5C(Sub8007618C *arg0);
 void func_8007DF98(void);
+extern s8 D_801987D1;
+extern s8 D_801987D2;
+extern s32 D_801987D4;
+extern s16 D_801987DA;
+extern s16 D_801987DC;
+extern s16 D_801987DE;
+extern s16 D_801987E0;
+extern s32 D_801987E4;
 
 #endif /* FDAT202_H */
