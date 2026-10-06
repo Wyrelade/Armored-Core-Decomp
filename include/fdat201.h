@@ -546,5 +546,6 @@ s32 func_80017528(s32 arg0, u8 *arg1, s32 arg2);
 s32 func_8001A174(s32 arg0);
 void func_80028D84(s32 arg0);
 void func_800A4EAC();
+void func_800A5118(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
