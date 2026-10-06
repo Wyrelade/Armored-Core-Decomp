@@ -151,6 +151,16 @@ typedef struct Obj8006AB34 {
     u16 unkC8;
 } Obj8006AB34;
 
+typedef struct Obj8006B1E8 {
+    u8 _pad0[0x1];
+    u8 unk1;
+    u8 _pad2[0x7A];
+    Obj8004DEB0 *unk7C;
+    void (*unk80)();
+    u8 _pad84[0x4];
+    u32 *unk88;
+} Obj8006B1E8;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
