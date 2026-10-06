@@ -33,6 +33,13 @@ typedef struct Sub80078CFC {
     void (*unk20[1])(Obj80078CFC *);
 } Sub80078CFC;
 
+typedef struct Obj8007A108 {
+    u8 _pad0[0x3];
+    u8 unk3;
+    u8 _pad4[0x2];
+    u8 unk6;
+} Obj8007A108;
+
 /* @externs */
 void func_80075FC0(void);
 s32 func_8004F080(Sub8007618C *arg0, u8 *arg1);
