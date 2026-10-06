@@ -152,5 +152,8 @@ void func_80089484(Obj800895B0 *arg0, s16 *arg1, s16 arg2, s16 arg3, s32 arg4, s
 extern u16 D_8019F528;
 void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
 extern u8 D_80031A94[];
+extern s16 D_8019F52C;
+extern s8 D_801D0B44;
+extern s16 D_801D0B46;
 
 #endif /* FDAT202_H */
