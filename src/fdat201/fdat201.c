@@ -280,7 +280,9 @@ void func_80051868(void) {
     func_80029B50();
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800518A4);
+void func_800518A4(u32 *arg0) {
+    func_8002A3C8(arg0);
+}
 
 void func_800518C4(void) {
 }
