@@ -3503,7 +3503,9 @@ s32 func_800B50C8(s32 arg0) {
     return ret;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B5104);
+void func_800B5104(s32 arg0) {
+    func_80028FC8(0, arg0);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B5128);
 

@@ -676,5 +676,6 @@ void func_800B52DC(void);
 s32 func_800B536C(void);
 u32 func_800B549C(void);
 s32 func_800B5404(void);
+void func_80028FC8(s32 arg0, s32 arg1);
 
 #endif /* FDAT201_H */
