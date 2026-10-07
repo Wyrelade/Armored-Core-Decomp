@@ -1853,7 +1853,25 @@ void func_80089154(void) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800891D0);
+void func_800891D0(void) {
+    u8 full;
+    s8 level;
+
+    if (D_801AB688 < 0x16) {
+        D_801B419B = 2;
+        if (D_801AB688 < 3) {
+            full = 0xFF;
+            D_801B419A = full;
+            D_801B4199 = full;
+            D_801B4198 = full;
+            return;
+        }
+        level = ((0x16 - D_801AB688) << 8) / 20;
+        D_801B419A = level;
+        D_801B4199 = level;
+        D_801B4198 = level;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80089264);
 
