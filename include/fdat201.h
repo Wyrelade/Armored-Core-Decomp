@@ -917,5 +917,7 @@ s32 CdRead(s32 arg0, u32 *arg1, s32 arg2);
 s32 CdReadSync(s32 arg0, u8 *arg1);
 extern u8 D_800B6F1C[];
 void func_80051C20();
+extern u8 D_800B6F04[];
+void func_80051DCC();
 
 #endif /* FDAT201_H */
