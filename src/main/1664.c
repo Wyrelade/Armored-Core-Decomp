@@ -278,7 +278,9 @@ s32 func_800148E4(s32 arg0, s32 arg1, s16 arg2) {
     return ret;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014920);
+s32 func_80014920(s32 arg0, s32 arg1) {
+    return ((arg0 - arg1) & 0xFFF) < 0x801;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014930);
 
