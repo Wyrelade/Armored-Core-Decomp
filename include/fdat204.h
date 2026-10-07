@@ -433,5 +433,6 @@ void func_8006CE6C(u32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006CEC0(u32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006E20C(s32 *arg0, s16 *arg1, s32 *arg2);
 extern s32 D_801ADA3C;
+extern s32 D_801ADA40;
 
 #endif /* FDAT204_H */
