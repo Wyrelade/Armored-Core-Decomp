@@ -1390,5 +1390,17 @@ extern Obj8004DEB0 *D_8019C14C[];
 extern Obj8004DEB0 *D_8019C150[];
 extern Obj8004DEB0 *D_8019C170[];
 extern Obj8004DEB0 *D_8019C174[];
+void func_8008DD50();
+void func_8008E260();
+void func_800953AC();
+void func_8009544C();
+extern Obj8004DEB0 *D_8019C154[];
+extern Obj8004DEB0 *D_8019C158[];
+extern Obj8004DEB0 *D_8019C15C[];
+extern Obj8004DEB0 *D_8019C160[];
+extern Obj8004DEB0 *D_8019C178[];
+extern Obj8004DEB0 *D_8019C17C[];
+extern Obj8004DEB0 *D_8019C180[];
+extern Obj8004DEB0 *D_8019C184[];
 
 #endif /* FDAT201_H */
