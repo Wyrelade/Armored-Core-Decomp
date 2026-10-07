@@ -326,7 +326,12 @@ s32 func_80014D78(s32 arg0) {
     return (rand() * arg0) >> 15;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014DAC);
+s32 func_80014DAC(s32 arg0) {
+    s32 r;
+
+    r = rand();
+    return ((r + rand() - 0x8000) * arg0) >> 15;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014DFC);
 
