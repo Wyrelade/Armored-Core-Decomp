@@ -1497,5 +1497,6 @@ void func_800A2FE0();
 void func_800A310C();
 Obj8004DEB0 *func_800A4340(s32 arg0);
 Obj8004DEB0 *func_800A4408(void);
+void func_800A3564();
 
 #endif /* FDAT201_H */
