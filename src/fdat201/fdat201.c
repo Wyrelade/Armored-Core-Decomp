@@ -1112,7 +1112,16 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005CC48);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005CDEC);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005D15C);
+void func_8005D15C(u8 *arg0, s32 arg1, s32 arg2) {
+    while (*arg0 != 0) {
+        D_800B7400.unk0 = ((*arg0 - 0x20) & 0x1F) * 2 + 0x1C0;
+        D_800B7400.unk2 = ((*arg0 - 0x20) / 32) * 0x10;
+        MoveImage((u8 *)&D_800B7400, (s16)arg1, (s16)arg2);
+        arg0++;
+        arg1 += 2;
+    }
+    DrawSync(0);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005D21C);
 
