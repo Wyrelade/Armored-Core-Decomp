@@ -406,5 +406,6 @@ void func_800655BC(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
 s32 func_8007291C(void);
 s32 func_80073454(s32 arg0, s32 arg1, s32 arg2, Obj8006C9D4 *arg3);
 void func_8006D030(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8006D084(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT203_H */
