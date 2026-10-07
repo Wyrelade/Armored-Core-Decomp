@@ -6094,7 +6094,12 @@ void func_800B1A44(Obj80056FC4 *arg0) {
     arg0->unk4C = *arg0->unk80 * 0x10 + 0xC;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B1A80);
+void func_800B1A80(Obj8004DEB0 *arg0) {
+    func_8005BA2C(0xA8, 0x70, 0x88, 0x48, 7, 0, 0);
+    SsUtKeyOn(D_801A2318, 0, 6, 0x3C, 0, 0x7F, 0x7F);
+    arg0->unk89 = D_80048664;
+    arg0->unk74 = func_800B1B08;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B1B08);
 
