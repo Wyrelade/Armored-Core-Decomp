@@ -42,7 +42,22 @@ void func_8004C7C8(void) {
     D_80041BBD = D_80041BBA;
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004C840);
+void func_8004C840(s32 arg0, u32 *arg1, u8 *arg2) {
+    Elem8004C840 *vab;
+    s16 id;
+
+    vab = &D_80041BD0[arg0];
+    id = SsVabOpenHead(arg1, -1);
+    vab->unk0 = id;
+    if (id != -1) {
+        vab->unk4 = arg1;
+        while (SsVabTransBodyPartly(arg2, 0x800, vab->unk0) != vab->unk0) {
+            SsVabTransCompleted(1);
+            arg2 += 0x800;
+        }
+        SsVabTransCompleted(1);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004C8EC);
 

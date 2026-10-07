@@ -301,6 +301,12 @@ typedef struct Obj80087A24 {
     u16 unkBE;
 } Obj80087A24;
 
+typedef struct Elem8004C840 {
+    s16 unk0;
+    u8 _pad2[0x2];
+    u32 *unk4;
+} Elem8004C840;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -377,5 +383,9 @@ s32 rand(void);
 extern u8 D_80031A94[];
 void MulRotMatrix(s32 *arg0);
 void SsSetSerialVol(s32 arg0, s16 arg1, s16 arg2);
+extern Elem8004C840 D_80041BD0[];
+s16 SsVabOpenHead(u32 *arg0, s32 arg1);
+s16 SsVabTransBodyPartly(u8 *arg0, s32 arg1, s16 arg2);
+void SsVabTransCompleted(s32 arg0);
 
 #endif /* FDAT204_H */
