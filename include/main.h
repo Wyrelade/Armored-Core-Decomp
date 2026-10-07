@@ -33,5 +33,6 @@ void func_80013AFC(s16 arg0, Obj80013A88 *arg1);
 void func_80013B74(s16 arg0, Obj80013A88 *arg1);
 Obj80013A88 *MulMatrix(Obj80013A88 *arg0, Obj80013A88 *arg1);
 Obj80013A88 *MulMatrix2(Obj80013A88 *arg0, Obj80013A88 *arg1);
+s32 SquareRoot0(s32 arg0);
 
 #endif /* MAIN_H */
