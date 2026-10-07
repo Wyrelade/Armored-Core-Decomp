@@ -803,7 +803,20 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006E3D0);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006E410);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006E5B8);
+void func_8006E5B8(Obj8006E5B8 *arg0) {
+    s32 scale;
+
+    func_8006E3D0(&arg0->unkE4, &arg0->unk9E, &arg0->unkD0);
+    scale = (-(arg0->unkD0 + arg0->unkA4) >> 10) - 0x10;
+    arg0->unk50.unk0 = (u32)(arg0->unk9E.unk0 * scale) >> 14;
+    arg0->unk50.unk2 = (u32)(arg0->unk9E.unk2 * scale) >> 14;
+    arg0->unk50.unk4 = (u32)(arg0->unk9E.unk4 * scale) >> 14;
+    if (arg0->unk60 != 0) {
+        arg0->unk50.unk0 += arg0->unk58.unk0;
+        arg0->unk50.unk2 += arg0->unk58.unk2;
+        arg0->unk50.unk4 += arg0->unk58.unk4;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006E684);
 
