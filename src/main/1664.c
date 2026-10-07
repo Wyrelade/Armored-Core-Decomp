@@ -567,7 +567,12 @@ u32 *func_8001654C(Obj8001654C *arg0) {
     return buf;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800165A8);
+void func_800165A8(u32 *arg0, Obj8001654C *arg1, s32 arg2) {
+    if (arg2 == 0) {
+        arg2 = arg1->unk4;
+    }
+    func_80016328(arg1, arg0, (u32)(arg2 + 0x7FF) >> 11);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800165E4);
 
