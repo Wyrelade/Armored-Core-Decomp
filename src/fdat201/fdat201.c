@@ -3808,7 +3808,13 @@ void func_8008E6C4(Obj8004DEB0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008E70C);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008E7E0);
+void func_8008E7E0(Obj8004DEB0 *arg0) {
+    if (func_8005015C(9) == &D_801BC4F8) {
+        func_8005BA2C(0x8C, 0x18, 0xB0, D_8019C094 * 0x18, 9, 0, 0);
+        SsUtKeyOn(D_801A2318, 0, 6, 0x3C, 0, 0x7F, 0x7F);
+        arg0->unk74 = func_8008F3B4;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008E880);
 
