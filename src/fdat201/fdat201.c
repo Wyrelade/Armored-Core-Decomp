@@ -5997,7 +5997,25 @@ void func_800AFFD4(Obj8004DEB0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B0048);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B02D0);
+void func_800B02D0(Obj8004DEB0 *arg0) {
+    s32 mvol;
+    s32 svol;
+    u8 *seq;
+
+    func_800506EC(8);
+    func_8005015C(7)->unk1 = 1;
+    if (arg0->unk84 == 0x4D) {
+        func_8005C2D0(0xA8, 0x2C, 0x50, 0x10, 7);
+        mvol = D_80048661 * 2;
+        SsSetMVol(mvol, mvol);
+    } else {
+        func_8005C2D0(0xA8, 0x44, 0x50, 0x10, 7);
+        seq = &D_801BC470;
+        svol = D_80048662 * 2;
+        SsSeqSetVol(((s16 *)&D_801BC470)[*seq - 14], svol, svol);
+    }
+    arg0->unk74 = func_800B03A4;
+}
 
 void func_800B03A4(Obj8004DEB0 *arg0) {
     if (func_80050078(func_8005C2D0) == &D_801BC4F8) {

@@ -1623,5 +1623,8 @@ extern u8 D_8004D8C8[];
 extern u8 D_8004D8D4[];
 extern u8 D_8004D8E0[];
 void func_800AFBFC();
+void SsSeqSetVol(s16 arg0, s32 arg1, s32 arg2);
+extern u8 D_80048662;
+void func_800B03A4(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
