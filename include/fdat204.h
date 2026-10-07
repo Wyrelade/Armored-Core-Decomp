@@ -468,5 +468,7 @@ Obj80085394 *func_80088928(s32 arg0);
 void func_800841C0(Obj80085394 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_80083DF0(Obj80085394 *arg0);
 extern Obj80085394 D_8008A7A4;
+extern u8 D_80039C5D;
+void func_8004DC18(u8 arg0);
 
 #endif /* FDAT204_H */

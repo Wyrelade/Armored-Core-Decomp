@@ -1842,7 +1842,16 @@ void func_800890E0(s32 arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80089154);
+void func_80089154(void) {
+    if (D_801AB68A == 0x2C) {
+        D_801AB684 &= ~0x1400;
+        if (D_80039C5D != 0xFF) {
+            func_8004DC18(D_80039C5D);
+        }
+    } else {
+        D_801AB684 |= 0x1400;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800891D0);
 
