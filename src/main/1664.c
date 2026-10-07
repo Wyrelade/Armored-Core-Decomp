@@ -288,7 +288,9 @@ s32 func_80014950(s32 arg0, s32 arg1) {
     return SquareRoot0(arg0 * arg0 + arg1 * arg1);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014988);
+s32 func_80014988(s32 arg0, s32 arg1, s32 arg2) {
+    return SquareRoot0(arg0 * arg0 + arg1 * arg1 + arg2 * arg2);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800149D4);
 
