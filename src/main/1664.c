@@ -1660,7 +1660,11 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", get_tmd_addr);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", unpack_packet);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80030368);
+void func_80030368(void) {
+    EnterCriticalSection();
+    AddDrv(&D_80039C0C);
+    ExitCriticalSection();
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800303A0);
 
