@@ -1485,7 +1485,51 @@ void func_800689E0(void) {
     func_8006C1B4(&D_801BC4F8);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80068A20);
+Obj80068A20 *func_80068A20(s32 arg0, s32 arg1) {
+    Obj80068A20 *obj;
+
+    obj = func_800501BC(0);
+    obj->unk70 = func_80068A20;
+    obj->unk74 = func_80068BC0;
+    obj->unk78 = func_800507F4;
+    obj->unk2 = 0;
+    obj->unk3 = 0;
+    obj->unk6C = 0;
+    obj->unk5 = 0;
+    obj->unk7C.unk8 = 2;
+    obj->unk7C.unkA = 1;
+    obj->unk7C.unk10 = 0;
+    obj->unk7C.unk12 = 0;
+    obj->unk92 = 0;
+    obj->unk94 = 0;
+    obj->unkCA = 0;
+    obj->unk7C.unkC = func_80050FC4(0x800);
+    obj->unkA0 = 0;
+    obj->unkA4 = 0;
+    obj->unk98 = func_8006FA74(obj);
+    obj->unk9C = func_8006FC84(obj);
+    func_8006F964();
+    func_8006F9EC();
+    func_8006FC04();
+    func_8006FDA0(obj);
+    func_800703D0(obj);
+    func_8006FF90(obj);
+    obj->unk7C.unk0 = arg0;
+    obj->unk7C.unk4 = arg1;
+    D_801A2574 = 2;
+    D_800B7E4A = 0;
+    D_800B7E49 = 0;
+    D_800B7E48 = 0;
+    obj->unk7C.unk13 = 1;
+    func_8005DD38(0x380, 0x80, 0xB);
+    func_8005DE08(0x380, 0x98, 0xB);
+    MoveImage(D_800B7FCC, 0x39A, 0);
+    MoveImage(D_800B7FCC, 0x39A, 0x40);
+    MoveImage(D_800B7FD4, 0x3B0, 0);
+    DrawSync(0);
+    func_8006BF84(obj->unk7C.unkC);
+    return obj;
+}
 
 void func_80068BC0(Obj8004DEB0 *arg0) {
     func_8006BA08();

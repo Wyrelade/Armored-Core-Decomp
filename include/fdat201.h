@@ -1071,5 +1071,22 @@ s32 func_8007AA04(s32 arg0);
 s32 OpenEvent(u32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 EnableEvent(s32 arg0);
 s32 func_80029AD0(s32 arg0);
+void func_80068BC0();
+Sub8006DCEC *func_8006FA74(struct Obj80068A20 *arg0);
+Obj8006FC84 *func_8006FC84(struct Obj80068A20 *arg0);
+void func_8006F964(void);
+void func_8006F9EC(void);
+void func_8006FC04(void);
+void func_8006FDA0(struct Obj80068A20 *arg0);
+void func_800703D0(Obj80068A20 *arg0);
+void func_8006FF90(struct Obj80068A20 *arg0);
+extern s8 D_800B7E4A;
+extern s8 D_800B7E49;
+extern s8 D_800B7E48;
+void func_8005DD38(s16 arg0, s16 arg1, s16 arg2);
+void func_8005DE08(s16 arg0, s16 arg1, s16 arg2);
+extern u8 D_800B7FCC[];
+extern u8 D_800B7FD4[];
+void func_8006BF84(s32 arg0);
 
 #endif /* FDAT201_H */
