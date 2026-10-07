@@ -60,7 +60,34 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800132A0);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800132CC);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013390);
+s32 func_80013390(s32 arg0, s32 arg1, s32 arg2) {
+    if (arg2 > 0) {
+        if (arg0 < arg1) {
+            arg0 += arg2;
+            if (arg1 < arg0) {
+                arg0 = arg1;
+            }
+        } else if (arg1 < arg0) {
+            arg0 -= arg2;
+            if (arg0 < arg1) {
+                arg0 = arg1;
+            }
+        }
+    } else {
+        if (arg1 < arg0) {
+            arg0 += arg2;
+            if (arg0 < arg1) {
+                arg0 = arg1;
+            }
+        } else if (arg0 < arg1) {
+            arg0 -= arg2;
+            if (arg1 < arg0) {
+                arg0 = arg1;
+            }
+        }
+    }
+    return arg0;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800133F8);
 
