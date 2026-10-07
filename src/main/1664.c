@@ -247,7 +247,14 @@ void func_8001467C(Obj800138F0 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2, Obj8
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014728);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014774);
+void func_80014774(Obj800138F0 *arg0, Obj800138F0 *arg1) {
+    s32 c;
+
+    c = rcos(arg0->unk0);
+    arg1->unk2 = -rsin(arg0->unk0);
+    arg1->unk0 = (-rsin(arg0->unk2) * c) >> 12;
+    arg1->unk4 = (rcos(arg0->unk2) * c) >> 12;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014804);
 
