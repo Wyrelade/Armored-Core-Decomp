@@ -60,14 +60,32 @@ typedef struct Obj80073138 {
     u8 _pad0[0x8];
     Obj8004F0B8 unk8;
     Obj8004F0B8 unk10;
-    u8 _pad18[0x29];
+    s16 unk18;
+    s16 unk1A;
+    s16 unk1C;
+    u8 _pad1E[0xC];
+    u16 unk2A;
+    u8 _pad2C[0x2];
+    s16 unk2E;
+    u8 _pad30[0x6];
+    u16 unk36;
+    u8 _pad38[0x4];
+    u8 unk3C;
+    u8 unk3D;
+    u8 _pad3E[0x3];
     u8 unk41;
     u8 _pad42[0xE];
     void (*unk50)(struct Obj80073138 *, u8);
-    u8 _pad54[0xC];
+    void (*unk54)(struct Obj80073138 *, s32, s32);
+    u8 _pad58[0x8];
     s32 unk60;
     Obj8004EDA8 unk64;
-    u8 _pad9C[0xAC];
+    u8 _pad9C[0x30];
+    s16 unkCC;
+    s16 unkCE;
+    s16 unkD0;
+    s16 unkD2;
+    u8 _padD4[0x74];
     u16 unk148;
     u8 _pad14A[0x12];
     s32 unk15C;
@@ -83,7 +101,9 @@ typedef struct Sub80077EAC {
 } Sub80077EAC;
 
 typedef struct Obj80077EAC {
-    u8 _pad0[0x288];
+    u8 _pad0[0x261];
+    u8 unk261;
+    u8 _pad262[0x26];
     u16 unk288;
     u16 unk28A;
     u16 unk28C;
@@ -113,11 +133,16 @@ typedef struct Obj80082384 {
 } Obj80082384;
 
 typedef struct Sub8008800C {
-    u8 _pad0[0x6];
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
 } Sub8008800C;
 
 typedef struct Obj8008800C {
-    u8 _pad0[0xE];
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x8];
     s16 unkE;
     u8 _pad10[0x2];
     s16 unk12;
@@ -129,6 +154,10 @@ typedef struct Obj8008800C {
     u8 _pad22[0x2];
     Sub8008800C unk24;
     s16 unk2A;
+    u8 _pad2C[0x8C];
+    union { u8 b[4]; s16 h; } unkB8;
+    u16 unkBC;
+    u16 unkBE;
 } Obj8008800C;
 
 typedef struct Sub8004DE88 {
@@ -222,14 +251,21 @@ typedef struct Obj8007A108 {
 } Obj8007A108;
 
 typedef struct Obj80085394 {
-    u8 _pad0[0x12];
+    u8 _pad0[0x10];
+    s8 unk10;
+    u8 _pad11[0x1];
     s16 unk12;
-    u8 _pad14[0x4];
+    void (*unk14)(struct Obj80085394 *);
     u16 unk18;
     u16 unk1A;
     s16 unk1C;
-    u8 _pad1E[0x9C];
+    u16 unk1E;
+    s16 unk20;
+    u8 _pad22[0x96];
+    s16 unkB8;
     u16 unkBA;
+    u16 unkBC;
+    u8 _padBE[0x2];
 } Obj80085394;
 
 typedef struct Obj80085510 {
