@@ -36,6 +36,15 @@ typedef struct Obj800158C8 {
     u8 unk2;
 } Obj800158C8;
 
+typedef struct Obj80015E48 {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u8 _pad4[4];
+    s32 *unk8;
+    u8 _padC[4];
+} Obj80015E48;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;

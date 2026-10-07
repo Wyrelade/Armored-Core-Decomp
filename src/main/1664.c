@@ -460,7 +460,16 @@ void func_80015DC0(void) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015DC8);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015E48);
+void func_80015E48(Obj80015E48 *arg0) {
+    s32 *ptr;
+
+    ptr = arg0->unk8;
+    arg0->unk0 = 0;
+    if (ptr != NULL) {
+        *ptr = 0;
+        arg0->unk8 = NULL;
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015E68);
 
