@@ -738,7 +738,11 @@ void func_8006CF18(Obj8006CF18 *arg0, s32 arg1) {
     func_8006CE6C(D_801EE0B0[2], ((s16)arg0->unk4 >> 10) + 0x20, ((s16)arg0->unkC >> 10) + 0x20, arg1);
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006CFDC);
+void func_8006CFDC(Obj8006CF18 *arg0, s32 arg1) {
+    func_8006CEC0(D_801EE0B0[0], ((s16)arg0->unk0 >> 10) + 0x20, ((s16)arg0->unk8 >> 10) + 0x20, arg1);
+    func_8006CEC0(D_801EE0B0[1], ((s16)arg0->unk2 >> 10) + 0x20, ((s16)arg0->unkA >> 10) + 0x20, arg1);
+    func_8006CEC0(D_801EE0B0[2], ((s16)arg0->unk4 >> 10) + 0x20, ((s16)arg0->unkC >> 10) + 0x20, arg1);
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006D0A0);
 
