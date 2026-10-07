@@ -91,5 +91,7 @@ s32 GetRCnt(s32 arg0);
 u32 *func_80016190(s32 arg0);
 void func_80016328(Obj8001654C *arg0, u32 *arg1, s32 arg2);
 void func_800309A8(s32 arg0, s32 arg1, s32 arg2);
+s32 func_80016A3C(Obj80016A3C *arg0);
+extern Obj80016A3C D_8004A268[];
 
 #endif /* MAIN_H */

@@ -594,7 +594,12 @@ s32 func_80016A3C(Obj80016A3C *arg0) {
     return 0;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016A84);
+s32 func_80016A84(void) {
+    s32 lo;
+
+    lo = func_80016A3C(&D_8004A268[0]);
+    return (lo & 0xFFFF) | (func_80016A3C(&D_8004A268[1]) << 16);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016ACC);
 
