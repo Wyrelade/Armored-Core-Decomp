@@ -584,7 +584,15 @@ void func_800167A8(void) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800167D0);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016A3C);
+s32 func_80016A3C(Obj80016A3C *arg0) {
+    if (arg0->unk0 == 0) {
+        if ((arg0->unk1 & 0xF0) == 0x40) {
+            return (u16)~((arg0->unk2 << 8) | arg0->unk3);
+        }
+        return 0;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016A84);
 

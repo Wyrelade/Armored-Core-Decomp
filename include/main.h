@@ -50,6 +50,14 @@ typedef struct Obj8001654C {
     s32 unk4;
 } Obj8001654C;
 
+typedef struct Obj80016A3C {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+    u8 _pad4[4];
+} Obj80016A3C;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;
