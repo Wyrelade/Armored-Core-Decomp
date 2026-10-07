@@ -1729,7 +1729,22 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800876DC);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80087BB8);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80087DE8);
+void func_80087DE8(Obj8008800C *arg0) {
+    if (--arg0->unk2A == 0) {
+        arg0->unk12 = 0;
+    }
+    arg0->unk0 += arg0->unk24.unk0;
+    arg0->unk2 += arg0->unk24.unk2 - ((rand() * 0x30) >> 15);
+    arg0->unk4 += arg0->unk24.unk4;
+    arg0->unkE = func_8006D990(arg0->unkE, arg0);
+    arg0->unkBC += arg0->unk1A;
+    arg0->unkBE += arg0->unk1C;
+    if (arg0->unk1E != 0) {
+        arg0->unkB8.b[0] -= arg0->unk1E;
+        arg0->unkB8.b[1] -= arg0->unk1E;
+        arg0->unkB8.b[2] -= arg0->unk1E;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80087EE0);
 
