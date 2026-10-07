@@ -429,7 +429,17 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015A08);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015A48);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015AC8);
+void func_80015AC8(u8 *arg0) {
+    for (;;) {
+        EnterCriticalSection();
+        if (*arg0 == 0) {
+            break;
+        }
+        ExitCriticalSection();
+        func_800161F8();
+    }
+    ExitCriticalSection();
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015B24);
 

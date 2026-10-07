@@ -55,5 +55,8 @@ s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
 extern Elem80015580 *D_8004A260;
 extern Elem80015580 *D_8004A264;
 s32 func_8001586C(u8 arg0);
+void EnterCriticalSection(void);
+void ExitCriticalSection(void);
+void func_800161F8(void);
 
 #endif /* MAIN_H */
