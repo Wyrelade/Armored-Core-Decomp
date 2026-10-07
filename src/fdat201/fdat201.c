@@ -2610,7 +2610,16 @@ void func_8007FED0(Obj8004DEB0 *arg0) {
     task->unk7C = arg0;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007FF64);
+void func_8007FF64(Obj8007FED0 *arg0) {
+    s32 y;
+
+    if (func_80050078(func_8007CFC0) != &D_801BC4F8) {
+        y = (s8)arg0->unk7C->unk84 * 0x18 + 0x20;
+    } else {
+        y = (s8)arg0->unk7C->unk84 * 0x18;
+    }
+    arg0->unk4C = y;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007FFEC);
 
