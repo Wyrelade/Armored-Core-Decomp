@@ -1192,7 +1192,18 @@ void func_8005DCDC(Obj8005DCDC *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005DD38);
+void func_8005DD38(s16 arg0, s16 arg1, s16 arg2) {
+    s16 x;
+    s16 i;
+
+    MoveImage(D_800B7420, arg0, arg1);
+    x = arg0 + 2;
+    for (i = 0; i < arg2; i++) {
+        MoveImage(D_800B7428, x, arg1);
+        x += 2;
+    }
+    MoveImage(D_800B7430, x, arg1);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005DE08);
 
