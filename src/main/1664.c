@@ -335,7 +335,9 @@ s32 func_80014DAC(s32 arg0) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014DFC);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014EC0);
+s32 func_80014EC0(s32 arg0, s32 arg1, s32 arg2) {
+    return (((arg1 - arg0) * arg2) >> 12) + arg0;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014ED8);
 
