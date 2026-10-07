@@ -176,7 +176,15 @@ void func_80013B74(s16 arg0, Obj80013A88 *arg1) {
     arg1->unk10 = 0x1000;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013BE8);
+void func_80013BE8(Obj800138F0 *arg0, Obj80013A88 *arg1) {
+    Obj80013A88 m;
+
+    func_80013AFC(arg0->unk2, &m);
+    func_80013A88(arg0->unk0, arg1);
+    MulMatrix(arg1, &m);
+    func_80013B74(arg0->unk4, &m);
+    MulMatrix2(&m, arg1);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013C54);
 
