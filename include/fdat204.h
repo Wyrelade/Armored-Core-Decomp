@@ -307,6 +307,11 @@ typedef struct Elem8004C840 {
     u32 *unk4;
 } Elem8004C840;
 
+typedef struct Obj8006C810 {
+    u8 _pad0[0x6];
+    s16 unk6;
+} Obj8006C810;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -390,5 +395,7 @@ void SsVabTransCompleted(s32 arg0);
 void func_80064B94(s32 arg0);
 void func_800640A4(u16 arg0, s32 arg1, s32 arg2);
 void func_800653F8(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
+s32 func_80072758(void);
+s32 func_80073290(s32 arg0, s32 arg1, s32 arg2, Obj8006C810 *arg3);
 
 #endif /* FDAT204_H */
