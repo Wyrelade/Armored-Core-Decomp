@@ -266,7 +266,17 @@ void func_8001484C(s32 arg0, Obj800138F0 *arg1) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014898);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800148E4);
+s32 func_800148E4(s32 arg0, s32 arg1, s16 arg2) {
+    s32 diff;
+    s32 ret;
+
+    diff = (arg0 - arg1) & 0xFFF;
+    ret = 0;
+    if (arg2 >= diff || diff >= 0x1000 - arg2) {
+        ret = 1;
+    }
+    return ret;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014920);
 
