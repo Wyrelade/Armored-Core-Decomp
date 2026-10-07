@@ -1106,5 +1106,7 @@ extern Elem8006FE38 D_800B7ED4[];
 extern Elem8006FE38 D_800B8180[];
 void func_8006FD24();
 extern Elem8006FE38 D_800B818C[];
+void func_8006FE38();
+extern Elem8006FE38 D_800B81B0[];
 
 #endif /* FDAT201_H */
