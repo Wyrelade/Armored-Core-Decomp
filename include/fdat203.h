@@ -273,6 +273,11 @@ typedef struct Obj80087A24 {
     u16 unkBE;
 } Obj80087A24;
 
+typedef struct Sub800507B8 {
+    s16 unk0;
+    s16 unk2;
+} Sub800507B8;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
