@@ -1451,7 +1451,16 @@ void func_800685E8(void) {
     ExitCriticalSection();
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80068790);
+void func_80068790(void) {
+    func_80029AD0(D_8017E5B4);
+    func_80029AD0(D_8017E5B8);
+    func_80029AD0(D_8017E5BC);
+    func_80029AD0(D_8017E5C0);
+    func_80029AD0(D_8017E5C4);
+    func_80029AD0(D_8017E5C8);
+    func_80029AD0(D_8017E5CC);
+    func_80029AD0(D_8017E5D0);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80068828);
 
