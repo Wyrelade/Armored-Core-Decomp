@@ -1145,7 +1145,19 @@ void func_8007502C(Obj800732FC *arg0) {
     arg0->unk10.unk2 += arg0->unkCC.unk0;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800750D0);
+void func_800750D0(Obj800732FC *arg0) {
+    func_8004EEC4(&arg0->unk64);
+    if (--arg0->unk64.unk2 == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+    arg0->unkCC.unk0 += arg0->unkCC.unk2;
+    if (arg0->unkCC.unk0 < -0x40) {
+        arg0->unkCC.unk0 = -0x40;
+    }
+    arg0->unk10.unk2 += arg0->unkCC.unk0;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80075174);
 
