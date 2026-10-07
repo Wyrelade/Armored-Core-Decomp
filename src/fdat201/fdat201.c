@@ -5269,7 +5269,9 @@ void func_800A779C(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A7808);
+void func_800A7808(Obj8004DEB0 *arg0) {
+    arg0->unk74 = func_800A7A68;
+}
 
 void func_800A7818(Obj8004DEB0 *arg0) {
     if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
