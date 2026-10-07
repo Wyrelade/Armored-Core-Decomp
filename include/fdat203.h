@@ -278,6 +278,12 @@ typedef struct Sub800507B8 {
     s16 unk2;
 } Sub800507B8;
 
+typedef struct Obj80056BEC {
+    u8 _pad0[0x4];
+    u8 unk4[0x5C];
+    u8 unk60[0x14];
+} Obj80056BEC;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -368,5 +374,16 @@ extern u16 D_80041BBE;
 extern u8 D_80041BC1;
 extern s32 D_80041BC4;
 void func_8004DD34(u16 arg0);
+extern Obj80056BEC *D_8019D954;
+extern u32 *D_8019D960;
+extern s32 D_801A3D98;
+void DrawSync(s32 arg0);
+void DrawOTag(u32 *arg0);
+void PutDispEnv(u8 *arg0);
+void PutDrawEnv(u8 *arg0);
+s32 GetRCnt(s32 arg0);
+s32 func_800162A0(s32 arg0);
+void func_8004D6E4(void);
+void func_80056C84(void);
 
 #endif /* FDAT203_H */

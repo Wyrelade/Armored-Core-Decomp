@@ -402,7 +402,20 @@ void func_80056B30(void) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056B58);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056BEC);
+void func_80056BEC(void) {
+    Obj80056BEC **p;
+
+    DrawSync(0);
+    func_8004D6E4();
+    while (func_800162A0(D_801A3D98) < 0x2CB) {
+    }
+    p = &D_8019D954;
+    PutDispEnv((*p)->unk60);
+    PutDrawEnv((*p)->unk4);
+    DrawOTag(&D_8019D960[0x1FFF]);
+    D_801A3D98 = GetRCnt(0xF2000001);
+    func_80056C84();
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056C84);
 
