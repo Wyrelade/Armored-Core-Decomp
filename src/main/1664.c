@@ -406,7 +406,9 @@ void func_8001585C(void) {
 void func_80015864(void) {
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001586C);
+s32 func_8001586C(u8 arg0) {
+    return (arg0 >> 4) * 10 + (arg0 & 0xF);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001588C);
 
