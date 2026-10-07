@@ -34,7 +34,13 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80012E5C);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800131D0);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001321C);
+void func_8001321C(s32 arg0, s32 *arg1, s32 *arg2) {
+    if (arg0 < *arg1) {
+        *arg1 = arg0;
+    } else if (*arg2 < arg0) {
+        *arg2 = arg0;
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013258);
 
