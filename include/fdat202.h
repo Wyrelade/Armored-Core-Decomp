@@ -463,5 +463,12 @@ void func_80085394(Obj80085394 *arg0);
 void func_8008AD80(s32 arg0, s32 arg1, s32 arg2);
 s32 func_80075280(Obj80075280 *p);
 s32 func_800752F4(u16 arg0, Obj80075280 *arg1);
+extern u16 D_80041228[];
+extern u16 D_8004122A;
+extern u16 D_8004122C;
+extern u16 D_8004122E;
+extern u8 D_8004124C;
+extern u8 D_8004124D;
+void func_80082CAC(u16 arg0, u16 arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 
 #endif /* FDAT202_H */

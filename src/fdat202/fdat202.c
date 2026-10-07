@@ -1432,7 +1432,9 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007959C);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800796F4);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80079728);
+void func_80079728(void) {
+    func_80082CAC(D_80041228[0], D_8004122A, D_8004122C, D_8004122C * D_8004122C, D_8004122E, D_8004124C, D_8004124D, (s32)&D_80041228[0x1C]);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80079798);
 
@@ -1634,7 +1636,7 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80082BC4);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80082C58);
 
-void func_80082CAC(s16 arg0, s16 arg1, s16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7) {
+void func_80082CAC(u16 arg0, u16 arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7) {
     D_801987DA = arg0;
     D_801987DC = arg1;
     D_801987E0 = arg2;
