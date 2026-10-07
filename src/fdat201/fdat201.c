@@ -3540,7 +3540,13 @@ Obj8004DEB0 *func_8008B778(void) {
     return task;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008B7C8);
+void func_8008B7C8(Obj8004DEB0 *arg0) {
+    if (func_8005015C(7) == &D_801BC4F8) {
+        func_8005BA2C(4, 0x16, 0x68, 0x64, 7, 1, 0);
+        SsUtKeyOn(D_801A2318, 0, 6, 0x3C, 0, 0x7F, 0x7F);
+        arg0->unk74 = func_8008B85C;
+    }
+}
 
 void func_8008B85C(Obj8004DEB0 *arg0) {
     if (func_80050078(func_8005BA2C) == &D_801BC4F8) {
