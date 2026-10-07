@@ -82,5 +82,6 @@ extern volatile s32 D_80049F94;
 s32 GetRCnt(s32 arg0);
 u32 *func_80016190(s32 arg0);
 void func_80016328(Obj8001654C *arg0, u32 *arg1, s32 arg2);
+void func_800309A8(s32 arg0, s32 arg1, s32 arg2);
 
 #endif /* MAIN_H */
