@@ -447,7 +447,11 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015B78);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015C9C);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015D28);
+void func_80015D28(u16 arg0, u16 arg1, s32 arg2, s32 arg3) {
+    u8 loc[4];
+
+    func_80015B78(0x10, loc, func_80015C9C(arg0, arg1, loc), arg2, arg3);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015D80);
 
