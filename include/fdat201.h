@@ -1248,5 +1248,6 @@ extern u8 D_80031A63;
 extern u8 D_80039CA2;
 extern u8 D_80039CA3;
 void func_800810C0();
+void func_80081BEC();
 
 #endif /* FDAT201_H */
