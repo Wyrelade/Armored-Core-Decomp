@@ -1868,7 +1868,28 @@ Sub8006DCEC *func_8006FA74(struct Obj80068A20 *arg0) {
     return obj;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006FB20);
+void func_8006FB20(Sub8006DCEC *arg0) {
+    u16 x;
+    u8 scale;
+
+    x = arg0->unk7E;
+    if ((u32)(x - 0xAC) >= 0x80 || (u32)(arg0->unk80 - 0x24) >= 0x80) {
+        arg0->unkC = D_800B7EB0;
+        arg0->unk48 = (s16)arg0->unk7E;
+        arg0->unk4C = (s16)arg0->unk80;
+        return;
+    }
+    arg0->unk48 = (((s16)x - 0xAC) & -arg0->unk84->unk7C.unk8) + 0xAB;
+    arg0->unk4C = (((s16)arg0->unk80 - 0x24) & -arg0->unk84->unk7C.unk8) + 0x23;
+    scale = arg0->unk84->unk7C.unk8;
+    if (scale == 2) {
+        arg0->unkC = D_800B7EBC;
+    } else if (scale == 4) {
+        arg0->unkC = D_800B7EC8;
+    } else {
+        arg0->unkC = D_800B7ED4;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006FC04);
 
