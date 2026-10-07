@@ -5450,7 +5450,37 @@ void func_800A96E8(Obj8004DEB0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A9740);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A9A38);
+void func_800A9A38(u8 *arg0, u16 arg1) {
+    s16 i;
+    s32 digit;
+    s32 div;
+    u8 started;
+
+    started = 0;
+    if (arg1 >= 1000) {
+        arg1 = 999;
+    }
+    div = 100;
+    i = 0;
+    do {
+        digit = arg1 / div;
+        if (digit > 0) {
+            *arg0++ = digit + '0';
+            started = 1;
+            arg1 -= digit * div;
+        } else {
+            if (started || (i == 2)) {
+                *arg0 = '0';
+            } else {
+                *arg0 = ' ';
+            }
+            arg0++;
+        }
+        i++;
+        div /= 10;
+    } while (i < 3);
+    *arg0 = 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A9AFC);
 
