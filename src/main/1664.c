@@ -503,7 +503,9 @@ void func_8001615C(Obj80015E48 *arg0, u16 arg1) {
     arg0[-1].unk2 = arg1;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016164);
+u16 func_80016164(Obj80015E48 *arg0) {
+    return arg0[-1].unk2;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016170);
 
