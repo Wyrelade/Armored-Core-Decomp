@@ -523,7 +523,10 @@ void func_800161D8(u32 *arg0) {
     free2(arg0);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800161F8);
+void func_800161F8(void) {
+    DrawSync(0);
+    VSync(0);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016220);
 
