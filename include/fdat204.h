@@ -462,5 +462,7 @@ extern Sub8007789C *D_801AB67C;
 extern u8 D_801AB7A0[];
 Obj8007789C *func_80077674(void);
 void func_800776B4(Obj8007789C *arg0, u8 *arg1);
+void func_8004CDE8(s32 arg0, s32 arg1, Obj8004F0B8 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+void func_8004CECC(s32 arg0, Obj8004F0B8 *arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT204_H */

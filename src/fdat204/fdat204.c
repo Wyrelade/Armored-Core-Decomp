@@ -1444,7 +1444,13 @@ void func_8007891C(Obj8007618C *arg0, Obj8007A108 *arg1) {
     arg0->unk15C &= ~(1 << arg1->unk6);
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8007893C);
+void func_8007893C(Obj80073138 *arg0) {
+    if (!(arg0->unk148 & 0xF)) {
+        func_8004CECC(1, &arg0->unk8, 0x50, -0x50);
+    } else {
+        func_8004CDE8(0xB, D_801ADA30 + 0x1000, &arg0->unk8, 0x50, 0x1F40, 0x2710, -0x30);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800789B8);
 
