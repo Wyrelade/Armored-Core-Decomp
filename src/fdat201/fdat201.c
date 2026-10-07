@@ -1157,7 +1157,25 @@ void func_8005D71C(void) {
     DrawSync(0);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005D754);
+void func_8005D754(s32 arg0, u8 *arg1, s32 arg2, s32 arg3, s32 arg4) {
+    Obj80056EF4 *obj;
+
+    obj = func_800501BC((s16)arg4);
+    obj->unk70 = func_8005D754;
+    obj->unk74 = func_800507FC;
+    obj->unk78 = func_800507F4;
+    obj->unkA = 3;
+    obj->unk16 = 0x15;
+    obj->unk14 = arg0;
+    obj->unkC = arg1;
+    obj->unk5 = 0;
+    obj->unk40 = 0;
+    obj->unk42 = 0;
+    obj->unk44 = 0;
+    obj->unk48 = (s16)arg2;
+    obj->unk4C = (s16)arg3;
+    obj->unk50 = 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005D80C);
 
