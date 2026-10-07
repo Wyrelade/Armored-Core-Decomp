@@ -1701,7 +1701,18 @@ void func_80085394(Obj80085394 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800853D4);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80085454);
+void func_80085454(Obj80087A24 *arg0) {
+    arg0->unkBE += arg0->unk1E;
+    arg0->unkB8 += arg0->unk28;
+    arg0->unkB9 += arg0->unk29;
+    arg0->unkBA += arg0->unk2A;
+    arg0->unk0 += arg0->unk18 >> 8;
+    arg0->unk2 += arg0->unk1A >> 8;
+    arg0->unk4 += arg0->unk1C >> 8;
+    arg0->unk18 += arg0->unk20;
+    arg0->unk1A += arg0->unk22;
+    arg0->unk1C += arg0->unk24;
+}
 
 void func_80085510(Obj80085510 *arg0) {
     arg0->unk0 += arg0->unk18;
