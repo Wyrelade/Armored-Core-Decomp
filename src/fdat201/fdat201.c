@@ -1205,7 +1205,18 @@ void func_8005DD38(s16 arg0, s16 arg1, s16 arg2) {
     MoveImage(D_800B7430, x, arg1);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005DE08);
+void func_8005DE08(s16 arg0, s16 arg1, s16 arg2) {
+    s16 x;
+    s16 i;
+
+    MoveImage(D_800B7438, arg0, arg1);
+    x = arg0 + 2;
+    for (i = 0; i < arg2; i++) {
+        MoveImage(D_800B7440, x, arg1);
+        x += 2;
+    }
+    MoveImage(D_800B7448, x, arg1);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005DED8);
 
