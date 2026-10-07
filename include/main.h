@@ -34,5 +34,7 @@ void func_80013B74(s16 arg0, Obj80013A88 *arg1);
 Obj80013A88 *MulMatrix(Obj80013A88 *arg0, Obj80013A88 *arg1);
 Obj80013A88 *MulMatrix2(Obj80013A88 *arg0, Obj80013A88 *arg1);
 s32 SquareRoot0(s32 arg0);
+s32 func_80014950(s32 arg0, s32 arg1);
+s32 ratan2(s32 arg0, s32 arg1);
 
 #endif /* MAIN_H */
