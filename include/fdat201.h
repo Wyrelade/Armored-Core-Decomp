@@ -1478,5 +1478,6 @@ void func_8009A15C();
 void func_8009A2FC();
 void func_8009A700();
 void func_8009A7D4();
+void func_800A2EB0();
 
 #endif /* FDAT201_H */
