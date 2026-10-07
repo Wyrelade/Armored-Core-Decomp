@@ -1536,5 +1536,12 @@ void func_8009646C(void);
 extern s8 D_80039CAF;
 extern s32 D_80048608;
 extern s32 D_8004860C;
+void func_8005AE8C(void);
+void func_8005B2CC(void);
+void func_800A4FFC(Obj8004DEB0 *arg0);
+void func_800AE7A4(void);
+extern s16 D_80039CA0;
+void func_800A503C();
+void func_800A88F8();
 
 #endif /* FDAT201_H */
