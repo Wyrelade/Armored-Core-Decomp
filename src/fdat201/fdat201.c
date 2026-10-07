@@ -10,7 +10,27 @@ void func_8004DEB0(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8004DF10);
+void func_8004DF10(Obj8004DF10 *arg0) {
+    Obj8004DEB0 *obj;
+
+    SsUtKeyOn(D_801A2318, 0, 8, 0x3C, 0, 0x7F, 0x7F);
+    arg0->unk80 = func_8004F2CC(2, 1, arg0->unkAE);
+    arg0->unk84 = func_8004F2CC(2, 2, arg0->unkAE);
+    arg0->unk88 = func_8004F2CC(2, 3, arg0->unkAE);
+    arg0->unk8C = func_8004F2CC(2, 4, arg0->unkAE);
+    arg0->unk90 = func_8004F2CC(2, 5, arg0->unkAE);
+    arg0->unk94 = func_8004F2CC(2, 6, arg0->unkAE);
+    func_8005CC48();
+    obj = func_8005CAE0(D_800B91D0, 0xD2, 0x84, 2);
+    arg0->unkA0 = obj;
+    obj->unk16 = 0xB;
+    arg0->unkA0->unk2 = 0;
+    obj = func_8005CAE0(D_800B91C4, 0x5F, 0x84, 2);
+    arg0->unkA4 = obj;
+    obj->unk16 = 0xB;
+    arg0->unkA4->unk2 = 0;
+    arg0->unk74 = func_8004E044;
+}
 
 void func_8004E044(Obj8004E044 *arg0) {
     if (arg0->unk80->unk7E != 0) {
