@@ -95,5 +95,8 @@ s32 func_80016A3C(Obj80016A3C *arg0);
 extern Obj80016A3C D_8004A268[];
 void AddDrv(s32 *arg0);
 extern s32 D_80039C0C;
+void DelDrv(s32 *arg0);
+void FlushCache(void);
+extern s32 D_80011E14;
 
 #endif /* MAIN_H */

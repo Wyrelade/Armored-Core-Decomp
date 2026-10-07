@@ -1666,7 +1666,12 @@ void func_80030368(void) {
     ExitCriticalSection();
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800303A0);
+void func_800303A0(void) {
+    EnterCriticalSection();
+    DelDrv(&D_80011E14);
+    FlushCache();
+    ExitCriticalSection();
+}
 
 void func_800303E0(void) {
 }
