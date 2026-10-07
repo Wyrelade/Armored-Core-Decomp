@@ -1548,7 +1548,18 @@ void func_8007B868(Obj8007618C *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007B8E8);
+void func_8007B8E8(Obj8007618C *arg0, s32 arg1) {
+    if (arg0->unk3D != 0xB0) {
+        func_8004DE88(&arg0->unk64, &arg0->unkCC);
+        arg0->unkCC.unk2 = 0;
+        arg0->unkCC.unk0 <<= 7;
+        arg0->unkCC.unk4 <<= 7;
+    }
+    arg0->unk15C &= D_8004125E;
+    func_800775B8(arg0, arg1, 1, 0x200, &arg0->unkCC, func_8007B548);
+    arg0->unk3C = 0x41;
+    arg0->unk41 = 0x41;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007B994);
 
