@@ -365,7 +365,22 @@ void func_800510FC(void) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80051138);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800511A4);
+void func_800511A4(u8 *arg0, u32 *arg1, s32 arg2) {
+    s32 result;
+    s32 retry;
+
+    func_80015A48();
+    retry = 0;
+    do {
+        while (CdControl(2, arg0, 0) == 0) {
+        }
+        while (CdRead(arg2, arg1, 0x80) == 0) {
+        }
+        while ((result = CdReadSync(1, NULL)) > 0) {
+        }
+        retry++;
+    } while (result != 0 && retry < 3);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80051248);
 

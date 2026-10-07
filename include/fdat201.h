@@ -912,5 +912,8 @@ void SsUtSetReverbType(s32 arg0);
 void SsUtSetReverbDepth(s32 arg0, s32 arg1);
 void SsSetRVol(s32 arg0, s32 arg1);
 void func_800228E4(void);
+void func_80015A48();
+s32 CdRead(s32 arg0, u32 *arg1, s32 arg2);
+s32 CdReadSync(s32 arg0, u8 *arg1);
 
 #endif /* FDAT201_H */
