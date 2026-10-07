@@ -1114,5 +1114,12 @@ void func_800703A4();
 extern Elem8006FE38 D_800B7FB8[];
 void func_8005D71C(void);
 void func_80070834(void);
+void func_800866FC(void);
+void func_80096230(void);
+extern s8 D_80041B10;
+void func_800866A8(void);
+extern s8 D_800411F8;
+extern u8 D_80039C5D;
+extern s8 D_80039CAA;
 
 #endif /* FDAT201_H */
