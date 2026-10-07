@@ -258,7 +258,11 @@ void func_80014774(Obj800138F0 *arg0, Obj800138F0 *arg1) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014804);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001484C);
+void func_8001484C(s32 arg0, Obj800138F0 *arg1) {
+    arg1->unk0 = (arg1->unk0 * arg0) >> 12;
+    arg1->unk2 = (arg1->unk2 * arg0) >> 12;
+    arg1->unk4 = (arg1->unk4 * arg0) >> 12;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014898);
 
