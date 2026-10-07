@@ -511,7 +511,9 @@ u32 *func_80016170(s32 arg0) {
     return malloc2(arg0);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016190);
+u32 *func_80016190(s32 arg0) {
+    return malloc2((arg0 + 3) & ~3);
+}
 
 void func_800161B8(u32 *arg0) {
     free2(arg0);
