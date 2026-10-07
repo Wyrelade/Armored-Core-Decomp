@@ -4787,7 +4787,27 @@ void func_800A40FC(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A4198);
+void func_800A4198(Obj8004DEB0 *arg0) {
+    if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
+        func_80050078(func_8005CC48)->unk1 = 1;
+        func_80073740();
+        while (func_800517C8() != 0) {
+        }
+        func_80086EC8();
+        func_8009646C();
+        func_8008C3DC();
+        func_80096230();
+        func_800866FC();
+        D_800411F8 = 0;
+        D_80039C5D = 0;
+        D_8004860C = 0;
+        D_80048608 = 0;
+        D_80039CAF = 1;
+        func_8009C964(0);
+        func_8005E92C();
+        arg0->unk1 = 1;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A4274);
 
