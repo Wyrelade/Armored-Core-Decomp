@@ -557,7 +557,15 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800163F8);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800164A0);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001654C);
+u32 *func_8001654C(Obj8001654C *arg0) {
+    s32 size;
+    u32 *buf;
+
+    size = (arg0->unk4 + 0x7FF) & ~0x7FF;
+    buf = func_80016190(size);
+    func_80016328(arg0, buf, size >> 11);
+    return buf;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800165A8);
 

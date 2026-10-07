@@ -45,6 +45,11 @@ typedef struct Obj80015E48 {
     u8 _padC[4];
 } Obj80015E48;
 
+typedef struct Obj8001654C {
+    u8 _pad0[4];
+    s32 unk4;
+} Obj8001654C;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;
@@ -75,5 +80,7 @@ void DrawSync(s32 arg0);
 void VSync(s32 arg0);
 extern volatile s32 D_80049F94;
 s32 GetRCnt(s32 arg0);
+u32 *func_80016190(s32 arg0);
+void func_80016328(Obj8001654C *arg0, u32 *arg1, s32 arg2);
 
 #endif /* MAIN_H */
