@@ -495,7 +495,9 @@ void func_80016148(Obj80015E48 *arg0, u8 arg1) {
     arg0[-1].unk1 = arg1;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016150);
+u8 func_80016150(Obj80015E48 *arg0) {
+    return arg0[-1].unk1;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001615C);
 
