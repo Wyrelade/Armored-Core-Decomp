@@ -1068,5 +1068,7 @@ void func_8005E318();
 extern Elem8006FE38 D_800B70B8[];
 extern u8 D_80031A59;
 s32 func_8007AA04(s32 arg0);
+s32 OpenEvent(u32 arg0, s32 arg1, s32 arg2, s32 arg3);
+s32 EnableEvent(s32 arg0);
 
 #endif /* FDAT201_H */

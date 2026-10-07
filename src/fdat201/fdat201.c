@@ -1430,7 +1430,26 @@ s32 func_800685A8(u8 arg0) {
     return func_80068828();
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800685E8);
+void func_800685E8(void) {
+    EnterCriticalSection();
+    D_8017E5B4 = OpenEvent(0xF4000001, 4, 0x2000, 0);
+    D_8017E5B8 = OpenEvent(0xF4000001, 0x8000, 0x2000, 0);
+    D_8017E5BC = OpenEvent(0xF4000001, 0x100, 0x2000, 0);
+    D_8017E5C0 = OpenEvent(0xF4000001, 0x2000, 0x2000, 0);
+    D_8017E5C4 = OpenEvent(0xF0000011, 4, 0x2000, 0);
+    D_8017E5C8 = OpenEvent(0xF0000011, 0x8000, 0x2000, 0);
+    D_8017E5CC = OpenEvent(0xF0000011, 0x100, 0x2000, 0);
+    D_8017E5D0 = OpenEvent(0xF0000011, 0x2000, 0x2000, 0);
+    EnableEvent(D_8017E5B4);
+    EnableEvent(D_8017E5B8);
+    EnableEvent(D_8017E5BC);
+    EnableEvent(D_8017E5C0);
+    EnableEvent(D_8017E5C4);
+    EnableEvent(D_8017E5C8);
+    EnableEvent(D_8017E5CC);
+    EnableEvent(D_8017E5D0);
+    ExitCriticalSection();
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80068790);
 
