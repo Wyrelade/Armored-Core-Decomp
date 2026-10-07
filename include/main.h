@@ -74,5 +74,6 @@ u32 *malloc2(s32 arg0);
 void DrawSync(s32 arg0);
 void VSync(s32 arg0);
 extern volatile s32 D_80049F94;
+s32 GetRCnt(s32 arg0);
 
 #endif /* MAIN_H */

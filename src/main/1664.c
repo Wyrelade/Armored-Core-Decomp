@@ -539,7 +539,15 @@ s32 func_8001628C(void) {
     return *counter;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800162A0);
+s32 func_800162A0(s32 arg0) {
+    s32 diff;
+
+    diff = GetRCnt(0xF2000001) - arg0;
+    if (diff < 0) {
+        diff += 0x10000;
+    }
+    return diff;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800162E8);
 
