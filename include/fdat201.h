@@ -819,6 +819,13 @@ typedef struct Obj800A7244 {
     s32 unk84;
 } Obj800A7244;
 
+typedef struct Obj800ACCC0 {
+    u8 _pad0[0x74];
+    void (*unk74)();
+    u8 _pad78[0xB];
+    u8 unk83;
+} Obj800ACCC0;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1150,7 +1157,7 @@ void func_800AB99C(Obj8004DEB0 *arg0);
 void func_800ABB10();
 void func_800AD780(Obj8004DEB0 *arg0);
 void SsUtKeyOn(s16 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
-void func_800ACCC0();
+void func_800ACCC0(Obj800ACCC0 *arg0);
 void func_800AD198();
 void func_800ACC44(Obj8004DEB0 *arg0);
 void func_800AD3B4(Obj8004DEB0 *arg0);
@@ -1583,5 +1590,10 @@ void func_800AC9E4(Obj8004DEB0 *arg0);
 void func_800ACA8C(Obj8004DEB0 *arg0);
 void func_800ACB34(Obj8004DEB0 *arg0);
 void func_800ACBDC(Obj8004DEB0 *arg0);
+void func_800ADB40(u8 *arg0, s32 arg1, s32 arg2, s32 arg3);
+extern u8 D_8004D51C[];
+extern u8 D_8004D528[];
+extern u8 D_800BDD34[];
+void func_800ACDBC();
 
 #endif /* FDAT201_H */
