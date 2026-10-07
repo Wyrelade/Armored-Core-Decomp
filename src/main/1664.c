@@ -410,7 +410,9 @@ s32 func_8001586C(u8 arg0) {
     return (arg0 >> 4) * 10 + (arg0 & 0xF);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001588C);
+s32 func_8001588C(u8 arg0) {
+    return ((u8)(arg0 / 10) << 4) | (u8)(arg0 % 10);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800158C8);
 
