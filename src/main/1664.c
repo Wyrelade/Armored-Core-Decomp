@@ -414,7 +414,14 @@ s32 func_8001588C(u8 arg0) {
     return ((u8)(arg0 / 10) << 4) | (u8)(arg0 % 10);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800158C8);
+s32 func_800158C8(Obj800158C8 *arg0) {
+    s32 min;
+    s32 sec;
+
+    min = func_8001586C(arg0->unk0);
+    sec = func_8001586C(arg0->unk1);
+    return min * 4500 + sec * 75 + func_8001586C(arg0->unk2);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001594C);
 
