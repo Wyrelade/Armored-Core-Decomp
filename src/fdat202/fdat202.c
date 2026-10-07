@@ -1249,7 +1249,20 @@ void func_800763F4(Obj8007618C *arg0) {
     arg0->unk10.unk2 += arg0->unkCC.unk0;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800764C4);
+void func_800764C4(Obj8007618C *arg0) {
+    func_80075FC0(arg0);
+
+    if (arg0->unkCC.unk6 == 0) {
+        arg0->unk36 &= 0xFFEF;
+    } else {
+        arg0->unkCC.unk6--;
+    }
+    if (func_8004F080(&arg0->unk64, &arg0->unk8) == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80076548);
 
