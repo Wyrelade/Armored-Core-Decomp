@@ -1524,5 +1524,7 @@ Obj8004DEB0 *func_800A4408(void);
 void func_800A3564();
 extern u8 D_800BDC50[];
 void func_800A38A8();
+void func_800689E0(void);
+void func_800A3F90();
 
 #endif /* FDAT201_H */
