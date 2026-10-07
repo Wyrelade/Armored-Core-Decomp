@@ -301,7 +301,30 @@ void func_80050BBC(void) {
     SsVabTransCompleted(1);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80050C18);
+void func_80050C18(void) {
+    s32 vol;
+
+    SsSetMVol(0, 0);
+    D_801BC470 = 0;
+    D_801BC45C = 0;
+    D_801BC458 = 0;
+    D_801BC464 = 0;
+    D_801BC460 = 0;
+    D_801BC46C = 0;
+    D_801BC468 = 0;
+    D_801BC456 = 0;
+    D_801BC454 = 0;
+    D_801BC471 = 0;
+    D_801BC473 = 0;
+    D_801BC472 = 0;
+    D_801BC474 = 0;
+    vol = D_80048661 * 2;
+    SsSetMVol(vol, vol);
+    SsUtSetReverbType(4);
+    SsUtSetReverbDepth(0x28, 0x28);
+    SsSetRVol(0x28, 0x28);
+    func_800228E4();
+}
 
 void func_80050CE0(void) {
     D_801A2550 = 0;

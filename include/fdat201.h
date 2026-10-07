@@ -893,5 +893,24 @@ void func_8004FAC4();
 void func_8004FD4C();
 extern Obj8004DEB0 D_801A25E8[];
 extern s32 D_801A2654;
+extern u8 D_80048661;
+extern s16 D_801BC454;
+extern s16 D_801BC456;
+extern s32 D_801BC458;
+extern s32 D_801BC45C;
+extern s32 D_801BC460;
+extern s32 D_801BC464;
+extern s32 D_801BC468;
+extern s32 D_801BC46C;
+extern s8 D_801BC470;
+extern s8 D_801BC471;
+extern s8 D_801BC472;
+extern s8 D_801BC473;
+extern s8 D_801BC474;
+void SsSetMVol(s32 arg0, s32 arg1);
+void SsUtSetReverbType(s32 arg0);
+void SsUtSetReverbDepth(s32 arg0, s32 arg1);
+void SsSetRVol(s32 arg0, s32 arg1);
+void func_800228E4(void);
 
 #endif /* FDAT201_H */
