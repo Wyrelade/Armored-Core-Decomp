@@ -5779,7 +5779,16 @@ void func_800AE30C(void) {
     obj->unk5 = 0;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AE370);
+void func_800AE370(Obj8004DEB0 *arg0) {
+    u8 *sel;
+
+    sel = &D_801A230D;
+    if (func_8005015C(*sel) == &D_801BC4F8) {
+        func_8005BA2C(0x20, 0x64, 0x100, 0x30, *sel, 1, 0);
+        SsUtKeyOn(D_801A2318, 0, 7, 0x3C, 0, 0x7F, 0x7F);
+        arg0->unk74 = func_800AE418;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AE418);
 
