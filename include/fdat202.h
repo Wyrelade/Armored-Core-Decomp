@@ -445,5 +445,9 @@ s32 func_800749A0(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, Sub80
 void func_8004DE88(Sub8007618C *arg0, Sub8004DE88 *arg1);
 void func_800775B8(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
 void func_8007B548();
+extern Obj80085394 D_8008EC88;
+Obj80085394 *func_80089ECC(s32 arg0);
+void func_80085764(Obj80085394 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80085394(Obj80085394 *arg0);
 
 #endif /* FDAT202_H */
