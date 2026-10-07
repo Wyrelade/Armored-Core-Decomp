@@ -339,7 +339,15 @@ s32 func_80014EC0(s32 arg0, s32 arg1, s32 arg2) {
     return (((arg1 - arg0) * arg2) >> 12) + arg0;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014ED8);
+u16 func_80014ED8(s16 arg0, s16 arg1, s32 arg2) {
+    s32 diff;
+
+    diff = (arg1 - arg0) & 0xFFF;
+    if (diff > 0x800) {
+        diff -= 0x1000;
+    }
+    return (arg0 + ((diff * arg2) >> 12)) & 0xFFF;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014F18);
 
