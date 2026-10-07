@@ -359,5 +359,9 @@ s32 func_8001628C(void);
 s32 rand(void);
 extern u8 D_80031A94[];
 void SsSetSerialVol(s32 arg0, s16 arg1, s16 arg2);
+extern u16 D_80041BBE;
+extern u8 D_80041BC1;
+extern s32 D_80041BC4;
+void func_8004DD34(u16 arg0);
 
 #endif /* FDAT203_H */
