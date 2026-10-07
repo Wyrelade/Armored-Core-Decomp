@@ -324,6 +324,11 @@ typedef struct Obj80077248 {
     s16 unk2E;
 } Obj80077248;
 
+typedef struct Obj80077854 {
+    u8 _pad0[0xE];
+    s16 unkE;
+} Obj80077854;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
