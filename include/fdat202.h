@@ -293,6 +293,32 @@ typedef struct Obj80072180 {
     struct Obj80072180 *unk2C;
 } Obj80072180;
 
+typedef struct Obj800851A8 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x12];
+    u8 unk18;
+    u8 unk19;
+    u8 unk1A;
+    u8 _pad1B;
+    u16 unk1C;
+    u16 unk1E;
+    u16 unk20;
+    u8 _pad22[0x2];
+    u16 unk24;
+    u16 unk26;
+    u16 unk28;
+    u8 _pad2A[0x8E];
+    u16 unkB8;
+    u16 unkBA;
+    u16 unkBC;
+    u8 _padBE[0x2];
+    u8 unkC0;
+    u8 unkC1;
+    u8 unkC2;
+} Obj800851A8;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
