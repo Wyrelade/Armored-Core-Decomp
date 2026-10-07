@@ -226,7 +226,24 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800145E4);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001462C);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001467C);
+void func_8001467C(Obj800138F0 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2, Obj800138F0 *arg3) {
+    s32 ax;
+    s32 ay;
+    s32 az;
+    s32 bx;
+    s32 by;
+    s32 bz;
+
+    ay = arg1->unk2 - arg0->unk2;
+    az = arg1->unk4 - arg0->unk4;
+    by = arg2->unk2 - arg0->unk2;
+    bx = arg2->unk0 - arg0->unk0;
+    bz = arg2->unk4 - arg0->unk4;
+    ax = arg1->unk0 - arg0->unk0;
+    arg3->unk0 = (ay * bz - az * by) >> 6;
+    arg3->unk2 = (az * bx - ax * bz) >> 6;
+    arg3->unk4 = (ax * by - ay * bx) >> 6;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014728);
 
