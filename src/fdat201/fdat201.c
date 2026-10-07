@@ -5862,7 +5862,33 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AEB30);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AEBF4);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AEC84);
+void func_800AEC84(Obj8004DEB0 *arg0) {
+    if (func_80050078(func_8005BA2C) == &D_801BC4F8) {
+        func_8005DD38(0x3C0, 0x80, 0xF);
+        func_8005DE08(0x3C0, 0x98, 0xF);
+        func_8005DE08(0x3C0, 0xB0, 0x11);
+        DrawSync(0);
+        func_8005D754(3, D_800BDDDC, 0, 0, 4);
+        func_8005D754(3, D_800BDDDC, 0, 0x18, 4);
+        func_8005D754(3, D_800BDDDC, 0, 0x30, 4);
+        func_8005D754(3, D_800BDDDC, 0, 0x48, 4);
+        func_8005D754(3, D_800BDDDC, 0, 0x60, 4);
+        func_8005D754(3, D_800BDDDC, 0, 0x78, 4);
+        func_8005D80C(2, D_8004D844, 0x10, 8, 4, 4);
+        func_8005D80C(2, D_8004D854, 0x10, 8, 0x1C, 4);
+        if (arg0->unk7C->unk70 != func_80052134) {
+            func_8005D80C(2, D_8004D860, 0x10, 8, 0x34, 4)->unk16 = 0x10;
+        } else {
+            func_8005D80C(2, D_8004D860, 0x10, 8, 0x34, 4);
+        }
+        func_8005D80C(2, D_8004D870, 0x10, 8, 0x4C, 4);
+        func_8005D80C(2, D_8004D87C, 0x10, 8, 0x64, 4);
+        func_8005D80C(2, D_8004D88C, 0x10, 8, 0x7C, 4);
+        func_800AEEDC(arg0);
+        func_800AE99C(&arg0->unk88);
+        arg0->unk74 = func_800AEF2C;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AEEDC);
 
