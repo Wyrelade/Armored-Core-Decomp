@@ -283,6 +283,16 @@ typedef struct Obj8006F234 {
     Sub8006F234 unkE4;
 } Obj8006F234;
 
+typedef struct Obj80072180 {
+    Sub8004DE88 unk0;
+    Sub8004DE88 unk8;
+    Sub8004DE88 unk10;
+    Sub8004DE88 unk18;
+    Sub8004DE88 unk20;
+    u8 _pad28[0x4];
+    struct Obj80072180 *unk2C;
+} Obj80072180;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);

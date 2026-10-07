@@ -933,7 +933,25 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80071E14);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80072120);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80072180);
+void func_80072180(Obj80072180 *arg0) {
+    Obj80072180 *parent = arg0->unk2C;
+
+    arg0->unk10.unk0 += parent->unk8.unk0;
+    arg0->unk10.unk2 += parent->unk8.unk2;
+    arg0->unk10.unk4 += parent->unk8.unk4;
+    arg0->unk0.unk0 += parent->unk8.unk0;
+    arg0->unk0.unk2 += parent->unk8.unk2;
+    arg0->unk0.unk4 += parent->unk8.unk4;
+    arg0->unk8.unk0 += parent->unk8.unk0;
+    arg0->unk8.unk2 += parent->unk8.unk2;
+    arg0->unk8.unk4 += parent->unk8.unk4;
+    arg0->unk18.unk0 += parent->unk8.unk0;
+    arg0->unk18.unk2 += parent->unk8.unk2;
+    arg0->unk18.unk4 += parent->unk8.unk4;
+    arg0->unk20.unk0 += parent->unk8.unk0;
+    arg0->unk20.unk2 += parent->unk8.unk2;
+    arg0->unk20.unk4 += parent->unk8.unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800722B4);
 
