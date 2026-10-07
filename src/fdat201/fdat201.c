@@ -4490,7 +4490,13 @@ void func_8009A078(void) {
     task->unk5 = 0;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8009A0C8);
+void func_8009A0C8(Obj8004DEB0 *arg0) {
+    if (func_8005015C(9) == &D_801BC4F8) {
+        func_8005BA2C(0x6C, 0x16, 0x68, 0x64, 9, 1, 0);
+        SsUtKeyOn(D_801A2318, 0, 6, 0x3C, 0, 0x7F, 0x7F);
+        arg0->unk74 = func_8009A15C;
+    }
+}
 
 void func_8009A15C(Obj8004DEB0 *arg0) {
     if (func_80050078(func_8005BA2C) == &D_801BC4F8) {
