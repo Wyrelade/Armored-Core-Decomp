@@ -812,6 +812,13 @@ typedef struct Obj800A3814 {
     s32 unk7C;
 } Obj800A3814;
 
+typedef struct Obj800A7244 {
+    u8 _pad0[0x74];
+    void (*unk74)();
+    u8 _pad78[0xC];
+    s32 unk84;
+} Obj800A7244;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1555,5 +1562,6 @@ void func_800A8560(u8 *arg0);
 extern u8 D_8004D344[];
 extern u8 D_8004D350[];
 extern u8 D_800BDCD8[];
+void func_800A7244(Obj800A7244 *arg0);
 
 #endif /* FDAT201_H */
