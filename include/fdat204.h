@@ -435,5 +435,12 @@ void func_8006E20C(s32 *arg0, s16 *arg1, s32 *arg2);
 extern s32 D_801ADA3C;
 extern s32 D_801ADA40;
 s32 func_8004F124(Obj8004EDA8 *arg0, Obj8004F0B8 *arg1);
+void func_8004DFAC(Obj8004EDA8 *arg0, s32 arg1, Obj8004F0B8 *arg2, Obj8004F0B8 *arg3);
+s32 func_8004E32C(Obj8004EDA8 *arg0, Obj8004F0B8 *arg1, Obj8004F0B8 *arg2, Obj8004F0B8 *arg3, Obj8004F0B8 *arg4);
+void func_8004EA8C(Obj8004EDA8 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8004EB3C(Obj8004EDA8 *arg0, s32 arg1, s32 arg2);
+void func_8007510C(Obj80073138 *arg0, s32 arg1, s32 arg2);
+void func_8004EB98(Obj8004EDA8 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80073C70(Obj80073138 *arg0, Obj8004F0B8 *arg1);
 
 #endif /* FDAT204_H */
