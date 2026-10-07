@@ -1045,12 +1045,6 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80075030);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80075108);
 
-typedef struct {
-    u8 flags;
-    u8 pad1;
-    u16 val;
-} Obj80075280;
-
 extern u8 D_80041214;
 extern u8 D_80041215;
 
@@ -1070,7 +1064,25 @@ s32 func_80075280(Obj80075280 *p) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800752F4);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80075350);
+void func_80075350(Obj8007618C *arg0, Obj80075280 *arg1, s32 arg2, s32 arg3) {
+    s32 sub;
+    s32 rem;
+
+    if (arg0 == (Obj8007618C *)D_801A26B8) {
+        sub = func_80075280(arg1) * 2;
+    } else {
+        sub = func_800752F4(arg0->unk0->unk14, arg1);
+    }
+    rem = arg0->unk160 - sub;
+    if (rem < 0) {
+        arg0->unk160 = 0;
+    } else {
+        arg0->unk160 = rem;
+    }
+    if (arg0->unk5C != NULL) {
+        arg0->unk5C(arg0, arg1, arg2, arg3, sub);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80075418);
 
