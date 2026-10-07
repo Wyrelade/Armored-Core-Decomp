@@ -1402,5 +1402,6 @@ extern Obj8004DEB0 *D_8019C178[];
 extern Obj8004DEB0 *D_8019C17C[];
 extern Obj8004DEB0 *D_8019C180[];
 extern Obj8004DEB0 *D_8019C184[];
+void func_8008CD38();
 
 #endif /* FDAT201_H */
