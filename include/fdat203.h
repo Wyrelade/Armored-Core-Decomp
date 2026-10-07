@@ -465,5 +465,6 @@ void func_8004D04C(s32 arg0, Sub8004F1D4 *arg1, s32 arg2, s32 arg3);
 void func_8004E0A4(Obj8004DE88 *arg0, Sub8004DE88 *arg1);
 void func_80076338(Obj800732FC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
 void func_8007A09C();
+extern u8 D_80039C5D;
 
 #endif /* FDAT203_H */
