@@ -73,5 +73,6 @@ void func_80015E48(Obj80015E48 *arg0);
 u32 *malloc2(s32 arg0);
 void DrawSync(s32 arg0);
 void VSync(s32 arg0);
+extern volatile s32 D_80049F94;
 
 #endif /* MAIN_H */

@@ -532,7 +532,12 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016220);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016278);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001628C);
+s32 func_8001628C(void) {
+    volatile s32 *counter;
+
+    counter = &D_80049F94;
+    return *counter;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800162A0);
 
