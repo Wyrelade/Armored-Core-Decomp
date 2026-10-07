@@ -315,7 +315,12 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014C10);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014C40);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014D30);
+s32 func_80014D30(s32 arg0) {
+    s32 r;
+
+    r = rand();
+    return ((r + rand()) * arg0) >> 15;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014D78);
 
