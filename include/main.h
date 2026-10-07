@@ -23,6 +23,13 @@ typedef struct Obj80013A88 {
     u8 _pad12[0xE];
 } Obj80013A88;
 
+typedef struct Elem80015580 {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2[4];
+    u8 _pad6[0x22];
+} Elem80015580;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;
@@ -38,5 +45,8 @@ s32 func_80014950(s32 arg0, s32 arg1);
 s32 ratan2(s32 arg0, s32 arg1);
 s32 rand(void);
 s32 func_80014F78(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 *arg5, s32 *arg6);
+s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
+extern Elem80015580 *D_8004A260;
+extern Elem80015580 *D_8004A264;
 
 #endif /* MAIN_H */

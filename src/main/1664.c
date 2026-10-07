@@ -379,7 +379,19 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015538);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001555C);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015580);
+void func_80015580(Elem80015580 *arg0) {
+    arg0->unk0 = 0;
+    arg0->unk1 = 0;
+    arg0++;
+    if (arg0 == (Elem80015580 *)&D_8004A260) {
+        arg0 -= 16;
+    }
+    D_8004A264 = arg0;
+    if (arg0->unk0 != 0) {
+        while (CdControl(0x16, arg0->unk2, 0) == 0) {
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800155F0);
 
