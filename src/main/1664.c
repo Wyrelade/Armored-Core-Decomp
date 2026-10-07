@@ -202,7 +202,17 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013E04);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013F5C);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800140C4);
+void func_800140C4(Obj80013A88 *arg0, Obj80013A88 *arg1) {
+    arg1->unk0 = (arg0->unk8 * arg0->unk10 - arg0->unkA * arg0->unkE) >> 12;
+    arg1->unk6 = (arg0->unkA * arg0->unkC - arg0->unk6 * arg0->unk10) >> 12;
+    arg1->unkC = (arg0->unk6 * arg0->unkE - arg0->unk8 * arg0->unkC) >> 12;
+    arg1->unk2 = (arg0->unk4 * arg0->unkE - arg0->unk2 * arg0->unk10) >> 12;
+    arg1->unk8 = (arg0->unk0 * arg0->unk10 - arg0->unk4 * arg0->unkC) >> 12;
+    arg1->unkE = (arg0->unk2 * arg0->unkC - arg0->unk0 * arg0->unkE) >> 12;
+    arg1->unk4 = (arg0->unk2 * arg0->unkA - arg0->unk4 * arg0->unk8) >> 12;
+    arg1->unkA = (arg0->unk4 * arg0->unk6 - arg0->unk0 * arg0->unkA) >> 12;
+    arg1->unk10 = (arg0->unk0 * arg0->unk8 - arg0->unk2 * arg0->unk6) >> 12;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001429C);
 
