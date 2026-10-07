@@ -1382,5 +1382,13 @@ void func_8008B9FC();
 void func_8008BB9C();
 void func_8008BFA0();
 void func_8008C074();
+void func_8008C3EC();
+void func_8008D560();
+void func_80095130(void);
+void func_800951B0();
+extern Obj8004DEB0 *D_8019C14C[];
+extern Obj8004DEB0 *D_8019C150[];
+extern Obj8004DEB0 *D_8019C170[];
+extern Obj8004DEB0 *D_8019C174[];
 
 #endif /* FDAT201_H */
