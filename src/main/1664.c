@@ -89,7 +89,20 @@ s32 func_80013390(s32 arg0, s32 arg1, s32 arg2) {
     return arg0;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800133F8);
+s32 func_800133F8(s32 arg0, s32 arg1) {
+    if (arg0 > 0) {
+        arg0 += arg1;
+        if (arg0 < 0) {
+            arg0 = 0;
+        }
+    } else {
+        arg0 += arg1;
+        if (arg0 > 0) {
+            arg0 = 0;
+        }
+    }
+    return arg0;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013430);
 
