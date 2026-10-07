@@ -112,7 +112,18 @@ void func_8004DE88(Sub8007618C *arg0, Sub8004DE88 *arg1) {
     arg1->unk4 = arg0->unk30.unk0;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004DEAC);
+void func_8004DEAC(Sub8007618C *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3) {
+    u8 temp = arg1;
+
+    arg0->unk2 = temp;
+    arg0->unk3 = temp;
+    func_800131D0(&arg0->unk20, temp, arg2->unk0);
+    func_800131D0(&arg0->unk28, arg0->unk3, arg2->unk2);
+    func_800131D0(&arg0->unk30, arg0->unk3, arg2->unk4);
+    func_800131D0(&arg0->unk38, arg0->unk3, arg3->unk0);
+    func_800131D0(&arg0->unk40, arg0->unk3, arg3->unk2);
+    func_800131D0(&arg0->unk48, arg0->unk3, arg3->unk4);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004DF54);
 
