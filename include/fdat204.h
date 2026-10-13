@@ -717,5 +717,8 @@ void func_8004D278(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 extern Elem80016D64 D_80041DE0[];
 void func_8004CF10(void);
 void func_8004CF94(Elem80016D64 *arg0);
+extern u16 D_80041BBE;
+extern u8 D_80041BC1;
+extern s32 D_80041BC4;
 
 #endif /* FDAT204_H */
