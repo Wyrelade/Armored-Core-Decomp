@@ -741,5 +741,6 @@ void func_800165E4(u16 arg0, u16 arg1, u32 *arg2);
 void func_80056688(u8 *arg0);
 extern s32 D_801ADCD8;
 extern Obj800558A8 D_801AE2F0[];
+void func_800548F4(Obj800558A8 *arg0);
 
 #endif /* FDAT204_H */

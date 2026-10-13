@@ -461,7 +461,19 @@ void func_800548F4(Obj800558A8 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80054940);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800549B0);
+void func_800549B0(void) {
+    Obj800558A8 *p;
+    u16 i;
+
+    p = D_801AE2F0;
+    i = 2;
+    do {
+        if (p->unk0 == 1) {
+            func_800548F4(p);
+        }
+        p++;
+    } while (--i != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80054A1C);
 
