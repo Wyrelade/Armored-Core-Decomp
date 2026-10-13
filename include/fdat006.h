@@ -37,6 +37,16 @@ typedef struct Elem801C5F00 {
     u8 _pad30[0x10];
 } Elem801C5F00;
 
+typedef struct Sub801C6050 {
+    u8 _pad0[0x6];
+    u8 unk6;
+} Sub801C6050;
+
+typedef struct Elem801C6050 {
+    Sub801C6050 *unk0;
+    u8 _pad4[0x3C];
+} Elem801C6050;
+
 /* @externs */
 Sub801C5CD0 *func_80072120(s32 arg0);
 void func_801C5A78();
@@ -45,5 +55,6 @@ extern Elem801C5F00 D_801D0B68[];
 Sub801C5FDC *func_80073674(s32 arg0);
 void func_801C5F00(Obj801C5F00 *arg0);
 void func_801C5F64();
+extern Elem801C6050 D_801D0BA0[];
 
 #endif /* FDAT006_H */
