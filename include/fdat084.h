@@ -61,6 +61,31 @@ typedef struct Obj801C4E64 {
     s32 unk15C;
 } Obj801C4E64;
 
+typedef struct Sub801C6B04 {
+    void (*unk0)();
+    void (*unk4)();
+    u8 _pad8[0x8];
+    s32 unk10;
+} Sub801C6B04;
+
+typedef struct Sub801C6D0C {
+    u8 unk0;
+    u8 _pad1;
+    u16 unk2;
+    u8 unk4;
+    u8 unk5;
+    u16 unk6;
+    u8 unk8;
+    u8 unk9;
+} Sub801C6D0C;
+
+typedef struct Obj801C6D0C {
+    u8 _pad0[0x2C];
+    Sub801C6B04 *unk2C;
+    u8 _pad30[0x8];
+    Sub801C6D0C *unk38;
+} Obj801C6D0C;
+
 /* @externs */
 extern u8 D_801C786C[];
 void func_8004CE44(s32 arg0, Sub801C50B0 *arg1, s32 arg2, s32 arg3);
@@ -70,5 +95,7 @@ void func_80077B78(Obj801C4E64 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32
 void func_801C4D14(Obj801C4E64 *arg0);
 s32 rand(void);
 void func_801C5038();
+Sub801C6B04 *func_80072120(s32 arg0);
+void func_801C7004();
 
 #endif /* FDAT084_H */
