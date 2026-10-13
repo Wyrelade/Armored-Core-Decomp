@@ -2029,7 +2029,25 @@ void func_8007B8E8(Obj8007618C *arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007B994);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007BA2C);
+void func_8007BA2C(void) {
+    Elem8007BA2C *p;
+    s32 i;
+
+    p = D_80041024;
+    i = 8;
+    do {
+        p->unk0 = 0;
+        p->unkC.unk2 = 0;
+        p->unkC.unk0 = 0;
+        p++;
+    } while (--i != 0);
+    D_80041020 = 0;
+    D_80040FC4 = 0;
+    D_80040FCE = 0;
+    D_80040FCC = 0;
+    D_80040FCA = 0;
+    D_80040FC8 = D_800411C0;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007BA98);
 
