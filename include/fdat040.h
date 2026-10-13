@@ -161,5 +161,6 @@ void func_801C5D80();
 void func_801C5E5C();
 void func_801C5DE4();
 void func_801C60F8();
+void func_801C64A0();
 
 #endif /* FDAT040_H */
