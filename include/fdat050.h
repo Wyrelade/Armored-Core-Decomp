@@ -218,6 +218,30 @@ typedef struct Obj801C4EB8 {
     u16 unk160;
 } Obj801C4EB8;
 
+typedef struct Obj801C63CC {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x12];
+    s16 unk18;
+    s16 unk1A;
+    s16 unk1C;
+    u16 unk1E;
+    u16 unk20;
+    u16 unk22;
+    u16 unk24;
+    s16 unk26;
+    u8 unk28;
+    u8 unk29;
+    u8 unk2A;
+    u8 _pad2B[0x8D];
+    u8 unkB8;
+    u8 unkB9;
+    u8 unkBA;
+    u8 _padBB[0x3];
+    s16 unkBE;
+} Obj801C63CC;
+
 /* @externs */
 extern Elem801C5454 D_801CCD2C;
 void func_801CCCE0(Obj801C5454 *arg0);
