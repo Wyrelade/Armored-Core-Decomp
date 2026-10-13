@@ -123,5 +123,8 @@ typedef struct Obj801C5454 {
 /* @externs */
 extern Elem801C5454 D_801CD8E8;
 void func_801CC9A8(Obj801C6864 *arg0);
+extern u8 D_8019FB68[];
+Obj801C5454 *func_80078A2C(void);
+void func_80078B14(Obj801C5454 *arg0, u8 *arg1);
 
 #endif /* FDAT052_H */
