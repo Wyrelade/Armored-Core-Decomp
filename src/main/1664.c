@@ -699,7 +699,19 @@ void func_80016D64(void) {
     }
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016DA8);
+void func_80016DA8(void) {
+    Elem8004C840 *p;
+    s32 i;
+
+    SsUtAllKeyOff(0);
+    p = D_80041BD0;
+    for (i = 65; i != -1; i--) {
+        if (p->unk0 != -1) {
+            SsVabClose(p->unk0);
+        }
+        p++;
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016E14);
 
