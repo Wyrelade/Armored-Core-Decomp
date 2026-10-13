@@ -79,5 +79,10 @@ void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s3
 void func_8004DE88(Sub801C5798 *arg0, Sub8004DE88 *arg1);
 void func_800775B8(Obj801C52C0 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
 void func_801C5AD4();
+void func_801C9334();
+void func_801C73D8();
+void func_801C8AD8();
+void func_801C8FE8();
+void func_801C9638();
 
 #endif /* FDAT120_H */
