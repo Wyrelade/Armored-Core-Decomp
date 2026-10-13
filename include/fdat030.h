@@ -190,6 +190,26 @@ typedef struct Sub801C4EE0 {
     u8 unk1000[1];
 } Sub801C4EE0;
 
+typedef struct Obj801C504C {
+    u8 _pad0[0x8];
+    Sub801C4C94 unk8;
+    u8 _pad10[0x2];
+    u16 unk12;
+    u8 _pad14[0x22];
+    u16 unk36;
+    u8 _pad38[0x4];
+    u8 unk3C;
+    u8 _pad3D[0x4];
+    u8 unk41;
+    u8 _pad42[0xE];
+    void (*unk50)(struct Obj801C504C *, u8);
+    u8 _pad54[0x10];
+    Sub801C4D98 unk64;
+    s16 unk72;
+    u8 _pad74[0x58];
+    s16 unkCC;
+} Obj801C504C;
+
 /* @externs */
 s32 rand(void);
 void func_801C4C94(Obj8007618C *arg0);
