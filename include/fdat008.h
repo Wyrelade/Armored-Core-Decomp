@@ -99,5 +99,10 @@ void func_801C5528();
 void func_801C63FC();
 Sub801C5CD0 *func_80072120(s32 arg0);
 void func_801C662C();
+extern u16 D_8019F528;
+extern u8 D_8019FB94;
+void func_8008C2FC(s32 arg0);
+void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
+void func_8004C318(s32 arg0);
 
 #endif /* FDAT008_H */
