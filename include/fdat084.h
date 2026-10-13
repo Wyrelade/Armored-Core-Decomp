@@ -210,11 +210,18 @@ typedef struct Sub801C4E00 {
     u8 unk20;
 } Sub801C4E00;
 
+typedef struct Sub801C588C {
+    u8 _pad0[0x8];
+    s16 unk8;
+} Sub801C588C;
+
 typedef struct Obj801C4C94 {
     Sub801C4E00 *unk0;
-    u8 _pad4[0x4];
+    Sub801C588C *unk4;
     Sub801C4C94 unk8;
-    u8 _pad10[0x1C];
+    u8 _pad10[0x2];
+    s16 unk12;
+    u8 _pad14[0x18];
     s16 unk2C;
     u8 _pad2E[0x8];
     s16 unk36;
