@@ -183,7 +183,7 @@ void func_8004CC30(s32 arg0, u8 *arg1, Sub801C4C94 *arg2, s32 arg3, s32 arg4, s3
 s32 func_8004F024(Sub801C4D98 *arg0, Sub801C4C94 *arg1);
 s32 func_8004F080(Sub801C4D98 *arg0, Sub801C4C94 *arg1);
 void func_801C4FD4(Obj801C4EB8 *arg0);
-void func_801C5A6C(Obj801C504C *arg0);
+void func_801C5A6C(Obj801C4EB8 *arg0);
 extern u8 D_800764C4[];
 void func_80076578(Obj801C504C *arg0, s32 arg1, s32 arg2, void (*arg3)());
 void func_8007790C(Obj801C504C *arg0, u8 arg1, s32 arg2, s32 arg3, s16 *arg4, s32 arg5, u8 *arg6);
