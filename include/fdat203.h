@@ -642,5 +642,6 @@ void func_80056CA4(void);
 void func_80055238(void);
 void func_80056B30(void);
 void func_800154D8(u8 *arg0, u8 *arg1, s32 arg2);
+extern s32 D_8019D964[];
 
 #endif /* FDAT203_H */
