@@ -187,6 +187,10 @@ typedef struct Obj801C6870 {
     u16 unkA;
 } Obj801C6870;
 
+typedef struct Elem801C5F64 {
+    u8 _pad0[0x34];
+} Elem801C5F64;
+
 /* @externs */
 extern Sub801C52C0 D_801CBAF4;
 void func_801CBAA8(Obj801C52C0 *arg0);
@@ -214,5 +218,11 @@ void func_801CA128();
 void func_801CA778();
 void func_8008A80C();
 u16 func_80073904(void);
+s32 rand();
+extern Elem801C5F64 D_80198B08[];
+void func_801C5A60();
+void func_801C5A74();
+void func_801C5CA0();
+void func_801C5DAC();
 
 #endif /* FDAT066_H */
