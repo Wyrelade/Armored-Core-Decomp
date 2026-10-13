@@ -1,4 +1,5 @@
 #include "common.h"
+#include "fdat086.h"
 
 INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C5438);
 
@@ -30,7 +31,11 @@ INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C64C0);
 
 INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C64E4);
 
-INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C6508);
+void func_801C6508(Obj801C6508 *arg0) {
+    arg0->unk36 = 2;
+    arg0->unk108 = &D_801CCF68;
+    func_801CCE38(arg0);
+}
 
 INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C6538);
 
