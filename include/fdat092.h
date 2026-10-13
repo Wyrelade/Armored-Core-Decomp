@@ -304,5 +304,9 @@ s32 func_800754D0(Obj801C52C0 *arg0, u8 *arg1);
 void func_80078E1C(Obj801C52C0 *arg0);
 s32 func_800781E8(Obj801C52C0 *arg0);
 s32 func_801C55F4(Obj801C52C0 *arg0);
+void func_801C54F0();
+void func_801C5808();
+void func_801C56E4(Obj801C52C0 *arg0);
+void func_801C5940();
 
 #endif /* FDAT092_H */
