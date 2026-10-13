@@ -63,7 +63,15 @@ void func_8001327C(s32 arg0, s32 *arg1, s32 arg2, s32 *arg3) {
     }
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800132A0);
+s32 func_800132A0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    if (arg0 < arg2) {
+        return arg1 >= arg2;
+    }
+    if (arg2 < arg0) {
+        return arg3 >= arg0;
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800132CC);
 
