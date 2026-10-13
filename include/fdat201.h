@@ -1055,7 +1055,7 @@ extern u8 D_801F37C8;
 void func_8008AF0C(void);
 void func_8009C964(s32);
 void func_8005E92C(void);
-extern u32 *D_801F5094;
+extern Obj80088334 *D_801F5094[];
 Obj8004DEB0 *func_8008B574(void);
 void func_800897D0(Obj8004DEB0 *);
 void func_8008A388(Obj8004DEB0 *arg0);
@@ -1709,5 +1709,7 @@ void func_8006F55C(Sub8006DCEC *arg0, Obj8006FC84 *arg1);
 void func_8006F220(Obj80068A20 *arg0);
 extern u8 D_800B8D3C[];
 void func_8009A6F0(Obj8004DEB0 *arg0);
+extern u8 D_800B8B58[];
+void func_8008BF90(Obj8008AF0C *arg0);
 
 #endif /* FDAT201_H */
