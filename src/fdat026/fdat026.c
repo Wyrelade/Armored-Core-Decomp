@@ -14,7 +14,18 @@ INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C53D4);
 void func_801C5410(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C5418);
+s32 func_801C5418(s32 arg0) {
+    Elem801C5418 *e;
+    s32 dx;
+    s32 dy;
+    s32 dz;
+
+    e = &D_8019FAB8[arg0];
+    dx = (e->unk4 - D_801A26C0) >> 2;
+    dy = (e->unk6 - D_801A26C2) >> 2;
+    dz = (e->unk8 - D_801A26C4) >> 2;
+    return dx * dx + dy * dy + dz * dz;
+}
 
 INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C549C);
 

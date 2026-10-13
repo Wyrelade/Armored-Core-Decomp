@@ -81,8 +81,20 @@ typedef struct Obj8007618C {
     u16 unk160;
 } Obj8007618C;
 
+typedef struct Elem801C5418 {
+    u8 _pad0[0x4];
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+    u8 _padA[0x22];
+} Elem801C5418;
+
 /* @externs */
 extern Sub801C52C0 D_801CAB88;
 void func_801CAB3C(Obj8007618C *arg0);
+extern Elem801C5418 D_8019FAB8[];
+extern s16 D_801A26C0;
+extern s16 D_801A26C2;
+extern s16 D_801A26C4;
 
 #endif /* FDAT026_H */
