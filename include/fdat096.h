@@ -86,5 +86,6 @@ Sub801C5D10 *func_80072120(s32 arg0);
 void func_801C5B4C();
 void func_801C5A70();
 void func_801C5AD4();
+void func_801C63AC();
 
 #endif /* FDAT096_H */
