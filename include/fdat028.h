@@ -55,5 +55,6 @@ Sub801C6A40 *func_80073674(s32 arg0);
 void func_801C6568();
 s32 func_80014D78(s32 arg0);
 void func_801C6AAC();
+void func_801C6BC8();
 
 #endif /* FDAT028_H */
