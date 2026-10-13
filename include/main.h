@@ -76,6 +76,12 @@ typedef struct Elem80015D80 {
     u8 _pad7[5];
 } Elem80015D80;
 
+typedef struct Elem80016D64 {
+    s16 unk0;
+    s8 unk2;
+    u8 _pad3[7];
+} Elem80016D64;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;
@@ -125,5 +131,7 @@ void func_8001594C(Obj800158C8 *arg0, u32 arg1);
 extern Elem80015D80 D_8004A2A4[];
 void func_80015A08(Obj800158C8 *arg0, s32 arg1, Obj800158C8 *arg2);
 s32 func_80015B24(u32 *arg0, s32 arg1);
+void SsUtAllKeyOff(s32 arg0);
+extern Elem80016D64 D_80041DE0[];
 
 #endif /* MAIN_H */

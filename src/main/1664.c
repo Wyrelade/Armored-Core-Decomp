@@ -686,7 +686,18 @@ s32 func_80016A84(void) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016ACC);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016D64);
+void func_80016D64(void) {
+    Elem80016D64 *p;
+    s32 i;
+
+    SsUtAllKeyOff(0);
+    p = D_80041DE0;
+    for (i = 22; i != -1; i--) {
+        p->unk2 = -1;
+        p->unk0 = 0;
+        p++;
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016DA8);
 
