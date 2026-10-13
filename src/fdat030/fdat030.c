@@ -32,7 +32,17 @@ void func_801C4DE4(Obj8007618C *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C4EC4);
+void func_801C4EC4(Obj801C4C94 *arg0) {
+    if (arg0->unk41 == arg0->unk3C) {
+        func_8004CC30(0x93, D_801A5DC0->unk1000, &arg0->unk8, 0x50, 0xBB8, 0xDAC, 0);
+    }
+    func_80075FC0((Obj8007618C *)arg0);
+    if (func_8004F024(&arg0->unk64, &arg0->unk8) == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C4F60);
 
