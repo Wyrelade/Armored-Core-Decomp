@@ -336,5 +336,11 @@ extern Elem801C67A4 D_8019FAB9[];
 extern Obj801C52C0 D_801A26B8[];
 extern Obj801C7788 *D_8019F51C;
 extern u8 D_801CCBB4[];
+s16 func_80075EB4();
+s16 func_800132CC(s16 arg0, s16 arg1, s16 arg2);
+void func_80014728(s32 arg0, Sub801C55B4 *arg1);
+void func_80014338(Sub801C55B4 *arg0, s32 arg1, Sub801C55B4 *arg2);
+void func_800143B8(Sub801C55B4 *arg0, s32 arg1, s32 arg2, Sub801C55B4 *arg3);
+s32 func_8004F080(Sub801C5798 *arg0, Sub801C55B4 *arg1);
 
 #endif /* FDAT092_H */
