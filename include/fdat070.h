@@ -17,5 +17,6 @@ typedef struct Obj801C5638 {
 /* @externs */
 Sub801C5638 *func_80072120(s32 arg0);
 void func_801C53E0();
+void func_801C5674();
 
 #endif /* FDAT070_H */
