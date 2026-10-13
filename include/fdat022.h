@@ -96,6 +96,11 @@ typedef struct Obj801C73EC {
     void (*unk20[1])();
 } Obj801C73EC;
 
+typedef struct Obj801C6720 {
+    u8 _pad0[0xA];
+    u16 unkA;
+} Obj801C6720;
+
 /* @externs */
 extern Elem801C5FD0 D_801D0B94[];
 void func_80078E1C(void);
@@ -113,7 +118,7 @@ void func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, u8 arg4);
 void func_801C6A5C(Obj801C53A0 *arg0);
 void func_801C6AF8();
 Sub801C6360 *func_80073674(s32 arg0);
-void func_801C6B90();
+void func_801C6B90(Obj801C6720 *arg0);
 void func_801C6BE0();
 void func_801C6CFC();
 extern s32 D_801C761C;
