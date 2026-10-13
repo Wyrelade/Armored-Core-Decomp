@@ -1491,7 +1491,7 @@ void func_8008CD38();
 void func_8005B12C();
 void func_8008D8AC();
 void func_80095094(void);
-void func_80095124();
+void func_80095124(Obj8004DEB0 *arg0);
 void func_8008DF6C();
 extern s8 D_8019C094;
 void func_8008F3B4();

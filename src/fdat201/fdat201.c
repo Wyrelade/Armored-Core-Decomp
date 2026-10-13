@@ -4180,7 +4180,9 @@ void func_80095094(void) {
 void func_8009511C(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80095124);
+void func_80095124(Obj8004DEB0 *arg0) {
+    arg0->unk1 = 1;
+}
 
 void func_80095130(void) {
     Obj80095094 *task;
