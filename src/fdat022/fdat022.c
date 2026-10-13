@@ -1,6 +1,8 @@
 #include "common.h"
 #include "fdat022.h"
 
+INCLUDE_RODATA("asm/USA/fdat022/nonmatchings/fdat022", D_801C4B40);
+
 INCLUDE_ASM("asm/USA/fdat022/nonmatchings/fdat022", func_801C4CFC);
 
 INCLUDE_ASM("asm/USA/fdat022/nonmatchings/fdat022", func_801C4FD0);

@@ -86,6 +86,8 @@ void func_801C5798(Obj801C52C0 *arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/fdat000/nonmatchings/fdat000", func_801C5834);
 
+INCLUDE_RODATA("asm/USA/fdat000/nonmatchings/fdat000", D_801C4B40);
+
 INCLUDE_ASM("asm/USA/fdat000/nonmatchings/fdat000", func_801C59EC);
 
 INCLUDE_ASM("asm/USA/fdat000/nonmatchings/fdat000", func_801C5CB8);

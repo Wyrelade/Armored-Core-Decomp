@@ -16,6 +16,7 @@ options:
 
   find_file_boundaries: True
   migrate_rodata_to_functions: True
+  disassemble_all: True
   pair_rodata_to_text: False
   gp_value: 0x80039C5C
 
@@ -64,7 +65,7 @@ segments:
     align: 4
     subalign: 4
     subsegments:
-      - [0x800, rodata, 800]
+      - [0x800, .rodata, 1664]
       - [0x1664, c, 1664]      # first function (func_80011E64), crt0 at 0x80011E6C
       - [0x20DB4, data, 20DB4]   # after the BIOS A0/B0/C0 call stubs
   - [0x29800]

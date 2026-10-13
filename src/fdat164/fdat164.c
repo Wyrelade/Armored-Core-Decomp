@@ -30,3 +30,5 @@ void func_801C8DCC(void) {
         D_800416D4->unk8 |= 1;
     }
 }
+
+INCLUDE_RODATA("asm/USA/fdat164/nonmatchings/fdat164", D_801C8460);

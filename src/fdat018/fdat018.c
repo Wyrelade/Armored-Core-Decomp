@@ -50,6 +50,8 @@ void func_801C5324(Obj801C52C0 *arg0) {
     arg0->unk10.unk2 += arg0->unkCC.unk0;
 }
 
+INCLUDE_RODATA("asm/USA/fdat018/nonmatchings/fdat018", D_801C4B40);
+
 INCLUDE_ASM("asm/USA/fdat018/nonmatchings/fdat018", func_801C5378);
 
 INCLUDE_ASM("asm/USA/fdat018/nonmatchings/fdat018", func_801C54C8);

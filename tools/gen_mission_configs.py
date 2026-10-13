@@ -104,6 +104,7 @@ options:
 
   find_file_boundaries: True
   migrate_rodata_to_functions: True
+  disassemble_all: True
   pair_rodata_to_text: False
   gp_value: 0x80039C5C
 
@@ -143,7 +144,7 @@ segments:
     align: 4
     subalign: 4
     subsegments:
-      - [0x0, rodata, {u}_rodata]
+      - [0x0, .rodata, {u}]
       - [0x{t0:X}, c, {u}]
       - [0x{t1:X}, data, {u}_data]
   - [0x{size:X}]

@@ -16,6 +16,7 @@ options:
 
   find_file_boundaries: True
   migrate_rodata_to_functions: True
+  disassemble_all: True
   pair_rodata_to_text: False
   gp_value: 0x80039C5C
 
@@ -55,7 +56,7 @@ segments:
     align: 4
     subalign: 4
     subsegments:
-      - [0x0, rodata, fdat090_rodata]
+      - [0x0, .rodata, fdat090]
       - [0x844, c, fdat090]
       - [0x8058, data, fdat090_data]
   - [0x9000]

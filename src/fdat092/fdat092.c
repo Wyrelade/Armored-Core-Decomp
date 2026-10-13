@@ -20,6 +20,8 @@ void func_801C5338(Obj801C52C0 *arg0) {
     func_801CC074(arg0);
 }
 
+INCLUDE_RODATA("asm/USA/fdat092/nonmatchings/fdat092", D_801C4B40);
+
 INCLUDE_ASM("asm/USA/fdat092/nonmatchings/fdat092", func_801C53B8);
 
 INCLUDE_ASM("asm/USA/fdat092/nonmatchings/fdat092", func_801C54F0);

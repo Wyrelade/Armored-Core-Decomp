@@ -53,3 +53,5 @@ void func_801B86AC(void) {
 void func_801B86B4(void) {
     func_80056668(1, 0x1FB, 1, 1, 2, 0xD, 1);
 }
+
+INCLUDE_RODATA("asm/USA/fdat180/nonmatchings/fdat180", D_801B80C8);

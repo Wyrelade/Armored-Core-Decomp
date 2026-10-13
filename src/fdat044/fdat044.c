@@ -43,6 +43,8 @@ INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C59E0);
 
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C5A48);
 
+INCLUDE_RODATA("asm/USA/fdat044/nonmatchings/fdat044", D_801C4B40);
+
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C5AB0);
 
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C5C54);

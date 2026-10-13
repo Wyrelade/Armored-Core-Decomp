@@ -59,3 +59,5 @@ void func_801B8964(Obj801B82DC *arg0) {
 
 void func_801B89A0(void) {
 }
+
+INCLUDE_RODATA("asm/USA/fdat182/nonmatchings/fdat182", D_801B80C8);

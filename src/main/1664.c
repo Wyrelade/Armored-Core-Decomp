@@ -773,6 +773,8 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", _ExitCard);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", StSetRing);
 
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_800112C8);
+
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", CdInit);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800172F4);
@@ -824,6 +826,10 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", CdDataSync);
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", CdIntToPos);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", CdPosToInt);
+
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_800112E8);
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_8001142C);
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_8001143C);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", getintr);
 
@@ -908,6 +914,8 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", dma_execute);
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", SpuRGetAllKeysStatus);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", SpuGetAllKeysStatus);
+
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_80011788);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", _spu_init);
 
@@ -1588,6 +1596,8 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", GetClut);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", DumpTPage);
 
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_800119CC);
+
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", DumpClut);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", NextPrim);
@@ -1683,6 +1693,8 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", checkRECT);
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", ClearImage);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", ClearImage2);
+
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_80011BC4);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", LoadImage);
 
@@ -1813,6 +1825,8 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80030448);
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800306C8);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8003072C);
+
+INCLUDE_RODATA("asm/USA/main/nonmatchings/1664", D_80011E14);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800309A8);
 
