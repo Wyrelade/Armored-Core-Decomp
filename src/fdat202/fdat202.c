@@ -1035,7 +1035,16 @@ void func_8006E780(s32 *arg0) {
     func_8006E718(arg0);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006E7B8);
+void func_8006E7B8(s32 *arg0) {
+    s32 i;
+
+    i = 0x10;
+    do {
+        *arg0 = 0;
+        i--;
+        arg0++;
+    } while (i != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006E7D4);
 
