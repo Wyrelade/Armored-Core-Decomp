@@ -1,8 +1,17 @@
 #include "common.h"
+#include "fdat180.h"
 
 INCLUDE_ASM("asm/USA/fdat180/nonmatchings/fdat180", func_801B81E8);
 
-INCLUDE_ASM("asm/USA/fdat180/nonmatchings/fdat180", func_801B8280);
+void func_801B8280(Obj801B8280 *arg0) {
+    s32 unused[0x24];
+    Sub801C5550 *task;
+
+    task = func_800714A4(0);
+    arg0->unk2C = task;
+    task->unk0 = func_801B81E8;
+    arg0->unk2C->unk4 = NULL;
+}
 
 INCLUDE_ASM("asm/USA/fdat180/nonmatchings/fdat180", func_801B82C8);
 
