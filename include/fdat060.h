@@ -94,5 +94,6 @@ void func_801C8CFC();
 void func_801CA3FC();
 void func_801CA90C();
 void func_801CAF5C();
+void func_8008A80C();
 
 #endif /* FDAT060_H */
