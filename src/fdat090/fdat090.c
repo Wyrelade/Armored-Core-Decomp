@@ -153,7 +153,11 @@ void func_801C7540(void) {
 
 INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C7548);
 
-INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C7568);
+void func_801C7568(Obj801C7568 *arg0) {
+    if (arg0->unk160 == 0) {
+        D_801CD1AC += 0x1F4;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C7598);
 
