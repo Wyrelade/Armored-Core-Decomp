@@ -112,5 +112,13 @@ extern Obj8019FB68 D_8019FB68;
 extern Obj8019F51C *D_8019F51C;
 void func_80078B14(Sub801A2828 *arg0, Obj8019FB68 *arg1);
 void func_80056C6C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+void func_80078598(Obj801C59E8 *arg0);
+s32 func_800754D0(Obj801C59E8 *arg0, u8 *arg1);
+void func_80078E1C(Obj801C59E8 *arg0);
+s32 func_801C513C(Obj801C59E8 *arg0);
+s32 rand(void);
+void func_80077B78(Obj801C59E8 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7);
+extern u8 D_801C7060[];
+extern u8 D_801C7084[];
 
 #endif /* FDAT004_H */
