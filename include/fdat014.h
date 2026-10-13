@@ -122,6 +122,11 @@ typedef struct Obj801C7A24 {
     Task801C7A24 *unk14;
 } Obj801C7A24;
 
+typedef struct Obj801C6870 {
+    u8 _pad0[0xA];
+    u16 unkA;
+} Obj801C6870;
+
 /* @externs */
 void func_8004EC4C(Sub801C4D98 *arg0);
 void func_80075FC0();
