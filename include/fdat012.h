@@ -49,7 +49,19 @@ typedef struct Obj801C4C94 {
     s32 unk15C;
 } Obj801C4C94;
 
+typedef struct Sub801C5B1C {
+    void (*unk0)();
+    void (*unk4)();
+} Sub801C5B1C;
+
+typedef struct Obj801C5B1C {
+    u8 _pad0[0x2C];
+    Sub801C5B1C *unk2C;
+} Obj801C5B1C;
+
 /* @externs */
 void func_8004E98C(Sub801C4D98 *arg0, s32 arg1, s32 arg2, s32 arg3);
+Sub801C5B1C *func_80072120(s32 arg0);
+void func_801C6C1C();
 
 #endif /* FDAT012_H */
