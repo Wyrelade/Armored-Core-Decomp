@@ -168,4 +168,8 @@ void func_801C7190(void) {
 
 INCLUDE_ASM("asm/USA/fdat074/nonmatchings/fdat074", func_801C71D4);
 
-INCLUDE_ASM("asm/USA/fdat074/nonmatchings/fdat074", func_801C7220);
+void func_801C7220(s32 arg0, s32 *arg1) {
+    if (func_801C71D4(2) + func_801C71D4(3) == 0) {
+        *arg1 -= 5000;
+    }
+}
