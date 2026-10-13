@@ -1692,7 +1692,9 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80030F38);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800312D0);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800313F0);
+Obj80077854 *func_800313F0(void) {
+    return NULL;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800313F8);
 

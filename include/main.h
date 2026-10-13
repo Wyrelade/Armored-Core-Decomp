@@ -58,6 +58,11 @@ typedef struct Obj80016A3C {
     u8 _pad4[4];
 } Obj80016A3C;
 
+typedef struct Obj80077854 {
+    u8 _pad0[0xE];
+    s16 unkE;
+} Obj80077854;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;
