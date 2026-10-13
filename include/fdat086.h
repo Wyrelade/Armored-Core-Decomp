@@ -29,6 +29,10 @@ typedef struct Sub801C7A84 {
 typedef struct Sub801C6800 {
     void (*unk0)();
     void (*unk4)();
+    u8 unk8;
+    u8 unk9;
+    u8 _padA[0x2];
+    u32 unkC;
 } Sub801C6800;
 
 typedef struct Obj801C6508 {
@@ -64,12 +68,14 @@ typedef struct Obj801C6800 {
     Sub801C6800 *unk14;
     u8 _pad18[0xA];
     u8 unk22;
-    u8 _pad23;
+    u8 unk23;
     u16 unk24;
-    u8 _pad26[0x4];
+    u8 _pad26[0x2];
+    u16 unk28;
     u8 unk2A;
-    u8 _pad2B;
+    u8 _pad2B[0x1];
     u16 unk2C;
+    u8 _pad2E[0x2];
 } Obj801C6800;
 
 typedef struct Elem801C52C0 {
