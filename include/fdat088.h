@@ -96,5 +96,8 @@ extern Elem801C52DC D_801CC460;
 Sub801C5594 *func_80072120(s32 arg0);
 void func_801C533C();
 void func_801C55D0();
+Sub801C5878 *func_80073674(s32 arg0);
+s32 func_801C5830(u8 arg0, u16 arg1);
+void func_801C56F0();
 
 #endif /* FDAT088_H */
