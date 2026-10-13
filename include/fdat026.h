@@ -206,6 +206,7 @@ void func_801C980C();
 void func_801C75AC();
 void func_801C8CAC();
 void func_801C91BC();
-void func_801C9508(Obj8007618C *arg0);
+void func_801C9508(Obj801C52C0 *arg0);
+u16 func_80073904(void);
 
 #endif /* FDAT026_H */
