@@ -196,7 +196,9 @@ void func_801C7720(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk6;
 }
 
-INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C773C);
+void func_801C773C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+    arg0->unk15C &= ~(1 << arg1->unk6);
+}
 
 INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C775C);
 
