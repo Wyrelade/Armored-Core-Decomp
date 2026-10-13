@@ -119,7 +119,21 @@ s32 func_800133F8(s32 arg0, s32 arg1) {
     return arg0;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013430);
+s32 func_80013430(Obj80013430 *arg0, Obj80013430 *arg1, s32 arg2, Obj800138F0 *arg3) {
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 len;
+
+    x = arg1->unk0 - arg0->unk0;
+    y = arg1->unk4 - arg0->unk4;
+    z = arg1->unk8 - arg0->unk8;
+    len = func_80014988(x, y, z);
+    arg3->unk0 = x * arg2 / len;
+    arg3->unk2 = y * arg2 / len;
+    arg3->unk4 = z * arg2 / len;
+    return len;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80013510);
 

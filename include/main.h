@@ -64,6 +64,12 @@ typedef struct Obj80077854 {
     s16 unkE;
 } Obj80077854;
 
+typedef struct Obj80013430 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} Obj80013430;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;
@@ -104,5 +110,6 @@ extern s32 D_80039C0C;
 void DelDrv(s32 *arg0);
 void FlushCache(void);
 extern s32 D_80011E14;
+s32 func_80014988(s32 arg0, s32 arg1, s32 arg2);
 
 #endif /* MAIN_H */
