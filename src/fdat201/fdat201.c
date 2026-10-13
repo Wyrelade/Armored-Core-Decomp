@@ -1743,7 +1743,31 @@ void func_8006DCEC(Obj8006DCEC *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006DD54);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006DF7C);
+void func_8006DF7C(Obj80068A20 *arg0) {
+    Sub8006DCEC *cursor;
+    Obj8006FC84 *grid;
+    Sub80068A20 *sub;
+    u16 x;
+
+    cursor = arg0->unk98;
+    x = cursor->unk7E;
+    grid = arg0->unk9C;
+    sub = &arg0->unk7C;
+    if ((u32)(x - 0xAC) < 0x80 && (u32)(cursor->unk80 - 0x24) < 0x80) {
+        if ((D_801A2568 & 0x40) && !(D_801A256C & 0x40) && arg0->unk7C.unk12 == 0) {
+            arg0->unk92 = grid->unk7C + ((s16)x - 0xAC) / arg0->unk7C.unk8;
+            arg0->unk94 = grid->unk7E + ((s16)cursor->unk80 - 0x24) / arg0->unk7C.unk8;
+            func_8006F55C(cursor, grid);
+            func_8006F220(arg0);
+        }
+        if (!(D_801A2568 & 0x20)) {
+            return;
+        }
+    }
+    if (D_801A2568 & 0x20) {
+        sub->unk12 = 0;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006E0A8);
 
@@ -1781,7 +1805,7 @@ void func_8006F220(Obj80068A20 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006F2CC);
 
-void func_8006F55C(void) {
+void func_8006F55C(Sub8006DCEC *arg0, Obj8006FC84 *arg1) {
     MoveImage(D_800B8134, 0x39A, 0x40);
     DrawSync(0);
 }
