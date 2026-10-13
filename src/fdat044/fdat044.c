@@ -72,7 +72,24 @@ void func_801C6634(Obj801C572C *arg0) {
 void func_801C6670(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C6678);
+s32 func_801C6678(s32 arg0) {
+    if (D_8019F528 == 0) {
+        switch (arg0) {
+        case 0:
+            if (D_801CCA40 < 2) {
+                func_800529F0(0, 0, 0x31);
+                D_8019F52C += D_8019F52C >> 1;
+            }
+            break;
+        case 1:
+            func_800529F0(0, 0, 0x68);
+            D_8019F52C = 0;
+            func_8004C318(0x80);
+            break;
+        }
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C6718);
 

@@ -99,5 +99,10 @@ Sub801C572C *func_80073674(s32 arg0);
 void func_801C61D0();
 void func_801C6234();
 void func_801C6318();
+void func_8004C318(s32 arg0);
+void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
+extern u16 D_8019F528;
+extern u16 D_8019F52C;
+extern s32 D_801CCA40;
 
 #endif /* FDAT044_H */
