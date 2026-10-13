@@ -54,7 +54,15 @@ void func_801C4F7C(Obj801C4C94 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C4FD4);
+void func_801C4FD4(Obj801C4EB8 *arg0) {
+    func_8004ECA8((Sub801C4D98 *)&arg0->unk64);
+    if (--arg0->unk64.unk2 == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+    arg0->unkCC += arg0->unkCE;
+}
 
 void func_801C504C(Obj801C504C *arg0) {
     func_801C4FD4(arg0);
