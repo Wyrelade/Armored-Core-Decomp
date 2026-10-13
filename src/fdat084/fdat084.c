@@ -3,7 +3,16 @@
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C4D14);
 
-INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C4DFC);
+void func_801C4DFC(Obj801C4C94 *arg0) {
+    func_80075FC0(arg0);
+    func_8004EC4C(&arg0->unk64);
+    arg0->unk64.unk2--;
+    if (arg0->unk64.unk2 == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+}
 
 void func_801C4E64(Obj801C4E64 *arg0) {
     if (arg0->unk64.unkA == 0xA) {
