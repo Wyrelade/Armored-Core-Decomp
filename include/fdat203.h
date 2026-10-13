@@ -435,6 +435,12 @@ typedef struct Elem8004C840 {
     u32 *unk4;
 } Elem8004C840;
 
+typedef struct Elem8004D6E4 {
+    u16 unk0;
+    s8 unk2;
+    u8 _pad3[0x7];
+} Elem8004D6E4;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -573,5 +579,8 @@ s16 SsVabOpenHead(u32 *arg0, s32 arg1);
 s16 SsVabTransBodyPartly(u8 *arg0, s32 arg1, s16 arg2);
 void SsVabTransCompleted(s32 arg0);
 void func_8004D394(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+extern Elem8004D6E4 D_80041DE0[];
+void func_8004D090(void);
+void func_8004D114(Elem8004D6E4 *arg0);
 
 #endif /* FDAT203_H */
