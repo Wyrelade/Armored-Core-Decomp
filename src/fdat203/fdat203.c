@@ -1982,7 +1982,39 @@ void func_800841BC(Obj80085510 *arg0) {
     arg0->unk1A += 6;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8008422C);
+void func_8008422C(Obj8008422C *arg0) {
+    u8 col[4];
+    Elem8008422C *e;
+    s32 t;
+    s32 old;
+    u16 pos;
+
+    arg0->unkC4 += arg0->unk24;
+    arg0->unkC6 += arg0->unk24;
+    arg0->unkC8 += arg0->unk24;
+    e = &D_8008C054[arg0->unk2D];
+    arg0->unkCC += e->unk26;
+    arg0->unkCD += e->unk27;
+    pos = arg0->unkC4;
+    arg0->unkCE += e->unk28;
+    arg0->unk24 += e->unk6;
+    old = arg0->unk2A << 16;
+    arg0->unk2A = pos;
+    if (arg0->unk18 != 0) {
+        arg0->unk20 = func_800823E4(arg0, old >> 18, (s16)pos >> 2, (s16)e->unk8 >> 2,
+                                    &arg0->unk18, e->unkC, e->unk10, arg0->unk20);
+    }
+    if (arg0->unk26 > 0) {
+        if (e->unk1D != 0xFF) {
+            t = (arg0->unk12 << 12) / arg0->unk2C;
+            LoadAverageCol(e->unk1A, e->unk1E, t, 0x1000 - t, col);
+            func_80056550(0, arg0, 0, arg0->unkE, 0xFFFF, col, arg0->unk26);
+        }
+        arg0->unk26 += arg0->unk28;
+        arg0->unk28 += e->unk18;
+        func_80084548(0, arg0, e->unk2C, arg0->unk26 >> 1, 0, arg0->unkE)->unk12 = 0;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80084410);
 
