@@ -68,7 +68,21 @@ void func_801C6238(void) {
     func_80078598();
 }
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6258);
+void func_801C6258(Obj801C52C0 *arg0) {
+    s32 s;
+    s32 sum;
+    s32 t;
+
+    func_801C6238();
+    arg0->unk148 = 0xF;
+    arg0->unkFC += 0x40;
+    arg0->unkFE += 0x30;
+    s = rsin(arg0->unkFC);
+    sum = s + rsin(arg0->unkFE) + 0x2000;
+    t = sum >> 2;
+    LoadAverageCol(D_801C7348, D_801C734C, t, 0x1000 - t, arg0->unk14A);
+    func_80056B54(arg0, &arg0->unk8, 0, arg0->unk16, 0xFFFF, D_801C734C, sum >> 4);
+}
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6320);
 

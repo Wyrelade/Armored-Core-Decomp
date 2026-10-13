@@ -90,5 +90,11 @@ void func_800775B8(Obj801C52C0 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 
 extern s32 D_801A5DC8;
 void func_801C5F98();
 void func_80078598(void);
+void LoadAverageCol(u8 *arg0, u8 *arg1, s32 arg2, s32 arg3, u8 *arg4);
+void func_80056B54(Obj801C52C0 *arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, s32 arg6);
+void func_801C6238(void);
+s32 rsin(s32 arg0);
+extern u8 D_801C7348[];
+extern u8 D_801C734C[];
 
 #endif /* FDAT036_H */
