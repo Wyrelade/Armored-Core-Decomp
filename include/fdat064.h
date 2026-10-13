@@ -89,5 +89,6 @@ typedef struct Obj801C4FA0 {
 
 /* @externs */
 void func_801C4ED4();
+void func_801C5DA8();
 
 #endif /* FDAT064_H */
