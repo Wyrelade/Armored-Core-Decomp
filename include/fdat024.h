@@ -130,5 +130,6 @@ void func_8004CE44(s32 arg0, Sub801C6C1C *arg1, s32 arg2, s32 arg3);
 extern u16 D_801D0B52;
 void func_8004CFC8(s32 arg0, s32 arg1);
 void func_801C6CCC(s32 arg0);
+extern s32 D_801C70F0;
 
 #endif /* FDAT024_H */
