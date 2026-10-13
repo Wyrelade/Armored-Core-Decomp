@@ -523,7 +523,7 @@ s32 func_80015D80(u16 arg0, u16 arg1) {
     return (end - start) << 11;
 }
 
-void func_80015DC0(void) {
+void func_80015DC0(s32 arg0) {
 }
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015DC8);
@@ -619,7 +619,31 @@ s32 func_800162A0(s32 arg0) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800162E8);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016328);
+void func_80016328(Obj8001654C *arg0, u32 *arg1, s32 arg2) {
+    s32 retry;
+    s32 failed;
+    s32 ret;
+
+    func_80015A48();
+    retry = 0;
+    failed = 1;
+    do {
+        while (CdControl(2, (u8 *)arg0, 0) == 0) {
+        }
+        while (CdRead(arg2, arg1, 0x80) == 0) {
+        }
+        while ((ret = CdReadSync(1, 0)) > 0) {
+        }
+        if (ret == 0) {
+            failed = 0;
+            break;
+        }
+        retry++;
+    } while (retry < 3);
+    if (failed == 1) {
+        func_80015DC0(1);
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800163F8);
 

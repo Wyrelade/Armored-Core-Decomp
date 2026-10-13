@@ -141,5 +141,9 @@ void SsUtAllKeyOff(s32 arg0);
 extern Elem80016D64 D_80041DE0[];
 void SsVabClose(s16 arg0);
 extern Elem8004C840 D_80041BD0[];
+s32 CdRead(s32 arg0, u32 *arg1, s32 arg2);
+s32 CdReadSync(s32 arg0, u8 *arg1);
+void func_80015A48();
+void func_80015DC0(s32 arg0);
 
 #endif /* MAIN_H */
