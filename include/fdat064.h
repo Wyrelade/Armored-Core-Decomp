@@ -71,6 +71,22 @@ typedef struct Obj801C4F4C {
     u16 unk164;
 } Obj801C4F4C;
 
+typedef struct Sub801C6778 {
+    void (*unk0)();
+    void (*unk4)();
+} Sub801C6778;
+
+typedef struct Obj801C4FA0 {
+    u8 _pad0[0x12];
+    u16 unk12;
+    u8 _pad14[0x18];
+    Sub801C6778 *unk2C;
+    u8 _pad30[0x6];
+    s16 unk36;
+    u8 _pad38[0x94];
+    s16 unkCC;
+} Obj801C4FA0;
+
 /* @externs */
 void func_801C4ED4();
 
