@@ -4456,7 +4456,9 @@ void func_80099868(u8 *arg0, u8 *arg1) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800998B4);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80099E30);
+void func_80099E30(Obj8004DEB0 *arg0) {
+    arg0->unk1 = 1;
+}
 
 Obj80095094 *func_80099E3C(void) {
     Obj80095094 *task;
