@@ -432,6 +432,11 @@ typedef struct Obj80087A24_fdat202 {
     u16 unkBE;
 } Obj80087A24_fdat202;
 
+typedef struct Obj80077854 {
+    u8 _pad0[0xE];
+    s16 unkE;
+} Obj80077854;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -538,7 +543,7 @@ void func_80076F8C(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 extern s32 D_801ADA30;
 extern Sub8007789C *D_801AB67C;
 extern u8 D_801AB7A0[];
-Obj8007789C *func_80077674(void);
+Obj80077854 *func_80077674(void);
 void func_800776B4(Obj8007789C *arg0, u8 *arg1);
 void func_8004CDE8(s32 arg0, s32 arg1, Obj8004F0B8 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_8004CECC(s32 arg0, Obj8004F0B8 *arg1, s32 arg2, s32 arg3);
