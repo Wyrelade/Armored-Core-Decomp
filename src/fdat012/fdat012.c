@@ -160,7 +160,12 @@ s32 func_801C791C(s32 arg0) {
     return 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat012/nonmatchings/fdat012", func_801C7960);
+void func_801C7960(void) {
+    D_801AC80C = 0;
+    func_80078B14(&D_8019FB68.unk2CC0, &D_8019FB68);
+    D_8019F51C->unk20[D_8019FB68.unk2CC0.unkE](&D_8019FB68.unk2CC0);
+    func_8008A778(0x1EF0, 0x100, 0x8B);
+}
 
 INCLUDE_ASM("asm/USA/fdat012/nonmatchings/fdat012", func_801C79D4);
 
