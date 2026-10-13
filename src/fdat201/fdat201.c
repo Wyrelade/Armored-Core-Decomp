@@ -1108,7 +1108,7 @@ Obj80056EF4 *func_8005CAE0(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     return obj;
 }
 
-void func_8005CB94(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+Obj80056EF4 *func_8005CB94(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     Obj80056EF4 *obj;
 
     obj = func_800501BC((s16)arg3);
@@ -1126,6 +1126,7 @@ void func_8005CB94(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     obj->unk48 = (s16)arg1;
     obj->unk4C = (s16)arg2;
     obj->unk50 = 0;
+    return obj;
 }
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005CC48);
@@ -1177,7 +1178,7 @@ void func_8005D71C(void) {
     DrawSync(0);
 }
 
-void func_8005D754(s32 arg0, u8 *arg1, s32 arg2, s32 arg3, s32 arg4) {
+Obj80056EF4 *func_8005D754(s32 arg0, u8 *arg1, s32 arg2, s32 arg3, s32 arg4) {
     Obj80056EF4 *obj;
 
     obj = func_800501BC((s16)arg4);
@@ -1195,6 +1196,7 @@ void func_8005D754(s32 arg0, u8 *arg1, s32 arg2, s32 arg3, s32 arg4) {
     obj->unk48 = (s16)arg2;
     obj->unk4C = (s16)arg3;
     obj->unk50 = 0;
+    return obj;
 }
 
 Obj8004DEB0 *func_8005D80C(s16 arg0, u8 *arg1, s8 arg2, s16 arg3, s32 arg4, s16 arg5) {
