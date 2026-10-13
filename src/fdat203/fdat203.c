@@ -2042,7 +2042,40 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80085244);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8008539C);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80085500);
+Obj80085500 *func_80085500(s32 arg0, Sub8004F1D4 *arg1, u32 *arg2) {
+    Obj80085500 *obj;
+    Elem80085500 *e;
+    Sub80085500 *e2;
+    u32 t;
+    u32 n;
+
+    if ((*arg2 & 7) == 7 || (obj = func_80088B78(0)) == &D_8008A978) {
+        return &D_8008A978;
+    }
+    if ((*arg2 & 0xF8000000) != 0xF8000000) {
+        e = &D_8008BE18[*arg2 >> 27];
+        func_8004D04C(e->unk0, arg1, e->unk4, e->unk6);
+    }
+    e2 = &D_8008BE54[*arg2 & 7];
+    func_80084410(obj, arg0, arg1, -1);
+    obj->unk10 = 2;
+    obj->unkB8 = e2->unk0;
+    obj->unk18 = *arg2 & 7;
+    t = *arg2 >> 17;
+    obj->unkBC = 100;
+    obj->unkBA = t & 0x3FF;
+    obj->unk1B = (*arg2 >> 10) & 7;
+    obj->unk19 = (*arg2 >> 3) & 3;
+    n = (*arg2 >> 13) & 0xF;
+    obj->unk1C = n;
+    obj->unk12 = ((*arg2 >> 5) & 0x1F) + n - 1;
+    if (obj->unk1C != 0) {
+        obj->unk6 = 1;
+    }
+    obj->unk14 = func_80083EE8;
+    obj->unk1A = 0;
+    return obj;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8008569C);
 

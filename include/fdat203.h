@@ -599,6 +599,37 @@ typedef struct Obj8008422C {
     u8 unkCE;
 } Obj8008422C;
 
+typedef struct Obj80085500 {
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0x8];
+    u8 unk10;
+    u8 _pad11[0x1];
+    s16 unk12;
+    void (*unk14)();
+    u8 unk18;
+    u8 unk19;
+    u8 unk1A;
+    u8 unk1B;
+    u8 unk1C;
+    u8 _pad1D[0x9B];
+    s16 unkB8;
+    s16 unkBA;
+    s16 unkBC;
+} Obj80085500;
+
+typedef struct Elem80085500 {
+    u16 unk0;
+    u8 _pad2[0x2];
+    s16 unk4;
+    s16 unk6;
+} Elem80085500;
+
+typedef struct Sub80085500 {
+    u8 unk0;
+    u8 _pad1[0x7];
+} Sub80085500;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -793,5 +824,11 @@ void LoadAverageCol(u8 *arg0, u8 *arg1, s32 arg2, s32 arg3, u8 *arg4);
 void func_80056550(s32 arg0, Obj8008422C *arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, s32 arg6);
 s32 func_800823E4(Obj8008422C *arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4, u8 *arg5, u8 *arg6, s32 arg7);
 Sub8008422C *func_80084548(s32 arg0, Obj8008422C *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
+extern Obj80085500 D_8008A978;
+extern Elem80085500 D_8008BE18[];
+extern Sub80085500 D_8008BE54[];
+void func_80083EE8();
+void func_80084410(Obj80085500 *arg0, s32 arg1, Sub8004F1D4 *arg2, s32 arg3);
+Obj80085500 *func_80088B78(s32 arg0);
 
 #endif /* FDAT203_H */
