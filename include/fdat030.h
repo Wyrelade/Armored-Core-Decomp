@@ -240,5 +240,10 @@ s32 func_8004F080(Sub801C4D98 *arg0, Sub801C4C94 *arg1);
 extern u8 D_801C7B08[];
 s32 func_800754D0(Obj8007618C *arg0, u8 *arg1);
 void func_80078E1C(Obj8007618C *arg0);
+s32 func_800781E8(Obj8007618C *arg0);
+s32 func_801C580C(Obj8007618C *arg0);
+s32 func_801C6864(Obj8007618C *arg0, u8 *arg1);
+extern u8 D_801C7B2C[];
+extern u8 D_801C7B50[];
 
 #endif /* FDAT030_H */
