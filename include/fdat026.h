@@ -106,5 +106,6 @@ extern u8 D_8019FB94[];
 extern u8 D_8019FBC0[];
 extern s32 D_801CB0CC;
 extern s32 D_801CB0D0;
+void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
 
 #endif /* FDAT026_H */

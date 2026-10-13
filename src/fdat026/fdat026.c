@@ -51,7 +51,13 @@ void func_801C549C(void) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C5560);
+s32 func_801C5560(s32 arg0) {
+    if (D_8019F528 == 0 && arg0 == 0) {
+        func_800529F0(0, 0, 0x4A);
+        D_801CB0CC = 1;
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C55A4);
 
