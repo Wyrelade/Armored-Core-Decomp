@@ -53,5 +53,9 @@ typedef struct Obj801C52C0 {
 /* @externs */
 void func_801C5258(Obj801C52C0 *arg0);
 void func_801C612C(Obj801C52C0 *arg0);
+extern u8 D_801C8200[];
+s32 func_800754D0(Obj801C52C0 *arg0, u8 *arg1);
+void func_80078598(Obj801C52C0 *arg0);
+void func_80078E1C(Obj801C52C0 *arg0);
 
 #endif /* FDAT018_H */
