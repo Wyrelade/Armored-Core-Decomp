@@ -1288,7 +1288,7 @@ extern u8 D_8004AFA0[];
 extern u8 D_8004AFAC[];
 extern u8 D_8004AFB8[];
 extern u8 D_800B6EF8[];
-Obj8004DEB0 *func_8005D80C(s32 arg0, u8 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
+Obj8004DEB0 *func_8005D80C(s16 arg0, u8 *arg1, s8 arg2, s16 arg3, s32 arg4, s16 arg5);
 void func_80051D38(s8 *arg0);
 void func_8005252C();
 void func_80053008(Obj80052334 *arg0);
