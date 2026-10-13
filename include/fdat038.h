@@ -66,10 +66,18 @@ typedef struct Elem801C52C0 {
     u8 unk3B;
 } Elem801C52C0;
 
-typedef struct Obj801C52C0 {
+typedef struct Sub801C4CA0 {
     u8 _pad0[0x8];
+    s16 unk8;
+} Sub801C4CA0;
+
+typedef struct Obj801C52C0 {
+    u8 _pad0[0x4];
+    Sub801C4CA0 *unk4;
     Sub8004DE88 unk8;
-    u8 _pad10[0x6];
+    u8 _pad10[0x2];
+    s16 unk12;
+    u8 _pad14[0x2];
     s16 unk16;
     u8 _pad18[0x14];
     Task801C6254 *unk2C;
@@ -81,7 +89,7 @@ typedef struct Obj801C52C0 {
     u8 _pad3E[0x3];
     u8 unk41;
     u8 unk42;
-    u8 _pad43;
+    u8 _pad43[0x1];
     s16 unk44;
     u8 _pad46[0xA];
     void (*unk50)();
@@ -103,6 +111,9 @@ typedef struct Obj801C52C0 {
     u8 _pad14E[0xE];
     s32 unk15C;
     u16 unk160;
+    u8 _pad162[0x2];
+    u16 unk164;
+    u8 _pad166[0x2];
 } Obj801C52C0;
 
 typedef struct Sub801C5550 {
