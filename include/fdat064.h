@@ -149,6 +149,26 @@ typedef struct Elem8019FB68 {
     u8 _padC[0x20];
 } Elem8019FB68;
 
+typedef struct Sub801C5EA8 {
+    u8 _pad0[0x10];
+    u8 unk10;
+} Sub801C5EA8;
+
+typedef struct Sub801C6050 {
+    u8 _pad0[0x6];
+    u8 unk6;
+} Sub801C6050;
+
+typedef struct Elem801C5EA8 {
+    u8 _pad0[0x26];
+    s16 unk26;
+    u16 *unk28;
+    Sub801C5EA8 *unk2C;
+    u8 _pad30[0x8];
+    Sub801C6050 *unk38;
+    u8 _pad3C[0x4];
+} Elem801C5EA8;
+
 /* @externs */
 void func_801C4ED4(Obj801C4EB8 *arg0);
 void func_801C5DA8();
@@ -169,5 +189,6 @@ void func_8008A80C();
 extern Elem8019FB68 D_8019FB68[];
 extern u16 D_801C713C;
 extern u8 D_801C713E;
+extern Elem801C5EA8 D_801D0B68[];
 
 #endif /* FDAT064_H */
