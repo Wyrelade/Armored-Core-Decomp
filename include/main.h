@@ -46,7 +46,8 @@ typedef struct Obj80015E48 {
 } Obj80015E48;
 
 typedef struct Obj8001654C {
-    u8 _pad0[4];
+    Obj800158C8 unk0;
+    u8 _pad3[0x1];
     s32 unk4;
 } Obj8001654C;
 
