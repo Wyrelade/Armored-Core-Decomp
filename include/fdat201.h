@@ -906,6 +906,11 @@ typedef struct Elem800B3010 {
     u8 _pad4[0xC];
 } Elem800B3010;
 
+typedef struct Elem800B3168 {
+    u8 *unk0;
+    u8 _pad4[0xC];
+} Elem800B3168;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1808,5 +1813,9 @@ void func_800B3168(Obj800B26C8 *arg0);
 extern u8 D_8017F578[];
 extern u8 D_8017F57C[];
 extern Elem800B3010 D_8017F590[];
+void func_800B32D4();
+extern u8 D_8004DB80[];
+extern Elem800B3168 D_8017F584[];
+extern Elem800B3168 D_8017F588[];
 
 #endif /* FDAT201_H */
