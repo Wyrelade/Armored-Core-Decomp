@@ -707,5 +707,6 @@ extern Elem8006DC20 D_801C40F0[];
 extern s32 D_801DC0F4;
 extern Elem80072A30 D_80194A70[];
 Sub80076F38 *func_80076EBC(Obj80076F38 *arg0, Obj80076F38 *arg1, Sub8004DE88 *arg2);
+void func_80085948(s32 arg0, Sub8004F1D4 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11);
 
 #endif /* FDAT203_H */
