@@ -146,5 +146,8 @@ extern Obj8019FB68 D_8019FB68;
 extern Obj8019F51C *D_8019F51C;
 void func_80078B14(Sub801A2828 *arg0, Obj8019FB68 *arg1);
 void func_8008A778(s32 arg0, s32 arg1, s32 arg2);
+void func_801C509C();
+void func_801C4E80();
+void func_801C50EC();
 
 #endif /* FDAT012_H */
