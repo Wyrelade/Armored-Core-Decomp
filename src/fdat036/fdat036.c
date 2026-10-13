@@ -108,7 +108,9 @@ void func_801C6664(void) {
     func_801C6594();
 }
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6684);
+void func_801C6684(void) {
+    func_801C6594();
+}
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C66A4);
 
