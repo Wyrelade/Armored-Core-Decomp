@@ -181,5 +181,8 @@ extern s16 D_801D186E;
 extern Obj801C7410 *D_801A5DC0;
 void func_8004CE44(s32 arg0, Sub801C7410 *arg1, s32 arg2, s32 arg3);
 void func_8004CC30(s32 arg0, u8 *arg1, Sub801C7410 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+void func_8004DE88(Sub801C75F4 *arg0, Sub801C7410 *arg1);
+void func_800775B8(Obj801C6864 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub801C7410 *arg4, void (*arg5)());
+void func_801C7B14();
 
 #endif /* FDAT052_H */
