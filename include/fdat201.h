@@ -1442,7 +1442,7 @@ void func_8008BEEC(Obj8004DEB0 *arg0);
 void func_8008BEF8(void);
 void func_8008BFA8(Obj8004DEB0 *arg0);
 void func_8008BFB4();
-void func_8008C07C();
+void func_8008C07C(Obj8004DEB0 *arg0);
 void func_8008AF9C(Obj8004DEB0 *arg0);
 void func_80088730(Obj8004DEB0 *arg0);
 void func_8008A418(Obj8004DEB0 *arg0);
