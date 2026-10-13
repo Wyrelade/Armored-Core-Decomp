@@ -70,10 +70,33 @@ typedef struct Obj801C52C0 {
     s32 unk15C;
 } Obj801C52C0;
 
+typedef struct Sub801C572C {
+    void (*unk0)();
+    void (*unk4)();
+} Sub801C572C;
+
+typedef struct Obj801C572C {
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0xC];
+    Sub801C572C *unk14;
+    u8 _pad18[0xA];
+    u8 unk22;
+    u8 _pad23;
+    u16 unk24;
+    u8 _pad26[0x4];
+    u8 unk2A;
+    u8 _pad2B;
+    u16 unk2C;
+} Obj801C572C;
+
 /* @externs */
 extern Elem801C52C0 D_801CC4B0;
 void func_801CC464(Obj801C52C0 *arg0);
 Sub801C5578 *func_80072120(s32 arg0);
 void func_801C5E28();
+Sub801C572C *func_80073674(s32 arg0);
+void func_801C61D0();
+void func_801C6234();
 
 #endif /* FDAT044_H */
