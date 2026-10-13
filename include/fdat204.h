@@ -15,12 +15,13 @@ typedef struct Sub8004EDA8 {
 } Sub8004EDA8;
 
 typedef struct Sub8004F0B8 {
-    u8 _pad0[0x8];
+    s16 unk0;
+    u8 _pad2[0x6];
 } Sub8004F0B8;
 
 typedef struct Obj8004EDA8 {
     u8 unk0;
-    u8 _pad1;
+    u8 _pad1[0x1];
     u8 unk2;
     u8 unk3;
     u8 _pad4[0x6];
@@ -31,6 +32,9 @@ typedef struct Obj8004EDA8 {
     Sub8004F0B8 unk20;
     Sub8004F0B8 unk28;
     Sub8004F0B8 unk30;
+    Sub8004F0B8 unk38;
+    Sub8004F0B8 unk40;
+    Sub8004F0B8 unk48;
 } Obj8004EDA8;
 
 typedef struct Obj8004F0B8 {
@@ -57,7 +61,8 @@ typedef struct Obj8006FBC0 {
 } Obj8006FBC0;
 
 typedef struct Obj80073138 {
-    u8 _pad0[0x8];
+    s32 unk0;
+    u8 _pad4[0x4];
     Obj8004F0B8 unk8;
     Obj8004F0B8 unk10;
     s16 unk18;
@@ -74,18 +79,26 @@ typedef struct Obj80073138 {
     u8 unk3D;
     u8 _pad3E[0x3];
     u8 unk41;
-    u8 _pad42[0xE];
+    u8 _pad42[0x6];
+    struct Obj80073138 *unk48;
+    u8 _pad4C[0x4];
     void (*unk50)(struct Obj80073138 *, u8);
     void (*unk54)(struct Obj80073138 *, s32, s32);
-    u8 _pad58[0x8];
+    void (*unk58)();
+    void (*unk5C)();
     s32 unk60;
     Obj8004EDA8 unk64;
-    u8 _pad9C[0x30];
+    u8 _padB4[0x18];
     s16 unkCC;
     s16 unkCE;
     s16 unkD0;
     s16 unkD2;
-    u8 _padD4[0x74];
+    u8 _padD4[0x34];
+    s16 unk108;
+    s16 unk10A;
+    s16 unk10C;
+    s16 unk10E;
+    u8 _pad110[0x38];
     u16 unk148;
     u8 _pad14A[0x12];
     s32 unk15C;
@@ -144,19 +157,26 @@ typedef struct Obj8008800C {
     u16 unk0;
     u16 unk2;
     u16 unk4;
-    u8 _pad6[0x8];
+    u8 _pad6[0x2];
+    s32 unk8;
+    u8 _padC[0x2];
     s16 unkE;
     u8 _pad10[0x2];
     s16 unk12;
-    u8 _pad14[0x6];
+    u8 _pad14[0x4];
+    s16 unk18;
     s16 unk1A;
     s16 unk1C;
     s16 unk1E;
     s16 unk20;
-    u8 _pad22[0x2];
+    u16 unk22;
     Sub8008800C unk24;
     s16 unk2A;
-    u8 _pad2C[0x8C];
+    u8 _pad2C[0x4];
+    s32 unk30;
+    u32 unk34;
+    s32 unk38;
+    u8 _pad3C[0x7C];
     union { u8 b[4]; s16 h; } unkB8;
     u16 unkBC;
     u16 unkBE;
