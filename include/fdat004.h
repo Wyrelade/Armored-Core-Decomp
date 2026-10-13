@@ -120,5 +120,9 @@ s32 rand(void);
 void func_80077B78(Obj801C59E8 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7);
 extern u8 D_801C7060[];
 extern u8 D_801C7084[];
+void func_8004E98C(Sub801C4D98 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_801C5D8C();
+void func_801C5B70();
+void func_801C5DDC();
 
 #endif /* FDAT004_H */
