@@ -53,7 +53,7 @@ typedef struct Obj801C53A0 {
     u8 _pad3C[0x5];
     u8 unk41;
     s8 unk42;
-    u8 _pad43;
+    u8 _pad43[0x1];
     s16 unk44;
     u8 _pad46[0xA];
     void (*unk50)(struct Obj801C53A0 *, u8);
@@ -69,6 +69,9 @@ typedef struct Obj801C53A0 {
     s8 unk10B;
     u8 _pad10C[0x54];
     u16 unk160;
+    u8 _pad162[0x2];
+    u16 unk164;
+    u8 _pad166[0x2];
 } Obj801C53A0;
 
 typedef struct Elem801C5FD0 {
