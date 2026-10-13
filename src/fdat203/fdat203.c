@@ -232,7 +232,15 @@ void func_8004EEC4(Obj8004EE14 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004EF38);
+s32 func_8004EF38(Sub8007618C_fdat202 *arg0) {
+    Sub8004ECA8 *tbl;
+
+    if (arg0->unkC > 0) {
+        tbl = arg0->unk1C;
+        return ((Elem8004ECA8 *)(tbl->unkC[arg0->unk0] + (s32)tbl))->unk10 - 1;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004EF78);
 
