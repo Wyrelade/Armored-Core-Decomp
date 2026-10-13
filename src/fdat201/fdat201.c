@@ -289,7 +289,26 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80050944);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80050A54);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80050AF4);
+void func_80050AF4(s32 arg0, s32 arg1) {
+    Obj800513F0 sp18;
+    u32 **tbl;
+    u32 **slot;
+    s32 id;
+    s32 obj;
+    s32 idx;
+
+    idx = (s16)arg0;
+    tbl = D_801F36D0;
+    slot = &tbl[idx];
+    if (*slot != NULL) {
+        func_80051078(*slot);
+    }
+    id = func_80015C9C(5, (u16)arg1, &sp18);
+    obj = func_80050FC4(id);
+    *slot = (u32 *)obj;
+    D_801BC478[idx] = id;
+    func_80015B78(0x10, &sp18, id, obj, func_80050B9C);
+}
 
 void func_80050B9C(s32 arg0) {
     func_800B597C(arg0 + 4);
