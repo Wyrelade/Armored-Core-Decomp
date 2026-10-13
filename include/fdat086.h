@@ -81,5 +81,6 @@ s32 func_801C70B8(u8 arg0, u16 arg1);
 void func_801C6F78();
 void func_801C7174();
 void func_801C71D8();
+void func_801C72BC();
 
 #endif /* FDAT086_H */
