@@ -63,5 +63,6 @@ typedef struct Obj801C5B1C {
 void func_8004E98C(Sub801C4D98 *arg0, s32 arg1, s32 arg2, s32 arg3);
 Sub801C5B1C *func_80072120(s32 arg0);
 void func_801C6C1C();
+void func_801C6EB0();
 
 #endif /* FDAT012_H */
