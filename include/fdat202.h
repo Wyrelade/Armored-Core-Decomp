@@ -400,6 +400,11 @@ typedef struct Sub80052F90 {
     u16 unk16;
 } Sub80052F90;
 
+typedef struct Obj80053908 {
+    u8 _pad0[0x8];
+    s32 unk8;
+} Obj80053908;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -559,5 +564,9 @@ extern Elem80051CDC D_8008DB0C[];
 void func_800513EC(s32 arg0, s32 arg1, s32 arg2, Elem80051CDC *arg3);
 extern u8 D_80039D10;
 extern s32 D_801ED854[];
+extern Obj80053908 *D_801A5F34[];
+s32 func_80015D80(s32 arg0, s32 arg1);
+void func_800165E4(s32 arg0, s32 arg1, Obj80053908 *arg2);
+void func_800574D8(Obj80053908 *arg0);
 
 #endif /* FDAT202_H */
