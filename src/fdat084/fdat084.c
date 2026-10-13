@@ -111,7 +111,54 @@ INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C56DC);
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C57D4);
 
-INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C588C);
+void func_801C588C(Obj801C4C94 *arg0) {
+    Sub801C4C94 vec;
+    s16 angle;
+    s32 offset;
+
+    angle = func_80075EB4();
+    offset = 0;
+    switch (arg0->unk3C) {
+    case 1:
+    rotate:
+        arg0->unk12 = func_800132CC(arg0->unk12, angle, arg0->unk4->unk8);
+        func_80014728(arg0->unk12 + offset, &vec);
+        func_80014338(&vec, 0x3E8, &arg0->unkCC);
+        break;
+    case 2:
+        angle += 0x200;
+        goto rotate;
+    case 3:
+        angle -= 0x200;
+        goto rotate;
+    case 6:
+        angle += 0x800;
+        offset = 0x800;
+        goto rotate;
+    case 7:
+        angle += 0x600;
+        offset = 0x800;
+        goto rotate;
+    case 8:
+        angle += 0xA00;
+        offset = 0x800;
+        goto rotate;
+    case 4:
+        angle += 0x400;
+        goto rotate;
+    case 5:
+        angle -= 0x400;
+        goto rotate;
+    default:
+        func_800143B8(&arg0->unkCC, 0x1F4, 0x3E8, &arg0->unkCC);
+        break;
+    }
+    if (func_8004F080(&arg0->unk64, &arg0->unk8) == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C59C4);
 
