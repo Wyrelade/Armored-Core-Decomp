@@ -147,7 +147,7 @@ void func_8004CE44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3);
 void func_80075FC0(Obj8007618C *arg0);
 void func_8004ECA8(Sub8007618C *arg0);
 void func_801C4FB8(Obj801C4EB8 *arg0);
-void func_801C5A50(Obj8007618C *arg0);
+void func_801C5A50(Obj801C4EB8 *arg0);
 extern Sub80078CFC *D_8019F51C;
 extern s32 D_801C7B94;
 void func_801C5754();
