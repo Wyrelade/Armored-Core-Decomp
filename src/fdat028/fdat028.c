@@ -25,7 +25,7 @@ INCLUDE_ASM("asm/USA/fdat028/nonmatchings/fdat028", func_801C5B34);
 
 void func_801C5C08(Obj801C53A0 *arg0) {
     if (D_801D0B94[arg0->unkFC].unk0 == 0) {
-        func_80078E1C();
+        func_80078E1C(arg0);
     }
 }
 

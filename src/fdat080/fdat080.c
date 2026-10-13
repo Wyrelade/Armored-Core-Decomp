@@ -29,7 +29,7 @@ void func_801C5E2C(Obj801C5E2C *arg0) {
 
 void func_801C5E5C(Obj801C53A0 *arg0) {
     if (D_801D0B94[arg0->unkFC].unk0 == 0) {
-        func_80078E1C();
+        func_80078E1C(arg0);
     }
 }
 
