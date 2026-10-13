@@ -69,5 +69,6 @@ void func_80075FC0();
 void func_80077B78(Obj801C4E64 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6);
 void func_801C4D14(Obj801C4E64 *arg0);
 s32 rand(void);
+void func_801C5038();
 
 #endif /* FDAT084_H */
