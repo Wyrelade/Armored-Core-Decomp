@@ -114,5 +114,7 @@ s32 func_80014988(s32 arg0, s32 arg1, s32 arg2);
 void VectorNormalSS(Obj80013430 *arg0, Obj800138F0 *arg1);
 void func_80013BE8(Obj800138F0 *arg0, Obj80013A88 *arg1);
 void ApplyMatrixSV(Obj80013A88 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2);
+s32 func_800158C8(Obj800158C8 *arg0);
+void func_8001594C(Obj800158C8 *arg0, u32 arg1);
 
 #endif /* MAIN_H */

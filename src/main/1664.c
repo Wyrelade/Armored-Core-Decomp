@@ -468,7 +468,9 @@ s32 func_800158C8(Obj800158C8 *arg0) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001594C);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015A08);
+void func_80015A08(Obj800158C8 *arg0, s32 arg1, Obj800158C8 *arg2) {
+    func_8001594C(arg2, func_800158C8(arg0) + arg1);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015A48);
 
