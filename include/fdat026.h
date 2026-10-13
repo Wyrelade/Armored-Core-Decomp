@@ -118,5 +118,10 @@ void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s3
 void func_8004DE88(Sub8007618C *arg0, Sub8004DE88 *arg1);
 void func_800775B8(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
 void func_801C5CA8();
+void func_801C980C();
+void func_801C75AC();
+void func_801C8CAC();
+void func_801C91BC();
+void func_801C9508(Obj8007618C *arg0);
 
 #endif /* FDAT026_H */
