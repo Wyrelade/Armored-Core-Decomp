@@ -235,4 +235,10 @@ INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801CB5E8);
 
 INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801CB710);
 
-INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801CCA40);
+void func_801CCA40(Obj801C4E64 *arg0) {
+    arg0->unk50 = func_801CB710;
+    arg0->unk54 = func_801C94B0;
+    arg0->unk58 = func_801CABB0;
+    arg0->unk5C = func_801CB0C0;
+    func_801CB40C();
+}
