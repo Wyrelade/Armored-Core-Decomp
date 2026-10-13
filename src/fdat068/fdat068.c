@@ -81,7 +81,9 @@ void func_801C634C(Obj801C5EA0 *arg0) {
 void func_801C6388(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat068/nonmatchings/fdat068", func_801C6390);
+void func_801C6390(void) {
+    func_80056C6C(1, 0x1FB, 1, 1, 2, 0xD, 1);
+}
 
 INCLUDE_ASM("asm/USA/fdat068/nonmatchings/fdat068", func_801C63D4);
 
