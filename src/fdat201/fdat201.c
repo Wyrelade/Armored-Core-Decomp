@@ -1214,7 +1214,15 @@ void func_8005D21C(u8 *arg0, s16 arg1, s16 arg2) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005D2DC);
+void func_8005D2DC(u8 *arg0, s32 arg1, s32 arg2) {
+    while (*arg0 != 0) {
+        D_800B7410.unk0 = ((*arg0 - 0x20) & 0x1F) * 2 + 0x1C0;
+        D_800B7410.unk2 = ((*arg0 - 0x20) / 32) * 8 + 0x60;
+        MoveImage((u8 *)&D_800B7410, (s16)arg1, (s16)arg2);
+        arg0++;
+        arg1++;
+    }
+}
 
 Obj8004DEB0 *func_8005D39C(s32 arg0) {
     Obj8004DEB0 *obj;
