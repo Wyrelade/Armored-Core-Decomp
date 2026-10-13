@@ -26,5 +26,6 @@ void func_801B847C();
 Sub801C5550 *func_800729F8(s32 arg0);
 void func_801B859C();
 void func_801B860C();
+void func_801B8874();
 
 #endif /* FDAT182_H */
