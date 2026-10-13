@@ -95,21 +95,33 @@ INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C63F8);
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6460);
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6594);
+void func_801C6594(Obj801C4C94 *arg0) {
+    arg0->unk36 = 2;
+    arg0->unk38 = 0x10;
+    arg0->unk50 = func_801C61AC;
+    arg0->unk54 = func_801C6460;
+    arg0->unk58 = func_801C6238;
+    if (arg0->unk54 != NULL) {
+        arg0->unk54(arg0, 0);
+    }
+    if (arg0->unk50 != NULL) {
+        arg0->unk50(arg0, arg0->unk41);
+    }
+}
 
 void func_801C6618(Obj801C52C0 *arg0) {
-    func_801C6594();
+    func_801C6594((Obj801C4C94 *)arg0);
     arg0->unk58 = func_801C6258;
     arg0->unkFC = rand() & 0xFFF;
     arg0->unkFE = rand() & 0xFFF;
 }
 
-void func_801C6664(void) {
-    func_801C6594();
+void func_801C6664(Obj801C4C94 *arg0) {
+    func_801C6594(arg0);
 }
 
-void func_801C6684(void) {
-    func_801C6594();
+void func_801C6684(Obj801C4C94 *arg0) {
+    func_801C6594(arg0);
 }
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C66A4);

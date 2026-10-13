@@ -147,9 +147,12 @@ typedef struct Obj801C4C94 {
     Sub801C4E00 *unk0;
     u8 _pad4[0x4];
     Sub801C4C94 unk8;
-    u8 _pad10[0x26];
+    u8 _pad10[0x1C];
+    s16 unk2C;
+    u8 _pad2E[0x8];
     s16 unk36;
-    u8 _pad38[0x4];
+    s16 unk38;
+    u8 _pad3A[0x2];
     u8 unk3C;
     u8 unk3D;
     u8 _pad3E[0x3];
@@ -183,7 +186,7 @@ void func_801C6238(void);
 s32 rsin(s32 arg0);
 extern u8 D_801C7348[];
 extern u8 D_801C734C[];
-void func_801C6594();
+void func_801C6594(Obj801C4C94 *arg0);
 s32 rand(void);
 void func_801C6258(Obj801C52C0 *arg0);
 Task801C6254 *func_80072120(s32 arg0);
@@ -194,5 +197,7 @@ extern u16 D_801A26E0;
 extern u16 D_801A26E2;
 void func_80012794(s16 *arg0, u16 arg1, u16 arg2, s32 arg3, u8 *arg4, s32 arg5, s32 arg6);
 void func_8004E98C(Sub801C4D98 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_801C61AC(Obj801C52C0 *arg0, u8 arg1);
+void func_801C6460();
 
 #endif /* FDAT036_H */
