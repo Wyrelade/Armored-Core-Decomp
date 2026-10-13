@@ -429,6 +429,12 @@ typedef struct Obj80087A24_fdat202 {
     u16 unkBE;
 } Obj80087A24_fdat202;
 
+typedef struct Elem8004C840 {
+    s16 unk0;
+    u8 _pad2[0x2];
+    u32 *unk4;
+} Elem8004C840;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -562,5 +568,9 @@ void func_80076338(Obj800732FC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 
 void func_8007A09C();
 extern u8 D_80039C5D;
 void func_800131D0(Sub8004EFB8 *arg0, s32 arg1, s16 arg2);
+extern Elem8004C840 D_80041BD0[];
+s16 SsVabOpenHead(u32 *arg0, s32 arg1);
+s16 SsVabTransBodyPartly(u8 *arg0, s32 arg1, s16 arg2);
+void SsVabTransCompleted(s32 arg0);
 
 #endif /* FDAT203_H */
