@@ -561,7 +561,54 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800562FC);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005631C);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80056434);
+void func_80056434(void) {
+    SetGeomOffset(0x4F, 0x3C);
+    SetGeomScreen(0xA0);
+    SetDefDrawEnv(&D_801ADA54[0].unk0[0], 2, 0x28, 0x9E, 0x78);
+    SetDefDrawEnv(&D_801ADA54[0].unk0[1], 0xA0, 0x28, 0x9E, 0x78);
+    SetDefDrawEnv(&D_801ADA54[0].unk0[2], 0, 0, 0x140, 0xF0);
+    SetDefDispEnv(&D_801ADA54[0].unk114, 0, 0xF0, 0x140, 0xF0);
+    SetDefDrawEnv(&D_801ADA54[1].unk0[0], 2, 0x118, 0x9E, 0x78);
+    SetDefDrawEnv(&D_801ADA54[1].unk0[1], 0xA0, 0x118, 0x9E, 0x78);
+    SetDefDrawEnv(&D_801ADA54[1].unk0[2], 0, 0xF0, 0x140, 0xF0);
+    SetDefDispEnv(&D_801ADA54[1].unk114, 0, 0, 0x140, 0xF0);
+    D_801ADA6D = 0;
+    D_801ADA6E = 0;
+    D_801ADA6F = 0;
+    D_801ADBA9 = 0;
+    D_801ADBAA = 0;
+    D_801ADBAB = 0;
+    D_801ADAC9 = 0;
+    D_801ADACA = 0;
+    D_801ADACB = 0;
+    D_801ADC05 = 0;
+    D_801ADC06 = 0;
+    D_801ADC07 = 0;
+    D_801ADB25 = 0;
+    D_801ADB26 = 0;
+    D_801ADB27 = 0;
+    D_801ADC61 = 0;
+    D_801ADC62 = 0;
+    D_801ADC63 = 0;
+    func_8005631C();
+    SetGeomScreen(0xA0);
+    SetFarColor(0, 0, 0);
+    D_801ADA48 = -1;
+    func_80054888();
+    func_80056180();
+    D_801B4F88 = 0;
+    D_801B4F60 = 0;
+    D_801B4F74 = 0;
+    D_801B419B = 0;
+    D_801B419A = 0;
+    D_801B4199 = 0;
+    D_801B4198 = 0;
+    D_801B4114 = 0;
+    D_801B4108 = 0;
+    func_800154D8(D_8008CB48, D_8008970C, 0x200);
+    func_800562FC();
+    D_801B4104 = 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80056688);
 
