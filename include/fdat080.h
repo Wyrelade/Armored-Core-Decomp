@@ -336,6 +336,6 @@ void func_801CADD0();
 void func_8008A80C();
 u16 func_80073904(void);
 extern Elem801C5FD0 D_801D0B94[];
-void func_80078E1C(Obj801C53A0 *arg0);
+void func_80078E1C(Obj801C4E64 *arg0);
 
 #endif /* FDAT080_H */
