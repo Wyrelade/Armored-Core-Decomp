@@ -135,7 +135,30 @@ void func_801C6EB0(Obj801C6B58 *arg0) {
 void func_801C6EEC(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat074/nonmatchings/fdat074", func_801C6EF4);
+Obj801C5AF0 *func_801C6EF4(void) {
+    Obj801C5AF0 *obj;
+    Obj801C5AF0 *best;
+    s32 r;
+    s32 i;
+    s32 max;
+
+    obj = D_801A26B8;
+    best = NULL;
+    i = 0x10;
+    max = -1;
+    do {
+        if (obj->unk0 != NULL && (obj->unk36 & 7) == 2) {
+            r = rand();
+            if (max < r) {
+                max = r;
+                best = obj;
+            }
+        }
+        i--;
+        obj++;
+    } while (i != 0);
+    return best;
+}
 
 INCLUDE_ASM("asm/USA/fdat074/nonmatchings/fdat074", func_801C6FA0);
 

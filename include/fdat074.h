@@ -88,5 +88,6 @@ void func_801C5E74();
 void func_801C6308();
 void func_801C60A8(Obj801C5AF0 *arg0);
 void func_801C64AC();
+extern Obj801C5AF0 D_801A26B8[];
 
 #endif /* FDAT074_H */
