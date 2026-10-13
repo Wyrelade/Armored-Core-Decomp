@@ -110,6 +110,18 @@ s32 func_801C6BE4(s32 arg0) {
     return 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat002/nonmatchings/fdat002", func_801C6C20);
+void func_801C6C20(Obj801C4EB8 *arg0) {
+    Sub801C6C20 *ref;
+
+    if (arg0->unk160 == 0) {
+        ref = arg0->unk0;
+        if (D_8019F51C->unk20[ref->unkA] == func_801C5E60) {
+            D_801C6DF4 += 0x1F4;
+        }
+        if (D_8019F51C->unk20[ref->unkA] == func_801C5E84) {
+            D_801C6DF0 -= 0x3E8;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat002/nonmatchings/fdat002", func_801C6CBC);
