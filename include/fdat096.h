@@ -82,5 +82,8 @@ extern Elem801C52C0 D_801CC098;
 void func_801CC04C(Obj801C52C0 *arg0);
 extern Elem801C52C0 D_801CC5DC[];
 extern Elem801C52C0 D_801CD5A8;
+Sub801C5D10 *func_80072120(s32 arg0);
+void func_801C5B4C();
+void func_801C5A70();
 
 #endif /* FDAT096_H */
