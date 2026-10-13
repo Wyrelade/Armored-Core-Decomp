@@ -845,5 +845,6 @@ void func_8006F0F4(s32 arg0, s32 arg1, s32 arg2, s32 *arg3);
 s32 func_80070C9C(s32 arg0, s32 arg1);
 s32 func_80070F0C(s32 arg0);
 extern Elem8007286C D_801A4C68[];
+void SsVabClose(s16 arg0);
 
 #endif /* FDAT204_H */
