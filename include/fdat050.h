@@ -242,6 +242,17 @@ typedef struct Obj801C63CC {
     s16 unkBE;
 } Obj801C63CC;
 
+typedef struct Obj801C7360 {
+    u8 _pad0[0x8];
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u8 _padE[0x14];
+    u16 unk22;
+    u16 unk24;
+    u16 unk26;
+} Obj801C7360;
+
 /* @externs */
 extern Elem801C5454 D_801CCD2C;
 void func_801CCCE0(Obj801C5454 *arg0);
@@ -256,7 +267,7 @@ void func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
 void func_801C694C(Obj801C5454 *arg0);
 void func_801C69E8();
 Sub801C5B54 *func_80073674(s32 arg0);
-void func_801C6A80();
+void func_801C6A80(Obj801C7360 *arg0);
 s32 func_801C6C30(u8 arg0, u16 arg1);
 void func_801C6AF0();
 s32 func_80014D78(u8 arg0);
