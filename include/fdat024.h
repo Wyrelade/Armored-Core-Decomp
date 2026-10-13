@@ -79,5 +79,6 @@ void func_801C4FDC();
 void func_801C534C();
 Sub801C6060 *func_80072120(s32 arg0);
 void func_801C5E08();
+void func_801C61B0();
 
 #endif /* FDAT024_H */
