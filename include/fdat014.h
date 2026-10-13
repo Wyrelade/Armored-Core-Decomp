@@ -54,5 +54,11 @@ typedef struct Obj801C4C94 {
 /* @externs */
 void func_8004EC4C(Sub801C4D98 *arg0);
 void func_80075FC0();
+extern u8 D_801C8478[];
+void func_8004CE44(s32 arg0, Sub801C4C94 *arg1, s32 arg2, s32 arg3);
+void func_8004ECA8(Sub801C4D98 *arg0);
+void func_80077B78(Obj801C4C94 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6);
+void func_801C4CB0(Obj801C4C94 *arg0);
+s32 rand(void);
 
 #endif /* FDAT014_H */
