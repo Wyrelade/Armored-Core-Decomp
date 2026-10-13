@@ -50,7 +50,19 @@ INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C5F68);
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C5F98);
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C61AC);
+void func_801C61AC(Obj801C52C0 *arg0, u8 arg1) {
+    u8 saved;
+
+    saved = arg1;
+    if (arg0->unk36 & 0x10) {
+        saved = arg0->unk3C;
+    }
+    D_801A5DC8 = 0;
+    func_800775B8(arg0, 0, 1, 0, &arg0->unkCC, func_801C5F98);
+    if (!(arg0->unk36 & 0x10)) {
+        arg0->unk3C = saved;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6238);
 
