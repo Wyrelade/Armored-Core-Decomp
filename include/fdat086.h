@@ -179,6 +179,11 @@ typedef struct Elem801C5F00 {
     u8 _pad30[0x10];
 } Elem801C5F00;
 
+typedef struct Obj801C6870 {
+    u8 _pad0[0xA];
+    u16 unkA;
+} Obj801C6870;
+
 /* @externs */
 extern Elem801C6508 D_801CCF68;
 void func_801CCE38(Obj801C6508 *arg0);
