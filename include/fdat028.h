@@ -32,5 +32,6 @@ typedef struct Obj801C60B4 {
 /* @externs */
 Sub801C60B4 *func_80072120(s32 arg0);
 void func_801C603C();
+void func_801C62D0();
 
 #endif /* FDAT028_H */
