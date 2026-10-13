@@ -44,7 +44,10 @@ typedef struct Obj801C52C0 {
     Sub801C52C0 *unk108;
     u8 _pad10C[0x3C];
     u16 unk148;
-    u8 _pad14A[0x12];
+    u8 unk14A;
+    u8 unk14B;
+    u8 unk14C;
+    u8 _pad14D[0xF];
     s32 unk15C;
 } Obj801C52C0;
 
