@@ -81,5 +81,6 @@ typedef struct Obj801C5418 {
 extern Sub801C5418 D_801CBEAC;
 void func_801CBE60(Obj801C4C94 *arg0);
 void func_801C5528();
+void func_801C63FC();
 
 #endif /* FDAT008_H */
