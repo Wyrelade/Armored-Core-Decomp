@@ -955,7 +955,41 @@ void func_80056D48(Obj8004DEB0 *arg0) {
     arg0->unk74 = func_80056D58;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80056D58);
+void func_80056D58(Obj8004DEB0 *arg0) {
+    void (*callback)();
+    u8 *data;
+    Obj8004DEB0 **slots;
+    u8 idx;
+
+    slots = &arg0->unk7C;
+    slots[arg0->unkA4 + 7] = (Obj8004DEB0 *)func_800684A0(arg0->unkA4);
+    idx = arg0->unkA4;
+    if (slots[idx + 7] != NULL) {
+        func_800506EC(0xA);
+        func_8005015C(9)->unk1 = 1;
+        func_8005C2D0(0xC, 0x68, 0x128, 0x20, 9);
+        func_8005DED8(arg0, func_800549D0, D_8004B1E8, 0xC);
+        SsUtKeyOn(D_801A2318, 0, 0, 0x3C, 0, 0x7F, 0x7F);
+    } else {
+        if (func_800B498C(idx, ((u8 *)&arg0->unkA8)[0] + ((u8 *)&arg0->unkA8)[1] * 4) & 0xFF) {
+            if (arg0->unk80 == NULL) {
+                callback = func_800537E0;
+                data = D_8004B258;
+            } else {
+                callback = func_8005552C;
+                data = D_8004B258;
+            }
+        } else {
+            callback = func_80054258;
+            data = D_8004B26C;
+        }
+        func_8005DED8(arg0, callback, data, 0xC);
+        func_800506EC(0xA);
+        func_8005015C(9)->unk1 = 1;
+        func_8005C2D0(0xC, 0x68, 0x128, 0x20, 9);
+    }
+    arg0->unk74 = func_800507FC;
+}
 
 void func_80056EF4(u8 *arg0, u8 *arg1) {
     Obj80056EF4 *obj;
