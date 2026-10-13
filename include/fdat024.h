@@ -169,10 +169,24 @@ typedef struct Obj801C5F00 {
     u16 unk24;
 } Obj801C5F00;
 
+typedef struct Sub801C5EA8 {
+    u8 _pad0[0x10];
+    u8 unk10;
+} Sub801C5EA8;
+
+typedef struct Sub801C6050 {
+    u8 _pad0[0x6];
+    u8 unk6;
+} Sub801C6050;
+
 typedef struct Elem801C5F00 {
-    u8 _pad0[0x2C];
-    s32 unk2C;
-    u8 _pad30[0x10];
+    u8 _pad0[0x26];
+    s16 unk26;
+    u16 *unk28;
+    Sub801C5EA8 *unk2C;
+    u8 _pad30[0x8];
+    Sub801C6050 *unk38;
+    u8 _pad3C[0x4];
 } Elem801C5F00;
 
 typedef struct Obj801C572C {
