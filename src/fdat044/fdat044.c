@@ -91,7 +91,16 @@ s32 func_801C6678(s32 arg0) {
     return 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C6718);
+void func_801C6718(Obj801C6718 *arg0) {
+    arg0->unk4 += arg0->unk26;
+    arg0->unk26 += 4;
+    arg0->unkBA += arg0->unk18;
+    arg0->unk18 += arg0->unk1A;
+    arg0->unkE = func_8006E6B4(arg0->unkE, arg0);
+    if (arg0->unkBA <= arg0->unk1C) {
+        arg0->unk12 = 0;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C67A0);
 
