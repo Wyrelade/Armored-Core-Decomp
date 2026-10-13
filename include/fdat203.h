@@ -600,5 +600,6 @@ void func_800520B8(s32 arg0, s32 arg1, s32 arg2, Elem800529A8 *arg3);
 extern Sub80053304 *D_8019D96C[];
 extern s32 D_8019D968;
 void func_80056ED4(Sub80053304 *arg0);
+extern Obj800558A8 D_8019DF80[];
 
 #endif /* FDAT203_H */

@@ -413,7 +413,18 @@ s32 func_800540DC(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005414C);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055238);
+void func_80055238(void) {
+    Obj800558A8 *p;
+    u16 i;
+
+    p = D_8019DF80;
+    i = 2;
+    do {
+        p->unk0 = 0;
+        p->unk20 = NULL;
+        p++;
+    } while (--i != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055268);
 
