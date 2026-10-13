@@ -249,8 +249,9 @@ void func_801C7CB8();
 void func_801C95BC();
 void func_801CACBC();
 void func_801CB1CC();
-void func_801CB518(Obj801C52C0 *arg0);
+void func_801CB518(Obj801C52C0_fdat000 *arg0);
 void func_801CB81C();
 void func_8008A80C();
+u16 func_80073904(void);
 
 #endif /* FDAT090_H */
