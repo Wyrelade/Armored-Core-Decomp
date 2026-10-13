@@ -1520,7 +1520,7 @@ extern s16 D_8019C104[];
 extern u8 D_800B8BC0[];
 void func_80095824();
 extern u8 D_800B8BD8[];
-void func_80095FE0();
+void func_80095FE0(Obj8008AF0C *arg0);
 void func_8009972C(void);
 void func_800997BC(Obj8004DEB0 *arg0);
 void func_80097CD4();
