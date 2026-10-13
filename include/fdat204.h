@@ -612,5 +612,8 @@ void func_8007D818(Obj80073138 *arg0, u8 arg1);
 void func_8007F0C0();
 void func_8007C3F0();
 void func_8007F5E4();
+void func_8007FCC8(Obj80073138 *arg0, u8 arg1);
+void func_80080C90();
+void func_80081004();
 
 #endif /* FDAT204_H */
