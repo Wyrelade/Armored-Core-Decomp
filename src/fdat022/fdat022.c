@@ -160,6 +160,10 @@ s32 func_801C73A4(s32 arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat022/nonmatchings/fdat022", func_801C73EC);
+void func_801C73EC(Obj801C53A0 *arg0) {
+    if (arg0->unk160 == 0 && D_8019F51C->unk20[arg0->unk0->unkA] == func_801C6758) {
+        D_801C7624 += 0x1388;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat022/nonmatchings/fdat022", func_801C744C);
