@@ -103,7 +103,9 @@ INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C60F0);
 
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C61E8);
 
-INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C62A0);
+s32 func_801C62A0(s32 arg0) {
+    return ((rand() * arg0) >> 0xF) - (arg0 >> 1);
+}
 
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C62DC);
 
