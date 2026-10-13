@@ -131,7 +131,16 @@ void func_801C6A9C(Obj801C61D0 *arg0) {
 void func_801C6AD8(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat034/nonmatchings/fdat034", func_801C6AE0);
+s32 func_801C6AE0(Sub801C6AE0 *arg0) {
+    s32 dx;
+    s32 dy;
+    s32 dz;
+
+    dx = (arg0->unk4 - D_801A26C0) >> 2;
+    dy = (arg0->unk6 - D_801A26C2) >> 2;
+    dz = (arg0->unk8 - D_801A26C4) >> 2;
+    return dx * dx + dy * dy + dz * dz;
+}
 
 INCLUDE_ASM("asm/USA/fdat034/nonmatchings/fdat034", func_801C6B44);
 
