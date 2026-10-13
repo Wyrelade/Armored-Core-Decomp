@@ -150,5 +150,7 @@ void func_801C614C();
 void func_801C6760();
 extern Sub801C6864 D_801CE024;
 void func_801CD89C(Obj801C6864 *arg0);
+Sub801C6AEC *func_80072120(s32 arg0);
+void func_801C6894();
 
 #endif /* FDAT052_H */
