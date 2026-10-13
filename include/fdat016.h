@@ -96,6 +96,26 @@ typedef struct Obj801C78F4 {
     Task801C788C *unk14;
 } Obj801C78F4;
 
+typedef struct Sub801C7AB8 {
+    void (*unk0)();
+    void (*unk4)();
+} Sub801C7AB8;
+
+typedef struct Obj801C7AB8 {
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0xC];
+    Sub801C7AB8 *unk14;
+    u8 _pad18[0xA];
+    u8 unk22;
+    u8 _pad23;
+    u16 unk24;
+    u8 _pad26[0x4];
+    u8 unk2A;
+    u8 _pad2B;
+    u16 unk2C;
+} Obj801C7AB8;
+
 /* @externs */
 void func_801C62CC();
 void func_801C69BC(Obj801C6A60 *arg0);
@@ -115,5 +135,7 @@ void func_801C7624(Obj801C730C *arg0);
 void func_801C76C0();
 void *func_80073674(s32 arg0);
 void func_801C7758();
+s32 func_801C7A70(u8 arg0, u16 arg1);
+void func_801C7930();
 
 #endif /* FDAT016_H */
