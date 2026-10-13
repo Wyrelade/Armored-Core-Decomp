@@ -683,5 +683,9 @@ void func_80055BA0(s32 arg0, Obj80083FDC *arg1, s32 arg2, s16 arg3, s32 arg4, u8
 s32 func_80082194(Obj80083FDC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub80083FDC *arg4, s32 *arg5, s32 *arg6, s32 arg7);
 Obj800842F8 *func_800842F8(s32 arg0, Obj80083FDC *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
 extern Elem80083FDC D_8008BE80[];
+s32 func_8006C810(s32 arg0, s32 arg1, s32 arg2, Obj8006C810 *arg3);
+void func_80082018(s32 arg0, s32 arg1, s16 *arg2, s16 *arg3, u16 *arg4);
+void func_800852B0(s32 arg0, Obj8008800C *arg1, s32 *arg2);
+void func_80085E54(s32 arg0, u16 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
 
 #endif /* FDAT204_H */
