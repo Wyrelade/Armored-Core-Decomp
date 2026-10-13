@@ -95,7 +95,19 @@ void func_801C6360(Obj801C6360 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C63CC);
+void func_801C63CC(Obj801C63CC *arg0) {
+    arg0->unkBE = arg0->unk26 >> 4;
+    arg0->unk26 += arg0->unk1E;
+    arg0->unkB8 += arg0->unk28;
+    arg0->unkB9 += arg0->unk29;
+    arg0->unkBA += arg0->unk2A;
+    arg0->unk0 += arg0->unk18 >> 8;
+    arg0->unk2 += arg0->unk1A >> 8;
+    arg0->unk4 += arg0->unk1C >> 8;
+    arg0->unk18 += arg0->unk20;
+    arg0->unk1A += arg0->unk22;
+    arg0->unk1C += arg0->unk24;
+}
 
 INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6498);
 
