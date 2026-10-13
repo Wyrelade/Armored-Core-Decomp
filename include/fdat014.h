@@ -148,7 +148,7 @@ void func_8007790C(Obj801C504C *arg0, u8 arg1, s32 arg2, s32 arg3, s16 *arg4, s3
 void func_80078598(Obj801C504C *arg0);
 s32 func_801C5B8C(Obj801C504C *arg0);
 void func_801C5C68(Obj801C504C *arg0, s32 arg1, s32 arg2);
-void func_801C5910();
+void func_801C5910(Obj801C4C94 *arg0);
 void *func_80072120(s32 arg0);
 void func_801C6B00();
 void func_801C6EA8();
