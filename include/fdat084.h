@@ -120,5 +120,9 @@ void func_801C7448();
 Sub801C6B04 *func_80073674(s32 arg0);
 void func_801C74E0();
 void func_801C7544();
+extern u16 D_8019F528;
+extern s32 D_801C79FC;
+void func_8004C318(s32 arg0);
+void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
 
 #endif /* FDAT084_H */

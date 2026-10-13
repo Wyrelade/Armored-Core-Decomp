@@ -181,6 +181,23 @@ void func_801C7628(void) {
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C7630);
 
-INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C775C);
+s32 func_801C775C(s32 arg0) {
+    if (D_8019F528 == 0) {
+        switch (arg0) {
+        case 0:
+            if (D_801C79FC == 0) {
+                D_801C79FC = 1;
+                func_800529F0(0, 0, 0x28);
+            }
+            break;
+        case 1:
+            func_800529F0(0, 0, 0x2B);
+            func_800529F0(0, 0, 0x68);
+            func_8004C318(0x80);
+            break;
+        }
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C77F0);
