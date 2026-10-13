@@ -1397,7 +1397,7 @@ void func_80078CFC(u8 *arg0) {
     Obj80078CFC *obj;
 
     if (arg0 >= D_8019FB68) {
-        obj = func_80078A2C();
+        obj = func_80078A2C((Sub80075350 *)arg0);
         if (obj != NULL) {
             func_80078B14(obj, arg0);
             D_8019F51C->unk20[obj->unkE](obj);
