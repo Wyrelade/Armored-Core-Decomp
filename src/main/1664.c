@@ -1704,7 +1704,9 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80031400);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800314A0);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8003158C);
+Obj80077854 *func_8003158C(void) {
+    return NULL;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", AddDrv);
 
