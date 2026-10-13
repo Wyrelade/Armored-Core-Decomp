@@ -31,6 +31,11 @@ typedef struct Obj801C66D8 {
     Sub801C5CD0 *unk2C;
 } Obj801C66D8;
 
+typedef struct Obj801C6720 {
+    u8 _pad0[0xA];
+    u16 unkA;
+} Obj801C6720;
+
 /* @externs */
 u16 func_80073904(void);
 void func_801C4FFC();
