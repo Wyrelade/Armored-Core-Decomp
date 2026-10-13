@@ -13,7 +13,9 @@ void func_801B8280(Obj801B8280 *arg0) {
     arg0->unk2C->unk4 = NULL;
 }
 
-INCLUDE_ASM("asm/USA/fdat180/nonmatchings/fdat180", func_801B82C8);
+void func_801B82C8(Obj801C6720 *arg0) {
+    arg0->unkA += 0x20;
+}
 
 void func_801B82DC(Obj801B82DC *arg0) {
     Sub801C5550 *task;
