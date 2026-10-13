@@ -35,6 +35,7 @@ import argparse
 import hashlib
 import os
 import platform
+import re
 import subprocess
 import sys
 
@@ -182,6 +183,31 @@ def assemble_asm(unit, as_bin):
     return True
 
 
+def extract_rodata(src):
+    """INCLUDE_RODATA(folder, SYM) for rodata splat migrated into a function already matched
+    in C: splat writes no nonmatchings/SYM.s for it, only the function's file under matchings/
+    (disassemble_all). Cut SYM's dlabel block out of that file into folder/SYM.s."""
+    text = open(src).read()
+    for folder, sym in re.findall(r'^INCLUDE_RODATA\("([^"]+)", (\w+)\);', text, re.M):
+        dst = os.path.join(ROOT, folder, sym + ".s")
+        if os.path.exists(dst):
+            continue
+        mdir = os.path.join(ROOT, folder.replace("/nonmatchings/", "/matchings/"))
+        block = None
+        for name in sorted(os.listdir(mdir)) if os.path.isdir(mdir) else []:
+            t = open(os.path.join(mdir, name)).read()
+            m = re.search(r"(?:\.align \d+\n)?nonmatching %s\n.*?enddlabel %s\n" % (sym, sym), t, re.S)
+            if m:
+                block = m.group(0)
+                break
+        if block is None:
+            print("BUILD FAILED: %s: no rodata block for %s under %s" % (src, sym, mdir))
+            return False
+        with open(dst, "w", newline="\n") as fh:
+            fh.write(".section .rodata\n\n" + block)
+    return True
+
+
 def compile_c(unit, cpp, cc1, as_bin):
     root = os.path.join(ROOT, "src", unit)
     if not os.path.isdir(root):
@@ -198,6 +224,8 @@ def compile_c(unit, cpp, cc1, as_bin):
             obj = obj_for(src)
             base = os.path.join(tmp, rel.replace("/", "_"))
             i_file, s_file = base + ".i", base + ".s"
+            if not extract_rodata(src):
+                return False
             if run([cpp] + CPP_FLAGS + ["-o", i_file, src]) != 0:
                 print("BUILD FAILED: preprocessing %s" % rel)
                 return False
