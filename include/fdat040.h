@@ -160,5 +160,6 @@ Sub801C6020 *func_80072120(s32 arg0);
 void func_801C5D80();
 void func_801C5E5C();
 void func_801C5DE4();
+void func_801C60F8();
 
 #endif /* FDAT040_H */
