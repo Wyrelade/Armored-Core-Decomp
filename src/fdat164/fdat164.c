@@ -22,4 +22,11 @@ void func_801C8D88(Obj801B82DC *arg0) {
 void func_801C8DC4(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat164/nonmatchings/fdat164", func_801C8DCC);
+void func_801C8DCC(void) {
+    if ((D_80040FB0 & 7) == 1) {
+        D_80041338->unk8 |= 1;
+    }
+    if ((D_8004134C & 7) == 1) {
+        D_800416D4->unk8 |= 1;
+    }
+}
