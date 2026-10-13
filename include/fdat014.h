@@ -36,7 +36,8 @@ typedef struct Obj801C4C94 {
     u8 _pad38[0x4];
     u8 unk3C;
     u8 unk3D;
-    u8 _pad3E[0x3];
+    u8 _pad3E[0x2];
+    u8 unk40;
     u8 unk41;
     u8 _pad42[0xE];
     void (*unk50)(struct Obj801C4C94 *, u8);
@@ -47,7 +48,12 @@ typedef struct Obj801C4C94 {
     Sub801C4D98 unk64;
     u8 _pad72[0x5A];
     Sub801C4C94 unkCC;
-    u8 _padD4[0x88];
+    u8 _padD4[0x74];
+    u16 unk148;
+    u8 unk14A;
+    u8 unk14B;
+    u8 unk14C;
+    u8 _pad14D[0xF];
     s32 unk15C;
 } Obj801C4C94;
 
