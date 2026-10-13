@@ -523,7 +523,7 @@ void func_8006D084(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006E3D0(s32 *arg0, Sub8004F1D4 *arg1, s32 *arg2);
 extern s32 D_8019D844;
 extern s32 D_8019D848;
-void func_8004E0C8(Obj8004EE14 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3);
+void func_8004E0C8(Sub8007618C_fdat202 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3);
 s32 func_8004E448(Obj8004EE14 *arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2, Sub8004DE88 *arg3, Sub8004DE88 *arg4);
 void func_8004EBA8(Obj8004EE14 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8004EC58(Obj8004EE14 *arg0, s32 arg1, s32 arg2);
