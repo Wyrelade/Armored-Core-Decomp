@@ -96,5 +96,8 @@ void func_801C6238(void);
 s32 rsin(s32 arg0);
 extern u8 D_801C7348[];
 extern u8 D_801C734C[];
+void func_801C6594();
+s32 rand(void);
+void func_801C6258(Obj801C52C0 *arg0);
 
 #endif /* FDAT036_H */
