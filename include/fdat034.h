@@ -155,5 +155,12 @@ void func_801C6780();
 extern s16 D_801A26C0;
 extern s16 D_801A26C2;
 extern s16 D_801A26C4;
+void func_8004C318(s32 arg0);
+s32 func_80052338(void);
+void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
+void func_8008A80C(void);
+extern u16 D_8019F528;
+extern s32 D_801CCA80;
+extern s32 D_801CCA84;
 
 #endif /* FDAT034_H */
