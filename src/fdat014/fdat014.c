@@ -116,7 +116,13 @@ void func_801C5AE4(Obj801C504C *arg0) {
     arg0->unk12 += arg0->unkCC;
 }
 
-INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C5B38);
+void func_801C5B38(Obj801C504C *arg0) {
+    func_801C5A6C(arg0);
+    if (arg0->unkCC < -0x18) {
+        arg0->unkCC = -0x18;
+    }
+    arg0->unk12 += arg0->unkCC;
+}
 
 INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C5B8C);
 
