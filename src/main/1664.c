@@ -512,7 +512,16 @@ void func_80015D28(u16 arg0, u16 arg1, s32 arg2, s32 arg3) {
     func_80015B78(0x10, loc, func_80015C9C(arg0, arg1, loc), arg2, arg3);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015D80);
+s32 func_80015D80(u16 arg0, u16 arg1) {
+    u16 *tbl;
+    s32 start;
+    s32 end;
+
+    tbl = D_8004A2A4[arg0].unk0;
+    start = tbl[arg1];
+    end = tbl[arg1 + 1];
+    return (end - start) << 11;
+}
 
 void func_80015DC0(void) {
 }

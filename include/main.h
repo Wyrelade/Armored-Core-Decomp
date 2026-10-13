@@ -70,6 +70,12 @@ typedef struct Obj80013430 {
     s32 unk8;
 } Obj80013430;
 
+typedef struct Elem80015D80 {
+    u16 *unk0;
+    Obj800158C8 unk4;
+    u8 _pad7[5];
+} Elem80015D80;
+
 /* @externs */
 void free2(u32 *arg0);
 extern s32 D_80049F98;
@@ -116,5 +122,6 @@ void func_80013BE8(Obj800138F0 *arg0, Obj80013A88 *arg1);
 void ApplyMatrixSV(Obj80013A88 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2);
 s32 func_800158C8(Obj800158C8 *arg0);
 void func_8001594C(Obj800158C8 *arg0, u32 arg1);
+extern Elem80015D80 D_8004A2A4[];
 
 #endif /* MAIN_H */
