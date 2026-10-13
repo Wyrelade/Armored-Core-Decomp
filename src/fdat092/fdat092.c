@@ -213,7 +213,11 @@ void func_801C6800(s32 arg0) {
 
 INCLUDE_ASM("asm/USA/fdat092/nonmatchings/fdat092", func_801C6880);
 
-INCLUDE_ASM("asm/USA/fdat092/nonmatchings/fdat092", func_801C69E4);
+void func_801C69E4(Obj801C52C0 *arg0) {
+    arg0->unk40 = 0;
+    func_800754D0(arg0, D_801CCBB4);
+    func_80078E1C(arg0);
+}
 
 void func_801C6A20(void) {
     u8 state;

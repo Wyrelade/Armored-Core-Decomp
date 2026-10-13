@@ -321,5 +321,6 @@ void func_801C5940();
 extern Elem801C67A4 D_8019FAB9[];
 extern Obj801C52C0 D_801A26B8[];
 extern Obj801C7788 *D_8019F51C;
+extern u8 D_801CCBB4[];
 
 #endif /* FDAT092_H */
