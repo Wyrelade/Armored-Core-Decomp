@@ -37,7 +37,25 @@ void func_801C57CC(Obj801C52C0 *arg0) {
     task->unk0 = func_801C56A4;
 }
 
-INCLUDE_ASM("asm/USA/fdat066/nonmatchings/fdat066", func_801C5808);
+void func_801C5808(Obj801C5808 *arg0) {
+    Sub801C5548 *task;
+    Sub801C5808 *info;
+    s32 timer;
+
+    if (arg0->unk38->unk0 == 1) {
+        task = arg0->unk2C;
+        timer = task->unk10;
+        if (timer == 0) {
+            if (func_8006D45C() != 0) {
+                func_8006D39C(arg0);
+                info = arg0->unk38;
+                func_8008A0B0(info->unk4, info->unk5, info->unk6, info->unk8, info->unk9);
+            }
+        } else {
+            task->unk10 = timer - 1;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat066/nonmatchings/fdat066", func_801C58A4);
 
