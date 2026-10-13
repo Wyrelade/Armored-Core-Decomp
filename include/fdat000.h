@@ -80,5 +80,7 @@ typedef struct Obj801C52C0 {
 /* @externs */
 extern Elem801C52C0 D_801CAB98[];
 void func_801CAB4C(Obj801C52C0 *arg0);
+Sub801C5550 *func_80072120(s32 arg0);
+void func_801C5428();
 
 #endif /* FDAT000_H */
