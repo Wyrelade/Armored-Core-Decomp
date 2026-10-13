@@ -103,7 +103,9 @@ typedef struct Sub80077EAC {
 typedef struct Obj80077EAC {
     u8 _pad0[0x261];
     u8 unk261;
-    u8 _pad262[0x26];
+    u8 _pad262[0xE];
+    u16 unk270;
+    u8 _pad272[0x16];
     u16 unk288;
     u16 unk28A;
     u16 unk28C;
