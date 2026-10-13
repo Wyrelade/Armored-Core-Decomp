@@ -204,7 +204,12 @@ Obj801C52C0 *func_801C67A4(s32 arg0) {
     return obj;
 }
 
-INCLUDE_ASM("asm/USA/fdat092/nonmatchings/fdat092", func_801C6800);
+void func_801C6800(s32 arg0) {
+    Obj801C52C0 *obj;
+
+    obj = &D_801A26B8[D_8019FAB9[arg0].unk0];
+    D_8019F51C->unk20[obj->unk8.unk6](obj);
+}
 
 INCLUDE_ASM("asm/USA/fdat092/nonmatchings/fdat092", func_801C6880);
 
