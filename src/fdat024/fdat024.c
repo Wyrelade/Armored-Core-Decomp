@@ -153,7 +153,20 @@ INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6C5C);
 
 INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6CCC);
 
-INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6D94);
+void func_801C6D94(void) {
+    s32 n;
+
+    n = 0x8C - D_801D0B52;
+    if (n == 0xA || n == 0x50) {
+        func_8004CFC8(7, 0x7F);
+    }
+    if ((u32)(n - 0xA) < 0x1F) {
+        func_801C6CCC(0x11);
+    }
+    if ((u32)(n - 0x50) < 0x1F) {
+        func_801C6CCC(0x10);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6E14);
 
