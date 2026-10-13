@@ -642,7 +642,22 @@ void func_800165A8(u32 *arg0, Obj8001654C *arg1, s32 arg2) {
     func_80016328(arg1, arg0, (u32)(arg2 + 0x7FF) >> 11);
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800165E4);
+void func_800165E4(u16 arg0, u16 arg1, u32 *arg2) {
+    Obj8001654C loc;
+    Elem80015D80 *e;
+    u16 *tbl;
+    s32 start;
+    s32 n;
+
+    e = &D_8004A2A4[arg0];
+    tbl = e->unk0;
+    start = tbl[arg1];
+    n = tbl[arg1 + 1] - start;
+    func_80015A08(&e->unk4, start, &loc.unk0);
+    do {
+        func_80016328(&loc, arg2, n);
+    } while (func_80015B24(arg2, n) != 0);
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80016678);
 

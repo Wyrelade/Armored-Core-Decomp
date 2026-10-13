@@ -123,5 +123,7 @@ void ApplyMatrixSV(Obj80013A88 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2);
 s32 func_800158C8(Obj800158C8 *arg0);
 void func_8001594C(Obj800158C8 *arg0, u32 arg1);
 extern Elem80015D80 D_8004A2A4[];
+void func_80015A08(Obj800158C8 *arg0, s32 arg1, Obj800158C8 *arg2);
+s32 func_80015B24(u32 *arg0, s32 arg1);
 
 #endif /* MAIN_H */
