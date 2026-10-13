@@ -257,5 +257,11 @@ void func_801C54BC();
 void func_801C5620();
 void func_801C5670();
 extern Elem801C5EA8 D_801D0B68[];
+s16 func_800132CC(s16 arg0, s16 arg1, s16 arg2);
+void func_80014338(Sub8004DE88 *arg0, s32 arg1, Sub8004DE88 *arg2);
+void func_800143B8(Sub8004DE88 *arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3);
+void func_80014728(s32 arg0, Sub8004DE88 *arg1);
+s32 func_8004F080(Sub801C5458 *arg0, Sub8004DE88 *arg1);
+s16 func_80075EB4(void);
 
 #endif /* FDAT038_H */
