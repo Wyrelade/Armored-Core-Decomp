@@ -1825,7 +1825,41 @@ void func_80079728(void) {
     func_80082CAC(D_80041228[0], D_8004122A, D_8004122C, D_8004122C * D_8004122C, D_8004122E, D_8004124C, D_8004124D, (s32)&D_80041228[0x1C]);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80079798);
+void func_80079798(Obj8007618C *arg0, s32 arg1, s32 arg2) {
+    s16 cur;
+    u16 val;
+
+    if (D_80040FA8 & D_80041234) {
+        val = arg0->unk1A + arg1;
+    } else if (D_80040FA8 & D_80041236) {
+        val = arg0->unk1A - arg1;
+    } else {
+        cur = arg0->unk1A;
+        if (cur > 0) {
+            if (arg1 < cur) {
+                arg0->unk1A = cur - arg1;
+            } else {
+                arg0->unk1A = 0;
+            }
+            goto clamp;
+        }
+        if (cur >= -arg1) {
+            arg0->unk1A = 0;
+            goto clamp;
+        }
+        val = cur + arg1;
+    }
+    arg0->unk1A = val;
+clamp:
+    if (arg0->unk1A > arg2) {
+        arg0->unk1A = arg2;
+    }
+    if (arg0->unk1A < -arg2) {
+        arg0->unk1A = -arg2;
+    }
+    arg0->unk10.unk0 += arg0->unk18;
+    arg0->unk10.unk2 += arg0->unk1A;
+}
 
 void func_80079888(Obj8007618C *arg0) {
     func_8004EDAC(&arg0->unk64, &arg0->unk8);

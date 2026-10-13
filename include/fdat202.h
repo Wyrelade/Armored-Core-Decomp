@@ -688,5 +688,8 @@ extern Elem800736AC D_80198B08[];
 s32 func_80012E5C(s32 arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, s32 arg4, s32 arg5);
 Elem800781E8 *func_8007816C(Obj8007618C *arg0, Obj8007618C *arg1, Sub8004DE88 *arg2);
 extern Obj80078CFC D_801A2828[];
+extern s32 D_80040FA8;
+extern u16 D_80041234;
+extern u16 D_80041236;
 
 #endif /* FDAT202_H */
