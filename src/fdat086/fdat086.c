@@ -79,7 +79,27 @@ void func_801C7100(Obj801C6800 *arg0) {
     arg0->unk6 = -1;
 }
 
-INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C7174);
+void func_801C7174(Obj801C5F00 *arg0) {
+    u8 num;
+    s32 count;
+    Elem801C5F00 *elem;
+
+    num = arg0->unk23;
+    if (num != 0) {
+        count = num;
+        elem = &D_801D0B68[arg0->unk24];
+        do {
+            if (elem->unk2C != 0) {
+                return;
+            }
+            count--;
+            elem++;
+        } while (count != 0);
+        arg0->unk6 = -1;
+        arg0->unk14 = NULL;
+        arg0->unk1C |= 0x8000;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C71D8);
 
