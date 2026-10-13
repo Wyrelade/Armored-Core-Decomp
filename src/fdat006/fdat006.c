@@ -106,7 +106,14 @@ void func_801C6050(s32 arg0) {
     D_801D0BA0[arg0].unk0->unk6 = 0;
 }
 
-INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C6068);
+void func_801C6068(s32 arg0) {
+    Sub801C6068 *p;
+
+    p = D_801D0B94[arg0].unk0;
+    if (p != NULL) {
+        p->unk0 = 0;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C6090);
 
