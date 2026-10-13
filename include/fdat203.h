@@ -466,6 +466,11 @@ typedef struct Elem80056450 {
     u8 _pad50[0x18];
 } Elem80056450;
 
+typedef struct Elem80056D5C {
+    u8 unk0[0x5C];
+    u8 unk5C[0x24];
+} Elem80056D5C;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -616,5 +621,26 @@ extern Obj800558A8 D_8019DF80[];
 void func_800552A4(Obj800558A8 *arg0);
 extern Elem80056450 D_801A3EEC[];
 void func_800135E8(Elem80056450 *arg0, Sub80056450 *arg1, s32 arg2);
+extern Elem80056D5C D_8019D858[];
+extern s8 D_8019D871;
+extern s8 D_8019D872;
+extern s8 D_8019D873;
+extern s8 D_8019D8F1;
+extern s8 D_8019D8F2;
+extern s8 D_8019D8F3;
+extern s32 D_8019D850;
+extern s32 D_801A4BF0;
+extern s32 D_801A3D94;
+extern u8 D_8008C990[];
+extern u8 D_80089990[];
+void SetGeomOffset(s32 arg0, s32 arg1);
+void SetGeomScreen(s32 arg0);
+void SetDefDrawEnv(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+void SetDefDispEnv(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+void SetFarColor(s32 arg0, s32 arg1, s32 arg2);
+void func_80056CA4(void);
+void func_80055238(void);
+void func_80056B30(void);
+void func_800154D8(u8 *arg0, u8 *arg1, s32 arg2);
 
 #endif /* FDAT203_H */

@@ -563,7 +563,36 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056C84);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056CA4);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056D5C);
+void func_80056D5C(void) {
+    SetGeomOffset(0xA0, 0x78);
+    SetGeomScreen(0x140);
+    SetDefDrawEnv(D_8019D858[0].unk0, 0, 0, 0x140, 0xF0);
+    SetDefDispEnv(D_8019D858[0].unk5C, 0, 0xF0, 0x140, 0xF0);
+    SetDefDrawEnv(D_8019D858[1].unk0, 0, 0xF0, 0x140, 0xF0);
+    SetDefDispEnv(D_8019D858[1].unk5C, 0, 0, 0x140, 0xF0);
+    D_8019D871 = 0;
+    D_8019D872 = 0;
+    D_8019D873 = 0;
+    D_8019D8F1 = 0;
+    D_8019D8F2 = 0;
+    D_8019D8F3 = 0;
+    func_80056CA4();
+    SetGeomScreen(0x140);
+    SetFarColor(0, 0, 0);
+    D_8019D850 = -1;
+    func_80055238();
+    func_80056B30();
+    D_801A4BF0 = 0;
+    D_801A3E2B = 0;
+    D_801A3E2A = 0;
+    D_801A3E29 = 0;
+    D_801A3E28 = 0;
+    D_801A3DA4 = 0;
+    D_801A3D98 = 0;
+    func_800154D8(D_8008C990, D_80089990, 0x200);
+    func_80056C84();
+    D_801A3D94 = 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056ED4);
 
