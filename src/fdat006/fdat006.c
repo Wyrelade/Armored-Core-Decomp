@@ -107,4 +107,6 @@ void func_801C6170(void) {
     D_801C6208 += 0x64;
 }
 
-INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C6190);
+void func_801C6190(s32 *arg0) {
+    *arg0 += D_801C6208;
+}
