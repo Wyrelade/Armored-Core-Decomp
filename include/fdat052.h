@@ -169,5 +169,9 @@ void func_801C6C8C();
 void func_801C6CF0();
 void func_801C6DD4();
 void func_801C6EF0();
+extern s16 D_801D17AE;
+extern s16 D_801D17EE;
+extern s16 D_801D182E;
+extern s16 D_801D186E;
 
 #endif /* FDAT052_H */
