@@ -234,7 +234,14 @@ void func_801C788C(Obj801C788C *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C7900);
 
-INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C7A24);
+void func_801C7A24(Obj801C7A24 *arg0) {
+    Task801C7A24 *task;
+
+    task = func_80073674(1);
+    arg0->unk14 = task;
+    task->unk0 = func_801C7900;
+    arg0->unk14->unk8 = rand() & 7;
+}
 
 INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C7A70);
 
