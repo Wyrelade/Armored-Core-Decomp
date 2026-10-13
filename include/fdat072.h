@@ -14,8 +14,20 @@ typedef struct Obj801C5EC0 {
     Sub801C5EC0 *unk2C;
 } Obj801C5EC0;
 
+typedef struct Sub801C6954 {
+    void (*unk0)();
+    void (*unk4)();
+} Sub801C6954;
+
+typedef struct Obj801C6954 {
+    u8 _pad0[0x14];
+    Sub801C6954 *unk14;
+} Obj801C6954;
+
 /* @externs */
 Sub801C5EC0 *func_80072120(s32 arg0);
 void func_801C5D98();
+Sub801C6954 *func_80073674(s32 arg0);
+void func_801C6638();
 
 #endif /* FDAT072_H */
