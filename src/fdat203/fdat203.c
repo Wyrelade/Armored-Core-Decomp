@@ -61,7 +61,14 @@ void func_8004C9B0(s32 arg0, u32 *arg1, u8 *arg2) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004CA5C);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004CB24);
+void func_8004CB24(s32 arg0) {
+    s16 id;
+
+    id = D_80041BD0[arg0].unk0;
+    if (id != -1) {
+        SsVabClose(id);
+    }
+}
 
 void func_8004CB60(void) {
     SsSetMVol(0, 0);
