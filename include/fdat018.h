@@ -25,7 +25,9 @@ typedef struct Obj801C52C0 {
     u8 _pad0[0x8];
     Sub801C52D0 unk8;
     Sub801C52D0 unk10;
-    u8 _pad18[0x1E];
+    u8 _pad18[0x14];
+    s16 unk2C;
+    u8 _pad2E[0x8];
     s16 unk36;
     u8 _pad38[0x4];
     u8 unk3C;
@@ -48,6 +50,9 @@ typedef struct Obj801C52C0 {
     u16 unk148;
     u8 _pad14A[0x12];
     s32 unk15C;
+    u8 _pad160[0x4];
+    u16 unk164;
+    u8 _pad166[0x2];
 } Obj801C52C0;
 
 typedef struct Sub801C53D4 {
