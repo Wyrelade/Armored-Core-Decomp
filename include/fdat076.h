@@ -76,5 +76,6 @@ s32 func_801C5544(u8 arg0, u16 arg1);
 void func_801C5404();
 void func_801C5600();
 void func_801C5664();
+void func_801C5748();
 
 #endif /* FDAT076_H */
