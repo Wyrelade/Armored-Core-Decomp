@@ -101,7 +101,9 @@ void func_801C6618(Obj801C52C0 *arg0) {
     arg0->unkFE = rand() & 0xFFF;
 }
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6664);
+void func_801C6664(void) {
+    func_801C6594();
+}
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6684);
 
