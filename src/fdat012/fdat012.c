@@ -132,7 +132,13 @@ void func_801C78D8(Obj801C7120 *arg0) {
 void func_801C7914(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat012/nonmatchings/fdat012", func_801C791C);
+s32 func_801C791C(s32 arg0) {
+    if (D_8019F528 == 0 && arg0 == 0) {
+        func_800529F0(0, 0, 0x6A);
+        D_801C7DE4 = 1;
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat012/nonmatchings/fdat012", func_801C7960);
 
