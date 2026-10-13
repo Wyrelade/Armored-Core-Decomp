@@ -221,5 +221,9 @@ s32 func_801C5494(Obj801C58D4 *arg0);
 s32 rand();
 extern u8 D_801CB9E0[];
 extern u8 D_801CBA04[];
+void func_801C5440();
+void func_801C56B0();
+void func_801C55A0(Obj801C58D4 *arg0);
+void func_801C57E4();
 
 #endif /* FDAT068_H */
