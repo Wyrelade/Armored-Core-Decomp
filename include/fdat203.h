@@ -10,7 +10,8 @@ typedef struct Sub8004EE14 {
 } Sub8004EE14;
 
 typedef struct Elem8004F1D4 {
-    u8 _pad0[0x8];
+    s16 unk0;
+    u8 _pad2[0x6];
 } Elem8004F1D4;
 
 typedef struct Obj8004EE14 {
@@ -23,7 +24,7 @@ typedef struct Obj8004EE14 {
     s16 unkC;
     u8 _padE[0xE];
     Sub8004EE14 *unk1C;
-    Elem8004F1D4 unk20[3];
+    Elem8004F1D4 unk20[6];
 } Obj8004EE14;
 
 typedef struct Elem8004EE14 {
@@ -77,12 +78,18 @@ typedef struct Obj800732FC {
     u8 _pad42[0xE];
     void (*unk50)(struct Obj800732FC *, u8);
     void (*unk54)(struct Obj800732FC *, s32, s32);
-    u8 _pad58[0x8];
+    void (*unk58)();
+    void (*unk5C)();
     s32 unk60;
     Obj8004EE14 unk64;
-    u8 _pad9C[0x30];
+    u8 _padB4[0x18];
     Sub8004DE88 unkCC;
-    u8 _padD4[0x74];
+    u8 _padD4[0x34];
+    s16 unk108;
+    s16 unk10A;
+    s16 unk10C;
+    s16 unk10E;
+    u8 _pad110[0x38];
     u16 unk148;
     u8 _pad14A[0x12];
     s32 unk15C;
@@ -128,19 +135,27 @@ typedef union Sub80088694 {
 
 typedef struct Obj8008825C {
     Sub8004F1D4 unk0;
-    u8 _pad6[0x8];
+    u8 _pad6[0x2];
+    s32 unk8;
+    u8 _padC[0x2];
     s16 unkE;
     u8 _pad10[0x2];
     s16 unk12;
-    u8 _pad14[0x6];
+    u8 _pad14[0x4];
+    u8 unk18;
+    u8 _pad19[0x1];
     s16 unk1A;
     s16 unk1C;
     s16 unk1E;
     s16 unk20;
-    u8 _pad22[0x2];
+    s16 unk22;
     Sub8004F1D4 unk24;
     s16 unk2A;
-    u8 _pad2C[0x8C];
+    u8 _pad2C[0x4];
+    u32 unk30;
+    u32 unk34;
+    s32 unk38;
+    u8 _pad3C[0x7C];
     Sub80088694 unkB8;
     u8 _padBC[0x2];
     u16 unkBE;
@@ -316,9 +331,11 @@ typedef struct Obj8006E5B8 {
 } Obj8006E5B8;
 
 typedef struct Obj80077248 {
-    u8 _pad0[0xA];
+    u8 _pad0[0x8];
+    s16 unk8;
     s16 unkA;
-    u8 _padC[0x1E];
+    s16 unkC;
+    u8 _padE[0x1C];
     u16 unk2A;
     u8 _pad2C[0x2];
     s16 unk2E;
