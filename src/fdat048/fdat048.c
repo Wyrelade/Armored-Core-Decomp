@@ -87,7 +87,13 @@ void func_801C5B54(Obj801C5B54 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat048/nonmatchings/fdat048", func_801C5B90);
 
-INCLUDE_ASM("asm/USA/fdat048/nonmatchings/fdat048", func_801C5EAC);
+void func_801C5EAC(Obj801C5B54 *arg0) {
+    Sub801C5B54 *task;
+
+    task = func_80073674(0);
+    arg0->unk14 = task;
+    task->unk0 = func_801C5B90;
+}
 
 void func_801C5EE8(void) {
 }
