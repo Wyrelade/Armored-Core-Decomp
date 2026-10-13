@@ -1696,7 +1696,9 @@ Obj80077854 *func_800313F0(void) {
     return NULL;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800313F8);
+Obj80077854 *func_800313F8(void) {
+    return NULL;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80031400);
 
