@@ -5931,7 +5931,19 @@ void func_800AB938(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AB99C);
+void func_800AB99C(Obj800ACCC0 *arg0) {
+    func_800ADB40(&arg0->unk7D, 0, 0, 0xA);
+    func_8005D754(3, D_800BDD34, 0, 0, 0xA);
+    func_8005D754(3, D_800BDD34, 0, 0x18, 0xA);
+    func_8005D754(3, D_800BDD34, 0, 0x30, 0xA);
+    func_8005D754(3, D_800BDD34, 0, 0x48, 0xA);
+    func_8005D754(3, D_800BDD34, 0, 0x60, 0xA);
+    func_8005D80C(2, D_8004D464, 0x10, 8, 4, 0xA);
+    func_8005D80C(2, D_8004D470, 0x10, 8, 0x1C, 0xA);
+    func_8005D80C(2, D_8004D480, 0x10, 8, 0x34, 0xA);
+    func_8005D80C(2, D_8004D490, 0x10, 8, 0x4C, 0xA);
+    func_8005D80C(2, D_8004D49C, 0x10, 8, 0x64, 0xA);
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800ABB10);
 
