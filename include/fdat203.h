@@ -572,5 +572,6 @@ extern Elem8004C840 D_80041BD0[];
 s16 SsVabOpenHead(u32 *arg0, s32 arg1);
 s16 SsVabTransBodyPartly(u8 *arg0, s32 arg1, s16 arg2);
 void SsVabTransCompleted(s32 arg0);
+void func_8004D394(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 
 #endif /* FDAT203_H */
