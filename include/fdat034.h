@@ -113,5 +113,6 @@ extern Elem801C52C0 D_801CC4EC;
 void func_801CC4A0(Obj801C52C0 *arg0);
 Sub801C60B4 *func_80072120(s32 arg0);
 void func_801C5E5C();
+void func_801C60F0();
 
 #endif /* FDAT034_H */
