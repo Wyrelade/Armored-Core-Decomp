@@ -1299,7 +1299,14 @@ Obj8004DEB0 *func_8005D80C(s16 arg0, u8 *arg1, s8 arg2, s16 arg3, s32 arg4, s16 
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005D8D4);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005D9E8);
+void func_8005D9E8(Obj8005D9E8 *arg0) {
+    if (func_80050078(func_8005BA2C) == &D_801BC4F8) {
+        arg0->unk7C = func_8005D754(1, D_800B70AC, (s16)(arg0->unk88 * 0x45 + 4), 0x18, arg0->unk94);
+        arg0->unk80 = func_8005CB94(arg0->unk8C, 8, 4, arg0->unk94);
+        arg0->unk84 = func_8005D754(2, D_800B70A0, 0, 0, arg0->unk94);
+        arg0->unk74 = func_8005DAB0;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005DAB0);
 
