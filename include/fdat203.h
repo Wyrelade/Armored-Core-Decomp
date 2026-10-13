@@ -543,6 +543,12 @@ typedef struct Sub800771CC {
     u16 unk4;
 } Sub800771CC;
 
+typedef struct Elem8008223C {
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0xD8];
+} Elem8008223C;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -728,5 +734,9 @@ void func_8007C740();
 void func_8008001C();
 void func_80080FE4();
 void func_80081358();
+extern u16 D_8008AC3A;
+extern u16 D_8008C3BC[];
+extern u8 D_8019B480;
+extern Elem8008223C D_801A60C4[];
 
 #endif /* FDAT203_H */
