@@ -41,7 +41,13 @@ void func_801C5680(Obj801C52C0 *arg0) {
     task->unk18 = (s16)temp * 17;
 }
 
-INCLUDE_ASM("asm/USA/fdat048/nonmatchings/fdat048", func_801C571C);
+void func_801C571C(Obj801C52C0 *arg0) {
+    Sub801C5578 *task;
+
+    task = func_80072120(0);
+    arg0->unk2C = task;
+    task->unk4 = func_801C5444;
+}
 
 INCLUDE_ASM("asm/USA/fdat048/nonmatchings/fdat048", func_801C5758);
 
