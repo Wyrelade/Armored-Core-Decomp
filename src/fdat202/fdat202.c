@@ -287,7 +287,16 @@ s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1) {
     return n & 0xFF;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004F0D4);
+s32 func_8004F0D4(Sub8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2) {
+    func_8004EC4C(arg0);
+    arg1->unk0 = func_8004EF74(&arg0->unk20, arg1->unk0, arg0->unk3);
+    arg1->unk2 = func_8004EF74(&arg0->unk28, arg1->unk2, arg0->unk3);
+    arg1->unk4 = func_8004EF74(&arg0->unk30, arg1->unk4, arg0->unk3);
+    arg2->unk0 = func_8004EF74(&arg0->unk38, arg2->unk0, arg0->unk3);
+    arg2->unk2 = func_8004EF74(&arg0->unk40, arg2->unk2, arg0->unk3);
+    arg2->unk4 = func_8004EF74(&arg0->unk48, arg2->unk4, arg0->unk3);
+    return --arg0->unk2;
+}
 
 void func_8004F1A0(void) {
 }
