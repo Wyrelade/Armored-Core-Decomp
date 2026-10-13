@@ -784,5 +784,9 @@ void LoadAverageCol(u8 *arg0, u8 *arg1, s32 arg2, s32 arg3, u8 *arg4);
 void func_80056B54(s32 arg0, Obj80085580 *arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, s32 arg6);
 s32 func_80083738(Obj80085580 *arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4, u8 *arg5, u8 *arg6, s32 arg7);
 Sub80085580 *func_8008589C(s32 arg0, Obj80085580 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
+s32 func_8006D534(s32 arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3);
+void func_800873F8(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
+void func_800835E8(s32 arg0, s32 arg1, s16 *arg2, s16 *arg3, Sub8004DE88 *arg4);
+void func_80086854(s32 arg0, Obj800895B0 *arg1, s32 *arg2);
 
 #endif /* FDAT202_H */
