@@ -164,5 +164,6 @@ void func_801C6E98();
 void func_801C7240();
 Sub801C7394 *func_80073674(s32 arg0);
 void func_801C7360(Obj801C7360 *arg0);
+void func_801C73D0();
 
 #endif /* FDAT042_H */
