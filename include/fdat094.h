@@ -109,5 +109,6 @@ void func_801C7E80();
 void func_801C9580();
 void func_801C9A90();
 void func_801C9DDC(Obj801C52C0 *arg0);
+void func_8008A80C();
 
 #endif /* FDAT094_H */
