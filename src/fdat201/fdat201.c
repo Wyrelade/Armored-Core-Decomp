@@ -2889,7 +2889,16 @@ void func_80080DF8(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80080EB0);
+void func_80080EB0(Obj80080EB0 *arg0) {
+    s16 i;
+    u8 idx;
+
+    idx = arg0->unk8D;
+    for (i = 0; i < 7; i++) {
+        func_8005D15C(D_800B827C[idx], 0x3C0, (s16)(i * 16 + 0x40));
+        idx++;
+    }
+}
 
 void func_80080F40(void) {
     s32 off;
