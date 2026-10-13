@@ -98,5 +98,6 @@ extern Sub801C5E2C D_801CC190;
 void func_801CC100(Obj801C4E64 *arg0);
 Sub801C6128 *func_80072120(s32 arg0);
 void func_801C5ED0();
+void func_801C6164();
 
 #endif /* FDAT080_H */
