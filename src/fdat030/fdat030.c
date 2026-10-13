@@ -79,7 +79,13 @@ void func_801C5AC8(Obj8007618C *arg0) {
     arg0->unk10.unk2 += arg0->unkCC.unk0;
 }
 
-INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C5B1C);
+void func_801C5B1C(Obj8007618C *arg0) {
+    func_801C5A50(arg0);
+    if (arg0->unkCC.unk0 < -0x18) {
+        arg0->unkCC.unk0 = -0x18;
+    }
+    arg0->unk10.unk2 += arg0->unkCC.unk0;
+}
 
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C5B70);
 
