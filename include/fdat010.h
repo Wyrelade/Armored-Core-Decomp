@@ -149,5 +149,9 @@ extern u8 D_801A26C0[];
 extern u16 D_801A26E0;
 extern u16 D_801A26E2;
 void func_80012794(s16 *arg0, u16 arg1, u16 arg2, s32 arg3, u8 *arg4, s32 arg5, s32 arg6);
+s32 func_800754D0(Obj801C4C94 *arg0, u8 *arg1);
+void func_80078E1C(Obj801C4C94 *arg0);
+s32 rand(void);
+extern u8 D_801C65DC[];
 
 #endif /* FDAT010_H */

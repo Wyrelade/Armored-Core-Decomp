@@ -15,7 +15,25 @@ void func_801C4C94(Obj801C4C94 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat010/nonmatchings/fdat010", func_801C4D30);
 
-INCLUDE_ASM("asm/USA/fdat010/nonmatchings/fdat010", func_801C4E58);
+void func_801C4E58(Obj801C4C94 *arg0) {
+    u8 state;
+
+    if (arg0->unk40 != 0xFF) {
+        if (func_800754D0(arg0, D_801C65DC) != 0) {
+            func_80078E1C(arg0);
+        }
+    } else {
+        state = arg0->unk3C;
+        if (state == 0 || state == 3) {
+            arg0->unk7C = 0;
+            arg0->unk76 = rand() & 0xFFF;
+            arg0->unk78 = rand() & 0xFFF;
+            arg0->unk7A = rand() & 0xFFF;
+            return;
+        }
+        arg0->unk7C = -1;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat010/nonmatchings/fdat010", func_801C4EFC);
 
