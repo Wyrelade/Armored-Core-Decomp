@@ -92,5 +92,6 @@ typedef struct Obj801C5878 {
 extern s32 D_801CC9D0;
 extern Elem801C52DC D_801CBF1C;
 void func_801CBED0(Obj801C52DC *arg0);
+extern Elem801C52DC D_801CC460;
 
 #endif /* FDAT088_H */
