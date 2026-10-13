@@ -87,7 +87,9 @@ void func_8004D1D0(s32 arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004D1FC);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004D23C);
+void func_8004D23C(s32 arg0, s32 arg1, s32 arg2) {
+    func_8004D394(arg0, arg1, arg2, arg2, 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004D260);
 
