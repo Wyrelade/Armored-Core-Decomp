@@ -113,5 +113,7 @@ void func_801C6BE0();
 void func_801C6CFC();
 extern s32 D_801C761C;
 void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
+extern u16 D_8019F528;
+void func_801C705C(void);
 
 #endif /* FDAT022_H */
