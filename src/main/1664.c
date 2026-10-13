@@ -245,7 +245,12 @@ void func_800140C4(Obj80013A88 *arg0, Obj80013A88 *arg1) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001429C);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014338);
+void func_80014338(Obj80013430 *arg0, s32 arg1, Obj800138F0 *arg2) {
+    VectorNormalSS(arg0, arg2);
+    arg2->unk0 = arg2->unk0 * arg1 >> 12;
+    arg2->unk2 = arg2->unk2 * arg1 >> 12;
+    arg2->unk4 = arg2->unk4 * arg1 >> 12;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800143B8);
 
