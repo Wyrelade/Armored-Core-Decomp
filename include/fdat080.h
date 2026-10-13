@@ -130,5 +130,6 @@ void func_801C6438();
 Sub801C6B04 *func_80073674(s32 arg0);
 s32 func_801C6610(u8 arg0, u16 arg1);
 void func_801C64D0();
+void func_801C66CC();
 
 #endif /* FDAT080_H */
