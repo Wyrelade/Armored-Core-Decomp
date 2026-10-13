@@ -349,6 +349,12 @@ typedef struct {
     u16 val;
 } Obj80075280;
 
+typedef struct Elem8004C7A8 {
+    s16 unk0;
+    u8 _pad2[0x2];
+    u32 *unk4;
+} Elem8004C7A8;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -489,5 +495,9 @@ extern u16 D_8004122E;
 extern u8 D_8004124C;
 extern u8 D_8004124D;
 void func_80082CAC(u16 arg0, u16 arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
+extern Elem8004C7A8 D_80041BD0[];
+s16 SsVabOpenHead(u32 *arg0, s32 arg1);
+s16 SsVabTransBodyPartly(u8 *arg0, s32 arg1, s16 arg2);
+void SsVabTransCompleted(s32 arg0);
 
 #endif /* FDAT202_H */
