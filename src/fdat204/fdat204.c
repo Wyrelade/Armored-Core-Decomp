@@ -205,7 +205,15 @@ s32 func_8004EBD0(Sub8007618C_fdat202 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004EBDC);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004ECF8);
+s32 func_8004ECF8(Obj8004EDA8 *arg0) {
+    Sub8004EDA8 *data;
+
+    if (arg0->unkC > 0) {
+        data = arg0->unk1C;
+        return arg0->unkA >= ((Elem8004EDA8 *)(data->unkC[arg0->unk0] + (s32)data))->unk10 - 1;
+    }
+    return arg0->unkA < 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004ED4C);
 
