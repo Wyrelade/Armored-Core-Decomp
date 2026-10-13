@@ -4,21 +4,55 @@
 #include "common.h"
 
 /* @types */
+typedef struct Sub801C4D98 {
+    u8 _pad0[0x2];
+    u8 unk2;
+    u8 _pad3[0x7];
+    s16 unkA;
+} Sub801C4D98;
+
+typedef struct Sub801C4E00 {
+    u8 _pad0[0x1C];
+    u16 unk1C;
+    u8 _pad1E[0x2];
+    u8 unk20;
+} Sub801C4E00;
+
+typedef union Sub801C52A0 {
+    s32 unk0;
+    u8 unk0_b[4];
+} Sub801C52A0;
+
 typedef struct Obj801C59E8 {
-    u8 _pad0[0x36];
+    Sub801C4E00 *unk0;
+    u8 _pad4[0x32];
     s16 unk36;
-    u8 _pad38[0x9];
+    u8 _pad38[0x4];
+    Sub801C52A0 unk3C;
+    u8 unk40;
     u8 unk41;
     u8 unk42;
-    u8 _pad43;
+    u8 _pad43[0x1];
     s16 unk44;
     u8 _pad46[0xA];
     void (*unk50)();
     void (*unk54)();
     void (*unk58)();
     void (*unk5C)();
-    u8 _pad60[0x104];
+    u8 _pad60[0x4];
+    Sub801C4D98 unk64;
+    u8 _pad70[0xC];
+    s16 unk7C;
+    u8 _pad7E[0xCA];
+    s16 unk148;
+    u8 unk14A;
+    u8 unk14B;
+    u8 unk14C;
+    u8 _pad14D[0xF];
+    s32 unk15C;
+    u8 _pad160[0x4];
     u16 unk164;
+    u8 _pad166[0x2];
 } Obj801C59E8;
 
 typedef struct Sub801C5CD0 {
@@ -64,7 +98,7 @@ typedef struct Obj8019F51C {
 u16 func_80073904(void);
 void func_801C4FFC();
 void func_801C5534();
-void func_801C52A0();
+void func_801C52A0(Obj801C59E8 *arg0);
 void func_801C58AC();
 Sub801C5CD0 *func_80072120(s32 arg0);
 void func_801C6640();
