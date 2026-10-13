@@ -3509,7 +3509,9 @@ Obj8004DEB0 *func_8008B574(void) {
 void func_8008B5FC(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008B604);
+void func_8008B604(Obj8004DEB0 *arg0) {
+    arg0->unk1 = 1;
+}
 
 void func_8008B610(void) {
     Obj8008AF0C *obj;
