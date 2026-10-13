@@ -422,6 +422,28 @@ typedef struct Elem80057360 {
     u8 unk5C[0x24];
 } Elem80057360;
 
+typedef struct Sub80071188 {
+    u32 unk0;
+    u8 _pad4[0x8];
+    u16 unkC[4];
+} Sub80071188;
+
+typedef struct Sub80071188_unk4 {
+    u8 _pad0[0x12];
+    u16 unk12;
+} Sub80071188_unk4;
+
+typedef struct Elem80071188 {
+    u8 _pad0[0x2];
+    u16 unk2;
+} Elem80071188;
+
+typedef struct Obj80071188 {
+    Sub80071188 *unk0;
+    Sub80071188_unk4 *unk4;
+    s32 *unk8;
+} Obj80071188;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
