@@ -712,5 +712,9 @@ extern s16 D_80040FCE;
 extern s32 D_80041020;
 extern Elem8007BA2C D_80041024[8];
 extern u16 D_800411C0;
+void func_8007EF94();
+void func_8008080C();
+void func_8007DB98();
+void func_80080D00(void);
 
 #endif /* FDAT202_H */
