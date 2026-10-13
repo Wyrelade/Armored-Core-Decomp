@@ -90,5 +90,6 @@ void func_8006D39C(Obj801C53D4 *arg0);
 void func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
 void func_801C76D0(Obj801C53D4 *arg0);
 void func_801C776C();
+void func_801C7804();
 
 #endif /* FDAT018_H */
