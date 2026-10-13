@@ -290,7 +290,12 @@ void func_80014774(Obj800138F0 *arg0, Obj800138F0 *arg1) {
     arg1->unk4 = (rcos(arg0->unk2) * c) >> 12;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014804);
+void func_80014804(Obj800138F0 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2) {
+    Obj80013A88 m;
+
+    func_80013BE8(arg0, &m);
+    ApplyMatrixSV(&m, arg1, arg2);
+}
 
 void func_8001484C(s32 arg0, Obj800138F0 *arg1) {
     arg1->unk0 = (arg1->unk0 * arg0) >> 12;

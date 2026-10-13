@@ -112,5 +112,7 @@ void FlushCache(void);
 extern s32 D_80011E14;
 s32 func_80014988(s32 arg0, s32 arg1, s32 arg2);
 void VectorNormalSS(Obj80013430 *arg0, Obj800138F0 *arg1);
+void func_80013BE8(Obj800138F0 *arg0, Obj80013A88 *arg1);
+void ApplyMatrixSV(Obj80013A88 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2);
 
 #endif /* MAIN_H */
