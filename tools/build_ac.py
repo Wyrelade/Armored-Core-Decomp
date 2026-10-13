@@ -226,7 +226,12 @@ def link(unit, ld_bin, objcopy_bin, verify=True):
         p = "linkers/USA/undefined_%s_auto.%s.txt" % (kind, unit)
         if os.path.exists(os.path.join(ROOT, p)):
             cmd += ["-T", p]
-    elf = "%s/%s.elf" % (BUILD, unit)
+    # symbols only matched C references (the asm reaches them as base+offset of another
+    # symbol, so splat never lists them): configs/USA/c_syms.<unit>.txt, `name = 0xADDR;`
+    p = "configs/USA/c_syms.%s.txt" % unit
+    if os.path.exists(os.path.join(ROOT, p)):
+        cmd += ["-T", p]
+    elf ="%s/%s.elf" % (BUILD, unit)
     cmd += ["-T", ld_script, "-Map", "%s/%s.map" % (BUILD, unit), "-o", elf, "--no-check-sections"]
     if run(cmd) != 0:
         print("BUILD FAILED: linking %s" % unit)
