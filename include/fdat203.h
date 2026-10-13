@@ -830,5 +830,9 @@ extern Sub80085500 D_8008BE54[];
 void func_80083EE8();
 void func_80084410(Obj80085500 *arg0, s32 arg1, Sub8004F1D4 *arg2, s32 arg3);
 Obj80085500 *func_80088B78(s32 arg0);
+s32 func_8006C9D4(s32 arg0, s32 arg1, s32 arg2, Obj8006C9D4 *arg3);
+void func_80082284(s32 arg0, s32 arg1, u8 *arg2, s16 *arg3, Obj8006C9D4 *arg4);
+Obj80085500 *func_80085500(s32 arg0, Sub8004F1D4 *arg1, u32 *arg2);
+void func_800860A4(s32 arg0, Obj8006C9D4 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
 
 #endif /* FDAT203_H */
