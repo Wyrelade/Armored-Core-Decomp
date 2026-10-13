@@ -96,5 +96,15 @@ extern Elem801C5418 D_8019FAB8[];
 extern s16 D_801A26C0;
 extern s16 D_801A26C2;
 extern s16 D_801A26C4;
+void func_8008C2FC(s32 arg0);
+void func_8008A80C(void);
+extern u16 D_8019F528;
+s32 func_80052338(void);
+s32 func_801C5418(s32 arg0);
+void func_80078CFC(u8 *arg0);
+extern u8 D_8019FB94[];
+extern u8 D_8019FBC0[];
+extern s32 D_801CB0CC;
+extern s32 D_801CB0D0;
 
 #endif /* FDAT026_H */

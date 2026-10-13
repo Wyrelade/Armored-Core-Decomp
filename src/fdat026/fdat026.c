@@ -27,7 +27,29 @@ s32 func_801C5418(s32 arg0) {
     return dx * dx + dy * dy + dz * dz;
 }
 
-INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C549C);
+void func_801C549C(void) {
+    s32 dist5;
+    s32 closer;
+    u8 *data;
+
+    if (D_801CB0D0 == 0) {
+        func_8008C2FC(0x601);
+        D_801CB0D0 = 1;
+    }
+    func_8008A80C();
+    if (D_8019F528 == 0 && D_801CB0CC == 1 && func_80052338() != 0) {
+        dist5 = func_801C5418(5);
+        closer = func_801C5418(6) < dist5;
+        do {
+            data = D_8019FBC0;
+            if (closer) {
+                data = D_8019FB94;
+            }
+        } while (0);
+        func_80078CFC(data);
+        D_801CB0CC = 2;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C5560);
 
