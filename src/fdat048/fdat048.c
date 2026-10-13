@@ -108,7 +108,10 @@ void func_801C5F40(Obj801C5454 *arg0) {
     func_8004CC30(arg0->unk108->unk3B, D_801A5DC0->unk1000, &arg0->unk8, 0x64, 0x1F40, 0x2710, -0x30);
 }
 
-INCLUDE_ASM("asm/USA/fdat048/nonmatchings/fdat048", func_801C5FC0);
+void func_801C5FC0(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+    arg0->unk148 &= 0xFFF0;
+    arg0->unk15C &= ~arg1->unk38;
+}
 
 INCLUDE_ASM("asm/USA/fdat048/nonmatchings/fdat048", func_801C5FE8);
 
