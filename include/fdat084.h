@@ -268,5 +268,9 @@ s32 func_8004F080(Sub801C4D98 *arg0, Sub801C4C94 *arg1);
 s32 func_800754D0(Obj801C4E64 *arg0, s32 *arg1);
 void func_80078E1C(Obj801C4E64 *arg0);
 extern s32 D_801C788C;
+void func_801C59C4(Obj801C4C94 *arg0, u8 arg1);
+void func_801C5D94();
+void func_801C5BBC();
+void func_801C5ECC();
 
 #endif /* FDAT084_H */
