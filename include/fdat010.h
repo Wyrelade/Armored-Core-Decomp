@@ -64,6 +64,11 @@ typedef struct Obj801C5B1C {
     Sub801C5B1C *unk2C;
 } Obj801C5B1C;
 
+typedef struct Obj801C5F84 {
+    u8 _pad0[0x8];
+    u16 unk8;
+} Obj801C5F84;
+
 /* @externs */
 extern Sub801C4EE0 *D_801A5DC0;
 void func_8004CC30(s32 arg0, u8 *arg1, Sub801C4C94 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
