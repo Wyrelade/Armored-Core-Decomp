@@ -6252,7 +6252,21 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B20A4);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B2398);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B2584);
+void func_800B2584(Obj800B2584 *arg0) {
+    Obj8004DEB0 *obj;
+
+    arg0->unk7C = func_8005D80C(1, D_8004DB68, 0x10, 0x24, 0x40, 2);
+    arg0->unk80 = func_8005D80C(1, D_8004DB70, 0x10, 0x4C, 0x40, 2);
+    arg0->unk84 = func_8005D80C(1, D_8004DB78, 0x10, 0xE4, 0x40, 2);
+    obj = (Obj8004DEB0 *)func_8005CAE0(D_800BDEC0, 0x118, 0x56, 2);
+    arg0->unk88 = obj;
+    obj->unk2 = 0;
+    arg0->unk8C = (Obj8004DEB0 *)func_8005CAE0(D_800BDECC, 0x118, 0xCC, 2);
+    arg0->unk88->unk16 = 0xB;
+    arg0->unk8C->unk16 = 0xB;
+    func_8005BA2C(0x1C, 0x50, 0x100, 0x90, 3, 0, 0);
+    SsUtKeyOn(D_801A2318, 0, 6, 0x3C, 0, 0x7F, 0x7F);
+}
 
 void func_800B26C8(Obj800B26C8 *arg0) {
     s16 i;
