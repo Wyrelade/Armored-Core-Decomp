@@ -95,5 +95,6 @@ extern u8 D_801CDC7C[];
 void func_801CDBD4(Obj801C52C0 *arg0);
 void *func_80072120(s32 arg0);
 void func_801C72A8();
+void func_801C730C(Obj801C730C *arg0);
 
 #endif /* FDAT016_H */
