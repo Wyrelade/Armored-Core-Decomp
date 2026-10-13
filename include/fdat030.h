@@ -81,6 +81,16 @@ typedef struct Obj8007618C {
     u16 unk160;
 } Obj8007618C;
 
+typedef struct Obj80078CFC {
+    u8 _pad0[0xE];
+    s16 unkE;
+} Obj80078CFC;
+
+typedef struct Sub80078CFC {
+    u8 _pad0[0x20];
+    void (*unk20[1])(Obj80078CFC *);
+} Sub80078CFC;
+
 /* @externs */
 s32 rand(void);
 void func_801C4C94(Obj8007618C *arg0);
@@ -91,5 +101,8 @@ void func_80075FC0(Obj8007618C *arg0);
 void func_8004ECA8(Sub8007618C *arg0);
 void func_801C4FB8(Obj8007618C *arg0);
 void func_801C5A50(Obj8007618C *arg0);
+extern Sub80078CFC *D_8019F51C;
+extern s32 D_801C7B94;
+void func_801C5754();
 
 #endif /* FDAT030_H */

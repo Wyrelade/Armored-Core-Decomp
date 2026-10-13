@@ -146,6 +146,10 @@ void func_801C7990(void) {
 
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C7998);
 
-INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C7A6C);
+void func_801C7A6C(Obj8007618C *arg0) {
+    if (arg0->unk160 == 0 && D_8019F51C->unk20[arg0->unk0->unkA] == func_801C5754) {
+        D_801C7B94 += 0x2BC;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C7ACC);
