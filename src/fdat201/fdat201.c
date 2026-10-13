@@ -6528,7 +6528,14 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B1C18);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B1ED0);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B1F20);
+void func_800B1F20(void) {
+    s16 i;
+
+    for (i = 0; i < 15; i++) {
+        D_80049E74[i] = D_800BE0C8[i];
+    }
+    D_80049E70 = 0;
+}
 
 Obj80056FC4 * func_800B1F74(u8 *arg0) {
     Obj80056FC4 *task;
