@@ -657,6 +657,19 @@ typedef struct Obj80071188 {
     s32 *unk8;
 } Obj80071188;
 
+typedef struct Elem8004CF0C {
+    u16 unk0;
+    s8 unk2;
+    u8 _pad3[0x3];
+    u8 unk6;
+    u8 _pad7[0x3];
+} Elem8004CF0C;
+
+typedef struct Sub8004CF0C {
+    s16 unk0;
+    u8 _pad2[0x8];
+} Sub8004CF0C;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -797,7 +810,7 @@ void SsVabTransCompleted(s32 arg0);
 void func_8004D394(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 extern Elem8004D6E4 D_80041DE0[];
 void func_8004D090(void);
-void func_8004D114(Elem8004D6E4 *arg0);
+void func_8004D114(Elem8004CF0C *arg0);
 extern Elem800529A8 D_80089834[];
 void func_800520B8(s32 arg0, s32 arg1, s32 arg2, Elem800529A8 *arg3);
 extern Sub80053304 *D_8019D96C[];
@@ -862,5 +875,7 @@ void func_80082284(s32 arg0, s32 arg1, u8 *arg2, s16 *arg3, Obj8006C9D4 *arg4);
 Obj80085500 *func_80085500(s32 arg0, Sub8004F1D4 *arg1, u32 *arg2);
 void func_800860A4(s32 arg0, Obj8006C9D4 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
 void SsVabClose(s16 arg0);
+extern Sub8004CF0C D_80042086[];
+void SsUtKeyOffV(s16 arg0);
 
 #endif /* FDAT203_H */
