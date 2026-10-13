@@ -80,5 +80,8 @@ extern Sub801C52C0 D_801CAA3C;
 void func_801CA9F0(Obj801C52C0 *arg0);
 Sub801C53D4 *func_80072120(s32 arg0);
 void func_801C52F0();
+extern s32 D_801CAF80;
+void func_8008A80C(void);
+void func_8008C2FC(s32 arg0);
 
 #endif /* FDAT020_H */
