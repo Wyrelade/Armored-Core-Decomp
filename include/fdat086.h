@@ -177,10 +177,11 @@ void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s3
 void func_8004DE88(Sub801C7A84 *arg0, Sub8004DE88 *arg1);
 void func_800775B8(Obj801C6508 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
 void func_801C7FA4();
-void func_801CB804(Obj801C6508 *arg0);
+void func_801CB804(Obj801C52C0 *arg0);
 void func_801C98A8();
 void func_801CAFA8();
 void func_801CB4B8();
 void func_801CBB08();
+u16 func_80073904(void);
 
 #endif /* FDAT086_H */
