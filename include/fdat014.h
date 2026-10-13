@@ -157,5 +157,6 @@ void func_801C7FB4();
 extern s32 D_801C8540;
 extern s32 D_801C8544;
 s32 func_801C830C(s32 arg0);
+void func_8008A80C();
 
 #endif /* FDAT014_H */
