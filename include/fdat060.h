@@ -241,5 +241,9 @@ s32 func_801C66DC(Obj801C4F4C *arg0);
 s32 rand();
 extern u8 D_801CC3BC[];
 extern u8 D_801CC3E0[];
+void func_801C6688();
+void func_801C68F8();
+void func_801C67E8(Obj801C4F4C *arg0);
+void func_801C6A2C();
 
 #endif /* FDAT060_H */
