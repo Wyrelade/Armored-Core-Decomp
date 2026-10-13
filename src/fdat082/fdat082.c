@@ -15,10 +15,18 @@ void func_801C5468(Obj801C4E64 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801C5498);
 
-INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801C5578);
+void func_801C5578(Obj801C4EB8 *arg0) {
+    func_8004ECA8(&arg0->unk64);
+    if (--arg0->unk64.unk2 == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+    arg0->unkCC += arg0->unkCE;
+}
 
 void func_801C55F0(Obj801C4E64 *arg0) {
-    func_801C5578();
+    func_801C5578((Obj801C4EB8 *)arg0);
     if (arg0->unkCC.unk0 >= 0x19) {
         arg0->unkCC.unk0 = 0x18;
     }
@@ -26,7 +34,7 @@ void func_801C55F0(Obj801C4E64 *arg0) {
 }
 
 void func_801C5644(Obj801C4E64 *arg0) {
-    func_801C5578();
+    func_801C5578((Obj801C4EB8 *)arg0);
     if (arg0->unkCC.unk0 < -0x18) {
         arg0->unkCC.unk0 = -0x18;
     }
