@@ -1831,5 +1831,9 @@ extern u32 *D_800BE320;
 extern u32 *D_800BE324;
 extern u32 *D_800BE34C;
 extern u32 *D_800BE354;
+extern s8 D_800B91A8;
+void func_8008729C();
+void func_80096944();
+void func_800B20A4();
 
 #endif /* FDAT201_H */

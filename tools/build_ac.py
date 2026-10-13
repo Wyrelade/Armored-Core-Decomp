@@ -208,6 +208,23 @@ def extract_rodata(src):
     return True
 
 
+def rdata_word_align(s_file):
+    """cc1 puts `.align 3` before each jump table in .rdata. Retail tables sit only 4-aligned:
+    the original link packed objects at 4-byte boundaries, so 8-alignment held only inside the
+    retail object, and any pad it produced is already part of the splat rodata in front of the
+    table. In .rdata, `.align 3` becomes `.align 2`."""
+    lines = open(s_file).read().split("\n")
+    sec = None
+    for i, l in enumerate(lines):
+        s = l.strip()
+        if s in (".text", ".data", ".rdata", ".bss", ".sdata") or s.startswith(".section"):
+            sec = s.split()[-1] if s.startswith(".section") else s
+            sec = sec.rstrip(",")
+        elif sec in (".rdata", ".rodata") and re.match(r"^\.align\s+3$", s):
+            lines[i] = l.replace("3", "2")
+    open(s_file, "w", newline="\n").write("\n".join(lines))
+
+
 def compile_c(unit, cpp, cc1, as_bin):
     root = os.path.join(ROOT, "src", unit)
     if not os.path.isdir(root):
@@ -233,6 +250,7 @@ def compile_c(unit, cpp, cc1, as_bin):
             if run([cc1, i_file] + cc1_flags + ["-o", s_file], stdin_devnull=True) != 0:
                 print("BUILD FAILED: compiling %s" % rel)
                 return False
+            rdata_word_align(s_file)
             mflags = [f for f in MASPSX_FLAGS if not f.startswith("--aspsx-version")]
             mflags.append("--aspsx-version=" + UNIT_ASPSX.get(key, UNIT_ASPSX.get(unit, "2.56")))
             cmd = [sys.executable, maspsx_py()] + mflags + [
