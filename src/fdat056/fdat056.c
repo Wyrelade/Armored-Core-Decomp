@@ -1,10 +1,17 @@
 #include "common.h"
+#include "fdat056.h"
 
 INCLUDE_ASM("asm/USA/fdat056/nonmatchings/fdat056", func_801C5438);
 
 INCLUDE_ASM("asm/USA/fdat056/nonmatchings/fdat056", func_801C5518);
 
-INCLUDE_ASM("asm/USA/fdat056/nonmatchings/fdat056", func_801C5590);
+void func_801C5590(Obj801C5590 *arg0) {
+    func_801C5518(arg0);
+    if (arg0->unkCC > 24) {
+        arg0->unkCC = 24;
+    }
+    arg0->unk12 += arg0->unkCC;
+}
 
 INCLUDE_ASM("asm/USA/fdat056/nonmatchings/fdat056", func_801C55E4);
 
