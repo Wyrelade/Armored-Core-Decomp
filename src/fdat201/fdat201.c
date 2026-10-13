@@ -4651,7 +4651,9 @@ void func_8009A7C4(Obj8004DEB0 *arg0) {
 void func_8009A7D4(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8009A7DC);
+void func_8009A7DC(Obj8004DEB0 *arg0) {
+    arg0->unk1 = 1;
+}
 
 void func_8009A7E8(void) {
     SetGeomScreen(0x100);
