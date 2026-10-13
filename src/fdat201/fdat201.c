@@ -374,7 +374,14 @@ void func_80051078(u32 *arg0) {
     ExitCriticalSection();
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800510B0);
+void func_800510B0(void) {
+    s16 i;
+
+    for (i = 0; i < 30; i++) {
+        D_801F36D0[i] = NULL;
+        D_801BC478[i] = 0;
+    }
+}
 
 void func_800510FC(void) {
     EnterCriticalSection();
