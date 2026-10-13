@@ -131,5 +131,9 @@ void func_801C705C(void);
 extern Obj801C73EC *D_8019F51C;
 extern s32 D_801C7624;
 void func_801C6758(Obj801C53A0 *arg0);
+void func_801C5A0C(Obj801C53A0 *arg0, u8 arg1);
+void func_801C5E40(Obj801C53A0 *arg0, s32 arg1);
+void func_801C5C00();
+void func_801C5EF8();
 
 #endif /* FDAT022_H */
