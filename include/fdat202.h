@@ -515,5 +515,6 @@ void SsVabTransCompleted(s32 arg0);
 void SsVabClose(s16 arg0);
 extern Sub8004CF0C D_80042086[];
 void SsUtKeyOffV(s16 arg0);
+void func_8004D178(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 
 #endif /* FDAT202_H */
