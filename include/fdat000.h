@@ -82,6 +82,17 @@ typedef struct Obj801C55B4 {
     u8 unk1000[1];
 } Obj801C55B4;
 
+typedef struct Sub801C5634 {
+    u8 _pad0[0x6];
+    u8 unk6;
+    u8 _pad7[0x2];
+    u8 unk9;
+    u8 _padA[0x23];
+    u8 unk2D;
+    u8 _pad2E[0xA];
+    u16 unk38;
+} Sub801C5634;
+
 /* @externs */
 extern Elem801C52C0 D_801CAB98[];
 void func_801CAB4C(Obj801C52C0 *arg0);
