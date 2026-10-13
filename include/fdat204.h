@@ -563,6 +563,12 @@ typedef struct Obj80088DA0 {
     void (*unk54)();
 } Obj80088DA0;
 
+typedef struct Elem80016D64 {
+    s16 unk0;
+    s8 unk2;
+    u8 _pad3[7];
+} Elem80016D64;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -708,5 +714,8 @@ void func_80085E54(s32 arg0, u16 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
 extern Elem8007229C D_801D4488[];
 extern s32 D_801EC48C;
 void func_8004D278(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+extern Elem80016D64 D_80041DE0[];
+void func_8004CF10(void);
+void func_8004CF94(Elem80016D64 *arg0);
 
 #endif /* FDAT204_H */
