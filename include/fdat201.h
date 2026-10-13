@@ -1434,7 +1434,7 @@ extern u8 D_8004CBB4[];
 extern u8 D_800B83C4[];
 void func_800885DC(Obj8004DEB0 *arg0);
 void func_8008AFA8(void);
-void func_8008B568();
+void func_8008B568(Obj8004DEB0 *arg0);
 void func_8008BC58();
 void func_8008BD9C();
 void func_8008BDA8();
