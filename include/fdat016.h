@@ -19,5 +19,6 @@ void func_801C62CC();
 void func_801C69BC(Obj801C6A60 *arg0);
 void func_801C66DC();
 void func_801C6904();
+void func_801C68E4(void);
 
 #endif /* FDAT016_H */
