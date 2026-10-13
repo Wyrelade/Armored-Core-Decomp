@@ -267,5 +267,13 @@ void func_801CAAE4();
 void func_801CB134();
 u16 func_80073904(void);
 extern Elem801C5F00 D_801D0B68[];
+s32 rand(void);
+s32 func_800754D0(Obj801C52C0 *arg0, u8 *arg1);
+void func_80077B78(Obj801C52C0 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10);
+void func_80078598(void);
+void func_80078E1C(Obj801C52C0 *arg0);
+s32 func_801C575C(Obj801C52C0 *arg0);
+extern u8 D_801CC9F4[];
+extern u8 D_801CCA18[];
 
 #endif /* FDAT044_H */
