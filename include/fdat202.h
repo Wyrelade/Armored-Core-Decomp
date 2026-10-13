@@ -716,5 +716,8 @@ void func_8007EF94();
 void func_8008080C();
 void func_8007DB98();
 void func_80080D00(void);
+void func_800813D8();
+void func_8008238C();
+void func_800826FC();
 
 #endif /* FDAT202_H */
