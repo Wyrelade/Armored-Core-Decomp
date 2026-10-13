@@ -22,7 +22,21 @@ INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C5320);
 
 INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C5374);
 
-INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C541C);
+void func_801C541C(Elem801C5F00 *arg0, s32 arg1) {
+    s32 count;
+    u16 *idx;
+
+    count = arg0->unk26;
+    idx = arg0->unk28 + 1;
+    do {
+        arg0->unk2C->unk10 = arg1;
+        if (arg1 == 4) {
+            arg0->unk38->unk6 = 0;
+        }
+        arg0 = &D_801D0B68[*idx++];
+        count--;
+    } while (count != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C546C);
 
