@@ -166,7 +166,23 @@ void func_801C7190(void) {
     func_80056C6C(1, 0x1FB, 1, 1, 2, 0xD, 1);
 }
 
-INCLUDE_ASM("asm/USA/fdat074/nonmatchings/fdat074", func_801C71D4);
+s32 func_801C71D4(s32 arg0) {
+    Elem801C5F00 *p;
+    s32 i;
+    s32 count;
+
+    i = 0x200;
+    count = 0;
+    p = D_801D0B68;
+    do {
+        if (p->unk6 != -1 && p->unk1E == arg0) {
+            count++;
+        }
+        i--;
+        p++;
+    } while (i != 0);
+    return count;
+}
 
 void func_801C7220(s32 arg0, s32 *arg1) {
     if (func_801C71D4(2) + func_801C71D4(3) == 0) {
