@@ -79,5 +79,8 @@ typedef struct Elem801C5FD0 {
 /* @externs */
 extern Elem801C5FD0 D_801D0B94[];
 void func_80078E1C(void);
+extern u8 D_8019FB68[];
+Obj801C53A0 *func_80078A2C(void);
+void func_80078B14(Obj801C53A0 *arg0, u8 *arg1);
 
 #endif /* FDAT022_H */

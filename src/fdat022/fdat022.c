@@ -39,7 +39,19 @@ void func_801C5FD0(Obj801C53A0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat022/nonmatchings/fdat022", func_801C6014);
 
-INCLUDE_ASM("asm/USA/fdat022/nonmatchings/fdat022", func_801C6044);
+Obj801C53A0 *func_801C6044(u8 *arg0) {
+    Obj801C53A0 *obj;
+
+    if (arg0 >= D_8019FB68) {
+        obj = func_80078A2C();
+        if (obj != NULL) {
+            func_80078B14(obj, arg0);
+            obj->unk36 = 2;
+            return obj;
+        }
+    }
+    return NULL;
+}
 
 INCLUDE_ASM("asm/USA/fdat022/nonmatchings/fdat022", func_801C60B0);
 
