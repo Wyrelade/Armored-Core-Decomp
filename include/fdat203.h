@@ -630,6 +630,11 @@ typedef struct Sub80085500 {
     u8 _pad1[0x7];
 } Sub80085500;
 
+typedef struct Obj80088FF0 {
+    u8 _pad0[0x54];
+    void (*unk54)(struct Obj80088FF0 *, s32);
+} Obj80088FF0;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
