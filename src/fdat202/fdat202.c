@@ -1228,7 +1228,20 @@ void func_800730DC(void) {
     } while (i != 0);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80073104);
+void func_80073104(void) {
+    Elem800730DC *p;
+    s32 i;
+
+    i = D_801E8B6C;
+    p = D_801D0B68;
+    do {
+        if (p->unk2C != NULL && p->unk2C->unk0 != NULL) {
+            p->unk2C->unk0(p);
+        }
+        i--;
+        p++;
+    } while (i != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80073170);
 
