@@ -113,4 +113,23 @@ void func_801C6F04(Obj801C6F04 *arg0) {
 void func_801C6F70(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C6F78);
+void func_801C6F78(void) {
+    Elem8019FB68 *p;
+    s32 i;
+
+    func_8008A80C();
+    if (D_801C713E == 0 && (D_801C713C++ & 0xF) == 0) {
+        i = 0xFC;
+        p = D_8019FB68;
+        do {
+            if (p->unkA != -1 && p->unk0 != 3) {
+                return;
+            }
+            i--;
+            p++;
+        } while (i != 0);
+        func_800529F0(0, 0, 0x68);
+        func_8004C318(0x80);
+        D_801C713E = 1;
+    }
+}
