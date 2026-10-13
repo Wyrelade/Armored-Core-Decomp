@@ -267,7 +267,20 @@ s32 func_8004F29C(Obj8004EE14 *arg0, Sub8004F1D4 *arg1) {
     return count;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004F2F0);
+s32 func_8004F2F0(Obj8004EE14 *arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2) {
+    u8 count;
+
+    func_8004EE68(arg0);
+    arg1->unk0 = func_8004F190(&arg0->unk20[0], arg1->unk0, arg0->unk3);
+    arg1->unk2 = func_8004F190(&arg0->unk20[1], arg1->unk2, arg0->unk3);
+    arg1->unk4 = func_8004F190(&arg0->unk20[2], arg1->unk4, arg0->unk3);
+    arg2->unk0 = func_8004F190(&arg0->unk20[3], arg2->unk0, arg0->unk3);
+    arg2->unk2 = func_8004F190(&arg0->unk20[4], arg2->unk2, arg0->unk3);
+    arg2->unk4 = func_8004F190(&arg0->unk20[5], arg2->unk4, arg0->unk3);
+    count = arg0->unk2 - 1;
+    arg0->unk2 = count;
+    return count;
+}
 
 void func_8004F3BC(void) {
 }
