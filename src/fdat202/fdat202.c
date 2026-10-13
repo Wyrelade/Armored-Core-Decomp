@@ -1173,7 +1173,17 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80071ADC);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80071D4C);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80071DC4);
+Elem80071DC4 *func_80071DC4(s32 arg0, s32 arg1) {
+    Elem80071DC4 *p;
+    Elem80071DC4 *q;
+
+    if (func_80071ADC(arg0, 1) != 0) {
+        p = func_80071D4C(arg1);
+        q = p;
+        return q != NULL ? p : NULL;
+    }
+    return NULL;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80071E14);
 

@@ -444,6 +444,10 @@ typedef struct Obj80071188 {
     s32 *unk8;
 } Obj80071188;
 
+typedef struct Elem80071DC4 {
+    s32 unk0;
+} Elem80071DC4;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -637,5 +641,7 @@ void func_800154D8(u8 *arg0, u8 *arg1, s32 arg2);
 void func_80057288(void);
 extern s32 D_801A5F2C[];
 void func_8006E718(s32 *arg0);
+s32 func_80071ADC(s32 arg0, s32 arg1);
+Elem80071DC4 *func_80071D4C(s32 arg0);
 
 #endif /* FDAT202_H */
