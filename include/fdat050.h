@@ -208,11 +208,12 @@ void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s3
 void func_8004DE88(Sub801C6124 *arg0, Sub8004DE88 *arg1);
 void func_800775B8(Obj801C5454 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
 void func_801C7E4C();
-void func_801CB6AC(Obj801C5454 *arg0);
+void func_801CB6AC(Obj801C52C0 *arg0);
 void func_801C9750();
 void func_801CAE50();
 void func_801CB360();
 void func_801CB9B0();
 void func_8008A80C();
+u16 func_80073904(void);
 
 #endif /* FDAT050_H */
