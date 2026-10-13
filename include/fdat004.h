@@ -36,6 +36,15 @@ typedef struct Obj801C6720 {
     u16 unkA;
 } Obj801C6720;
 
+typedef struct Sub801C5FDC {
+    void (*unk0)();
+} Sub801C5FDC;
+
+typedef struct Obj801C6734 {
+    u8 _pad0[0x14];
+    Sub801C5FDC *unk14;
+} Obj801C6734;
+
 /* @externs */
 u16 func_80073904(void);
 void func_801C4FFC();
@@ -44,5 +53,7 @@ void func_801C52A0();
 void func_801C58AC();
 Sub801C5CD0 *func_80072120(s32 arg0);
 void func_801C6640();
+Sub801C5FDC *func_80073674(s32 arg0);
+void func_801C6720(Obj801C6720 *arg0);
 
 #endif /* FDAT004_H */
