@@ -5291,7 +5291,27 @@ void func_800A5414(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A546C);
+void func_800A546C(Obj8004DEB0 *arg0) {
+    func_800A79B0((Sub800A7A44 *)arg0);
+    func_8005D754(3, D_800BDCD8, 0, 0, 4);
+    func_8005D754(3, D_800BDCD8, 0, 0x18, 4);
+    func_8005D754(3, D_800BDCD8, 0, 0x30, 4);
+    func_8005D754(3, D_800BDCD8, 0, 0x48, 4);
+    func_8005D754(3, D_800BDCD8, 0, 0x60, 4);
+    func_8005D754(3, D_800BDCD8, 0, 0x78, 4);
+    func_8005D80C(2, D_8004D23C, 0x10, 8, 4, 4);
+    func_8005D80C(2, D_8004D248, 0x10, 8, 0x1C, 4);
+    func_8005D80C(2, D_8004D254, 0x10, 8, 0x34, 4);
+    func_8005D80C(2, D_8004D264, 0x10, 8, 0x4C, 4);
+    func_8005D80C(2, D_8004D274, 0x10, 8, 0x64, 4);
+    func_8005D80C(2, D_8004D280, 0x10, 8, 0x7C, 4);
+    func_8005CB94(D_8004D288, 0x10, 4, 6);
+    func_8005CB94(D_8004D290, 0x50, 4, 6);
+    func_800A56A8(D_8017F450, D_80039D08);
+    func_800A56A8(&D_8017F450[4], D_80039D0A);
+    func_8005D80C(2, D_8017F450, 0x10, 0x1C, 0x1C, 6);
+    func_8005D80C(2, &D_8017F450[4], 0x10, 0x64, 0x1C, 6);
+}
 
 void func_800A56A8(u8 *arg0, u16 arg1) {
     s32 digit;
