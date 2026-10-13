@@ -132,6 +132,17 @@ typedef struct Obj801C52C0 {
     s32 unk15C;
 } Obj801C52C0;
 
+typedef struct Obj801C7360 {
+    u8 _pad0[0x8];
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u8 _padE[0x14];
+    u16 unk22;
+    u16 unk24;
+    u16 unk26;
+} Obj801C7360;
+
 /* @externs */
 void func_801C55AC(Obj801C5624 *arg0);
 void func_801C6480(Obj801C6554 *arg0);
