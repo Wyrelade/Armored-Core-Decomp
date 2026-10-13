@@ -486,7 +486,21 @@ void func_80015AC8(u8 *arg0) {
     ExitCriticalSection();
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015B24);
+s32 func_80015B24(u32 *arg0, s32 arg1) {
+    u32 sum;
+    u32 *p;
+    s32 i;
+    s32 last;
+
+    sum = 0x12345678;
+    p = arg0;
+    arg1 <<= 9;
+    last = arg1 - 1;
+    for (i = arg1 - 2; i != -1; i--) {
+        sum += *p++;
+    }
+    return sum != arg0[last];
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015B78);
 
