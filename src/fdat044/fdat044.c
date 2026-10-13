@@ -61,7 +61,13 @@ void func_801C62AC(Obj801C572C *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C6318);
 
-INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C6634);
+void func_801C6634(Obj801C572C *arg0) {
+    Sub801C572C *task;
+
+    task = func_80073674(0);
+    arg0->unk14 = task;
+    task->unk0 = func_801C6318;
+}
 
 void func_801C6670(void) {
 }
