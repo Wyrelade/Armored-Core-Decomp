@@ -124,5 +124,6 @@ void func_801C6284();
 void func_801C62E8();
 s32 func_80014D78(u8 arg0);
 void func_801C6498();
+void func_801C67A0();
 
 #endif /* FDAT024_H */
