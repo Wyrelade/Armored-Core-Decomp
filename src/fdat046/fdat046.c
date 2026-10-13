@@ -109,7 +109,9 @@ void func_801C5DAC(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk9;
 }
 
-INCLUDE_ASM("asm/USA/fdat046/nonmatchings/fdat046", func_801C5DC8);
+void func_801C5DC8(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+    arg0->unk15C &= ~(1 << arg1->unk9);
+}
 
 void func_801C5DE8(Obj801C52C0 *arg0, s32 arg1) {
     if (arg0->unk3D != 0xB0) {
