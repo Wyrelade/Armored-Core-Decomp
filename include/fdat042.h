@@ -152,6 +152,11 @@ typedef struct Obj801C7394 {
     Sub801C7394 *unk14;
 } Obj801C7394;
 
+typedef struct Obj801C7910 {
+    u8 _pad0[0x1000];
+    u8 unk1000[1];
+} Obj801C7910;
+
 /* @externs */
 void func_801C55AC(Obj801C5624 *arg0);
 void func_801C6480(Obj801C6554 *arg0);
@@ -166,5 +171,8 @@ Sub801C7394 *func_80073674(s32 arg0);
 void func_801C7360(Obj801C7360 *arg0);
 void func_801C73D0();
 void func_801C74EC();
+extern Obj801C7910 *D_801A5DC0;
+void func_8004CE44(s32 arg0, Sub801C7910 *arg1, s32 arg2, s32 arg3);
+void func_8004CC30(s32 arg0, u8 *arg1, Sub801C7910 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 
 #endif /* FDAT042_H */
