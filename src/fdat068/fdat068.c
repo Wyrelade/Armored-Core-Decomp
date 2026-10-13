@@ -85,7 +85,9 @@ void func_801C6390(void) {
     func_80056C6C(1, 0x1FB, 1, 1, 2, 0xD, 1);
 }
 
-INCLUDE_ASM("asm/USA/fdat068/nonmatchings/fdat068", func_801C63D4);
+void func_801C63D4(void) {
+    func_8008A80C();
+}
 
 void func_801C63F4(void) {
 }
