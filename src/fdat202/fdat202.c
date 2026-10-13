@@ -103,7 +103,9 @@ void func_8004CFC8(s32 arg0, s32 arg1) {
     func_8004D178(arg0, 0, arg1, arg1, 0);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004CFF4);
+void func_8004CFF4(s32 arg0, s32 arg1) {
+    func_8004D178(arg0, 0, arg1, arg1, 0);
+}
 
 void func_8004D020(s32 arg0, s32 arg1, s32 arg2) {
     func_8004D178(arg0, arg1, arg2, arg2, 0);
