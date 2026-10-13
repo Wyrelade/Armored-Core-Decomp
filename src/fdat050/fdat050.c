@@ -177,7 +177,9 @@ void func_801C76E4(Obj801C5B54 *arg0) {
 void func_801C7720(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat050/nonmatchings/fdat050", func_801C7728);
+void func_801C7728(void) {
+    func_8008A80C();
+}
 
 void func_801C7748(Obj801C5454 *arg0) {
     if (!(arg0->unk148 & 0xF)) {
