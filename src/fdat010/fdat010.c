@@ -109,6 +109,8 @@ void func_801C64AC(Obj801C5F98 *arg0) {
 void func_801C6518(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat010/nonmatchings/fdat010", func_801C6520);
+void func_801C6520(void) {
+    func_8008A80C();
+}
 
 INCLUDE_ASM("asm/USA/fdat010/nonmatchings/fdat010", func_801C6540);
