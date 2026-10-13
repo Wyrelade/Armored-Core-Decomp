@@ -1,6 +1,11 @@
 #include "common.h"
+#include "fdat026.h"
 
-INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C52C0);
+void func_801C52C0(Obj8007618C *arg0) {
+    arg0->unk36 = 0x102;
+    arg0->unk108 = &D_801CAB88;
+    func_801CAB3C(arg0);
+}
 
 INCLUDE_ASM("asm/USA/fdat026/nonmatchings/fdat026", func_801C52F0);
 
