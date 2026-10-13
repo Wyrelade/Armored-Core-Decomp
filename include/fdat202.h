@@ -355,6 +355,19 @@ typedef struct Elem8004C7A8 {
     u32 *unk4;
 } Elem8004C7A8;
 
+typedef struct Elem8004CF0C {
+    u16 unk0;
+    s8 unk2;
+    u8 _pad3[0x3];
+    u8 unk6;
+    u8 _pad7[0x3];
+} Elem8004CF0C;
+
+typedef struct Sub8004CF0C {
+    s16 unk0;
+    u8 _pad2[0x8];
+} Sub8004CF0C;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -500,5 +513,7 @@ s16 SsVabOpenHead(u32 *arg0, s32 arg1);
 s16 SsVabTransBodyPartly(u8 *arg0, s32 arg1, s16 arg2);
 void SsVabTransCompleted(s32 arg0);
 void SsVabClose(s16 arg0);
+extern Sub8004CF0C D_80042086[];
+void SsUtKeyOffV(s16 arg0);
 
 #endif /* FDAT202_H */

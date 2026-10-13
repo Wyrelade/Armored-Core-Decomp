@@ -86,7 +86,16 @@ void func_8004CE44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004CE88);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004CF0C);
+void func_8004CF0C(Elem8004CF0C *arg0) {
+    s32 unused[2];
+    s16 id;
+
+    id = D_80041BD0[D_80042086[arg0->unk6].unk0].unk0;
+    if (id != -1 && id != 0xFE) {
+        arg0->unk0 = 0;
+        SsUtKeyOffV(arg0->unk2);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004CF7C);
 
