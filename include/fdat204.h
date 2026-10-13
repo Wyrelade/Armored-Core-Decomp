@@ -372,6 +372,16 @@ typedef struct Sub8007618C_fdat202 {
     Sub8004EFB8 unk48;
 } Sub8007618C_fdat202;
 
+typedef struct Obj80072180 {
+    Sub8004DE88 unk0;
+    Sub8004DE88 unk8;
+    Sub8004DE88 unk10;
+    Sub8004DE88 unk18;
+    Sub8004DE88 unk20;
+    u8 _pad28[0x4];
+    struct Obj80072180 *unk2C;
+} Obj80072180;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
