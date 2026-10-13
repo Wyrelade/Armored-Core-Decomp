@@ -217,6 +217,11 @@ typedef struct Sub801C5634 {
     u16 unk38;
 } Sub801C5634;
 
+typedef struct Sub801C5BDC {
+    u8 _pad0[0x12];
+    s16 unk12;
+} Sub801C5BDC;
+
 /* @externs */
 void func_801C62CC();
 void func_801C69BC(Obj801C6A60 *arg0);
@@ -252,5 +257,19 @@ void func_801CA644();
 void func_801CBD44();
 void func_801CC254();
 u16 func_80073904(void);
+void func_80078598(Obj801C52C0 *arg0);
+s32 func_800754D0(Obj801C52C0 *arg0, u8 *arg1);
+void func_80078E1C(Obj801C52C0 *arg0);
+s32 rand(void);
+extern s32 D_801A5DC4;
+extern u8 D_801CDC20[];
+extern u8 D_80039C78[];
+extern u8 D_8019F52E[];
+extern u8 D_801CDC44[];
+extern u8 D_801CDC48[];
+extern u8 D_801CDC4C[];
+Sub801C5BDC *func_80086F20(s32 arg0, Sub801C52D0 *arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, u8 *arg6, u8 *arg7, u8 *arg8);
+s32 func_801C59F8(Obj801C52C0 *arg0);
+void func_80077B78(Obj801C52C0 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7);
 
 #endif /* FDAT016_H */
