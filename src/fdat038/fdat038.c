@@ -82,7 +82,25 @@ s32 func_801C6214(s32 arg0) {
     return 0;
 }
 
-INCLUDE_ASM("asm/USA/fdat038/nonmatchings/fdat038", func_801C6314);
+void func_801C6314(void) {
+    func_8008A80C();
+    if (D_8019F528 == 0) {
+        if (D_801C6500 == 0xDC) {
+            func_800529F0(0, 0, 0x4F);
+        }
+        if (D_801C6504 != 0 && func_80052338() != 0) {
+            func_8008A778(0xF78, 0x100, 0x95);
+            D_801C6504 = 0;
+            D_801C6508 = 1;
+        }
+        if (D_8019F52C == 0x528) {
+            func_800529F0(0, 0, 0x50);
+        }
+        if (D_801C6500 < 0xFFFF) {
+            D_801C6500++;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat038/nonmatchings/fdat038", func_801C63EC);
 

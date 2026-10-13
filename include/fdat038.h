@@ -42,5 +42,9 @@ extern Sub801C6214 *D_801D3A20;
 extern Sub801C6214 *D_801D3AE0;
 extern Sub801C6214 *D_801D3C20;
 extern Sub801C6214 *D_801D3C60;
+void func_8008A778(s32 arg0, s32 arg1, s32 arg2);
+void func_8008A80C(void);
+extern u16 D_8019F52C;
+extern s32 D_801C6500;
 
 #endif /* FDAT038_H */
