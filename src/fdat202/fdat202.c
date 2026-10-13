@@ -1883,7 +1883,36 @@ void func_80079904(Obj8007618C *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80079980);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80079AF8);
+void func_80079AF8(Obj8007618C *arg0) {
+    s32 unused[2];
+    s16 x;
+    s16 z;
+
+    x = arg0->unkCC.unk0;
+    if (x > 0) {
+        if (D_80041201 < x) {
+            arg0->unkCC.unk0 = x - D_80041201;
+        } else {
+            arg0->unkCC.unk0 = 0;
+        }
+    } else if (x < -D_80041201) {
+        arg0->unkCC.unk0 = x + D_80041201;
+    } else {
+        arg0->unkCC.unk0 = 0;
+    }
+    z = arg0->unkCC.unk4;
+    if (z > 0) {
+        if (D_80041201 < z) {
+            arg0->unkCC.unk4 = z - D_80041201;
+        } else {
+            arg0->unkCC.unk4 = 0;
+        }
+    } else if (z < -D_80041201) {
+        arg0->unkCC.unk4 = z + D_80041201;
+    } else {
+        arg0->unkCC.unk4 = 0;
+    }
+}
 
 void func_80079BB4(Obj8007618C *arg0) {
     if (func_8004F0D4(&arg0->unk64, &arg0->unk8, &arg0->unk10) == 0) {

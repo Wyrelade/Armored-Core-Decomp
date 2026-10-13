@@ -691,5 +691,6 @@ extern Obj80078CFC D_801A2828[];
 extern s32 D_80040FA8;
 extern u16 D_80041234;
 extern u16 D_80041236;
+extern u8 D_80041201;
 
 #endif /* FDAT202_H */
