@@ -105,5 +105,8 @@ void func_801CCDAC(Obj801C52C0 *arg0);
 extern Elem801C52C0 D_801CDE08;
 Sub801C6A5C *func_80072120(s32 arg0);
 void func_801C6804();
+void func_8006D39C(Obj801C52C0 *arg0);
+s32 func_8006D45C();
+void func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
 
 #endif /* FDAT098_H */
