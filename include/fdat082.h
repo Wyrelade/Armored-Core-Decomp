@@ -65,5 +65,6 @@ typedef struct Obj801C4E64 {
 extern Elem801C6B68 D_801CCA8C;
 void func_801CCA40(Obj801C4E64 *arg0);
 extern Elem801C6B68 D_801CCFD0;
+void func_801C5578();
 
 #endif /* FDAT082_H */
