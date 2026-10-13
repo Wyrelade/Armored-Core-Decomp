@@ -28,8 +28,18 @@ typedef struct Obj801C6870 {
     u16 unkA;
 } Obj801C6870;
 
+typedef struct Elem801C8BA8 {
+    u8 _pad0[0x34];
+} Elem801C8BA8;
+
 /* @externs */
 Sub801C5550 *func_80072834(s32 arg0);
 void func_801C8E08();
+s32 rand(void);
+extern Elem801C8BA8 D_801A4C68[];
+void func_801C86A4();
+void func_801C86B8();
+void func_801C88E4();
+void func_801C89F0();
 
 #endif /* FDAT160_H */
