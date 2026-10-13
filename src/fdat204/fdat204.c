@@ -88,7 +88,16 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004CECC);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004CF10);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004CF94);
+void func_8004CF94(Elem8004CF0C *arg0) {
+    s32 unused[2];
+    s16 id;
+
+    id = D_80041BD0[D_80042086[arg0->unk6].unk0].unk0;
+    if (id != -1 && id != 0xFE) {
+        arg0->unk0 = 0;
+        SsUtKeyOffV(arg0->unk2);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004D004);
 

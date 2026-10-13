@@ -640,6 +640,19 @@ typedef struct Obj80071188 {
     s32 *unk8;
 } Obj80071188;
 
+typedef struct Elem8004CF0C {
+    u16 unk0;
+    s8 unk2;
+    u8 _pad3[0x3];
+    u8 unk6;
+    u8 _pad7[0x3];
+} Elem8004CF0C;
+
+typedef struct Sub8004CF0C {
+    s16 unk0;
+    u8 _pad2[0x8];
+} Sub8004CF0C;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -787,7 +800,7 @@ extern s32 D_801EC48C;
 void func_8004D278(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 extern Elem80016D64 D_80041DE0[];
 void func_8004CF10(void);
-void func_8004CF94(Elem80016D64 *arg0);
+void func_8004CF94(Elem8004CF0C *arg0);
 extern u16 D_80041BBE;
 extern u8 D_80041BC1;
 extern s32 D_80041BC4;
@@ -846,5 +859,7 @@ s32 func_80070C9C(s32 arg0, s32 arg1);
 s32 func_80070F0C(s32 arg0);
 extern Elem8007286C D_801A4C68[];
 void SsVabClose(s16 arg0);
+extern Sub8004CF0C D_80042086[];
+void SsUtKeyOffV(s16 arg0);
 
 #endif /* FDAT204_H */
