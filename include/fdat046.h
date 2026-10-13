@@ -76,5 +76,6 @@ void func_801CB19C(Obj801C52C0 *arg0);
 extern Elem801C52C0 D_801CB72C;
 Sub801C5578 *func_80072120(s32 arg0);
 void func_801C5320();
+void func_801C55B4();
 
 #endif /* FDAT046_H */
