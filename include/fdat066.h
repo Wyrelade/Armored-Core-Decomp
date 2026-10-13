@@ -61,5 +61,6 @@ extern Sub801C52C0 D_801CBAF4;
 void func_801CBAA8(Obj801C52C0 *arg0);
 Sub801C5548 *func_80072120(s32 arg0);
 void func_801C52F0();
+void func_801C5584();
 
 #endif /* FDAT066_H */
