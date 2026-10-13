@@ -122,7 +122,23 @@ void func_801C7730(void) {
 
 INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C7738);
 
-INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C77E8);
+void func_801C77E8(s32 arg0) {
+    if (D_8019F528 == 0) {
+        switch (arg0) {
+        case 0:
+            func_800529F0(0, 0, 0x9C);
+            func_800529F0(0, 0, 0x68);
+            func_8004C318(0x80);
+            break;
+        case 1:
+            func_800529F0(0, 0, 0x9D);
+            func_800529F0(0, 0, 0x95);
+            func_8004C318(0x100);
+            D_801CD538 = -0x7530;
+            break;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat086/nonmatchings/fdat086", func_801C7884);
 
