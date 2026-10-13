@@ -452,7 +452,27 @@ void func_8005460C(Elem8005460C *arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80054660);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800546E0);
+s32 func_800546E0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    s32 d1;
+    s32 d2;
+
+    arg3 += arg0;
+    d1 = (arg3 - arg1) & 0xFFF;
+    if (((arg2 - arg1) & 0xFFF) < d1) {
+        if (d1 > 0x800) {
+            d1 = 0x1000 - d1;
+        }
+        d2 = (arg3 - arg2) & 0xFFF;
+        if (d2 > 0x800) {
+            d2 = 0x1000 - d2;
+        }
+        if (d1 < d2) {
+            return arg1 - arg0;
+        }
+        return arg2 - arg0;
+    }
+    return d1 + arg1 - arg0;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80054750);
 
