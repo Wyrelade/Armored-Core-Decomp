@@ -144,7 +144,19 @@ void func_8004D948(s16 arg0) {
     SsSetSerialVol(0, arg0, arg0);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004D974);
+void func_8004D974(void) {
+    u16 *p;
+
+    p = &D_80041BBE;
+    if (*p != 0xFFFF && D_80041BC2 == 0 && D_80041BC4 - func_8001628C() < 0) {
+        if (!(D_80041BC1 & 1)) {
+            func_8004DB18(*p);
+            return;
+        }
+        D_80041BC2 = 0xF0;
+        func_8004D948(0);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004DA1C);
 
