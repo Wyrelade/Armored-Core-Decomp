@@ -173,5 +173,9 @@ void func_8004E98C(Sub801C563C *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_801C5054();
 void func_801C4EF0();
 void func_801C50A4();
+void func_801C6518();
+void func_801C67F4();
+void func_801C6658();
+void func_801C6998();
 
 #endif /* FDAT018_H */
