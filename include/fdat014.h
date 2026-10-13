@@ -226,7 +226,7 @@ void *func_80073674(s32 arg0);
 s32 func_801C7844(u8 arg0, u16 arg1);
 void func_801C7704();
 void func_801C7900();
-s32 func_80014D78(u8 arg0);
+s32 func_80014D78(s32 arg0);
 void func_801C7A70();
 void func_801C7FB4();
 extern s32 D_801C8540;

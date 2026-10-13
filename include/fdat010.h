@@ -162,7 +162,7 @@ void func_801C5D40();
 void func_801C5EA4();
 Sub801C5F98 *func_80073674(s32 arg0);
 void func_801C5F84(Obj801C5F84 *arg0);
-s32 func_80014D78(u8 arg0);
+s32 func_80014D78(s32 arg0);
 void func_801C5FD4();
 void func_8008A80C();
 extern u8 D_801A26C0[];

@@ -315,7 +315,7 @@ void func_801C6CB8();
 Sub801C6730 *func_80073674(s32 arg0);
 void func_801C6D98(Obj801C5F00 *arg0);
 void func_801C6DFC();
-s32 func_80014D78(u8 arg0);
+s32 func_80014D78(s32 arg0);
 void func_801C6EE0();
 void func_801C7424();
 extern s32 D_801CD1AC;

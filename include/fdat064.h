@@ -175,7 +175,7 @@ void func_801C5DA8();
 Sub801C6778 *func_80072120(s32 arg0);
 void func_801C6520();
 void func_801C68C8();
-s32 func_80014D78(u8 arg0);
+s32 func_80014D78(s32 arg0);
 Sub801C6F04 *func_80073674(s32 arg0);
 void func_801C6A2C();
 void func_8004ECA8(Sub801C4EB8 *arg0);

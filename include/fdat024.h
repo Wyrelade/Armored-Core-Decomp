@@ -205,7 +205,7 @@ void func_801C61B0();
 Sub801C6360 *func_80073674(s32 arg0);
 void func_801C6284(Obj801C5F00 *arg0);
 void func_801C62E8();
-s32 func_80014D78(u8 arg0);
+s32 func_80014D78(s32 arg0);
 void func_801C6498();
 void func_801C67A0();
 void func_801C68BC();
