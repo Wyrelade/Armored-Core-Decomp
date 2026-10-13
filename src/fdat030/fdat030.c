@@ -235,7 +235,30 @@ INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C75B8);
 
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C76C4);
 
-INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C787C);
+void func_801C787C(Obj801C787C *arg0) {
+    Sub801C787C *task;
+    u16 n;
+
+    task = func_80073674(8);
+    arg0->unk14 = task;
+    task->unk4 = func_801C76C4;
+    switch (arg0->unk23) {
+    case 1:
+        arg0->unk14->unk0 = func_801C7378;
+        break;
+    case 2:
+        arg0->unk14->unk0 = func_801C738C;
+        arg0->unk14->unkC = (u32)&D_80198B08[arg0->unk28];
+        break;
+    case 3:
+        arg0->unk14->unk0 = func_801C75B8;
+        n = arg0->unk28;
+        arg0->unk14->unkC = (u32)(n * n) >> 4;
+        arg0->unk14->unk8 = rand() & 0x1F;
+        break;
+    }
+    arg0->unk14->unk9 = 0;
+}
 
 void func_801C7990(void) {
 }
