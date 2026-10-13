@@ -42,6 +42,30 @@ typedef struct Obj801C6A40 {
     u8 unk28;
 } Obj801C6A40;
 
+typedef struct Obj801C6F28 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x12];
+    u16 unk18;
+    u16 unk1A;
+    u16 unk1C;
+    u16 unk1E;
+    u16 unk20;
+    u16 unk22;
+    u16 unk24;
+    u8 _pad26[0x2];
+    u8 unk28;
+    u8 unk29;
+    u8 unk2A;
+    u8 _pad2B[0x8D];
+    u8 unkB8;
+    u8 unkB9;
+    u8 unkBA;
+    u8 _padBB[0x3];
+    u16 unkBE;
+} Obj801C6F28;
+
 /* @externs */
 Sub801C60B4 *func_80072120(s32 arg0);
 void func_801C603C();
