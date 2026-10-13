@@ -172,6 +172,11 @@ typedef struct Sub801C5634 {
     u16 unk38;
 } Sub801C5634;
 
+typedef struct Obj801C6870 {
+    u8 _pad0[0xA];
+    u16 unkA;
+} Obj801C6870;
+
 /* @externs */
 extern s32 D_801CC9D0;
 extern Elem801C52DC D_801CBF1C;
