@@ -296,5 +296,7 @@ void func_801C6A24();
 void func_801C6A38();
 void func_801C6C64();
 void func_801C6D70();
+extern s32 D_801CD760;
+extern s32 D_801CD764;
 
 #endif /* FDAT056_H */

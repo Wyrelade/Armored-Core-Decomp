@@ -182,7 +182,22 @@ void func_801C743C(void) {
     D_801CD7FC = func_801C73F0(0x2B);
 }
 
-INCLUDE_ASM("asm/USA/fdat056/nonmatchings/fdat056", func_801C7544);
+void func_801C7544(s32 *arg0) {
+    s32 n;
+    s32 e8;
+
+    D_801CD7E8 -= func_801C739C(4) + func_801C739C(5) + func_801C739C(6);
+    D_801CD7EC -= func_801C739C(0x15) + func_801C739C(0x16);
+    D_801CD7F0 -= func_801C73F0(0x23) + func_801C73F0(0x24) + func_801C73F0(0x25) +
+                  func_801C73F0(0x26) + func_801C73F0(0x27);
+    D_801CD7F4 -= func_801C73F0(0x29);
+    D_801CD7F8 -= func_801C73F0(0x2A);
+    n = D_801CD7FC - func_801C73F0(0x2B);
+    e8 = D_801CD7E8 * 0x19;
+    D_801CD7FC = n;
+    *arg0 += (D_801CD7EC * 0x7D + e8) * 8 + D_801CD7F0 * 0x190 +
+             D_801CD7F8 * 0x2BC + n * 0x12C + D_801CD760 * 0x2BC + D_801CD764 * 0xDAC;
+}
 
 INCLUDE_ASM("asm/USA/fdat056/nonmatchings/fdat056", func_801C779C);
 
