@@ -222,6 +222,12 @@ typedef struct Sub801C5BDC {
     s16 unk12;
 } Sub801C5BDC;
 
+typedef struct Elem801C85FC {
+    u8 _pad0[0x2];
+    u16 unk2;
+    u8 _pad4[0x28];
+} Elem801C85FC;
+
 /* @externs */
 void func_801C62CC();
 void func_801C69BC(Obj801C6A60 *arg0);
@@ -271,5 +277,6 @@ extern u8 D_801CDC4C[];
 Sub801C5BDC *func_80086F20(s32 arg0, Sub801C52D0 *arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, u8 *arg6, u8 *arg7, u8 *arg8);
 s32 func_801C59F8(Obj801C52C0 *arg0);
 void func_80077B78(Obj801C52C0 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7);
+extern Elem801C85FC D_8019FB94[];
 
 #endif /* FDAT016_H */
