@@ -1826,5 +1826,10 @@ extern Elem800B3168 D_8017F588[];
 extern s32 D_800BE218[];
 extern s32 D_800BE258[];
 extern s32 D_800BE29C[];
+extern u32 *D_800BE31C;
+extern u32 *D_800BE320;
+extern u32 *D_800BE324;
+extern u32 *D_800BE34C;
+extern u32 *D_800BE354;
 
 #endif /* FDAT201_H */

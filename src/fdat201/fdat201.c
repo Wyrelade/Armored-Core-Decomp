@@ -6783,7 +6783,14 @@ void func_800B5128(s32 arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B514C);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B5248);
+void func_800B5248(u32 *arg0, u32 arg1) {
+    func_800B536C();
+    *D_800BE354 |= 0x88;
+    *D_800BE31C = (u32)(arg0 + 1);
+    *D_800BE320 = ((arg1 >> 5) << 16) | 0x20;
+    *D_800BE34C = *arg0;
+    *D_800BE324 = 0x01000201;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B52DC);
 
