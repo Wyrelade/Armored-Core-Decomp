@@ -294,5 +294,7 @@ void func_801C738C();
 void func_801C75B8();
 void func_801C76C4();
 extern Elem801C5EA8 D_801D0B68[];
+s32 func_80014D78(s32 arg0);
+void func_800759A4(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
 
 #endif /* FDAT030_H */
