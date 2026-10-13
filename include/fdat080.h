@@ -344,5 +344,9 @@ s32 func_801C5708(Obj801C4E64 *arg0);
 s32 rand();
 extern s32 D_801CC14C;
 extern s32 D_801CC170;
+void func_801C55C8(Obj801C4E64 *arg0, u8 arg1);
+void func_801C5AB0();
+void func_801C582C(Obj801C4E64 *arg0);
+void func_801C5C5C();
 
 #endif /* FDAT080_H */
