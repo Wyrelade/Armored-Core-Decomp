@@ -214,5 +214,12 @@ void func_801CA014();
 void func_801CA664();
 void func_8008A80C();
 u16 func_80073904(void);
+s32 func_800754D0(Obj801C58D4 *arg0, u8 *arg1);
+void func_80077B78(Obj801C58D4 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7);
+void func_80078E1C(Obj801C58D4 *arg0);
+s32 func_801C5494(Obj801C58D4 *arg0);
+s32 rand();
+extern u8 D_801CB9E0[];
+extern u8 D_801CBA04[];
 
 #endif /* FDAT068_H */
