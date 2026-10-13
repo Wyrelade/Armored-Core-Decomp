@@ -426,7 +426,19 @@ void func_80055238(void) {
     } while (--i != 0);
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055268);
+void func_80055268(void) {
+    Obj800558A8 *p;
+    u16 i;
+
+    p = D_8019DF80;
+    i = 2;
+    do {
+        if (p->unk0 != 0) {
+            p->unk0 = 1;
+        }
+        p++;
+    } while (--i != 0);
+}
 
 void func_800552A4(Obj800558A8 *arg0) {
     arg0->unk0 = 0;
