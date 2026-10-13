@@ -91,5 +91,6 @@ s32 func_801C729C(u8 arg0, u16 arg1);
 void func_801C715C();
 void func_801C7358();
 void func_801C73BC();
+void func_801C74A0();
 
 #endif /* FDAT012_H */
