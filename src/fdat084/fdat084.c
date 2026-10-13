@@ -1,10 +1,28 @@
 #include "common.h"
+#include "fdat084.h"
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C4D14);
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C4DFC);
 
-INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C4E64);
+void func_801C4E64(Obj801C4E64 *arg0) {
+    if (arg0->unk64.unkA == 0xA) {
+        if (!(rand() & 1)) {
+            func_801C4D14(arg0);
+            func_80077B78(arg0, 0x27, arg0->unk0->unk1C, arg0->unk0->unk20, D_801C786C, 1, 0);
+        } else {
+            func_8004CE44(0x95, &arg0->unk8, 0x64, 0);
+        }
+    }
+    func_80075FC0(arg0);
+    func_8004ECA8(&arg0->unk64);
+    arg0->unk64.unk2--;
+    if (arg0->unk64.unk2 == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C4F44);
 
