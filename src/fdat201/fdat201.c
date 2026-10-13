@@ -6716,7 +6716,28 @@ void func_800B4E84(s32 arg0) {
     func_800B514C(arg0);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B4EBC);
+Obj800B4EBC *func_800B4EBC(Obj800B4EBC *arg0) {
+    s32 *dst;
+    s32 *src;
+    s32 i;
+
+    dst = arg0->unk0;
+    src = D_800BE218;
+    for (i = 15; i != -1; i--) {
+        *dst++ = *src++;
+    }
+    dst = arg0->unk40;
+    src = D_800BE258;
+    for (i = 15; i != -1; i--) {
+        *dst++ = *src++;
+    }
+    dst = arg0->unk80;
+    src = D_800BE29C;
+    for (i = 31; i != -1; i--) {
+        *dst++ = *src++;
+    }
+    return arg0;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800B4F48);
 
