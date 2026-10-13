@@ -22,7 +22,14 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800122A8);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800125D0);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80012670);
+void func_80012670(u8 *arg0, s32 arg1, s32 arg2) {
+    arg0 += arg2;
+    *arg0-- = 0;
+    for (arg2--; arg2 != -1; arg2--) {
+        *arg0-- = arg1 % 10 + '0';
+        arg1 /= 10;
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800126D8);
 
