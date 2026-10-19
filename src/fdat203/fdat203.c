@@ -1939,7 +1939,19 @@ void func_800786E0(Obj800732FC *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80078748);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800787B0);
+void func_800787B0(Obj800732FC *arg0) {
+    if (--arg0->unk64.unk2 == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+    arg0->unkCC.unk0 += arg0->unkCC.unk2;
+    if (arg0->unkCC.unk0 > D_80039D18->unk216) {
+        arg0->unkCC.unk0 = D_80039D18->unk216;
+    }
+    arg0->unk10.unk2 += arg0->unkCC.unk0;
+    func_8004CE38(D_80039D18->unk4C->unk11, D_8019D838 + 0x1200, &arg0->unk8, 0x28, 0x1F40, 0x2710, 0);
+}
 
 void func_8007888C(Obj800732FC *arg0) {
     func_8004EEC4(&arg0->unk64);
