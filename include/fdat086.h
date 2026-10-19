@@ -62,9 +62,13 @@ typedef struct Obj801C6508 {
 } Obj801C6508;
 
 typedef struct Obj801C6800 {
-    u8 _pad0[0x6];
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
     s16 unk6;
-    u8 _pad8[0xC];
+    u8 _pad8[0x6];
+    u16 unkE;
+    u8 _pad10[0x4];
     Sub801C6800 *unk14;
     u8 _pad18[0xA];
     u8 unk22;
