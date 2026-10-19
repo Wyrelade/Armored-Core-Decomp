@@ -58,7 +58,14 @@ void func_801C5A10(s32 arg0, s32 arg1) {
     func_80075A18(arg0, arg1, &vec);
 }
 
-INCLUDE_ASM("asm/USA/fdat034/nonmatchings/fdat034", func_801C5A78);
+void func_801C5A78(s32 arg0, s32 arg1) {
+    Sub801C4C94 vec;
+
+    vec.unk0 = func_80014DAC(2000);
+    vec.unk4 = func_80014DAC(2000);
+    vec.unk2 = -func_80014D30(1000);
+    func_80075A54(arg0, arg1, &vec);
+}
 
 INCLUDE_RODATA("asm/USA/fdat034/nonmatchings/fdat034", D_801C4B40);
 
