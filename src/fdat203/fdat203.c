@@ -2064,7 +2064,13 @@ void func_8007A448(Obj800732FC *arg0, s32 arg1) {
     arg0->unk41 = 0x41;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8007A4F8);
+void func_8007A4F8(Obj800732FC *arg0, s32 arg1, s32 arg2) {
+    func_8004E0A4((Obj8004DE88 *)&arg0->unk64, &arg0->unkCC);
+    arg0->unkCC.unk0 <<= 6;
+    arg0->unkCC.unk4 <<= 6;
+    func_800760AC(arg0, arg1, 1, 0x200, &arg0->unkCC, func_80079C94);
+    arg0->unk41 = arg0->unk3C = arg2;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8007A590);
 
