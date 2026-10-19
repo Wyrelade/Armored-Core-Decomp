@@ -1058,6 +1058,12 @@ typedef struct Obj800ADC4C {
     u8 unk97;
 } Obj800ADC4C;
 
+typedef struct Obj80051138 {
+    u8 unk0[4];
+    s32 unk4;
+    u8 unk8[0x10];
+} Obj80051138;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2041,5 +2047,7 @@ void func_800ADD70(Obj8005D9E8 *arg0);
 extern u8 D_800BDD88[];
 extern u8 D_800BDD94[];
 void func_800ADE38();
+s32 CdSearchFile(Obj80051138 *arg0, s32 arg1);
+void func_800511A4(u8 *arg0, u32 *arg1, s32 arg2);
 
 #endif /* FDAT201_H */

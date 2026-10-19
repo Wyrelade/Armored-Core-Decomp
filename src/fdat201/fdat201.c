@@ -477,7 +477,18 @@ void func_800510FC(void) {
     ExitCriticalSection();
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80051138);
+s32 func_80051138(s32 arg0) {
+    Obj80051138 file;
+    s32 size;
+    s32 ret;
+
+    if (CdSearchFile(&file, arg0) != 0) {
+        size = (file.unk4 + 0x7FF) & ~0x7FF;
+        ret = func_80050FC4(size);
+        func_800511A4((u8 *)&file, (u32 *)ret, (u32)size >> 11);
+        return ret;
+    }
+}
 
 void func_800511A4(u8 *arg0, u32 *arg1, s32 arg2) {
     s32 result;
