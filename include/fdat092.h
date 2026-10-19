@@ -325,7 +325,7 @@ s32 func_801C64DC(Obj801C730C *arg0, s32 arg1, s32 arg2, ...);
 void func_801C6574();
 Sub801C6730 *func_80073674(s32 arg0);
 void func_801C6654(Obj801C5F00 *arg0);
-void func_801C66B8();
+void func_801C66B8(Obj801C5F00 *arg0);
 extern u16 D_8019F528;
 extern u8 D_8019FB68[];
 extern s32 D_801CCBD8;
