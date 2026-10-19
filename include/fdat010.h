@@ -253,6 +253,11 @@ typedef struct Elem801C5314 {
     u8 _pad4[0x3C];
 } Elem801C5314;
 
+typedef struct Elem801C5C6C {
+    u8 _pad0[0xC];
+    s32 unkC;
+} Elem801C5C6C;
+
 /* @externs */
 extern Sub801C4EE0 *D_801A5DC0;
 void func_8004CC30(s32 arg0, u8 *arg1, Sub801C4C94 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
@@ -260,7 +265,6 @@ s32 func_8004F024(Sub801C4D98 *arg0, Sub801C4C94 *arg1);
 void func_80075FC0();
 Sub801C5B1C *func_80072120(s32 arg0);
 void func_801C58C4();
-void func_801C5C6C();
 void func_801C5D40();
 void func_801C5EA4();
 Sub801C5F98 *func_80073674(s32 arg0);
