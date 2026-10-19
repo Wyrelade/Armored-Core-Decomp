@@ -127,7 +127,10 @@ void func_801C5DCC(Obj801C53A0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat028/nonmatchings/fdat028", func_801C5F3C);
+s32 func_801C5F3C(Obj801C53A0 *arg0, s32 arg1, ...) {
+    func_80073714(arg0, 0x7FFFFFFF);
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat028/nonmatchings/fdat028", func_801C5F6C);
 
