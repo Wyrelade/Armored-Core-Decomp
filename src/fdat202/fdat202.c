@@ -405,7 +405,27 @@ void func_80052F90(Obj80052F90 *arg0, Sub80052F90 *arg1) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80053020);
+void func_80053020(Obj80052F90 *arg0, Sub80052F90 *arg1, s32 arg2) {
+    s32 cx;
+    s32 cy;
+    s32 s;
+    s32 c;
+    s32 t;
+
+    if (D_80039D10 != 0 || (arg0->unkC & 4)) {
+        cx = (arg0->unk0 + arg0->unk4) >> 1;
+        cy = (arg0->unk2 + arg0->unk6) >> 1;
+        s = rsin(arg2);
+        c = rcos(arg2);
+        arg1->unk8 = arg1->unk10 = cx + (((arg0->unk0 - cx) * s) >> 12);
+        c = 0x1000 - c;
+        arg1->unkC = arg1->unk14 = cx + (((arg0->unk4 - cx) * s) >> 12);
+        t = (c * c) >> 12;
+        arg1->unkA = arg1->unkE = cy + (((arg0->unk2 - cy) * t) >> 12);
+        arg1->unk12 = arg1->unk16 = cy + (((arg0->unk6 - cy) * t) >> 12);
+        LoadAverageCol(D_8008DBC8, (u8 *)&D_801ED854[arg0->unkE], 0x1000 - s, s, (u8 *)&arg1->unk4);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80053190);
 

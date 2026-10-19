@@ -805,5 +805,7 @@ void func_800873F8(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3, s32 arg4, s3
 void func_800835E8(s32 arg0, s32 arg1, s16 *arg2, s16 *arg3, Sub8004DE88 *arg4);
 void func_80086854(s32 arg0, Obj800895B0 *arg1, s32 *arg2);
 void func_80081088(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4);
+extern u8 D_8008DBC8[];
+s32 rcos(s32 arg0);
 
 #endif /* FDAT202_H */
