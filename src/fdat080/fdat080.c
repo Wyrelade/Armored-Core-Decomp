@@ -95,7 +95,21 @@ void func_801C6128(Obj801C5E2C *arg0) {
     task->unk4 = func_801C5ED0;
 }
 
-INCLUDE_ASM("asm/USA/fdat080/nonmatchings/fdat080", func_801C6164);
+s32 func_801C6164(Obj801C6164 *arg0, s32 arg1, Elem801C6164 **arg2, ...) {
+    Sub801C6164 *data;
+
+    if (arg1 == 0x8100) {
+        if (((*arg2)->unkC & 7) == 2) {
+            data = arg0->unk38;
+            func_8008A0B0(data->unk0, data->unk1, data->unk2, data->unk4, data->unk5);
+            if (arg0->unk38->unk6 == 1) {
+                arg0->unk2C = NULL;
+            }
+            return 1;
+        }
+    }
+    return 0;
+}
 
 void func_801C61FC(Obj801C5E2C *arg0) {
     s32 unused[36];

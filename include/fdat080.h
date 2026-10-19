@@ -334,12 +334,32 @@ typedef struct Obj801C730C {
     Sub801C7624 *unk38;
 } Obj801C730C;
 
+typedef struct Sub801C6164 {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u8 unk4;
+    u8 unk5;
+    u8 unk6;
+} Sub801C6164;
+
+typedef struct Elem801C6164 {
+    u8 _pad0[0xC];
+    s32 unkC;
+} Elem801C6164;
+
+typedef struct Obj801C6164 {
+    u8 _pad0[0x2C];
+    Sub801C6128 *unk2C;
+    u8 _pad30[0x8];
+    Sub801C6164 *unk38;
+} Obj801C6164;
+
 /* @externs */
 extern Sub801C5E2C D_801CC190;
 void func_801CC100(Obj801C4E64 *arg0);
 Sub801C6128 *func_80072120(s32 arg0);
 void func_801C5ED0();
-void func_801C6164();
 void func_801C6238();
 void func_8006D39C(Obj801C5E2C *arg0);
 s32 func_8006D45C(void);
