@@ -442,4 +442,15 @@ s32 func_801C775C(s32 arg0) {
     return 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat084/nonmatchings/fdat084", func_801C77F0);
+void func_801C77F0(s32 arg0, s32 *arg1) {
+    Elem801C77F0 *e;
+    s32 i;
+    s32 j;
+
+    for (i = 0xFF, j = 0; i != -1; i--, j++) {
+        e = &D_8019FABA[j];
+        if (e->unk8 != -1 && e->unk0 == 0 && D_8019F51C->unk20[e->unk8] == func_801C57D4) {
+            *arg1 -= 500;
+        }
+    }
+}
