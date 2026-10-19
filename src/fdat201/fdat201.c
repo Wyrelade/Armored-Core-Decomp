@@ -1604,7 +1604,42 @@ void func_8005DFB4(Obj8005E23C *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005E040);
+void func_8005E040(Obj8005E23C *arg0) {
+    Sub8005E040 *work;
+    s32 limit;
+
+    work = (Sub8005E040 *)&arg0->unk7C;
+    switch (D_801A2574) {
+    case 0:
+        limit = 0x78;
+        break;
+    case 2:
+        limit = 0x3C;
+        break;
+    case 3:
+    default:
+        limit = 0x1E;
+        break;
+    }
+    if (++work->unk8 > limit || (D_801A2568 & 0x600060)) {
+        if (D_801A2568 & 0x40) {
+            D_801A2550 |= 0x40;
+        }
+        if (D_801A2568 & 0x20) {
+            D_801A2550 |= 0x20;
+        }
+        if (D_801A2568 & 0x400000) {
+            D_801A2550 |= 0x400000;
+        }
+        if (D_801A2568 & 0x200000) {
+            D_801A2550 |= 0x200000;
+        }
+        work->unk14->unk1 = 1;
+        func_8005015C((s16)(work->unk10 - 1))->unk1 = 1;
+        func_8005C2D0(0x14, 0x68, 0x118, 0x20, (s16)(work->unk10 - 1));
+        arg0->unk74 = func_8005E1E8;
+    }
+}
 
 void func_8005E1E8(Obj8004DEB0 *arg0) {
     if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
