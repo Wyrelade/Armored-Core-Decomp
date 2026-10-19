@@ -885,5 +885,6 @@ extern u32 D_801EAF90[3][0x400];
 s32 func_8006EFFC(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_800714C4(Sub8004DE88 *arg0, Obj80071610 *arg1);
 extern u16 D_8019F508;
+s32 func_80012794(s32 arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, s32 arg5, s32 arg6);
 
 #endif /* FDAT202_H */
