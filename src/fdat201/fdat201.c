@@ -3169,7 +3169,36 @@ void func_8007D6E8(Obj8004DEB0 *arg0) {
 
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004C4B4);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007D738);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004C4C8);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004C4D0);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004C4D8);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004C4E0);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004C4E8);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004C4F0);
+
+Obj8004DEB0 *func_8007D738(Obj8004DEB0 *arg0, s32 arg1) {
+    Obj8004DEB0 *obj;
+
+    obj = func_800501BC(0);
+    obj->unk70 = func_8007D738;
+    obj->unk74 = func_8007D934;
+    obj->unk78 = func_800507F4;
+    obj->unk2 = 0;
+    obj->unk3 = 0;
+    obj->unk6C = 0;
+    obj->unk5 = 0;
+    func_8005D15C(D_8004C4C8, 1000, 0x34);
+    func_8005D15C(D_8004C4D0, 1000, 0x4C);
+    func_8005D15C(D_8004C4D8, 1000, 0x64);
+    func_8005D15C(D_8004C4E0, 1000, 0x7C);
+    func_8005D15C(D_8004C4E8, 1000, 0x94);
+    func_8005D15C(D_8004C4F0, 1000, 0xAC);
+    func_8007D840(obj);
+    obj->unk7C = arg0;
+    obj->unk80 = (void (*)())arg1;
+    obj->unk84 = 0;
+    return obj;
+}
 
 void func_8007D840(Obj8004DEB0 *arg0) {
     func_8005D754(4, D_800B8454, 0, 0, 4);

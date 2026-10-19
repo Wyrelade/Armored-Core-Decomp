@@ -2083,5 +2083,11 @@ extern u8 D_8004B738[];
 extern u8 D_8004B740[];
 extern u8 D_8004B748[];
 extern u8 D_8004B750[];
+extern u8 D_8004C4C8[];
+extern u8 D_8004C4D0[];
+extern u8 D_8004C4D8[];
+extern u8 D_8004C4E0[];
+extern u8 D_8004C4E8[];
+extern u8 D_8004C4F0[];
 
 #endif /* FDAT201_H */
