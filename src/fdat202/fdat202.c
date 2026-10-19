@@ -1011,7 +1011,11 @@ s32 func_8006D534(s32 arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3) {
     return ret;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006D5BC);
+void func_8006D5BC(Elem80074728 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+    if (func_800733D8(arg0, arg1, arg2, arg3, 0) == 0) {
+        func_80074620(arg0, arg1, arg2, arg3, 0);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006D628);
 

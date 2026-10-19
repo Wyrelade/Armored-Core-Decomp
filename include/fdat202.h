@@ -831,5 +831,7 @@ extern s32 D_801AC814[];
 extern s32 D_801AC818[];
 void ClearOTagR(u32 *arg0, s32 arg1);
 void func_8004DCF8(void);
+s32 func_800733D8(Elem80074728 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+Elem80074728 *func_80074620(Elem80074728 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 
 #endif /* FDAT202_H */
