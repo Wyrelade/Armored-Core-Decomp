@@ -917,5 +917,16 @@ s32 func_80072598(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_80073188(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 s32 func_8006E1BC(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_80070684(s32 arg0, Obj800707D0 *arg1);
+extern Obj80077EAC D_80040FA0[];
+extern s32 D_80040FA8;
+extern s32 D_80040FAC;
+extern s32 D_80041344;
+extern s32 D_80041348;
+extern u32 D_800411F4;
+extern u32 D_80041590;
+void func_80077C30(void);
+void func_800771D0(void);
+void func_80077AA0(void);
+void func_800775B8(Obj80077CD8 *arg0, s32 arg1);
 
 #endif /* FDAT204_H */
