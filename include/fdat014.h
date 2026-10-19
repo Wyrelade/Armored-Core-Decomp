@@ -247,5 +247,12 @@ void func_801C7100();
 void func_801C732C();
 void func_801C7438();
 void func_800759A4(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+void func_800765E8(Obj801C504C *arg0, s32 arg1, s32 arg2, void (*arg3)());
+s32 func_8004EBF8(Sub801C4D98 *arg0);
+void func_801C4D98(Obj801C4C94 *arg0);
+void func_801C4E00(Obj801C4C94 *arg0);
+s32 func_801C50F4(Obj801C504C *arg0);
+void func_801C51F8(Obj801C504C *arg0, s32 arg1, s32 arg2);
+void func_801C52E8(s32 arg0, s32 arg1);
 
 #endif /* FDAT014_H */
