@@ -88,7 +88,9 @@ typedef struct Obj8004F9D8 {
 } Obj8004F9D8;
 
 typedef struct Obj8004FF14 {
-    u8 _pad0[0x74];
+    u8 _pad0[0x1];
+    u8 unk1;
+    u8 _pad2[0x72];
     void (*unk74)();
     u8 _pad78[0x4];
     u8 unk7C[4];
@@ -276,6 +278,34 @@ typedef struct Obj800702A8 {
     s16 unk82;
 } Obj800702A8;
 
+typedef struct Obj80056EF4 {
+    u8 _pad0[0x1];
+    u8 unk1;
+    u8 _pad2[0x3];
+    u8 unk5;
+    u8 _pad6[0x4];
+    s16 unkA;
+    u8 *unkC;
+    s8 unk10;
+    u8 _pad11[0x3];
+    s16 unk14;
+    s16 unk16;
+    u8 _pad18[0x28];
+    s16 unk40;
+    s16 unk42;
+    s16 unk44;
+    u8 _pad46[0x2];
+    s32 unk48;
+    s32 unk4C;
+    s32 unk50;
+    u8 _pad54[0x1C];
+    void (*unk70)();
+    void (*unk74)();
+    void (*unk78)();
+    u8 *unk7C;
+    u8 *unk80;
+} Obj80056EF4;
+
 typedef struct Obj800709D4 {
     u8 unk0;
     u8 unk1;
@@ -289,9 +319,10 @@ typedef struct Obj800709D4 {
     void (*unk74)();
     void (*unk78)();
     s32 unk7C;
-    u8 _pad80[0x4];
+    Obj80056EF4 *unk80;
     struct Obj800709D4 *unk84;
     u8 unk88;
+    u8 _pad89[0x3];
 } Obj800709D4;
 
 typedef struct Obj8007281C {
@@ -457,13 +488,15 @@ typedef struct Obj80068A20 {
     u8 _pad90[0x2];
     s16 unk92;
     s16 unk94;
-    u8 _pad96[0x2];
+    u8 unk96;
+    u8 _pad97[0x1];
     struct Sub8006DCEC *unk98;
     struct Obj8006FC84 *unk9C;
     s32 unkA0;
     s32 unkA4;
     u8 _padA8[0x22];
     u8 unkCA;
+    u8 _padCB[0x1];
 } Obj80068A20;
 
 typedef struct Obj8006FC84 {
@@ -531,32 +564,6 @@ typedef struct Obj80053C98 {
     u8 unkA7;
 } Obj80053C98;
 
-typedef struct Obj80056EF4 {
-    u8 _pad0[0x5];
-    u8 unk5;
-    u8 _pad6[0x4];
-    s16 unkA;
-    u8 *unkC;
-    s8 unk10;
-    u8 _pad11[0x3];
-    s16 unk14;
-    s16 unk16;
-    u8 _pad18[0x28];
-    s16 unk40;
-    s16 unk42;
-    s16 unk44;
-    u8 _pad46[0x2];
-    s32 unk48;
-    s32 unk4C;
-    s32 unk50;
-    u8 _pad54[0x1C];
-    void (*unk70)();
-    void (*unk74)();
-    void (*unk78)();
-    u8 *unk7C;
-    u8 *unk80;
-} Obj80056EF4;
-
 typedef struct Obj8005D15C {
     s16 unk0;
     s16 unk2;
@@ -581,6 +588,8 @@ typedef struct Obj8005E23C {
     u8 _pad86[0x2];
     u8 *unk88;
     s16 unk8C;
+    u8 _pad8E[0x2];
+    Obj80056EF4 *unk90;
 } Obj8005E23C;
 
 typedef struct Obj8005EAF8 {
@@ -605,6 +614,8 @@ typedef struct Obj8005EAF8 {
     void (*unk74)();
     void (*unk78)();
     struct Obj80068A20 *unk7C;
+    s16 unk80;
+    u8 _pad82[0x2];
 } Obj8005EAF8;
 
 typedef struct Obj8007437C {
@@ -878,7 +889,9 @@ typedef struct Obj800B2584 {
 } Obj800B2584;
 
 typedef struct Obj8009A658 {
-    u8 _pad0[0x24];
+    u8 _pad0[0x1];
+    s8 unk1;
+    u8 _pad2[0x22];
     s16 unk24;
 } Obj8009A658;
 
@@ -978,7 +991,7 @@ void func_80053A84(Obj8004DEB0 *arg0);
 void func_80053AB4(Obj8004DEB0 *arg0);
 void func_80055CE0(Obj8004DEB0 *arg0);
 extern u8 D_8004B0FC[];
-void func_8005DED8(Obj8004DEB0 *arg0, void (*arg1)(), u8 *arg2, s32 arg3);
+Obj8005E23C *func_8005DED8(Obj8004DEB0 *arg0, void (*arg1)(), u8 *arg2, s16 arg3);
 void func_80054258(Obj80052334 *arg0);
 void func_800507FC(void);
 extern u8 D_8004B120[];
@@ -987,7 +1000,7 @@ extern u8 D_8004B1BC[];
 void func_80054D34(Obj8004DEB0 *arg0);
 extern u8 D_8004B22C[];
 void func_800551A0(Obj8004DEB0 *arg0);
-void func_800A2D0C(void);
+void func_800A2D0C(u8 arg0);
 void func_8004FDF4(void);
 extern u8 D_8004B27C[];
 s32 func_800685A8(u8 arg0);
@@ -1031,7 +1044,7 @@ void func_8006BA08(void);
 void func_80068C08(Obj8004DEB0 *arg0);
 void func_800695E8(Obj8004DEB0 *arg0);
 void func_800700D8(void);
-void func_800701D4(s32 arg0, u8 *arg1, s32 arg2, s32 arg3);
+void func_800701D4(s16 arg0, u8 *arg1, s16 arg2, s16 arg3);
 void func_80068FBC();
 void func_80070154(void);
 void func_80069D40();
@@ -1049,7 +1062,7 @@ void func_8008651C(void);
 void func_80070A44();
 void func_8007092C(void);
 void func_800709D4(Obj800709D4 *arg0);
-void func_8007C68C();
+Obj800A8974 *func_8007C68C(void);
 void func_8004EFE8(void);
 s32 func_800728D8(Obj800709D4 *arg0);
 void func_800728A8(Obj8004DEB0 *arg0);
@@ -1060,7 +1073,7 @@ void func_80073904(void);
 void func_80075898();
 void func_80078AAC();
 void func_800804F0(Obj8004DEB0 *, s32);
-void func_8007D738(Obj8004DEB0 *, s32);
+Obj8004DEB0 *func_8007D738(Obj8004DEB0 *arg0, s32 arg1);
 void func_8007CFC0(Obj8004DEB0 *, s32);
 void func_8007D690(Obj8004DEB0 *arg0);
 void func_8007D6E8(Obj8004DEB0 *arg0);
@@ -1091,7 +1104,7 @@ void func_80088DE4();
 void func_80089250(Obj8004DEB0 *arg0);
 void func_800513F0(u16 arg0, u16 arg1, void (*arg2)());
 void func_80086E34();
-extern u8 D_801F37C8;
+extern volatile u8 D_801F37C8;
 void func_8008AF0C(void);
 void func_8009C964(s32);
 void func_8005E92C(void);
@@ -1347,7 +1360,7 @@ void func_80052334(Obj80052334 *arg0);
 void func_800A38CC();
 s32 func_800684A0(u8 arg0);
 void func_80053A20(Obj8004DEB0 *arg0);
-extern u8 D_801A257C;
+extern u16 D_801A257C;
 void func_80053DB4();
 void func_80054CD0();
 void func_80054D44();
@@ -1448,7 +1461,7 @@ extern s16 D_800B9094;
 void func_8007437C(s32 arg0, s32 arg1);
 void func_8007AD64();
 void func_8007BC58(Obj8004DEB0 *arg0);
-void func_80070890();
+Obj800709D4 *func_80070890(u8 arg0);
 void func_8007FFEC(Obj8004DEB0 *arg0);
 extern u8 D_8004C498[];
 extern u8 D_8004C4A8[];
@@ -1520,7 +1533,7 @@ void func_8008AFA8(void);
 void func_8008B568(Obj8004DEB0 *arg0);
 void func_8008BC58();
 void func_8008BD9C(Obj8004DEB0 *arg0);
-void func_8008BDA8();
+Obj80056EF4 *func_8008BDA8(void);
 void func_8008BEEC(Obj8004DEB0 *arg0);
 void func_8008BEF8(void);
 void func_8008BFA8(Obj8004DEB0 *arg0);
