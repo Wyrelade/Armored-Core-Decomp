@@ -243,7 +243,27 @@ void func_801C7618(Obj801C5F00 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat098/nonmatchings/fdat098", func_801C767C);
+void func_801C767C(Obj801C5F00 *arg0) {
+    u8 num;
+    s32 count;
+    Elem801C7308 *elem;
+
+    num = arg0->unk23;
+    if (num != 0) {
+        count = num;
+        elem = &D_80198B08[arg0->unk24];
+        do {
+            if (elem->unk6 != -1) {
+                return;
+            }
+            count--;
+            elem++;
+        } while (count != 0);
+        arg0->unk6 = -1;
+        arg0->unk14 = NULL;
+        arg0->unk1C |= 0x8000;
+    }
+}
 
 void func_801C76F4(Obj801C75A4 *arg0) {
     Sub801C75A4 *task;
