@@ -383,7 +383,15 @@ s32 func_80014920(s32 arg0, s32 arg1) {
     return ((arg0 - arg1) & 0xFFF) < 0x801;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014930);
+s32 func_80014930(s32 arg0, s32 arg1) {
+    s32 d;
+
+    d = (arg1 - arg0) & 0xFFF;
+    if (d > 0x800) {
+        return d - 0x1000;
+    }
+    return d;
+}
 
 s32 func_80014950(s32 arg0, s32 arg1) {
     return SquareRoot0(arg0 * arg0 + arg1 * arg1);
