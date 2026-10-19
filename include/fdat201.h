@@ -2005,5 +2005,7 @@ extern s16 D_800B9030[];
 extern s16 D_800B9032[];
 extern s16 D_800B9034[];
 void func_8009A4A8();
+extern u8 D_800B8D48[];
+void func_8009A7C4();
 
 #endif /* FDAT201_H */
