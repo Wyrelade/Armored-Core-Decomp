@@ -267,7 +267,19 @@ void func_801C6C1C(Obj801C53A0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6C5C);
 
-INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6CCC);
+void func_801C6CCC(s32 arg0) {
+    Elem801C5F64 *elem;
+    Sub801C6C1C vec;
+    Task801C6CCC *task;
+
+    elem = &D_80198B08[arg0];
+    vec.unk0 = elem->unk0 + func_80014D78(1000) - 500;
+    vec.unk2 = elem->unk2;
+    vec.unk4 = elem->unk4;
+    task = func_80086F20(0, &vec, 8, 0x15E, 0, D_801C70D4, D_801C70DC, D_801C70E4, D_801C70E8);
+    task->unk14 = func_801C6C5C;
+    task->unk12 = 0xB;
+}
 
 void func_801C6D94(void) {
     s32 n;
