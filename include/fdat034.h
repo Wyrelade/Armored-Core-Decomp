@@ -143,7 +143,12 @@ typedef struct Obj8007A19C {
 } Obj8007A19C;
 
 typedef struct Elem801C52C0_fdat000 {
-    u8 _pad0[0x3A];
+    u8 _pad0[0x30];
+    u8 unk30;
+    u8 unk31;
+    u8 unk32;
+    u8 unk33;
+    u8 _pad34[0x6];
     u8 unk3A;
     u8 unk3B;
     u8 _pad3C[0x508];
@@ -163,7 +168,9 @@ typedef struct Sub801C5550 {
 
 typedef struct Sub801C5798 {
     u8 unk0;
-    u8 _pad1[0x67];
+    u8 _pad1[0x9];
+    s16 unkA;
+    u8 _padC[0x5C];
 } Sub801C5798;
 
 typedef struct Obj801C52C0_fdat000 {
