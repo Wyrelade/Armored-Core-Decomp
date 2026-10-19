@@ -303,5 +303,6 @@ void func_80075A54(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
 extern Elem801CA2EC D_80198B08[];
 void func_800759A4(Obj801C52C0_fdat000 *arg0, s32 arg1, u8 *arg2);
 void func_80075B08(Obj801C52C0_fdat000 *arg0, s32 arg1, Elem801CA2EC *arg2);
+s32 func_80014D78(s32 arg0);
 
 #endif /* FDAT016_H */
