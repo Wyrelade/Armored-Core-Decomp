@@ -660,7 +660,41 @@ void func_80015FB4(Obj80015E48 *arg0) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001604C);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001606C);
+Obj80015E48 *func_8001606C(Obj80015E48 *arg0, s32 arg1, s32 *arg2, s32 arg3) {
+    Obj80015E48 *blk;
+    Obj80015E48 *next;
+    s32 size;
+    s32 rest;
+    s32 total;
+    s32 avail;
+    Obj80015E48 *data;
+
+    size = (arg1 + 3) & ~3;
+    blk = func_80015E68(arg0, size);
+    if (blk == NULL) {
+        return NULL;
+    }
+    total = blk->unk4;
+    avail = total - sizeof(Obj80015E48);
+    rest = avail - size;
+    if (rest >= 0x810) {
+        next = (Obj80015E48 *)((u8 *)blk + size) + 1;
+        next->unk0 = 0;
+        next->unk4 = rest;
+        next->unk8 = NULL;
+    } else {
+        size = total;
+    }
+    blk->unk0 = 2;
+    data = &blk[1];
+    blk->unk4 = size;
+    blk->unk8 = arg2;
+    blk->unkC = arg3;
+    if (arg2 != NULL) {
+        *arg2 = (s32)data;
+    }
+    return data;
+}
 
 void func_80016114(Obj80015E48 *arg0) {
     func_80015E48(&arg0[-1]);
