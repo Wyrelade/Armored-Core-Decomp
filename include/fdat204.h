@@ -893,5 +893,7 @@ void SsUtKeyOffV(s16 arg0);
 s16 SsUtKeyOnV(s16 arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4, s16 arg5, s16 arg6, s16 arg7);
 extern s32 D_800894C0[];
 void func_80060050(Sub800507B8 *arg0, s32 *arg1, s32 arg2, s32 arg3, s32 arg4);
+s32 func_80072598(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+void func_80073188(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 
 #endif /* FDAT204_H */
