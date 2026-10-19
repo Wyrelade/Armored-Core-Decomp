@@ -1994,5 +1994,16 @@ extern s16 D_800B8F90[];
 extern s16 D_800B8F92[];
 extern s16 D_800B8F94[];
 void func_8008BE98();
+extern u8 D_800B8D24[];
+extern s16 D_800B9024[];
+extern s16 D_800B9026[];
+extern s16 D_800B9028[];
+extern s16 D_800B902A[];
+extern s16 D_800B902C[];
+extern s16 D_800B902E[];
+extern s16 D_800B9030[];
+extern s16 D_800B9032[];
+extern s16 D_800B9034[];
+void func_8009A4A8();
 
 #endif /* FDAT201_H */
