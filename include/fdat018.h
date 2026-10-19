@@ -206,7 +206,7 @@ void func_801C71C4();
 void func_801C756C();
 s32 func_8006D45C(void);
 void func_8006D39C(Obj801C53D4 *arg0);
-void func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
+s32 func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
 void func_801C76D0(Obj801C53D4 *arg0);
 s32 func_801C776C(Obj801C730C *arg0, s32 arg1, s32 arg2, ...);
 void func_801C7804();
