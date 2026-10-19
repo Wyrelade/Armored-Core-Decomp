@@ -1016,7 +1016,18 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006CF38);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006D030);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006D084);
+void func_8006D084(u32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+    s32 n;
+    u32 mask;
+
+    n = arg2 - arg1;
+    arg0 = arg0 + arg1 * 16 + ((u32)arg3 >> 5);
+    mask = ~(1 << (arg3 & 0x1F));
+    while (n-- >= 0) {
+        *arg0 &= mask;
+        arg0 += 16;
+    }
+}
 
 void func_8006D0DC(Obj8006D0DC *arg0, s32 arg1) {
     func_8006D030(D_801DDD18[0], (arg0->unk0 >> 10) + 0x20, (arg0->unk8 >> 10) + 0x20, arg1);
