@@ -1922,5 +1922,6 @@ void func_8005E710();
 extern Elem8006F708 D_8017E5D8[];
 extern Elem8006F708 D_8017E5D9[];
 extern Elem8006F708 D_8017E5DA[];
+extern u8 D_800B81D4[];
 
 #endif /* FDAT201_H */
