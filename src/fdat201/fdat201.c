@@ -2736,7 +2736,32 @@ void func_800703D0(Obj80068A20 *arg0) {
     obj->unk7C = arg0;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007046C);
+void func_8007046C(Obj800703D0 *arg0) {
+    Obj80068A20 *obj;
+    Sub8006DCEC *src;
+    Obj8006FC84 *dst;
+    Sub80068A20 *grid;
+    s16 x;
+    s16 y;
+    s16 px;
+    s16 py;
+
+    obj = arg0->unk7C;
+    src = obj->unk98;
+    px = src->unk7E;
+    grid = &obj->unk7C;
+    dst = obj->unk9C;
+    if (px >= 0xAC) {
+        py = src->unk80;
+        if (py >= 0x24) {
+            x = dst->unk7C + (px - 0xAC) / grid->unk8;
+            y = dst->unk7E + (py - 0x24) / grid->unk8;
+            if (x < 0x40 && y < 0x40 && x >= 0 && y >= 0) {
+                func_8007053C(grid, x, y, arg0->unk14, &D_800B7E54, 0);
+            }
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007053C);
 

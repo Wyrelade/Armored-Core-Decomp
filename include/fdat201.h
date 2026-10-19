@@ -2062,7 +2062,7 @@ extern u8 D_800B81D4[];
 extern u8 D_800B81E0[];
 extern u8 D_800B81F8[];
 void func_800702A8();
-void func_8007046C();
+void func_8007046C(Obj800703D0 *arg0);
 extern u8 D_800B83B8[];
 extern s8 D_800B8A24[];
 extern u8 D_80042AA8[];
@@ -2158,5 +2158,7 @@ void func_8004FDEC(void);
 u32 *malloc2(s32 arg0);
 extern volatile s32 D_800CF378;
 void func_800165E4(u16 arg0, u16 arg1, u32 *arg2);
+void func_8007053C(Sub80068A20 *arg0, s16 arg1, s16 arg2, s16 arg3, s32 *arg4, s32 arg5);
+extern s32 D_800B7E54;
 
 #endif /* FDAT201_H */
