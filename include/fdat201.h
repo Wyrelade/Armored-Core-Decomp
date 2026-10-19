@@ -1081,6 +1081,41 @@ typedef struct Obj800B1B08 {
     u8 unk89;
 } Obj800B1B08;
 
+typedef struct Elem8008F08C_2C {
+    s32 unk0;
+    u8 _pad4[0x28];
+} Elem8008F08C_2C;
+
+typedef struct Elem8008F08C_30 {
+    s32 unk0;
+    u8 _pad4[0x2C];
+} Elem8008F08C_30;
+
+typedef struct Elem8008F08C_34 {
+    s32 unk0;
+    u8 _pad4[0x30];
+} Elem8008F08C_34;
+
+typedef struct Elem8008F08C_38 {
+    s32 unk0;
+    u8 _pad4[0x34];
+} Elem8008F08C_38;
+
+typedef struct Elem8008F08C_3C {
+    s32 unk0;
+    u8 _pad4[0x38];
+} Elem8008F08C_3C;
+
+typedef struct Elem8008F08C_48 {
+    s32 unk0;
+    u8 _pad4[0x44];
+} Elem8008F08C_48;
+
+typedef struct Elem8008F08C_60 {
+    s32 unk0;
+    u8 _pad4[0x5C];
+} Elem8008F08C_60;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2107,5 +2142,16 @@ extern u32 D_800485C8[];
 extern u32 D_800485D0[];
 extern u32 D_800485E8[];
 extern u32 D_800485F8[];
+extern Elem8008F08C_3C D_800B9218[];
+extern Elem8008F08C_38 D_800B9470[];
+extern Elem8008F08C_48 D_800B9518[];
+extern Elem8008F08C_34 D_800B9E18[];
+extern Elem8008F08C_2C D_800BA158[];
+extern Elem8008F08C_34 D_800BA418[];
+extern Elem8008F08C_34 D_800BAB00[];
+extern Elem8008F08C_30 D_800BABD0[];
+extern Elem8008F08C_60 D_800BACF0[];
+extern Elem8008F08C_30 D_800BAFF0[];
+extern Elem8008F08C_2C D_800BB140[];
 
 #endif /* FDAT201_H */

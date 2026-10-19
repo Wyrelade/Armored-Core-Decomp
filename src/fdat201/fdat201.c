@@ -4825,7 +4825,33 @@ void func_8008EE88(u8 *arg0, u8 *arg1) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008EED4);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008F08C);
+s32 func_8008F08C(u8 arg0, u8 arg1) {
+    switch (arg0) {
+    case 0:
+        return D_800B9218[arg1].unk0;
+    case 1:
+        return D_800B9470[arg1].unk0;
+    case 2:
+        return D_800B9E18[arg1].unk0;
+    case 3:
+        return D_800B9518[arg1].unk0;
+    case 4:
+        return D_800BAFF0[arg1].unk0;
+    case 5:
+        return D_800BACF0[arg1].unk0;
+    case 6:
+        return D_800BB140[arg1].unk0;
+    case 7:
+        return D_800BABD0[arg1].unk0;
+    case 8:
+        return D_800BA418[arg1].unk0;
+    case 9:
+        if (arg1 >= 0x10) {
+            return D_800BAB00[arg1 - 0x10].unk0;
+        }
+        return D_800BA158[arg1].unk0;
+    }
+}
 
 void func_8008F274(u8 arg0, u8 arg1, u8 arg2) {
     u8 buf[8];
