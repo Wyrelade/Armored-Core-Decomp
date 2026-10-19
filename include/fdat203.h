@@ -107,15 +107,34 @@ typedef struct Obj800744D0 {
     u16 unk164;
 } Obj800744D0;
 
+typedef struct Elem8007A590 {
+    s32 unk0;
+    u8 _pad4[0x8];
+    s16 unkC;
+    s16 unkE;
+    u8 _pad10[0x20];
+} Elem8007A590;
+
 typedef struct Obj800781F0 {
     u8 _pad0[0x8];
     s32 unk8;
-    u8 _padC[0x40];
+    u8 _padC[0x18];
+    s32 unk24;
+    u16 unk28;
+    s16 unk2A;
+    s16 unk2C;
+    s16 unk2E;
+    u8 _pad30[0x1C];
     struct Sub800787B0 *unk4C;
-    u8 _pad50[0x1C4];
+    u8 _pad50[0x30];
+    s32 unk80;
+    Elem8007A590 unk84[8];
+    u8 _pad204[0x10];
     u16 unk214;
     u16 unk216;
-    u8 _pad218[0x49];
+    u8 _pad218[0x8];
+    u16 unk220;
+    u8 _pad222[0x3F];
     u8 unk261;
     u8 _pad262[0xE];
     u16 unk270;
@@ -791,7 +810,7 @@ typedef struct Obj8007618C_fdat202 {
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
-void func_8004BE10(void);
+s32 func_8004BE10(void);
 extern s32 D_8019B48C;
 extern u16 D_8019B490;
 extern u8 D_80041BC0;
