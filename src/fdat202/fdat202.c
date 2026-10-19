@@ -1388,7 +1388,27 @@ void func_80073104(void) {
     } while (i != 0);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80073170);
+void func_80073170(void) {
+    Obj80073170 *obj;
+    Elem800736AC *p;
+    Elem800736AC **list;
+    u16 *count;
+    s32 i;
+
+    obj = (Obj80073170 *)D_80198B08;
+    p = obj->unk0;
+    list = obj->unk6800;
+    i = 0x200;
+    D_8019F508 = 0;
+    do {
+        if (p->unk6 != -1 && !(p->unk1C & 0x4000)) {
+            count = &((Obj80073170 *)D_80198B08)->unk6A00;
+            (*count)++;
+            *list++ = p;
+        }
+        p++;
+    } while (--i != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800731E8);
 
