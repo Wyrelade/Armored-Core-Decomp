@@ -6237,7 +6237,13 @@ void func_800A4E38(u8 *arg0) {
     } while (CdRead2(0x1C0) == 0);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A4EAC);
+s32 func_800A4EAC(void) {
+    if (func_800162A0(D_800BDCD0) >= 0x1EBA) {
+        D_800BDCD4 = 1;
+        return 0;
+    }
+    return 1;
+}
 
 void func_800A4EF0(void) {
     func_800309A8(4, 0, func_800A4EAC);
