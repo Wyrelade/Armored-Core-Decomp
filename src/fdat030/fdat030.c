@@ -94,7 +94,43 @@ void func_801C52CC(s32 arg0, s32 arg1) {
     func_800759A4(arg0, arg1, &vec);
 }
 
-INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C5330);
+void func_801C5330(Obj801C504C *arg0, s32 arg1) {
+    s32 var_s1;
+
+    var_s1 = arg1;
+    if (arg0->unk36 & 0x10) {
+        var_s1 = arg0->unk3C;
+    }
+    func_80078598(arg0);
+    switch (var_s1) {
+    case 1:
+        func_801C51DC(arg0, 2, 1);
+        break;
+    case 2:
+        func_801C51DC(arg0, 5, 4);
+        break;
+    case 0:
+        if (func_801C50D8(arg0) != 0) {
+            func_80076578(arg0, 0, 1, func_801C4D7C);
+            arg0->unk72 = 0x100;
+        }
+        break;
+    case 3:
+        func_8007790C(arg0, arg0->unk64.unk0, 1, 0x400, &arg0->unkCC, -1, D_800764C4);
+        break;
+    case 4:
+        if (arg0->unk64.unk0 == 8 && func_8004EBF8(&arg0->unk64) != 0) {
+            func_801C52CC((s32)arg0, 1);
+            func_80076578(arg0, 0, 1, func_801C4D7C);
+        } else {
+            func_800765E8(arg0, 8, 1, func_801C4DE4);
+        }
+        break;
+    }
+    if (!(arg0->unk36 & 0x10)) {
+        arg0->unk3C = var_s1;
+    }
+}
 
 void func_801C54AC(Obj8007618C *arg0) {
     arg0->unk148 = 0;
