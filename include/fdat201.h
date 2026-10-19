@@ -2164,5 +2164,7 @@ extern u8 D_800B8B40[];
 void func_8008BD48();
 extern u8 D_800B8D30[];
 void func_8009A5F8();
+extern u8 D_800BDBC0[];
+extern u8 D_800BDBCC[];
 
 #endif /* FDAT201_H */
