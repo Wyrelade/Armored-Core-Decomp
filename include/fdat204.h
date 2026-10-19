@@ -1037,5 +1037,7 @@ s32 func_80016A84(s32 arg0);
 extern Elem800852B0 D_8008BC44[];
 extern Sub800852B0 D_8008BC80[];
 void func_80083C98();
+extern s32 D_800893C0;
+s32 func_80016278(s32);
 
 #endif /* FDAT204_H */

@@ -1,7 +1,13 @@
 #include "common.h"
 #include "fdat204.h"
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004BDB8);
+s32 func_8004BDB8(void) {
+    if (func_80016278(D_800893C0) >= 300) {
+        D_800893C4 = 1;
+        return 0;
+    }
+    return 1;
+}
 
 void func_8004BDFC(void) {
     D_800893C4 = 0;
