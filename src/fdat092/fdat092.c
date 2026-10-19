@@ -188,7 +188,12 @@ void func_801C6440(Obj801C52C0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat092/nonmatchings/fdat092", func_801C64DC);
+s32 func_801C64DC(Obj801C730C *arg0, s32 arg1, s32 arg2, ...) {
+    if (arg1 == 0x8200) {
+        arg0->unk38->unk0 = 1;
+    }
+    return 0;
+}
 
 void func_801C6500(Obj801C52C0 *arg0) {
     s32 unused[36];
