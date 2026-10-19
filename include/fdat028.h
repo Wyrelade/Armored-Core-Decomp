@@ -185,6 +185,13 @@ typedef struct Sub801C54B8 {
     s16 unk12;
 } Sub801C54B8;
 
+typedef struct Sub801C4C94 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C4C94;
+
 /* @externs */
 Sub801C60B4 *func_80072120(s32 arg0);
 void func_801C603C();
@@ -225,5 +232,8 @@ extern u8 D_801C740C[];
 extern u8 D_801C7410[];
 Sub801C54B8 *func_80086F20(s32 arg0, Sub801C6C1C *arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, u8 *arg6, u8 *arg7, u8 *arg8);
 s32 func_801C5334(Obj801C53A0 *arg0);
+s16 func_80014DAC(s32 arg0);
+s32 func_80014D30(s32 arg0);
+void func_80075A18(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
 
 #endif /* FDAT028_H */
