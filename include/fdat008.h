@@ -353,5 +353,6 @@ void func_801C7234(Obj801C52C0 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub801C55B4 
 extern s16 D_801A26CE;
 extern Elem801C5314 D_801D0B94[];
 s32 func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
+s32 func_80014D78(s32 arg0);
 
 #endif /* FDAT008_H */
