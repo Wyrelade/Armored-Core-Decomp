@@ -273,7 +273,24 @@ void func_801CAF18(Obj801C52C0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat008/nonmatchings/fdat008", func_801CAFB8);
+s32 func_801CAFB8(Obj801C52C0 *arg0) {
+    switch (arg0->unk64.unk0) {
+    case 0:
+    case 2:
+    case 4:
+    case 6:
+    case 9:
+    case 12:
+    case 15:
+    case 17:
+    case 19:
+        if (arg0->unkCC.unk0 != 0 || arg0->unkCC.unk4 != 0) {
+            func_801C7234(arg0, 0, 0, 0x100, &arg0->unkCC);
+            return 0;
+        }
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat008/nonmatchings/fdat008", func_801CB03C);
 
