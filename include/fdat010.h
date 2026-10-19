@@ -65,9 +65,20 @@ typedef struct Sub801C5B1C {
     void (*unk4)();
 } Sub801C5B1C;
 
+typedef struct Sub801C5C6C {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u8 unk4;
+    u8 unk5;
+    u8 unk6;
+} Sub801C5C6C;
+
 typedef struct Obj801C5B1C {
     u8 _pad0[0x2C];
     Sub801C5B1C *unk2C;
+    u8 _pad30[0x8];
+    Sub801C5C6C *unk38;
 } Obj801C5B1C;
 
 typedef struct Obj801C5F84 {
