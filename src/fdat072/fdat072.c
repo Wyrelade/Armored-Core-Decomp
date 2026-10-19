@@ -55,7 +55,32 @@ void func_801C5EC0(Obj801C5EC0 *arg0) {
     task->unk0 = func_801C5D98;
 }
 
-INCLUDE_ASM("asm/USA/fdat072/nonmatchings/fdat072", func_801C5EFC);
+void func_801C5EFC(Obj801C5EFC *arg0) {
+    Sub801C6954 *sub;
+    s32 hit;
+    Sub801C5EFC *task;
+    s32 dx;
+    s32 dy;
+    s32 dz;
+
+    sub = arg0->unk14;
+    if (!(sub->unk8 & 7)) {
+        hit = D_801AC860[(s16)arg0->unkE >> 5] & (1 << (arg0->unkE & 0x1F));
+        if (hit != 0) {
+            dx = D_801A26C0 - arg0->unk0;
+            dy = D_801A26C2 - arg0->unk2;
+            dz = D_801A26C4 - arg0->unk4;
+            if (SquareRoot0(dx * dx + dy * dy + dz * dz) < 0x1770) {
+                task = func_80086854(0, arg0, &D_801C6C04);
+                task->unk10 = 5;
+                task->unkBC = 0xC8;
+                task->unkBA = 0xC8;
+                task->unkBE = 0x64;
+            }
+        }
+    }
+    sub->unk8++;
+}
 
 void func_801C6020(Obj801C6870 *arg0) {
     arg0->unkA += 0x80;
