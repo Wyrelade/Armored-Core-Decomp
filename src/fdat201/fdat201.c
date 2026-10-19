@@ -3852,7 +3852,17 @@ void func_80083984(Obj8005DCDC *arg0) {
     obj->unk48 = x + 8;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80083A28);
+void func_80083A28(Obj80081010 *arg0) {
+    Obj8005DCDC *src;
+    u8 col;
+
+    src = arg0->unk7C;
+    col = src->unk96;
+    if (col == 8) {
+        col = 7;
+    }
+    arg0->unk48 = col * 16 + 8;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80083A58);
 

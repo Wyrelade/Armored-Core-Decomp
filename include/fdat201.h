@@ -1694,7 +1694,7 @@ void func_800828BC(Obj800828BC *arg0);
 void func_8008382C();
 void func_80083958();
 extern u8 D_800B8550[];
-void func_80083A28();
+void func_80083A28(Obj80081010 *arg0);
 s32 func_800842D4();
 void func_80083D48(Obj8004DEB0 *arg0);
 void func_80083DF0(Obj8004DEB0 *arg0);
