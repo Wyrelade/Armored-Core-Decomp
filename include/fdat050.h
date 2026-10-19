@@ -264,6 +264,10 @@ typedef struct Obj801C7360 {
     u16 unk26;
 } Obj801C7360;
 
+typedef struct Elem801C93F8 {
+    u8 _pad0[0x34];
+} Elem801C93F8;
+
 /* @externs */
 extern Elem801C5454 D_801CCD2C;
 void func_801CCCE0(Obj801C5454 *arg0);
@@ -299,5 +303,9 @@ void func_801CB9B0();
 void func_8008A80C();
 u16 func_80073904(void);
 void func_8004ECA8(Sub801C4EB8 *arg0);
+extern Sub801C55B4 D_80039C78;
+extern Elem801C93F8 D_80198B08[];
+void func_800759A4(Obj801C52C0 *arg0, s32 arg1, Sub801C55B4 *arg2);
+void func_80075B08(Obj801C52C0 *arg0, s32 arg1, Elem801C93F8 *arg2);
 
 #endif /* FDAT050_H */
