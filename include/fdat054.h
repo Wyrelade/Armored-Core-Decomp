@@ -194,5 +194,6 @@ extern Sub801C55B4 D_80039C78;
 extern Elem801C7290 D_80198B08[];
 void func_800759A4(Obj801C52C0 *arg0, s32 arg1, Sub801C55B4 *arg2);
 void func_80075B08(Obj801C52C0 *arg0, s32 arg1, Elem801C7290 *arg2);
+void func_801C5860(Obj801C52C0 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub801C55B4 *arg4);
 
 #endif /* FDAT054_H */
