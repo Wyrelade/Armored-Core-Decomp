@@ -2966,7 +2966,50 @@ INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", jtbl_8004C34C);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", jtbl_8004C3BC);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", jtbl_8004C42C);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007AA04);
+s32 func_8007AA04(s32 arg0) {
+    u32 *flags;
+    u32 bits;
+    u8 i;
+
+    switch ((u8)arg0) {
+    case 2:
+        flags = D_800485C8;
+        break;
+    case 3:
+        flags = D_800485B0;
+        break;
+    case 0:
+        flags = D_800485A0;
+        break;
+    case 11:
+        flags = D_800485A8;
+        break;
+    case 8:
+        flags = D_800485F8;
+        break;
+    case 1:
+        flags = D_800485D0;
+        break;
+    case 9:
+        flags = D_800485E8;
+        break;
+    }
+    bits = flags[0];
+    for (i = 0; i < 32; i++) {
+        if (bits & 1) {
+            return i;
+        }
+        bits >>= 1;
+    }
+    bits = flags[1];
+    for (i = 32; i < 64; i++) {
+        if (bits & 1) {
+            return i;
+        }
+        bits >>= 1;
+    }
+    return 0xFF;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007AAF0);
 
