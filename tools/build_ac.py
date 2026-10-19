@@ -193,9 +193,14 @@ def extract_rodata(src):
         if os.path.exists(dst):
             continue
         mdir = os.path.join(ROOT, folder.replace("/nonmatchings/", "/matchings/"))
+        ndir = os.path.join(ROOT, folder)
         block = None
-        for name in sorted(os.listdir(mdir)) if os.path.isdir(mdir) else []:
-            t = open(os.path.join(mdir, name)).read()
+        # matchings/ after a re-split; the function's old nonmatchings/ file before one
+        names = [os.path.join(mdir, n) for n in sorted(os.listdir(mdir))] if os.path.isdir(mdir) else []
+        names += [os.path.join(ndir, n) for n in sorted(os.listdir(ndir))
+                  if n.startswith("func_")] if os.path.isdir(ndir) else []
+        for name in names:
+            t = open(name).read()
             m = re.search(r"(?:\.align \d+\n)?nonmatching %s\n.*?enddlabel %s\n" % (sym, sym), t, re.S)
             if m:
                 block = m.group(0)
