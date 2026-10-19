@@ -418,12 +418,16 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80052330);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80052368);
 
-s32 func_80052658(Obj80052658 *arg0, u16 arg1, u16 arg2, s32 arg3) {
+s32 func_80052658(Obj80052658 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 ret;
+    u16 a;
+    u16 b;
 
+    a = arg1;
+    b = arg2;
     D_801ADCDC[arg3] = arg0;
-    ret = func_80015D80(arg1, arg2);
-    func_800165E4(arg1, arg2, (u32 *)arg0);
+    ret = func_80015D80(a, b);
+    func_800165E4(a, b, (u32 *)arg0);
     func_80056688((u8 *)arg0 + arg0->unk8);
     return ret;
 }
