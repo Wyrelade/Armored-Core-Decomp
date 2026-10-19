@@ -304,6 +304,35 @@ typedef struct Sub801C4C94 {
     s16 unk6;
 } Sub801C4C94;
 
+typedef struct Task801C712C {
+    void (*unk0)();
+    void (*unk4)();
+    u8 _pad8[0x8];
+    u16 unk10;
+} Task801C712C;
+
+typedef struct Sub801C712C {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u8 unk4;
+    u8 unk5;
+    u16 unk6;
+    u16 unk8;
+} Sub801C712C;
+
+typedef struct Obj801C712C {
+    u8 _pad0[0x2C];
+    Task801C712C *unk2C;
+    u8 _pad30[0x8];
+    Sub801C712C *unk38;
+} Obj801C712C;
+
+typedef struct Elem801C712C {
+    s32 unk0;
+    u8 _pad4[0x3C];
+} Elem801C712C;
+
 /* @externs */
 void func_801C55AC(Obj801C4EB8 *arg0);
 void func_801C6480(Obj801C6554 *arg0);
@@ -340,5 +369,8 @@ extern Obj8019FB68 D_8019FB68;
 extern Obj8019F51C *D_8019F51C;
 void func_80078B14(Sub801A2828 *arg0, Obj8019FB68 *arg1);
 s32 func_80014D78(s32 arg0);
+extern s16 D_801A26CE;
+extern Elem801C712C D_801D0B94[];
+s32 func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
 
 #endif /* FDAT042_H */
