@@ -1785,7 +1785,14 @@ void func_800751AC(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     arg0->unk64.unk2 = 2;
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8007521C);
+void func_8007521C(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
+    func_8007510C((Obj8007618C_fdat202 *)arg0, arg3, arg6);
+    func_8004EA8C(&arg0->unk64, arg1, arg2, 0x200);
+    arg0->unkCC = 0;
+    arg0->unkCE = arg4;
+    arg0->unkD0 = arg5;
+    arg0->unk64.unk2 = 2;
+}
 
 void func_800752A4(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
     Obj8004F0B8 sp18;
