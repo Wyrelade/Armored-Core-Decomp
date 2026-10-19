@@ -429,12 +429,16 @@ void func_80053020(Obj80052F90 *arg0, Sub80052F90 *arg1, s32 arg2) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80053190);
 
-s32 func_8005360C(Obj80053908 *arg0, u16 arg1, u16 arg2, s32 arg3) {
+s32 func_8005360C(Obj80053908 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+    u16 x;
+    u16 y;
     s32 ret;
 
+    x = arg1;
+    y = arg2;
     D_801A5F34[arg3] = arg0;
-    ret = func_80015D80(arg1, arg2);
-    func_800165E4(arg1, arg2, arg0);
+    ret = func_80015D80(x, y);
+    func_800165E4(x, y, arg0);
     func_800574D8((Obj80053908 *)((u8 *)arg0 + arg0->unk8));
     return ret;
 }
@@ -998,7 +1002,7 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006D4BC);
 s32 func_8006D534(s32 arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3) {
     s32 ret;
 
-    ret = func_80073598();
+    ret = func_80073598(arg0, arg1, arg2, arg3);
     if (ret == 0) {
         ret = func_80074728(arg0, arg1, arg2, arg3);
         if (ret == 0) {
