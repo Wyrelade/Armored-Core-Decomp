@@ -285,6 +285,13 @@ typedef struct Obj801CB74C {
     Elem801C52C0 *unk108;
 } Obj801CB74C;
 
+typedef struct Sub801C4C94 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C4C94;
+
 /* @externs */
 extern Elem801C5454 D_801CCD2C;
 void func_801CCCE0(Obj801C5454 *arg0);
