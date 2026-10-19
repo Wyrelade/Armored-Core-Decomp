@@ -277,7 +277,9 @@ typedef struct Obj801C7788 {
 } Obj801C7788;
 
 typedef struct Elem801C878C {
-    u8 _pad0[0x34];
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0x2C];
 } Elem801C878C;
 
 typedef struct Task801C6D58 {
