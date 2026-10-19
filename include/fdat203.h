@@ -936,5 +936,10 @@ extern s32 D_801DE518[3][64][16];
 s32 func_8006E380(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_80070848(s32 arg0, Obj80070994 *arg1);
 s32 func_80012794(s16 *arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4, s32 arg5, s32 arg6);
+extern Obj800781F0 D_80040FA0[];
+void func_80077E10(void);
+void func_8007738C(void);
+void func_80077C80(void);
+void func_80077798(Obj800732FC *arg0, s32 arg1);
 
 #endif /* FDAT203_H */
