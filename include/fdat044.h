@@ -288,7 +288,7 @@ Sub801C5578 *func_80072120(s32 arg0);
 void func_801C5E28();
 Sub801C572C *func_80073674(s32 arg0);
 void func_801C61D0(Obj801C5F00 *arg0);
-void func_801C6234();
+void func_801C6234(Obj801C5F00 *arg0);
 void func_801C6318();
 void func_8004C318(s32 arg0);
 void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
