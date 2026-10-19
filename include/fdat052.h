@@ -293,7 +293,7 @@ void func_801C6894();
 void func_801C6B28();
 Sub801C6D68 *func_80073674(s32 arg0);
 void func_801C6C8C(Obj801C5F00 *arg0);
-void func_801C6CF0();
+void func_801C6CF0(Obj801C5F00 *arg0);
 void func_801C6DD4();
 void func_801C6EF0();
 extern s16 D_801D17AE;
