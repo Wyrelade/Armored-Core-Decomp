@@ -611,7 +611,25 @@ s32 func_80015D80(u16 arg0, u16 arg1) {
 void func_80015DC0(s32 arg0) {
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015DC8);
+void func_80015DC8(Obj80015E48 *arg0) {
+    Obj80015E48 *p;
+    u8 state;
+
+    p = arg0;
+    state = p->unk0;
+    while (state != 0xFF) {
+        if (state == 0) {
+            p = (Obj80015E48 *)((u8 *)p + (p->unk4 + sizeof(Obj80015E48)));
+            if (p->unk0 != 0) {
+                return;
+            }
+            arg0->unk4 += p->unk4 + sizeof(Obj80015E48);
+        } else {
+            p = (Obj80015E48 *)((u8 *)p + (p->unk4 + sizeof(Obj80015E48)));
+        }
+        state = p->unk0;
+    }
+}
 
 void func_80015E48(Obj80015E48 *arg0) {
     s32 *ptr;
