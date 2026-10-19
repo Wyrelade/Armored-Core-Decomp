@@ -420,7 +420,16 @@ void func_80014B74(Obj800138F0 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2) {
     arg2->unk4 = 0;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014C10);
+s32 func_80014C10(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    if (arg2 < arg0) {
+        if (arg2 < arg0 - arg1) {
+            return 0;
+        }
+    } else if (arg0 < arg2 - arg3) {
+        return 0;
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014C40);
 
