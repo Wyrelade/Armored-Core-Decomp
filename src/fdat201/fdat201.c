@@ -800,7 +800,40 @@ void func_80053A84(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80053AB4);
+void func_80053AB4(Obj8004DEB0 *arg0) {
+    Obj80053AB4 *self;
+    Sub80053AB4 *work;
+
+    self = (Obj80053AB4 *)arg0;
+    work = &self->unk7C;
+    if (func_800684A0(self->unk7C.unk28) != 0) {
+        func_800506EC(0xA);
+        func_8005015C(9)->unk1 = 1;
+        self->unk74 = func_80054258;
+    }
+    func_80066994(self->unk7C.unk28);
+    if (self->unk7C.unk29 == 'S' && D_801EF6D0[self->unk7C.unk28].unk0 < 0xF) {
+        self->unk7C.unk2B = 1;
+    } else {
+        self->unk7C.unk2B = 0;
+    }
+    func_80066CB0(work->unk28);
+    work->unk2A = 0;
+    work->unk26 = 0;
+    func_800506EC(0xA);
+    func_8005015C(9)->unk1 = 1;
+    func_8005C2D0(0xC, 0x68, 0x128, 0x20, 9);
+    if (work->unk29 == 'S') {
+        if (D_801EF6D0[work->unk28].unk0 >= 0xF && D_801EF6D8[work->unk28].unk0 == 0) {
+            self->unk74 = func_80054188;
+            return;
+        }
+    } else if (D_801EF6D8[work->unk28].unk0 == 0) {
+        self->unk74 = func_800541F0;
+        return;
+    }
+    self->unk74 = func_80053C98;
+}
 
 void func_80053C98(Obj80053C98 *arg0) {
     u8 n;
