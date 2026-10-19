@@ -189,7 +189,9 @@ typedef struct Elem801C586C {
 } Elem801C586C;
 
 typedef struct Elem801C75E8 {
-    u8 _pad0[0x34];
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0x2C];
 } Elem801C75E8;
 
 /* @externs */
