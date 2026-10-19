@@ -6148,7 +6148,38 @@ Obj8004DEB0 *func_800A4274(s32 arg0) {
     return (Obj8004DEB0 *)task;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A4340);
+Obj8004DEB0 *func_800A4340(s32 arg0) {
+    Obj80056EF4 *task;
+    u8 kind;
+
+    task = func_800501BC(2);
+    task->unk70 = func_800A4340;
+    task->unk74 = func_800507FC;
+    task->unk78 = func_800507F4;
+    task->unkA = 3;
+    task->unk16 = 4;
+    kind = arg0;
+    task->unk14 = 3;
+    if (kind == 0x4C) {
+        task->unkC = D_800BDBD8;
+    } else {
+        task->unkC = D_800BDBE4;
+    }
+    task->unk5 = 0;
+    task->unk40 = 0;
+    task->unk42 = 0;
+    task->unk44 = 0;
+    if (kind == 0x4C) {
+        task->unk48 = 0;
+    } else {
+        task->unk48 = 0x100;
+    }
+    do {
+        task->unk4C = 0;
+        task->unk50 = 0;
+    } while (0);
+    return (Obj8004DEB0 *)task;
+}
 
 Obj8004DEB0 *func_800A4408(void) {
     Obj800A3814 *obj;
