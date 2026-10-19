@@ -7010,7 +7010,12 @@ void func_800AEB0C(Obj80056FC4 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AEB30);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800AEBF4);
+void func_800AEBF4(Obj8004DEB0 *arg0) {
+    arg0->unk88 = 0;
+    func_8005BA2C(0x18, 0x28, 0x88, 0x90, 3, 0, 0);
+    func_8005BA2C(0x10, 0xC8, 0x120, 0x18, 5, 1, 0);
+    SsUtKeyOn(D_801A2318, 0, 6, 0x3C, 0, 0x7F, 0x7F);
+}
 
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D798);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D844);
