@@ -890,5 +890,6 @@ extern Elem8007286C D_801A4C68[];
 void SsVabClose(s16 arg0);
 extern Sub8004CF0C D_80042086[];
 void SsUtKeyOffV(s16 arg0);
+s16 SsUtKeyOnV(s16 arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4, s16 arg5, s16 arg6, s16 arg7);
 
 #endif /* FDAT204_H */
