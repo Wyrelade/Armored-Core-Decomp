@@ -43,11 +43,18 @@ typedef struct Sub801C55A0 {
     u8 unk20;
 } Sub801C55A0;
 
+typedef struct Sub801C52E0 {
+    u8 _pad0[0x8];
+    s16 unk8;
+} Sub801C52E0;
+
 typedef struct Obj801C58D4 {
     Sub801C55A0 *unk0;
-    u8 _pad4[0x4];
+    Sub801C52E0 *unk4;
     Sub801C63FC unk8;
-    u8 _pad10[0x1C];
+    u8 _pad10[0x2];
+    s16 unk12;
+    u8 _pad14[0x18];
     Sub801C5B78 *unk2C;
     u8 _pad30[0x6];
     s16 unk36;
@@ -221,7 +228,7 @@ s32 func_801C5494(Obj801C58D4 *arg0);
 s32 rand();
 extern u8 D_801CB9E0[];
 extern u8 D_801CBA04[];
-void func_801C5440();
+void func_801C5440(Obj801C58D4 *arg0, u8 arg1);
 void func_801C56B0();
 void func_801C55A0(Obj801C58D4 *arg0);
 void func_801C57E4();
