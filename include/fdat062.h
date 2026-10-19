@@ -113,7 +113,7 @@ typedef struct Obj801C52C0 {
     u8 _pad3E[0x3];
     u8 unk41;
     u8 unk42;
-    u8 _pad43;
+    u8 _pad43[0x1];
     s16 unk44;
     u8 _pad46[0xA];
     void (*unk50)();
@@ -139,14 +139,18 @@ typedef struct Obj801C52C0 {
     u8 unk132;
     u8 unk133;
     u8 unk134;
-    u8 _pad135;
+    u8 _pad135[0x1];
     u8 unk136;
     u8 _pad137[0x11];
     u16 unk148;
-    u8 _pad14A[0x12];
+    u8 unk14A;
+    u8 unk14B;
+    u8 unk14C;
+    u8 _pad14D[0xF];
     s32 unk15C;
     u8 _pad160[0x4];
     u16 unk164;
+    u8 _pad166[0x2];
 } Obj801C52C0;
 
 typedef struct Sub801C5634 {
