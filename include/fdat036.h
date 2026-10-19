@@ -224,5 +224,6 @@ s32 func_80014D78(s32 arg0);
 void func_800759A4(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
 s32 func_80014DAC(s32 arg0);
 void func_80075A18(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+void func_80075A54(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
 
 #endif /* FDAT036_H */
