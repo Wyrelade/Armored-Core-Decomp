@@ -297,6 +297,13 @@ typedef struct Obj8019F51C {
     void (*unk20[1])(Sub801A2828 *);
 } Obj8019F51C;
 
+typedef struct Sub801C4C94 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C4C94;
+
 /* @externs */
 void func_801C55AC(Obj801C4EB8 *arg0);
 void func_801C6480(Obj801C6554 *arg0);
@@ -332,5 +339,6 @@ extern s32 D_801AC80C;
 extern Obj8019FB68 D_8019FB68;
 extern Obj8019F51C *D_8019F51C;
 void func_80078B14(Sub801A2828 *arg0, Obj8019FB68 *arg1);
+s32 func_80014D78(s32 arg0);
 
 #endif /* FDAT042_H */
