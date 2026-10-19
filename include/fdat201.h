@@ -1028,6 +1028,15 @@ typedef struct Obj800703D0 {
     Obj80068A20 *unk7C;
 } Obj800703D0;
 
+typedef struct Obj800A3EBC {
+    u8 _pad0[0x1];
+    u8 unk1;
+    u8 _pad2[0x72];
+    void (*unk74)();
+    u8 _pad78[0x24];
+    u8 unk9C;
+} Obj800A3EBC;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1286,7 +1295,7 @@ void func_80051450(u16 arg0, u16 arg1);
 void func_800A3088(Obj800A3088 *arg0);
 void func_80050804(s16 arg0, s16 arg1);
 void func_80052134(Obj8004DEB0 *arg0, void (*arg1)());
-void func_800A3EBC();
+void func_800A3EBC(Obj800A3EBC *arg0);
 void func_8005CC48(void);
 void func_800810F0(Obj8004DEB0 *arg0, void (*arg1)(), s32 arg2);
 void func_800A3FFC(Obj8004DEB0 *arg0);
