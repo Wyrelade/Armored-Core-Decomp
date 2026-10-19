@@ -64,7 +64,13 @@ INCLUDE_ASM("asm/USA/fdat040/nonmatchings/fdat040", func_801C5BD4);
 
 INCLUDE_ASM("asm/USA/fdat040/nonmatchings/fdat040", func_801C5CE0);
 
-INCLUDE_ASM("asm/USA/fdat040/nonmatchings/fdat040", func_801C5D80);
+s32 func_801C5D80(Obj801C52F0 *arg0, s32 arg1, Sub801C5D80 **arg2, ...) {
+    if (arg1 == 0x8100 && ((*arg2)->unkC & 7) == 2) {
+        func_801C5CE0(arg0, &arg0->unk10, arg0->unk38->unkA);
+        return 1;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat040/nonmatchings/fdat040", func_801C5DE4);
 
