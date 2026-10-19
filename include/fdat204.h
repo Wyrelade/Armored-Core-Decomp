@@ -1050,5 +1050,6 @@ void func_800526D4(s32 arg0, s32 arg1);
 extern s32 D_801EE8B0[3][64][16];
 extern s32 D_801EC490;
 extern u16 D_801AB668;
+s32 func_80012794(s32 arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, s32 arg5, s32 arg6);
 
 #endif /* FDAT204_H */

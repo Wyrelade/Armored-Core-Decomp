@@ -1515,7 +1515,29 @@ void func_80073138(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, ..
     func_80054A70(arg0->unk60, arg0->unk8.unk6 + 0x80, &arg0->unk8, &arg0->unk10, arg1, arg2, arg3, arg4, &arg4 + 1);
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80073188);
+Elem80073290 *func_80073188(Elem80073290 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    Elem80073290 *p;
+    Elem80073290 *q;
+    Elem80073290 *found;
+    s32 i;
+
+    p = (Elem80073290 *)D_801AB748;
+    found = NULL;
+    i = 2;
+    q = p;
+    do {
+        if (arg0 != p && p->unk0 != 0 && !(q->unk32 & 4)
+            && func_80012794(arg1, arg2, arg3, arg4, &p->unk8, q->unk6A, q->unk6C) != 0) {
+            found = q;
+            if (arg4 == 0) {
+                return p;
+            }
+        }
+        q++;
+        p++;
+    } while (--i != 0);
+    return found;
+}
 
 Elem80073290 *func_80073290(Elem80073290 *arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3) {
     Elem80073290 *p;
