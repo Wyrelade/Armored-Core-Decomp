@@ -121,7 +121,7 @@ void func_801C5E20();
 extern Elem801C5F00 D_801D0B68[];
 Sub801C5FDC *func_80073674(s32 arg0);
 void func_801C5F00(Obj801C5F00 *arg0);
-void func_801C5F64();
+void func_801C5F64(Obj801C5F00 *arg0);
 extern Elem801C6050 D_801D0BA0[];
 extern s32 D_801C6208;
 void func_8008A80C();
