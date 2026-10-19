@@ -340,6 +340,23 @@ typedef struct Elem801C712C {
     u8 _pad4[0x3C];
 } Elem801C712C;
 
+typedef struct Obj801C95A8 {
+    u8 _pad0[0x8];
+    Sub801C55B4 unk8;
+    u8 _pad10[0x1A];
+    u16 unk2A;
+    u8 _pad2C[0x2];
+    s16 unk2E;
+    u8 _pad30[0x11];
+    u8 unk41;
+    u8 _pad42[0xE];
+    void (*unk50)();
+    u8 _pad54[0x10];
+    Sub801C5798 unk64;
+    u8 _padCC[0x3C];
+    Elem801C52C0_fdat000 *unk108;
+} Obj801C95A8;
+
 /* @externs */
 void func_801C55AC(Obj801C4EB8 *arg0);
 void func_801C6480(Obj801C6554 *arg0);
@@ -379,5 +396,9 @@ s32 func_80014D78(s32 arg0);
 extern s16 D_801A26CE;
 extern Elem801C712C D_801D0B94[];
 s32 func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
+void func_80075FC0(Obj801C95A8 *arg0);
+s32 func_8004F024(Sub801C5798 *arg0, Sub801C55B4 *arg1);
+void func_80078250(Obj801C95A8 *arg0, u8 arg1, u8 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
+void func_8007847C(Obj801C95A8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 
 #endif /* FDAT042_H */
