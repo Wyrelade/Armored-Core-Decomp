@@ -245,5 +245,8 @@ void func_801C6688(Obj801C4F4C *arg0, u8 arg1);
 void func_801C68F8();
 void func_801C67E8(Obj801C4F4C *arg0);
 void func_801C6A2C();
+void func_80078598(Obj801C4F4C *arg0);
+void func_8007732C(Obj801C4F4C *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
+void func_801C6528();
 
 #endif /* FDAT060_H */
