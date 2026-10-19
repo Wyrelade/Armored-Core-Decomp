@@ -237,7 +237,8 @@ typedef struct Obj801C4C94 {
     void (*unk5C)();
     u8 _pad60[0x4];
     Sub801C4D98 unk64;
-    u8 _pad72[0xA];
+    s16 unk72;
+    u8 _pad74[0x8];
     s16 unk7C;
     u8 _pad7E[0x4E];
     Sub801C4C94 unkCC;
