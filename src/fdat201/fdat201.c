@@ -1986,7 +1986,32 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80068C08);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B700);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B714);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80068E14);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B728);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B730);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B738);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B740);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B748);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B750);
+
+void func_80068E14(Obj80068E14 *arg0) {
+    s16 i;
+
+    func_8006BA08();
+    if (func_80050078(func_8005BA2C) == &D_801BC4F8) {
+        for (i = 0; i < 6; i++) {
+            func_8005D754(3, D_800B7FAC, 0, (s16)(i * 0x18), 0xA);
+        }
+        func_8005D80C(2, D_8004B728, 0x10, 8, 0x4, 0xA);
+        func_8005D80C(2, D_8004B730, 0x10, 8, 0x1C, 0xA);
+        func_8005D80C(2, D_8004B738, 0x10, 8, 0x34, 0xA);
+        func_8005D80C(2, D_8004B740, 0x10, 8, 0x4C, 0xA);
+        func_8005D80C(2, D_8004B748, 0x10, 8, 0x64, 0xA);
+        func_8005D80C(2, D_8004B750, 0x10, 8, 0x7C, 0xA);
+        func_800702C8(0xA, arg0->unk90, 0, 0);
+        arg0->unk74 = func_80068FBC;
+        arg0->unk8D = arg0->unk8C;
+    }
+}
 
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B758);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004B770);

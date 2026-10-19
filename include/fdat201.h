@@ -1064,6 +1064,16 @@ typedef struct Obj80051138 {
     u8 unk8[0x10];
 } Obj80051138;
 
+typedef struct Obj80068E14 {
+    u8 _pad0[0x74];
+    void (*unk74)();
+    u8 _pad78[0x14];
+    u8 unk8C;
+    u8 unk8D;
+    u8 _pad8E[0x2];
+    u8 unk90[1];
+} Obj80068E14;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2065,5 +2075,13 @@ extern Obj8004DEB0 *D_8019C190[];
 extern Obj8004DEB0 *D_8019C194[];
 extern Obj8004DEB0 *D_8019C198[];
 extern Obj8004DEB0 *D_8019C19C[];
+void func_800702C8(s16 arg0, u8 *arg1, s16 arg2, s16 arg3);
+extern u8 D_800B7FAC[];
+extern u8 D_8004B728[];
+extern u8 D_8004B730[];
+extern u8 D_8004B738[];
+extern u8 D_8004B740[];
+extern u8 D_8004B748[];
+extern u8 D_8004B750[];
 
 #endif /* FDAT201_H */
