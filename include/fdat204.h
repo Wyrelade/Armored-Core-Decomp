@@ -809,7 +809,7 @@ typedef struct Sub800852B0 {
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
-void func_8004BDB8(void);
+s32 func_8004BDB8(void);
 extern s32 D_801AB684;
 extern u16 D_801AB688;
 extern u8 D_80041BC0;
@@ -1017,7 +1017,7 @@ s16 SsUtKeyOnV(s16 arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4, s16 arg5, s16 a
 extern s32 D_800894C0[];
 void func_80060050(Sub800507B8 *arg0, s32 *arg1, s32 arg2, s32 arg3, s32 arg4);
 s32 func_80072598(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
-void func_80073188(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+Elem80073290 *func_80073188(Elem80073290 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 s32 func_8006E1BC(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_80070684(s32 arg0, Obj800707D0 *arg1);
 extern Obj80077EAC D_80040FA0[];
