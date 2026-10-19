@@ -316,7 +316,9 @@ typedef struct Obj801C5698 {
 } Obj801C5698;
 
 typedef struct Elem801C9264 {
-    u8 _pad0[0x34];
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0x2C];
 } Elem801C9264;
 
 typedef struct Sub801C4C94 {
@@ -358,7 +360,7 @@ Sub801C5550 *func_80072120(s32 arg0);
 void func_801C67DC();
 void func_8006D39C(Obj801C5384 *arg0);
 s32 func_8006D45C();
-void func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
+s32 func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
 void func_801C6B84(Obj801C5384 *arg0);
 s32 func_801C6C20(Obj801C730C *arg0, s32 arg1, s32 arg2, ...);
 void func_801C6CB8();
