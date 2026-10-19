@@ -279,7 +279,27 @@ void func_8004FD3C(Obj8004DEB0 *arg0) {
     arg0->unk74 = func_8004FD4C;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8004FD4C);
+void func_8004FD4C(Obj8004DEB0 *arg0) {
+    if (arg0->unk48 == 12 && arg0->unk4C == 20) {
+        if (arg0->unk70 == func_8004F810) {
+            arg0->unk1 = 1;
+        } else {
+            arg0->unk74 = func_8004FDEC;
+        }
+    }
+    if (arg0->unk48 > 12) {
+        arg0->unk48 -= 4;
+        if (arg0->unk48 < 12) {
+            arg0->unk48 = 12;
+        }
+    }
+    if (arg0->unk4C > 20) {
+        arg0->unk4C -= 4;
+        if (arg0->unk4C < 20) {
+            arg0->unk4C = 20;
+        }
+    }
+}
 
 void func_8004FDEC(void) {
 }
