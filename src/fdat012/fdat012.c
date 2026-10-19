@@ -23,7 +23,61 @@ void func_801C5140(Obj801C4C94 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat012/nonmatchings/fdat012", func_801C51B8);
 
-INCLUDE_ASM("asm/USA/fdat012/nonmatchings/fdat012", func_801C52B8);
+void func_801C52B8(Obj801C4C94 *arg0) {
+    Obj801C52B8 *sub;
+    Elem801C52B8 *elem;
+    Sub801C4E00 *info;
+    s32 ret;
+    u16 saved;
+    s32 idx;
+
+    if (arg0->unk60 != NULL) {
+        sub = arg0->unk60->unk20;
+        sub->unk1F8 += 0x40;
+        sub->unk216 |= 1;
+    }
+    arg0->unk148 = 0;
+    if (arg0->unk40 != 0xFF) {
+        if (arg0->unk40 == 0) {
+            elem = &D_80198B08[arg0->unkFE];
+            elem->unk1C &= 0x7FFF;
+            elem->unk0.unk0 = arg0->unk8.unk0;
+            elem->unk0.unk2 = arg0->unk8.unk2;
+            elem->unk0.unk4 = arg0->unk8.unk4;
+            elem->unk8.unk0 = arg0->unk10.unk0;
+            elem->unk8.unk2 = arg0->unk10.unk2;
+            elem->unk8.unk4 = arg0->unk10.unk4;
+        }
+        if (func_800754D0(arg0, D_801C7C18) != 0) {
+            func_80078E1C(arg0);
+        }
+    } else {
+        if (arg0->unk7C == 0) {
+            ret = func_801C51B8(arg0);
+            if (ret != 0) {
+                arg0->unk10.unk2 = func_800132CC(arg0->unk10.unk2, arg0->unk78, 0x20);
+                arg0->unk7C = 0;
+                if (func_800148E4(arg0->unk10.unk2, arg0->unk78, 0x20) != 0 && arg0->unk3F == 0) {
+                    saved = arg0->unk78;
+                    info = arg0->unk0;
+                    arg0->unk78 = 0;
+                    arg0->unk3E = arg0->unk3E == 0;
+                    idx = arg0->unk3E * 2;
+                    func_80077B78(arg0, 0x17, info->unk1C, info->unk20, D_801C7C3C, 1, idx, idx + 1, 0, 0, ret);
+                    arg0->unk3F = 0x3C;
+                    arg0->unk148 = 0xF;
+                    arg0->unk14A = 0xB4;
+                    arg0->unk14B = 0xA0;
+                    arg0->unk78 = saved;
+                    arg0->unk14C = 0x8C;
+                }
+            }
+        }
+        if (arg0->unk3F != 0) {
+            arg0->unk3F--;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat012/nonmatchings/fdat012", func_801C54E4);
 
