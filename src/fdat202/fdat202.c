@@ -2250,7 +2250,19 @@ void func_8007B8E8(Obj8007618C *arg0, s32 arg1) {
     arg0->unk41 = 0x41;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007B994);
+void func_8007B994(Obj8007618C *arg0, s32 arg1, s8 arg2) {
+    Sub8004DE88 *rect;
+    s32 val;
+
+    rect = &arg0->unkCC;
+    func_8004DE88(&arg0->unk64, rect);
+    arg0->unkCC.unk0 <<= 6;
+    arg0->unkCC.unk4 <<= 6;
+    func_8007732C(arg0, arg1, 1, 0x200, rect, func_8007B160);
+    val = arg2;
+    arg0->unk3C = val;
+    arg0->unk41 = arg2;
+}
 
 void func_8007BA2C(void) {
     Elem8007BA2C *p;
