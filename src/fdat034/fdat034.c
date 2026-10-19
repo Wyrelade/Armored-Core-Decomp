@@ -47,7 +47,14 @@ void func_801C585C(Obj801C52C0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat034/nonmatchings/fdat034", func_801C59A0);
+void func_801C59A0(s32 arg0, s32 arg1) {
+    Sub801C4C94 vec;
+
+    vec.unk0 = func_80014D78(2000) - 1000;
+    vec.unk4 = func_80014D78(2000) - 1000;
+    vec.unk2 = -func_80014D78(2000);
+    func_800759A4((Obj801C52C0_fdat000 *)arg0, arg1, (Sub801C55B4 *)&vec);
+}
 
 void func_801C5A10(s32 arg0, s32 arg1) {
     Sub801C4C94 vec;
