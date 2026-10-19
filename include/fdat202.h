@@ -97,7 +97,10 @@ typedef struct Obj8007618C {
     s16 unk10E;
     u8 _pad110[0x38];
     u16 unk148;
-    u8 _pad14A[0x12];
+    u8 unk14A;
+    u8 unk14B;
+    u8 unk14C;
+    u8 _pad14D[0xF];
     s32 unk15C;
     u16 unk160;
     u16 unk162;
