@@ -325,7 +325,21 @@ void func_8004F2A0(void) {
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004F2A8);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004F66C);
+void func_8004F66C(u16 *arg0, u16 *arg1) {
+    u16 a;
+    u16 b;
+
+    a = *arg0;
+    b = *arg1;
+    if (a >= 0x7980 && a <= 0x7B80) {
+        *arg0 = a + 0x240;
+    } else if (a == 0x7F90) {
+        *arg0 = a + 0x40;
+    }
+    if ((b & 0x1F) == 0x1B || (b & 0x1F) == 0x1C) {
+        *arg1 = b & 0xFFEF;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004F6BC);
 
