@@ -230,7 +230,7 @@ Sub801C558C *func_80073674(s32 arg0);
 s32 func_801C5544(u8 arg0, u16 arg1);
 void func_801C5404();
 void func_801C5600(Obj801C5F00 *arg0);
-void func_801C5664();
+void func_801C5664(Obj801C5F00 *arg0);
 void func_801C5748();
 extern Obj801C5938 *D_801A5DC0;
 void func_8004CE44(s32 arg0, Sub801C5938 *arg1, s32 arg2, s32 arg3);
