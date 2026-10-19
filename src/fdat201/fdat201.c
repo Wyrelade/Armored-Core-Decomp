@@ -6895,7 +6895,14 @@ Obj800ADC4C *func_800ADC4C(s32 arg0, u8 *arg1, s16 arg2, u8 arg3, u8 arg4) {
     return obj;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800ADD70);
+void func_800ADD70(Obj8005D9E8 *arg0) {
+    if (func_80050078(func_8005BA2C) == &D_801BC4F8) {
+        arg0->unk7C = func_8005D754(1, D_800BDD88, (s16)(arg0->unk88 * 0x45 + 4), 0x18, arg0->unk94);
+        arg0->unk80 = func_8005CB94(arg0->unk8C, 8, 4, arg0->unk94);
+        arg0->unk84 = func_8005D754(2, D_800BDD94, 0, 0, arg0->unk94);
+        arg0->unk74 = func_800ADE38;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800ADE38);
 
