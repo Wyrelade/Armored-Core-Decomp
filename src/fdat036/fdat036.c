@@ -7,7 +7,28 @@ INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C4DBC);
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C4FAC);
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C5094);
+void func_801C5094(Obj801C52C0 *arg0) {
+    Sub801C4E00 *sub;
+
+    arg0->unk148 = 0;
+    arg0->unk15C = 0;
+    if (arg0->unk40 != 0xFF) {
+        if (func_800754D0(arg0, D_801C72A0) != 0) {
+            func_80078E1C(arg0);
+        }
+    } else if (arg0->unk3F != 0 && arg0->unk3E == 0) {
+        arg0->unk3F--;
+    } else if (rand() < 0x290 && (rand() < 0xCCD || func_801C4FAC(arg0) != 0)) {
+        sub = arg0->unk0;
+        func_80077B78(arg0, 0x27, sub->unk1C, sub->unk20, D_801C72C4, 1, 0);
+        arg0->unk148 = 0xF;
+        arg0->unk14A[0] = 0xC8;
+        arg0->unk14A[1] = 0x3C;
+        arg0->unk15C = 0x100;
+        arg0->unk14A[2] = 0;
+        arg0->unk3F = 5;
+    }
+}
 
 void func_801C51A4(s32 arg0, s32 arg1) {
     Sub801C4C94 vec;
