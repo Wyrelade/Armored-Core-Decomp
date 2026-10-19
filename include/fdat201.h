@@ -1848,5 +1848,6 @@ extern s8 D_800B91A8;
 void func_8008729C();
 void func_80096944();
 void func_800B20A4();
+extern u8 D_80039CA9;
 
 #endif /* FDAT201_H */
