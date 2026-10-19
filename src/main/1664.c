@@ -284,7 +284,29 @@ void func_80014338(Obj80013430 *arg0, s32 arg1, Obj800138F0 *arg2) {
     arg2->unk4 = arg2->unk4 * arg1 >> 12;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800143B8);
+s32 func_800143B8(Obj800138F0 *arg0, s32 arg1, s32 arg2, Obj800138F0 *arg3) {
+    s32 len;
+    s32 div;
+
+    len = SquareRoot0(arg0->unk0 * arg0->unk0 + arg0->unk4 * arg0->unk4);
+    div = len;
+    if (arg2 < len) {
+        arg3->unk0 = arg0->unk0 * arg2 / len;
+        arg3->unk4 = arg0->unk4 * arg2 / len;
+        len = arg2;
+        div = len;
+    }
+    len -= arg1;
+    if (len <= 0) {
+        len = 0;
+        arg3->unk4 = 0;
+        arg3->unk0 = 0;
+    } else {
+        arg3->unk0 = arg0->unk0 * len / div;
+        arg3->unk4 = arg0->unk4 * len / div;
+    }
+    return len;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800144FC);
 
