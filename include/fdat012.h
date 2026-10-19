@@ -167,7 +167,7 @@ void func_801C6F84();
 s32 func_801C729C(u8 arg0, u16 arg1);
 void func_801C715C();
 void func_801C7358(Obj801C5F00 *arg0);
-void func_801C73BC();
+void func_801C73BC(Obj801C5F00 *arg0);
 void func_801C74A0();
 void func_801C75BC();
 extern u16 D_8019F528;
