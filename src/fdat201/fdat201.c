@@ -2616,7 +2616,27 @@ void func_800703A4(Obj800702A8 *arg0) {
     arg0->unk4C = arg0->unk80 + *arg0->unk7C * 0x18;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800703D0);
+void func_800703D0(Obj80068A20 *arg0) {
+    Sub8006DCEC *src;
+    Obj800703D0 *obj;
+
+    src = arg0->unk98;
+    obj = func_800501BC(4);
+    obj->unk70 = func_800703D0;
+    obj->unk74 = func_8007046C;
+    obj->unk78 = func_800507F4;
+    obj->unk16 = 4;
+    obj->unk2 = 0;
+    obj->unk14 = 3;
+    obj->unk5 = 0;
+    obj->unk40 = 0;
+    obj->unk42 = 0;
+    obj->unk44 = 0;
+    obj->unk48 = src->unk48;
+    obj->unk4C = src->unk4C;
+    obj->unk50 = 0;
+    obj->unk7C = arg0;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007046C);
 
