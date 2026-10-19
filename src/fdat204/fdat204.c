@@ -1261,7 +1261,23 @@ s32 func_8006F118(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return ret;
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006F1FC);
+s32 func_8006F1FC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    s32 a;
+    s32 b;
+    s32 c;
+    s32 d;
+    s32 ret;
+
+    func_8006F0F4(arg1, arg2, arg0, &a);
+    func_8006F0F4(arg2, arg4, arg0, &b);
+    func_8006F0F4(arg4, arg3, arg0, &c);
+    func_8006F0F4(arg3, arg1, arg0, &d);
+    ret = 0;
+    if ((a >= 0 && b >= 0 && c >= 0 && d >= 0) || (a <= 0 && b <= 0 && c <= 0 && d <= 0)) {
+        ret = 1;
+    }
+    return ret;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006F328);
 
