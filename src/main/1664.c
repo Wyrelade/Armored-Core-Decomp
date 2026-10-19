@@ -333,7 +333,11 @@ void func_8001467C(Obj800138F0 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2, Obj8
     arg3->unk4 = (ax * by - ay * bx) >> 6;
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014728);
+void func_80014728(s32 arg0, Obj800138F0 *arg1) {
+    arg1->unk0 = -rsin(arg0);
+    arg1->unk4 = rcos(arg0);
+    arg1->unk2 = 0;
+}
 
 void func_80014774(Obj800138F0 *arg0, Obj800138F0 *arg1) {
     s32 c;
