@@ -198,4 +198,29 @@ void func_801C70B0(void) {
 
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C70F0);
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C71D8);
+s32 func_801C71D8(s32 arg0) {
+    Sub801C71D8 *p;
+
+    if (D_8019F528 == 0) {
+        switch (arg0) {
+        case 0:
+            if (D_801C7364 != 0) {
+                return 1;
+            }
+            if (D_801D3214->unk10 == 0) {
+                func_8004CFC8(0x4F, 0x78);
+                func_800529F0(0, 0, 0x3B);
+                p = D_801D3220;
+                D_801D3260->unk6 = 0x66;
+                p->unk6 = 0x66;
+                D_801C7364 = 1;
+                return 1;
+            }
+            return 0;
+        case 1:
+            D_801C7368 = arg0;
+            break;
+        }
+    }
+    return 1;
+}
