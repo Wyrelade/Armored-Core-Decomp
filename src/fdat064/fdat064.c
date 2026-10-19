@@ -41,7 +41,14 @@ INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C559C);
 
 INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C56C4);
 
-INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C5994);
+void func_801C5994(s32 arg0, s32 arg1) {
+    Sub801C4C94 vec;
+
+    vec.unk0 = func_80014D78(100) - 50;
+    vec.unk4 = func_80014D78(100) - 50;
+    vec.unk2 = 0;
+    func_800759A4(arg0, arg1, &vec);
+}
 
 INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C59F8);
 
