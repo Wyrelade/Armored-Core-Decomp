@@ -1576,7 +1576,25 @@ void func_8005DE08(s16 arg0, s16 arg1, s16 arg2) {
     MoveImage(D_800B7448, x, arg1);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005DED8);
+Obj8005E23C *func_8005DED8(Obj8004DEB0 *arg0, void (*arg1)(), u8 *arg2, s16 arg3) {
+    Obj8005E23C *obj;
+
+    obj = func_800501BC(0);
+    obj->unk70 = func_8005DED8;
+    obj->unk74 = func_8005DFB4;
+    obj->unk78 = func_800507F4;
+    obj->unk8C = arg3;
+    obj->unk2 = 0;
+    obj->unk3 = 0;
+    obj->unk6C = 0;
+    obj->unk5 = 0;
+    obj->unk7C = arg0;
+    obj->unk80 = arg1;
+    obj->unk88 = arg2;
+    obj->unk84 = 0;
+    func_8005BA2C(0x14, 0x68, 0x118, 0x20, (s16)(arg3 - 1), 1, 0);
+    return obj;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8005DFB4);
 
