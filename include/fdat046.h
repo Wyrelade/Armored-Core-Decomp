@@ -5,7 +5,12 @@
 
 /* @types */
 typedef struct Elem801C52C0 {
-    u8 _pad0[0x3A];
+    u8 _pad0[0x30];
+    u8 unk30;
+    u8 unk31;
+    u8 unk32;
+    u8 unk33;
+    u8 _pad34[0x6];
     u8 unk3A;
     u8 unk3B;
 } Elem801C52C0;
@@ -18,7 +23,10 @@ typedef struct Sub801C5C04 {
 } Sub801C5C04;
 
 typedef struct Sub801C52C0 {
-    u8 _pad0[0x68];
+    u8 unk0;
+    u8 _pad1[0x9];
+    s16 unkA;
+    u8 _padC[0x5C];
 } Sub801C52C0;
 
 typedef struct Sub801C5578 {
