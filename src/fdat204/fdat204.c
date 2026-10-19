@@ -1194,7 +1194,22 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80070404);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80070684);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800707D0);
+void func_800707D0(Obj800707D0 *arg0) {
+    s32 base;
+
+    base = *arg0->unk94;
+    arg0->unkC0[0] = (Sub8004DE88 *)(base + arg0->unkA8[0].unk0_3 * 8);
+    arg0->unkC0[1] = (Sub8004DE88 *)(base + arg0->unkA8[1].unk0_3 * 8);
+    arg0->unkC0[2] = (Sub8004DE88 *)(base + arg0->unkA8[2].unk0_3 * 8);
+    if (arg0->unk9C & 1) {
+        arg0->unkC0[3] = (Sub8004DE88 *)(base + arg0->unkA8[3].unk0_3 * 8);
+    }
+    if (func_8006E1BC(arg0->unk5C[0], arg0->unk68[0], arg0->unkC0[(arg0->unk9C >> 4) & 3]->unk0, arg0->unkC0[(arg0->unk9C >> 10) & 3]->unk0) != 0
+        && func_8006E1BC(arg0->unk5C[1], arg0->unk68[1], arg0->unkC0[(arg0->unk9C >> 6) & 3]->unk2, arg0->unkC0[(arg0->unk9C >> 12) & 3]->unk2) != 0
+        && func_8006E1BC(arg0->unk5C[2], arg0->unk68[2], arg0->unkC0[(arg0->unk9C >> 8) & 3]->unk4, arg0->unkC0[(arg0->unk9C >> 14) & 3]->unk4) != 0) {
+        func_80070684(base, arg0);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80070928);
 
