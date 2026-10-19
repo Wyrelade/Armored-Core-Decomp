@@ -588,6 +588,16 @@ typedef struct Obj8005715C {
     Elem8005715C unk4[2];
 } Obj8005715C;
 
+typedef struct Obj8006FB14 {
+    s16 unk0;
+    u8 _pad2[0x2];
+    s16 unk4;
+    u8 _pad6[0x2];
+    s16 unk8;
+    u8 _padA[0x2];
+    s16 unkC;
+} Obj8006FB14;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);

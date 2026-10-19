@@ -1214,7 +1214,20 @@ void func_8006FA30(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006FB14);
+void func_8006FB14(Obj8006FB14 *arg0) {
+    s16 t;
+
+    if (arg0->unk0 > arg0->unk8) {
+        t = arg0->unk0;
+        arg0->unk0 = arg0->unk8;
+        arg0->unk8 = t;
+    }
+    if (arg0->unk4 > arg0->unkC) {
+        t = arg0->unk4;
+        arg0->unk4 = arg0->unkC;
+        arg0->unkC = t;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006FB6C);
 
