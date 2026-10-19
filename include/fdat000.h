@@ -21,6 +21,9 @@ typedef struct Sub801C55B4 {
 typedef struct Sub801C5550 {
     void (*unk0)();
     void (*unk4)();
+    u8 _pad8[0x8];
+    u16 unk10;
+    u8 _pad12[0x2];
 } Sub801C5550;
 
 typedef struct Sub801C5798 {
@@ -35,13 +38,13 @@ typedef struct Obj801C52C0 {
     Sub801C5550 *unk2C;
     u8 _pad30[0x6];
     s16 unk36;
-    u8 _pad38[0x4];
+    struct Sub801C5314 *unk38;
     u8 unk3C;
     u8 unk3D;
     u8 _pad3E[0x3];
     u8 unk41;
     u8 unk42;
-    u8 _pad43;
+    u8 _pad43[0x1];
     s16 unk44;
     u8 _pad46[0xA];
     void (*unk50)();
@@ -67,7 +70,7 @@ typedef struct Obj801C52C0 {
     u8 unk132;
     u8 unk133;
     u8 unk134;
-    u8 _pad135;
+    u8 _pad135[0x1];
     u8 unk136;
     u8 _pad137[0x11];
     u16 unk148;
@@ -75,6 +78,7 @@ typedef struct Obj801C52C0 {
     s32 unk15C;
     u8 _pad160[0x4];
     u16 unk164;
+    u8 _pad166[0x2];
 } Obj801C52C0;
 
 typedef struct Obj801C55B4 {
@@ -92,6 +96,16 @@ typedef struct Sub801C5634 {
     u8 _pad2E[0xA];
     u16 unk38;
 } Sub801C5634;
+
+typedef struct Sub801C5314 {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u8 unk4;
+    u8 unk5;
+    u16 unk6;
+    u16 unk8;
+} Sub801C5314;
 
 /* @externs */
 extern Elem801C52C0 D_801CAB98[];
