@@ -1035,5 +1035,7 @@ void func_8007F414();
 void func_8007F938();
 void func_80084040(Obj80085394 *arg0);
 void func_8007FCCC(Obj800732FC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4);
+extern s32 D_800895C4;
+s32 func_80016278(s32);
 
 #endif /* FDAT203_H */
