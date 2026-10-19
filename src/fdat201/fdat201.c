@@ -3924,7 +3924,11 @@ void func_80086E04(void) {
     func_80050078(func_80088DE4)->unk74 = func_80089250;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80086E34);
+void func_80086E34(u32 *arg0) {
+    func_800154D8(D_801F3814, (u8 *)arg0, 0x620);
+    D_801F37C8 = 0;
+    free2(arg0);
+}
 
 void func_80086E80(void) {
     while (func_800517C8() != 0) {

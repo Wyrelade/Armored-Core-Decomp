@@ -1201,7 +1201,7 @@ void func_80085640(Obj8004DEB0 *);
 void func_80088DE4();
 void func_80089250(Obj8004DEB0 *arg0);
 void func_800513F0(u16 arg0, u16 arg1, void (*arg2)());
-void func_80086E34();
+void func_80086E34(u32 *arg0);
 extern volatile u8 D_801F37C8;
 void func_8008AF0C(void);
 void func_8009C964(s32);
@@ -1981,5 +1981,7 @@ extern u8 D_80042AA8[];
 s16 func_8008CFD4(s8 arg0, s8 arg1);
 extern u8 D_800B855C[];
 extern u8 D_800B8574[];
+void func_800154D8(u8 *arg0, u8 *arg1, s32 arg2);
+extern u8 D_801F3814[];
 
 #endif /* FDAT201_H */
