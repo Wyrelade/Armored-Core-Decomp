@@ -947,5 +947,6 @@ void func_80079C94();
 void func_8007DB6C();
 void func_8007F414();
 void func_8007F938();
+void func_80084040(Obj80085394 *arg0);
 
 #endif /* FDAT203_H */
