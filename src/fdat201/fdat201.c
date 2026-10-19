@@ -474,7 +474,21 @@ INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80050D58);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80050E94);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80050FC4);
+s32 func_80050FC4(s32 arg0) {
+    u32 *ptr;
+
+    arg0 = (arg0 + 3) & ~3;
+retry:
+    EnterCriticalSection();
+    ptr = malloc2(arg0);
+    ExitCriticalSection();
+    if (ptr == NULL) {
+        for (D_800CF378 = 0; D_800CF378 < 0x7FFF; D_800CF378++) {
+        }
+        goto retry;
+    }
+    return (s32)ptr;
+}
 
 void func_80051078(u32 *arg0) {
     EnterCriticalSection();

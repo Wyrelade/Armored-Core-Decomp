@@ -2155,5 +2155,7 @@ extern Elem8008F08C_30 D_800BAFF0[];
 extern Elem8008F08C_2C D_800BB140[];
 void func_8004F810();
 void func_8004FDEC(void);
+u32 *malloc2(s32 arg0);
+extern volatile s32 D_800CF378;
 
 #endif /* FDAT201_H */
