@@ -111,6 +111,21 @@ typedef struct Obj8007A19C {
     u8 unk1000[1];
 } Obj8007A19C;
 
+typedef struct Sub801A2828 {
+    u8 _pad0[0xE];
+    s16 unkE;
+} Sub801A2828;
+
+typedef struct Obj8019FB68 {
+    u8 _pad0[0x2CC0];
+    Sub801A2828 unk2CC0;
+} Obj8019FB68;
+
+typedef struct Obj8019F51C {
+    u8 _pad0[0x20];
+    void (*unk20[1])(Sub801A2828 *);
+} Obj8019F51C;
+
 /* @externs */
 Sub801C5EC0 *func_80072120(s32 arg0);
 void func_801C5D98();
@@ -145,5 +160,9 @@ s32 func_800143B8(Sub8004DE88 *arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3);
 s16 func_80013390(s16 arg0, s32 arg1, s32 arg2);
 void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 s32 func_8004F080(Sub8004F080 *arg0, Sub8004DE88 *arg1);
+extern s32 D_801AC80C;
+extern Obj8019FB68 D_8019FB68;
+extern Obj8019F51C *D_8019F51C;
+void func_80078B14(Sub801A2828 *arg0, Obj8019FB68 *arg1);
 
 #endif /* FDAT072_H */
