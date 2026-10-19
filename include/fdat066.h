@@ -236,5 +236,8 @@ void func_801C5A60();
 void func_801C5A74();
 void func_801C5CA0();
 void func_801C5DAC();
+extern Sub801C55B4 D_80039C78;
+void func_800759A4(Obj801C52C0_fdat000 *arg0, s32 arg1, Sub801C55B4 *arg2);
+void func_80075B08(Obj801C52C0_fdat000 *arg0, s32 arg1, Elem801C5F64 *arg2);
 
 #endif /* FDAT066_H */
