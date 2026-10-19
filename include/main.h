@@ -88,6 +88,14 @@ typedef struct Elem8004C840 {
     u32 *unk4;
 } Elem8004C840;
 
+typedef struct Obj800121AC {
+    u8 _pad0[0x14];
+} Obj800121AC;
+
+typedef struct Sub800121AC {
+    u8 _pad0[0x5C];
+} Sub800121AC;
+
 /* @externs */
 void free2(u32 *arg0);
 extern volatile s32 D_80049F98;
@@ -145,5 +153,17 @@ s32 CdRead(s32 arg0, u32 *arg1, s32 arg2);
 s32 CdReadSync(s32 arg0, u8 *arg1);
 void func_80015A48();
 void func_80015DC0(s32 arg0);
+void SetDispMask(s32 arg0);
+void ClearImage(u8 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800165E4(u16 arg0, u16 arg1, u32 *arg2);
+void func_80011FD8(u32 *arg0);
+void SetDefDispEnv(Obj800121AC *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+void SetDefDrawEnv(Sub800121AC *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+void PutDispEnv(Obj800121AC *arg0);
+void PutDrawEnv(Sub800121AC *arg0);
+void func_80012048();
+extern u32 *D_800112C8;
+extern u8 D_80039C60[];
+extern s32 D_80049FA0;
 
 #endif /* MAIN_H */
