@@ -217,6 +217,86 @@ typedef struct Obj801C730C {
     Sub801C7624 *unk38;
 } Obj801C730C;
 
+typedef struct Elem801C52C0 {
+    u8 _pad0[0x30];
+    u8 unk30;
+    u8 unk31;
+    u8 unk32;
+    u8 unk33;
+    u8 _pad34[0x6];
+    u8 unk3A;
+    u8 unk3B;
+    u8 _pad3C[0x508];
+} Elem801C52C0;
+
+typedef struct Sub801C55B4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C55B4;
+
+typedef struct Sub801C5550 {
+    void (*unk0)();
+    void (*unk4)();
+} Sub801C5550;
+
+typedef struct Sub801C5798 {
+    u8 unk0;
+    u8 _pad1[0x9];
+    s16 unkA;
+    u8 _padC[0x5C];
+} Sub801C5798;
+
+typedef struct Obj801C52C0_fdat000 {
+    u8 _pad0[0x8];
+    Sub801C55B4 unk8;
+    u8 _pad10[0x1C];
+    Sub801C5550 *unk2C;
+    u8 _pad30[0x6];
+    s16 unk36;
+    u8 _pad38[0x4];
+    u8 unk3C;
+    u8 unk3D;
+    u8 _pad3E[0x3];
+    u8 unk41;
+    u8 unk42;
+    u8 _pad43;
+    s16 unk44;
+    u8 _pad46[0xA];
+    void (*unk50)();
+    void (*unk54)();
+    void (*unk58)();
+    void (*unk5C)();
+    u8 _pad60[0x4];
+    Sub801C5798 unk64;
+    Sub801C55B4 unkCC;
+    u8 _padD4[0x2C];
+    u8 unk100;
+    u8 _pad101[0x7];
+    Elem801C52C0 *unk108;
+    u8 _pad10C[0x18];
+    s16 unk124;
+    s16 unk126;
+    s16 unk128;
+    s16 unk12A;
+    s16 unk12C;
+    s16 unk12E;
+    u8 unk130;
+    u8 unk131;
+    u8 unk132;
+    u8 unk133;
+    u8 unk134;
+    u8 _pad135;
+    u8 unk136;
+    u8 _pad137[0x11];
+    u16 unk148;
+    u8 _pad14A[0x12];
+    s32 unk15C;
+    u8 _pad160[0x4];
+    u16 unk164;
+} Obj801C52C0_fdat000;
+
 /* @externs */
 Sub801C60B4 *func_80072120(s32 arg0);
 void func_801C603C();
@@ -262,5 +342,6 @@ s32 func_80014D30(s32 arg0);
 void func_80075A18(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
 void func_80075A54(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
 void func_80073714(Obj801C53A0 *arg0, s32 arg1);
+void func_800759A4(Obj801C52C0_fdat000 *arg0, s32 arg1, u8 *arg2);
 
 #endif /* FDAT028_H */
