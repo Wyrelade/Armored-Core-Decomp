@@ -909,5 +909,6 @@ void func_800860A4(s32 arg0, Obj8006C9D4 *arg1, s32 arg2, s32 arg3, s32 arg4, s3
 void SsVabClose(s16 arg0);
 extern Sub8004CF0C D_80042086[];
 void SsUtKeyOffV(s16 arg0);
+s16 SsUtKeyOnV(s16 voice, s16 vabId, s16 prog, s16 tone, s16 note, s16 fine, s16 voll, s16 volr);
 
 #endif /* FDAT203_H */

@@ -115,7 +115,18 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004D260);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004D394);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004D640);
+void func_8004D640(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    s32 note;
+
+    arg3 += 0x3C0;
+    note = arg3 >> 4;
+    if (note < 0) {
+        note = 0;
+    } else if (note >= 0x80) {
+        note = 0x7F;
+    }
+    SsUtKeyOnV(0x17, D_80041BD0[arg4].unk0, (arg0 >> 4) + 4, arg0 & 0xF, note, (arg3 & 0xF) * 8, arg1, arg2);
+}
 
 void func_8004D6E4(void) {
     Elem8004D6E4 *p;
