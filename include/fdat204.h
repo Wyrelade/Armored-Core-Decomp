@@ -929,5 +929,6 @@ void func_800771D0(void);
 void func_80077AA0(void);
 void func_800775B8(Obj80077CD8 *arg0, s32 arg1);
 void func_80077F08(Obj80073138 *arg0, s32 arg1, s32 arg2);
+void func_8007F978(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3, s16 *arg4);
 
 #endif /* FDAT204_H */
