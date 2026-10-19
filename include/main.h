@@ -96,6 +96,13 @@ typedef struct Sub800121AC {
     u8 _pad0[0x5C];
 } Sub800121AC;
 
+typedef struct Obj800131D0 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Obj800131D0;
+
 /* @externs */
 void free2(u32 *arg0);
 extern volatile s32 D_80049F98;
@@ -165,5 +172,6 @@ void func_80012048();
 extern u32 *D_800112C8;
 extern u8 D_80039C60[];
 extern s32 D_80049FA0;
+s32 abs(s32 arg0);
 
 #endif /* MAIN_H */
