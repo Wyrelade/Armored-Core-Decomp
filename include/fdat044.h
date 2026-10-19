@@ -240,7 +240,9 @@ typedef struct Elem801C5F00 {
 } Elem801C5F00;
 
 typedef struct Elem801C8B7C {
-    u8 _pad0[0x34];
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0x2C];
 } Elem801C8B7C;
 
 typedef struct Sub801C4C94 {
