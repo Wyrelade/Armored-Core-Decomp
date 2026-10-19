@@ -3,7 +3,70 @@
 
 INCLUDE_RODATA("asm/USA/fdat072/nonmatchings/fdat072", D_801C4B40);
 
-INCLUDE_ASM("asm/USA/fdat072/nonmatchings/fdat072", func_801C4D28);
+void func_801C4D28(Obj801C5560 *arg0) {
+    Sub8004DE88 v;
+    s16 angle;
+    s32 flip;
+    s32 speed;
+    s16 x;
+
+    flip = 0;
+    angle = func_80075EB4();
+    switch (arg0->unk3C) {
+    case 1:
+    turn:
+        arg0->unk12 = func_800132CC(arg0->unk12, angle, arg0->unk4->unk8);
+        if (flip) {
+            func_80014728((arg0->unk12 + 0x800) % 0x1000, &v);
+        } else {
+            func_80014728(arg0->unk12, &v);
+        }
+        func_80014338(&v, 0x3E8, &arg0->unkCC);
+        speed = 0x3E8;
+        break;
+    case 2:
+        angle += 0x200;
+        goto turn;
+    case 3:
+        angle -= 0x200;
+        goto turn;
+    case 6:
+        angle += 0x800;
+        goto turn;
+    case 7:
+        angle += 0x600;
+        goto turn;
+    case 8:
+        angle += 0xA00;
+        goto turn;
+    case 4:
+        angle += 0x400;
+        goto turn;
+    case 5:
+        angle -= 0x400;
+        goto turn;
+    case 12:
+        angle += 0x200;
+    case 11:
+    back:
+        flip = 1;
+        goto turn;
+    case 13:
+        angle -= 0x200;
+        goto back;
+    default:
+        speed = func_800143B8(&arg0->unkCC, 0x1F4, 0x3E8, &arg0->unkCC);
+        break;
+    }
+    x = func_80013390(arg0->unk108, speed, 0x32);
+    arg0->unk108 = x;
+    func_8004CC30(0xA1, &D_801A5DC0[0]->unk1000[0x300], &arg0->unk8, (x >> 4) + 0x32, 0x1F40, 0x2710, arg0->unk108 >> 5);
+    if (func_8004F080(&arg0->unk64, &arg0->unk8) == 0) {
+        if (arg0->unk50 != NULL) {
+            arg0->unk50(arg0, arg0->unk41);
+        }
+    }
+}
 
 void func_801C4EE8(Obj801C5560 *arg0, s32 arg1) {
     arg0->unk3C = arg1;
