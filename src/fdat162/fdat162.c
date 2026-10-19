@@ -1,7 +1,21 @@
 #include "common.h"
 #include "fdat162.h"
 
-INCLUDE_ASM("asm/USA/fdat162/nonmatchings/fdat162", func_801C8580);
+void func_801C8580(Elem801C8580 *arg0, s32 arg1) {
+    s32 count;
+    u16 *idx;
+
+    count = arg0->unk26;
+    idx = arg0->unk28 + 1;
+    do {
+        arg0->unk2C->unk10 = arg1;
+        if (arg1 == 4) {
+            arg0->unk38->unk6 = 0;
+        }
+        arg0 = &D_801D4488[*idx++];
+        count--;
+    } while (count != 0);
+}
 
 INCLUDE_ASM("asm/USA/fdat162/nonmatchings/fdat162", func_801C85D0);
 
