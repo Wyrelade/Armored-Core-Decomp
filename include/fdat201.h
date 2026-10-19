@@ -2157,5 +2157,6 @@ void func_8004F810();
 void func_8004FDEC(void);
 u32 *malloc2(s32 arg0);
 extern volatile s32 D_800CF378;
+void func_800165E4(u16 arg0, u16 arg1, u32 *arg2);
 
 #endif /* FDAT201_H */

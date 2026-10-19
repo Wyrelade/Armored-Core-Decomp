@@ -541,7 +541,21 @@ void func_800511A4(u8 *arg0, u32 *arg1, s32 arg2) {
     } while (result != 0 && retry < 3);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80051248);
+u32 *func_80051248(s16 arg0, s16 arg1) {
+    s32 size;
+    u8 *data;
+    u8 *p;
+
+    size = func_80015D80((u16)arg0, (u16)arg1);
+    data = (u8 *)func_80050FC4(size + 4);
+    p = data + size;
+    *p++ = 0;
+    *p++ = 0;
+    *p++ = 0;
+    *p = 0;
+    func_800165E4(arg0, arg1, (u32 *)data);
+    return (u32 *)data;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800512D4);
 
