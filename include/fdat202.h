@@ -571,6 +571,23 @@ typedef struct Obj80085580 {
     u8 unkCE;
 } Obj80085580;
 
+typedef struct Sub8005715C {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} Sub8005715C;
+
+typedef struct Elem8005715C {
+    u32 *unk0;
+    u8 _pad4[0x70];
+    Sub8005715C unk74;
+} Elem8005715C;
+
+typedef struct Obj8005715C {
+    s32 unk0;
+    Elem8005715C unk4[2];
+} Obj8005715C;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -807,5 +824,12 @@ void func_80086854(s32 arg0, Obj800895B0 *arg1, s32 *arg2);
 void func_80081088(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4);
 extern u8 D_8008DBC8[];
 s32 rcos(s32 arg0);
+extern Elem8005715C *D_801A5F1C[];
+extern Sub8005715C *D_801A5F24[];
+extern u32 *D_801A5F28;
+extern s32 D_801AC814[];
+extern s32 D_801AC818[];
+void ClearOTagR(u32 *arg0, s32 arg1);
+void func_8004DCF8(void);
 
 #endif /* FDAT202_H */

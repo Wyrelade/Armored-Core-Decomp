@@ -649,7 +649,22 @@ void func_80057134(void) {
     } while (i != 0);
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8005715C);
+void func_8005715C(void) {
+    Obj8005715C *db;
+    Elem8005715C *e;
+
+    db = (Obj8005715C *)&D_801A5E18;
+    db->unk0 = db->unk0 == 0;
+    e = &((Obj8005715C *)&D_801A5E18)->unk4[db->unk0];
+    D_801A5F1C[0] = e;
+    D_801A5F24[0] = &e->unk74;
+    D_801A5F28 = e->unk0;
+    ClearOTagR(D_801A5F28, 0x2000);
+    D_801A5F24[0]->unk8 = D_801A5F24[0]->unk0;
+    D_801AC818[0] = 0;
+    D_801AC814[0] = 0;
+    func_8004DCF8();
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800571F0);
 
