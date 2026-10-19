@@ -49,6 +49,13 @@ typedef struct Sub80075350 {
     u16 unk14;
 } Sub80075350;
 
+typedef struct Sub80076548 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+} Sub80076548;
+
 typedef struct Obj8007618C {
     Sub80075350 *unk0;
     u8 _pad4[0x4];
@@ -69,7 +76,7 @@ typedef struct Obj8007618C {
     u8 unk41;
     u8 _pad42[0x6];
     struct Obj8007618C *unk48;
-    u8 _pad4C[0x4];
+    s32 unk4C;
     void (*unk50)(struct Obj8007618C *, u8);
     void (*unk54)(struct Obj8007618C *, s32, s32);
     void (*unk58)();
@@ -78,7 +85,10 @@ typedef struct Obj8007618C {
     Sub8007618C unk64;
     u8 _padB4[0x18];
     Sub8004DE88 unkCC;
-    u8 _padD4[0x34];
+    u8 _padD4[0x8];
+    Sub80076548 unkDC;
+    Sub80076548 unkEC;
+    u8 _padFC[0xC];
     s16 unk108;
     s16 unk10A;
     s16 unk10C;
@@ -378,14 +388,15 @@ typedef struct Elem80051CDC {
 } Elem80051CDC;
 
 typedef struct Obj80052F90 {
-    u16 unk0;
-    u16 unk2;
-    u16 unk4;
-    u16 unk6;
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
     u8 _pad8[0x4];
     u8 unkC;
     u8 _padD[0x1];
     u8 unkE;
+    u8 _padF[0x1];
 } Obj80052F90;
 
 typedef struct Sub80052F90 {
@@ -461,9 +472,13 @@ typedef struct Elem800730DC {
 } Elem800730DC;
 
 typedef struct Elem800736AC {
-    u8 _pad0[0x14];
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0xC];
     Sub80073104 *unk14;
-    u8 _pad18[0x1C];
+    u8 _pad18[0x4];
+    u16 unk1C;
+    u8 _pad1E[0x16];
 } Elem800736AC;
 
 typedef struct Elem80074728 {
