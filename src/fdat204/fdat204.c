@@ -1856,7 +1856,41 @@ void func_80077EAC(void) {
     func_800815DC(D_80039D18->unk288, D_80039D18->unk28A, n, n * n, D_80039D18->unk28E, D_80039D18->unk2AC, D_80039D18->unk2AD, &D_80039D18->unk2C0);
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80077F08);
+void func_80077F08(Obj80073138 *arg0, s32 arg1, s32 arg2) {
+    s16 cur;
+    u16 val;
+
+    if (D_80039D18->unk8 & D_80039D18->unk294) {
+        val = arg0->unk1A + arg1;
+    } else if (D_80039D18->unk8 & D_80039D18->unk296) {
+        val = arg0->unk1A - arg1;
+    } else {
+        cur = arg0->unk1A;
+        if (cur > 0) {
+            if (arg1 < cur) {
+                arg0->unk1A = cur - arg1;
+            } else {
+                arg0->unk1A = 0;
+            }
+            goto clamp;
+        }
+        if (cur >= -arg1) {
+            arg0->unk1A = 0;
+            goto clamp;
+        }
+        val = cur + arg1;
+    }
+    arg0->unk1A = val;
+clamp:
+    if (arg0->unk1A > arg2) {
+        arg0->unk1A = arg2;
+    }
+    if (arg0->unk1A < -arg2) {
+        arg0->unk1A = -arg2;
+    }
+    arg0->unk10.unk0 += arg0->unk18;
+    arg0->unk10.unk2 += arg0->unk1A;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80077FF4);
 
