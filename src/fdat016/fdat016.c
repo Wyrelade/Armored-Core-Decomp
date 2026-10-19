@@ -45,7 +45,14 @@ void func_801C5B7C(Obj801C52C0 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat016/nonmatchings/fdat016", func_801C5D24);
 
-INCLUDE_ASM("asm/USA/fdat016/nonmatchings/fdat016", func_801C5DA0);
+void func_801C5DA0(s32 arg0, s32 arg1, s32 arg2) {
+    Sub801C4C94 vec;
+
+    vec.unk0 = func_80014DAC(2000);
+    vec.unk4 = func_80014DAC(2000);
+    vec.unk2 = arg2 - func_80014D30(1000);
+    func_80075A18(arg0, arg1, &vec);
+}
 
 INCLUDE_ASM("asm/USA/fdat016/nonmatchings/fdat016", func_801C5E14);
 
