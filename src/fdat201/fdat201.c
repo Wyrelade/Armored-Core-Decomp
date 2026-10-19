@@ -2298,7 +2298,24 @@ void func_8006F708(Obj8005EAF8 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006F79C);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006F8C0);
+void func_8006F8C0(Obj8005EAF8 *arg0) {
+    u8 v;
+    s32 y;
+
+    if (arg0->unk80 == 0) {
+        v = D_8017E5D8[arg0->unk7C->unk7C.unkA].unk0;
+        y = 0xB7;
+    } else if (arg0->unk80 == 1) {
+        v = D_8017E5D9[arg0->unk7C->unk7C.unkA].unk0;
+        y = 0xBF;
+    } else {
+        v = D_8017E5DA[arg0->unk7C->unk7C.unkA].unk0;
+        y = 0xC7;
+    }
+    arg0->unk48 = (v >> 3) | 0x60;
+    arg0->unk4C = y;
+    arg0->unk50 = 0;
+}
 
 void func_8006F964(void) {
     Obj8005EAF8 *obj;
