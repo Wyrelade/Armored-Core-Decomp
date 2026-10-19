@@ -259,5 +259,8 @@ extern s32 D_801AC860[];
 extern s32 D_801CD4B4;
 s32 SquareRoot0(s32 arg0);
 Sub801C683C *func_80086854(s32 arg0, Obj801C6800 *arg1, s32 *arg2);
+extern u8 D_80039C78[];
+void func_800759A4(Obj801C52C0 *arg0, s32 arg1, u8 *arg2);
+void func_80075B08(Obj801C52C0 *arg0, s32 arg1, Elem801C7308 *arg2);
 
 #endif /* FDAT086_H */
