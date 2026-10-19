@@ -489,7 +489,12 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015258);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015440);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800154D8);
+s32 *func_800154D8(s32 *arg0, s32 *arg1, s32 arg2) {
+    while (arg2--) {
+        *arg0++ = *arg1++;
+    }
+    return arg1;
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015508);
 
