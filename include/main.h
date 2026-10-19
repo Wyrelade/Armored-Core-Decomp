@@ -40,9 +40,9 @@ typedef struct Obj80015E48 {
     u8 unk0;
     u8 unk1;
     u16 unk2;
-    u8 _pad4[4];
+    s32 unk4;
     s32 *unk8;
-    u8 _padC[4];
+    s32 unkC;
 } Obj80015E48;
 
 typedef struct Obj8001654C {
@@ -90,7 +90,7 @@ typedef struct Elem8004C840 {
 
 /* @externs */
 void free2(u32 *arg0);
-extern s32 D_80049F98;
+extern volatile s32 D_80049F98;
 s32 rsin(s32 arg0);
 s32 rcos(s32 arg0);
 void func_80013A88(s16 arg0, Obj80013A88 *arg1);
