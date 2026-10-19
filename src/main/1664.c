@@ -644,7 +644,19 @@ void func_80015E48(Obj80015E48 *arg0) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015E68);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015FB4);
+void func_80015FB4(Obj80015E48 *arg0) {
+    u8 state;
+
+    state = arg0->unk0;
+    while (state != 0xFF) {
+        while (state == 3) {
+            func_80015A48();
+            state = arg0->unk0;
+        }
+        arg0 = (Obj80015E48 *)((u8 *)arg0 + (arg0->unk4 + sizeof(Obj80015E48)));
+        state = arg0->unk0;
+    }
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001604C);
 
