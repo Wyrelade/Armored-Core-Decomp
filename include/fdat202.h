@@ -66,7 +66,9 @@ typedef struct Obj8007618C {
     s16 unk1C;
     u8 _pad1E[0xC];
     u16 unk2A;
-    u8 _pad2C[0xA];
+    u8 _pad2C[0x2];
+    s16 unk2E;
+    u8 _pad30[0x6];
     u16 unk36;
     u8 _pad38[0x4];
     s8 unk3C;
