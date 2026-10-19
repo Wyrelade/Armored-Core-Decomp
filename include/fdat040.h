@@ -430,7 +430,7 @@ void func_801C60F8();
 void func_801C64A0();
 Sub801C665C *func_80073674(s32 arg0);
 void func_801C6580(Obj801C5F00 *arg0);
-void func_801C65E4();
+void func_801C65E4(Obj801C5F00 *arg0);
 extern Obj801C6A24 *D_8019F51C;
 extern s32 D_801CCB90;
 void func_801C52C0(Obj801C52C0 *arg0);
