@@ -2295,7 +2295,25 @@ void func_8007A02C(Obj8007618C *arg0) {
     arg0->unk15C &= ~D_8004125E;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8007A058);
+void func_8007A058(Obj8007618C *arg0) {
+    u16 *bits;
+    s32 flags;
+
+    bits = &arg0->unk148;
+    flags = arg0->unk15C;
+    *bits |= 0xF;
+    if (flags & D_8004125E) {
+        arg0->unk15C = flags & ~D_8004125E;
+        arg0->unk14A = 60;
+        arg0->unk14B = 40;
+        arg0->unk14C = 20;
+    } else {
+        arg0->unk15C = flags | D_8004125E;
+        arg0->unk14A = 180;
+        arg0->unk14B = 160;
+        arg0->unk14C = 140;
+    }
+}
 
 void func_8007A0C4(Obj8007618C *arg0) {
     arg0->unk15C ^= 1 << D_8004124B;
