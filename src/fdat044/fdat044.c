@@ -230,7 +230,23 @@ void func_801C6F4C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C &= ~arg1->unk38;
 }
 
-INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C6F74);
+void func_801C6F74(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
+    u16 mask;
+
+    arg0->unk148 |= 0xF;
+    mask = arg1->unk38;
+    if (arg0->unk15C & mask) {
+        arg0->unk15C &= ~mask;
+        arg0->unk14A[0] = 0x3C;
+        arg0->unk14A[1] = 0x28;
+        arg0->unk14A[2] = 0x14;
+    } else {
+        arg0->unk15C |= mask;
+        arg0->unk14A[0] = 0xB4;
+        arg0->unk14A[1] = 0xA0;
+        arg0->unk14A[2] = 0x8C;
+    }
+}
 
 void func_801C6FE0(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk2D;
