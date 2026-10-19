@@ -1155,7 +1155,30 @@ s32 func_8006EB24(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006EBC0);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006EDB4);
+void func_8006EDB4(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, s32 arg2) {
+    switch (arg2) {
+    case 0:
+        arg1->unk0 = arg0->unk0;
+        arg1->unk2 = arg0->unk2;
+        arg1->unk4 = arg0->unk4;
+        break;
+    case 1:
+        arg1->unk0 = -arg0->unk4;
+        arg1->unk2 = arg0->unk2;
+        arg1->unk4 = arg0->unk0;
+        break;
+    case 2:
+        arg1->unk0 = -arg0->unk0;
+        arg1->unk2 = arg0->unk2;
+        arg1->unk4 = -arg0->unk4;
+        break;
+    case 3:
+        arg1->unk0 = arg0->unk4;
+        arg1->unk2 = arg0->unk2;
+        arg1->unk4 = -arg0->unk0;
+        break;
+    }
+}
 
 void func_8006EE98(Obj8006FB14 *arg0) {
     s16 t;
