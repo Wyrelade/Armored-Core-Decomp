@@ -125,9 +125,11 @@ typedef struct Sub80078460 {
 } Sub80078460;
 
 typedef struct Obj80077EAC {
-    u8 _pad0[0x8];
+    s32 unk0;
+    s32 unk4;
     s32 unk8;
-    u8 _padC[0x40];
+    s32 unkC;
+    u8 _pad10[0x3C];
     Sub80078460 *unk4C;
     u8 _pad50[0x1C4];
     u16 unk214;
