@@ -319,6 +319,13 @@ typedef struct Elem801C9264 {
     u8 _pad0[0x34];
 } Elem801C9264;
 
+typedef struct Sub801C4C94 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C4C94;
+
 /* @externs */
 extern Elem801C5384 D_801CCB98;
 void func_801CCB4C(Obj801C52C0 *arg0);
