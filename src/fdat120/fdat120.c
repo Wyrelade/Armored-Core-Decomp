@@ -10,7 +10,30 @@ void func_801C52C0(Obj801C52C0 *arg0) {
 void func_801C52F0(void) {
 }
 
-INCLUDE_ASM("asm/USA/fdat120/nonmatchings/fdat120", func_801C52F8);
+void func_801C52F8(void) {
+    Elem8019FB68 *p;
+    s32 i;
+
+    if (D_801CAEF8 == 0) {
+        func_8008C2FC(0);
+        D_801CAEF8 = 1;
+    }
+    func_8008A80C();
+    if (D_801CAEFE == 0 && (D_801CAEFC++ & 0xF) == 0) {
+        i = 0xFC;
+        p = D_8019FB68;
+        do {
+            if (p->unkA != -1 && p->unk0 != 3) {
+                return;
+            }
+            i--;
+            p++;
+        } while (i != 0);
+        func_800529F0(0, 0, 0x68);
+        func_8004C318(0x80);
+        D_801CAEFE = 1;
+    }
+}
 
 void func_801C53D0(Obj801C52C0 *arg0) {
     if (!(arg0->unk148 & 0xF)) {
