@@ -2273,7 +2273,28 @@ void func_8006F670(struct Obj80068A20 *arg0) {
     obj->unk7C = arg0;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006F708);
+void func_8006F708(Obj8005EAF8 *arg0) {
+    Obj80068A20 *parent;
+    u8 v;
+    s32 y;
+
+    parent = arg0->unk7C;
+    if (parent->unk96 == 0) {
+        v = D_8017E5D8[parent->unk7C.unkA].unk0;
+        y = 0xBB;
+    } else if (parent->unk96 == 1) {
+        v = D_8017E5D9[parent->unk7C.unkA].unk0;
+        y = 0xC3;
+    } else {
+        do {
+            v = D_8017E5DA[parent->unk7C.unkA].unk0;
+        } while (0);
+        y = 0xCB;
+    }
+    arg0->unk48 = (v >> 3) + 0x62;
+    arg0->unk4C = y;
+    arg0->unk50 = 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006F79C);
 
