@@ -644,9 +644,13 @@ typedef struct Sub8007286C {
 } Sub8007286C;
 
 typedef struct Elem8007286C {
-    u8 _pad0[0x14];
+    u8 _pad0[0x6];
+    s16 unk6;
+    u8 _pad8[0xC];
     Sub8007286C *unk14;
-    u8 _pad18[0x1C];
+    u8 _pad18[0x4];
+    u16 unk1C;
+    u8 _pad1E[0x16];
 } Elem8007286C;
 
 typedef struct Sub80071188 {
