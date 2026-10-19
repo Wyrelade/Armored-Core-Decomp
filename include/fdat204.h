@@ -1039,5 +1039,7 @@ extern Sub800852B0 D_8008BC80[];
 void func_80083C98();
 extern s32 D_800893C0;
 s32 func_80016278(s32);
+s32 func_80052658(Obj80052658 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800526D4(s32 arg0, s32 arg1);
 
 #endif /* FDAT204_H */
