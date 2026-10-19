@@ -2160,5 +2160,7 @@ extern volatile s32 D_800CF378;
 void func_800165E4(u16 arg0, u16 arg1, u32 *arg2);
 void func_8007053C(Sub80068A20 *arg0, s16 arg1, s16 arg2, s16 arg3, s32 *arg4, s32 arg5);
 extern s32 D_800B7E54;
+extern u8 D_800B8B40[];
+void func_8008BD48();
 
 #endif /* FDAT201_H */
