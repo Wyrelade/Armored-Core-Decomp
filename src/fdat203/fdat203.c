@@ -101,7 +101,11 @@ void func_8004D1D0(s32 arg0, s32 arg1) {
     func_8004D394(arg0, 0, arg1, arg1, 0);
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004D1FC);
+void func_8004D1FC(s32 arg0, s32 arg1) {
+    if (D_80039D18 == D_80039D30) {
+        func_8004D394(arg0, 0, arg1, arg1, 0);
+    }
+}
 
 void func_8004D23C(s32 arg0, s32 arg1, s32 arg2) {
     func_8004D394(arg0, arg1, arg2, arg2, 0);
