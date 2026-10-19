@@ -912,5 +912,7 @@ void SsUtKeyOffV(s16 arg0);
 s16 SsUtKeyOnV(s16 voice, s16 vabId, s16 prog, s16 tone, s16 note, s16 fine, s16 voll, s16 volr);
 s32 func_8007275C(Obj800732FC *arg0, s16 *arg1, s32 arg2, s32 arg3, s32 arg4);
 Obj800732FC *func_8007334C(Obj800732FC *arg0, s16 *arg1, s32 arg2, s32 arg3, s32 arg4);
+extern s32 D_801DC0F8;
+extern s32 D_801DE518[3][64][16];
 
 #endif /* FDAT203_H */
