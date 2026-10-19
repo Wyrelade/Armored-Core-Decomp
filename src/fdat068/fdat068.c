@@ -5,7 +5,11 @@ INCLUDE_RODATA("asm/USA/fdat068/nonmatchings/fdat068", D_801C4B40);
 
 INCLUDE_ASM("asm/USA/fdat068/nonmatchings/fdat068", func_801C52E0);
 
-INCLUDE_ASM("asm/USA/fdat068/nonmatchings/fdat068", func_801C5440);
+void func_801C5440(Obj801C58D4 *arg0, u8 arg1) {
+    arg0->unk3C = arg1;
+    func_80078598(arg0);
+    func_8007732C(arg0, 0, 0, 0, &arg0->unkCC, func_801C52E0);
+}
 
 INCLUDE_ASM("asm/USA/fdat068/nonmatchings/fdat068", func_801C5494);
 
