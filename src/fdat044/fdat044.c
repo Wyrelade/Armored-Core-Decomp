@@ -244,7 +244,13 @@ INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C8628);
 
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C87F0);
 
-INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C8B7C);
+void func_801C8B7C(Obj801C52C0_fdat000 *arg0, s32 arg1) {
+    if (arg0->unk126 == -1) {
+        func_800759A4(arg0, arg1, &D_80039C78);
+    } else {
+        func_80075B08(arg0, arg1, &D_80198B08[arg0->unk126]);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat044/nonmatchings/fdat044", func_801C8BDC);
 
