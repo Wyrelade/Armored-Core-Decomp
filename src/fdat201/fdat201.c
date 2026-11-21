@@ -3049,7 +3049,156 @@ void func_800709D4(Obj800709D4 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80070A44);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BD00);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BD20);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BD40);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BD5C);
+
+void func_80070A44(Obj800709D4 *arg0) {
+    u8 *cur;
+    Sub80070A44 *work;
+    s32 unused;
+
+    work = (Sub80070A44 *)&arg0->unk7C;
+    cur = &((Obj80070A44 *)arg0->unk7C)->unk7C;
+    if (D_801A2550.unk18 & 0x1000) {
+        D_801A2550.unk0 |= 0x1000;
+        if (D_801A2574 != 0) {
+            D_801A2550.unk4 = 6 / D_801A2574;
+            if (!(D_801A2550.unk1C & 0x1000)) {
+                D_801A2550.unk6 = 12 / D_801A2574;
+            }
+        } else {
+            D_801A2550.unk4 = 6;
+            if (!(D_801A2550.unk1C & 0x1000)) {
+                D_801A2550.unk6 = 12;
+            }
+        }
+        SsUtKeyOn(D_801A2318, 0, 1, 0x3C, 0, 0x7F, 0x7F);
+        (*cur)--;
+    } else if (D_801A2550.unk18 & 0x4000) {
+        D_801A2550.unk0 |= 0x4000;
+        if (D_801A2574 != 0) {
+            D_801A2550.unk4 = 6 / D_801A2574;
+            if (!(D_801A2550.unk1C & 0x4000)) {
+                D_801A2550.unk6 = 12 / D_801A2574;
+            }
+        } else {
+            D_801A2550.unk4 = 6;
+            if (!(D_801A2550.unk1C & 0x4000)) {
+                D_801A2550.unk6 = 12;
+            }
+        }
+        SsUtKeyOn(D_801A2318, 0, 1, 0x3C, 0, 0x7F, 0x7F);
+        (*cur)++;
+    }
+    if ((s8)*cur < 0) {
+        *cur = 6;
+    } else if (*cur >= 7) {
+        *cur = 0;
+    }
+    if (D_801A2550.unk18 & 0x40) {
+        D_801A2550.unk0 |= 0x40;
+        SsUtKeyOn(D_801A2318, 0, 2, 0x3C, 0, 0x7F, 0x7F);
+        switch (*cur) {
+        case 0:
+            *(Blk800AAC20 *)D_80042AA8 = D_80031A94;
+            func_80083A58();
+            if ((u8)func_8007AA04(0) == 0xFF) {
+                func_8005DED8((Obj8004DEB0 *)arg0, func_80070A44, D_8004BD00, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                func_800506EC(4);
+                func_8005015C(3)->unk1 = 1;
+                func_8005C2D0(0x10, 0x28, 0x90, 0xB8, 3);
+                arg0->unk74 = func_80072448;
+            }
+            break;
+        case 2:
+            if (D_80031A5A == 0xFF || D_80031A5B == 0xFF || D_80031A63 == 0xFF ||
+                (D_80031A63 < 0x1B && D_80031A59 == 0xFF) || D_80031A61 == 0xFF || D_80031A60 == 0xFF) {
+                func_8005DED8((Obj8004DEB0 *)arg0, func_80070A44, D_8004BD20, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                func_800506EC(4);
+                func_8005015C(3)->unk1 = 1;
+                func_8005C2D0(0x10, 0x28, 0x90, 0xB8, 3);
+                arg0->unk74 = func_800854A8;
+            }
+            break;
+        case 4:
+            func_80051450(4, 8);
+            func_800506EC(4);
+            func_8005015C(3)->unk1 = 1;
+            func_800506EC(6);
+            func_8005015C(5)->unk1 = 1;
+            func_8005C2D0(0xB0, 0x18, 0x80, 0x90, 5);
+            func_8005C2D0(0x10, 0x28, 0x90, 0xB8, 3);
+            arg0->unk74 = func_80072134;
+            func_80050078((void (*)())func_80072838)->unk1 = 1;
+            break;
+        case 3:
+            if (D_80031A5A == 0xFF || D_80031A5B == 0xFF || D_80031A63 == 0xFF) {
+                func_8005DED8((Obj8004DEB0 *)arg0, func_80070A44, D_8004BD20, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                func_800506EC(4);
+                func_8005015C(3)->unk1 = 1;
+                func_8005C2D0(0x10, 0x28, 0x90, 0xB8, 3);
+                arg0->unk74 = func_80072640;
+            }
+            break;
+        case 5:
+            func_800506EC(4);
+            func_8005015C(3)->unk1 = 1;
+            func_800506EC(6);
+            func_8005015C(5)->unk1 = 1;
+            func_8005C2D0(0xB0, 0x18, 0x80, 0x90, 5);
+            func_8005C2D0(0x10, 0x28, 0x90, 0xB8, 3);
+            work->unk8->unk1 = 1;
+            arg0->unk74 = func_800722D4;
+            break;
+        case 6:
+            func_8005D8D4(D_8004BD40, &work->unkD, 0xC, 0);
+            arg0->unk74 = func_80071328;
+            break;
+        case 1:
+            *(Blk800AAC20 *)D_80042AA8 = D_80031A94;
+            func_80083A58();
+            if (D_800485F0 == 0) {
+                func_8005DED8((Obj8004DEB0 *)arg0, func_80070A44, D_8004BD5C, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                MoveImage(D_800B858C, 0x200, 0x100);
+                MoveImage(D_800B8594, 0x140, 0x1FF);
+                DrawSync(0);
+                func_80050AF4(0xD, func_80084290() + 0x84);
+                func_80051450(0x11, func_80084290());
+                func_800506EC(4);
+                func_8005015C(3)->unk1 = 1;
+                func_800506EC(6);
+                func_8005015C(5)->unk1 = 1;
+                func_8005C2D0(0xB0, 0x18, 0x80, 0x90, 5);
+                func_8005C2D0(0x10, 0x28, 0x90, 0xB8, 3);
+                func_80050078((void (*)())func_80072838)->unk1 = 1;
+                arg0->unk74 = func_80083C58;
+            }
+            break;
+        }
+    } else if (D_801A2550.unk18 & 0x20) {
+        SsUtKeyOn(D_801A2318, 0, 0, 0x3C, 0, 0x7F, 0x7F);
+        arg0->unk84->unk1 = 1;
+        arg0->unk80->unk1 = 1;
+        func_800506EC(4);
+        func_800506EC(6);
+        func_8005015C(3)->unk1 = 1;
+        func_8005015C(5)->unk1 = 1;
+        func_80050078(func_8005CC48)->unk1 = 1;
+        func_8005C2D0(0x20, 0x28, 0x80, 0xA8, 3);
+        func_8005C2D0(0xB0, 0x18, 0x80, 0x90, 5);
+        arg0->unk74 = func_80072730;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80071328);
 
@@ -3067,11 +3216,6 @@ void func_8007145C(Obj8004DEB0 *arg0) {
         arg0->unk1 = 1;
     }
 }
-
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BD20);
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BD40);
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BD5C);
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", jtbl_8004BD84);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800714FC);
 
