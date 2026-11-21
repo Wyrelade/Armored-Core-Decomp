@@ -349,7 +349,7 @@ typedef struct Obj8006D0DC {
     s16 unk0;
     s16 unk2;
     s16 unk4;
-    u8 _pad6[0x2];
+    s16 unk6;
     s16 unk8;
     s16 unkA;
     s16 unkC;
@@ -518,11 +518,26 @@ typedef struct Sub80072488 {
 } Sub80072488;
 
 typedef struct Elem8006DC20 {
-    u8 _pad0[0x26];
+    Obj8006D0DC unk0;
+    u8 _padE[2];
+    Obj8006D0DC unk10;
+    u8 _pad1E[2];
+    s16 unk20;
+    s16 unk22;
+    s16 unk24;
     s16 unk26;
     u16 *unk28;
     Sub80072488 *unk2C;
-    u8 _pad30[0x10];
+    u32 unk30_0 : 12;
+    u32 unk30_12 : 1;
+    u32 unk30_13 : 3;
+    u32 unk30_16 : 1;
+    u32 unk30_17 : 15;
+    u32 unk34_0 : 12;
+    u32 unk34_12 : 12;
+    u32 unk34_24 : 1;
+    u32 unk34_25 : 7;
+    u8 _pad38[8];
 } Elem8006DC20;
 
 typedef struct Sub80071148 {
@@ -744,7 +759,7 @@ typedef struct Obj8006FB14 {
     s16 unk0;
     u8 _pad2[0x2];
     s16 unk4;
-    u8 _pad6[0x2];
+    s16 unk6;
     s16 unk8;
     u8 _padA[0x2];
     s16 unkC;
