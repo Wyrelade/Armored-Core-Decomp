@@ -90,7 +90,20 @@ void func_801C6030(Obj801C4EB8 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C6080);
 
-INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C6340);
+void func_801C6340(Elem801C5EA8 *arg0) {
+    switch (func_801C6080(arg0, arg0->unk38->unk7)) {
+    case 1:
+        if (arg0->unk38->unk8 != 0) {
+            func_8004CC30(arg0->unk38->unk8, (u8 *)((arg0 - D_801D0B68) + 0x3000), &arg0->unk2C->unk22, 0x64, 0x1F40, 0x2710, 0);
+        }
+        break;
+    case 2:
+        if (arg0->unk38->unk9 != 0) {
+            func_8004CE44(arg0->unk38->unk9, &arg0->unk2C->unk22, 0x78, 0);
+        }
+        break;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat064/nonmatchings/fdat064", func_801C6414);
 
