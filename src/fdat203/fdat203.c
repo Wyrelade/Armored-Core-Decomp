@@ -1795,13 +1795,13 @@ Elem8006E85C **func_8006F95C(Sub8006D560 *arg0, Sub8004F1D4 *arg1, s32 arg2) {
         } while (scr->unkA0 < scr->unkA4);
     }
     if (scr->unkAC != NULL) {
-    func_8006EDB4(&scr->unk74.unk0, &scr->unk6C.unk0, scr->unk90->unk10.unk6);
-    arg1->unk0 = scr->unk90->unk10.unk0 + (scr->unk6C.unk0.unk0 >> 2);
-    arg1->unk2 = scr->unk90->unk10.unk2 + (scr->unk6C.unk0.unk2 >> 2);
-    arg1->unk4 = scr->unk90->unk10.unk4 + (scr->unk6C.unk0.unk4 >> 2);
-    D_801DC0FC[0] = scr->unkAC;
-    D_801DC100 = scr->unk90;
-    return D_801DC0FC;
+        func_8006EDB4(&scr->unk74.unk0, &scr->unk6C.unk0, scr->unk90->unk10.unk6);
+        arg1->unk0 = scr->unk90->unk10.unk0 + (scr->unk6C.unk0.unk0 >> 2);
+        arg1->unk2 = scr->unk90->unk10.unk2 + (scr->unk6C.unk0.unk2 >> 2);
+        arg1->unk4 = scr->unk90->unk10.unk4 + (scr->unk6C.unk0.unk4 >> 2);
+        D_801DC0FC[0] = scr->unkAC;
+        D_801DC100 = scr->unk90;
+        return D_801DC0FC;
     }
     return NULL;
 }
