@@ -6431,7 +6431,22 @@ void func_800A4A04(u8 *arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A4A74);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A4BE8);
+s32 func_800A4BE8(Obj800A4BE8 *arg0) {
+    u32 *addr;
+    s32 count;
+
+    for (count = 0x800000; count != 0; ) {
+        addr = func_800A4C70(arg0);
+        count--;
+        if (addr != NULL) {
+            arg0->unk8 = arg0->unk8 == 0;
+            func_800B5618(addr, arg0->unk0[arg0->unk8]);
+            StFreeRing(addr);
+            return 1;
+        }
+    }
+    return -1;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A4C70);
 

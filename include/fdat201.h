@@ -1232,6 +1232,11 @@ typedef struct Rect800ABB10 {
     s16 unk6;
 } Rect800ABB10;
 
+typedef struct Obj800A4BE8 {
+    u32 *unk0[2];
+    s32 unk8;
+} Obj800A4BE8;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2302,5 +2307,8 @@ extern void (*D_800B6FDC[])(s32, s32);
 extern u8 *D_8017E508;
 extern void (*D_800B7048[])(s32, s32);
 void func_8006C408(Sub80068A20 *arg0, s32 x, s32 y);
+u32 *func_800A4C70(Obj800A4BE8 *arg0);
+void func_800B5618(u32 *arg0, u32 *arg1);
+s32 StFreeRing(u32 *base);
 
 #endif /* FDAT201_H */
