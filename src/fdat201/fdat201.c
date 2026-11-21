@@ -358,7 +358,58 @@ void func_80050560(void) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800505F0);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800506EC);
+void func_800506EC(s16 arg0) {
+    Elem800505F0 *p;
+    Elem800505F0 *end;
+
+    switch (arg0) {
+    case 2:
+        p = D_801A36F8;
+        end = &D_801A36F8[19];
+        break;
+    case 4:
+        p = D_801A48D8;
+        end = &D_801A48D8[49];
+        break;
+    case 6:
+        p = D_801A7318;
+        end = &D_801A7318[49];
+        break;
+    case 8:
+        p = D_801A9D58;
+        end = &D_801A9D58[69];
+        break;
+    case 10:
+        p = D_801AD7D8;
+        end = &D_801AD7D8[69];
+        break;
+    case 12:
+        p = D_801B1258;
+        end = &D_801B1258[69];
+        break;
+    case 14:
+        p = D_801B4CD8;
+        end = &D_801B4CD8[49];
+        break;
+    case 16:
+        p = D_801B7718;
+        end = &D_801B7718[29];
+        break;
+    case 18:
+        p = D_801B9118;
+        end = &D_801B9118[29];
+        break;
+    case 20:
+        p = D_801BAB18;
+        end = &D_801BAB18[29];
+        break;
+    }
+    for (; p <= end; p++) {
+        if (p->unk0 != 0) {
+            p->unk1 = 1;
+        }
+    }
+}
 
 void func_800507F4(void) {
 }

@@ -1274,7 +1274,7 @@ void func_80015B78(s32 arg0, Obj800513F0 *arg1, s32 arg2, s32 arg3, void (*arg4)
 void func_80051830(u32 *arg0);
 void func_800309A8();
 Obj8004DEB0 *func_8005015C(s32 arg0);
-void func_800506EC(s32 arg0);
+void func_800506EC(s16 arg0);
 void func_80053988(Obj8004DEB0 *arg0);
 extern u8 D_8004B0B0[];
 void func_8005BA2C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
