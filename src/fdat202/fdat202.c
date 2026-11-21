@@ -1100,7 +1100,150 @@ void func_80057360(void) {
     D_801AC80C = 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800574D8);
+void func_800574D8(Obj80053908 *arg0) {
+    Blk80055A24 *blk;
+    Elem80055A24 *e;
+    Hdr800574D8 *hdr;
+    u16 *b;
+    s32 i;
+    s32 n;
+    u16 flags;
+    u32 code;
+    s32 unused[2];
+
+    blk = (Blk80055A24 *)arg0;
+    e = blk->unkC;
+    i = blk->unk8;
+    for (i--; i != -1; e++, i--) {
+        if (e->unkE & 0x8000) {
+            e->unk16 = 0xFFFF;
+            continue;
+        }
+        e->unk0 = (u8 *)((s32)e->unk0 + (s32)blk->unkC);
+        e->unk8 = (u8 *)((s32)e->unk8 + (s32)blk->unkC);
+        e->unk10 = (Hdr800574D8 *)((s32)e->unk10 + (s32)blk->unkC);
+        e->unk18 = (Vtx80055A24 *)((s32)e->unk18 + (s32)blk->unkC);
+        flags = e->unkE;
+        if (flags & 0x4000) {
+            continue;
+        }
+        n = e->unk14 + (flags & 0x1FF);
+        hdr = e->unk10;
+        while (--n != -1) {
+            b = (u16 *)(hdr + 1);
+            code = hdr->w;
+            hdr = (Hdr800574D8 *)b + hdr->b[1];
+            switch ((code >> 24) & 0xBC) {
+            case 0x20:
+                b[3] <<= 4;
+                b[4] <<= 4;
+                b[5] <<= 4;
+                b[2] <<= 3;
+                break;
+            case 0x30:
+                b[3] <<= 4;
+                b[5] <<= 4;
+                b[7] <<= 4;
+                b[2] <<= 3;
+                b[4] <<= 3;
+                b[6] <<= 3;
+                break;
+            case 0x24:
+                b[7] <<= 4;
+                b[8] <<= 4;
+                b[9] <<= 4;
+                b[6] <<= 3;
+                break;
+            case 0x34:
+                b[7] <<= 4;
+                b[9] <<= 4;
+                b[11] <<= 4;
+                b[6] <<= 3;
+                b[8] <<= 3;
+                b[10] <<= 3;
+                break;
+            case 0x28:
+                b[3] <<= 4;
+                b[4] <<= 4;
+                b[5] <<= 4;
+                b[6] <<= 4;
+                b[2] <<= 3;
+                break;
+            case 0x38:
+                b[3] <<= 4;
+                b[5] <<= 4;
+                b[7] <<= 4;
+                b[9] <<= 4;
+                b[2] <<= 3;
+                b[4] <<= 3;
+                b[6] <<= 3;
+                b[8] <<= 3;
+                break;
+            case 0x2C:
+                b[9] <<= 4;
+                b[10] <<= 4;
+                b[11] <<= 4;
+                b[12] <<= 4;
+                b[8] <<= 3;
+                break;
+            case 0x3C:
+                b[9] <<= 4;
+                b[11] <<= 4;
+                b[13] <<= 4;
+                b[15] <<= 4;
+                b[8] <<= 3;
+                b[10] <<= 3;
+                b[12] <<= 3;
+                b[14] <<= 3;
+                break;
+            case 0xA0:
+                b[2] <<= 4;
+                b[3] <<= 4;
+                b[4] <<= 4;
+                break;
+            case 0xB0:
+                b[6] <<= 4;
+                b[7] <<= 4;
+                b[8] <<= 4;
+                break;
+            case 0xA4:
+                b[8] <<= 4;
+                b[9] <<= 4;
+                b[10] <<= 4;
+                break;
+            case 0xB4:
+                b[12] <<= 4;
+                b[13] <<= 4;
+                b[14] <<= 4;
+                break;
+            case 0xA8:
+                b[2] <<= 4;
+                b[3] <<= 4;
+                b[4] <<= 4;
+                b[5] <<= 4;
+                break;
+            case 0xB8:
+                b[8] <<= 4;
+                b[9] <<= 4;
+                b[10] <<= 4;
+                b[11] <<= 4;
+                break;
+            case 0xAC:
+                b[10] <<= 4;
+                b[11] <<= 4;
+                b[12] <<= 4;
+                b[13] <<= 4;
+                break;
+            case 0xBC:
+                b[16] <<= 4;
+                b[17] <<= 4;
+                b[18] <<= 4;
+                b[19] <<= 4;
+                break;
+            }
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80057994);
 
