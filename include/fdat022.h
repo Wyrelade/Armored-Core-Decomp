@@ -197,10 +197,18 @@ extern s32 D_801C7624;
 void func_801C6758(Obj801C53A0 *arg0);
 void func_801C5A0C(Obj801C53A0 *arg0, u8 arg1);
 void func_801C5E40(Obj801C53A0 *arg0, s32 arg1);
-void func_801C5C00();
+void func_801C5C00(Obj801C53A0 *arg0);
 void func_801C5EF8();
 void func_801C5FD0();
 s32 func_80014D78(s32 arg0);
 void func_800759A4(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+extern u8 D_801C74CC[];
+extern u8 D_801C74F0[];
+extern u8 D_801C7510[];
+s32 func_800754D0(Obj801C53A0 *arg0, u8 *arg1);
+s32 func_80073714(Obj801C53A0 *arg0, s32 arg1);
+s32 func_801C5B10(Obj801C53A0 *arg0);
+s32 rand(void);
+void func_80077B78(Obj801C53A0 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, ...);
 
 #endif /* FDAT022_H */
