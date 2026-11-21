@@ -1819,7 +1819,41 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006E4C0);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006E5A0);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006E698);
+s32 func_8006E698(Sub8004DE88 *arg0, s32 arg1, s32 arg2) {
+    Obj8006E698 *s;
+
+    s = (Obj8006E698 *)0x1F800000;
+    func_8006D1D0(arg0, s);
+    s->unk48 = D_801EC494;
+    s->unk4C = arg2;
+    s->unk84 = D_8008D348;
+    for (s->unk88 = func_8006ED2C(s->unk0, D_801EC490); s->unk88 != -1; s->unk88 = func_8006ED2C(NULL)) {
+        s->unk90 = &D_801D4488[s->unk88];
+        if (func_8006E1BC(arg0[0].unk0, arg0[1].unk0, s->unk90->unk18, s->unk90->unk20)
+            && func_8006E1BC(arg0[0].unk2, arg0[1].unk2, s->unk90->unk1A, s->unk90->unk22)
+            && func_8006E1BC(arg0[0].unk4, arg0[1].unk4, s->unk90->unk1C, s->unk90->unk24)) {
+            if (arg1 == 0) {
+                s->unk60 = NULL;
+            } else {
+                s->unk60 = &s->unk58;
+            }
+            func_8006E9FC(s, arg0, arg1);
+            s->unk94 = &s->unk84[s->unk90->unk1E];
+            s->unk98 = (Obj8006FBC0 *)s->unk94->unk4;
+            s->unkBC = func_8006E960(s->unk98->unk4, s->unk64 - s->unk74, s->unk6C - s->unk74, s->unk7C - s->unk74);
+            s->unkBC &= func_8006E960(s->unk98->unk24, s->unk66 - s->unk76, s->unk6E - s->unk76, s->unk7E - s->unk76);
+            s->unkBC &= func_8006E960(s->unk98->unk44, s->unk68 - s->unk78, s->unk70 - s->unk78, s->unk80 - s->unk78);
+            if (s->unkBC != 0) {
+                s->unkB0 = s->unk98->unk64;
+                s->unkB4 = s->unkB0 + s->unk98->unk0;
+                s->unk8C = (s->unk98->unk0 >> 5) + 1;
+                func_8006E24C(s);
+            }
+        }
+    }
+    *s->unk48 = 0;
+    return s->unk48 != D_801EC494;
+}
 
 s32 func_8006E960(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 result;
