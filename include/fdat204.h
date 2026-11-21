@@ -886,7 +886,7 @@ extern u8 D_80041BB8;
 extern u8 D_80041BBA;
 extern u8 D_80041BBB;
 extern u8 D_80041BBD;
-extern u8 D_80041BC2;
+extern volatile u8 D_80041BC2;
 extern s8 D_80041BC8;
 extern s8 D_80041BC9;
 extern s8 D_80041BCA;
