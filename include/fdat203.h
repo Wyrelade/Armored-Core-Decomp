@@ -939,6 +939,13 @@ typedef struct Vec80055420 {
     s32 unk8;
 } Vec80055420;
 
+typedef struct Snd8004DC18 {
+    u16 unk0;
+    u8 unk2;
+    u8 unk3;
+    volatile u8 unk4;
+} Snd8004DC18;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1192,5 +1199,6 @@ s32 func_8006EEF0(s32 *arg0, ...);
 s32 ratan2(s32 arg0, s32 arg1);
 s32 rcos(s32 arg0);
 s32 CdRead2(s32 arg0);
+s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
 
 #endif /* FDAT203_H */
