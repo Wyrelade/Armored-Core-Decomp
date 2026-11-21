@@ -3765,7 +3765,27 @@ void func_8008C95C(Elem8008C95C *arg0, s32 *arg1, s32 arg2) {
     sc->unk140[arg2].unk0_0 = (u32)p;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008CA14);
+void func_8008CA14(Sub8004DE88 *arg0, s32 arg1, char *arg2) {
+    Obj8008C6FC *sc = (Obj8008C6FC *)0x1F800000;
+
+    func_8008C6FC(arg0);
+    RotTrans(&sc->unk128, sc->unk130, &sc->unk168);
+    func_80013AFC(-arg1, &sc->unk148);
+    MulRotMatrix(&sc->unk148);
+    SetRotMatrix(&sc->unk148);
+    SetTransMatrix((Sub8006F234 *)&sc->unk11C);
+    func_8008C7BC(D_80090824, sc->unk170, 3);
+    if ((s16)(sc->unk170[0].unk6 | sc->unk170[1].unk6 | sc->unk170[2].unk6) != 0xFF &&
+        (sc->unk170[0].unk6 & sc->unk170[1].unk6 & sc->unk170[2].unk6) == 0) {
+        func_8008C95C(sc->unk170, D_80090844, 0x10);
+    }
+    if (arg2 != NULL) {
+        func_8008C7BC(&D_8009083C, sc->unk170, 1);
+        if (sc->unk170[0].unk6 != 0xFF) {
+            func_8008C890(&sc->unk170[0].unk0.h, arg2, 7, 8);
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008CB5C);
 

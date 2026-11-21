@@ -1235,5 +1235,14 @@ extern Elem8008C178 *D_801D0B60[];
 extern u16 *D_801D0B64;
 void *func_8008C154(s32 arg0);
 void func_80051150(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, char *arg5);
+extern Sub8004DE88 D_80090824[];
+extern Sub8004DE88 D_8009083C;
+extern s32 D_80090844[];
+void MulRotMatrix(Sub8006F234 *arg0);
+void RotTrans(Sub8004DE88 *arg0, s32 *arg1, s32 *arg2);
+void func_8008C6FC(Sub8004DE88 *arg0);
+void func_8008C7BC(Sub8004DE88 *arg0, Elem8008C95C *arg1, s32 arg2);
+void func_8008C890(Sub8007BA2C *arg0, char *arg1, s32 arg2, s32 arg3);
+void func_8008C95C(Elem8008C95C *arg0, s32 *arg1, s32 arg2);
 
 #endif /* FDAT202_H */
