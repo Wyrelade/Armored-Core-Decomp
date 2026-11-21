@@ -590,7 +590,15 @@ void func_800558B4(Obj800558B4 *arg0, Sub800558B4 *arg1, s32 arg2, s32 arg3, s32
     arg1->unk4 = ((arg0->unk60.unk4 + arg0->unk68.unk4 + arg0->unk70.unk4) * 0x5555) >> 16;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800559D4);
+void func_800559D4(Obj800558B4 *arg0, Sub800558B4 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    func_80055880(arg0->unk5C + (arg2 >> 1), &arg0->unk60);
+    func_80055880(arg0->unk5C + (arg3 >> 1), &arg0->unk68);
+    func_80055880(arg0->unk5C + (arg4 >> 1), &arg0->unk70);
+    func_80055880(arg0->unk5C + (arg5 >> 1), &arg0->unk78);
+    arg1->unk0 = (arg0->unk60.unk0 + arg0->unk68.unk0 + arg0->unk70.unk0 + arg0->unk78.unk0) >> 2;
+    arg1->unk2 = (arg0->unk60.unk2 + arg0->unk68.unk2 + arg0->unk70.unk2 + arg0->unk78.unk2) >> 2;
+    arg1->unk4 = (arg0->unk60.unk4 + arg0->unk68.unk4 + arg0->unk70.unk4 + arg0->unk78.unk4) >> 2;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055AF0);
 
