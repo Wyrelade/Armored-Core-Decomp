@@ -1734,7 +1734,7 @@ s32 func_8006F3C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006F4EC);
 
-Elem8006E85C **func_8006F95C(Obj8006D0DC *arg0, Sub8004F1D4 *arg1, s32 arg2) {
+Elem8006E85C **func_8006F95C(Sub8006D560 *arg0, Sub8004F1D4 *arg1, s32 arg2) {
     Obj8006F95C *scr = (Obj8006F95C *)0x1F800000;
     s32 d;
 

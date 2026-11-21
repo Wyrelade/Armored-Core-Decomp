@@ -364,6 +364,15 @@ typedef struct Obj8006D0DC {
     s16 unkC;
 } Obj8006D0DC;
 
+typedef struct Sub8006D560 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+} Sub8006D560;
+
 typedef struct Obj8006E5B8 {
     u8 _pad0[0x50];
     Sub8004F1D4 unk50;
@@ -1349,7 +1358,7 @@ void func_80057964(s32 arg0);
 void func_8006EBC0(Obj8006E85C *arg0, Obj8006D0DC *arg1, s32 arg2);
 void func_8006E410(Obj8006E85C *arg0);
 extern Elem8006DC20 *D_801DC100;
-void func_8006D560(Obj8006D0DC *arg0, s32 *arg1);
+void func_8006D560(Sub8006D560 *arg0, s32 *arg1);
 void func_8006F0F0(Obj8006F95C *arg0, Obj8006D0DC *arg1);
 u32 func_8006FDDC(Obj8006FD84 *arg0, s32 *arg1, s32 *arg2);
 s32 func_8006F4EC(s32 arg0, Elem8006E85C *arg1, s32 *arg2, Sub8006F95C *arg3);
