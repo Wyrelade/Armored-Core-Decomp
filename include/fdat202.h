@@ -471,7 +471,9 @@ typedef struct Sub80073104 {
 } Sub80073104;
 
 typedef struct Elem800730DC {
-    u8 _pad0[0x2C];
+    u8 _pad0[0x26];
+    s16 unk26;
+    u16 *unk28;
     Sub80073104 *unk2C;
     u8 _pad30[0x10];
 } Elem800730DC;
