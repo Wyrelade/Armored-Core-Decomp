@@ -192,5 +192,6 @@ void ChangeClearPAD(s32 arg0);
 void func_800122A8(void);
 extern s32 D_80039CC0[];
 void func_800145E4(Obj800138F0 *arg0, s32 arg1);
+void func_80015580(Elem80015580 *arg0);
 
 #endif /* MAIN_H */

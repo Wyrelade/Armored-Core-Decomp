@@ -588,7 +588,45 @@ void func_80015580(Elem80015580 *arg0) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800155F0);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015710);
+s32 func_80015710(void) {
+    Elem80015580 *p;
+
+    p = D_8004A264;
+    switch (p->unk0) {
+    case 0:
+        break;
+    case 0x10:
+    case 0x30:
+    case 0x40:
+        switch (p->unk1) {
+        case 0:
+            while (CdRead(p->unk10, p->unkC, 0x80) == 0) {
+            }
+            p->unk1 = 1;
+            break;
+        case 1:
+            if (p->unk0 == 0x10) {
+                if (func_80015B24(p->unkC, p->unk10) != 0) {
+                    p->unk1 = 0;
+                    while (CdControl(0x16, p->unk6, 0) == 0) {
+                    }
+                    break;
+                }
+                if (p->unk14 != NULL) {
+                    p->unk14(p->unkC);
+                }
+            release:
+                func_80015580(p);
+            } else if (p->unk14 != NULL) {
+                p->unk14(p);
+            }
+            break;
+        }
+        break;
+    case 0x60:
+        goto release;
+    }
+}
 
 void func_80015854(void) {
 }
