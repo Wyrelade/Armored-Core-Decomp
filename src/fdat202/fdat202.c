@@ -787,7 +787,74 @@ void func_80055964(void) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800559D0);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80055A24);
+s32 func_80055A24(Obj80055A24 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, SVECTOR *arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8) {
+    VECTOR tv;
+    Sub8006F234 m;
+    VECTOR lv;
+    Obj80053908 *h;
+    Part80055A24 *part;
+    Vtx80055A24 *verts;
+    s32 k;
+    SVECTOR *v;
+    Blk80055A24 *blk;
+
+    h = D_801A5F34[arg1];
+    blk = (Blk80055A24 *)((u8 *)h + h->unk8);
+    verts = ((Elem80055A24 *)((u8 *)blk->unkC + (arg6 << 5) - (arg6 << 2)))->unk18;
+    if (arg0 != NULL) {
+        part = &arg0->unk20[arg5];
+        func_80013AFC(0x800 - arg3->unk2, &m);
+        m.unk0[0][0] >>= 2;
+        m.unk0[0][2] >>= 2;
+        m.unk0[1][1] >>= 2;
+        m.unk0[2][0] >>= 2;
+        m.unk0[2][2] >>= 2;
+        m.unk14[0] = arg2->unk0;
+        m.unk14[1] = arg2->unk2;
+        m.unk14[2] = arg2->unk4;
+        SetRotMatrix(&m);
+        SetTransMatrix(&m);
+        gte_ldlv0(part->unk28.unk14);
+        gte_rtv0tr();
+        gte_stlvnl(&tv);
+        gte_ldclmv(&part->unk28.unk0[0][0]);
+        gte_rtir();
+        gte_stclmv(&m.unk0[0][0]);
+        gte_ldclmv(&part->unk28.unk0[0][1]);
+        gte_rtir();
+        gte_stclmv(&m.unk0[0][1]);
+        gte_ldclmv(&part->unk28.unk0[0][2]);
+        gte_rtir();
+        gte_stclmv(&m.unk0[0][2]);
+        SetRotMatrix(&m);
+        SetTransMatrix((Sub8006F234 *)((u8 *)&tv - (u32)((Sub8006F234 *)0)->unk14));
+        k = 1;
+    } else {
+        func_80013AFC(0x800 - arg3->unk2, &m);
+        m.unk0[0][0] >>= 2;
+        m.unk0[0][2] >>= 2;
+        m.unk0[1][1] >>= 2;
+        m.unk0[2][0] >>= 2;
+        m.unk0[2][2] >>= 2;
+        m.unk14[0] = arg2->unk0;
+        m.unk14[1] = arg2->unk2;
+        m.unk14[2] = arg2->unk4;
+        SetRotMatrix(&m);
+        SetTransMatrix(&m);
+        k = 2;
+    }
+    for (arg7--; arg7 != -1; arg7--) {
+        v = &verts[*arg8++].v[k];
+        gte_ldv0(v);
+        gte_rtv0tr();
+        gte_stlvnl(&lv);
+        arg4->vx = lv.vx;
+        arg4->vy = lv.vy;
+        arg4->vz = lv.vz;
+        arg4++;
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80055DB8);
 
