@@ -198,7 +198,54 @@ void func_8004DB1C(u8 arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004DC18);
+void func_8004DC18(s32 arg0) {
+    u8 param[2];
+    Snd8004DC18 *snd;
+    Elem8004DB1C *e;
+    s32 trk;
+    s32 idx;
+    u8 *flags;
+    volatile u8 *busy;
+
+    snd = (Snd8004DC18 *)&D_80041BBE;
+    snd->unk0 = arg0;
+    D_80041BC1 = 0;
+    if (arg0 == 0xFFFF) {
+        D_80041BC0 = 0;
+        return;
+    }
+    if (D_80041BC2 == 0xFF) {
+        busy = &snd->unk4;
+        do {
+        } while (*busy == 0xFF);
+    }
+    idx = arg0 >> 4;
+    trk = arg0 & 0xF;
+    e = &D_80031764[idx];
+    if ((s16)e->unk0[trk] & 0x8000) {
+        flags = &D_80041BC1;
+        *flags |= 1;
+    }
+    param[0] = 1;
+    param[1] = trk;
+    D_80041BC2 = 0xFF;
+    func_8004DA48(0);
+    while (CdControl(0xD, param, 0) == 0) {
+    }
+    while (CdControl(2, e->unk20, 0) == 0) {
+    }
+    if (D_800893D0 == 0) {
+        D_800893D0 = CdSyncCallback((s32)func_8004DB1C);
+    }
+    while (CdControl(0x16, e->unk20, 0) == 0) {
+    }
+    if (e->unk0[trk] & 0x2000) {
+        D_80041BBD = 0x7F;
+    } else {
+        D_80041BBD = D_80041BBA;
+    }
+    D_80041BC0 = 1;
+}
 
 void func_8004DDBC(void) {
     if (D_80041BC0 == 0) {
