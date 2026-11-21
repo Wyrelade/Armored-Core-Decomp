@@ -2451,7 +2451,64 @@ void func_8006F220(Obj80068A20 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006F2CC);
+u8 *func_8006F2CC(Obj80068A20 *arg0, u8 *arg1, u8 arg2) {
+    Sub80068A20 *grid;
+    s16 y;
+    s16 left;
+    s16 right;
+    s16 i;
+    u8 flag;
+
+    arg1 -= 2;
+    grid = &arg0->unk7C;
+    left = arg1[0];
+    y = arg1[1];
+    right = left;
+    while (left > 0) {
+        if ((u8)func_8006C4C0(grid, (s16)(left - 1), y) != arg2) {
+            break;
+        }
+        left--;
+    }
+    while (right < 0x3F) {
+        if ((u8)func_8006C4C0(grid, (s16)(right + 1), y) != arg2) {
+            break;
+        }
+        right++;
+    }
+    for (i = left; i <= right; i++) {
+        func_8006C408(grid, i, y);
+    }
+    if (y != 0) {
+        i = right;
+        flag = 0;
+        for (; i >= left; i--) {
+            if ((u8)func_8006C4C0(grid, i, (s16)(y - 1)) == arg2 && flag == 0) {
+                arg1[0] = i;
+                arg1[1] = y - 1;
+                arg1 += 2;
+                flag = 1;
+            } else {
+                flag = 0;
+            }
+        }
+    }
+    if (y != 0x3F) {
+        i = right;
+        flag = 0;
+        for (; i >= left; i--) {
+            if ((u8)func_8006C4C0(grid, i, (s16)(y + 1)) == arg2 && flag == 0) {
+                arg1[0] = i;
+                arg1[1] = y + 1;
+                arg1 += 2;
+                flag = 1;
+            } else {
+                flag = 0;
+            }
+        }
+    }
+    return arg1;
+}
 
 void func_8006F55C(Sub8006DCEC *arg0, Obj8006FC84 *arg1) {
     MoveImage(D_800B8134, 0x39A, 0x40);

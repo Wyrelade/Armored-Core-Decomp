@@ -2301,5 +2301,6 @@ extern u8 *D_8017E500;
 extern void (*D_800B6FDC[])(s32, s32);
 extern u8 *D_8017E508;
 extern void (*D_800B7048[])(s32, s32);
+void func_8006C408(Sub80068A20 *arg0, s32 x, s32 y);
 
 #endif /* FDAT201_H */
