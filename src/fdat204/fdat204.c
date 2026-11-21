@@ -1967,7 +1967,78 @@ s32 func_8006F1FC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006F328);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006F798);
+s32 *func_8006F798(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2) {
+    Obj8006F798 *s;
+    s32 d;
+
+    s = (Obj8006F798 *)0x1F800000;
+    func_8006D39C(arg0, s);
+    s->unk88 = 0x7FFFFFFF;
+    s->unkAC = NULL;
+    s->unk7C = D_8008D348;
+    for (s->unk80 = func_8006ED2C(s->unk0, D_801EC490); s->unk80 != -1; s->unk80 = func_8006ED2C(NULL)) {
+        s->unk8C = &D_801D4488[s->unk80];
+        func_8006EF2C(s, arg0);
+        s->unk94 = &s->unk7C[s->unk8C->unk1E];
+        s->unk9C = (Obj8006FBC0 *)s->unk94->unk4;
+        if (s->unk9C->unk0 < 0x10) {
+            s->unk60[0] -= s->unk54[0];
+            s->unk60[1] -= s->unk54[1];
+            s->unk60[2] -= s->unk54[2];
+            s->unkA0 = s->unk9C->unk64;
+            s->unkA4 = s->unkA8 = s->unkA0 + s->unk9C->unk0;
+            goto scan;
+        }
+        s->unkB0 = func_8006FC18(s->unk9C, s->unk54, s->unk44);
+        if (s->unkB0 == 0) {
+            continue;
+        }
+        s->unk60[0] -= s->unk54[0];
+        s->unk60[1] -= s->unk54[1];
+        s->unk60[2] -= s->unk54[2];
+        s->unkA0 = s->unk9C->unk64;
+        s->unkA4 = s->unkA0 + s->unk9C->unk0;
+        s->unk84 = (s->unk9C->unk0 >> 5) + 1;
+        do {
+            if (s->unkB0 & 1) {
+                s->unkA8 = s->unkA0 + s->unk84;
+                if (s->unkA4 < s->unkA8) {
+                    s->unkA8 = s->unkA4;
+                }
+            scan:
+                do {
+                    if (!(s->unkA0->unkE & 7 & arg2)
+                        && func_8006F328(s->unk94->unk0, s->unkA0, s->unk54, &s->unk6C)) {
+                        d = ((s->unk54[0] < s->unk6C.unk0) ? s->unk6C.unk0 - s->unk54[0] : s->unk54[0] - s->unk6C.unk0)
+                          + ((s->unk54[1] < s->unk6C.unk2) ? s->unk6C.unk2 - s->unk54[1] : s->unk54[1] - s->unk6C.unk2)
+                          + ((s->unk54[2] < s->unk6C.unk4) ? s->unk6C.unk4 - s->unk54[2] : s->unk54[2] - s->unk6C.unk4);
+                        if (d < s->unk88) {
+                            s->unk88 = d;
+                            s->unk74 = s->unk6C;
+                            s->unk90 = s->unk8C;
+                            s->unkAC = s->unkA0;
+                            s->unk98 = s->unk94;
+                        }
+                    }
+                    s->unkA0++;
+                } while (s->unkA0 < s->unkA8);
+            } else {
+                s->unkA0 += s->unk84;
+            }
+            s->unkB0 >>= 1;
+        } while (s->unkA0 < s->unkA4);
+    }
+    if (s->unkAC != NULL) {
+        func_8006EBF0(&s->unk74, &s->unk6C, s->unk90->unk16);
+        arg1->unk0 = s->unk90->unk10 + (s->unk6C.unk0 >> 2);
+        arg1->unk2 = s->unk90->unk12 + (s->unk6C.unk2 >> 2);
+        arg1->unk4 = s->unk90->unk14 + (s->unk6C.unk4 >> 2);
+        D_801EC494[0] = (s32)s->unkAC;
+        D_801EC498 = s->unk90;
+        return D_801EC494;
+    }
+    return NULL;
+}
 
 s32 func_8006FBC0(Obj8006FBC0 *arg0, u32 arg1, u32 arg2, u32 arg3) {
     if (arg1 < 8 && arg2 < 8 && arg3 < 8) {
