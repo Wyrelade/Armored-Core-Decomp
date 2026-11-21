@@ -889,7 +889,7 @@ void func_80057134(void);
 void func_800154D8(u8 *arg0, u8 *arg1, s32 arg2);
 void func_80057288(void);
 extern s32 D_801A5F2C[];
-void func_8006E718(s32 *arg0);
+void func_8006E718(s32 *arg0, Elem800730DC *arg1);
 s32 func_80071ADC(s32 arg0, s32 arg1);
 Elem80071DC4 *func_80071D4C(s32 arg0);
 extern Elem800730DC D_801D0B68[];

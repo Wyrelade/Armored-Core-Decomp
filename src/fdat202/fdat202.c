@@ -1160,7 +1160,7 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006E6B4);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006E718);
 
-void func_8006E780(s32 *arg0) {
+void func_8006E780(s32 *arg0, Elem800730DC *arg1) {
     s32 *p;
     s32 i;
 
@@ -1171,7 +1171,7 @@ void func_8006E780(s32 *arg0) {
         i--;
         p++;
     } while (i != 0);
-    func_8006E718(arg0);
+    func_8006E718(arg0, arg1);
 }
 
 void func_8006E7B8(s32 *arg0) {
