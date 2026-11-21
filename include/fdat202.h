@@ -911,6 +911,16 @@ typedef struct Sub8008C178c {
     u8 unk2[1];
 } Sub8008C178c;
 
+typedef struct Obj8008C95C {
+    Sub8008C95C unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+} Obj8008C95C;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);

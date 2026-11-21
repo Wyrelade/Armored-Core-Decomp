@@ -3748,7 +3748,22 @@ void func_8008C890(Sub8007BA2C *arg0, char *arg1, s32 arg2, s32 arg3) {
     sc->unk144 = (u8 *)D_801A5F24[0]->unk8;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008C95C);
+void func_8008C95C(Elem8008C95C *arg0, s32 *arg1, s32 arg2) {
+    Obj8008C6FC *sc = (Obj8008C6FC *)0x1F800000;
+    Obj8008C95C *p;
+
+    p = (Obj8008C95C *)sc->unk144;
+    sc->unk144 = (u8 *)(p + 1);
+    p->unk8 = arg0[0].unk0.w;
+    p->unk10 = arg0[1].unk0.w;
+    p->unk18 = arg0[2].unk0.w;
+    p->unk4 = arg1[0];
+    p->unkC = arg1[1];
+    p->unk14 = arg1[2];
+    p->unk0.unk0_24 = 6;
+    p->unk0.unk0_0 = sc->unk140[arg2].unk0_0;
+    sc->unk140[arg2].unk0_0 = (u32)p;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008CA14);
 
