@@ -1638,7 +1638,77 @@ s32 func_8006F3C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006F4EC);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006F95C);
+Elem8006E85C **func_8006F95C(Obj8006D0DC *arg0, Sub8004F1D4 *arg1, s32 arg2) {
+    Obj8006F95C *scr = (Obj8006F95C *)0x1F800000;
+    s32 d;
+
+    func_8006D560(arg0, scr->unk0);
+    scr->unk88 = 0x7FFFFFFF;
+    scr->unkAC = NULL;
+    scr->unk7C = D_8008D190;
+    for (scr->unk80 = func_8006EEF0(scr->unk0, D_801DC0F8); scr->unk80 != -1; scr->unk80 = func_8006EEF0(NULL)) {
+        scr->unk8C = &D_801C40F0[scr->unk80];
+        func_8006F0F0(scr, arg0);
+        scr->unk94 = &scr->unk7C[scr->unk8C->unk1E];
+        scr->unk9C = scr->unk94->unk4;
+        if (scr->unk9C->unk0 < 0x10) {
+            scr->unk60 -= scr->unk54;
+            scr->unk64 -= scr->unk58;
+            scr->unk68 -= scr->unk5C;
+            scr->unkA0 = scr->unk9C->unk64;
+            scr->unkA4 = scr->unkA8 = &scr->unkA0[scr->unk9C->unk0];
+            goto scan;
+        }
+        scr->unkB0 = func_8006FDDC(scr->unk9C, &scr->unk54, scr->unk44);
+        if (scr->unkB0 == 0) {
+            continue;
+        }
+        scr->unk60 -= scr->unk54;
+        scr->unk64 -= scr->unk58;
+        scr->unk68 -= scr->unk5C;
+        scr->unkA0 = scr->unk9C->unk64;
+        scr->unkA4 = &scr->unkA0[scr->unk9C->unk0];
+        scr->unk84 = (scr->unk9C->unk0 >> 5) + 1;
+        do {
+            if (scr->unkB0 & 1) {
+                scr->unkA8 = &scr->unkA0[scr->unk84];
+                if (scr->unkA4 < scr->unkA8) {
+                    scr->unkA8 = scr->unkA4;
+                }
+            scan:
+                do {
+                    if (!(scr->unkA0->unkE & 7 & arg2)
+                        && func_8006F4EC(scr->unk94->unk0, scr->unkA0, &scr->unk54, &scr->unk6C)) {
+                        d = ((scr->unk54 < scr->unk6C.unk0.unk0) ? scr->unk6C.unk0.unk0 - scr->unk54 : scr->unk54 - scr->unk6C.unk0.unk0)
+                          + ((scr->unk58 < scr->unk6C.unk0.unk2) ? scr->unk6C.unk0.unk2 - scr->unk58 : scr->unk58 - scr->unk6C.unk0.unk2)
+                          + ((scr->unk5C < scr->unk6C.unk0.unk4) ? scr->unk6C.unk0.unk4 - scr->unk5C : scr->unk5C - scr->unk6C.unk0.unk4);
+                        if (d < scr->unk88) {
+                            scr->unk88 = d;
+                            scr->unk74 = scr->unk6C;
+                            scr->unk90 = scr->unk8C;
+                            scr->unkAC = scr->unkA0;
+                            scr->unk98 = scr->unk94;
+                        }
+                    }
+                    scr->unkA0++;
+                } while (scr->unkA0 < scr->unkA8);
+            } else {
+                scr->unkA0 += scr->unk84;
+            }
+            scr->unkB0 >>= 1;
+        } while (scr->unkA0 < scr->unkA4);
+    }
+    if (scr->unkAC != NULL) {
+    func_8006EDB4(&scr->unk74.unk0, &scr->unk6C.unk0, scr->unk90->unk10.unk6);
+    arg1->unk0 = scr->unk90->unk10.unk0 + (scr->unk6C.unk0.unk0 >> 2);
+    arg1->unk2 = scr->unk90->unk10.unk2 + (scr->unk6C.unk0.unk2 >> 2);
+    arg1->unk4 = scr->unk90->unk10.unk4 + (scr->unk6C.unk0.unk4 >> 2);
+    D_801DC0FC[0] = scr->unkAC;
+    D_801DC100 = scr->unk90;
+    return D_801DC0FC;
+    }
+    return NULL;
+}
 
 s32 func_8006FD84(Obj8006FD84 *arg0, u32 arg1, u32 arg2, u32 arg3) {
     if (arg1 < 8 && arg2 < 8 && arg3 < 8) {

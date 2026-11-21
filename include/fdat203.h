@@ -1051,6 +1051,39 @@ typedef struct Obj8006E85C {
     s32 unkBC;
 } Obj8006E85C;
 
+typedef struct Sub8006F95C {
+    Sub8004F1D4 unk0;
+    u8 _pad6[0x2];
+} Sub8006F95C;
+
+typedef struct Obj8006F95C {
+    s32 unk0[16];
+    u8 _pad40[0x4];
+    s32 unk44[4];
+    s32 unk54;
+    s32 unk58;
+    s32 unk5C;
+    s32 unk60;
+    s32 unk64;
+    s32 unk68;
+    Sub8006F95C unk6C;
+    Sub8006F95C unk74;
+    Elem8006CE7C *unk7C;
+    s32 unk80;
+    s32 unk84;
+    s32 unk88;
+    Elem8006DC20 *unk8C;
+    Elem8006DC20 *unk90;
+    Elem8006CE7C *unk94;
+    Elem8006CE7C *unk98;
+    Obj8006FD84 *unk9C;
+    Elem8006E85C *unkA0;
+    Elem8006E85C *unkA4;
+    Elem8006E85C *unkA8;
+    Elem8006E85C *unkAC;
+    u32 unkB0;
+} Obj8006F95C;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1315,5 +1348,11 @@ extern Buf800573FC *D_8019D95C;
 void func_80057964(s32 arg0);
 void func_8006EBC0(Obj8006E85C *arg0, Obj8006D0DC *arg1, s32 arg2);
 void func_8006E410(Obj8006E85C *arg0);
+extern Elem8006DC20 *D_801DC100;
+void func_8006D560(Obj8006D0DC *arg0, s32 *arg1);
+void func_8006F0F0(Obj8006F95C *arg0, Obj8006D0DC *arg1);
+u32 func_8006FDDC(Obj8006FD84 *arg0, s32 *arg1, s32 *arg2);
+s32 func_8006F4EC(s32 arg0, Elem8006E85C *arg1, s32 *arg2, Sub8006F95C *arg3);
+void func_8006EDB4(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, s32 arg2);
 
 #endif /* FDAT203_H */
