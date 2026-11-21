@@ -743,7 +743,101 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055D00);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055DD8);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055EA8);
+s32 func_80055EA8(Obj80055420 *arg0, s32 arg1, Sub8004F1D4 *arg2, Sub8004F1D4 *arg3, s32 arg4, s32 arg5) {
+    Scr80055EA8 *s;
+    Sub80053304 *mdl;
+    Joint80055420 *j;
+    s32 n;
+    s32 idx;
+    s32 sum;
+    Part80055420 *p;
+
+    s = (Scr80055EA8 *)0x1F800000;
+    s->unk50 = D_8019D96C[arg1];
+    if (s->unk50 == NULL) {
+        return 0;
+    }
+    s->unk80 = arg4;
+    s->unk88 = arg5;
+    s->unk84 = 0;
+    if (s->unk50->unk5 != 0) {
+        func_80013AFC(0x800 - arg3->unk2, &s->unk0);
+        s->unk0.unk0 >>= 2;
+        s->unk0.unk4 >>= 2;
+        s->unk0.unk8 >>= 2;
+        s->unk0.unkC >>= 2;
+        s->unk0.unk10 >>= 2;
+        mdl = s->unk50;
+        s->unk0.unk14 = arg2->unk0;
+        s->unk0.unk18 = arg2->unk2;
+        s->unk0.unk1C = arg2->unk4;
+        s->unk54.hdr = (Mdl80055420 *)((u8 *)mdl + mdl->unk8);
+        if (arg0 == NULL) {
+            func_80055DD8(s, s->unk54.hdr->unk0);
+        } else {
+            s->unk54.parts = s->unk54.hdr->unkC;
+            sum = 0;
+            n = mdl->unk5;
+            j = arg0->unk20;
+            for (n--; n != -1; n--) {
+                idx = j->unk12;
+                if (idx >= 0) {
+                add:
+                    p = &s->unk54.parts[idx];
+                    sum += p->unk14;
+                } else if (idx < -0x800) {
+                    idx += 0x1000;
+                    goto add;
+                }
+                j++;
+            }
+            func_80055D00(s, sum);
+            n = s->unk50->unk5;
+            j = arg0->unk20;
+            for (n--; n != -1; n--) {
+                idx = j->unk12;
+                if (idx >= 0) {
+                draw:
+                    gte_SetRotMatrix(&s->unk0);
+                    gte_SetTransMatrix(&s->unk0);
+                    gte_ldlv0(&j->unk28.unk14);
+                    gte_rtv0tr();
+                    gte_stlvnl(&s->unk40);
+                    gte_ldclmv(&j->unk28.unk0);
+                    gte_rtir();
+                    gte_stclmv(&s->unk20.unk0);
+                    gte_ldclmv(&j->unk28.unk2);
+                    gte_rtir();
+                    gte_stclmv(&s->unk20.unk2);
+                    gte_ldclmv(&j->unk28.unk4);
+                    gte_rtir();
+                    gte_stclmv(&s->unk20.unk4);
+                    gte_SetRotMatrix(&s->unk20);
+                    gte_SetTransMatrix((Obj80013A88 *)((u8 *)&s->unk40 - 0x14));
+                    func_80055AF0(idx);
+                } else if (idx < -0x800) {
+                    idx += 0x1000;
+                    goto draw;
+                }
+                j++;
+            }
+            return 1;
+        }
+    } else {
+        func_80013AFC(0x800 - arg3->unk2, &s->unk0);
+        s->unk0.unk0 >>= 2;
+        s->unk0.unk4 >>= 2;
+        s->unk0.unk8 >>= 2;
+        s->unk0.unkC >>= 2;
+        s->unk0.unk10 >>= 2;
+        s->unk0.unk14 = arg2->unk0;
+        s->unk0.unk18 = arg2->unk2;
+        s->unk0.unk1C = arg2->unk4;
+        s->unk54.hdr = (Mdl80055420 *)((u8 *)s->unk50 + s->unk50->unk8);
+        func_80055DD8(s, 1);
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80056354);
 

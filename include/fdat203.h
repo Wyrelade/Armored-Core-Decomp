@@ -947,6 +947,24 @@ typedef struct Snd8004DC18 {
     volatile u8 unk4;
 } Snd8004DC18;
 
+typedef union Un80055EA8 {
+    Mdl80055420 *hdr;
+    Part80055420 *parts;
+} Un80055EA8;
+
+typedef struct Scr80055EA8 {
+    Obj80013A88 unk0;
+    Obj80013A88 unk20;
+    Vec80055420 unk40;
+    u8 _pad4C[0x4];
+    Sub80053304 *unk50;
+    Un80055EA8 unk54;
+    u8 _pad58[0x28];
+    s32 unk80;
+    s32 unk84;
+    s32 unk88;
+} Scr80055EA8;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1203,5 +1221,8 @@ s32 CdRead2(s32 arg0);
 s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
 void SetRotMatrix(Obj80013A88 *arg0);
 void SetTransMatrix(Obj80013A88 *arg0);
+void func_80055AF0(s32 arg0);
+void func_80055D00(Scr80055EA8 *arg0, s32 arg1);
+void func_80055DD8(Scr80055EA8 *arg0, s32 arg1);
 
 #endif /* FDAT203_H */
