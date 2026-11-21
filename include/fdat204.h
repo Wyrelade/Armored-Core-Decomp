@@ -1244,6 +1244,22 @@ typedef struct Tmd8005C910 {
     Part8005C910 unkC[1];
 } Tmd8005C910;
 
+typedef struct Rec8005BAA8 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s16 unkC;
+    s16 unkE;
+    Elem8007229C *unk10;
+    Light8005BAA8 *unk14;
+} Rec8005BAA8;
+
+typedef struct Vec8005BFE0 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} Vec8005BFE0;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1503,5 +1519,10 @@ void func_8006E24C(Obj8006E698 *arg0);
 s32 func_8006E960(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006E9FC(Obj8006E698 *arg0, Sub8004DE88 *arg1, s32 arg2);
 s32 func_8006ED2C(s32 *arg0, ...);
+extern s32 D_801A4960;
+void Square0(Vec8005BFE0 *v0, Vec8005BFE0 *v1);
+void func_8005BAA8(Elem8007229C *arg0, s32 arg1, Rec8005BAA8 **arg2, Rec8005BAA8 **arg3, Sv80060B08 *arg4);
+void func_8005A134(Rec8005BAA8 *arg0);
+void func_80062CB4(Rec8005BAA8 *arg0);
 
 #endif /* FDAT204_H */
