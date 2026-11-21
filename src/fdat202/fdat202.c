@@ -3613,7 +3613,15 @@ void func_8008A9FC(void) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008AA90);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008AB68);
+void func_8008AB68(void) {
+    D_8019F51C->unk0();
+    if (D_8019F52A < 0x3D) {
+        func_8008A8F8();
+    }
+    if (D_8019F528 != 0) {
+        func_8008AA90();
+    }
+}
 
 void func_8008ABD4(s8 arg0) {
     D_80090922 = arg0;
