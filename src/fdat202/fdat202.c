@@ -3674,7 +3674,53 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008B380);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008C154);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008C178);
+u16 func_8008C178(s32 arg0) {
+    u8 unused[0x218];
+    Sub8008C178b *hdr;
+    Elem8008C178 *e;
+    u16 *idx;
+    Sub8008C178c *src;
+    Sub8008C178 *sub;
+    s32 n;
+
+    D_801D0B50.unk0 = arg0;
+    hdr = (Sub8008C178b *)((u8 *)D_801D0B64 + D_801D0B64[arg0]);
+    D_801D0B51[0] = hdr->unk2;
+    D_801D0B52 = hdr->unk4;
+    D_801D0B5C[0] = (u8 *)D_801D0B58;
+    D_801D0B60[0] = D_801D0B58;
+    e = D_801D0B58;
+    idx = hdr->unk6;
+    n = D_801D0B51[0];
+    for (n--; n != -1; n--) {
+        D_801D0B50.unkC += 0x18;
+        src = (Sub8008C178c *)((u8 *)D_801D0B50.unk14 + *idx++);
+        e->unk0 = src->unk2;
+        e->unkC = src->unk0;
+        e->unk4 = 0;
+        e->unk10 = 0;
+        e++;
+    }
+    e = D_801D0B60[0];
+    n = D_801D0B51[0];
+    for (n--; n != -1; n--) {
+        switch (e->unkC) {
+        case 0:
+            e->unk14 = func_8008C154(0x10);
+            break;
+        case 1:
+            sub = func_8008C154(0x212);
+            e->unk14 = sub;
+            sub->unk10 = 0;
+            break;
+        case 2:
+            e->unk14 = func_8008C154(0x28);
+            break;
+        }
+        e++;
+    }
+    return hdr->unk0;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008C2FC);
 
