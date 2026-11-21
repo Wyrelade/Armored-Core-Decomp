@@ -1524,5 +1524,6 @@ void Square0(Vec8005BFE0 *v0, Vec8005BFE0 *v1);
 void func_8005BAA8(Elem8007229C *arg0, s32 arg1, Rec8005BAA8 **arg2, Rec8005BAA8 **arg3, Sv80060B08 *arg4);
 void func_8005A134(Rec8005BAA8 *arg0);
 void func_80062CB4(Rec8005BAA8 *arg0);
+void func_80057118(s32 arg0);
 
 #endif /* FDAT204_H */

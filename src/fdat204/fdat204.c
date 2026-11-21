@@ -939,7 +939,90 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005C294);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005C340);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005C910);
+void func_8005C910(s32 arg0, Cv8005C910 *arg1, s32 arg2) {
+    Spad8005C910 *sp;
+    Vtx8005C910 *vtx;
+    Vtx8005C910 *v0;
+    Vtx8005C910 *v1;
+    Vtx8005C910 *v2;
+    Vtx8005C910 *v3;
+    u32 *pk;
+    Pk8005C910 *q;
+    Ft38005C910 *p;
+    s32 z;
+
+    sp = (Spad8005C910 *)0x1F800000;
+    sp->unk2C.c = *arg1;
+    sp->unk28 = 0;
+    sp->unk20 = D_801A4964 + 0xF;
+    sp->unk24 = D_801A4964 + 3;
+    sp->unk1C = D_801ADCD0.unk0 + arg2;
+    sp->unk10 = (Part8005C910 *)((D_801ADCD8 + 0xC + arg0 * 0x20) - arg0 * 4);
+    vtx = D_801ADCD0.unk670;
+    func_80057118(sp->unk10->unk4 + sp->unk10->unk6);
+    sp->unk18 = sp->unk10->unk14 + (sp->unk10->unkE & 0x1FF);
+    pk = sp->unk10->unk10;
+    sp->unk4 = D_801ADCCC[0]->unk8;
+    sp->unk8 = D_801ADCCC[0]->unk4;
+    if (sp->unk8 < sp->unk4 + sp->unk18 * 4 + sp->unk18 * 16 + sp->unk18 * 32) {
+        return;
+    }
+    while (sp->unk18-- != 0) {
+        sp->unkC.w = *pk;
+        pk++;
+        switch (sp->unkC.b.mode & 0xFC) {
+        case 0xA4:
+            q = (Pk8005C910 *)pk;
+            p = (Ft38005C910 *)sp->unk4;
+            v0 = (Vtx8005C910 *)((u8 *)vtx + q->unk10);
+            v1 = (Vtx8005C910 *)((u8 *)vtx + q->unk12);
+            v2 = (Vtx8005C910 *)((u8 *)vtx + q->unk14);
+            sp->unk4 += sizeof(Ft38005C910);
+            p->unk8 = v0->unk0;
+            p->unk10 = v1->unk0;
+            p->unk18 = v2->unk0;
+            p->unk4.w = sp->unk2C.w;
+            p->unkC = q->unk0;
+            p->unk14 = q->unk4;
+            p->unk1C = q->unk8;
+            p->tag.len = 7;
+            p->unk4.c.code = sp->unkC.b.mode & 0x7F;
+            z = ((v0->unk4 + v1->unk4 + v2->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p->tag.addr = sp->unk1C[z];
+                sp->unk1C[z] = (sp->unk1C[z] & 0xFF000000) | ((u32)p & 0xFFFFFF);
+            }
+            break;
+        case 0xAC:
+            q = (Pk8005C910 *)pk;
+            p = (Ft38005C910 *)sp->unk4;
+            v0 = (Vtx8005C910 *)((u8 *)vtx + q->unk14);
+            v1 = (Vtx8005C910 *)((u8 *)vtx + q->unk16);
+            v2 = (Vtx8005C910 *)((u8 *)vtx + q->unk18);
+            v3 = (Vtx8005C910 *)((u8 *)vtx + q->unk1A);
+            sp->unk4 += sizeof(Ft48005C910);
+            p->unk8 = v0->unk0;
+            p->unk10 = v1->unk0;
+            p->unk18 = v2->unk0;
+            ((Ft48005C910 *)p)->unk20 = v3->unk0;
+            p->unk4.w = sp->unk2C.w;
+            p->unkC = q->unk0;
+            p->unk14 = q->unk4;
+            p->unk1C = q->unk8;
+            ((Ft48005C910 *)p)->unk24 = q->unkC;
+            p->tag.len = 9;
+            p->unk4.c.code = sp->unkC.b.mode & 0x7F;
+            z = (v0->unk4 + v1->unk4 + v2->unk4 + v3->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p->tag.addr = sp->unk1C[z];
+                sp->unk1C[z] = (sp->unk1C[z] & 0xFF000000) | ((u32)p & 0xFFFFFF);
+            }
+            break;
+        }
+        pk += sp->unkC.b.len;
+    }
+    D_801ADCCC[0]->unk8 = sp->unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005CCB4);
 
