@@ -1116,6 +1116,43 @@ typedef struct Elem8008F08C_60 {
     u8 _pad4[0x5C];
 } Elem8008F08C_60;
 
+typedef struct Sub8007C240 {
+    u8 _pad0[0x26];
+    u16 unk26;
+    u16 unk28;
+} Sub8007C240;
+
+typedef struct Owner8007C240 {
+    u8 _pad0[0x7C];
+    Sub8007C240 unk7C;
+} Owner8007C240;
+
+typedef struct Elem8007C240 {
+    s16 unk0;
+    u8 _pad2[0xE];
+} Elem8007C240;
+
+typedef struct Tbl8007C240 {
+    Elem8007C240 *unk0;
+    u8 _pad4[0xC];
+} Tbl8007C240;
+
+typedef struct Obj8007C240 {
+    u8 unk0;
+    u8 unk1;
+    u8 _pad2[0x40];
+    u16 unk42;
+    u8 _pad44[0x4];
+    s32 unk48;
+    u8 _pad4C[0x30];
+    s16 unk7C;
+    u8 _pad7E[0x2];
+    u16 unk80;
+    u8 _pad82[0x2];
+    Owner8007C240 *unk84;
+    u16 unk88;
+} Obj8007C240;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2172,5 +2209,6 @@ s32 func_800162A0(s32 arg0);
 extern s32 D_800BDCD0;
 extern u8 D_800BDCD4;
 void func_8006E148(s32 arg0, s32 arg1);
+extern Tbl8007C240 D_800BCAC0[];
 
 #endif /* FDAT201_H */

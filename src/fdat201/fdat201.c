@@ -3174,7 +3174,29 @@ void func_8007C22C(Obj8004DEB0 *arg0) {
     arg0->unk42 -= 0x20;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007C240);
+void func_8007C240(Obj8007C240 *arg0) {
+    Sub8007C240 *sub;
+    s32 pos;
+    s16 lim;
+    s32 idx;
+
+    idx = arg0->unk88;
+    arg0->unk42 -= 0x20;
+    sub = &arg0->unk84->unk7C;
+    pos = arg0->unk48 + arg0->unk7C;
+    arg0->unk48 = pos;
+    if (idx != 0xFF) {
+        lim = D_800BCAC0[arg0->unk80].unk0[idx].unk0;
+        if (pos >= -lim && pos <= lim) {
+            return;
+        }
+    } else if ((u32)(pos + 0x320) < 0x641) {
+        return;
+    }
+    arg0->unk1 = 1;
+    sub->unk26 = arg0->unk42;
+    sub->unk28 = arg0->unk7C;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8007C2F0);
 
