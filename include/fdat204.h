@@ -1261,6 +1261,11 @@ typedef struct Vec8005BFE0 {
     s32 unk8;
 } Vec8005BFE0;
 
+typedef struct Arg8005E278 {
+    u8 _pad0[0x2];
+    u16 unk2;
+} Arg8005E278;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
