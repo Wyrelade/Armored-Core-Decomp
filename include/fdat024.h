@@ -393,5 +393,6 @@ void func_801C6C5C();
 Task801C6CCC *func_80086F20(s32 arg0, Sub801C6C1C *arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, u8 *arg6, u8 *arg7, u8 *arg8);
 s32 func_801C5968(Elem801C5F00 *arg0, u8 arg1);
 void func_8004CC30(s32 arg0, u8 *arg1, Sub801C6C1C *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+void func_801C609C(Obj801C52C0 *arg0);
 
 #endif /* FDAT024_H */

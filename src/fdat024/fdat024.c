@@ -157,7 +157,13 @@ void func_801C609C(Obj801C52C0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C615C);
+void func_801C615C(Obj801C52C0 *arg0) {
+    s32 unused[36];
+
+    arg0->unk2C = (Sub801C5550_fdat000 *)func_80072120(2);
+    arg0->unk2C->unk10 = (Elem801C5F00 *)arg0 - D_801D0B68;
+    arg0->unk2C->unk0 = func_801C609C;
+}
 
 INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C61B0);
 
