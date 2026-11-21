@@ -422,7 +422,11 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800149D4);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014A68);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014AE4);
+void func_80014AE4(s32 arg0, s32 arg1, s32 arg2, Obj800138F0 *arg3) {
+    arg3->unk2 = -ratan2(arg0, arg2);
+    arg3->unk0 = ratan2(arg1, SquareRoot0(arg0 * arg0 + arg2 * arg2)) & 0xFFF;
+    arg3->unk4 = 0;
+}
 
 void func_80014B74(Obj800138F0 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2) {
     s32 dx;
