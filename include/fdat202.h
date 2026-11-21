@@ -1127,5 +1127,6 @@ void func_8008CA14(Sub8004DE88 *arg0, s32 arg1, char *arg2);
 s32 ratan2(s32 arg0, s32 arg1);
 s32 CdRead2(s32 arg0);
 s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
+void func_8005239C(s16 arg0);
 
 #endif /* FDAT202_H */

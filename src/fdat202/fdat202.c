@@ -567,7 +567,25 @@ Elem80052338 *func_800523BC(Elem80052338 *arg0) {
     return arg0;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800523DC);
+void func_800523DC(void) {
+    Elem80052338 *e;
+    Elem80052338 **head;
+    u16 **tbl;
+    s32 i;
+
+    tbl = &D_801ED850;
+    i = 8;
+    *tbl = (u16 *)((u8 *)*tbl + (s32)tbl);
+    e = (Elem80052338 *)((u8 *)tbl - 0xB0);
+    do {
+        e->unk10 = 0;
+        e++;
+    } while (--i != 0);
+    head = (Elem80052338 **)D_801ED840;
+    D_801ED844 = D_801ED840 - 8;
+    *head = D_801ED840 - 8;
+    func_8005239C(0);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80052440);
 
