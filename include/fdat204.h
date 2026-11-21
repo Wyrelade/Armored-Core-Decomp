@@ -1011,7 +1011,7 @@ void func_80056180(void);
 void func_800154D8(u8 *arg0, u8 *arg1, s32 arg2);
 void func_800562FC(void);
 extern s32 D_801ADCD4[];
-void func_8006D9F4(s32 *arg0);
+void func_8006D9F4(s32 *arg0, Elem8007229C *arg1);
 void func_8006F0F4(s32 arg0, s32 arg1, s32 arg2, s32 *arg3);
 s32 func_80070C9C(s32 arg0, s32 arg1);
 s32 func_80070F0C(s32 arg0);
