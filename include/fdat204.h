@@ -24,7 +24,9 @@ typedef struct Obj8004EDA8 {
     u8 _pad1[0x1];
     u8 unk2;
     u8 unk3;
-    u8 _pad4[0x6];
+    u8 _pad4[0x2];
+    u16 unk6;
+    u16 unk8;
     s16 unkA;
     s16 unkC;
     u8 _padE[0xE];
@@ -53,11 +55,19 @@ typedef struct Elem80056180 {
     u8 _pad1[0x17];
 } Elem80056180;
 
+typedef struct Elem8006E698 {
+    u8 _pad0[0xE];
+    u16 unkE;
+    u8 _pad10[0x4];
+} Elem8006E698;
+
 typedef struct Obj8006FBC0 {
-    u8 _pad0[0x4];
+    u16 unk0;
+    u8 _pad2[0x2];
     s32 unk4[8];
     s32 unk24[8];
     s32 unk44[8];
+    Elem8006E698 unk64[1];
 } Obj8006FBC0;
 
 typedef struct Obj80073138 {
@@ -601,11 +611,33 @@ typedef struct Sub8007229C {
 } Sub8007229C;
 
 typedef struct Elem8007229C {
-    u8 _pad0[0x26];
+    u8 _pad0[0x10];
+    s16 unk10;
+    s16 unk12;
+    s16 unk14;
+    s16 unk16;
+    s16 unk18;
+    s16 unk1A;
+    s16 unk1C;
+    s16 unk1E;
+    s16 unk20;
+    s16 unk22;
+    s16 unk24;
     s16 unk26;
     u16 *unk28;
     Sub8007229C *unk2C;
-    u8 _pad30[0x10];
+    u32 unk30_0 : 8;
+    u32 unk30_8 : 1;
+    u32 unk30_9 : 3;
+    u32 unk30_12 : 1;
+    u32 unk30_13 : 1;
+    u32 unk30_14 : 14;
+    u32 unk30_28 : 4;
+    u32 unk34_0 : 12;
+    u32 unk34_12 : 12;
+    u32 unk34_24 : 1;
+    u32 unk34_25 : 7;
+    u8 _pad38[0x8];
 } Elem8007229C;
 
 typedef struct Obj80088DA0 {
@@ -715,17 +747,39 @@ typedef struct Sub800707D0 {
     u16 unk0_15 : 1;
 } Sub800707D0;
 
+typedef struct Elem8006CCB8 {
+    s32 unk0;
+    s32 unk4;
+} Elem8006CCB8;
+
 typedef struct Obj800707D0 {
-    u8 _pad0[0x5C];
+    s32 unk0[0x12];
+    s32 *unk48;
+    s32 unk4C;
+    u8 _pad50[0xC];
     s32 unk5C[3];
     s32 unk68[3];
-    u8 _pad74[0x20];
+    s16 unk74;
+    s16 unk76;
+    s16 unk78;
+    u8 _pad7A[0x2];
+    s16 unk7C;
+    s16 unk7E;
+    s16 unk80;
+    u8 _pad82[0x2];
+    Elem8006CCB8 *unk84;
+    s32 unk88;
+    s32 unk8C;
+    Elem8007229C *unk90;
     s32 *unk94;
-    u8 _pad98[0x4];
+    Obj8006FBC0 *unk98;
     u32 unk9C;
     u8 _padA0[0x8];
     Sub800707D0 unkA8[4];
-    u8 _padB0[0x10];
+    Elem8006E698 *unkB0;
+    Elem8006E698 *unkB4;
+    u8 _padB8[0x4];
+    s32 unkBC;
     Sub8004DE88 *unkC0[4];
 } Obj800707D0;
 
@@ -858,10 +912,337 @@ typedef struct Snd8004DC18 {
     volatile u8 unk4;
 } Snd8004DC18;
 
-typedef struct Elem8006CCB8 {
+typedef struct Buf8005C910 {
+    u8 _pad0[0x4];
+    u8 *unk4;
+    u8 *unk8;
+} Buf8005C910;
+
+typedef struct Rgbc8005C910 {
+    u8 r;
+    u8 g;
+    u8 b;
+    u8 code;
+} Rgbc8005C910;
+
+typedef union Col8005C910 {
+    s32 w;
+    Rgbc8005C910 c;
+} Col8005C910;
+
+typedef struct Cv8005C910 {
+    u8 r;
+    u8 g;
+    u8 b;
+    u8 cd;
+} Cv8005C910;
+
+typedef union CvWord8005C910 {
+    s32 w;
+    Cv8005C910 c;
+} CvWord8005C910;
+
+typedef struct Sv80060B08 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv80060B08;
+
+typedef struct Elem80060C54 {
+    Sv80060B08 unk0;
+    s16 unk8;
+    u8 unkA;
+    u8 unkB;
+    u8 unkC;
+    u8 unkD;
+    u8 _padE[0x2];
+} Elem80060C54;
+
+typedef struct Rot8005BAA8 {
+    s16 m[3][3];
+    s16 pad;
+} Rot8005BAA8;
+
+typedef struct Light8005BAA8 {
+    Rot8005BAA8 unk0[4];
+    s16 unk50[3][3];
+    u8 unk62;
+    u8 unk63;
+    u8 unk64;
+    u8 _pad65;
+    u16 unk66;
+} Light8005BAA8;
+
+typedef struct Mat8005BAA8 {
+    s16 m[3][3];
+    s16 pad;
+    s32 t[3];
+} Mat8005BAA8;
+
+typedef struct Vtx8005C910 {
+    s32 unk0;
+    s16 unk4;
+    s16 unk6;
+    s32 unk8;
+    s32 unkC;
+} Vtx8005C910;
+
+typedef struct Draw8005C910 {
+    u32 *unk0;
+    u8 _pad4[0x4];
+    u8 *unk8;
+    u8 _padC[0x610];
+    s32 unk61C;
+    u8 _pad620[0x50];
+    Vtx8005C910 unk670[0x5DD];
+    u8 _pad6440[0x8];
+    u32 unk6448[16];
+    u32 unk6488[16];
+    u8 _pad64C8[0xC4];
+    Light8005BAA8 unk658C[32];
+    s32 unk728C;
+    u8 _pad7290[0x28];
+    Elem8007229C *unk72B8;
+    u8 _pad72BC[0x10];
+    Rot8005BAA8 unk72CC;
+    s32 unk72E0[3];
+    s32 unk72EC[3];
+    u8 _pad72F8[0x24];
+    Mat8005BAA8 unk731C[4];
+    Mat8005BAA8 unk739C[4];
+    Rot8005BAA8 unk741C;
+    u8 _pad7430[0x4C];
+    Elem80060C54 unk747C[256];
+} Draw8005C910;
+
+typedef struct Tag8005C910 {
+    u32 addr : 24;
+    u32 len : 8;
+} Tag8005C910;
+
+typedef struct Ft38005C910 {
+    Tag8005C910 tag;
+    Col8005C910 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+} Ft38005C910;
+
+typedef struct Ft48005C910 {
+    Tag8005C910 tag;
+    Col8005C910 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Ft48005C910;
+
+typedef struct Xy8005DEE4 {
+    s16 x;
+    s16 y;
+} Xy8005DEE4;
+
+typedef union Sxy8005DEE4 {
+    s32 w;
+    Xy8005DEE4 h;
+} Sxy8005DEE4;
+
+typedef struct Gt48005E588 {
+    Tag8005C910 tag;
+    Col8005C910 unk4;
+    Sxy8005DEE4 unk8;
+    u8 unkC;
+    u8 unkD;
+    u16 unkE;
+    Sxy8005DEE4 unk10;
+    u8 unk14;
+    u8 unk15;
+    u16 unk16;
+    Sxy8005DEE4 unk18;
+    u8 unk1C;
+    u8 unk1D;
+    u16 unk1E;
+    Sxy8005DEE4 unk20;
+    u8 unk24;
+    u8 unk25;
+    u16 unk26;
+} Gt48005E588;
+
+typedef struct Line8005DEE4 {
+    Tag8005C910 tag;
+    Col8005C910 unk4;
+    s32 unk8;
+    s32 unkC;
+} Line8005DEE4;
+
+typedef struct Mode8005DEE4 {
+    Tag8005C910 tag;
+    u8 _pad4[0x8];
+} Mode8005DEE4;
+
+typedef struct Sv8005DEE4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv8005DEE4;
+
+typedef struct Node8005DEE4 {
+    Sv8005DEE4 unk0;
+    Sv8005DEE4 unk8;
+    u8 unk10;
+    u8 unk11;
+    u8 _pad12[0x2];
+    s32 unk14;
+    s32 unk18;
+} Node8005DEE4;
+
+typedef struct Obj8006E698 {
+    s32 unk0[0x12];
+    s32 *unk48;
+    s32 unk4C;
+    u8 _pad50[0x8];
+    s32 unk58;
+    u8 _pad5C[0x4];
+    s32 *unk60;
+    s16 unk64;
+    s16 unk66;
+    s16 unk68;
+    u8 _pad6A[0x2];
+    s16 unk6C;
+    s16 unk6E;
+    s16 unk70;
+    u8 _pad72[0x2];
+    s16 unk74;
+    s16 unk76;
+    s16 unk78;
+    u8 _pad7A[0x2];
+    s16 unk7C;
+    s16 unk7E;
+    s16 unk80;
+    u8 _pad82[0x2];
+    Elem8006CCB8 *unk84;
+    s32 unk88;
+    s32 unk8C;
+    Elem8007229C *unk90;
+    Elem8006CCB8 *unk94;
+    Obj8006FBC0 *unk98;
+    u8 _pad9C[0x14];
+    Elem8006E698 *unkB0;
+    Elem8006E698 *unkB4;
+    u8 _padB8[0x4];
+    s32 unkBC;
+} Obj8006E698;
+
+typedef struct Sub80073508_unk0 {
+    u8 _pad0[0xC];
+    s32 unkC;
+} Sub80073508_unk0;
+
+typedef struct Obj80073508 {
+    Sub80073508_unk0 *unk0;
+} Obj80073508;
+
+typedef struct Part8005C910 {
+    s32 unk0;
+    u16 unk4;
+    u16 unk6;
+    u8 *unk8;
+    u8 _padC[0x2];
+    u16 unkE;
+    u32 *unk10;
+    u16 unk14;
+    u8 _pad16[0x6];
+} Part8005C910;
+
+typedef struct Pk8005C910 {
     s32 unk0;
     s32 unk4;
-} Elem8006CCB8;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+} Pk8005C910;
+
+typedef struct PkHdr8005C910 {
+    u8 unk0;
+    u8 len;
+    u8 unk2;
+    u8 mode;
+} PkHdr8005C910;
+
+typedef union PkWord8005C910 {
+    u32 w;
+    PkHdr8005C910 b;
+} PkWord8005C910;
+
+typedef struct Spad8005C910 {
+    u8 _pad0[0x4];
+    u8 *unk4;
+    u8 *unk8;
+    PkWord8005C910 unkC;
+    Part8005C910 *unk10;
+    u8 _pad14[0x4];
+    s32 unk18;
+    u32 *unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    CvWord8005C910 unk2C;
+} Spad8005C910;
+
+typedef struct Spad8005DEE4 {
+    u32 *unk0;
+    u16 unk4;
+    s16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u8 unkC;
+    u8 unkD;
+    u8 _padE[0x2];
+    s32 unk10;
+    Node8005DEE4 unk14[3];
+    Sxy8005DEE4 unk68;
+    Sxy8005DEE4 unk6C;
+    s32 unk70;
+    s32 unk74;
+    Gt48005E588 *unk78;
+    s32 unk7C;
+} Spad8005DEE4;
+
+typedef struct Sub80073508_unk14 {
+    u8 _pad0[0x4];
+    void (*unk4)();
+} Sub80073508_unk14;
+
+typedef struct Sub80073508 {
+    u8 _pad0[0x14];
+    Sub80073508_unk14 *unk14;
+    u8 _pad18[0x4];
+    u16 unk1C;
+} Sub80073508;
+
+typedef struct Tmd8005C910 {
+    u8 _pad0[0xC];
+    Part8005C910 unkC[1];
+} Tmd8005C910;
 
 /* @externs */
 extern s8 D_800893C4;
@@ -1064,7 +1445,7 @@ void func_800562FC(void);
 extern s32 D_801ADCD4[];
 void func_8006D9F4(s32 *arg0, Elem8007229C *arg1);
 void func_8006F0F4(s32 arg0, s32 arg1, s32 arg2, s32 *arg3);
-s32 func_80070C9C(s32 arg0, s32 arg1);
+s32 func_80070C9C(Sub8004DE88 *arg0, s32 arg1);
 s32 func_80070F0C(s32 arg0);
 extern Elem8007286C D_801A4C68[];
 void SsVabClose(s16 arg0);
@@ -1110,5 +1491,17 @@ s32 CdRead2(s32 arg0);
 s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
 void func_8004DB1C(u8 arg0);
 extern Elem8006CCB8 D_8008D348[];
+extern s32 D_801A4964;
+extern Buf8005C910 *D_801ADCCC[];
+extern Draw8005C910 D_801ADCD0;
+extern s32 D_801EC494[];
+void SetDrawMode(Mode8005DEE4 *p, s32 dfe, s32 dtd, s32 tpage, void *tw);
+void func_8005DEE4(Node8005DEE4 *arg0);
+s32 func_80060B08(s32 arg0, Sv80060B08 *arg1, s32 arg2, s32 arg3);
+void func_8006D1D0(Sub8004DE88 *arg0, void *arg1);
+void func_8006E24C(Obj8006E698 *arg0);
+s32 func_8006E960(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8006E9FC(Obj8006E698 *arg0, Sub8004DE88 *arg1, s32 arg2);
+s32 func_8006ED2C(s32 *arg0, ...);
 
 #endif /* FDAT204_H */
