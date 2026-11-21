@@ -505,5 +505,6 @@ void func_80075FC0(Obj801C95A8 *arg0);
 s32 func_8004F024(Sub801C5798 *arg0, Sub801C55B4 *arg1);
 void func_80078250(Obj801C95A8 *arg0, u8 arg1, u8 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 void func_8007847C(Obj801C95A8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
+s32 func_801C5840(Elem801C5F00 *arg0, u8 arg1);
 
 #endif /* FDAT040_H */
