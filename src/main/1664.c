@@ -771,7 +771,15 @@ void func_80015FB4(Obj80015E48 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001604C);
+void func_8001604C(Obj80015E48 *arg0, s32 arg1) {
+    Obj80015E48 *end;
+
+    arg0->unk0 = 0;
+    arg0->unk4 = arg1 - (sizeof(Obj80015E48) + 4);
+    arg1 -= 4;
+    end = (Obj80015E48 *)((u8 *)arg0 + arg1);
+    end->unk0 = 0xFF;
+}
 
 Obj80015E48 *func_8001606C(Obj80015E48 *arg0, s32 arg1, s32 *arg2, s32 arg3) {
     Obj80015E48 *blk;
