@@ -654,7 +654,17 @@ s32 func_80015B24(u32 *arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015B78);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80015C9C);
+s32 func_80015C9C(u16 arg0, u16 arg1, u8 *arg2) {
+    Elem80015D80 *e;
+    u16 start;
+
+    e = &D_8004A2A4[arg0];
+    start = e->unk0[arg1];
+    if (arg2 != NULL) {
+        func_80015A08(&e->unk4, start, (Obj800158C8 *)arg2);
+    }
+    return (e->unk0[arg1 + 1] - start) << 11;
+}
 
 void func_80015D28(u16 arg0, u16 arg1, s32 arg2, s32 arg3) {
     u8 loc[4];
