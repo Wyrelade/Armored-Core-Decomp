@@ -2,6 +2,7 @@
 #define FDAT201_H
 
 #include "common.h"
+#include "gte.h"
 
 /* @types */
 typedef struct Obj8004DEB0 {
@@ -2296,5 +2297,7 @@ extern Elem800505F0 D_801BAB18[];
 extern s32 D_801F07EC[];
 void SetRotMatrix(MATRIX *m);
 void SetTransMatrix(MATRIX *m);
+extern u8 *D_8017E500;
+extern void (*D_800B6FDC[])(s32, s32);
 
 #endif /* FDAT201_H */

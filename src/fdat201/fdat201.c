@@ -1387,7 +1387,37 @@ void func_80057108(Obj8004DEB0 *arg0) {
     arg0->unk74 = func_80052334;
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80057190);
+void func_80057190(s32 arg0, s32 arg1, s32 arg2, MATRIX *arg3) {
+    Elem80057190 *e;
+    SVECTOR *v;
+    s32 *sxy;
+    s32 *sz;
+    u32 count;
+    s32 i;
+
+    e = &((Obj80057190 *)D_801F36D0[arg2])->unkC[arg1];
+    count = e->unk14;
+    D_8017E500 = e->unk10;
+    SetRotMatrix(arg3);
+    SetTransMatrix(arg3);
+    sxy = D_8019F424;
+    sz = D_801F07EC;
+    i = e->unk4;
+    v = e->unk0;
+    while (i > 0) {
+        gte_ldv0(v);
+        gte_rtps();
+        v++;
+        sxy++;
+        sz++;
+        i--;
+        gte_stsxy(sxy);
+        gte_stszotz(sz);
+    }
+    for (i = 0; i < count; i++) {
+        D_800B6FDC[*D_8017E500](arg0, e->unk8);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800572C4);
 
