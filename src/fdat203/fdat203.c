@@ -663,7 +663,7 @@ void func_80056BEC(void) {
     p = &D_8019D954;
     PutDispEnv((*p)->unk60);
     PutDrawEnv((*p)->unk4);
-    DrawOTag(&D_8019D960[0x1FFF]);
+    DrawOTag(&D_8019D960.unk0[0x1FFF]);
     D_801A3D98 = GetRCnt(0xF2000001);
     func_80056C84();
 }

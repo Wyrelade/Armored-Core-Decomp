@@ -843,6 +843,12 @@ typedef struct Obj800558B4 {
     Sub800558B4 unk78;
 } Obj800558B4;
 
+typedef struct Obj800573FC {
+    u32 *unk0;
+    u8 _pad4[0x66C];
+    u8 unk670[1];
+} Obj800573FC;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -913,7 +919,7 @@ extern u8 D_80041BB8;
 extern u8 D_80041BBA;
 extern u8 D_80041BBB;
 extern u8 D_80041BBD;
-extern u8 D_80041BC2;
+extern volatile u8 D_80041BC2;
 extern s8 D_80041BC8;
 extern s8 D_80041BC9;
 extern s8 D_80041BCA;
@@ -934,7 +940,7 @@ extern u8 D_80041BC1;
 extern s32 D_80041BC4;
 void func_8004DD34(u16 arg0);
 extern Obj80056BEC *D_8019D954;
-extern u32 *D_8019D960;
+extern Obj800573FC D_8019D960;
 extern s32 D_801A3D98;
 void DrawSync(s32 arg0);
 void DrawOTag(u32 *arg0);
