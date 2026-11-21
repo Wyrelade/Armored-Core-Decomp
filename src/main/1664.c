@@ -325,7 +325,11 @@ INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800144FC);
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_800145E4);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_8001462C);
+void func_8001462C(Obj800138F0 *arg0, Obj800138F0 *arg1) {
+    func_800145E4(&arg0[0], arg1->unk0);
+    func_800145E4(&arg0[1], arg1->unk2);
+    func_800145E4(&arg0[2], arg1->unk4);
+}
 
 void func_8001467C(Obj800138F0 *arg0, Obj800138F0 *arg1, Obj800138F0 *arg2, Obj800138F0 *arg3) {
     s32 ax;
