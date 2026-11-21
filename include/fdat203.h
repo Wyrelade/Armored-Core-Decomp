@@ -827,6 +827,22 @@ typedef struct Sub8005218C {
     s16 unk2;
 } Sub8005218C;
 
+typedef struct Sub800558B4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    u8 _pad6[2];
+} Sub800558B4;
+
+typedef struct Obj800558B4 {
+    u8 _pad0[0x5C];
+    u8 *unk5C;
+    Sub800558B4 unk60;
+    Sub800558B4 unk68;
+    Sub800558B4 unk70;
+    Sub800558B4 unk78;
+} Obj800558B4;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1060,5 +1076,6 @@ s32 func_80016278(s32);
 extern s32 D_80089744[];
 void func_800608C4(Sub8005218C *arg0, s32 *arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_8006F2B8(s32 arg0, s32 arg1, s32 arg2, s32 *arg3);
+void func_80055880(u8 *arg0, Sub800558B4 *arg1);
 
 #endif /* FDAT203_H */
