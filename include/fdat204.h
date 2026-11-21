@@ -1272,6 +1272,55 @@ typedef struct Vec80060B08 {
     s32 unk8;
 } Vec80060B08;
 
+typedef struct Gt380063960 {
+    Tag8005C910 tag;
+    Col8005C910 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Gt380063960;
+
+typedef struct Gt480063960 {
+    Tag8005C910 tag;
+    Col8005C910 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+    s32 unk28;
+    s32 unk2C;
+    u16 unk30;
+    u16 unk32;
+} Gt480063960;
+
+typedef struct Spad80063960 {
+    s32 unk0;
+    u8 *unk4;
+    u8 *unk8;
+    PkWord8005C910 unkC;
+    Part8005C910 *unk10;
+    u8 *unk14;
+    s32 unk18;
+    s32 unk1C;
+    u32 *unk20;
+    s32 unk24;
+    s32 unk28;
+    u8 unk2C;
+    u8 unk2D;
+    u8 unk2E;
+} Spad80063960;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1540,5 +1589,12 @@ void func_80057118(s32 arg0);
 void func_8005E588(Node8005DEE4 *arg0);
 s32 SquareRoot0(s32 a);
 s32 func_80060AC4(s32 arg0, s32 arg1);
+extern s32 D_801AE2EC;
+extern s32 D_801B4F5C;
+void func_80063EC4(s32 arg0, u16 arg1);
+void func_80062E70(s32 arg0, u16 arg1);
+void func_80063904(Spad80063960 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800638C4(u8 *arg0, s32 *arg1, s32 arg2);
+void func_800638E8(s32 *arg0, s32 arg1);
 
 #endif /* FDAT204_H */
