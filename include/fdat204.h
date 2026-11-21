@@ -1631,5 +1631,7 @@ extern Obj8004F0B8 D_80039C78;
 extern s16 D_8008A034;
 extern u16 D_8008A036;
 Obj80073508 *func_80073368(Obj80073138 *arg0, Obj8004F0B8 *arg1, Obj8004F0B8 *arg2, s32 arg3);
+extern s16 D_8008A03C;
+extern u16 D_8008A03E;
 
 #endif /* FDAT204_H */
