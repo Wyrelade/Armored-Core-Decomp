@@ -27,7 +27,12 @@ typedef struct Elem80015580 {
     u8 unk0;
     u8 unk1;
     u8 unk2[4];
-    u8 _pad6[0x22];
+    u8 unk6[4];
+    u8 _padA[0x2];
+    u32 *unkC;
+    s32 unk10;
+    void (*unk14)();
+    u8 _pad18[0x10];
 } Elem80015580;
 
 typedef struct Obj800158C8 {
