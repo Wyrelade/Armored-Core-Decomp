@@ -134,7 +134,53 @@ s32 func_8004C98C(s32 arg0, s32 arg1, Sub8004C98C *arg2, Sub8004C98C *arg3, s32 
     return 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004CC30);
+s32 func_8004CC30(s32 arg0, s32 arg1, Sub8004C98C *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
+    Vec8004C98C *d;
+    Vec8004C98C *sq;
+    s32 dist;
+    s32 vol;
+    s32 ang;
+    s32 l;
+    s32 r;
+
+    d = (Vec8004C98C *)0x1F8003F0;
+    sq = (Vec8004C98C *)0x1F8003E0;
+    d->unk0 = (arg2->unk0 - D_80041B90) >> 1;
+    d->unk4 = (arg2->unk2 - D_80041B92) >> 1;
+    d->unk8 = (arg2->unk4 - D_80041B94) >> 1;
+    arg0 &= 0xFFF;
+    gte_ldlvl(d);
+    gte_sqr0();
+    gte_stlvnl(sq);
+    dist = SquareRoot0(sq->unk0 + sq->unk4 + sq->unk8) * 2;
+    if (dist >= arg4) {
+        return 0;
+    }
+    dist = ((arg5 - dist) << 7) / arg5;
+    vol = (dist * arg3) >> 7;
+    if (vol < 0x1E) {
+        return 0;
+    }
+    if (vol >= 0x80) {
+        vol = 0x7F;
+    }
+    ang = (0x400 - ratan2(d->unk0, d->unk8) - D_80041B9A) & 0xFFF;
+    if (ang >= 0x800) {
+        ang = 0x1000 - ang;
+    }
+    ang >>= 1;
+    vol += (vol << 6) + (vol << 3) + (vol << 2);
+    l = (vol * rsin(ang)) >> 18;
+    if (l >= 0x80) {
+        l = 0x7F;
+    }
+    r = (vol * rcos(ang)) >> 18;
+    if (r >= 0x80) {
+        r = 0x7F;
+    }
+    func_8004D178(arg0, arg1, l, r, arg6);
+    return 1;
+}
 
 void func_8004CE44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3) {
     func_8004CC30(arg0, NULL, arg1, (s16)arg2, 0x1F40, 0x2710, arg3);
