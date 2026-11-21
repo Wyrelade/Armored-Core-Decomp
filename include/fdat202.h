@@ -2,6 +2,7 @@
 #define FDAT202_H
 
 #include "common.h"
+#include "gte.h"
 
 /* @types */
 typedef struct Sub8004DE88 {

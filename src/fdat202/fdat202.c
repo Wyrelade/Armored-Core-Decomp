@@ -82,7 +82,57 @@ void func_8004C958(void) {
     SsEnd();
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004C98C);
+s32 func_8004C98C(s32 arg0, s32 arg1, Sub8004C98C *arg2, Sub8004C98C *arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
+    Vec8004C98C *d;
+    Vec8004C98C *sq;
+    s32 dist;
+    s32 vol;
+    s32 ang;
+    s32 l;
+    s32 r;
+
+    d = (Vec8004C98C *)0x1F8003F0;
+    sq = (Vec8004C98C *)0x1F8003E0;
+    d->unk0 = (arg2->unk0 - D_80041B90) >> 1;
+    d->unk4 = (arg2->unk2 - D_80041B92) >> 1;
+    d->unk8 = (arg2->unk4 - D_80041B94) >> 1;
+    arg0 &= 0xFFF;
+    gte_ldlvl(d);
+    gte_sqr0();
+    gte_stlvnl(sq);
+    dist = SquareRoot0(sq->unk0 + sq->unk4 + sq->unk8);
+    if (dist != 0) {
+        arg7 -= ((d->unk0 * arg3->unk0 + d->unk4 * arg3->unk2 + d->unk8 * arg3->unk4) / dist * arg8) >> 12;
+    }
+    dist *= 2;
+    if (dist >= arg5) {
+        return 0;
+    }
+    dist = ((arg6 - dist) << 7) / arg6;
+    vol = (dist * arg4) >> 7;
+    if (vol < 0xA) {
+        return 0;
+    }
+    if (vol >= 0x80) {
+        vol = 0x7F;
+    }
+    ang = (0x400 - ratan2(d->unk0, d->unk8) - D_80041B9A) & 0xFFF;
+    if (ang >= 0x800) {
+        ang = 0x1000 - ang;
+    }
+    ang >>= 1;
+    vol += (vol << 6) + (vol << 3) + (vol << 2);
+    l = (vol * rsin(ang)) >> 18;
+    if (l >= 0x80) {
+        l = 0x7F;
+    }
+    r = (vol * rcos(ang)) >> 18;
+    if (r >= 0x80) {
+        r = 0x7F;
+    }
+    func_8004D178(arg0, arg1, l, r, arg7);
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8004CC30);
 
