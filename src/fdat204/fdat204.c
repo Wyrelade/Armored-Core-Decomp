@@ -625,7 +625,15 @@ void func_80054F04(Obj80054F04 *arg0, Sub80054F04 *arg1, s32 arg2, s32 arg3, s32
     arg1->unk4 = ((arg0->unk60[0].unk4 + arg0->unk60[1].unk4 + arg0->unk60[2].unk4) * 0x5555) >> 16;
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80055024);
+void func_80055024(Obj80054F04 *arg0, Sub80054F04 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    func_80054ED0((Sub80054F04 *)&arg0->unk5C[arg2 >> 1], &arg0->unk60[0]);
+    func_80054ED0((Sub80054F04 *)&arg0->unk5C[arg3 >> 1], &arg0->unk60[1]);
+    func_80054ED0((Sub80054F04 *)&arg0->unk5C[arg4 >> 1], &arg0->unk60[2]);
+    func_80054ED0((Sub80054F04 *)&arg0->unk5C[arg5 >> 1], &arg0->unk60[3]);
+    arg1->unk0 = (arg0->unk60[0].unk0 + arg0->unk60[1].unk0 + arg0->unk60[2].unk0 + arg0->unk60[3].unk0) >> 2;
+    arg1->unk2 = (arg0->unk60[0].unk2 + arg0->unk60[1].unk2 + arg0->unk60[2].unk2 + arg0->unk60[3].unk2) >> 2;
+    arg1->unk4 = (arg0->unk60[0].unk4 + arg0->unk60[1].unk4 + arg0->unk60[2].unk4 + arg0->unk60[3].unk4) >> 2;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80055140);
 
