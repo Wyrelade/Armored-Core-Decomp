@@ -715,6 +715,14 @@ typedef struct Obj80055EB8 {
     Sub80055EB8 unk78;
 } Obj80055EB8;
 
+typedef struct Obj80082D04 {
+    s32 unk0;
+    u8 _pad4[0x12];
+    u16 unk16;
+    s16 unk18;
+    s16 unk1A;
+} Obj80082D04;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -925,7 +933,7 @@ extern u16 D_80040FC8;
 extern s16 D_80040FCA;
 extern s16 D_80040FCC;
 extern s16 D_80040FCE;
-extern s32 D_80041020;
+extern Obj80082D04 *D_80041020;
 extern Elem8007BA2C D_80041024[8];
 extern u16 D_800411C0;
 void func_8007EF94();
