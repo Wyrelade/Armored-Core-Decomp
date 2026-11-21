@@ -415,5 +415,6 @@ extern u8 D_801C78D4[];
 extern u8 D_801C78F4[];
 s32 func_801C5AC8(Obj801C4E64 *arg0);
 s32 func_801C6B64(Elem801C5F00 *arg0, u8 arg1);
+void func_801C7298(Obj801C7298 *arg0);
 
 #endif /* FDAT084_H */
