@@ -3724,7 +3724,16 @@ u16 func_8008C178(s32 arg0) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008C2FC);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008C6FC);
+void func_8008C6FC(Sub8004DE88 *arg0) {
+    Obj8008C6FC *sc = (Obj8008C6FC *)0x1F800000;
+
+    SetRotMatrix(&sc->unk0);
+    SetTransMatrix(&sc->unk0);
+    sc->unk128 = *arg0;
+    sc->unk128.unk0 = (sc->unk128.unk0 >> 2) - sc->unk120.unk0;
+    sc->unk128.unk2 = (sc->unk128.unk2 >> 2) - sc->unk120.unk2;
+    sc->unk128.unk4 = (sc->unk128.unk4 >> 2) - sc->unk120.unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008C7BC);
 
