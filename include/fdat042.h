@@ -333,6 +333,7 @@ typedef struct Obj801C712C {
     Task801C712C *unk2C;
     u8 _pad30[0x8];
     Sub801C712C *unk38;
+    u8 _pad3C[0x4];
 } Obj801C712C;
 
 typedef struct Elem801C712C {
