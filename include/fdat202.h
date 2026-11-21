@@ -1118,5 +1118,6 @@ s32 SquareRoot0(s32 arg0);
 void func_8004DA1C(u8 arg0);
 void func_8008CA14(Sub8004DE88 *arg0, s32 arg1, char *arg2);
 s32 ratan2(s32 arg0, s32 arg1);
+s32 CdRead2(s32 arg0);
 
 #endif /* FDAT202_H */
