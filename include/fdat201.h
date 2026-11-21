@@ -1153,6 +1153,20 @@ typedef struct Obj8007C240 {
     u16 unk88;
 } Obj8007C240;
 
+typedef struct Obj801A2550 {
+    s32 unk0;
+    s16 unk4;
+    s16 unk6;
+    s32 unk8;
+    s16 unkC;
+    s16 unkE;
+    s16 unk10;
+    u8 _pad12[0x2];
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+} Obj801A2550;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1180,16 +1194,7 @@ extern s16 D_801A2318;
 s16 SsVabOpenHead(u32 *arg0, s32 arg1);
 void SsVabTransBody(u32 *arg0, s16 arg1);
 void SsVabTransCompleted(s32 arg0);
-extern s32 D_801A2550;
-extern s16 D_801A2554;
-extern s16 D_801A2556;
-extern s32 D_801A2558;
-extern s16 D_801A255C;
-extern s16 D_801A255E;
-extern s16 D_801A2560;
-extern s32 D_801A2564;
-extern s32 D_801A2568;
-extern s32 D_801A256C;
+extern Obj801A2550 D_801A2550;
 extern s8 D_801A2570;
 extern s32 D_801A2574;
 extern s8 D_801A2578;
@@ -1717,7 +1722,7 @@ extern u8 D_800B8544[];
 void func_80080D60(Obj8004DEB0 *arg0);
 void func_80080DF8(Obj8004DEB0 *arg0);
 extern u8 D_8004C6DC[];
-extern u8 D_80031A58;
+extern u8 D_80031A58[];
 extern u8 D_80031A5A;
 extern u8 D_80031A5B;
 extern u8 D_80031A63;
