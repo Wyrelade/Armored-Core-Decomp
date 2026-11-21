@@ -1779,7 +1779,40 @@ void func_80070C38(Obj800718B4 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80070C88);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80070E60);
+s32 func_80070E60(Obj8006D0DC *arg0, s32 arg1) {
+    Obj80070994 *scr = (Obj80070994 *)0x1F800000;
+    Elem8006CE7C *e;
+
+    func_8006D394(arg0, scr->unk0);
+    scr->unk48 = D_801DC0FC;
+    scr->unk4C = arg1;
+    scr->unk84 = D_8008D190;
+    for (scr->unk88 = func_8006EEF0(scr->unk0, D_801DC0F8); scr->unk88 != -1; scr->unk88 = func_8006EEF0(NULL)) {
+        scr->unk90 = &D_801C40F0[scr->unk88];
+        if (func_8006E380(arg0->unk0, arg0->unk8, scr->unk90->unk10.unk8, scr->unk90->unk20)
+            && func_8006E380(arg0->unk2, arg0->unkA, scr->unk90->unk10.unkA, scr->unk90->unk22)
+            && func_8006E380(arg0->unk4, arg0->unkC, scr->unk90->unk10.unkC, scr->unk90->unk24)) {
+            func_80070C88(scr, arg0);
+            e = &scr->unk84[scr->unk90->unk1E];
+            scr->unk94 = &e->unk0;
+            scr->unk98 = e->unk4;
+            scr->unkBC = func_8006EB24(scr->unk98->unk4, scr->unk5C - scr->unk74.unk0,
+                                       scr->unk68 - scr->unk74.unk0, scr->unk7C.unk0 - scr->unk74.unk0);
+            scr->unkBC &= func_8006EB24(scr->unk98->unk24, scr->unk60 - scr->unk74.unk2,
+                                        scr->unk6C - scr->unk74.unk2, scr->unk7C.unk2 - scr->unk74.unk2);
+            scr->unkBC &= func_8006EB24(scr->unk98->unk44, scr->unk64 - scr->unk74.unk4,
+                                        scr->unk70 - scr->unk74.unk4, scr->unk7C.unk4 - scr->unk74.unk4);
+            if (scr->unkBC != 0) {
+                scr->unkB0 = scr->unk98->unk64;
+                scr->unkB4 = &scr->unkB0[scr->unk98->unk0];
+                scr->unk8C = (scr->unk98->unk0 >> 5) + 1;
+                func_80070AEC(scr);
+            }
+        }
+    }
+    *scr->unk48 = NULL;
+    return scr->unk48 != D_801DC0FC;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800710D0);
 
