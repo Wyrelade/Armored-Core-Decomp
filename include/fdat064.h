@@ -152,11 +152,16 @@ typedef struct Elem8019FB68 {
 typedef struct Sub801C5EA8 {
     u8 _pad0[0x10];
     u8 unk10;
+    u8 _pad11[0x11];
+    Sub8004DE88 unk22;
 } Sub801C5EA8;
 
 typedef struct Sub801C6050 {
     u8 _pad0[0x6];
     u8 unk6;
+    u8 unk7;
+    u8 unk8;
+    u8 unk9;
 } Sub801C6050;
 
 typedef struct Elem801C5EA8 {
