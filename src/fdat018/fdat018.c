@@ -170,7 +170,20 @@ void func_801C6CD4(Obj801C4EB8 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat018/nonmatchings/fdat018", func_801C6D24);
 
-INCLUDE_ASM("asm/USA/fdat018/nonmatchings/fdat018", func_801C6FE4);
+void func_801C6FE4(Elem801C5EA8 *arg0) {
+    switch (func_801C6D24(arg0, arg0->unk38->unk7)) {
+    case 1:
+        if (arg0->unk38->unk8 != 0) {
+            func_8004CC30(arg0->unk38->unk8, (u8 *)((arg0 - D_801D0B68) + 0x3000), &arg0->unk2C->unk22, 0x64, 0x1F40, 0x2710, 0);
+        }
+        break;
+    case 2:
+        if (arg0->unk38->unk9 != 0) {
+            func_8004CE44(arg0->unk38->unk9, &arg0->unk2C->unk22, 0x78, 0);
+        }
+        break;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat018/nonmatchings/fdat018", func_801C70B8);
 
