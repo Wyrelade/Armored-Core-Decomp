@@ -1273,6 +1273,13 @@ typedef struct Elem800B597C {
     u32 unk18;
 } Elem800B597C;
 
+typedef struct Sub800ABB10 {
+    u8 unk0;
+    u8 unk1;
+    u8 _pad2[0x5];
+    u8 unk7;
+} Sub800ABB10;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1592,7 +1599,7 @@ void func_800A953C(Obj8008E70C *arg0);
 void func_800A9740(Obj800ACCC0 *arg0);
 void func_800A9AFC();
 void func_800AB99C(Obj800ACCC0 *arg0);
-void func_800ABB10();
+void func_800ABB10(Obj8004DEB0 *arg0);
 void func_800AD780(Obj8004DEB0 *arg0);
 void SsUtKeyOn(s16 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_800ACCC0(Obj800ACCC0 *arg0);
@@ -2363,5 +2370,18 @@ void func_800AF4AC(Obj8004DEB0 *arg0);
 void func_800AF5CC(Obj8004DEB0 *arg0);
 void func_800AFA50(Obj8004DEB0 *arg0);
 void func_800B1A80(Obj8004DEB0 *arg0);
+extern u32 D_800485A4;
+extern u32 D_800485F0;
+extern u32 D_800485F4;
+extern u8 D_8004D4A4[];
+extern u8 D_8004D4C4[];
+extern u8 D_8004D4E8[];
+void func_80083A58(void);
+void func_800AC4A8(void);
+void func_800AD40C();
+void func_800AC8F4();
+void func_800AC728();
+void func_800AC58C();
+void func_800AC0B8();
 
 #endif /* FDAT201_H */
