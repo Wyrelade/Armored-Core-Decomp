@@ -63,6 +63,9 @@ typedef struct Sub801C4EE0 {
 typedef struct Sub801C5B1C {
     void (*unk0)();
     void (*unk4)();
+    u8 _pad8[0x8];
+    u16 unk10;
+    u8 _pad12[0x2];
 } Sub801C5B1C;
 
 typedef struct Sub801C5C6C {
@@ -142,13 +145,20 @@ typedef struct Obj801C4EB8 {
 } Obj801C4EB8;
 
 typedef struct Sub801C5EA8 {
-    u8 _pad0[0x10];
+    void (*unk0)();
+    u8 _pad4[0xC];
     u8 unk10;
+    u8 _pad11[0x11];
+    Sub801C4C94 unk22;
+    u8 _pad2A[0x2];
 } Sub801C5EA8;
 
 typedef struct Sub801C6050 {
     u8 _pad0[0x6];
     u8 unk6;
+    u8 unk7;
+    u8 unk8;
+    u8 unk9;
 } Sub801C6050;
 
 typedef struct Elem801C5EA8 {
