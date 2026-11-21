@@ -1191,5 +1191,6 @@ s32 func_8006EB24(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_8006EEF0(s32 *arg0, ...);
 s32 ratan2(s32 arg0, s32 arg1);
 s32 rcos(s32 arg0);
+s32 CdRead2(s32 arg0);
 
 #endif /* FDAT203_H */
