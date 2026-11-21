@@ -1044,7 +1044,73 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005D954);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005DAFC);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005DEE4);
+void func_8005DEE4(Node8005DEE4 *arg0) {
+    Spad8005DEE4 *sp;
+    Line8005DEE4 *line;
+    Mode8005DEE4 *mode;
+    s32 z;
+    s32 a;
+    s32 b;
+
+    sp = (Spad8005DEE4 *)0x1F800000;
+    if (sp->unk7C == 0) {
+        arg0->unk14 = sp->unk6C.w;
+        arg0->unk18 = sp->unk74;
+        gte_ldv0(&arg0->unk8);
+        gte_rtps();
+        gte_stsxy(&sp->unk6C);
+        gte_stszotz(&sp->unk74);
+    } else {
+        sp->unk68.w = sp->unk6C.w;
+        sp->unk70 = sp->unk74;
+        a = arg0->unk14;
+        b = arg0->unk18;
+        sp->unk6C.w = a;
+        sp->unk74 = b;
+    }
+    if ((sp->unk70 <= 0xA0 || sp->unk74 <= 0xA0) && (sp->unk4 != 0 || sp->unk70 < 8 || sp->unk74 < 8)) {
+        if (sp->unk4 != 0) {
+            sp->unk4--;
+            arg0[1].unk0 = arg0->unk0;
+            arg0[1].unk8.unk0 = (arg0->unk0.unk0 + arg0->unk8.unk0) >> 1;
+            arg0[1].unk8.unk2 = (arg0->unk0.unk2 + arg0->unk8.unk2) >> 1;
+            arg0[1].unk8.unk4 = (arg0->unk0.unk4 + arg0->unk8.unk4) >> 1;
+            sp->unk7C = 0;
+            func_8005DEE4(&arg0[1]);
+            arg0[1].unk0 = arg0[1].unk8;
+            arg0[1].unk8 = arg0->unk8;
+            sp->unk7C = 1;
+            func_8005DEE4(&arg0[1]);
+            sp->unk4++;
+        }
+        return;
+    }
+    line = (Line8005DEE4 *)D_801ADCCC[0]->unk8;
+    D_801ADCCC[0]->unk8 += sizeof(Line8005DEE4);
+    if (D_801ADCCC[0]->unk8 > D_801ADCCC[0]->unk4) {
+        return;
+    }
+    line->unk8 = sp->unk68.w;
+    line->unkC = sp->unk6C.w;
+    line->unk4.w = sp->unk10;
+    line->tag.len = 3;
+    line->unk4.c.code = 0x42;
+    z = (sp->unk70 + sp->unk74) >> 2;
+    if (z >= 0) {
+        line->tag.addr = sp->unk0[z];
+        sp->unk0[z] = (sp->unk0[z] & 0xFF000000) | ((u32)line & 0xFFFFFF);
+    }
+    mode = (Mode8005DEE4 *)D_801ADCCC[0]->unk8;
+    D_801ADCCC[0]->unk8 += sizeof(Mode8005DEE4);
+    if (D_801ADCCC[0]->unk8 > D_801ADCCC[0]->unk4) {
+        return;
+    }
+    SetDrawMode(mode, 0, 1, sp->unkA, NULL);
+    if (z >= 0) {
+        mode->tag.addr = sp->unk0[z];
+        sp->unk0[z] = (sp->unk0[z] & 0xFF000000) | ((u32)mode & 0xFFFFFF);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005E278);
 

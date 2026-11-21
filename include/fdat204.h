@@ -2,6 +2,7 @@
 #define FDAT204_H
 
 #include "common.h"
+#include "gte.h"
 
 /* @types */
 typedef struct Elem8004EDA8 {
