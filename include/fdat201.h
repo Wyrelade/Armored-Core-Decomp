@@ -1263,6 +1263,16 @@ typedef struct Sub800AEF2C {
     u8 unkC;
 } Sub800AEF2C;
 
+typedef struct Elem800B597C {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+} Elem800B597C;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
