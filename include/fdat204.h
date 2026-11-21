@@ -1266,6 +1266,12 @@ typedef struct Arg8005E278 {
     u16 unk2;
 } Arg8005E278;
 
+typedef struct Vec80060B08 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} Vec80060B08;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1533,5 +1539,6 @@ void func_80062CB4(Rec8005BAA8 *arg0);
 void func_80057118(s32 arg0);
 void func_8005E588(Node8005DEE4 *arg0);
 s32 SquareRoot0(s32 a);
+s32 func_80060AC4(s32 arg0, s32 arg1);
 
 #endif /* FDAT204_H */

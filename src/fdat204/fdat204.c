@@ -1325,7 +1325,36 @@ s32 func_80060AC4(s32 arg0, s32 arg1) {
     return flags;
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80060B08);
+s32 func_80060B08(s32 arg0, Sv80060B08 *arg1, s32 arg2, s32 arg3) {
+    Vec80060B08 *v;
+    s32 z;
+    s32 q;
+    s32 x;
+    s32 y;
+    s32 w;
+    s32 h;
+    s32 r;
+
+    v = (Vec80060B08 *)0x1F800300;
+    gte_ldv0(arg1);
+    gte_rtv0tr();
+    gte_stlvnl(v);
+    z = v->unk8 + arg2;
+    v->unk8 = z;
+    if (z > 0 && z <= arg0) {
+        q = 0xA00000 / z;
+        x = (v->unk0 * q) >> 16;
+        y = (v->unk4 * q) >> 16;
+        w = (arg2 * q) >> 16;
+        h = (arg3 * q) >> 16;
+        r = func_80060AC4(x - w, y);
+        r &= func_80060AC4(x + w, y);
+        r &= func_80060AC4(x - w, y - h);
+        r &= func_80060AC4(x + w, y - h);
+        return r == 0;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80060C54);
 
