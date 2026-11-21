@@ -174,5 +174,17 @@ extern u8 D_80039C60[];
 extern s32 D_80049FA0;
 s32 abs(s32 arg0);
 Obj80015E48 *func_80015E68(Obj80015E48 *arg0, s32 arg1);
+void __main(void);
+void func_80015538(s32 *arg0, s32 arg1, s32 arg2);
+void CdInit(void);
+void func_8002A490(Obj80016A3C *arg0, s32 arg1, s32 arg2);
+void InitPAD(Obj80016A3C *arg0, s32 arg1, Obj80016A3C *arg2, s32 arg3);
+void InitCARD(s32 arg0);
+void StartCARD(void);
+void _bu_init(void);
+void StartPAD(void);
+void ChangeClearPAD(s32 arg0);
+void func_800122A8(void);
+extern s32 D_80039CC0[];
 
 #endif /* MAIN_H */

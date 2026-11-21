@@ -6,7 +6,20 @@ void __main(void) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", __SN_ENTRY_POINT);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80011F28);
+void func_80011F28(void) {
+    __main();
+    func_80015538(D_80039CC0, 0, ((s32)0x801F8000 - (s32)D_80039CC0) >> 2);
+    CdInit();
+    func_8002A490(D_8004A268, 0, 0x10);
+    InitPAD(D_8004A268, 8, &D_8004A268[1], 8);
+    InitCARD(0);
+    StartCARD();
+    _bu_init();
+    StartPAD();
+    ChangeClearPAD(0);
+    ExitCriticalSection();
+    func_800122A8();
+}
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80011FD8);
 
