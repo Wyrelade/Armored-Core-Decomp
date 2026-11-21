@@ -965,6 +965,67 @@ typedef struct Scr80055EA8 {
     s32 unk88;
 } Scr80055EA8;
 
+typedef union Col800573FC {
+    u32 w;
+    u8 b[4];
+} Col800573FC;
+
+typedef struct Vtx800573FC {
+    s32 unk0;
+    s16 unk4;
+} Vtx800573FC;
+
+typedef struct Rec800573FC {
+    u8 _pad0[0x6];
+    u16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+} Rec800573FC;
+
+typedef struct Tag800573FC {
+    u32 addr : 24;
+    u32 len : 8;
+} Tag800573FC;
+
+typedef struct Poly800573FC {
+    Tag800573FC unk0;
+    Col800573FC unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+} Poly800573FC;
+
+typedef struct Mdl800573FC {
+    u8 _pad0[0x4];
+    u16 unk4;
+    u8 _pad6[0xA];
+    Col800573FC *unk10;
+    u16 unk14;
+} Mdl800573FC;
+
+typedef struct Scr800573FC {
+    u8 _pad0[0x4];
+    u8 *unk4;
+    u8 *unk8;
+    Col800573FC unkC;
+    Mdl800573FC *unk10;
+    u8 _pad14[0x4];
+    s32 unk18;
+    Tag800573FC *unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    Col800573FC unk2C;
+} Scr800573FC;
+
+typedef struct Buf800573FC {
+    u8 _pad0[0x4];
+    u8 *unk4;
+    u8 *unk8;
+} Buf800573FC;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1224,5 +1285,8 @@ void SetTransMatrix(Obj80013A88 *arg0);
 void func_80055AF0(s32 arg0);
 void func_80055D00(Scr80055EA8 *arg0, s32 arg1);
 void func_80055DD8(Scr80055EA8 *arg0, s32 arg1);
+extern s32 D_80194734;
+extern Buf800573FC *D_8019D95C;
+void func_80057964(s32 arg0);
 
 #endif /* FDAT203_H */
