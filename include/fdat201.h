@@ -1298,6 +1298,22 @@ typedef struct Sub800A57F0 {
     s8 unkE;
 } Sub800A57F0;
 
+typedef struct Obj80071A18 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s16 unk18;
+    s16 unk1A;
+    s16 unk1C;
+} Obj80071A18;
+
+typedef struct Arr80071A18 {
+    u16 unk0[12];
+} Arr80071A18;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2431,5 +2447,8 @@ void func_800A63D4();
 void func_800A6B88();
 void func_800A7028();
 void func_800A6E54();
+extern Obj80071A18 D_8004AC38;
+extern Arr80071A18 D_8004BDC0;
+u8 func_80083C00();
 
 #endif /* FDAT201_H */
