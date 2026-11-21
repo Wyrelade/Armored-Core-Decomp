@@ -1356,7 +1356,128 @@ s32 func_80060B08(s32 arg0, Sv80060B08 *arg1, s32 arg2, s32 arg3) {
     return 0;
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80060C54);
+void func_80060C54(s32 arg0) {
+    Spad80060C54 *sp;
+    Draw8005C910 *d;
+    Elem80060C54 *e;
+    Light8005BAA8 *l;
+    Fr80060C54 *f;
+    Ft48005C910 *p;
+    s32 *src;
+    s32 *dst;
+    s32 i;
+    s32 last;
+    s32 li;
+    s32 idx;
+    s32 hit;
+    u32 fog;
+    s32 otz;
+
+    sp = (Spad80060C54 *)0x1F800000;
+    last = -1;
+    d = &D_801ADCD0;
+    src = (s32 *)&d->unk741C;
+    dst = (s32 *)&sp->unk1C;
+    sp->unk8 = d->unk0;
+    sp->unk0 = D_801ADCCC[0]->unk8;
+    sp->unk4 = D_801ADCCC[0]->unk4;
+    for (i = 5; i != 0; i--) {
+        *dst++ = *src++;
+    }
+    d = &D_801ADCD0;
+    src = (s32 *)&d->unk72CC;
+    dst = (s32 *)&sp->unk3C;
+    for (i = 5; i != 0; i--) {
+        *dst++ = *src++;
+    }
+    sp->unk14.unk0 = 0x1000;
+    sp->unk14.unk4 = 0;
+    sp->unk14.unk2 = 0;
+    sp->unk64 = 0x100;
+    sp->unk3C.t[0] = D_801ADCD0.unk72EC[0];
+    sp->unk3C.t[1] = D_801ADCD0.unk72EC[1];
+    sp->unk3C.t[2] = D_801ADCD0.unk72EC[2];
+    sp->unk68 = D_801ADCD0.unk72E0[0];
+    sp->unk6A = D_801ADCD0.unk72E0[1];
+    sp->unk6C = D_801ADCD0.unk72E0[2];
+    e = D_801ADCD0.unk747C;
+    do {
+        if (e->unk0.unk6 != -1) {
+            idx = e->unk8;
+            hit = D_801ADCD0.unk6488[idx >> 5] & (1 << (idx & 0x1F));
+            if (hit != 0) {
+                gte_SetRotMatrix(&sp->unk3C);
+                gte_SetTransMatrix(&sp->unk3C);
+                if (func_80060B08(arg0, &e->unk0, 500, 500) != 0) {
+                    li = D_801D4488[e->unk8].unk30_0;
+                    if (li != last) {
+                        last = li;
+                        l = &D_801ADCD0.unk658C[last];
+                        SetBackColor(l->unk62, l->unk63, l->unk64);
+                        fog = l->unk66;
+                        sp->unk5C = fog;
+                        if (fog != 0) {
+                            SetFogNearFar((fog * 2) >> 4, (fog * 2) >> 2, 0x50);
+                        }
+                    }
+                    sp->unkC.unk0 = e->unk0.unk0 - sp->unk68;
+                    sp->unkC.unk2 = e->unk0.unk2 - sp->unk6A;
+                    sp->unkC.unk4 = e->unk0.unk4 - sp->unk6C;
+                    gte_ldv0(&sp->unkC);
+                    gte_rtv0();
+                    gte_stlvnl(sp->unk1C.t);
+                    gte_SetRotMatrix(&sp->unk1C);
+                    gte_SetTransMatrix(&sp->unk1C);
+                    p = (Ft48005C910 *)sp->unk0;
+                    sp->unk0 += sizeof(Ft48005C910);
+                    f = D_800896FC[e->unk0.unk6] + e->unkA + e->unkD;
+                    gte_ldv3(&f->unk10, &f->unk18, &f->unk20);
+                    gte_rtpt();
+                    p->unkC = f->unk4;
+                    p->unk14 = f->unk8;
+                    gte_stsxy3(&p->unk8, &p->unk10, &p->unk18);
+                    gte_stszotz(&otz);
+                    if (otz != 0) {
+                        if (sp->unk5C == 0) {
+                            sp->unk60 = 0;
+                        } else {
+                            gte_stdp(&sp->unk60);
+                        }
+                        gte_ldv0(&f->unk28);
+                        gte_rtps();
+                        p->unk1C = f->unkC;
+                        p->unk24 = f->unkE;
+                        p->tag.len = 9;
+                        gte_stsxy(&p->unk20);
+                        gte_ldv0(&sp->unk14);
+                        gte_ldrgb(f);
+                        gte_lddp(sp->unk60);
+                        gte_ncds();
+                        gte_strgb(&p->unk4);
+                        otz >>= 1;
+                        if (sp->unkC.unk2 <= 0) {
+                            otz += 0x78;
+                        } else {
+                            otz += 0x64;
+                        }
+                        p->tag.addr = sp->unk8[otz];
+                        sp->unk8[otz] = (sp->unk8[otz] & 0xFF000000) | ((u32)p & 0xFFFFFF);
+                        if (e->unkC != 0 && (u32)D_801B4114 % e->unkC == 0) {
+                            e->unkD++;
+                            if (e->unkD >= e->unkB) {
+                                e->unkD = 0;
+                            }
+                        }
+                    } else {
+                        sp->unk0 -= sizeof(Ft48005C910);
+                    }
+                }
+            }
+        }
+        e++;
+    } while (--sp->unk64 != 0);
+    D_801ADCCC[0]->unk8 = sp->unk0;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800611D0);
 
