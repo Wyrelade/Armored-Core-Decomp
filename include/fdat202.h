@@ -1224,5 +1224,6 @@ extern u8 *D_801D0B5C[];
 extern Elem8008C178 *D_801D0B60[];
 extern u16 *D_801D0B64;
 void *func_8008C154(s32 arg0);
+void func_80051150(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, char *arg5);
 
 #endif /* FDAT202_H */
