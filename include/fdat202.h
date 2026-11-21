@@ -971,5 +971,7 @@ extern Obj8007DF08 D_80040FB8;
 extern s16 D_800411B8;
 extern s16 D_800411BA;
 extern s16 D_800411BC;
+extern u16 *D_801ED850;
+void func_8005277C(s32 arg0, s32 arg1, u8 *arg2);
 
 #endif /* FDAT202_H */
