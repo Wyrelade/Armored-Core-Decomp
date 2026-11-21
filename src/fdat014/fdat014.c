@@ -441,7 +441,14 @@ void func_801C8380(void) {
     D_801C8544 = temp + func_801C830C(0x16);
 }
 
-INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C83C0);
+void func_801C83C0(s32 *arg0, s32 *arg1) {
+    s32 a;
+
+    *arg0 += D_801C8540;
+    a = func_801C830C(0x15);
+    D_801C8544 -= a + func_801C830C(0x16);
+    *arg1 -= D_801C8544 * 1000;
+}
 
 void func_801C8450(void) {
 }
