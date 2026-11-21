@@ -1151,5 +1151,10 @@ void SetTransMatrix(Sub8006F234 *m);
 void func_800560F4(s32 arg0);
 void func_80056304(Scr800564AC *arg0, s32 arg1);
 void func_800563DC(Scr800564AC *arg0, s32 arg1);
+extern s32 D_800411F4;
+extern Sub8004DE88 D_80039C78;
+extern s16 D_801987FC[];
+extern s16 D_801987FE;
+s32 func_800132CC(s32 arg0, s32 arg1, s32 arg2);
 
 #endif /* FDAT202_H */

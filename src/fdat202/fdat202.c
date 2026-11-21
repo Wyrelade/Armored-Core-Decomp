@@ -3081,7 +3081,29 @@ void func_80082CAC(u16 arg0, u16 arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s
     D_801987D4 = arg7;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80082D04);
+void func_80082D04(void) {
+    Sub8004DE88 v;
+    Obj80082D04 *p;
+
+    p = D_80041020;
+    if ((D_800411F4 & 0x20000) && D_80040FC4 != 0) {
+        if (p != NULL && p->unk0 != 0) {
+            v.unk0 = p->unk18 - (p->unk18 >> 2);
+            v.unk2 = p->unk1A - (p->unk1A >> 2);
+            D_801987FC[0] = func_800132CC(D_801987FC[0], v.unk0, 0x40);
+            D_801987FE = func_800132CC(D_801987FE, v.unk2, 0x40);
+            return;
+        }
+        v = D_80039C78;
+    } else if (p != NULL && p->unk0 != 0 && (p->unk16 & 2)) {
+        v.unk0 = p->unk18 >> 1;
+        v.unk2 = p->unk1A >> 1;
+    } else {
+        v = D_80039C78;
+    }
+    D_801987FC[0] = func_800132CC(D_801987FC[0], v.unk0, 0x14);
+    D_801987FE = func_800132CC(D_801987FE, v.unk2, 0x14);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80082E7C);
 
