@@ -80,6 +80,9 @@ typedef struct Obj801C5418 {
 typedef struct Sub801C5CD0 {
     void (*unk0)();
     void (*unk4)();
+    u8 _pad8[0x8];
+    u16 unk10;
+    u8 _pad12[0x2];
 } Sub801C5CD0;
 
 typedef struct Obj801C6710 {
