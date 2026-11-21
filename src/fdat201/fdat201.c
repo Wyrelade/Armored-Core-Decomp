@@ -2346,7 +2346,14 @@ void func_8006C408(Sub80068A20 *arg0, s32 x, s32 y) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006C4C0);
+s32 func_8006C4C0(Sub80068A20 *arg0, s32 arg1, s32 arg2) {
+    if ((u16)arg1 < 0x40 && (u16)arg2 < 0x40) {
+        if (arg1 & 1) {
+            return ((u8 *)arg0->unkC)[(s16)arg1 / 2 + (s16)arg2 * 32] >> 4;
+        }
+        return ((u8 *)arg0->unkC)[(s16)arg1 / 2 + (s16)arg2 * 32] & 0xF;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8006C554);
 
