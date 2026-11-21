@@ -1026,6 +1026,31 @@ typedef struct Buf800573FC {
     u8 *unk8;
 } Buf800573FC;
 
+typedef struct Obj8006E85C {
+    s32 unk0[16];
+    u8 _pad40[0x8];
+    Elem8006E85C **unk48;
+    s32 unk4C;
+    u8 _pad50[0x8];
+    s32 unk58[2];
+    s32 *unk60;
+    Sub8004DE88 unk64;
+    Sub8004DE88 unk6C;
+    Sub8004DE88 unk74;
+    Sub8004DE88 unk7C;
+    Elem8006CE7C *unk84;
+    s32 unk88;
+    s32 unk8C;
+    Elem8006DC20 *unk90;
+    Elem8006CE7C *unk94;
+    Obj8006FD84 *unk98;
+    u8 _pad9C[0x14];
+    Elem8006E85C *unkB0;
+    Elem8006E85C *unkB4;
+    u8 _padB8[0x4];
+    s32 unkBC;
+} Obj8006E85C;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1288,5 +1313,7 @@ void func_80055DD8(Scr80055EA8 *arg0, s32 arg1);
 extern s32 D_80194734;
 extern Buf800573FC *D_8019D95C;
 void func_80057964(s32 arg0);
+void func_8006EBC0(Obj8006E85C *arg0, Obj8006D0DC *arg1, s32 arg2);
+void func_8006E410(Obj8006E85C *arg0);
 
 #endif /* FDAT203_H */
