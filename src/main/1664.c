@@ -490,7 +490,51 @@ u16 func_80014ED8(s16 arg0, s16 arg1, s32 arg2) {
 
 INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014F18);
 
-INCLUDE_ASM("asm/USA/main/nonmatchings/1664", func_80014F78);
+s32 func_80014F78(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 *arg5, s32 *arg6) {
+    s32 a2;
+    s32 b2;
+    s32 c;
+    s32 r;
+    s32 b;
+    s32 t1;
+    s32 t2;
+    s32 t;
+    s32 s;
+    s32 q;
+
+    a2 = arg4 * arg4;
+    b2 = arg3 * arg3;
+    c = a2 >> 6;
+    r = c * c - ((b2 * arg1) >> 10) * (arg1 >> 2) - ((arg3 * c) >> 3) * (arg2 >> 2);
+    if (r < 0) {
+        return -1;
+    }
+    r = SquareRoot0(r * 16) * 4;
+    b = (a2 >> 2) - ((arg2 * arg3) >> 2);
+    t1 = (b + r) * 2 / b2;
+    t2 = (b - r) * 2 / b2;
+    if (t1 <= 0 && t2 <= 0) {
+        return -1;
+    }
+    if (arg0 == 0) {
+        t = t2;
+        if (t1 > 0) {
+            if (t2 >= t1) {
+                t = t1;
+            }
+        }
+    } else {
+        t = t2;
+        if (t1 >= t2) {
+            t = t1;
+        }
+    }
+    s = SquareRoot0(t << 14);
+    q = (arg1 << 14) / arg4 / s;
+    *arg5 = s;
+    *arg6 = -ratan2(((arg2 + arg3 * t * 2) << 12) / (arg4 >> 1) / (s >> 1), q);
+    return 0;
+}
 
 s32 func_8001514C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s16 *arg9, s16 *arg10, s16 *arg11) {
     s32 sp20;
