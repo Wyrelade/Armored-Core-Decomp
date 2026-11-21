@@ -1237,6 +1237,26 @@ typedef struct Obj800A4BE8 {
     s32 unk8;
 } Obj800A4BE8;
 
+typedef struct Blk800AAC20 {
+    u8 unk0[0xA0];
+} Blk800AAC20;
+
+typedef struct Rgb800AAC20 {
+    s8 unk0;
+    s8 unk1;
+    s8 unk2;
+} Rgb800AAC20;
+
+typedef struct Sub800AAC20 {
+    u8 _pad0[0x5];
+    u8 unk5;
+} Sub800AAC20;
+
+typedef struct Obj800AAC20 {
+    u8 _pad0[0x7C];
+    Sub800AAC20 unk7C;
+} Obj800AAC20;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2310,5 +2330,16 @@ void func_8006C408(Sub80068A20 *arg0, s32 x, s32 y);
 u32 *func_800A4C70(Obj800A4BE8 *arg0);
 void func_800B5618(u32 *arg0, u32 *arg1);
 s32 StFreeRing(u32 *base);
+extern Blk800AAC20 D_80031A94;
+extern Blk800AAC20 D_80040E60[];
+extern Rgb800AAC20 D_80031A64[4][4];
+extern Rgb800AAC20 D_8004AC60[][4][4];
+extern u8 D_80040830[][12];
+extern u16 D_80039D1C[];
+extern s32 D_80041A10[][30];
+extern u16 D_80041858[][30];
+extern u8 D_80039D28[];
+extern u8 D_80039D12[];
+void func_800AAF20(void);
 
 #endif /* FDAT201_H */
