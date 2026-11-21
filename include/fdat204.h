@@ -1625,5 +1625,7 @@ void func_8006EF2C(Obj8006F798 *arg0, Sub8004DE88 *arg1);
 u32 func_8006FC18(Obj8006FBC0 *arg0, s32 *arg1, s32 *arg2);
 s32 func_8006F328(s32 arg0, Elem8006E698 *arg1, s32 *arg2, Sub8004DE88 *arg3);
 void func_8006EBF0(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2);
+void func_80070AC4(Obj800707D0 *arg0, Sub8004DE88 *arg1);
+void func_80070928(Obj800707D0 *arg0);
 
 #endif /* FDAT204_H */
