@@ -921,6 +921,30 @@ typedef struct Obj8008C95C {
     s32 unk18;
 } Obj8008C95C;
 
+typedef struct Mat8008D3B0 {
+    s16 unk0[3][3];
+    u8 _pad12[0x2];
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+} Mat8008D3B0;
+
+typedef struct Obj8008D3B0 {
+    Mat8008D3B0 unk0;
+    Mat8008D3B0 unk20;
+    Mat8008D3B0 unk40;
+    Mat8008D3B0 unk60;
+    Mat8008D3B0 unk80;
+    Mat8008D3B0 unkA0;
+    Mat8008D3B0 unkC0;
+    Mat8008D3B0 unkE0;
+    Mat8008D3B0 unk100;
+    Sub8004DE88 unk120;
+    u8 _pad128[0x18];
+    u32 *unk140;
+    s32 unk144;
+} Obj8008D3B0;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1244,5 +1268,20 @@ void func_8008C6FC(Sub8004DE88 *arg0);
 void func_8008C7BC(Sub8004DE88 *arg0, Elem8008C95C *arg1, s32 arg2);
 void func_8008C890(Sub8007BA2C *arg0, char *arg1, s32 arg2, s32 arg3);
 void func_8008C95C(Elem8008C95C *arg0, s32 *arg1, s32 arg2);
+extern Mat8008D3B0 D_8009087C;
+extern Mat8008D3B0 D_8009089C;
+extern Sub8004DE88 D_801A26C0;
+extern s16 D_801A26CA;
+extern u16 D_801A26E2[];
+extern u8 D_80041218;
+extern char D_8004C1AC[];
+void func_8005715C(void);
+void func_800571F0();
+void SetColorMatrix(Mat8008D3B0 *arg0);
+void SetBackColor(s32 arg0, s32 arg1, s32 arg2);
+void func_80013BE8(s16 *arg0, Mat8008D3B0 *arg1);
+void func_8008D288();
+void func_8008CB5C();
+void func_8008CC88();
 
 #endif /* FDAT202_H */

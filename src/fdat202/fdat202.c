@@ -3793,7 +3793,55 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008CC88);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008D288);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008D3B0);
+INCLUDE_RODATA("asm/USA/fdat202/nonmatchings/fdat202", D_8004C1AC);
+
+void func_8008D3B0(void) {
+    Sub8004DE88 rect;
+    Obj8008D3B0 *sc;
+    s16 *src;
+    s16 *dst;
+    s32 i;
+    s32 ot;
+
+    sc = (Obj8008D3B0 *)0x1F800000;
+    func_8005715C();
+    SetColorMatrix(&D_8009089C);
+    SetBackColor(0x80, 0x80, 0x80);
+    sc->unkA0 = D_8009087C;
+    func_800135E8((Sub80056A54 *)&sc->unkA0, (Sub80056A54 *)&sc->unkC0, 1);
+    func_800135E8((Sub80056A54 *)&sc->unkC0, (Sub80056A54 *)&sc->unkE0, 1);
+    func_800135E8((Sub80056A54 *)&sc->unkE0, (Sub80056A54 *)&sc->unk100, 1);
+    sc->unk120 = D_801A26C0;
+    sc->unk120.unk0 >>= 2;
+    sc->unk120.unk2 >>= 2;
+    sc->unk120.unk4 >>= 2;
+    func_80013BE8(&D_801ED798, &sc->unk0);
+    sc->unk0.unk14 = D_801ED790;
+    sc->unk0.unk18 = D_801ED792;
+    sc->unk0.unk1C = D_801ED794;
+    src = sc->unk0.unk0[0];
+    dst = sc->unk20.unk0[0];
+    i = 9;
+    do {
+        *dst++ = *src++ >> 4;
+    } while (--i != 0);
+    func_800135E8((Sub80056A54 *)&sc->unk20, (Sub80056A54 *)&sc->unk40, 1);
+    func_800135E8((Sub80056A54 *)&sc->unk40, (Sub80056A54 *)&sc->unk60, 1);
+    func_800135E8((Sub80056A54 *)&sc->unk60, (Sub80056A54 *)&sc->unk80, 1);
+    ot = D_801A5F24[0]->unk8;
+    rect = D_801A26C0;
+    sc->unk140 = D_801A5F28;
+    sc->unk144 = ot;
+    rect.unk2 -= D_801A26E2[0] >> 1;
+    func_8008CA14(&rect, D_801A26CA, D_8004C1AC);
+    func_8008D288();
+    if (!(D_80041218 & 2)) {
+        func_8008CB5C();
+    }
+    func_8008CC88();
+    D_801A5F24[0]->unk8 = sc->unk144;
+    func_800571F0();
+}
 
 s32 func_8008D668(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 val;
