@@ -4276,7 +4276,10 @@ void func_80083A28(Obj80081010 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80083A58);
 
-u8 func_80083C00(u16 arg0, s8 arg1) {
+u8 func_80083C00(arg0, arg1)
+    u16 arg0;
+    s8 arg1;
+{
     if (arg0 == 3) {
         arg1 += 0x10;
     }
