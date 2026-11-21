@@ -858,6 +858,11 @@ typedef struct Snd8004DC18 {
     volatile u8 unk4;
 } Snd8004DC18;
 
+typedef struct Elem8006CCB8 {
+    s32 unk0;
+    s32 unk4;
+} Elem8006CCB8;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1104,5 +1109,6 @@ s32 CdSyncCallback(s32 arg0);
 s32 CdRead2(s32 arg0);
 s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
 void func_8004DB1C(u8 arg0);
+extern Elem8006CCB8 D_8008D348[];
 
 #endif /* FDAT204_H */
