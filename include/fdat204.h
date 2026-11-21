@@ -827,6 +827,11 @@ typedef struct Obj80054F04 {
     Sub80054F04 unk60[4];
 } Obj80054F04;
 
+typedef struct Elem8004DB1C {
+    u16 unk0[16];
+    u8 unk20[4];
+} Elem8004DB1C;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1067,5 +1072,9 @@ extern s32 D_801EC490;
 extern u16 D_801AB668;
 s32 func_80012794(s32 arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, s32 arg5, s32 arg6);
 void func_80054ED0(Sub80054F04 *arg0, Sub80054F04 *arg1);
+extern Elem8004DB1C D_80031764[];
+extern s32 D_800893D0;
+s32 CdSyncCallback(s32 arg0);
+s32 CdRead2(s32 arg0);
 
 #endif /* FDAT204_H */

@@ -178,7 +178,25 @@ void func_8004DA74(void) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004DB1C);
+void func_8004DB1C(u8 arg0) {
+    Elem8004DB1C *e;
+    u32 trk;
+
+    if (arg0 == 2) {
+        D_80041BC2++;
+        if (D_80041BC2 == 0) {
+            CdSyncCallback(D_800893D0);
+            D_800893D0 = 0;
+            while (CdRead2(0xC8) == 0) {
+            }
+            func_8004DA48(D_80041BBD);
+            trk = D_80041BBE;
+            e = &D_80031764[trk >> 4];
+            trk &= 0xF;
+            D_80041BC4 = func_8001628C() + (e->unk0[trk] & 0xFFF) * 6;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004DC18);
 
