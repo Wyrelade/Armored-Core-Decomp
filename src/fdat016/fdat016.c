@@ -104,7 +104,7 @@ void func_801C6AA0(Obj801C6A60 *arg0) {
 
 void func_801C6AE0(Obj801C6A60 *arg0) {
     arg0->unk36 = 0x102;
-    arg0->unk108 = D_801CDC7C;
+    arg0->unk108.ptr = D_801CDC7C;
     func_801CDBD4((Obj801C52C0 *)arg0);
 }
 

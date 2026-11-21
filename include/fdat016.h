@@ -4,14 +4,41 @@
 #include "common.h"
 
 /* @types */
+typedef struct Half801C69BC {
+    s16 unk0;
+    u16 unk2;
+} Half801C69BC;
+
+typedef union Un801C6A60 {
+    u8 *ptr;
+    Half801C69BC h;
+} Un801C6A60;
+
 typedef struct Obj801C6A60 {
-    u8 _pad0[0x36];
+    u8 _pad0[0x32];
+    u16 unk32;
+    u8 _pad34[0x2];
     s16 unk36;
-    u8 _pad38[0x20];
+    u8 _pad38[0xA];
+    u8 unk42;
+    u8 _pad43[0xD];
+    void (*unk50)();
+    void (*unk54)();
     void (*unk58)();
     void (*unk5C)();
-    u8 _pad60[0xA8];
-    u8 *unk108;
+    u8 _pad60[0xA];
+    s16 unk6A;
+    s16 unk6C;
+    u8 _pad6E[0x8E];
+    u16 unkFC;
+    u8 unkFE;
+    u8 _padFF[0x1];
+    u16 unk100;
+    u8 _pad102[0x6];
+    Un801C6A60 unk108;
+    s16 unk10C;
+    s16 unk10E;
+    u8 _pad110[0x60];
 } Obj801C6A60;
 
 typedef struct Sub801C52C0 {
