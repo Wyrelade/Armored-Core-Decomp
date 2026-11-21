@@ -1293,6 +1293,11 @@ typedef struct Sub80070A44 {
     u8 unkD;
 } Sub80070A44;
 
+typedef struct Sub800A57F0 {
+    u8 _pad0[0xE];
+    s8 unkE;
+} Sub800A57F0;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -2410,5 +2415,21 @@ void func_80072640();
 void func_80072730();
 void func_800854A8();
 void func_80083C58();
+extern u8 D_8004D29C[];
+extern u8 D_8004D2BC[];
+extern Rect800ABB10 D_8004D2E0;
+extern Rect800ABB10 D_8004D2E8;
+extern u8 D_8004D2F0[];
+extern u8 D_8004D310[];
+extern u8 D_80048510[];
+extern u8 D_80031BD4[];
+u8 func_800714FC(u8 *arg0, u8 *arg1);
+void func_800A576C(void);
+void func_800A5EA4();
+void func_800A6084();
+void func_800A63D4();
+void func_800A6B88();
+void func_800A7028();
+void func_800A6E54();
 
 #endif /* FDAT201_H */

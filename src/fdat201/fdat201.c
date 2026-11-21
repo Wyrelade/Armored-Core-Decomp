@@ -6833,7 +6833,156 @@ void func_800A576C(void) {
     func_8005C2D0(0xA0, 0x50, 0x98, 0x30, 5);
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A57F0);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D29C);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D2BC);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D2E0);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D2E8);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D2F0);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D310);
+
+void func_800A57F0(Obj8004DEB0 *arg0) {
+    Rect800ABB10 rect1;
+    Rect800ABB10 rect2;
+    Sub800A57F0 *sub;
+    s32 v;
+    s32 r;
+
+    sub = (Sub800A57F0 *)&arg0->unk7C;
+    if (D_801A2550.unk18 & 0x1000) {
+        D_801A2550.unk0 |= 0x1000;
+        if (D_801A2574 != 0) {
+            D_801A2550.unk4 = 6 / D_801A2574;
+            if (!(D_801A2550.unk1C & 0x1000)) {
+                D_801A2550.unk6 = 12 / D_801A2574;
+            }
+        } else {
+            D_801A2550.unk4 = 6;
+            if (!(D_801A2550.unk1C & 0x1000)) {
+                D_801A2550.unk6 = 12;
+            }
+        }
+        SsUtKeyOn(D_801A2318, 0, 1, 0x3C, 0, 0x7F, 0x7F);
+        if (sub->unkE == 0) {
+            sub->unkE = 5;
+        } else {
+            sub->unkE--;
+        }
+    } else if (D_801A2550.unk18 & 0x4000) {
+        D_801A2550.unk0 |= 0x4000;
+        if (D_801A2574 != 0) {
+            D_801A2550.unk4 = 6 / D_801A2574;
+            if (!(D_801A2550.unk1C & 0x4000)) {
+                D_801A2550.unk6 = 12 / D_801A2574;
+            }
+        } else {
+            D_801A2550.unk4 = 6;
+            if (!(D_801A2550.unk1C & 0x4000)) {
+                D_801A2550.unk6 = 12;
+            }
+        }
+        SsUtKeyOn(D_801A2318, 0, 1, 0x3C, 0, 0x7F, 0x7F);
+        if (sub->unkE == 5) {
+            sub->unkE = 0;
+        } else {
+            sub->unkE++;
+        }
+    } else if (D_801A2550.unk18 & 0x40) {
+        D_801A2550.unk0 |= 0x40;
+        SsUtKeyOn(D_801A2318, 0, 2, 0x3C, 0, 0x7F, 0x7F);
+        switch (((Sub800A57F0 *)&arg0->unk7C)->unkE) {
+        case 1:
+            func_80083A58();
+            D_800485F0 = 0;
+            D_800485F4 = 0;
+            if (D_800485A0[0] == 0 && D_800485A4 == 0) {
+                func_8005DED8(arg0, func_800A57F0, D_8004D29C, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                func_800A576C();
+                arg0->unk74 = func_800A5EA4;
+            }
+            break;
+        case 2:
+            func_80083A58();
+            if (D_800485F0 == 0) {
+                func_8005DED8(arg0, func_800A57F0, D_8004D2BC, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else if (D_800485A0[0] == 0 && D_800485A4 == 0) {
+                func_8005DED8(arg0, func_800A57F0, D_8004D29C, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                rect1 = D_8004D2E0;
+                rect2 = D_8004D2E8;
+                MoveImage((u8 *)&rect1, 0x200, 0x100);
+                MoveImage((u8 *)&rect2, 0x140, 0x1FF);
+                DrawSync(0);
+                func_80050AF4(0xD, func_80084290() + 0x84);
+                func_80051450(0x11, func_80084290());
+                func_800A576C();
+                arg0->unk74 = func_800A6084;
+            }
+            break;
+        case 3:
+            if (D_80031A58[0] == 0xFF || D_80031A5A == 0xFF || D_80031A5B == 0xFF || D_80031A63 == 0xFF) {
+                func_8005DED8(arg0, func_800A57F0, D_8004D2F0, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                func_800A576C();
+                arg0->unk74 = func_800A63D4;
+            }
+            break;
+        case 4:
+            if (D_80031A58[0] == 0xFF || D_80031A5A == 0xFF || D_80031A5B == 0xFF || D_80031A63 == 0xFF) {
+                func_8005DED8(arg0, func_800A57F0, D_8004D2F0, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                func_800A576C();
+                arg0->unk74 = func_800A6B88;
+            }
+            break;
+        case 5:
+            arg0->unk8B[0] = 0;
+            arg0->unk74 = func_800A6520;
+            break;
+        case 0:
+            if (func_800714FC(D_80048510, D_80031BD4) == 0) {
+                func_8005DED8(arg0, func_800A57F0, D_8004D2F0, 0xC);
+                arg0->unk74 = func_800507FC;
+            } else {
+                if (D_80048663 != 2) {
+                    r = (u8)D_80039D14;
+                    if (r >= 0xCD) {
+                        v = 0x5A;
+                    } else if (r >= 0x9A) {
+                        v = 0x5B;
+                    } else if (r >= 0x67) {
+                        v = 0x5C;
+                    } else if (r >= 0x34) {
+                        v = 0x5D;
+                    } else {
+                        v = 0x5E;
+                    }
+                    D_80039CAE = v;
+                } else {
+                    D_80039CAE++;
+                    if (D_80039CAE == 0x5F) {
+                        D_80039CAE = 0x5A;
+                    }
+                    v = D_80039CAE;
+                }
+                D_800411F8 = v;
+                func_80051450(4, v - 0x26);
+                func_800A576C();
+                arg0->unk74 = func_800A7028;
+            }
+            break;
+        }
+    } else if (D_801A2550.unk18 & 0x20) {
+        D_801A2550.unk0 |= 0x20;
+        func_8005D8D4(D_8004D310, &arg0->unk88, 0xC, 1);
+        arg0->unk74 = func_800A6E54;
+    }
+}
 
 void func_800A5EA4(Obj8004DEB0 *arg0) {
     if (func_80050078(func_8005C2D0) == &D_801BC4F8) {
@@ -6844,12 +6993,6 @@ void func_800A5EA4(Obj8004DEB0 *arg0) {
         arg0->unk74 = func_800A5F90;
     }
 }
-
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D2E0);
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D2E8);
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D2F0);
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004D310);
-INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", jtbl_8004D324);
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800A5F90);
 
