@@ -13,6 +13,10 @@
 #define gte_stflg(r0) __asm__ volatile ("cfc2 $12, $31;" "nop;" "sw $12, 0(%0)" : : "r"(r0) : "$12", "memory")
 #define gte_stsxy(r0) __asm__ volatile ("swc2 $14, 0(%0)" : : "r"(r0) : "memory")
 #define gte_stdp(r0) __asm__ volatile ("swc2 $8, 0(%0)" : : "r"(r0) : "memory")
+#define gte_ldlvl(r0) __asm__ volatile ("lwc2 $9, 0(%0);" "lwc2 $10, 4(%0);" "lwc2 $11, 8(%0)" : : "r"(r0))
+#define gte_sqr0() __asm__ volatile ("nop;" "nop;" "sqr 0")
+#define gte_ldrgb(r0) __asm__ volatile ("lwc2 $6, 0(%0)" : : "r"(r0))
+#define gte_nccs() __asm__ volatile ("nop;" "nop;" "nccs")
 #define gte_stszotz(r0) __asm__ volatile ("mfc2 $12, $19;" "nop;" "sra $12, $12, 2;" "sw $12, 0(%0)" : : "r"(r0) : "$12", "memory")
 #define gte_ldv0u(r0) __asm__ volatile ("lwl $12, 3(%0);" "lwr $12, 0(%0);" "lhu $13, 4(%0);" "mtc2 $12, $0;" "mtc2 $13, $1" : : "r"(r0) : "$12", "$13") /* unaligned SVECTOR load (lwl/lwr + lhu); not an inline_n.h name */
 #define gte_ncs() __asm__ volatile ("nop;" "nop;" "ncs")
