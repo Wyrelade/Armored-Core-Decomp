@@ -839,6 +839,23 @@ typedef struct Snd8004DB18 {
     volatile u8 unk4;
 } Snd8004DB18;
 
+typedef union Un800564AC {
+    Blk80055A24 *blk;
+    Elem80055A24 *elem;
+} Un800564AC;
+
+typedef struct Scr800564AC {
+    Sub8006F234 unk0;
+    Sub8006F234 unk20;
+    VECTOR unk40;
+    Obj80053908 *unk50;
+    Un800564AC unk54;
+    u8 _pad58[0x28];
+    s32 unk80;
+    s32 unk84;
+    s32 unk88;
+} Scr800564AC;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1131,5 +1148,8 @@ void func_8005239C(s16 arg0);
 void func_80013AFC(s16 arg0, Sub8006F234 *arg1);
 void SetRotMatrix(Sub8006F234 *m);
 void SetTransMatrix(Sub8006F234 *m);
+void func_800560F4(s32 arg0);
+void func_80056304(Scr800564AC *arg0, s32 arg1);
+void func_800563DC(Scr800564AC *arg0, s32 arg1);
 
 #endif /* FDAT202_H */

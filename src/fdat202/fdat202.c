@@ -905,7 +905,104 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80056304);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800563DC);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800564AC);
+s32 func_800564AC(Obj80055A24 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, s32 arg4, s32 arg5) {
+    Scr800564AC *scr;
+    Part80055A24 *p;
+    s32 n;
+    s32 idx;
+    s32 sum;
+    Elem80055A24 *e;
+
+    scr = (Scr800564AC *)0x1F800000;
+    scr->unk50 = D_801A5F34[arg1];
+    if (scr->unk50 == NULL) {
+        return 0;
+    }
+    scr->unk80 = arg4;
+    scr->unk88 = arg5;
+    scr->unk84 = 0;
+    if (scr->unk50->unk5 != 0) {
+        func_80013AFC(0x800 - arg3->unk2, &scr->unk0);
+        scr->unk0.unk0[0][0] >>= 2;
+        scr->unk0.unk0[0][2] >>= 2;
+        scr->unk0.unk0[1][1] >>= 2;
+        scr->unk0.unk0[2][0] >>= 2;
+        scr->unk0.unk0[2][2] >>= 2;
+        scr->unk0.unk14[0] = arg2->unk0;
+        scr->unk0.unk14[1] = arg2->unk2;
+        scr->unk0.unk14[2] = arg2->unk4;
+        scr->unk54.blk = (Blk80055A24 *)((u8 *)scr->unk50 + scr->unk50->unk8);
+        if (arg0 == NULL) {
+            func_800563DC(scr, scr->unk54.blk->unk0);
+            return 1;
+        }
+        scr->unk54.elem = scr->unk54.blk->unkC;
+        n = scr->unk50->unk5;
+        p = arg0->unk20;
+        sum = 0;
+        for (n--; n != -1; n--, p++) {
+            idx = p->unk12;
+            if (idx < 0) {
+                goto neg;
+            }
+        sum:
+            e = &scr->unk54.elem[idx];
+            sum += e->unk14;
+            continue;
+        neg:
+            if (idx < -0x800) {
+                idx += 0x1000;
+                goto sum;
+            }
+        }
+        func_80056304(scr, sum);
+        n = scr->unk50->unk5;
+        p = arg0->unk20;
+        for (n--; n != -1; p++, n--) {
+            idx = p->unk12;
+            if (idx < 0) {
+                goto neg2;
+            }
+        draw:
+            gte_SetRotMatrix(&scr->unk0);
+            gte_SetTransMatrix(&scr->unk0);
+            gte_ldlv0(p->unk28.unk14);
+            gte_rtv0tr();
+            gte_stlvnl(&scr->unk40);
+            gte_ldclmv(&p->unk28.unk0[0][0]);
+            gte_rtir();
+            gte_stclmv(&scr->unk20.unk0[0][0]);
+            gte_ldclmv(&p->unk28.unk0[0][1]);
+            gte_rtir();
+            gte_stclmv(&scr->unk20.unk0[0][1]);
+            gte_ldclmv(&p->unk28.unk0[0][2]);
+            gte_rtir();
+            gte_stclmv(&scr->unk20.unk0[0][2]);
+            gte_SetRotMatrix(&scr->unk20);
+            gte_SetTransMatrix((Sub8006F234 *)((u8 *)&scr->unk40 - (u32)((Sub8006F234 *)0)->unk14));
+            func_800560F4(idx);
+            continue;
+        neg2:
+            if (idx < -0x800) {
+                idx += 0x1000;
+                goto draw;
+            }
+        }
+        return 1;
+    }
+    func_80013AFC(0x800 - arg3->unk2, &scr->unk0);
+    scr->unk0.unk0[0][0] >>= 2;
+    scr->unk0.unk0[0][2] >>= 2;
+    scr->unk0.unk0[1][1] >>= 2;
+    scr->unk0.unk0[2][0] >>= 2;
+    scr->unk0.unk0[2][2] >>= 2;
+    scr->unk0.unk14[0] = arg2->unk0;
+    scr->unk0.unk14[1] = arg2->unk2;
+    scr->unk0.unk14[2] = arg2->unk4;
+    scr->unk54.blk = (Blk80055A24 *)((u8 *)scr->unk50 + scr->unk50->unk8);
+    func_800563DC(scr, 1);
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80056958);
 
