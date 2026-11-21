@@ -260,5 +260,6 @@ extern u8 D_801C61D4[];
 s32 func_801C55D8(Elem801C5F00 *arg0, u8 arg1);
 void func_8004CC30(s32 arg0, u8 *arg1, Sub801C4C94 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_8004CE44(s32 arg0, Sub801C4C94 *arg1, s32 arg2, s32 arg3);
+void func_801C5D0C();
 
 #endif /* FDAT006_H */
