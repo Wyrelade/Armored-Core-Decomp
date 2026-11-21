@@ -2,6 +2,7 @@
 #define FDAT203_H
 
 #include "common.h"
+#include "gte.h"
 
 /* @types */
 typedef struct Sub8004EE14 {
@@ -1200,5 +1201,7 @@ s32 ratan2(s32 arg0, s32 arg1);
 s32 rcos(s32 arg0);
 s32 CdRead2(s32 arg0);
 s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
+void SetRotMatrix(Obj80013A88 *arg0);
+void SetTransMatrix(Obj80013A88 *arg0);
 
 #endif /* FDAT203_H */

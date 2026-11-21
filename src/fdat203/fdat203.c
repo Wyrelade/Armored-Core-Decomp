@@ -625,7 +625,74 @@ void func_80055360(void) {
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800553CC);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80055420);
+s32 func_80055420(Obj80055420 *arg0, s32 arg1, Sub8004F1D4 *arg2, Sub8004F1D4 *arg3, Sub8004DE88 *arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8) {
+    Vec80055420 v;
+    Obj80013A88 m;
+    Vec80055420 out;
+    Pair80055420 *vtx;
+    Joint80055420 *j;
+    Sub80053304 *mdl;
+    s32 k;
+    s32 idx;
+    Mdl80055420 *hdr;
+
+    mdl = D_8019D96C[arg1];
+    hdr = (Mdl80055420 *)((u8 *)mdl + mdl->unk8);
+    vtx = ((Part80055420 *)((u8 *)hdr->unkC + (arg6 << 5) - (arg6 << 2)))->unk18;
+    if (arg0 != NULL) {
+        j = &arg0->unk20[arg5];
+        func_80013AFC(0x800 - arg3->unk2, &m);
+        m.unk0 >>= 2;
+        m.unk4 >>= 2;
+        m.unk8 >>= 2;
+        m.unkC >>= 2;
+        m.unk10 >>= 2;
+        m.unk14 = arg2->unk0;
+        m.unk18 = arg2->unk2;
+        m.unk1C = arg2->unk4;
+        SetRotMatrix(&m);
+        SetTransMatrix(&m);
+        gte_ldlv0(&j->unk28.unk14);
+        gte_rtv0tr();
+        gte_stlvnl(&v);
+        gte_ldclmv(&j->unk28.unk0);
+        gte_rtir();
+        gte_stclmv(&m.unk0);
+        gte_ldclmv(&j->unk28.unk2);
+        gte_rtir();
+        gte_stclmv(&m.unk2);
+        gte_ldclmv(&j->unk28.unk4);
+        gte_rtir();
+        gte_stclmv(&m.unk4);
+        SetRotMatrix(&m);
+        SetTransMatrix((Obj80013A88 *)((u8 *)&v - 0x14));
+        k = 1;
+    } else {
+        func_80013AFC(0x800 - arg3->unk2, &m);
+        m.unk0 >>= 2;
+        m.unk4 >>= 2;
+        m.unk8 >>= 2;
+        m.unkC >>= 2;
+        m.unk10 >>= 2;
+        m.unk14 = arg2->unk0;
+        m.unk18 = arg2->unk2;
+        m.unk1C = arg2->unk4;
+        SetRotMatrix(&m);
+        SetTransMatrix(&m);
+        k = 2;
+    }
+    for (arg7--; arg7 != -1; arg7--) {
+        idx = *arg8++;
+        gte_ldv0(&vtx[idx].unk0[k]);
+        gte_rtv0tr();
+        gte_stlvnl(&out);
+        arg4->unk0 = out.unk0;
+        arg4->unk2 = out.unk4;
+        arg4->unk4 = out.unk8;
+        arg4++;
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800557B4);
 
