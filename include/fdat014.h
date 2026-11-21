@@ -289,6 +289,12 @@ typedef struct Elem801C5314 {
     u8 _pad4[0x3C];
 } Elem801C5314;
 
+typedef struct Elem801C53D4 {
+    u8 _pad0[0x2C];
+    Sub801C5550_fdat000 *unk2C;
+    u8 _pad30[0x10];
+} Elem801C53D4;
+
 /* @externs */
 void func_8004EC4C(Sub801C4D98 *arg0);
 void func_80075FC0();
@@ -349,5 +355,7 @@ void func_801C52E8(s32 arg0, s32 arg1);
 extern s16 D_801A26CE;
 extern Elem801C5314 D_801D0B94[];
 s32 func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
+extern Elem801C53D4 D_801D0B68[];
+void func_801C6D94();
 
 #endif /* FDAT014_H */
