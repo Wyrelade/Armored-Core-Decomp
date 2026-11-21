@@ -124,17 +124,36 @@ typedef struct Sub80078460 {
     u8 unk11;
 } Sub80078460;
 
+typedef struct Elem8007A240 {
+    s32 unk0;
+    u8 _pad4[0x8];
+    s16 unkC;
+    s16 unkE;
+    u8 _pad10[0x20];
+} Elem8007A240;
+
 typedef struct Obj80077EAC {
     s32 unk0;
     s32 unk4;
     s32 unk8;
     s32 unkC;
-    u8 _pad10[0x3C];
+    u8 _pad10[0x14];
+    s32 unk24;
+    u16 unk28;
+    s16 unk2A;
+    s16 unk2C;
+    s16 unk2E;
+    u8 _pad30[0x1C];
     Sub80078460 *unk4C;
-    u8 _pad50[0x1C4];
+    u8 _pad50[0x30];
+    s32 unk80;
+    Elem8007A240 unk84[8];
+    u8 _pad204[0x10];
     u16 unk214;
     u16 unk216;
-    u8 _pad218[0x49];
+    u8 _pad218[0x8];
+    u16 unk220;
+    u8 _pad222[0x3F];
     u8 unk261;
     u8 _pad262[0xE];
     u16 unk270;
