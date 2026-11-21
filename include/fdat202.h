@@ -832,6 +832,13 @@ typedef struct Vec8004C98C {
     s32 unk8;
 } Vec8004C98C;
 
+typedef struct Snd8004DB18 {
+    u16 unk0;
+    u8 unk2;
+    u8 unk3;
+    volatile u8 unk4;
+} Snd8004DB18;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1119,5 +1126,6 @@ void func_8004DA1C(u8 arg0);
 void func_8008CA14(Sub8004DE88 *arg0, s32 arg1, char *arg2);
 s32 ratan2(s32 arg0, s32 arg1);
 s32 CdRead2(s32 arg0);
+s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);
 
 #endif /* FDAT202_H */
