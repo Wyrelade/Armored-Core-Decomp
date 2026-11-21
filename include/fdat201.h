@@ -1083,37 +1083,59 @@ typedef struct Obj800B1B08 {
 
 typedef struct Elem8008F08C_2C {
     s32 unk0;
-    u8 _pad4[0x28];
+    u16 unk4;
+    u16 unk6;
+    u8 _pad8[0x24];
 } Elem8008F08C_2C;
 
 typedef struct Elem8008F08C_30 {
     s32 unk0;
-    u8 _pad4[0x2C];
+    u16 unk4;
+    u16 unk6;
+    u8 _pad8[0x28];
 } Elem8008F08C_30;
 
 typedef struct Elem8008F08C_34 {
     s32 unk0;
-    u8 _pad4[0x30];
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    u8 _padA[0x2A];
 } Elem8008F08C_34;
 
 typedef struct Elem8008F08C_38 {
     s32 unk0;
-    u8 _pad4[0x34];
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    u8 _padA[0x4];
+    u16 unkE;
+    u8 _pad10[0x28];
 } Elem8008F08C_38;
 
 typedef struct Elem8008F08C_3C {
     s32 unk0;
-    u8 _pad4[0x38];
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    u8 _padA[0x32];
 } Elem8008F08C_3C;
 
 typedef struct Elem8008F08C_48 {
     s32 unk0;
-    u8 _pad4[0x44];
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    u8 _padA[0x4];
+    u16 unkE;
+    u8 _pad10[0x38];
 } Elem8008F08C_48;
 
 typedef struct Elem8008F08C_60 {
     s32 unk0;
-    u8 _pad4[0x5C];
+    u16 unk4;
+    u16 unk6;
+    u8 _pad8[0x58];
 } Elem8008F08C_60;
 
 typedef struct Sub8007C240 {
@@ -1167,6 +1189,48 @@ typedef struct Obj801A2550 {
     s32 unk1C;
 } Obj801A2550;
 
+typedef struct Elem800505F0 {
+    u8 unk0;
+    u8 unk1;
+    u8 _pad2[0x14];
+    s16 unk16;
+    u8 _pad18[0xB8];
+} Elem800505F0;
+
+typedef struct SVECTOR {
+    s16 vx;
+    s16 vy;
+    s16 vz;
+    s16 pad;
+} SVECTOR;
+
+typedef struct Elem80057190 {
+    SVECTOR *unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    u8 *unk10;
+    u32 unk14;
+    s32 unk18;
+} Elem80057190;
+
+typedef struct MATRIX {
+    s16 m[3][3];
+    s32 t[3];
+} MATRIX;
+
+typedef struct Obj80057190 {
+    u8 _pad0[0xC];
+    Elem80057190 unkC[1];
+} Obj80057190;
+
+typedef struct Rect800ABB10 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Rect800ABB10;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1189,7 +1253,7 @@ u32 *func_80051248(s16 arg0, s16 arg1);
 void func_80050944(u32 *arg0);
 void DrawSync(s32 arg0);
 void func_80051078(u32 *arg0);
-void func_800B597C(s32 arg0);
+void func_800B597C(u32 *arg0);
 extern s16 D_801A2318;
 s16 SsVabOpenHead(u32 *arg0, s32 arg1);
 void SsVabTransBody(u32 *arg0, s16 arg1);
@@ -1443,7 +1507,7 @@ void func_800A546C(Obj8004DEB0 *arg0);
 void func_800A57F0(Obj8004DEB0 *arg0);
 void func_800744A8(Obj8004DEB0 *arg0, void (*arg1)(), s32 arg2);
 void func_800A6DA4(Obj8004DEB0 *arg0);
-void func_800505F0(s32 arg0, s32 arg1);
+void func_800505F0(s16 arg0, s16 arg1);
 void func_800A6580(Obj8004DEB0 *arg0);
 void func_800A69AC(Obj8004DEB0 *arg0);
 void func_800A6AC4(Obj8004DEB0 *arg0);
@@ -1642,8 +1706,8 @@ void func_8006BF84(s32 arg0);
 void func_80069528();
 void func_8006AF58();
 extern Elem8006FE38 D_800B7FA0[];
-s32 func_8006C4C0(Sub80068A20 *arg0, s16 arg1, s16 arg2);
-u8 *func_8006F2CC(Obj80068A20 *arg0, u8 *arg1, s32 arg2);
+s32 func_8006C4C0(Sub80068A20 *arg0, s32 arg1, s32 arg2);
+u8 *func_8006F2CC(Obj80068A20 *arg0, u8 *arg1, u8 arg2);
 extern Elem8006FE38 D_800B8144[];
 void func_8006F708(Obj8005EAF8 *arg0);
 extern Elem8006FE38 D_800B8150[];
@@ -2218,5 +2282,19 @@ extern Tbl8007C240 D_800BCAC0[];
 extern u32 D_800BE214[];
 extern u32 D_800BE298[];
 void func_800B5248(u32 *arg0, u32 arg1);
+extern s32 D_8019F424[];
+extern Elem800505F0 D_801A36F8[];
+extern Elem800505F0 D_801A48D8[];
+extern Elem800505F0 D_801A7318[];
+extern Elem800505F0 D_801A9D58[];
+extern Elem800505F0 D_801AD7D8[];
+extern Elem800505F0 D_801B1258[];
+extern Elem800505F0 D_801B4CD8[];
+extern Elem800505F0 D_801B7718[];
+extern Elem800505F0 D_801B9118[];
+extern Elem800505F0 D_801BAB18[];
+extern s32 D_801F07EC[];
+void SetRotMatrix(MATRIX *m);
+void SetTransMatrix(MATRIX *m);
 
 #endif /* FDAT201_H */
