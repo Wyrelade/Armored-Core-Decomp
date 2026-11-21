@@ -1093,6 +1093,34 @@ typedef struct Obj8006F95C {
     u32 unkB0;
 } Obj8006F95C;
 
+typedef struct Vec80086874 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Vec80086874;
+
+typedef struct Obj80086874 {
+    Vec80086874 unk0;
+    s32 unk8;
+    u8 _padC[0x2];
+    s16 unkE;
+    u8 _pad10[0x2];
+    s16 unk12;
+    u8 _pad14[0x4];
+    u8 unk18;
+    u8 _pad19[0x5];
+    s16 unk1E;
+    s16 unk20;
+    s16 unk22;
+    u8 _pad24[0x2];
+    Sub8004F1D4 unk26;
+    s16 unk2C;
+    u8 _pad2E[0x2];
+    u32 unk30;
+    u32 unk34;
+} Obj80086874;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1365,5 +1393,6 @@ s32 func_8006F4EC(s32 arg0, Elem8006E85C *arg1, s32 *arg2, Sub8006F95C *arg3);
 void func_8006EDB4(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, s32 arg2);
 void func_80070C88(Obj80070994 *arg0, Obj8006D0DC *arg1);
 void func_80070AEC(Obj80070994 *arg0);
+Elem8006E85C **func_8006F95C(Sub8006D560 *arg0, Sub8004F1D4 *arg1, s32 arg2);
 
 #endif /* FDAT203_H */
