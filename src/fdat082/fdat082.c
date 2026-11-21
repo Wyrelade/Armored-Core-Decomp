@@ -145,7 +145,15 @@ void func_801C6BF8(Obj801C6BF8 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801C6CB8);
+void func_801C6CB8(Obj801C6BF8 *arg0) {
+    s32 unused[36];
+    Task801C6BF8 *task;
+
+    task = (Task801C6BF8 *)func_80072120(2);
+    arg0->unk2C = task;
+    task->unk10 = (Elem801C5EA8 *)arg0 - D_801D0B68;
+    arg0->unk2C->unk0 = func_801C6BF8;
+}
 
 void func_801C6D0C(Obj801C6D0C *arg0) {
     Sub801C6B04 *task;
