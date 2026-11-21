@@ -114,7 +114,8 @@ typedef struct Obj80078CFC {
 } Obj80078CFC;
 
 typedef struct Sub80078CFC {
-    u8 _pad0[0x20];
+    void (*unk0)(void);
+    u8 _pad4[0x1C];
     void (*unk20[1])(Obj80078CFC *);
 } Sub80078CFC;
 
@@ -222,7 +223,8 @@ typedef struct Obj800895B0 {
     s16 unk22;
     s16 unk24[3];
     s16 unk2A;
-    u8 _pad2C[0x4];
+    s16 unk2C;
+    u8 _pad2E[0x2];
     s32 unk30;
     u32 unk34;
     s32 unk38;
@@ -418,7 +420,9 @@ typedef struct Sub80052F90 {
 } Sub80052F90;
 
 typedef struct Obj80053908 {
-    u8 _pad0[0x8];
+    u8 _pad0[0x5];
+    u8 unk5;
+    u8 _pad6[0x2];
     s32 unk8;
 } Obj80053908;
 
@@ -723,6 +727,110 @@ typedef struct Obj80082D04 {
     s16 unk1A;
 } Obj80082D04;
 
+typedef union Hdr800574D8 {
+    u32 w;
+    u8 b[4];
+} Hdr800574D8;
+
+typedef struct SVECTOR {
+    s16 vx;
+    s16 vy;
+    s16 vz;
+    s16 pad;
+} SVECTOR;
+
+typedef struct Vtx80055A24 {
+    SVECTOR v[2];
+} Vtx80055A24;
+
+typedef struct Elem80055A24 {
+    u8 *unk0;
+    u8 _pad4[0x4];
+    u8 *unk8;
+    u8 _padC[0x2];
+    u16 unkE;
+    Hdr800574D8 *unk10;
+    u16 unk14;
+    u16 unk16;
+    Vtx80055A24 *unk18;
+} Elem80055A24;
+
+typedef struct Blk80055A24 {
+    s32 unk0;
+    u8 _pad4[0x4];
+    s32 unk8;
+    Elem80055A24 unkC[1];
+} Blk80055A24;
+
+typedef struct Elem8004DA1C {
+    u16 unk0[16];
+    u8 unk20[4];
+} Elem8004DA1C;
+
+typedef union Un8008C95C {
+    s32 w;
+    Sub8007BA2C h;
+} Un8008C95C;
+
+typedef struct Elem8008C95C {
+    Un8008C95C unk0;
+    s16 unk4;
+    s16 unk6;
+} Elem8008C95C;
+
+typedef struct Part80055A24 {
+    u8 _pad0[0x12];
+    s16 unk12;
+    u8 _pad14[0x14];
+    Sub8006F234 unk28;
+    u8 _pad48[0x34];
+} Part80055A24;
+
+typedef struct Obj80055A24 {
+    u8 _pad0[0x20];
+    Part80055A24 *unk20;
+} Obj80055A24;
+
+typedef struct Sub8008C95C {
+    u32 unk0_0 : 24;
+    u32 unk0_24 : 8;
+} Sub8008C95C;
+
+typedef struct Obj8008C6FC {
+    Sub8006F234 unk0;
+    u8 _pad20[0xFC];
+    s32 unk11C;
+    Sub8004DE88 unk120;
+    Sub8004DE88 unk128;
+    s32 unk130[3];
+    u8 _pad13C[0x4];
+    Sub8008C95C *unk140;
+    u8 *unk144;
+    Sub8006F234 unk148;
+    s32 unk168;
+    u8 _pad16C[0x4];
+    Elem8008C95C unk170[3];
+} Obj8008C6FC;
+
+typedef struct Sub8004C98C {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+} Sub8004C98C;
+
+typedef struct VECTOR {
+    s32 vx;
+    s32 vy;
+    s32 vz;
+    s32 pad;
+} VECTOR;
+
+typedef struct Vec8004C98C {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} Vec8004C98C;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -742,7 +850,7 @@ extern u16 D_8004125E;
 extern u8 D_8004124B;
 extern Obj8007A19C *D_801A5DC0;
 void func_8004CE44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3);
-void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+s32 func_8004CC30(s32 arg0, s32 arg1, Sub8004C98C *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_8004ED5C(Sub8007618C *arg0);
 void func_8007DF98(void);
 extern s8 D_801987D1;
@@ -824,7 +932,7 @@ extern s32 D_801A5DC4;
 extern s32 D_801A5DC8;
 void func_8007398C(s32 arg0);
 void func_8007399C(s32 arg0);
-void func_80055A24(s32 arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8);
+s32 func_80055A24(Obj80055A24 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, SVECTOR *arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8);
 s32 func_8004F0D4(Sub8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2);
 s32 func_8004EFB8(Sub8007618C *arg0, Sub8004DE88 *arg1);
 s32 func_8004F024(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -877,7 +985,7 @@ void func_8004CF0C(Elem8004CF0C *arg0);
 extern u16 D_80041BBE;
 extern u8 D_80041BC1;
 extern s32 D_80041BC4;
-void func_8004DB18(u16 arg0);
+void func_8004DB18(s32 arg0);
 extern Elem80051CDC D_8008DB0C[];
 void func_800513EC(s32 arg0, s32 arg1, s32 arg2, Elem80051CDC *arg3);
 extern u8 D_80039D10;
@@ -998,5 +1106,16 @@ extern s16 D_800411BC;
 extern u16 *D_801ED850;
 void func_8005277C(s32 arg0, s32 arg1, u8 *arg2);
 void func_80055E84(u8 *arg0, Sub80055EB8 *arg1);
+s32 CdSyncCallback(s32 arg0);
+extern Elem8004DA1C D_80031764[];
+extern s16 D_80041B90;
+extern s16 D_80041B92;
+extern s16 D_80041B94;
+extern s16 D_80041B9A;
+extern s32 D_8008D924;
+s32 SquareRoot0(s32 arg0);
+void func_8004DA1C(u8 arg0);
+void func_8008CA14(Sub8004DE88 *arg0, s32 arg1, char *arg2);
+s32 ratan2(s32 arg0, s32 arg1);
 
 #endif /* FDAT202_H */
