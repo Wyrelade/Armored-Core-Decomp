@@ -1531,5 +1531,7 @@ void func_8005BAA8(Elem8007229C *arg0, s32 arg1, Rec8005BAA8 **arg2, Rec8005BAA8
 void func_8005A134(Rec8005BAA8 *arg0);
 void func_80062CB4(Rec8005BAA8 *arg0);
 void func_80057118(s32 arg0);
+void func_8005E588(Node8005DEE4 *arg0);
+s32 SquareRoot0(s32 a);
 
 #endif /* FDAT204_H */
