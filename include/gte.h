@@ -17,6 +17,12 @@
 #define gte_sqr0() __asm__ volatile ("nop;" "nop;" "sqr 0")
 #define gte_ldrgb(r0) __asm__ volatile ("lwc2 $6, 0(%0)" : : "r"(r0))
 #define gte_nccs() __asm__ volatile ("nop;" "nop;" "nccs")
+#define gte_rtv0() __asm__ volatile ("nop;" "nop;" "mvmva 1, 0, 0, 3, 0")
+#define gte_ldv3(r0, r1, r2) __asm__ volatile ("lwc2 $0, 0(%0);" "lwc2 $1, 4(%0);" "lwc2 $2, 0(%1);" "lwc2 $3, 4(%1);" "lwc2 $4, 0(%2);" "lwc2 $5, 4(%2)" : : "r"(r0), "r"(r1), "r"(r2))
+#define gte_rtpt() __asm__ volatile ("nop;" "nop;" "rtpt")
+#define gte_stsxy3(r0, r1, r2) __asm__ volatile ("swc2 $12, 0(%0);" "swc2 $13, 0(%1);" "swc2 $14, 0(%2)" : : "r"(r0), "r"(r1), "r"(r2) : "memory")
+#define gte_ncds() __asm__ volatile ("nop;" "nop;" "ncds")
+#define gte_lddp(r0) __asm__ volatile ("mtc2 %0, $8" : : "r"(r0))
 #define gte_stszotz(r0) __asm__ volatile ("mfc2 $12, $19;" "nop;" "sra $12, $12, 2;" "sw $12, 0(%0)" : : "r"(r0) : "$12", "memory")
 #define gte_ldv0u(r0) __asm__ volatile ("lwl $12, 3(%0);" "lwr $12, 0(%0);" "lhu $13, 4(%0);" "mtc2 $12, $0;" "mtc2 $13, $1" : : "r"(r0) : "$12", "$13") /* unaligned SVECTOR load (lwl/lwr + lhu); not an inline_n.h name */
 #define gte_ncs() __asm__ volatile ("nop;" "nop;" "ncs")
