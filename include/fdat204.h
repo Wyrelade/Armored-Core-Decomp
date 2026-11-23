@@ -2105,21 +2105,31 @@ typedef struct Poly800573FC {
     s32 unk14;
 } Poly800573FC;
 
+typedef struct Sv800584F4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv800584F4;
+
 typedef struct Mdl800573FC {
-    u8 _pad0[0x4];
+    Sv800584F4 *unk0;
     u16 unk4;
-    u8 _pad6[0xA];
+    u16 unk6;
+    u8 *unk8;
+    u8 _padC[0x2];
+    u16 unkE;
     Col800573FC *unk10;
     u16 unk14;
 } Mdl800573FC;
 
 typedef struct Scr800573FC {
-    u8 _pad0[0x4];
+    s32 unk0;
     u8 *unk4;
     u8 *unk8;
     Col800573FC unkC;
     Mdl800573FC *unk10;
-    u8 _pad14[0x4];
+    u8 *unk14;
     s32 unk18;
     Tag800573FC *unk1C;
     s32 unk20;
@@ -2127,6 +2137,115 @@ typedef struct Scr800573FC {
     s32 unk28;
     Col800573FC unk2C;
 } Scr800573FC;
+
+typedef struct Ft380057A3C {
+    Tag800573FC tag;
+    Col800573FC unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+} Ft380057A3C;
+
+typedef struct Ft480057A3C {
+    Tag800573FC tag;
+    Col800573FC unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Ft480057A3C;
+
+typedef struct Gt380057A3C {
+    Tag800573FC tag;
+    Col800573FC unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Gt380057A3C;
+
+typedef struct Gt480057A3C {
+    Tag800573FC tag;
+    Col800573FC unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+    s32 unk28;
+    s32 unk2C;
+    u16 unk30;
+    u16 unk32;
+} Gt480057A3C;
+
+typedef struct Pk80057A3C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+    u16 unk1C;
+    u16 unk1E;
+} Pk80057A3C;
+
+typedef struct PkF380057A3C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    s32 unkC;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+} PkF380057A3C;
+
+typedef struct PkF480057A3C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    s32 unk10;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+} PkF480057A3C;
+
+typedef union Prim80057A3C {
+    Ft380057A3C *f3;
+    Ft480057A3C *f4;
+    Gt380057A3C *g3;
+    Gt480057A3C *g4;
+} Prim80057A3C;
 
 /* @externs */
 extern s8 D_800893C4;
@@ -2512,5 +2631,6 @@ void func_80079944();
 void func_80055140(s32 arg0);
 void func_80055350(Scr80055EA8 *arg0, s32 arg1);
 void func_80055428(Scr80055EA8 *arg0, s32 arg1);
+void func_800571CC(Scr800573FC *arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT204_H */
