@@ -170,7 +170,7 @@ typedef struct Obj80078CFC {
     void (*unk54)();
     void (*unk58)();
     void (*unk5C)();
-    s16 *unk60;
+    struct Obj800558A8 *unk60;
     u8 unk64;
     u8 unk65;
     u8 _pad66[0x2];
@@ -2701,7 +2701,7 @@ extern Ent8006131C D_80198808[];
 extern u8 D_80039C70[];
 extern Sub8004DE88 D_8008E4D8;
 extern Elem8006131C D_8008ED68[];
-s32 func_80054750(s16 **arg0, s32 arg1, u8 arg2, s32 arg3, s32 arg4, u8 arg5, s32 arg6, Sub8004DE88 *arg7);
+Obj800558A8 *func_80054750(Obj800558A8 **arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, Sub8004DE88 *arg7);
 void func_8005DEC4(u16 arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, s16 *arg3, u16 *arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10);
 void func_8005DC7C(s8 arg0, u16 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, s16 *arg4, s32 arg5, s32 arg6);
 void func_8005E434(Elem800736AC *arg0);

@@ -2586,7 +2586,7 @@ void func_8006131C(void) {
     if (p->unk0 != NULL) {
         if (!(p->unk32 & 0x8001)) {
             if ((p->unk32 & 0x4000) && p->unk60 != NULL) {
-                *p->unk60 = 2;
+                p->unk60->unk0 = 2;
             } else {
                 func_80054750(&p->unk60, p->unkE + 0x80, p->unk64, p->unk6E, p->unk72, p->unk65, p->unk74, &p->unk76);
             }
@@ -2611,7 +2611,7 @@ void func_8006131C(void) {
                 }
             }
         } else if ((p->unk32 & 0x4000) && p->unk60 != NULL) {
-            *p->unk60 = 2;
+            p->unk60->unk0 = 2;
         }
     }
     p = D_801A2828;
@@ -2625,7 +2625,7 @@ void func_8006131C(void) {
                     SetTransMatrix((Sub8006F234 *)((u8 *)&D_801A5F28.unk7774 - (u32)((Sub8006F234 *)0)->unk14));
                     if (func_80061F44((p->unk32 & 2) ? dist << 1 : dist, (Sub8004DE88 *)&p->unk8, p->unk6A, p->unk6C)) {
                         if ((p->unk32 & 0x4000) && p->unk60 != NULL) {
-                            *p->unk60 = 2;
+                            p->unk60->unk0 = 2;
                         } else if (!func_80054750(&p->unk60, p->unkE + 0x80, p->unk64, p->unk6E, p->unk72, p->unk65, p->unk74, &p->unk76)) {
                             goto second;
                         }
@@ -2638,7 +2638,7 @@ void func_8006131C(void) {
                 if (k != -1 && (D_801A5F28.unk6938[k >> 5] & (1 << (k & 0x1F)))) {
                     if (!drawn) {
                         if ((p->unk32 & 0x4000) && p->unk60 != NULL) {
-                            *p->unk60 = 2;
+                            p->unk60->unk0 = 2;
                         } else if (!func_80054750(&p->unk60, p->unkE + 0x80, p->unk64, p->unk6E, p->unk72, p->unk65, p->unk74, &p->unk76)) {
                             goto next;
                         }
@@ -2653,7 +2653,7 @@ void func_8006131C(void) {
                     }
                 }
             } else if ((p->unk32 & 0x4000) && p->unk60 != NULL) {
-                *p->unk60 = 2;
+                p->unk60->unk0 = 2;
             }
         }
     next:
