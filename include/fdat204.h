@@ -1277,6 +1277,8 @@ typedef struct Pk8005C910 {
     u16 unk16;
     u16 unk18;
     u16 unk1A;
+    u16 unk1C;
+    u16 unk1E;
 } Pk8005C910;
 
 typedef struct PkHdr8005C910 {
@@ -1636,6 +1638,56 @@ typedef struct Obj80086624 {
     u32 unk34;
 } Obj80086624;
 
+typedef struct PkF3800640A4 {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    s32 unkC;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+} PkF3800640A4;
+
+typedef struct PkF4800640A4 {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    s32 unk10;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+} PkF4800640A4;
+
+typedef union Prim800640A4 {
+    Ft38005C910 *f3;
+    Ft48005C910 *f4;
+    Gt380063960 *g3;
+    Gt480063960 *g4;
+} Prim800640A4;
+
+typedef struct Spad800640A4 {
+    s32 unk0;
+    u8 *unk4;
+    u8 *unk8;
+    PkWord8005C910 unkC;
+    Part8005C910 *unk10;
+    u8 *unk14;
+    s32 unk18;
+    u32 *unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    u8 _pad2C[0xB4];
+    s32 unkE0;
+    Sv8006678C unkE4;
+} Spad800640A4;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1957,5 +2009,8 @@ void func_8007A078(Obj80073138 *arg0);
 s32 func_800132CC(s32 arg0, s32 arg1, s32 arg2);
 s32 *func_8006F798(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2);
 Obj800852B0 *func_800852B0(s32 arg0, Obj8008800C *arg1, u32 *arg2);
+void func_800665A8(void);
+void func_80063F94(s32 arg0);
+void func_80064040(Spad800640A4 *arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT204_H */
