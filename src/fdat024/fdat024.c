@@ -413,7 +413,47 @@ void func_801C6E14(void) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat024/nonmatchings/fdat024", func_801C6E80);
+s32 func_801C6E80(s32 arg0) {
+    Elem801C6E14 *e;
+
+    if (D_8019F528 == 0) {
+        switch (arg0) {
+        case 0:
+            e = &D_801D3368[0];
+        hit:
+            e->unk30 &= ~0x1000;
+            if (D_801C70EC == 0) {
+                func_800529F0(0, 0, 0x85);
+            } else if (D_801C70EC == 4) {
+                func_800529F0(0, 0, 0x8C);
+            } else {
+                func_800529F0(0, 0, 0x93);
+            }
+            func_8004CE44(0x4D, &e->unk10, 0x64, 0);
+            D_801C70EC++;
+            return 1;
+        case 1:
+            e = &D_801D3368[3];
+            goto hit;
+        case 2:
+            e = &D_801D3368[4];
+            goto hit;
+        case 3:
+            e = &D_801D3368[1];
+            goto hit;
+        case 4:
+            e = &D_801D3368[2];
+            goto hit;
+        case 10:
+            if (D_801C70EC >= 5) {
+                func_8008C2FC(0x100, func_801C6D94);
+                return 1;
+            }
+            return 0;
+        }
+    }
+    return 0;
+}
 
 void func_801C6FD4(Obj801C53A0 *arg0) {
     if (arg0->unk160 == 0) {
