@@ -5,7 +5,6 @@
 #include "gte.h"
 
 /* @types */
-
 typedef struct Vs8004BF3C {
     s32 unk0;
     u16 unk4;
@@ -141,8 +140,12 @@ typedef struct Sub80077EAC {
 
 typedef struct Obj80077CD8 {
     s32 unk0;
-    u8 _pad4[0x50];
+    u8 _pad4[0x3C];
+    u8 unk40;
+    u8 _pad41[0x13];
     void (*unk54)(struct Obj80077CD8 *, s32);
+    u8 _pad58[0x108];
+    u16 unk160;
 } Obj80077CD8;
 
 typedef struct Sub80078460 {
@@ -181,7 +184,7 @@ typedef struct Obj80077EAC {
     s32 unk4;
     s32 unk8;
     s32 unkC;
-    u8 _pad10[0x2];
+    u16 unk10;
     u16 unk12;
     u8 _pad14[0x6];
     u8 unk1A;
@@ -239,7 +242,9 @@ typedef struct Obj80077EAC {
     u8 _pad2AE[0x10];
     u16 unk2BE;
     Sub80077EAC unk2C0;
-    u8 _pad2C4[0xD0];
+    u8 _pad2C4[0xCC];
+    u8 unk390;
+    u8 _pad391[0x3];
     Obj80077CD8 *unk394;
     Sub8008166C *unk398;
 } Obj80077EAC;
@@ -573,7 +578,8 @@ typedef struct Obj8007789C {
 } Obj8007789C;
 
 typedef struct Sub8007789C {
-    u8 _pad0[0x20];
+    void (*unk0)();
+    u8 _pad4[0x1C];
     void (*unk20[1])(Obj8007789C *);
 } Sub8007789C;
 
@@ -2315,6 +2321,10 @@ typedef struct Spad80059508 {
     s32 unk14;
 } Spad80059508;
 
+typedef struct Res8004BF3C {
+    s32 unk0[4];
+} Res8004BF3C;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2706,5 +2716,37 @@ void func_800582C0(Sv800584F4 *arg0, s32 *arg1, s32 arg2);
 void func_800582E4(Sv800584F4 *arg0, Sv800584F4 *arg1, Sv800584F4 *arg2, Col800573FC *arg3, s32 arg4);
 void func_8005831C(Sub8004F1D4 *arg0);
 void func_800594D4(Sv8006678C *arg0, Sxy8005DEE4 *arg1, s32 *arg2, s32 *arg3);
+extern Obj80077EAC D_8008C2B8[];
+extern u16 D_80039D08[];
+extern u8 D_80039D2A;
+extern u8 D_800893C8[];
+extern u8 D_801C4460[];
+void DrawSync(s32 arg0);
+void VSync(s32 arg0);
+void InitHeap2(u8 *arg0, s32 arg1);
+void SsUtAllKeyOff(s32 arg0);
+void ClearImage(u8 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80056434(void);
+void func_8006CD54(void);
+void func_80072A70(void);
+void func_80016E64(void);
+void func_8004F964(void);
+void func_80081FD0(void);
+void func_80088D34(void);
+void func_8008156C(void);
+void func_80055CB8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+void func_8002A4B0(s32 arg0);
+void func_8004C7C8(void);
+void func_80012298(void);
+void func_80089354(void);
+void func_800722C4(void);
+void func_8007286C(void);
+void func_80077E78(void);
+void func_80086388(void);
+void func_8004D09C(s32 arg0, s32 arg1);
+void func_80061AD4(Res8004BF3C *arg0, Res8004BF3C *arg1);
+void func_80081A00(Res8004BF3C *arg0);
+void func_8004D004(Res8004BF3C *arg0, Res8004BF3C *arg1);
+void func_80016D64(void);
 
 #endif /* FDAT204_H */
