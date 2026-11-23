@@ -990,21 +990,42 @@ typedef struct Elem8005A364 {
     s32 unkC;
 } Elem8005A364;
 
+typedef struct Rot8005C904 {
+    s16 unk0[3][3];
+    u8 _pad12[0x2];
+} Rot8005C904;
+
+typedef struct Light8005C904 {
+    Rot8005C904 unk0[4];
+    s16 unk50[3][3];
+    u8 unk62;
+    u8 unk63;
+    u8 unk64;
+    u8 _pad65;
+    u16 unk66;
+} Light8005C904;
+
 typedef struct Obj80057A00 {
     u32 *unk0;
     u8 _pad4[0x4];
     Blk80055A24 *unk8;
-    u8 _padC[0x610];
+    Obj80053908 *unkC[0x184];
     SVECTOR *unk61C;
     u8 _pad620[0x500];
     Elem8005A364 unkB20[1];
     u8 _padB30[0x5DC8];
     u32 unk68F8[16];
     u32 unk6938[16];
-    u8 _pad6978[0xDC8];
+    u8 _pad6978[0xC4];
+    Light8005C904 unk6A3C[32];
+    s32 unk773C;
     Elem800730DC *unk7740;
     u8 _pad7744[0x10];
     Sub8006F234 unk7754;
+    Vec8004C98C unk7774;
+    u8 _pad7780[0x24];
+    Sub8006F234 unk77A4[4];
+    Sub8006F234 unk7824[4];
 } Obj80057A00;
 
 typedef struct Model80067EBC {
@@ -1246,21 +1267,6 @@ typedef struct Scr8005A364 {
     s32 unk10;
     s32 unk14;
 } Scr8005A364;
-
-typedef struct Rot8005C904 {
-    s16 unk0[3][3];
-    u8 _pad12[0x2];
-} Rot8005C904;
-
-typedef struct Light8005C904 {
-    Rot8005C904 unk0[4];
-    s16 unk50[3][3];
-    u8 unk62;
-    u8 unk63;
-    u8 unk64;
-    u8 _pad65;
-    u16 unk66;
-} Light8005C904;
 
 typedef struct Elem8005C904 {
     s32 unk0;
@@ -1974,5 +1980,14 @@ void func_800590E8(Sub8004C98C *arg0, Word80057A00 *arg1, s32 arg2);
 void func_8005911C(SVECTOR *arg0, Word80057A00 *arg1, s32 arg2);
 void func_80059140(SVECTOR *arg0, SVECTOR *arg1, SVECTOR *arg2, Word80057A00 *arg3, s32 arg4);
 void func_80059178(Sub8004C98C *arg0);
+void SetLightMatrix(Rot8005C904 *m);
+void SetFogNearFar(s32 arg0, s32 arg1, s32 arg2);
+void ApplyMatrixLV(Sub8006F234 *m, Vec8004C98C *v0, Vec8004C98C *v1);
+s32 func_8005C710(s16 *arg0, s16 *arg1);
+s32 func_800674B0(Elem800730DC *arg0, s32 arg1);
+void func_80067EBC(u16 arg0);
+void func_80068D18(u16 arg0, s32 arg1);
+void func_8005BE20(u16 arg0, s32 arg1);
+void func_80064684(u16 arg0, s32 arg1);
 
 #endif /* FDAT202_H */
