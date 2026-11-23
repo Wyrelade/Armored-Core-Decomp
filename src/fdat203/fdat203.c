@@ -2709,7 +2709,7 @@ s32 func_8006C9D4(s32 arg0, s32 arg1, s32 arg2, Obj8006C9D4 *arg3) {
 }
 
 void func_8006CA5C(Obj800732FC *arg0, s16 *arg1, s32 arg2, s32 arg3) {
-    if (func_8007275C(arg0, arg1, arg2, arg3, 0) == 0) {
+    if (func_8007275C(arg0, arg1, arg2, arg3, 0) == NULL) {
         func_8007334C(arg0, arg1, arg2, arg3, 0);
     }
 }
@@ -3324,7 +3324,7 @@ void func_80072B20(s32 arg0) {
 }
 
 void func_80072B30(s32 arg0) {
-    D_8019D848 = arg0;
+    D_8019D848.unk0 = arg0;
 }
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80072B40);

@@ -114,6 +114,31 @@ typedef struct Obj800732FC {
     u8 _pad162[0xE];
 } Obj800732FC;
 
+typedef struct Hit800736CC {
+    s32 unk0;
+    Obj800732FC *unk4;
+} Hit800736CC;
+
+typedef struct Sub800736CC {
+    u8 _pad0[0x4];
+    void (*unk4)(struct Obj800736CC *, Sub8004DE88 *, Sub8004DE88 *, Sub8004DE88 *, s32);
+} Sub800736CC;
+
+typedef struct Obj800736CC {
+    u8 _pad0[0x14];
+    Sub800736CC *unk14;
+    u8 _pad18[0x4];
+    u16 unk1C;
+} Obj800736CC;
+
+typedef struct Obj8008196C {
+    s32 unk0;
+    u8 _pad4[0x12];
+    u16 unk16;
+    s16 unk18;
+    s16 unk1A;
+} Obj8008196C;
+
 typedef struct Obj800744D0 {
     u8 _pad0[0x164];
     u16 unk164;
@@ -139,7 +164,7 @@ typedef struct Obj800781F0 {
     u8 _pad30[0x1C];
     struct Sub800787B0 *unk4C;
     u8 _pad50[0x30];
-    s32 unk80;
+    Obj8008196C *unk80;
     Elem8007A590 unk84[8];
     u8 _pad204[0x10];
     u16 unk214;
@@ -1877,7 +1902,7 @@ void func_8006D030(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006D084(u32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006E3D0(s32 *arg0, Sub8004F1D4 *arg1, s32 *arg2);
 extern s32 D_8019D844;
-extern s32 D_8019D848;
+extern Hit800736CC D_8019D848;
 void func_8004E0C8(Sub8007618C_fdat202 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3);
 s32 func_8004E448(Obj8004EE14 *arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2, Sub8004DE88 *arg3, Sub8004DE88 *arg4);
 void func_8004EBA8(Obj8004EE14 *arg0, s32 arg1, s32 arg2, s32 arg3);
@@ -1975,7 +2000,7 @@ void SsVabClose(s16 arg0);
 extern Sub8004CF0C D_80042086[];
 void SsUtKeyOffV(s16 arg0);
 s16 SsUtKeyOnV(s16 voice, s16 vabId, s16 prog, s16 tone, s16 note, s16 fine, s16 voll, s16 volr);
-s32 func_8007275C(Obj800732FC *arg0, s16 *arg1, s32 arg2, s32 arg3, s32 arg4);
+Obj800736CC *func_8007275C(Obj800732FC *arg0, s16 *arg1, s32 arg2, s32 arg3, s32 arg4);
 Obj800732FC *func_8007334C(Obj800732FC *arg0, s16 *arg1, s32 arg2, s32 arg3, s32 arg4);
 extern s32 D_801DC0F8;
 extern s32 D_801DE518[3][64][16];
