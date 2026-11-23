@@ -476,11 +476,33 @@ typedef struct Sub80073104 {
 } Sub80073104;
 
 typedef struct Elem800730DC {
-    u8 _pad0[0x26];
+    u8 _pad0[0x10];
+    s16 unk10;
+    s16 unk12;
+    s16 unk14;
+    s16 unk16;
+    s16 unk18;
+    s16 unk1A;
+    s16 unk1C;
+    s16 unk1E;
+    s16 unk20;
+    s16 unk22;
+    s16 unk24;
     s16 unk26;
     u16 *unk28;
     Sub80073104 *unk2C;
-    u8 _pad30[0x10];
+    u32 unk30_0 : 8;
+    u32 unk30_8 : 1;
+    u32 unk30_9 : 3;
+    u32 unk30_12 : 1;
+    u32 unk30_13 : 1;
+    u32 unk30_14 : 14;
+    u32 unk30_28 : 4;
+    u32 unk34_0 : 12;
+    u32 unk34_12 : 12;
+    u32 unk34_24 : 1;
+    u32 unk34_25 : 7;
+    u8 _pad38[0x8];
 } Elem800730DC;
 
 typedef struct Elem800736AC {
@@ -1223,6 +1245,31 @@ typedef struct Scr8005A364 {
     s32 unk14;
 } Scr8005A364;
 
+typedef struct Rot8005C904 {
+    s16 unk0[3][3];
+    u8 _pad12[0x2];
+} Rot8005C904;
+
+typedef struct Light8005C904 {
+    Rot8005C904 unk0[4];
+    s16 unk50[3][3];
+    u8 unk62;
+    u8 unk63;
+    u8 unk64;
+    u8 _pad65;
+    u16 unk66;
+} Light8005C904;
+
+typedef struct Elem8005C904 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s16 unkC;
+    s16 unkE;
+    Elem800730DC *unk10;
+    Light8005C904 *unk14;
+} Elem8005C904;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1568,5 +1615,10 @@ extern Mat80058B04 D_800B1228;
 void func_8005804C(u16 arg0, s32 arg1, s32 arg2);
 void func_80059198(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
 void func_8005A330(SVECTOR *arg0, Un8005A364 *arg1, s32 *arg2, s32 *arg3);
+extern s32 D_801987C8;
+void Square0(Vec8004C98C *v0, Vec8004C98C *v1);
+void func_8005C904(Elem800730DC *arg0, s32 arg1, Elem8005C904 **arg2, Elem8005C904 **arg3, Sub8004DE88 *arg4);
+void func_8005AF90(Elem8005C904 *arg0);
+void func_800639D8(Elem8005C904 *arg0);
 
 #endif /* FDAT202_H */
