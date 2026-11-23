@@ -9,7 +9,7 @@
 # Armored Core Decompilation
 
 <!-- PROGRESS:BADGE -->
-![matched](https://img.shields.io/badge/matched-2842%2F5786%20(49.12%25)-1f6feb)
+![matched](https://img.shields.io/badge/matched-2844%2F5786%20(49.15%25)-1f6feb)
 <!-- /PROGRESS:BADGE -->
 ![build](https://img.shields.io/badge/build-byte--identical-2ea043)
 ![platform](https://img.shields.io/badge/platform-PS1%20(SCUS--94182)-8957e5)
@@ -52,9 +52,9 @@ C compile pipeline is live, and the compiler is pinned. Matching has started.
 | &nbsp;&nbsp;└ `FDAT_202` | 619 | 246 | `▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱` 39.74% |
 | &nbsp;&nbsp;└ `FDAT_203` | 579 | 222 | `▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱` 38.34% |
 | &nbsp;&nbsp;└ `FDAT_204` | 582 | 224 | `▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱` 38.49% |
-| **Mission overlays** (`FDAT.T`, 58 entries, 57 unique) | 2768 | 1394 | `▰▰▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱` 50.36% |
+| **Mission overlays** (`FDAT.T`, 58 entries, 57 unique) | 2768 | 1396 | `▰▰▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱` 50.43% |
 | PsyQ 3.7 libraries (`configs/USA/psyq_funcs.txt`, kept as asm, not counted) | 528 | | |
-| **Total** | 5786 | 2842 | `▰▰▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱` 49.12% |
+| **Total** | 5786 | 2844 | `▰▰▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱` 49.15% |
 <!-- /PROGRESS:TABLE -->
 
 Counts come from objdiff (`tools/progress_report.py`, published to decomp.dev by
