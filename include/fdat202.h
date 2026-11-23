@@ -945,6 +945,53 @@ typedef struct Obj8008D3B0 {
     s32 unk144;
 } Obj8008D3B0;
 
+typedef struct Elem8005A364 {
+    s32 unk0;
+    s16 unk4;
+    u8 unk6;
+    u8 _pad7[0x5];
+    s32 unkC;
+} Elem8005A364;
+
+typedef struct Obj80057A00 {
+    u32 *unk0;
+    u8 _pad4[0x4];
+    Blk80055A24 *unk8;
+    u8 _padC[0x610];
+    SVECTOR *unk61C;
+    u8 _pad620[0x500];
+    Elem8005A364 unkB20[1];
+    u8 _padB30[0x5DC8];
+    u32 unk68F8[16];
+    u32 unk6938[16];
+    u8 _pad6978[0xDC8];
+    Elem800730DC *unk7740;
+    u8 _pad7744[0x10];
+    Sub8006F234 unk7754;
+} Obj80057A00;
+
+typedef struct Model80067EBC {
+    u8 _pad0[0x4];
+    u16 unk4;
+    u8 _pad6[0x2];
+    u8 *unk8;
+    u8 _padC[0x4];
+    u32 *unk10;
+    u16 unk14;
+    u8 _pad16[0x6];
+} Model80067EBC;
+
+typedef struct Bank80067EBC {
+    u8 _pad0[0xC];
+    Model80067EBC unkC[1];
+} Bank80067EBC;
+
+typedef struct Obj80067EBC {
+    Bank80067EBC *unk0;
+    u8 _pad4[0xB14];
+    u8 unkB18[1];
+} Obj80067EBC;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1108,7 +1155,7 @@ extern Obj80053908 *D_801A5F34[];
 s32 func_80015D80(s32 arg0, s32 arg1);
 void func_800165E4(s32 arg0, s32 arg1, Obj80053908 *arg2);
 void func_800574D8(Obj80053908 *arg0);
-extern s32 D_801A5F30;
+extern Obj80067EBC D_801A5F30;
 extern Obj800558A8 D_801A6548[];
 void func_800558A8(Obj800558A8 *arg0);
 extern Elem80056A54 D_801AC964[];
@@ -1182,7 +1229,7 @@ extern u8 D_8008DBC8[];
 s32 rcos(s32 arg0);
 extern Elem8005715C *D_801A5F1C[];
 extern Sub8005715C *D_801A5F24[];
-extern u32 *D_801A5F28;
+extern Obj80057A00 D_801A5F28;
 extern s32 D_801AC814[];
 extern s32 D_801AC818[];
 void ClearOTagR(u32 *arg0, s32 arg1);

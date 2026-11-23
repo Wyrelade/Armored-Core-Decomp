@@ -666,7 +666,7 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80053848);
 void func_80053908(u16 arg0, Obj80053908 *arg1) {
     D_801A5F34[arg0] = arg1;
     arg1 = (Obj80053908 *)((s32)arg1 + arg1->unk8);
-    D_801A5F30 = arg1;
+    D_801A5F30.unk0 = (Bank80067EBC *)arg1;
     func_800574D8(arg1);
 }
 
@@ -1055,8 +1055,8 @@ void func_8005715C(void) {
     e = &((Obj8005715C *)&D_801A5E18)->unk4[db->unk0];
     D_801A5F1C[0] = e;
     D_801A5F24[0] = &e->unk74;
-    D_801A5F28 = e->unk0;
-    ClearOTagR(D_801A5F28, 0x2000);
+    D_801A5F28.unk0 = e->unk0;
+    ClearOTagR(D_801A5F28.unk0, 0x2000);
     D_801A5F24[0]->unk8 = D_801A5F24[0]->unk0;
     D_801AC818[0] = 0;
     D_801AC814[0] = 0;
@@ -1250,7 +1250,7 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80057994);
 void func_800579D4(u16 arg0) {
     s32 unused[2];
 
-    D_801A5F30 = D_801A5F2C[arg0];
+    D_801A5F30.unk0 = (Bank80067EBC *)D_801A5F2C[arg0];
 }
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80057A00);
@@ -3830,7 +3830,7 @@ void func_8008D3B0(void) {
     func_800135E8((Sub80056A54 *)&sc->unk60, (Sub80056A54 *)&sc->unk80, 1);
     ot = D_801A5F24[0]->unk8;
     rect = D_801A26C0;
-    sc->unk140 = D_801A5F28;
+    sc->unk140 = D_801A5F28.unk0;
     sc->unk144 = ot;
     rect.unk2 -= D_801A26E2[0] >> 1;
     func_8008CA14(&rect, D_801A26CA, D_8004C1AC);
