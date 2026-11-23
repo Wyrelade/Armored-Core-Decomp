@@ -189,6 +189,8 @@ typedef struct Obj801C7394 {
 typedef struct Obj801C7910 {
     u8 _pad0[0x1000];
     u8 unk1000[1];
+    u8 _pad1001[0xFF];
+    u8 unk1100[1];
 } Obj801C7910;
 
 typedef struct Sub801C5550 {
@@ -491,6 +493,44 @@ typedef struct Part801C7DA8 {
     Slot801C7DA8 unk14[1];
 } Part801C7DA8;
 
+typedef struct View801C65CC {
+    u8 _pad0[0x8];
+    Sub801C7910 unk8;
+    Sub801C7910 unk10;
+    u8 _pad18[0x14];
+    s16 unk2C;
+    s16 unk2E;
+    s16 unk30;
+    s16 unk32;
+    u8 _pad34[0x2];
+    u16 unk36;
+    u8 _pad38[0x8];
+    u8 unk40;
+    u8 unk41;
+    u8 unk42;
+    u8 _pad43[0x1];
+    u16 unk44;
+    u8 _pad46[0x1E];
+    Sub801C6E3C unk64;
+    Sub801C7910 unkCC;
+    u8 _padD4[0x34];
+    s16 unk108;
+} View801C65CC;
+
+typedef struct Elem801C65CC {
+    u8 _pad0[0x2];
+    s16 unk2;
+    s16 unk4;
+    u8 _pad6[0x2];
+    u16 unk8;
+    u8 unkA;
+    u8 unkB;
+    u8 unkC;
+    u8 unkD;
+    u8 unkE;
+    u8 unkF;
+} Elem801C65CC;
+
 /* @externs */
 void func_801C55AC(Obj801C4EB8 *arg0);
 void func_801C6480(Obj801C6554 *arg0);
@@ -594,5 +634,23 @@ void func_80014AE4(s32 arg0, s32 arg1, s32 arg2, Sub801C7910 *arg3);
 void func_80086448(Obj801C52C0 *arg0, Sub801C7910 *arg1, Sub801C7910 *arg2, Sub801C7910 *arg3, Sub801C7910 *arg4, s32 arg5, s32 arg6, s32 arg7);
 void func_8008840C(Obj801C52C0 *arg0, Sub801C7910 *arg1, Sub801C7910 *arg2, Sub801C7910 *arg3, s32 arg4, s32 arg5);
 void func_8008915C(Obj801C52C0 *arg0, Sub801C7910 *arg1, Sub801C7910 *arg2, Sub801C7910 *arg3, s32 arg4, s32 arg5, s32 arg6, Sub801C7910 *arg7);
+Sub8006D4BC *func_8006D4BC(s32 arg0);
+void func_80014728(s32 arg0, Sub801C7910 *arg1);
+s16 func_8006E6B4(s16 arg0, Sub801C7910 *arg1);
+void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
+void func_8004D178(s32 arg0, u8 *arg1, s32 arg2, s32 arg3, s32 arg4);
+extern u8 D_801CD5FC[];
+extern Elem801C65CC D_801CD51C[];
+extern u8 D_8019F518;
+extern u8 D_801CD620[];
+extern u8 D_801CD624[];
+extern u8 D_801CD628[];
+extern u8 D_801CD62C[];
+extern u8 D_801CD630[];
+extern u8 D_801CD634[];
+extern View801C65CC D_801A26B8[];
+extern s32 D_8019F524[];
+extern u16 D_801987D8[];
+extern u16 D_8019F52A;
 
 #endif /* FDAT042_H */
