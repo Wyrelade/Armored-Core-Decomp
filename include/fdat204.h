@@ -156,6 +156,12 @@ typedef struct Obj8008166C {
     s16 unk1A;
 } Obj8008166C;
 
+typedef struct Sub8008166C {
+    u8 _pad0[0x2C];
+    s16 unk2C;
+    s16 unk2E;
+} Sub8008166C;
+
 typedef struct Obj80077EAC {
     s32 unk0;
     s32 unk4;
@@ -179,7 +185,9 @@ typedef struct Obj80077EAC {
     u16 unk216;
     u8 _pad218[0x8];
     u16 unk220;
-    u8 _pad222[0x3F];
+    u8 _pad222[0x32];
+    s32 unk254;
+    u8 _pad258[0x9];
     u8 unk261;
     u8 _pad262[0xE];
     u16 unk270;
@@ -202,7 +210,7 @@ typedef struct Obj80077EAC {
     Sub80077EAC unk2C0;
     u8 _pad2C4[0xD0];
     Obj80077CD8 *unk394;
-    u8 _pad398[0x4];
+    Sub8008166C *unk398;
 } Obj80077EAC;
 
 typedef struct Sub80082384 {
@@ -1911,5 +1919,6 @@ void func_80079480();
 void func_800764D0(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3, s16 *arg4, s32 arg5, void (*arg6)());
 void func_8007647C(Obj80073138 *arg0, s32 arg1, s32 arg2, s16 *arg3, s32 arg4, void (*arg5)());
 void func_8007A078(Obj80073138 *arg0);
+s32 func_800132CC(s32 arg0, s32 arg1, s32 arg2);
 
 #endif /* FDAT204_H */
