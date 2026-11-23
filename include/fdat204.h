@@ -1298,7 +1298,8 @@ typedef struct Part8005C910 {
     u16 unkE;
     u32 *unk10;
     u16 unk14;
-    u8 _pad16[0x6];
+    u16 unk16;
+    u8 *unk18;
 } Part8005C910;
 
 typedef struct Pk8005C910 {
@@ -1377,7 +1378,8 @@ typedef struct Sub80073508 {
 } Sub80073508;
 
 typedef struct Tmd8005C910 {
-    u8 _pad0[0xC];
+    u8 _pad0[0x8];
+    s32 unk8;
     Part8005C910 unkC[1];
 } Tmd8005C910;
 
@@ -2070,6 +2072,11 @@ typedef struct Scr80055EA8 {
     s32 unk84;
     s32 unk88;
 } Scr80055EA8;
+
+typedef union Hdr80056688 {
+    u32 w;
+    u8 b[4];
+} Hdr80056688;
 
 /* @externs */
 extern s8 D_800893C4;
