@@ -4,7 +4,6 @@
 #include "common.h"
 
 /* @types */
-
 typedef struct Sub8004DE88 {
     s16 unk0;
     s16 unk2;
@@ -274,10 +273,17 @@ typedef struct Elem801C5314 {
     u8 _pad4[0x3C];
 } Elem801C5314;
 
+typedef struct Sub801C4C94 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C4C94;
+
 /* @externs */
 s16 func_80073904(void);
 void func_801C4DBC();
-void func_801C5208();
+s32 func_801C5208(Obj801C52C0 *arg0, s32 arg1, ...);
 void func_801C5094(Obj801C52C0 *arg0);
 void func_801C5404();
 void func_800775B8(Obj801C52C0 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, void (*arg5)());
@@ -330,5 +336,8 @@ s32 func_801C6860(Elem801C5EA8 *arg0, u8 arg1);
 void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_8004CE44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3);
 void func_801C6F94(Obj801C52C0_fdat000 *arg0);
+s32 func_80073714(Obj801C52C0 *arg0, s32 arg1);
+void func_801C51A4(s32 arg0, s32 arg1);
+extern Sub801C4C94 D_80039C78;
 
 #endif /* FDAT036_H */
