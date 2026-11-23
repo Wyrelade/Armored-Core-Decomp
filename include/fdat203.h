@@ -1465,7 +1465,8 @@ typedef struct Vtx80059D54 {
     s32 unk0;
     s16 unk4;
     u8 unk6;
-    u8 _pad7[0x5];
+    u8 _pad7[0x1];
+    Col800573FC unk8;
     s32 unkC;
 } Vtx80059D54;
 
@@ -2316,6 +2317,30 @@ typedef struct Spad80064E8C {
     Un80064E8C unk10C;
 } Spad80064E8C;
 
+typedef struct Box80066950 {
+    Sv800584F4 unk0;
+    Sv800584F4 unk8;
+} Box80066950;
+
+typedef struct Scr80066950 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    Elem800658B8 *unkC;
+    Sv800584F4 unk10;
+    Box80066950 unk18;
+    Sv800584F4 unk28;
+    s32 unk30[3];
+    u8 _pad3C[0x4];
+    Vtx80059D54 *unk40;
+    s32 unk44[3];
+    u8 _pad50[0x4];
+    s32 unk54[3];
+    u8 _pad60[0x4];
+    Obj80013A88 unk64;
+    u8 *unk84;
+} Scr80066950;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2711,5 +2736,6 @@ void func_8006559C(Sub8004DE88 *arg0);
 void func_8006550C(Sub8004DE88 *arg0, s32 *arg1, s32 arg2);
 void func_80065540(u8 *arg0, s32 *arg1, s32 arg2);
 void func_80065564(u8 *arg0, u8 *arg1, u8 *arg2, s32 *arg3, s32 arg4);
+extern u16 D_80031564[];
 
 #endif /* FDAT203_H */
