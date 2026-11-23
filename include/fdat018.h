@@ -28,7 +28,7 @@ typedef struct Obj801C52C0 {
     u8 _pad18[0x14];
     s16 unk2C;
     u8 _pad2E[0x8];
-    s16 unk36;
+    u16 unk36;
     u8 _pad38[0x4];
     u8 unk3C;
     u8 unk3D;

@@ -133,7 +133,7 @@ typedef struct Obj801C52C0 {
     s16 unk2C;
     s16 unk2E;
     u8 _pad30[0x6];
-    s16 unk36;
+    u16 unk36;
     u8 _pad38[0x4];
     u8 unk3C;
     u8 unk3D;

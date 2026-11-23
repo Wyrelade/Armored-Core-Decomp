@@ -139,7 +139,7 @@ typedef struct Obj801C52C0 {
     u8 _pad18[0x14];
     Task801C6254 *unk2C;
     u8 _pad30[0x6];
-    u16 unk36;
+    s16 unk36;
     Sub801C6254 *unk38;
     u8 unk3C;
     u8 unk3D;
