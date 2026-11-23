@@ -2273,7 +2273,7 @@ void func_8007EF94(Obj8007618C *arg0, s32 arg1);
 void func_8008080C();
 void func_8007DB98();
 void func_80080D00(void);
-void func_800813D8();
+void func_800813D8(Obj8007618C *arg0, s32 arg1);
 void func_8008238C();
 void func_800826FC();
 extern u16 D_8008EF4A;
@@ -2516,5 +2516,7 @@ void func_80079EF4();
 void func_8007A654();
 void func_8007ACC0();
 void func_8007B868(Obj8007618C *arg0);
+extern u8 D_8004121A;
+s32 func_80081318(Obj8007618C *arg0);
 
 #endif /* FDAT202_H */

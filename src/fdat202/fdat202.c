@@ -7416,7 +7416,424 @@ s32 func_80081318(Obj8007618C *arg0) {
     return 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800813D8);
+void func_800813D8(Obj8007618C *arg0, s32 arg1) {
+    Sub8004DE88 pos;
+    s32 state;
+    s32 val;
+    u16 *flags;
+
+    state = arg1;
+    if (arg0->unk36 & 0x10) {
+        state = arg0->unk3C;
+    }
+    if (arg0->unk64.unk0 == 0x16) {
+        if (func_8004EAD0(&arg0->unk64) == 0) {
+            goto dispatch;
+        }
+        func_8004DE88(&arg0->unk64, &arg0->unkCC);
+        arg0->unkCC.unk0 <<= 6;
+        arg0->unkCC.unk2 <<= 6;
+        arg0->unkCC.unk4 <<= 6;
+        goto release;
+    }
+    if (arg0->unk3D == 0xC0) {
+        goto dispatch;
+    }
+    if (state == 0x60 || state == 0x61) {
+        goto dispatch;
+    }
+    if (arg0->unk41 != 0x40) {
+        if (arg0->unk2C - arg0->unk8.unk2 < 0x32) {
+            goto dispatch;
+        }
+        pos.unk0 = arg0->unk8.unk0;
+        pos.unk2 = arg0->unk8.unk2 + 0x32;
+        pos.unk4 = arg0->unk8.unk4;
+        if (arg0->unk3D != 0xB0 || (arg0->unkCC.unk0 == 0 && arg0->unkCC.unk4 == 0)) {
+            D_801A5DC8 = 1;
+        }
+        val = func_80074FA4(arg0, &pos);
+        D_801A5DC8 = 0;
+        if (val != 0) {
+            goto dispatch;
+        }
+        state = 0x4B;
+        arg0->unkCC.unk2 = 0x100;
+        arg0->unkCC.unk0 = arg0->unkCC.unk4 = 0;
+        arg0->unk41 = arg0->unk3C = 0x4B;
+        arg0->unk36 &= ~0x10;
+    }
+    arg0->unk148 = 0;
+    arg0->unk15C = 0;
+    flags = &D_80040FC0.h;
+    *flags &= ~2;
+    switch (arg0->unk64.unk0) {
+    case 0:
+        break;
+    case 2:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x1A);
+        return;
+    case 4:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x20);
+        return;
+    case 6:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x21);
+        return;
+    case 15:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x1B);
+        return;
+    case 17:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x22);
+        return;
+    case 19:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x23);
+        return;
+    case 9:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x1C);
+        return;
+    case 12:
+        arg0->unkCC.unk2 = 0;
+        func_8007B8E8(arg0, 0x1D);
+        return;
+    case 21:
+        arg0->unkCC = D_80039C78;
+        if (arg0->unk3D == 2) {
+            func_800775B8(arg0, 0x1E, 1, 0x200, &arg0->unkCC, func_8007B548);
+            val = 0x49;
+        } else {
+            func_800775B8(arg0, 0x1F, 1, 0x200, &arg0->unkCC, func_8007B548);
+            val = 0x4A;
+        }
+        arg0->unk3C = val;
+        arg0->unk41 = val;
+        return;
+    }
+dispatch:
+    switch (state) {
+    case 1:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 2, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 2, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 2:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 4, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 4, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 3:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 6, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 6, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 6:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 0xF, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 0xF, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 7:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 0x11, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 0x11, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 8:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 0x13, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 0x13, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 4:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 9, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 9, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 5:
+        switch (arg0->unk64.unk0) {
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 0xC, 0, 0x100, &arg0->unkCC);
+            break;
+        default:
+            if (func_80081318(arg0)) {
+                func_80081088(arg0, 0xC, 0, 0x100, &arg0->unkCC);
+            }
+            break;
+        }
+        break;
+    case 0:
+        switch (arg0->unk64.unk0) {
+        default:
+            if (func_80081318(arg0) == 0) {
+                break;
+            }
+        case 0: case 2: case 4: case 6: case 9: case 12: case 15: case 17: case 19:
+            func_80081088(arg0, 0, 0, 0x100, &arg0->unkCC);
+            break;
+        }
+        break;
+    case 9:
+        if (arg0->unk3D != 3) {
+            if (arg0->unk64.unk0 == 0x15) {
+                func_80076548(arg0, 2, (s32)func_80079DB0);
+                arg0->unk64.unkC = 1;
+                arg0->unk64.unk2 = 1;
+                break;
+            }
+            if (func_80081318(arg0) == 0) {
+                break;
+            }
+        }
+        func_80076658(arg0, 0x15, 1, 2, D_800411B4, D_800411B6, func_80079DB0);
+        break;
+    case 10:
+        if (arg0->unk3D != 2) {
+            if (arg0->unk64.unk0 == 0x15) {
+                func_80076548(arg0, 3, (s32)func_80079EC0);
+                arg0->unk64.unkC = 1;
+                arg0->unk64.unk2 = 1;
+                break;
+            }
+            if (func_80081318(arg0) == 0) {
+                break;
+            }
+        }
+        func_80076658(arg0, 0x15, 1, 3, -D_800411B4, -D_800411B6, func_80079EC0);
+        break;
+    case 0x40:
+        if (arg0->unk3D != 0xC0) {
+            if (D_8004121A == 1) {
+                arg0->unkCC.unk2 = 0;
+                goto release;
+            }
+            if (func_80081318(arg0) == 0) {
+                break;
+            }
+            if (arg0->unk64.unk0 == 0x38) {
+                func_80076A84(arg0, 0x16, 1, 0xFF, (s32)&D_80040FEC[0]->unkC, (s32)func_80079980);
+                arg0->unk64.unkE = 0x400;
+            } else {
+                func_80076A84(arg0, 0x16, 1, 0xFF, (s32)&D_80040FEC[0]->unkC, (s32)func_80079980);
+            }
+            break;
+        }
+    release:
+        func_800775B8(arg0, 0x19, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x41:
+        func_800775B8(arg0, 0x1A, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x42:
+        func_800775B8(arg0, 0x20, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x43:
+        func_800775B8(arg0, 0x21, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x44:
+        func_800775B8(arg0, 0x1B, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x45:
+        func_800775B8(arg0, 0x22, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x46:
+        func_800775B8(arg0, 0x23, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x47:
+        func_800775B8(arg0, 0x1C, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x48:
+        func_800775B8(arg0, 0x1D, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x49:
+        func_800775B8(arg0, 0x1E, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x4A:
+        func_800775B8(arg0, 0x1F, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x4B:
+        func_800775B8(arg0, 0x18, 1, 0x200, &arg0->unkCC, func_8007B548);
+        break;
+    case 0x60:
+        func_8007A02C(arg0);
+        if (arg0->unk64.unk0 != 0x17) {
+            arg0->unk15C = 0;
+            arg0->unk148 = 0;
+            func_8004CE44(0xE, &arg0->unk8, 0x3C, 0);
+        }
+        switch (arg0->unk64.unk0) {
+        case 0x18:
+        case 0x19:
+            func_80081088(arg0, 0, 0, 0x100, &arg0->unkCC);
+            state = 0;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x1A:
+            func_80081088(arg0, 2, 0, 0x100, &arg0->unkCC);
+            state = 1;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x20:
+            func_80081088(arg0, 4, 0, 0x100, &arg0->unkCC);
+            state = 2;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x21:
+            func_80081088(arg0, 6, 0, 0x100, &arg0->unkCC);
+            state = 3;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x1B:
+            func_80081088(arg0, 0xF, 0, 0x100, &arg0->unkCC);
+            state = 6;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x22:
+            func_80081088(arg0, 0x11, 0, 0x100, &arg0->unkCC);
+            state = 7;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x23:
+            func_80081088(arg0, 0x13, 0, 0x100, &arg0->unkCC);
+            state = 8;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x1C:
+            func_80081088(arg0, 9, 0, 0x100, &arg0->unkCC);
+            state = 4;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x1D:
+            func_80081088(arg0, 0xC, 0, 0x100, &arg0->unkCC);
+            state = 5;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x1E:
+            func_80076658(arg0, 0x15, 1, 2, D_800411B4, D_800411B6, func_80079DB0);
+            state = 9;
+            arg0->unk36 &= ~0x10;
+            break;
+        case 0x1F:
+            func_80076658(arg0, 0x15, 1, 3, -D_800411B4, -D_800411B6, func_80079EC0);
+            state = 0xA;
+            arg0->unk36 &= ~0x10;
+            break;
+        default:
+            if (arg0->unk64.unk0 == 0x17) {
+                if (func_8004EBF8(&arg0->unk64)) {
+                    arg0->unk36 &= ~0x10;
+                    func_80081088(arg0, 0, 0, 0x100, &arg0->unkCC);
+                } else {
+                    func_800765E8(arg0, 0x17, 1, (s32)func_80079904);
+                }
+            } else {
+                func_800765E8(arg0, 0x17, 1, (s32)func_80079904);
+                arg0->unkCC = D_80039C78;
+            }
+            arg0->unk64.unkE = 0x200;
+            break;
+        }
+        break;
+    case 0x61:
+        func_8007A02C(arg0);
+        if (arg0->unk64.unk0 == 0x24) {
+            if (func_8004EBF8(&arg0->unk64)) {
+                state = 0;
+                arg0->unk36 &= ~0x10;
+                func_80081088(arg0, 0, 0, 0x200, &arg0->unkCC);
+            } else {
+                func_800765E8(arg0, 0x24, 1, (s32)func_80079904);
+                arg0->unk64.unkE = 0x200;
+            }
+        } else {
+            arg0->unk15C = 0;
+            arg0->unk148 = 0;
+            func_800765E8(arg0, 0x24, 1, (s32)func_80079904);
+            arg0->unk64.unkE = 0x200;
+            func_8004EA3C(&arg0->unk64, 1, (s32)&D_80040FEC[0]->unk8);
+            arg0->unkCC = D_80039C78;
+            if (arg0->unk2E <= arg0->unk8.unk2 && arg0->unk2E >= arg0->unk8.unk2 - arg0->unk2A) {
+                func_8007847C(arg0, 0x64, 5, 0x12C, 0x2BC, 0x64, 0x12C, 0x40);
+            }
+        }
+        break;
+    case 0x20:
+        if (arg0->unk64.unk0 == 0x38 && func_8004EBF8(&arg0->unk64)) {
+            arg0->unk36 &= ~0x10;
+            func_8007BA2C();
+        }
+        func_800766E0(arg0, 0x38, 1, 0, 0, 0, (s32)func_8007A654);
+        arg0->unk64.unkE = 0x400;
+        break;
+    case 0x21:
+        if (arg0->unk64.unk0 == 0x2F && func_8004EBF8(&arg0->unk64)) {
+            arg0->unk36 &= ~0x10;
+            func_8007BA2C();
+        }
+        func_800775B8(arg0, 0x2F, 1, 0x400, &arg0->unkCC, func_8007ACC0);
+        break;
+    case 0x80:
+        func_8007790C(arg0, arg0->unk64.unk0, 1, 0x400, &arg0->unkCC, -1, func_8007B868);
+        break;
+    case 0x81:
+        func_800778B8(arg0, arg0->unk64.unk0, 0x400, &arg0->unkCC, -1, func_8007B548);
+        break;
+    }
+    if (!(arg0->unk36 & 0x10)) {
+        arg0->unk3C = state;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8008238C);
 
