@@ -347,14 +347,48 @@ typedef struct Elem80052338 {
 } Elem80052338;
 
 typedef struct Elem8005460C {
-    u8 _pad0[0x12];
+    s16 unk0[3];
+    s16 unk6[3];
+    s16 unkC[3];
     s16 unk12;
-    u8 _pad14[0x68];
+    s16 unk14[3][3];
+    u16 unk26;
+    s32 unk28[3];
+    u8 _pad34[0x14];
+    struct Elem8005460C *unk48;
+    s16 unk4C[3];
+    s16 unk52[3];
+    s16 unk58[3];
+    s16 unk5E[3];
+    s16 unk64[3];
+    u8 _pad6A[0x12];
 } Elem8005460C;
+
+typedef struct Obj80053908 {
+    u8 _pad0[0x5];
+    u8 unk5;
+    u8 _pad6[0x2];
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+} Obj80053908;
 
 typedef struct Obj800558A8 {
     s16 unk0;
-    u8 _pad2[0x1E];
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    s16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 *unk14;
+    u16 *unk18;
+    Obj80053908 *unk1C;
     struct Elem8005460C *unk20;
     struct Obj800558A8 **unk24;
 } Obj800558A8;
@@ -514,13 +548,6 @@ typedef struct Sub80052F90 {
     u16 unk14;
     u16 unk16;
 } Sub80052F90;
-
-typedef struct Obj80053908 {
-    u8 _pad0[0x5];
-    u8 unk5;
-    u8 _pad6[0x2];
-    s32 unk8;
-} Obj80053908;
 
 typedef struct Sub80056A54 {
     u8 _pad0[0x14];
@@ -2207,6 +2234,31 @@ typedef struct Ent8006131C {
     u8 _pad8[0x10];
 } Ent8006131C;
 
+typedef struct Obj80015E48 {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    s32 unk4;
+    s32 *unk8;
+    s32 unkC;
+} Obj80015E48;
+
+typedef struct Copy80054750 {
+    s32 unk0[4];
+    s16 unk10;
+    u8 _pad12[0x3A];
+    s32 unk4C[4];
+    s16 unk5C;
+    u8 _pad5E[0x1E];
+} Copy80054750;
+
+typedef struct Elem80054750 {
+    u16 unk0;
+    s16 unk2[3];
+    s16 unk8[3];
+    s16 unkE[3];
+} Elem80054750;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2716,5 +2768,17 @@ void func_8006023C(Sub8004F1D4 *arg0, Elem8006131C *arg1, Pair8006131C *arg2, s3
 void func_80060800(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2, s32 arg3);
 void func_8005DB10(u16 arg0, u16 arg1, Sub8004F1D4 *arg2, Sub8004DE88 *arg3, Sub8004DE88 *arg4, Sub8004DE88 *arg5, s32 arg6, s32 arg7);
 void func_800604B8(Sub8004F1D4 *arg0, Elem8006131C *arg1, s32 arg2, s32 arg3, s32 arg4);
+extern Obj80015E48 D_800A1228;
+void *func_8001606C(Obj80015E48 *arg0, s32 arg1, void *arg2, s32 arg3);
+void func_800558F4(void);
+Obj800558A8 *func_800559D0(void);
+void func_80053950(u16 *arg0, Elem8005460C *arg1);
+s32 func_800546E0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800144FC(s32 *arg0, s16 *arg1);
+void func_80054660(u16 *arg0, s32 arg1, s32 *arg2, s32 *arg3);
+u16 *func_80053A54(u16 *arg0, Elem8005460C *arg1, s32 arg2, s32 arg3, s32 arg4);
+void func_80053FAC(u16 *arg0, Elem8005460C *arg1, s32 arg2, s32 arg3);
+void RotMatrix(s16 *arg0, s16 (*arg1)[3]);
+void func_8005460C(Elem8005460C *arg0, s32 arg1);
 
 #endif /* FDAT202_H */
