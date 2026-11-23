@@ -1447,6 +1447,17 @@ typedef struct Obj8007C7D8 {
     Sub8007C7D8 unk7C;
 } Obj8007C7D8;
 
+typedef struct Pal8007D934 {
+    Rgb800AAC20 e[4][4];
+} Pal8007D934;
+
+typedef struct Sub8007D934 {
+    Obj8004DEB0 *unk0;
+    void (*unk4)();
+    u8 unk8;
+    u8 unk9;
+} Sub8007D934;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1590,7 +1601,7 @@ void func_8007C6FC(Obj8004DEB0 *arg0);
 void func_8007C7D8(Obj8007C7D8 *arg0);
 void func_8007F30C(Obj8004DEB0 *);
 void func_8007D840(Obj8004DEB0 *arg0);
-void func_8007D934(Obj8004DEB0 *);
+void func_8007D934(Obj8004DEB0 *arg0);
 extern u8 D_8004C6C4[];
 void func_80080BE4(Obj8004DEB0 *arg0);
 void func_80080C58(Obj8004DEB0 *arg0);
@@ -2600,5 +2611,9 @@ void func_8007CBC0(Obj8004DEB0 *arg0);
 void func_8007CCE4(Obj8004DEB0 *arg0);
 void func_8007CDD8(Obj8004DEB0 *arg0);
 void func_8007CECC(Obj8004DEB0 *arg0);
+extern Pal8007D934 D_8004C4F8;
+void func_80073DDC(void);
+void func_8007DE1C(Obj8004DEB0 *arg0);
+void func_8007DF2C(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
