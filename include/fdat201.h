@@ -5,6 +5,13 @@
 #include "gte.h"
 
 /* @types */
+
+typedef struct Elem80078D84 {
+    s32 unk0;
+    u8 unk4;
+    u8 _pad5[0x27];
+} Elem80078D84;
+
 typedef struct Obj8004DEB0 {
     u8 unk0;
     u8 unk1;
@@ -2341,7 +2348,7 @@ extern Elem8008F08C_34 D_800BAB00[];
 extern Elem8008F08C_30 D_800BABD0[];
 extern Elem8008F08C_60 D_800BACF0[];
 extern Elem8008F08C_30 D_800BAFF0[];
-extern Elem8008F08C_2C D_800BB140[];
+extern Elem80078D84 D_800BB140[];
 void func_8004F810();
 void func_8004FDEC(void);
 u32 *malloc2(s32 arg0);
