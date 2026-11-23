@@ -2471,6 +2471,61 @@ typedef struct Elem8005379C {
     s16 unkE[3];
 } Elem8005379C;
 
+typedef struct SVECTOR {
+    s16 vx;
+    s16 vy;
+    s16 vz;
+    s16 pad;
+} SVECTOR;
+
+typedef struct VECTOR {
+    s32 vx;
+    s32 vy;
+    s32 vz;
+    s32 pad;
+} VECTOR;
+
+typedef struct Vtx80055A24 {
+    SVECTOR v[2];
+} Vtx80055A24;
+
+typedef union Hdr800574D8 {
+    u32 w;
+    u8 b[4];
+} Hdr800574D8;
+
+typedef struct Elem80055A24 {
+    u8 *unk0;
+    u8 _pad4[0x4];
+    u8 *unk8;
+    u8 _padC[0x2];
+    u16 unkE;
+    Hdr800574D8 *unk10;
+    u16 unk14;
+    u16 unk16;
+    Vtx80055A24 *unk18;
+} Elem80055A24;
+
+typedef struct Blk80055A24 {
+    s32 unk0;
+    u8 _pad4[0x4];
+    s32 unk8;
+    Elem80055A24 unkC[1];
+} Blk80055A24;
+
+typedef struct Part80055A24 {
+    u8 _pad0[0x12];
+    s16 unk12;
+    u8 _pad14[0x14];
+    Mat8005BAA8 unk28;
+    u8 _pad48[0x34];
+} Part80055A24;
+
+typedef struct Obj80055A24 {
+    u8 _pad0[0x20];
+    Part80055A24 *unk20;
+} Obj80055A24;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2498,7 +2553,7 @@ extern s32 D_801ADA34;
 extern s32 D_801ADA38;
 void func_8007295C(s32 arg0);
 void func_8007296C(s32 arg0);
-s32 func_80054A70(s32 arg0, s32 arg1, Obj8004F0B8 *arg2, Obj8004F0B8 *arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8);
+s32 func_80054A70(Obj80055A24 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, SVECTOR *arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8);
 s32 func_8004F1D4(Obj8004EDA8 *arg0, Obj8004F0B8 *arg1, Obj8004F0B8 *arg2);
 void func_80074B84(void);
 s32 func_8004F180(Obj8004EDA8 *arg0, Obj8004F0B8 *arg1);

@@ -1254,7 +1254,74 @@ Obj800558A8 *func_80054A1C(void) {
     return NULL;
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80054A70);
+s32 func_80054A70(Obj80055A24 *arg0, s32 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, SVECTOR *arg4, s32 arg5, s32 arg6, s32 arg7, s32 *arg8) {
+    VECTOR tv;
+    Mat8005BAA8 m;
+    VECTOR lv;
+    Obj80052658 *h;
+    Part80055A24 *part;
+    Vtx80055A24 *verts;
+    s32 k;
+    SVECTOR *v;
+    Blk80055A24 *blk;
+
+    h = D_801ADCDC[arg1];
+    blk = (Blk80055A24 *)((u8 *)h + h->unk8);
+    verts = ((Elem80055A24 *)((u8 *)blk->unkC + (arg6 << 5) - (arg6 << 2)))->unk18;
+    if (arg0 != NULL) {
+        part = &arg0->unk20[arg5];
+        func_80013AFC(0x800 - arg3->unk2, &m);
+        m.m[0][0] >>= 2;
+        m.m[0][2] >>= 2;
+        m.m[1][1] >>= 2;
+        m.m[2][0] >>= 2;
+        m.m[2][2] >>= 2;
+        m.t[0] = arg2->unk0;
+        m.t[1] = arg2->unk2;
+        m.t[2] = arg2->unk4;
+        SetRotMatrix(&m);
+        SetTransMatrix(&m);
+        gte_ldlv0(part->unk28.t);
+        gte_rtv0tr();
+        gte_stlvnl(&tv);
+        gte_ldclmv(&part->unk28.m[0][0]);
+        gte_rtir();
+        gte_stclmv(&m.m[0][0]);
+        gte_ldclmv(&part->unk28.m[0][1]);
+        gte_rtir();
+        gte_stclmv(&m.m[0][1]);
+        gte_ldclmv(&part->unk28.m[0][2]);
+        gte_rtir();
+        gte_stclmv(&m.m[0][2]);
+        SetRotMatrix(&m);
+        SetTransMatrix((Mat8005BAA8 *)((u8 *)&tv - (u32)((Mat8005BAA8 *)0)->t));
+        k = 1;
+    } else {
+        func_80013AFC(0x800 - arg3->unk2, &m);
+        m.m[0][0] >>= 2;
+        m.m[0][2] >>= 2;
+        m.m[1][1] >>= 2;
+        m.m[2][0] >>= 2;
+        m.m[2][2] >>= 2;
+        m.t[0] = arg2->unk0;
+        m.t[1] = arg2->unk2;
+        m.t[2] = arg2->unk4;
+        SetRotMatrix(&m);
+        SetTransMatrix(&m);
+        k = 2;
+    }
+    for (arg7--; arg7 != -1; arg7--) {
+        v = &verts[*arg8++].v[k];
+        gte_ldv0(v);
+        gte_rtv0tr();
+        gte_stlvnl(&lv);
+        arg4->vx = lv.vx;
+        arg4->vy = lv.vy;
+        arg4->vz = lv.vz;
+        arg4++;
+    }
+    return 1;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80054E04);
 
