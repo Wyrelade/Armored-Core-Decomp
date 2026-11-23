@@ -4229,7 +4229,148 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8007B57C);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8007B874);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8007BB04);
+void func_8007BB04(Obj80073138 *arg0, Obj8007A108 *arg1) {
+    Seg8007BB04 seg;
+    Obj8004F0B8 rot;
+    Obj8004F0B8 sp58;
+    Tbl8007BB04 *tbl;
+    Sub8007BB04 *p;
+    Hdr8007BB04 *hdr;
+    Part8007BB04 *part;
+    Elem8007BB04 *elem;
+    s32 scale;
+    s32 time;
+    s32 notify;
+
+    tbl = &D_8008A174[arg1->unk1];
+    arg0->unk64.unk12.unk6 = -1;
+    func_800788E0((Obj8007618C *)arg0, arg1);
+    if (D_80039D18->unk27A != 1 && D_80039D18->unk27A != 3 && arg0->unk3D == 0xC0) {
+        func_8007A240();
+        arg0->unk64.unk12.unk0 = arg0->unk64.unk12.unk2 = arg0->unk64.unk12.unk4 = 0;
+        if (D_80039D18->unk27A == 2) {
+            arg0->unk64.unk12.unk6 = arg1->unkA;
+        }
+    } else if (D_80039D18->unk27A != 0
+               || (arg0->unk3C == 0x22 && arg0->unk64.unk0 == D_80039D18->unk1A && func_8004ECF8(&arg0->unk64))) {
+        arg0->unk64.unk12.unk6 = arg1->unkA;
+        func_800788E0((Obj8007618C *)arg0, arg1);
+        p = (Sub8007BB04 *)arg0->unk60;
+        if (p == NULL || p->unkE != arg1->unkA) {
+            goto tail;
+        }
+        hdr = D_801ADEDC[arg0->unk8.unk6];
+        part = (Part8007BB04 *)((u8 *)hdr + ((s32 *)((u8 *)hdr + hdr->unk14))[arg1->unkA]);
+        elem = &p->unk20[part->unk3C];
+        if (elem->unk26 & 4) {
+            goto tail;
+        }
+        func_8007A29C(arg0, arg1, tbl->unk0, 1, D_80039D18->unk286);
+        if ((arg0->unk64.unk0 == D_80039D18->unk1A && func_8004ECF8(&arg0->unk64)) || D_80039D18->unk27A != 0) {
+            if (arg0->unk64.unk1 == 0xFF && arg0->unk3F == 0 && arg1->unk10 != 0
+                && ((tbl->unk4 == 0 && (D_80039D18->unk8 & D_80039D18->unk29C) && !(D_80039D18->unkC & D_80039D18->unk29C))
+                    || (tbl->unk4 == 1 && (D_80039D18->unk8 & D_80039D18->unk29C)))
+                && func_8007AF2C(arg1)) {
+                arg1->unk10--;
+                if (func_80073138(arg0, (s32)&seg.unk0, arg1->unk2, arg1->unk3, 2, 0, 1)) {
+                    seg.unk8.unk0 -= seg.unk0.unk0;
+                    seg.unk8.unk2 -= seg.unk0.unk2;
+                    seg.unk8.unk4 -= seg.unk0.unk4;
+                    VectorNormalSS(&seg.unk8, &seg.unk8);
+                    if (D_80039D18->unk27A == 3 && arg0->unk3D == 0x10) {
+                        notify = 0;
+                    } else {
+                        scale = (D_80039D18->unk21C * tbl->unk2) >> 8;
+                        notify = 1;
+                        if (scale != 0) {
+                            arg0->unkCC -= (seg.unk8.unk0 * scale) >> 6;
+                            arg0->unkCE -= (seg.unk8.unk2 * scale) >> 6;
+                            arg0->unkD0 -= (seg.unk8.unk4 * scale) >> 6;
+                            if (arg0->unk3D == 2 || arg0->unk3D == 3) {
+                                func_8007F978(arg0, 0, 0, 0x100, &arg0->unkCC);
+                            }
+                        }
+                    }
+                    switch (arg1->unk1) {
+                    case 0:
+                        func_800848F4(arg0, &arg1->unk24, &seg.unk0, &seg.unk8, tbl->unk0, arg1->unk16, 7, &D_8008A740, 0x14, 3, 0x78, &D_8008A744, &D_8008A748, 0, 4);
+                        func_800889D8(D_80039D18->unk84[0].unk0, 1, arg0);
+                        break;
+                    case 1:
+                        func_80087410(arg0, &seg.unk0, &seg.unk8, &arg1->unk24, arg1->unk16, 6);
+                        func_800889D8(D_80039D18->unk84[0].unk0, 1, arg0);
+                        break;
+                    case 2:
+                        func_80087410(arg0, &seg.unk0, &seg.unk8, &arg1->unk24, arg1->unk16, 7);
+                        func_800889D8(D_80039D18->unk84[0].unk0, 3, arg0);
+                        break;
+                    case 3:
+                        seg.unk8.unk0 = (seg.unk8.unk0 * 75) >> 9;
+                        seg.unk8.unk2 = (seg.unk8.unk2 * 75) >> 9;
+                        seg.unk8.unk4 = (seg.unk8.unk4 * 75) >> 9;
+                        if (D_80039D18->unk84[0].unk0 != 0) {
+                            time = func_80015258(&seg.unk0, 0, 0x258, D_80039D18->unk84[0].unk10, D_80039D18->unk84[0].unk28, &sp58, 0, 8);
+                        } else {
+                            time = (s16)(arg1->unk16 / 600);
+                        }
+                        func_80014AE4(seg.unk8.unk0, seg.unk8.unk2, seg.unk8.unk4, &rot);
+                        func_80084EA4(arg0, &arg1->unk24, &seg.unk0, &rot, &seg.unk8, 0x31, 0, time);
+                        func_800889D8(D_80039D18->unk84[0].unk0, 3, arg0);
+                        break;
+                    case 4:
+                        func_80087410(arg0, &seg.unk0, &seg.unk8, &arg1->unk24, arg1->unk16, 5);
+                        func_800889D8(D_80039D18->unk84[0].unk0, 1, arg0);
+                        break;
+                    case 5:
+                        func_80086E68(arg0, &seg.unk0, &seg.unk8, &arg1->unk24, arg1->unk16, 1);
+                        func_800889D8(D_80039D18->unk84[0].unk0, 3, arg0);
+                        break;
+                    case 6:
+                        func_80014AE4(seg.unk8.unk0, seg.unk8.unk2, seg.unk8.unk4, &rot);
+                        func_80087BB8(arg0, &seg.unk0, &seg.unk8, &arg1->unk24, arg1->unk16, 3, 0x31, &rot);
+                        func_800889D8(D_80039D18->unk84[0].unk0, 3, arg0);
+                        break;
+                    default:
+                        goto done;
+                    }
+                    if (notify && arg0->unk50 != NULL) {
+                        arg0->unk50(arg0, arg0->unk41);
+                    }
+                    func_800788A8((Obj8007618C *)arg0, arg1);
+                }
+            done:
+                arg0->unk64.unk1 = arg1->unkB;
+                arg0->unk64.unk10 = 0;
+                arg0->unk3F = arg1->unk23;
+            }
+        }
+        if (arg0->unk3F == 0 && D_80039D18->unk27A == 0
+            && (D_80039D18->unk8 & (D_80039D18->unk29A | D_80039D18->unk290 | D_80039D18->unk292 | D_80039D18->unk2A0 | D_80039D18->unk2A4))) {
+            arg0->unk3C = 0x23;
+            arg0->unk36 |= 0x10;
+        }
+    } else if (arg0->unk3C != 0x22) {
+        D_80039D18->unk84[0].unk0 = 0;
+        if ((D_80039D18->unk8 & D_80039D18->unk29C) && !(D_80039D18->unkC & D_80039D18->unk29C)
+            && arg0->unk3D != 0xC0 && arg0->unk3D != 0xB0) {
+            D_80039D18->unk1A = arg1->unkA + 0x2A;
+            arg0->unk18 = arg0->unk1A = arg0->unk1C = 0;
+            arg0->unk3C = 0x22;
+            arg0->unk36 |= 0x10;
+        }
+    }
+tail:
+    if (arg0->unk3F != 0) {
+        if (arg0->unk3F >= 0x14) {
+            func_80078900((Obj8007618C *)arg0, arg1);
+        } else {
+            func_8007891C((Obj8007618C *)arg0, arg1);
+        }
+        if (arg0->unk64.unk1 == 0xFF) {
+            arg0->unk3F--;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8007C3F0);
 
