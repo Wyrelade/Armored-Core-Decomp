@@ -2300,6 +2300,22 @@ typedef struct Spad80064268 {
     Sub8004DE88 unkE4;
 } Spad80064268;
 
+typedef struct Tr80064E8C {
+    u8 _pad0[0xC];
+    Mat800584F4 unkC;
+} Tr80064E8C;
+
+typedef union Un80064E8C {
+    Mat800584F4 rot;
+    Tr80064E8C tr;
+} Un80064E8C;
+
+typedef struct Spad80064E8C {
+    u8 _pad0[0xEC];
+    Mat800584F4 unkEC;
+    Un80064E8C unk10C;
+} Spad80064E8C;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
