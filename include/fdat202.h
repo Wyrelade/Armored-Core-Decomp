@@ -1099,6 +1099,9 @@ typedef struct Scr80057A00 {
     s32 unk28;
     Word80057A00 unk2C;
     Sub8004C98C unk30;
+    u8 _pad36[0xAA];
+    Word80057A00 unkE0;
+    Sub8004C98C unkE4;
 } Scr80057A00;
 
 typedef struct Ft38005804C {
@@ -2182,5 +2185,8 @@ void func_80064BE8(u8 *arg0, u16 arg1);
 void func_800645E8(u8 *arg0, Word80057A00 *arg1, s32 arg2);
 void func_8006460C(Word80057A00 *arg0, s32 arg1);
 void func_80064628(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800672CC(void);
+void func_80064CB8(s32 arg0);
+void func_80064D64(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT202_H */
