@@ -2341,6 +2341,12 @@ typedef struct Scr80066950 {
     u8 *unk84;
 } Scr80066950;
 
+typedef struct Obj8006735C {
+    Bank80067EBC *unk0;
+    u8 _pad4[0x664];
+    u8 unk668[1];
+} Obj8006735C;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2737,5 +2743,13 @@ void func_8006550C(Sub8004DE88 *arg0, s32 *arg1, s32 arg2);
 void func_80065540(u8 *arg0, s32 *arg1, s32 arg2);
 void func_80065564(u8 *arg0, u8 *arg1, u8 *arg2, s32 *arg3, s32 arg4);
 extern u16 D_80031564[];
+void func_80067080(u16 arg0);
+s32 func_800672F4(s32 arg0, s32 arg1, s32 arg2);
+void func_80067324(u8 *arg0, Cv80067EBC *arg1);
+void func_80067344(Cv80067EBC *arg0);
+void func_800693A4(Ent80067EBC *arg0);
+void func_80069C8C(Ent80067EBC *arg0);
+void func_8006BA20(Ent80067EBC *arg0);
+void func_8006C560(Ent80067EBC *arg0);
 
 #endif /* FDAT203_H */
