@@ -356,4 +356,36 @@ void func_801C7254(Sub801C6C1C *arg0, s32 arg1) {
     arg0->unk4 = z >> 1;
 }
 
-INCLUDE_ASM("asm/USA/fdat028/nonmatchings/fdat028", func_801C72B4);
+s32 func_801C72B4(s32 arg0) {
+    if (D_8019F528 == 0) {
+        switch (arg0) {
+        case 0:
+            func_801C7254(&D_801C7494, 0x1F);
+            func_800529F0(0, 0, 0x2D);
+            return 1;
+        case 1:
+            func_801C7254(&D_801C749C, 0x25);
+        count:
+            D_801C74BC++;
+            if (D_801C74BC == 1) {
+                func_800529F0(0, 0, 0x4B);
+            } else if (D_801C74BC == 3) {
+                func_800529F0(0, 0, 0x4C);
+            } else if (D_801C74BC == 4) {
+                func_800529F0(0, 0, 0x94);
+                func_8004C318(0x100);
+            }
+            return 1;
+        case 2:
+            func_801C7254(&D_801C74A4, 0x26);
+            goto count;
+        case 3:
+            func_801C7254(&D_801C74AC, 0x27);
+            goto count;
+        case 4:
+            func_801C7254(&D_801C74B4, 0x28);
+            goto count;
+        }
+    }
+    return 0;
+}

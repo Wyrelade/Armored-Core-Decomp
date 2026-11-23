@@ -362,5 +362,15 @@ void func_80089628(Obj801C6A40 *arg0, Sub801C6C1C *arg1, s32 arg2, u8 arg3);
 void func_800898A4(Sub801C6568 *arg0, u8 *arg1, u8 *arg2, Obj801C6A40 *arg3, Sub801C6C1C *arg4, Sub801C6C1C *arg5, s32 arg6);
 void func_80089A80(Obj801C6A40 *arg0, Sub801C6C1C *arg1);
 void func_80089C30(Sub801C6C1C *arg0, Sub801C6C1C *arg1, s32 arg2);
+extern u16 D_8019F528;
+void func_8004C318(s32 arg0);
+void func_800529F0(s32 arg0, s32 arg1, s32 arg2);
+void func_801C7254(Sub801C6C1C *arg0, s32 arg1);
+extern Sub801C6C1C D_801C7494;
+extern Sub801C6C1C D_801C749C;
+extern Sub801C6C1C D_801C74A4;
+extern Sub801C6C1C D_801C74AC;
+extern Sub801C6C1C D_801C74B4;
+extern s32 D_801C74BC;
 
 #endif /* FDAT028_H */
