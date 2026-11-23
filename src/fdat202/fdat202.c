@@ -5786,7 +5786,45 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80074FA4);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80075030);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80075108);
+void func_80075108(Obj8007618C *arg0, Sub8004DE88 *arg1) {
+    Sub8004DE88 prev;
+    Sub8004DE88 sp18;
+    Sub8004DE88 *pos;
+    Sub8004DE88 *out;
+    s32 hit;
+    s32 a;
+    s32 b;
+
+    arg1->unk2 += SquareRoot0(arg1->unk0 * arg1->unk0 + arg1->unk4 * arg1->unk4) >> 1;
+    prev = *arg1;
+    pos = &arg0->unk8;
+    out = &sp18;
+    func_800749A0(arg0, pos, out, arg1);
+    if (arg1->unk2 <= 0) {
+        a = arg1->unk0;
+        b = prev.unk0;
+        if (a < 0) a = -a;
+        if (b < 0) b = -b;
+        a = a < b >> 1;
+        if (a) {
+            goto redo;
+        }
+        a = arg1->unk4;
+        b = prev.unk4;
+        if (a < 0) a = -a;
+        if (b < 0) b = -b;
+        a = a < b >> 1;
+        if (a) {
+        redo:
+            *arg1 = prev;
+            arg1->unk2 = 0;
+            hit = func_800749A0(arg0, pos, out, arg1);
+            if (arg0->unk54 != NULL) {
+                arg0->unk54(arg0, 5, hit);
+            }
+        }
+    }
+}
 
 extern u8 D_80041214;
 extern u8 D_80041215;
