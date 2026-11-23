@@ -1716,6 +1716,72 @@ typedef struct Scr80062090 {
     s16 unk6C;
 } Scr80062090;
 
+typedef struct Scr80064684 {
+    s32 unk0;
+    u8 *unk4;
+    u8 *unk8;
+    Hdr800574D8 unkC;
+    Elem80055A24 *unk10;
+    u8 *unk14;
+    u8 *unk18;
+    s32 unk1C;
+    Sub8008C95C *unk20;
+    s32 unk24;
+    s32 unk28;
+    Word80057A00 unk2C;
+} Scr80064684;
+
+typedef struct Pkt80064684 {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+} Pkt80064684;
+
+typedef struct Gt380064684 {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+    Word80057A00 unk10;
+    s32 unk14;
+    s32 unk18;
+    Word80057A00 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u8 _pad26[0x2];
+} Gt380064684;
+
+typedef struct Gt480064684 {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+    Word80057A00 unk10;
+    s32 unk14;
+    s32 unk18;
+    Word80057A00 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u8 _pad26[0x2];
+    Word80057A00 unk28;
+    s32 unk2C;
+    u16 unk30;
+    u8 _pad32[0x2];
+} Gt480064684;
+
+typedef union Prim80064684 {
+    Gt380064684 g3;
+    Gt480064684 g4;
+} Prim80064684;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2110,5 +2176,11 @@ s32 func_80061F00(s32 arg0, s32 arg1);
 extern Mdl80062090 *D_8008DC90[];
 extern Fog80062090 D_801D0B98[];
 s32 func_80061F44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3);
+extern s32 D_801AD664;
+void func_80063B94(u8 *arg0, u16 arg1);
+void func_80064BE8(u8 *arg0, u16 arg1);
+void func_800645E8(u8 *arg0, Word80057A00 *arg1, s32 arg2);
+void func_8006460C(Word80057A00 *arg0, s32 arg1);
+void func_80064628(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT202_H */
