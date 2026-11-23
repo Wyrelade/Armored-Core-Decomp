@@ -234,7 +234,52 @@ void func_801C63F8(s32 arg0, s32 arg1) {
     func_80075A54(arg0, arg1, &vec);
 }
 
-INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C6460);
+s32 func_801C6460(Obj801C52C0 *arg0, s32 arg1, ...) {
+    s32 dist;
+
+    dist = func_80073714(arg0, 0x7FFFFFFF);
+    if (arg1 == 5 || arg1 == 0x8100) {
+        return 0;
+    }
+    if (dist > 7000) {
+        func_801C6320((s32)arg0, 2);
+        return 0;
+    }
+    switch (rand() & 0x3F) {
+    case 0:
+    case 1:
+    case 2:
+        func_801C6320((s32)arg0, 2);
+        break;
+    case 3:
+        func_801C6320((s32)arg0, 3);
+        break;
+    case 4:
+    case 5:
+        func_801C6390((s32)arg0, 2);
+        return 0;
+    case 6:
+    case 7:
+        func_801C63F8((s32)arg0, 2);
+        return 0;
+    case 8:
+        func_801C6390((s32)arg0, 3);
+        return 0;
+    case 11:
+        func_801C63F8((s32)arg0, 3);
+        return 0;
+    case 12:
+        func_801C6320((s32)arg0, 4);
+        break;
+    case 13:
+        func_801C6320((s32)arg0, 5);
+        break;
+    case 14:
+        func_801C6320((s32)arg0, 1);
+        break;
+    }
+    return 0;
+}
 
 void func_801C6594(Obj801C4C94 *arg0) {
     arg0->unk36 = 2;
