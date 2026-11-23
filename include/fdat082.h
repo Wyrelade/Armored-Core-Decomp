@@ -22,9 +22,13 @@ typedef struct Sub801C4E64 {
     u8 unk0;
     u8 _pad1[0x1];
     u8 unk2;
-    u8 _pad3[0x7];
+    u8 _pad3[0x3];
+    s16 unk6;
+    s16 unk8;
     s16 unkA;
-    u8 _padC[0x5C];
+    s16 unkC;
+    s16 unkE;
+    u8 _pad10[0x58];
 } Sub801C4E64;
 
 typedef struct Elem801C6B68 {
@@ -33,13 +37,23 @@ typedef struct Elem801C6B68 {
     u8 unk3B;
 } Elem801C6B68;
 
+typedef struct Sub801C5550 {
+    void (*unk0)();
+    void (*unk4)();
+    u8 _pad8[0x8];
+    u16 unk10;
+    u8 _pad12[0x2];
+} Sub801C5550;
+
 typedef struct Obj801C4E64 {
     Elem801C4E64 *unk0;
     u8 _pad4[0x4];
     Sub801C50B0 unk8;
     u8 _pad10[0x2];
     u16 unk12;
-    u8 _pad14[0x22];
+    u8 _pad14[0x18];
+    Sub801C5550 *unk2C;
+    u8 _pad30[0x6];
     s16 unk36;
     u8 _pad38[0x4];
     u8 unk3C;
@@ -108,7 +122,15 @@ typedef struct Obj801C6B68 {
 } Obj801C6B68;
 
 typedef struct Elem801C52C0 {
-    u8 _pad0[0x30];
+    u8 unk0;
+    u8 unk1[0x8];
+    u8 unk9[0x4];
+    u8 unkD[0x9];
+    u16 unk16;
+    u8 _pad18[0xA];
+    u16 unk22;
+    u16 unk24;
+    u8 _pad26[0xA];
     u8 unk30;
     u8 unk31;
     u8 unk32;
@@ -118,11 +140,6 @@ typedef struct Elem801C52C0 {
     u8 unk3B;
     u8 _pad3C[0x508];
 } Elem801C52C0;
-
-typedef struct Sub801C5550 {
-    void (*unk0)();
-    void (*unk4)();
-} Sub801C5550;
 
 typedef struct Obj801C52C0 {
     u8 _pad0[0x8];
@@ -320,18 +337,33 @@ typedef struct Elem801C6BF8 {
 typedef struct Obj801CB4AC {
     u8 _pad0[0x8];
     Sub801C50B0 unk8;
-    u8 _pad10[0x1A];
+    u8 _pad10[0x2];
+    s16 unk12;
+    u8 _pad14[0x14];
+    u16 unk28;
     u16 unk2A;
-    u8 _pad2C[0x2];
+    s16 unk2C;
     s16 unk2E;
-    u8 _pad30[0x11];
+    u8 _pad30[0x6];
+    s16 unk36;
+    u8 _pad38[0x4];
+    u8 unk3C;
+    u8 unk3D;
+    u8 _pad3E[0x3];
     u8 unk41;
     u8 _pad42[0xE];
     void (*unk50)();
     u8 _pad54[0x10];
     Sub801C4E64 unk64;
-    u8 _padCC[0x3C];
+    Sub801C50B0 unkCC;
+    u8 _padD4[0x34];
     Elem801C52C0 *unk108;
+    u8 _pad10C[0x29];
+    u8 unk135;
+    u8 _pad136[0x12];
+    u16 unk148;
+    u8 _pad14A[0x12];
+    s32 unk15C;
 } Obj801CB4AC;
 
 typedef struct Sub8004DE88 {
@@ -413,7 +445,7 @@ void func_801C94B0();
 void func_801CABB0();
 void func_801CB0C0();
 void func_801CB40C(Obj801C52C0 *arg0);
-void func_801CB710();
+void func_801CB710(Obj801CB4AC *arg0, s32 arg1);
 void func_8008A80C();
 u16 func_80073904(void);
 void func_8004ECA8(Sub801C4EB8 *arg0);
@@ -453,5 +485,32 @@ void func_8001380C(Sub801C50B0 *arg0, Sub801C50B0 *arg1, s32 arg2);
 void func_80072180(Elem801C5EA8 *arg0);
 s32 func_801C6708(struct Obj801C4EB8 *arg0);
 void func_801C659C(Elem801C5EA8 *arg0, s32 arg1);
+extern s32 D_801A5DC8;
+void D_80076014();
+void D_80076078();
+void D_800760DC();
+void D_800764C4();
+void func_801C7E98();
+void func_801C848C();
+void func_801C8640();
+void func_801C891C();
+void func_801CB4AC(Obj801CB4AC *arg0);
+s32 ratan2(s32 arg0, s32 arg1);
+s32 abs(s32 arg0);
+s32 func_8004EAD0(Sub801C4E64 *arg0);
+s32 func_8004EBF8(Sub801C4E64 *arg0);
+void func_8004EA3C(Sub801C4E64 *arg0, s32 arg1, u8 *arg2);
+s32 func_80074FA4(Obj801CB4AC *arg0, Sub801C50B0 *arg1);
+void func_80076578(Obj801CB4AC *arg0, s32 arg1, s32 arg2, void (*arg3)());
+void func_800765E8(Obj801CB4AC *arg0, s32 arg1, s32 arg2, void (*arg3)());
+void func_800766E0(Obj801CB4AC *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, u8 *arg5, void (*arg6)());
+void func_80076A84(Obj801CB4AC *arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4, void (*arg5)());
+void func_80077170(Obj801CB4AC *arg0, s32 arg1, s32 arg2, Sub801C50B0 *arg3, void (*arg4)());
+void func_8007732C(Obj801CB4AC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub801C50B0 *arg4, void (*arg5)());
+void func_800778B8(Obj801CB4AC *arg0, s32 arg1, s32 arg2, Sub801C50B0 *arg3, s32 arg4, void (*arg5)());
+void func_8007790C(Obj801CB4AC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub801C50B0 *arg4, s32 arg5, void (*arg6)());
+void func_801C7528(struct Obj801C52C0 *arg0, Sub801C5634 *arg1);
+void func_801C768C(Obj801C4E64 *arg0, s32 arg1);
+s32 func_801CB5E8(Obj801CB4AC *arg0);
 
 #endif /* FDAT082_H */
