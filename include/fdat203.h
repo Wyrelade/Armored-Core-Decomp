@@ -175,7 +175,9 @@ typedef struct Obj800781F0 {
     u16 unk216;
     u8 _pad218[0x8];
     u16 unk220;
-    u8 _pad222[0x3F];
+    u8 _pad222[0x32];
+    s32 unk254;
+    u8 _pad258[0x9];
     u8 unk261;
     u8 _pad262[0xE];
     u16 unk270;
@@ -2288,5 +2290,8 @@ void func_800797D0();
 void func_8007668C(Obj800732FC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, s32 arg5, void (*arg6)());
 void func_80076638(Obj800732FC *arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3, s32 arg4, void (*arg5)());
 void func_8007A3C8(Obj800732FC *arg0);
+extern s16 D_80194764[];
+extern s16 D_80194766;
+s32 func_800132CC(s32 arg0, s32 arg1, s32 arg2);
 
 #endif /* FDAT203_H */
