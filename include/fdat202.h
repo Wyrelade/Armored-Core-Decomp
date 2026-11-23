@@ -29,13 +29,18 @@ typedef struct Sub8004ECA8 {
 
 typedef struct Sub8007618C {
     u8 unk0;
-    u8 _pad1[0x1];
+    u8 unk1;
     u8 unk2;
     u8 unk3;
-    u8 _pad4[0x6];
+    u8 _pad4[0x2];
+    u16 unk6;
+    u16 unk8;
     s16 unkA;
     s16 unkC;
-    u8 _padE[0xE];
+    s16 unkE;
+    s16 unk10;
+    Sub8004DE88 unk12;
+    u8 _pad1A[0x2];
     Sub8004ECA8 *unk1C;
     Sub8004EFB8 unk20;
     Sub8004EFB8 unk28;
@@ -65,16 +70,19 @@ typedef struct Obj8007618C {
     s16 unk18;
     s16 unk1A;
     s16 unk1C;
-    u8 _pad1E[0xC];
+    u8 _pad1E[0xA];
+    u16 unk28;
     u16 unk2A;
-    u8 _pad2C[0x2];
+    s16 unk2C;
     s16 unk2E;
-    u8 _pad30[0x6];
+    s16 unk30;
+    u8 _pad32[0x4];
     u16 unk36;
     u8 _pad38[0x4];
     u8 unk3C;
     u8 unk3D;
-    u8 _pad3E[0x2];
+    u8 _pad3E[0x1];
+    u8 unk3F;
     u8 unk40;
     u8 unk41;
     u8 _pad42[0x6];
@@ -1933,6 +1941,15 @@ typedef struct Scr80071ADC {
     s32 unkBC;
 } Scr80071ADC;
 
+typedef struct Sub800749A0 {
+    u8 _pad0[0xC];
+    s32 unkC;
+} Sub800749A0;
+
+typedef struct Obj800749A0 {
+    Sub800749A0 *unk0;
+} Obj800749A0;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2354,5 +2371,8 @@ void func_8006FA30(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2);
 void func_80071904(Scr80071ADC *arg0, Sub8006F4D8 *arg1);
 void func_80071768(Scr80071ADC *arg0);
 s32 func_800722B4(Elem800730DC *arg0, Sub8006F4D8 *arg1, s32 arg2, s32 arg3);
+extern s16 D_8008E518;
+extern u16 D_8008E51A;
+Obj800749A0 *func_80074800(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, s32 arg3);
 
 #endif /* FDAT202_H */

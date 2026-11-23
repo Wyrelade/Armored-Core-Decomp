@@ -5712,7 +5712,73 @@ s32 func_80074728(s32 arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80074800);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800749A0);
+s32 func_800749A0(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3) {
+    Sub8004DE88 prev;
+    Sub8004DE88 pos;
+    Sub8004DE88 *pp;
+    Elem800736AC *obj;
+    Obj800749A0 *hit;
+    s32 *target;
+    s32 found;
+    s32 r;
+    s32 i;
+
+    found = 0;
+    i = 6;
+    pp = &pos;
+    target = &D_801A5DD0;
+    do {
+        prev = *arg3;
+        arg2->unk0 = arg1->unk0 + prev.unk0;
+        arg2->unk2 = arg1->unk2 + prev.unk2;
+        arg2->unk4 = arg1->unk4 + prev.unk4;
+        hit = func_80074800(arg0, arg2, arg3, 0);
+        if (hit == NULL) {
+            pos.unk0 = arg1->unk0 + arg3->unk0;
+            pos.unk2 = arg1->unk2 + arg3->unk2;
+            pos.unk4 = arg1->unk4 + arg3->unk4;
+            obj = (Elem800736AC *)func_800733D8(NULL, (s32)pp, arg0->unk64.unk6, arg0->unk64.unk8, (s32)arg3);
+            if (obj != NULL) {
+                if (obj->unk1C & 0x2000) {
+                    if (obj->unk14 != NULL && obj->unk14->unk4 != NULL) {
+                        obj->unk14->unk4(obj, &D_8008E518, arg3, pp, D_8008E51A);
+                    }
+                } else {
+                    found = (s32)obj;
+                }
+            }
+            r = (s32)func_80074620((Elem80074728 *)arg0, (s32)&pos, arg0->unk64.unk6, arg0->unk64.unk8, (s32)arg3);
+            if (r != 0) {
+                found = r;
+            }
+            if (obj == NULL && r == 0) {
+                return found;
+            }
+            if (D_801A5DCC == 1) {
+                *arg3 = D_80039C78;
+                return found;
+            }
+            if (prev.unk0 == arg3->unk0 && prev.unk2 == arg3->unk2 && prev.unk4 == arg3->unk4) {
+                break;
+            }
+        } else {
+            found = (s32)hit;
+            if (target[0] != 0 && (u32)((hit->unk0->unkC & 7) - 2) < 2) {
+                target[1] = found;
+                if (arg0->unk54 != NULL) {
+                    ((void (*)(Obj8007618C *, s32))arg0->unk54)(arg0, 7);
+                }
+            }
+        }
+    } while (--i != 0);
+    arg3->unk4 = 0;
+    arg3->unk2 = 0;
+    arg3->unk0 = 0;
+    arg2->unk0 = arg1->unk0;
+    arg2->unk2 = arg1->unk2;
+    arg2->unk4 = arg1->unk4;
+    return found;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80074CA0);
 
