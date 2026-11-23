@@ -853,7 +853,423 @@ s32 func_800540DC(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return d1 + arg1 - arg0;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005414C);
+Obj800558A8 *func_8005414C(Obj800558A8 **arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5,
+                           s32 arg6, Sub8004DE88 *arg7) {
+    Sub8004DE88 sv;
+    s32 frame;
+    s32 frac;
+    s32 frame2;
+    s32 frac2;
+    Obj800558A8 *obj;
+    Sub80053304 *model;
+    Elem80054008 *p;
+    Elem80054008 *pf;
+    Elem80054008 *r;
+    Elem8005414C *anim;
+    Elem8005414C *e;
+    Copy8005414C *c;
+    u16 *q;
+    s32 *tbl;
+    s32 j;
+    s32 k;
+    s32 t;
+    s32 n;
+    s16 cx;
+    s16 cy;
+    s16 cz;
+    s16 px;
+    s16 py;
+    s16 pz;
+    s32 changed;
+    s32 changed2;
+    Sub8004DE88 *spad;
+
+    changed2 = 0;
+    obj = *arg0;
+    changed = 0;
+    if (obj != NULL && obj->unk0 == 2) {
+        return obj;
+    }
+    model = D_8019D96C[arg1];
+    if (obj == NULL) {
+        obj = func_800553CC();
+        if (obj == NULL) {
+            return NULL;
+        }
+    init:
+        obj->unk2 = arg1;
+        obj->unk24 = arg0;
+        while ((r = obj->unk20 = func_8001606C(&D_8009D190, model->unk5 * sizeof(Elem80054008), &obj->unk20, 0)) == NULL) {
+            func_800552F0();
+        }
+        p = r;
+        func_80015538(p, 0, model->unk5 * (sizeof(Elem80054008) / 4));
+        {
+            s32 i;
+
+            i = model->unk5;
+            while (--i != -1) {
+                p->unk26 = 0;
+                p++;
+            }
+        }
+        func_8005334C((u16 *)((u8 *)model + model->unkC), obj->unk20);
+        *arg0 = obj;
+        if (arg7->unk6 != -1) {
+            anim = (Elem8005414C *)((u8 *)model + ((s32 *)((u8 *)model + model->unk14))[arg7->unk6]);
+            sv = *arg7;
+            e = anim + 1;
+            n = anim->unk0;
+            sv.unk0 = func_800540DC(anim->unk2[0], anim->unk8[0], anim->unkE[0], arg7->unk0);
+            sv.unk2 = func_800540DC(anim->unk2[1], anim->unk8[1], anim->unkE[1], arg7->unk2);
+            sv.unk4 = func_800540DC(anim->unk2[2], anim->unk8[2], anim->unkE[2], arg7->unk4);
+            while (--n != -1) {
+                Elem80054008 *pt;
+
+                pt = &obj->unk20[e->unk0];
+                if (!(pt->unk26 & 0x40)) {
+                    if (sv.unk0 < 0) {
+                        pt->unk5E[0] = pt->unk52[0] = e->unk2[0] + (sv.unk0 * e->unk8[0] >> 12);
+                    } else {
+                        pt->unk5E[0] = pt->unk52[0] = e->unk2[0] + (sv.unk0 * e->unkE[0] >> 12);
+                    }
+                    if (sv.unk2 < 0) {
+                        pt->unk5E[1] = pt->unk52[1] = e->unk2[1] + (sv.unk2 * e->unk8[1] >> 12);
+                    } else {
+                        pt->unk5E[1] = pt->unk52[1] = e->unk2[1] + (sv.unk2 * e->unkE[1] >> 12);
+                    }
+                    if (sv.unk4 < 0) {
+                        pt->unk5E[2] = pt->unk52[2] = e->unk2[2] + (sv.unk4 * e->unk8[2] >> 12);
+                    } else {
+                        pt->unk5E[2] = pt->unk52[2] = e->unk2[2] + (sv.unk4 * e->unkE[2] >> 12);
+                    }
+                }
+                e++;
+            }
+        }
+        obj->unkE = arg7->unk6;
+        obj->unk1C = NULL;
+    } else if (obj->unk2 != arg1) {
+        func_800552A4(obj);
+        obj->unk4 = 0xFF;
+        changed = 1;
+        goto init;
+    } else {
+        if (obj->unkE != arg7->unk6) {
+            if (obj->unkE != -1) {
+                Elem8005414C *rec;
+
+                rec = (Elem8005414C *)((u8 *)model + ((s32 *)((u8 *)model + model->unk14))[obj->unkE]);
+                p = &obj->unk20[rec[1].unk0];
+                e = rec + 1;
+                n = rec->unk0;
+                if (p->unk48 != NULL) {
+                    func_800144FC(p->unk48->unk28, &sv.unk0);
+                    p->unk5E[0] = p->unk52[0] = p->unk52[0] - sv.unk0;
+                    p->unk5E[1] = p->unk52[1] = p->unk52[1] - sv.unk2;
+                    p->unk5E[2] = p->unk52[2] = p->unk52[2] - sv.unk4;
+                } else {
+                    p->unk5E[0] = p->unk52[0];
+                    p->unk5E[1] = p->unk52[1];
+                    p->unk5E[2] = p->unk52[2];
+                }
+                while (--n != -1) {
+                    p = &obj->unk20[e->unk0];
+                    e++;
+                    p->unk26 = (p->unk26 & ~0x38) | 4;
+                }
+                obj->unkE = -1;
+                changed = 1;
+            }
+            if (arg7->unk6 != -1) {
+                Elem8005414C *rec;
+
+                rec = (Elem8005414C *)((u8 *)model + ((s32 *)((u8 *)model + model->unk14))[arg7->unk6]);
+                e = rec + 1;
+                n = rec->unk0;
+                p = &obj->unk20[e->unk0];
+                func_800144FC(p->unk28, p->unk52);
+                for (;;) {
+                    p->unk5E[0] = p->unk52[0];
+                    p->unk5E[1] = p->unk52[1];
+                    p->unk5E[2] = p->unk52[2];
+                    if (--n == 0) {
+                        break;
+                    }
+                    e++;
+                    p = &obj->unk20[e->unk0];
+                }
+            }
+            obj->unkE = arg7->unk6;
+        }
+        if (obj->unk10 != arg5) {
+            if (obj->unk10 != 0xFF) {
+                u16 *q;
+                Elem80054008 *pt;
+                s32 i;
+
+                q = (u16 *)((u8 *)model + ((s32 *)((u8 *)model + model->unk18))[obj->unk10]);
+                i = *q++;
+                while (--i != -1) {
+                    pt = &obj->unk20[*q++];
+                    pt->unk26 = (pt->unk26 & ~0x48) | 4;
+                }
+                changed = 1;
+            }
+            if (arg5 != 0xFF) {
+                u16 *q;
+                Elem80054008 *pt;
+                s32 i;
+
+                q = (u16 *)((u8 *)model + ((s32 *)((u8 *)model + model->unk18))[arg5]);
+                i = *q++;
+                while (--i != -1) {
+                    pt = &obj->unk20[*q++];
+                    pt->unk26 = (pt->unk26 & ~4) | 0x48;
+                    pt->unk6[0] = pt->unk5E[0] = pt->unk52[0];
+                    pt->unk6[1] = pt->unk5E[1] = pt->unk52[1];
+                    pt->unk6[2] = pt->unk5E[2] = pt->unk52[2];
+                }
+            } else {
+                obj->unk10 = 0xFF;
+            }
+            obj->unk10 = arg5;
+            changed2 = 1;
+        }
+        if (obj->unk4 != arg2) {
+            obj->unkC = 0;
+            if (arg4 != 0) {
+                Elem80054008 *pt;
+                s32 i;
+
+                pt = obj->unk20;
+                i = model->unk5;
+                while (--i != -1) {
+                    if (!(pt->unk26 & 0x50)) {
+                        pt->unk26 = (pt->unk26 | 0x80) & ~0xC;
+                        pt->unk5E[0] = pt->unk52[0];
+                        pt->unk5E[1] = pt->unk52[1];
+                        pt->unk5E[2] = pt->unk52[2];
+                        pt->unk64[0] = pt->unk4C[0];
+                        pt->unk64[1] = pt->unk4C[1];
+                        pt->unk64[2] = pt->unk4C[2];
+                    }
+                    pt++;
+                }
+                obj->unkC = arg4;
+                obj->unkA = 0x1000;
+            }
+        }
+    }
+    tbl = (s32 *)((u8 *)model + model->unk10);
+    q = (u16 *)((u8 *)tbl + tbl[arg2]);
+    func_8005405C(q, arg3, &frame, &frac);
+    q += (s16)q[1] + 2;
+    if (changed || obj->unk4 != arg2 || frame < obj->unk6 || obj->unk1C != model) {
+        Elem80054008 *pt;
+        s32 i;
+
+        pt = obj->unk20;
+        i = model->unk5;
+        while (--i != -1) {
+            pt->unk26 &= ~3;
+            pt++;
+        }
+        obj->unk14 = q;
+        obj->unk14 = func_80053450(obj->unk14, obj->unk20, 0, frame, 8);
+    } else if (obj->unk6 < frame) {
+        obj->unk14 = func_80053450(obj->unk14, obj->unk20, obj->unk6 + 1, frame, 8);
+    }
+    obj->unk4 = arg2;
+    obj->unk6 = frame;
+    obj->unk8 = frac;
+    if (obj->unk10 != 0xFF) {
+        q = (u16 *)((u8 *)model + ((s32 *)((u8 *)model + model->unk18))[obj->unk10]);
+        q += *q + 1;
+        func_8005405C(q, arg6, &frame2, &frac2);
+        q += q[1] + 2;
+        if (changed2 || frame2 < obj->unk12 || obj->unk1C != model) {
+            obj->unk18 = q;
+            obj->unk18 = func_80053450(obj->unk18, obj->unk20, 0, frame2, 0);
+        } else if (obj->unk12 < frame2) {
+            obj->unk18 = func_80053450(obj->unk18, obj->unk20, obj->unk12 + 1, frame2, 0);
+        }
+        obj->unk12 = frame2;
+    }
+    c = (Copy8005414C *)obj->unk20;
+    k = model->unk5;
+    while (--k != -1) {
+        c->unk4C[0] = c->unk0[0];
+        c->unk4C[1] = c->unk0[1];
+        c->unk4C[2] = c->unk0[2];
+        c->unk4C[3] = c->unk0[3];
+        c->unk5C = c->unk10;
+        c++;
+    }
+    func_800539A8(obj->unk14, obj->unk20, frac, 8);
+    if (obj->unkE != -1) {
+        anim = (Elem8005414C *)((u8 *)model + ((s32 *)((u8 *)model + model->unk14))[obj->unkE]);
+        sv = *arg7;
+        e = anim + 1;
+        n = anim->unk0;
+        if (obj->unk20[e->unk0].unk48 != NULL) {
+            Sub8004DE88 ofs;
+
+            func_800144FC(obj->unk20[e->unk0].unk48->unk28, &ofs.unk0);
+            sv.unk0 = func_800540DC(anim->unk2[0], anim->unk8[0] + ofs.unk0, anim->unkE[0] + ofs.unk0, arg7->unk0);
+            sv.unk2 = func_800540DC(anim->unk2[1], anim->unk8[1] + ofs.unk2, anim->unkE[1] + ofs.unk2, arg7->unk2);
+            sv.unk4 = func_800540DC(anim->unk2[2], anim->unk8[2] + ofs.unk4, anim->unkE[2] + ofs.unk4, arg7->unk4);
+        } else {
+            sv.unk0 = func_800540DC(anim->unk2[0], anim->unk8[0], anim->unkE[0], arg7->unk0);
+            sv.unk2 = func_800540DC(anim->unk2[1], anim->unk8[1], anim->unkE[1], arg7->unk2);
+            sv.unk4 = func_800540DC(anim->unk2[2], anim->unk8[2], anim->unkE[2], arg7->unk4);
+        }
+        obj->unk20[e->unk0].unk26 |= 0x20;
+        while (--n != -1) {
+            Elem80054008 *pt;
+
+            pt = &obj->unk20[e->unk0];
+            if (!(pt->unk26 & 0x40)) {
+                pt->unk26 |= 0x1C;
+                if (sv.unk0 < 0) {
+                    pt->unk52[0] = e->unk2[0] + (sv.unk0 * e->unk8[0] >> 12);
+                } else {
+                    pt->unk52[0] = e->unk2[0] + (sv.unk0 * e->unkE[0] >> 12);
+                }
+                if (sv.unk2 < 0) {
+                    pt->unk52[1] = e->unk2[1] + (sv.unk2 * e->unk8[1] >> 12);
+                } else {
+                    pt->unk52[1] = e->unk2[1] + (sv.unk2 * e->unkE[1] >> 12);
+                }
+                if (sv.unk4 < 0) {
+                    pt->unk52[2] = e->unk2[2] + (sv.unk4 * e->unk8[2] >> 12);
+                } else {
+                    pt->unk52[2] = e->unk2[2] + (sv.unk4 * e->unkE[2] >> 12);
+                }
+            }
+            e++;
+        }
+    }
+    if (obj->unk10 != 0xFF) {
+        func_800539A8(obj->unk18, obj->unk20, frac2, 0);
+    }
+    if (obj->unkC != 0) {
+        obj->unkA -= obj->unkC;
+        if (obj->unkA <= 0) {
+            Elem80054008 *pt;
+            s32 i;
+
+            obj->unkC = 0;
+            pt = obj->unk20;
+            i = model->unk5;
+            while (--i != -1) {
+                if (pt->unk26 & 0x80) {
+                    pt->unk26 = (pt->unk26 & ~0x80) | 1;
+                }
+                pt++;
+            }
+        } else {
+            Elem80054008 *pt;
+            s32 i;
+
+            spad = (Sub8004DE88 *)0x1F800000;
+            pt = obj->unk20;
+            gte_lddp((s32)obj->unkA);
+            i = model->unk5;
+            while (--i != -1) {
+                if (pt->unk26 & 0x80) {
+                    spad->unk0 = pt->unk64[0] - pt->unk4C[0];
+                    spad->unk2 = pt->unk64[1] - pt->unk4C[1];
+                    spad->unk4 = pt->unk64[2] - pt->unk4C[2];
+                    if (spad->unk0 != 0 || spad->unk2 != 0 || spad->unk4 != 0) {
+                        gte_ldsv(spad);
+                        gte_gpf12();
+                        gte_stsv(spad);
+                        pt->unk4C[0] += spad->unk0;
+                        pt->unk4C[1] += spad->unk2;
+                        pt->unk4C[2] += spad->unk4;
+                    }
+                    spad->unk0 = pt->unk5E[0] - pt->unk52[0];
+                    spad->unk2 = pt->unk5E[1] - pt->unk52[1];
+                    spad->unk4 = pt->unk5E[2] - pt->unk52[2];
+                    if (spad->unk0 != 0 || spad->unk2 != 0 || spad->unk4 != 0) {
+                        gte_ldsv(spad);
+                        gte_gpf12();
+                        gte_stsv(spad);
+                        pt->unk52[0] += spad->unk0;
+                        pt->unk52[1] += spad->unk2;
+                        pt->unk52[2] += spad->unk4;
+                        pt->unk26 |= 1;
+                    }
+                }
+                pt++;
+            }
+        }
+    }
+    pf = obj->unk20;
+    j = model->unk5;
+    while (--j != -1) {
+        if (pf->unk12 != -1) {
+            if (pf->unk26 & 4) {
+                pf->unk26 &= ~4;
+                cx = pf->unk52[0];
+                px = pf->unk5E[0];
+                if (cx - px >= -0x40 && cx - px <= 0x40) {
+                    pf->unk5E[0] = cx;
+                } else {
+                    pf->unk5E[0] = px + ((cx - px) >> 3);
+                    pf->unk26 |= 4;
+                }
+                pf->unk52[0] = pf->unk5E[0];
+                cy = pf->unk52[1];
+                py = pf->unk5E[1];
+                if (cy - py >= -0x40 && cy - py <= 0x40) {
+                    pf->unk5E[1] = cy;
+                } else {
+                    pf->unk5E[1] = py + ((cy - py) >> 3);
+                    pf->unk26 |= 4;
+                }
+                pf->unk52[1] = pf->unk5E[1];
+                cz = pf->unk52[2];
+                pz = pf->unk5E[2];
+                if (cz - pz >= -0x40 && cz - pz <= 0x40) {
+                    pf->unk5E[2] = cz;
+                } else {
+                    pf->unk5E[2] = pz + ((cz - pz) >> 3);
+                    pf->unk26 |= 4;
+                }
+                pf->unk52[2] = pf->unk5E[2];
+                goto rot;
+            }
+            if (pf->unk26 & 1) {
+            rot:
+                RotMatrix(pf->unk52, pf->unk14);
+                if (pf->unk58[0] != 0x1000) {
+                    pf->unk14[0][0] = pf->unk14[0][0] * pf->unk58[0] >> 12;
+                    pf->unk14[1][0] = pf->unk14[1][0] * pf->unk58[0] >> 12;
+                    pf->unk14[2][0] = pf->unk14[2][0] * pf->unk58[0] >> 12;
+                }
+                if (pf->unk58[1] != 0x1000) {
+                    pf->unk14[0][1] = pf->unk14[0][1] * pf->unk58[1] >> 12;
+                    pf->unk14[1][1] = pf->unk14[1][1] * pf->unk58[1] >> 12;
+                    pf->unk14[2][1] = pf->unk14[2][1] * pf->unk58[1] >> 12;
+                }
+                if (pf->unk58[2] != 0x1000) {
+                    pf->unk14[0][2] = pf->unk14[0][2] * pf->unk58[2] >> 12;
+                    pf->unk14[1][2] = pf->unk14[1][2] * pf->unk58[2] >> 12;
+                    pf->unk14[2][2] = pf->unk14[2][2] * pf->unk58[2] >> 12;
+                }
+                pf->unk26 &= ~1;
+            }
+            pf->unk26 |= 2;
+        }
+        pf++;
+    }
+    func_80054008(obj->unk20, model->unk5);
+    obj->unk0 = 2;
+    obj->unk1C = model;
+    return obj;
+}
 
 void func_80055238(void) {
     Obj800558A8 *p;
