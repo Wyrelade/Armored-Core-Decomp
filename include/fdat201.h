@@ -1117,7 +1117,9 @@ typedef struct Elem8008F08C_38 {
     u16 unk8;
     u8 _padA[0x4];
     u16 unkE;
-    u8 _pad10[0x28];
+    u8 _pad10[0x2];
+    u8 unk12;
+    u8 _pad13[0x25];
 } Elem8008F08C_38;
 
 typedef struct Elem8008F08C_3C {
@@ -1146,13 +1148,36 @@ typedef struct Elem8008F08C_60 {
 } Elem8008F08C_60;
 
 typedef struct Sub8007C240 {
-    u8 _pad0[0x26];
+    u8 _pad0[0x8];
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+    u8 _padC[0x8];
+    u16 unk14;
+    u16 unk16;
+    s16 unk18;
+    u8 unk1A;
+    u8 _pad1B[0x5];
+    struct Obj8007C240 *unk20;
+    u8 unk24;
+    u8 unk25;
     u16 unk26;
     u16 unk28;
+    u16 unk2A;
+    u16 unk2C;
+    u8 _pad2E[0x1];
+    u8 unk2F;
+    u16 unk30;
+    u8 unk32;
+    u8 _pad33[0x1];
+    u16 unk34;
 } Sub8007C240;
 
 typedef struct Owner8007C240 {
-    u8 _pad0[0x7C];
+    u8 _pad0[0x74];
+    void (*unk74)();
+    u8 _pad78[0x4];
     Sub8007C240 unk7C;
 } Owner8007C240;
 
@@ -1181,7 +1206,9 @@ typedef struct Obj8007C240 {
     u16 unk42;
     u8 _pad44[0x4];
     s32 unk48;
-    u8 _pad4C[0x30];
+    u8 _pad4C[0x28];
+    void (*unk74)();
+    u8 _pad78[0x4];
     s16 unk7C;
     u8 _pad7E[0x2];
     u16 unk80;
@@ -1485,6 +1512,17 @@ typedef struct Obj80082E90 {
 typedef struct U8x10 {
     u8 b[10];
 } U8x10;
+
+typedef struct Ptr80078D84 {
+    s32 unk0;
+    s32 unk4;
+} Ptr80078D84;
+
+typedef struct Tbl80078D84 {
+    u8 _pad0[0xA];
+    u16 unkA;
+    Ptr80078D84 *unkC;
+} Tbl80078D84;
 
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
@@ -2634,7 +2672,7 @@ Task80078AAC *func_8007BE0C(u8 arg0, Obj80078AAC *arg1, u8 arg2);
 void func_8007509C(Obj80078AAC *arg0);
 void func_800740AC(Obj80078AAC *arg0);
 void func_80075520(void);
-void func_80078D84();
+void func_80078D84(Owner8007C240 *arg0);
 void func_8007CBC0(Obj8004DEB0 *arg0);
 void func_8007CCE4(Obj8004DEB0 *arg0);
 void func_8007CDD8(Obj8004DEB0 *arg0);
@@ -2672,5 +2710,30 @@ extern s32 D_801BC480;
 void func_80078A38(Obj8004DEB0 *arg0);
 void func_8007BCE8(s32 arg0);
 void func_800788C8(s16 arg0, u8 arg1);
+extern u8 D_80031A5D;
+extern u16 D_800B8228[];
+extern Tbl80078D84 D_800BCAB0[];
+extern u8 D_8004C060[];
+extern u8 D_8004C084[];
+extern u8 D_8004C0A8[];
+extern u8 D_8004C0CC[];
+extern u8 D_8004C0EC[];
+extern u8 D_8004C100[];
+extern u8 D_8004C11C[];
+extern u8 D_8004C140[];
+extern u8 D_8004C164[];
+extern u8 D_8004C180[];
+extern u8 D_8004C19C[];
+extern u8 D_8004C1B4[];
+extern u8 D_8004C1D8[];
+extern u8 D_8004C1F8[];
+extern u8 D_8004C20C[];
+u16 func_8007C2F0(Owner8007C240 *arg0, s32 arg1);
+void func_8007AAF0();
+void func_8007AC74(Obj8004DEB0 *arg0);
+void func_8007BA10();
+void func_8007BB48();
+void func_8007C22C(Obj8004DEB0 *arg0);
+void func_8007C240(Obj8007C240 *arg0);
 
 #endif /* FDAT201_H */
