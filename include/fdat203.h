@@ -2249,6 +2249,57 @@ typedef struct Spad80063B24 {
     u8 unk2E;
 } Spad80063B24;
 
+typedef struct Ft380064268 {
+    Tag800573FC tag;
+    Col8005E758 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+} Ft380064268;
+
+typedef struct Ft480064268 {
+    Tag800573FC tag;
+    Col8005E758 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Ft480064268;
+
+typedef union Prim80064268 {
+    Ft380064268 *f3;
+    Ft480064268 *f4;
+    Gt380063B24 *g3;
+    Gt480063B24 *g4;
+} Prim80064268;
+
+typedef struct Spad80064268 {
+    s32 unk0;
+    u8 *unk4;
+    u8 *unk8;
+    PkWord80063B24 unkC;
+    Part80063B24 *unk10;
+    u8 *unk14;
+    s32 unk18;
+    u32 *unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    u8 _pad2C[0xB4];
+    s32 unkE0;
+    Sub8004DE88 unkE4;
+} Spad80064268;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2635,5 +2686,8 @@ void func_80063034(s32 arg0, u16 arg1);
 void func_80063AC8(Spad80063B24 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_80063A88(u8 *arg0, s32 *arg1, s32 arg2);
 void func_80063AAC(s32 *arg0, s32 arg1);
+void func_8006676C(void);
+void func_80064158(s32 arg0);
+void func_80064204(Spad80064268 *arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT203_H */
