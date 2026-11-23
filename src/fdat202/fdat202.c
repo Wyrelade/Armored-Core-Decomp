@@ -3242,7 +3242,346 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800660C4);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800660FC);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006611C);
+void func_8006611C(u16 arg0, s32 arg1, u16 arg2, s32 arg3) {
+    Scr80057A00 *sp;
+    Elem8005A364 *a;
+    Elem8005A364 *b;
+    Elem8005A364 *c;
+    Elem8005A364 *d;
+    Hdr800574D8 *pk;
+    Pk8005804C *q;
+    Prim8005804C *p;
+    s32 z;
+    u8 *vtx;
+
+    sp = (Scr80057A00 *)0x1F800000;
+    sp->unk28 = 0;
+    sp->unk20 = D_801987CC + 0xF;
+    sp->unk24 = D_801987CC + 3;
+    sp->unk1C = (Sub8008C95C *)(D_801A5F28.unk0 + arg1);
+    sp->unk10 = (Elem80055A24 *)((u8 *)D_801A5F28.unk8->unkC + arg0 * 0x20 - arg0 * 4);
+    vtx = (u8 *)D_801A5F28.unkB20;
+    if (sp->unk10->unk4 == 0) {
+        return;
+    }
+    func_800672CC();
+    func_80065CF8(sp, arg2, arg3);
+    sp->unk14 = sp->unk10->unk8;
+    pk = sp->unk10->unk10;
+    if (arg3 != 0) {
+        sp->unk18 = sp->unk10->unk14 + (sp->unk10->unkE & 0x1FF);
+    } else {
+        sp->unk18 = sp->unk10->unk14;
+    }
+    sp->unk4 = (u8 *)D_801A5F24[0]->unk8;
+    sp->unk8 = (u8 *)D_801A5F24[0]->unk4;
+    if (sp->unk8 < sp->unk4 + sp->unk18 * 4 + sp->unk18 * 16 + sp->unk18 * 32) {
+        return;
+    }
+    while (sp->unk18-- != 0) {
+        sp->unkC = *pk;
+        pk++;
+        q = (Pk8005804C *)pk;
+        switch (sp->unkC.b[3] & 0xFD) {
+        case 0x25:
+            a = (Elem8005A364 *)(vtx + q->lf3.unkE);
+            b = (Elem8005A364 *)(vtx + q->lf3.unk10);
+            c = (Elem8005A364 *)(vtx + q->lf3.unk12);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            gte_ldv0(sp->unk14 + q->lf3.unkC);
+            gte_ncs();
+            p = (Prim8005804C *)sp->unk4;
+            sp->unk4 += sizeof(Gt38005804C);
+            p->g3.unk8 = a->unk0;
+            p->g3.unk14 = b->unk0;
+            p->g3.unk20 = c->unk0;
+            func_800660FC(&sp->unkE4);
+            func_8006606C(&sp->unkE4, &a->unk8, a->unkC);
+            gte_strgb(&p->g3.unk4);
+            func_8006606C(&sp->unkE4, &b->unk8, b->unkC);
+            p->g3.unkC = q->lf3.unk0;
+            p->g3.unk18 = q->lf3.unk4;
+            p->g3.unk24 = q->lf3.unk8;
+            gte_strgb(&p->g3.unk10);
+            func_8006606C(&sp->unkE4, &c->unk8, c->unkC);
+            p->g3.tag.unk0_24 = 9;
+            p->g3.unk4.c.code = (sp->unkC.b[3] & 2) | 0x34;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p->g3.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb(&p->g3.unk1C);
+            }
+            break;
+        case 0x2D:
+            a = (Elem8005A364 *)(vtx + q->lf4.unk12);
+            b = (Elem8005A364 *)(vtx + q->lf4.unk14);
+            c = (Elem8005A364 *)(vtx + q->lf4.unk16);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            gte_ldv0(sp->unk14 + q->lf4.unk10);
+            gte_ncs();
+            p = (Prim8005804C *)sp->unk4;
+            d = (Elem8005A364 *)(vtx + q->lf4.unk18);
+            sp->unk4 += sizeof(Gt48005804C);
+            p->g4.unk8 = a->unk0;
+            p->g4.unk14 = b->unk0;
+            p->g4.unk20 = c->unk0;
+            p->g4.unk2C = d->unk0;
+            func_800660FC(&sp->unkE4);
+            func_8006606C(&sp->unkE4, &a->unk8, a->unkC);
+            gte_strgb(&p->g4.unk4);
+            func_8006606C(&sp->unkE4, &b->unk8, b->unkC);
+            gte_strgb(&p->g4.unk10);
+            func_8006606C(&sp->unkE4, &c->unk8, c->unkC);
+            p->g4.unkC = q->lf4.unk0;
+            p->g4.unk18 = q->lf4.unk4;
+            p->g4.unk24 = q->lf4.unk8;
+            p->g4.unk30 = q->lf4.unkC;
+            gte_strgb(&p->g4.unk1C);
+            func_8006606C(&sp->unkE4, &d->unk8, d->unkC);
+            p->g4.tag.unk0_24 = 0xC;
+            p->g4.unk4.c.code = (sp->unkC.b[3] & 2) | 0x3C;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p->g4.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb(&p->g4.unk28);
+            }
+            break;
+        case 0x35:
+            a = (Elem8005A364 *)(vtx + q->lg3.unkE);
+            b = (Elem8005A364 *)(vtx + q->lg3.unk12);
+            c = (Elem8005A364 *)(vtx + q->lg3.unk16);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg3.unkC), &a->unk8, a->unkC);
+            p = (Prim8005804C *)sp->unk4;
+            sp->unk4 += sizeof(Gt38005804C);
+            p->g3.unk8 = a->unk0;
+            p->g3.unk14 = b->unk0;
+            p->g3.unk20 = c->unk0;
+            gte_strgb(&p->g3.unk4);
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg3.unk10), &b->unk8, b->unkC);
+            gte_strgb(&p->g3.unk4);
+            gte_strgb(&p->g3.unk10);
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg3.unk14), &c->unk8, c->unkC);
+            p->g3.unkC = q->lg3.unk0;
+            p->g3.unk18 = q->lg3.unk4;
+            p->g3.unk24 = q->lg3.unk8;
+            p->g3.tag.unk0_24 = 9;
+            p->g3.unk4.c.code = sp->unkC.b[3] & 0xFE;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p->g3.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb(&p->g3.unk1C);
+            }
+            break;
+        case 0x3D:
+            a = (Elem8005A364 *)(vtx + q->lg4.unk12);
+            b = (Elem8005A364 *)(vtx + q->lg4.unk16);
+            c = (Elem8005A364 *)(vtx + q->lg4.unk1A);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg4.unk10), &a->unk8, a->unkC);
+            d = (Elem8005A364 *)(vtx + q->lg4.unk1E);
+            p = (Prim8005804C *)sp->unk4;
+            sp->unk4 += sizeof(Gt48005804C);
+            gte_strgb(&p->g4.unk4);
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg4.unk14), &b->unk8, b->unkC);
+            p->g4.unk8 = a->unk0;
+            p->g4.unk14 = b->unk0;
+            p->g4.unk20 = c->unk0;
+            p->g4.unk2C = d->unk0;
+            gte_strgb(&p->g4.unk10);
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg4.unk18), &c->unk8, c->unkC);
+            gte_strgb(&p->g4.unk1C);
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg4.unk1C), &d->unk8, d->unkC);
+            p->g4.unkC = q->lg4.unk0;
+            p->g4.unk18 = q->lg4.unk4;
+            p->g4.unk24 = q->lg4.unk8;
+            p->g4.unk30 = q->lg4.unkC;
+            p->g4.tag.unk0_24 = 0xC;
+            p->g4.unk4.c.code = sp->unkC.b[3] & 0xFE;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p->g4.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb(&p->g4.unk28);
+            }
+            break;
+        case 0x24:
+            a = (Elem8005A364 *)(vtx + q->lf3.unkE);
+            b = (Elem8005A364 *)(vtx + q->lf3.unk10);
+            c = (Elem8005A364 *)(vtx + q->lf3.unk12);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lf3.unkC), &sp->unkE0, a->unkC);
+            p = (Prim8005804C *)sp->unk4;
+            sp->unk4 += sizeof(Ft38005804C);
+            p->f3.unk8 = a->unk0;
+            p->f3.unk10 = b->unk0;
+            p->f3.unk18 = c->unk0;
+            p->f3.unkC = q->lf3.unk0;
+            p->f3.unk14 = q->lf3.unk4;
+            p->f3.unk1C = q->lf3.unk8;
+            p->f3.tag.unk0_24 = 7;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p->f3.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb(&p->f3.unk4);
+                p->f3.unk4.c.code = sp->unkC.b[3];
+            }
+            break;
+        case 0x2C:
+            a = (Elem8005A364 *)(vtx + q->lf4.unk12);
+            b = (Elem8005A364 *)(vtx + q->lf4.unk14);
+            c = (Elem8005A364 *)(vtx + q->lf4.unk16);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lf4.unk10), &sp->unkE0, a->unkC);
+            p = (Prim8005804C *)sp->unk4;
+            d = (Elem8005A364 *)(vtx + q->lf4.unk18);
+            sp->unk4 += sizeof(Ft48005804C);
+            p->f4.unk8 = a->unk0;
+            p->f4.unk10 = b->unk0;
+            p->f4.unk18 = c->unk0;
+            p->f4.unk20 = d->unk0;
+            p->f4.unkC = q->lf4.unk0;
+            p->f4.unk14 = q->lf4.unk4;
+            p->f4.unk1C = q->lf4.unk8;
+            p->f4.unk24 = q->lf4.unkC;
+            p->f4.tag.unk0_24 = 9;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p->f4.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb(&p->f4.unk4);
+                p->f4.unk4.c.code = sp->unkC.b[3];
+            }
+            break;
+        case 0x34:
+            a = (Elem8005A364 *)(vtx + q->lg3.unkE);
+            b = (Elem8005A364 *)(vtx + q->lg3.unk12);
+            c = (Elem8005A364 *)(vtx + q->lg3.unk16);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800660C4((SVECTOR *)(sp->unk14 + q->lg3.unkC), (SVECTOR *)(sp->unk14 + q->lg3.unk10), (SVECTOR *)(sp->unk14 + q->lg3.unk14), &sp->unkE0, a->unkC);
+            p = (Prim8005804C *)sp->unk4;
+            sp->unk4 += sizeof(Gt38005804C);
+            p->g3.unk8 = a->unk0;
+            p->g3.unk14 = b->unk0;
+            p->g3.unk20 = c->unk0;
+            p->g3.unkC = q->lg3.unk0;
+            p->g3.unk18 = q->lg3.unk4;
+            p->g3.unk24 = q->lg3.unk8;
+            p->g3.tag.unk0_24 = 9;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p->g3.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb3(&p->g3.unk4, &p->g3.unk10, &p->g3.unk1C);
+                p->g3.unk4.c.code = sp->unkC.b[3];
+            }
+            break;
+        case 0x3C:
+            a = (Elem8005A364 *)(vtx + q->lg4.unk12);
+            b = (Elem8005A364 *)(vtx + q->lg4.unk16);
+            c = (Elem8005A364 *)(vtx + q->lg4.unk1A);
+            func_80066048(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800660C4((SVECTOR *)(sp->unk14 + q->lg4.unk10), (SVECTOR *)(sp->unk14 + q->lg4.unk14), (SVECTOR *)(sp->unk14 + q->lg4.unk18), &sp->unkE0, a->unkC);
+            p = (Prim8005804C *)sp->unk4;
+            d = (Elem8005A364 *)(vtx + q->lg4.unk1E);
+            sp->unk4 += sizeof(Gt48005804C);
+            p->g4.unk8 = a->unk0;
+            p->g4.unk14 = b->unk0;
+            p->g4.unk20 = c->unk0;
+            p->g4.unk2C = d->unk0;
+            gte_strgb3(&p->g4.unk4, &p->g4.unk10, &p->g4.unk1C);
+            func_800660A0((SVECTOR *)(sp->unk14 + q->lg4.unk1C), &sp->unkE0, a->unkC);
+            p->g4.unkC = q->lg4.unk0;
+            p->g4.unk18 = q->lg4.unk4;
+            p->g4.unk24 = q->lg4.unk8;
+            p->g4.unk30 = q->lg4.unkC;
+            p->g4.tag.unk0_24 = 0xC;
+            p->g4.unk4.c.code = sp->unkC.b[3];
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p->g4.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+                gte_strgb(&p->g4.unk28);
+            }
+            break;
+        case 0xA4:
+            p = (Prim8005804C *)sp->unk4;
+            a = (Elem8005A364 *)(vtx + q->ft3.unk10);
+            b = (Elem8005A364 *)(vtx + q->ft3.unk12);
+            c = (Elem8005A364 *)(vtx + q->ft3.unk14);
+            sp->unk4 += sizeof(Ft38005804C);
+            p->f3.unk8 = a->unk0;
+            p->f3.unk10 = b->unk0;
+            p->f3.unk18 = c->unk0;
+            p->f3.unk4.w = q->ft3.unkC;
+            p->f3.unkC = q->ft3.unk0;
+            p->f3.unk14 = q->ft3.unk4;
+            p->f3.unk1C = q->ft3.unk8;
+            p->f3.tag.unk0_24 = 7;
+            p->f3.unk4.c.code = sp->unkC.b[3] & 0x7F;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p->f3.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+            }
+            break;
+        case 0xAC:
+            p = (Prim8005804C *)sp->unk4;
+            a = (Elem8005A364 *)(vtx + q->ft4.unk14);
+            b = (Elem8005A364 *)(vtx + q->ft4.unk16);
+            c = (Elem8005A364 *)(vtx + q->ft4.unk18);
+            d = (Elem8005A364 *)(vtx + q->ft4.unk1A);
+            sp->unk4 += sizeof(Ft48005804C);
+            p->f4.unk8 = a->unk0;
+            p->f4.unk10 = b->unk0;
+            p->f4.unk18 = c->unk0;
+            p->f4.unk20 = d->unk0;
+            p->f4.unk4.w = q->ft4.unk10;
+            p->f4.unkC = q->ft4.unk0;
+            p->f4.unk14 = q->ft4.unk4;
+            p->f4.unk1C = q->ft4.unk8;
+            p->f4.unk24 = q->ft4.unkC;
+            p->f4.tag.unk0_24 = 9;
+            p->f4.unk4.c.code = sp->unkC.b[3] & 0x7F;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p->f4.tag.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+            }
+            break;
+        }
+        pk += sp->unkC.b[1];
+    }
+    D_801A5F24[0]->unk8 = (s32)sp->unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800672A4);
 

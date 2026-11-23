@@ -2260,5 +2260,11 @@ void func_800672CC(void);
 void func_80064CB8(s32 arg0);
 void func_80064D64(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 extern Tbl800658B8 D_801AE82C;
+void func_80065CF8(Scr80057A00 *arg0, u16 arg1, s32 arg2);
+void func_80066048(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8006606C(Sub8004C98C *arg0, Word80057A00 *arg1, s32 arg2);
+void func_800660A0(SVECTOR *arg0, Word80057A00 *arg1, s32 arg2);
+void func_800660C4(SVECTOR *arg0, SVECTOR *arg1, SVECTOR *arg2, Word80057A00 *arg3, s32 arg4);
+void func_800660FC(Sub8004C98C *arg0);
 
 #endif /* FDAT202_H */
