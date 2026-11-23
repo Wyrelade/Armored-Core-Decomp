@@ -1348,7 +1348,139 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80060374);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800608C4);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80060B3C);
+void func_80060B3C(void) {
+    Sub8004F1D4 v;
+    Obj800732FC *p;
+    s32 dist;
+    s32 n;
+    s32 idx;
+    s16 k;
+    s32 drawn;
+    Elem80072A30 *e;
+    Elem8008223C *q;
+    s32 r;
+
+    if (D_801A4BF0 == NULL) {
+        return;
+    }
+    dist = 0xFFFF;
+    if (D_8019D960.unk7290->unk30_14) {
+        dist = D_8019D960.unk7290->unk34_0 << 4;
+    }
+    p = (Obj800732FC *)D_8019B550;
+    for (n = 2; n != 0; n--) {
+        if (p->unk0 != 0) {
+            idx = p->unk16;
+            drawn = 0;
+            if (D_8019D960.unk6488[idx >> 5] & (1 << (idx & 0x1F))) {
+                SetRotMatrix(&D_8019D960.unk72A4);
+                SetTransMatrix((Obj80013A88 *)((u8 *)D_8019D960.unk72C4 - (u32)&((Obj80013A88 *)0)->unk14));
+                if (func_8006137C(dist, &p->unk8, p->unk64.unk6, p->unk64.unk8)) {
+                    func_8005D8B4(p->unkE + 0x80, &p->unk8, &p->unk10, p->unk60, &p->unk148, p->unk15C, idx, 0x64, 0x78, p->unk64.unk6, p->unk64.unk8);
+                    drawn = 1;
+                }
+            }
+            k = p->unk30;
+            if (k != -1 && (D_8019D960.unk6488[k >> 5] & (1 << (k & 0x1F)))) {
+                SetRotMatrix(&D_8019D960.unk72A4);
+                SetTransMatrix((Obj80013A88 *)((u8 *)D_8019D960.unk72C4 - (u32)&((Obj80013A88 *)0)->unk14));
+                v.unk2 = p->unk2C;
+                v.unk0 = p->unk8.unk0;
+                v.unk4 = p->unk8.unk4;
+                if (func_8006137C(dist, &v, p->unk64.unk6, p->unk64.unk8 >> 2)) {
+                    func_8005D66C(drawn, p->unkE + 0x80, &v, &p->unk10, p->unk60, 0x64, 0x78);
+                }
+            }
+        }
+        p++;
+    }
+    e = D_80194A70;
+    for (n = 0x200; n != 0; n--) {
+        if (e->unk6 != -1 && !(e->unk1C & 0x8000)) {
+            if (e->unk1C & 1) {
+                if (D_8019D960.unk72A4.unk14 >= e->unk0.unk0 + (e->unk22 << 8)
+                    && e->unk0.unk0 + (e->unk25 << 8) >= D_8019D960.unk72A4.unk14
+                    && D_8019D960.unk72A4.unk18 >= e->unk0.unk2 + (e->unk23 << 8)
+                    && e->unk0.unk2 + (e->unk26 << 8) >= D_8019D960.unk72A4.unk18
+                    && D_8019D960.unk72A4.unk1C >= e->unk0.unk4 + (e->unk24 << 8)
+                    && e->unk0.unk4 + (e->unk27 << 8) >= D_8019D960.unk72A4.unk1C) {
+                    if (e->unk1C & 2) {
+                        func_8005E370(e->unk0.unk2 - D_8019D960.unk72A4.unk18, e->unk28, e->unk29);
+                    } else if (e->unk1C & 8) {
+                        func_8005DCF0(e->unk6 + 0xA0, e, &D_8019D960.unk658C[D_801C40F0[e->unkE].unk30_0]);
+                    } else if (e->unk1C & 0x20) {
+                        idx = e->unkE;
+                        goto draw;
+                    } else {
+                        func_8005DC1C(e->unk6 + 0xA0, &e->unk8, &D_8019D960.unk658C[D_801C40F0[e->unkE].unk30_0]);
+                    }
+                }
+            } else {
+                idx = e->unkE;
+                if (D_8019D960.unk6488[idx >> 5] & (1 << (idx & 0x1F))) {
+                    SetRotMatrix(&D_8019D960.unk72A4);
+                    SetTransMatrix((Obj80013A88 *)((u8 *)D_8019D960.unk72C4 - (u32)&((Obj80013A88 *)0)->unk14));
+                    if (func_8006137C(dist, &e->unk0, 0x1F4, 0x1F4)) {
+                    draw:
+                        func_8005CB8C(e->unk6 + 0xA0, &e->unk0, &e->unk8, &e->unk10, e->unk19, e->unk1A, 0, 0xFF, 0, D_80039C70, &D_8008A1C8, 0, idx, e->unk18 + 0x64, e->unk18 + 0x78, 0, 0);
+                    }
+                }
+            }
+        }
+        e++;
+    }
+    func_800614C8(dist);
+    dist <<= 1;
+    q = D_801A60C4;
+    for (n = 0x100; n != 0; n--) {
+        if (q->unk6 == 0) {
+            idx = q->unkE;
+            if (D_8019D960.unk6488[idx >> 5] & (1 << (idx & 0x1F))) {
+                SetRotMatrix(&D_8019D960.unk72A4);
+                SetTransMatrix((Obj80013A88 *)((u8 *)D_8019D960.unk72C4 - (u32)&((Obj80013A88 *)0)->unk14));
+                switch (q->unk10) {
+                case 0:
+                    if (func_8006137C(dist, &q->unk0, 0x1F4, 0x1F4)) {
+                        func_8005CB8C(q->unkB8.p0.unk8, &q->unk0, &q->unkB8.p0.unk0, &q->unkB8.p0.unk24, q->unkB8.p0.unkA, q->unkB8.p0.unkC, 0, 0xFF, 0, D_80039C70, &q->unkB8.p0.unk10, q->unkB8.p0.unkE, idx, 0x64, 0x78, 0, 0);
+                    }
+                    break;
+                case 1:
+                    r = func_8005C020(&q->unk0);
+                    if (!(r & func_8005C020(&q->unkB8.p1.unk0))) {
+                        func_8005F3B0(&q->unk0, &q->unkB8.p1.unk0, &D_8008AA58[q->unkB8.p1.unkC], &q->unkB8.p1.unk8, q->unkB8.p1.unkE);
+                    }
+                    break;
+                case 2:
+                    if (func_8006137C(dist, &q->unk0, q->unkB8.p2.unk2, q->unkB8.p2.unk2)) {
+                        func_8005FA5C(&q->unk0, &D_8008AA58[q->unkB8.p2.unk0], &D_8008AA58[q->unkB8.p2.unk0].unk8, q->unkB8.p2.unk2, q->unkB8.p2.unk4);
+                    }
+                    break;
+                case 3:
+                    if (func_8006137C(dist, &q->unk0, q->unkB8.p3.unk16, q->unkB8.p3.unk16)) {
+                        func_80060020(&q->unk0, &q->unkB8.p3.unkE, &q->unkB8.p3.unk0, q->unkB8.p3.unk16);
+                    }
+                    break;
+                case 4:
+                    if (func_8006137C(dist, &q->unk0, 0x1F4, 0x1F4)) {
+                        func_8005D500(q->unkB8.p4.unk0, q->unkB8.p4.unk2, &q->unk0, &q->unkB8.p4.unk4, &q->unkB8.p4.unkC, &q->unkB8.p4.unk14, 0x64, 0x78);
+                    }
+                    break;
+                case 5:
+                    if (func_8006137C(dist, &q->unk0, q->unkB8.p2.unk2, q->unkB8.p2.unk4)) {
+                        func_8005FCD8(&q->unk0, &D_8008AA58[q->unkB8.p2.unk0], q->unkB8.p2.unk2, q->unkB8.p2.unk4, q->unkB8.p2.unk6);
+                    }
+                    break;
+                case 6:
+                    if (func_8006137C(dist, &q->unk0, q->unkB8.p6.unk6, q->unkB8.p6.unk6)) {
+                        func_8005FA5C(&q->unk0, &D_8008AA58[q->unkB8.p6.unk4], &q->unkB8.p6.unk0, q->unkB8.p6.unk6, q->unkB8.p6.unk8);
+                    }
+                    break;
+                }
+            }
+        }
+        q++;
+    }
+}
 
 s32 func_80061338(s32 arg0, s32 arg1) {
     s32 flags;
