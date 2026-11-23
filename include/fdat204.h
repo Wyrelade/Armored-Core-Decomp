@@ -81,9 +81,10 @@ typedef struct Obj80073138 {
     s16 unk1C;
     u8 _pad1E[0xC];
     u16 unk2A;
-    u8 _pad2C[0x2];
+    s16 unk2C;
     s16 unk2E;
-    u8 _pad30[0x6];
+    s16 unk30;
+    u8 _pad32[0x4];
     u16 unk36;
     u8 _pad38[0x4];
     u8 unk3C;
@@ -1483,6 +1484,14 @@ typedef struct Mdl80064CC8 {
     u8 unk5;
 } Mdl80064CC8;
 
+typedef struct Elem8007712C {
+    u8 _pad0[0x4];
+    Elem8007229C *unk4;
+    u8 _pad8[0x6];
+    u16 unkE;
+    u8 _pad10[0xC];
+} Elem8007712C;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1777,5 +1786,7 @@ void SetBackColor(s32 arg0, s32 arg1, s32 arg2);
 void SetFogNearFar(s32 arg0, s32 arg1, s32 arg2);
 extern Tbl80064B94 D_801B614C;
 extern Mat8005BAA8 D_800AD348;
+Elem8007712C *func_80073B98(Obj80073138 *arg0, s32 arg1);
+Elem8007712C *func_8006C798(s32 arg0);
 
 #endif /* FDAT204_H */
