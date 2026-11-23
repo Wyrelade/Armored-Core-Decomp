@@ -1844,5 +1844,11 @@ void func_80069F04(Ent80067EBC *arg0);
 void func_8006A7EC(Ent80067EBC *arg0);
 void func_8006C580(Ent80067EBC *arg0);
 void func_8006D0C0(Ent80067EBC *arg0);
+void func_80068A44(u16 arg0);
+s32 func_80068CB8(Scr80069A5C *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80068CE0(u8 *arg0, u8 *arg1);
+void func_80068D00(u8 *arg0);
+void func_8006B0BC(Ent80067EBC *arg0);
+void func_8006BC30(Ent80067EBC *arg0);
 
 #endif /* FDAT202_H */
