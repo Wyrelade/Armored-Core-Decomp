@@ -168,7 +168,90 @@ s32 func_801C6CD4(Obj801C4EB8 *arg0) {
     return func_80012794(&arg0->unk22, arg0->unk16, arg0->unk18, 0, D_801A26C0, D_801A26E0, D_801A26E2);
 }
 
-INCLUDE_ASM("asm/USA/fdat018/nonmatchings/fdat018", func_801C6D24);
+s32 func_801C6D24(Elem801C5EA8 *arg0, s32 arg1) {
+    Sub801C5EA8 *sub;
+    s32 turn;
+    s32 rot;
+    s32 dir;
+    s16 speed;
+    s16 v;
+    s32 neg;
+
+    sub = arg0->unk2C;
+    if (arg1 >= 4) {
+        turn = 0;
+        dir = 1;
+        if (arg1 == 4) {
+            dir = -1;
+        }
+    } else {
+        turn = 1;
+        rot = arg1;
+    }
+    switch (sub->unk10) {
+    case 2:
+        rot += 2;
+        dir = -dir;
+    case 1:
+    case 4:
+        if (turn) {
+            rot = (rot + arg0->unk16) & 3;
+            sub->unk1E -= sub->unk20;
+            if (sub->unk1E <= 0) {
+                sub->unk1E += sub->unk12;
+                speed = sub->unk1C;
+            } else {
+                speed = sub->unk1A;
+            }
+            D_801C8228 = speed;
+            func_8001380C(&D_801C8224, &sub->unk8, rot);
+        } else if (dir > 0) {
+            sub->unk1E -= sub->unk20;
+            if (sub->unk1E <= 0) {
+                sub->unk1E += sub->unk12;
+                v = sub->unk1C;
+            } else {
+                v = sub->unk1A;
+            }
+            sub->unk8.unk2 = v;
+        } else {
+            sub->unk1E -= sub->unk20;
+            if (sub->unk1E <= 0) {
+                sub->unk1E += sub->unk12;
+                neg = -sub->unk1C;
+            } else {
+                neg = -sub->unk1A;
+            }
+            sub->unk8.unk2 = neg;
+        }
+        func_80072180(arg0);
+        if (sub->unk10 == 1 || sub->unk10 == 4) {
+            if (++sub->unk11 >= sub->unk12) {
+                sub->unk10 += 2;
+            }
+            return 1;
+        }
+        if (--sub->unk11 == 0) {
+            sub->unk10 = 0;
+            D_801D0B98[*arg0->unk28].unk0 |= 0x100;
+            return 2;
+        }
+        if (sub->unk11 >= sub->unk13 && arg0->unk38->unkA == 0) {
+            if (func_801C6CD4((struct Obj801C4EB8 *)sub) != 0) {
+                func_801C6B68(arg0, 1);
+            }
+        }
+        return 1;
+    case 3:
+        if (arg0->unk38->unkA == 0) {
+            if (func_801C6CD4((struct Obj801C4EB8 *)sub) == 0) {
+                func_801C6B68(arg0, 2);
+            }
+        }
+        return 0;
+    }
+    return 0;
+}
 
 void func_801C6FE4(Elem801C5EA8 *arg0) {
     switch (func_801C6D24(arg0, arg0->unk38->unk7)) {
