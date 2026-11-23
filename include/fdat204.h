@@ -143,6 +143,14 @@ typedef struct Elem8007A240 {
     u8 _pad10[0x20];
 } Elem8007A240;
 
+typedef struct Obj8008166C {
+    s32 unk0;
+    u8 _pad4[0x12];
+    u16 unk16;
+    s16 unk18;
+    s16 unk1A;
+} Obj8008166C;
+
 typedef struct Obj80077EAC {
     s32 unk0;
     s32 unk4;
@@ -157,7 +165,7 @@ typedef struct Obj80077EAC {
     u8 _pad30[0x1C];
     Sub80078460 *unk4C;
     u8 _pad50[0x30];
-    s32 unk80;
+    Obj8008166C *unk80;
     Elem8007A240 unk84[8];
     u8 _pad204[0x10];
     u16 unk214;
