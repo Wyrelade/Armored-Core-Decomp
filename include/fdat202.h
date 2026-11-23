@@ -115,6 +115,11 @@ typedef struct Obj8007618C {
     u16 unk162;
 } Obj8007618C;
 
+typedef struct Hit800736CC {
+    s32 unk0;
+    Obj8007618C *unk4;
+} Hit800736CC;
+
 typedef struct Sub80078B14 {
     s16 unk0;
     s16 unk2;
@@ -2220,7 +2225,7 @@ void func_8006DB90(u32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006DBE4(u32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006F04C(Sub8006F234 *arg0, s16 *arg1, s32 *arg2);
 extern s32 D_801A5DCC;
-extern s32 D_801A5DD0;
+extern Hit800736CC D_801A5DD0;
 void func_80076548(Obj8007618C *arg0, s32 arg1, s32 arg2);
 void func_8004E98C(Sub8007618C *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8004EA98(Sub8007618C *arg0, s32 arg1, s32 arg2, s32 arg3);

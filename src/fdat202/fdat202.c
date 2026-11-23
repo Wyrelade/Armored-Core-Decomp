@@ -5636,7 +5636,7 @@ void func_8007398C(s32 arg0) {
 }
 
 void func_8007399C(s32 arg0) {
-    D_801A5DD0 = arg0;
+    D_801A5DD0.unk0 = arg0;
 }
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800739AC);
@@ -5726,7 +5726,7 @@ s32 func_800749A0(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, Sub80
     found = 0;
     i = 6;
     pp = &pos;
-    target = &D_801A5DD0;
+    target = &D_801A5DD0.unk0;
     do {
         prev = *arg3;
         arg2->unk0 = arg1->unk0 + prev.unk0;
