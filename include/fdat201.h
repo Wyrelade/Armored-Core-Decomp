@@ -2649,5 +2649,28 @@ extern u8 D_80031BE6[];
 extern u8 D_80031BF4[];
 void func_80083790(Obj8004DEB0 *arg0);
 extern U8x10 D_8004CD30;
+extern u8 D_800B83D0[];
+extern u8 D_800B843C[];
+extern u8 D_8004BEA8[];
+extern u8 D_8004BEAC[];
+extern u8 D_8004BEB4[];
+extern u8 D_8004BEBC[];
+extern u8 D_8004BEC0[];
+extern u8 D_8004BEC8[];
+extern u8 D_8004BECC[];
+extern u8 D_8004BED4[];
+extern u8 *D_800B824C;
+extern u8 *D_800B8250;
+extern Obj8004DEB0 *D_8017EF80;
+extern Obj8004DEB0 *D_8017EF84;
+extern Obj8004DEB0 *D_8017EF88;
+extern Obj8004DEB0 *D_8017EF8C;
+extern Obj8004DEB0 *D_8017EF90;
+extern Obj8004DEB0 *D_8017EF94;
+extern u32 *D_801F36D8;
+extern s32 D_801BC480;
+void func_80078A38(Obj8004DEB0 *arg0);
+void func_8007BCE8(s32 arg0);
+void func_800788C8(s32 arg0, s32 arg1);
 
 #endif /* FDAT201_H */

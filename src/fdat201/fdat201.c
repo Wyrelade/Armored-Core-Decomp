@@ -3824,7 +3824,131 @@ INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BEB4);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BEBC);
 INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BEC0);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800744A8);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BEC8);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BECC);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004BED4);
+
+Obj800744A8 *func_800744A8(Obj8004DEB0 *arg0, void (*arg1)(), u8 arg2) {
+    Obj800744A8 *task;
+    Sub800744A8 *sub;
+    u8 *a5Ap;
+    u32 **bufp;
+    u8 *a59p;
+    u8 a58;
+    u8 a5A;
+    u8 a5B;
+    u8 a63;
+    u8 a59;
+    u8 a60;
+    u8 a61;
+
+    task = func_800501BC(0);
+    task->unk70 = func_800744A8;
+    task->unk74 = func_80078A38;
+    task->unk78 = func_800507F4;
+    task->unk2 = 0;
+    task->unk3 = 0;
+    task->unk6C = 0;
+    task->unk5 = 0;
+    func_8005CAE0(D_800B83D0, 0, 0, 4);
+    func_8007BCE8(0x4C);
+    func_8007BCE8(0x52);
+    func_8007BCE8(0x55);
+    func_8007BCE8(0x44);
+    func_8005D754(2, D_800B843C, 8, 8, 4);
+    func_8005D80C(1, D_8004BEA8, 6, 8, 8, 8);
+    func_8005D80C(1, D_8004BEAC, 6, 8, 0x10, 8);
+    func_8005D80C(1, D_8004BEB4, 6, 8, 0x18, 8);
+    func_8005D80C(1, D_8004BEBC, 6, 8, 0x28, 8);
+    func_8005D80C(1, D_8004BEC0, 6, 8, 0x30, 8);
+    func_8005D80C(1, D_8004BEA8, 6, 8, 0x84, 4);
+    func_8005D80C(1, D_8004BEC8, 6, 8, 0x8C, 4);
+    func_8005D80C(1, D_8004BECC, 6, 8, 0xAC, 4);
+    a59p = &D_80031A58[1];
+    task->unk7C.unk0 = arg0;
+    task->unk7C.unk4 = arg1;
+    task->unk7C.unk8 = 0;
+    task->unk7C.unk9 = 0;
+    D_8017EF80 = &D_801BC4F8;
+    D_8017EF84 = &D_801BC4F8;
+    D_8017EF88 = &D_801BC4F8;
+    D_8017EF8C = &D_801BC4F8;
+    D_8017EF90 = &D_801BC4F8;
+    D_8017EF94 = &D_801BC4F8;
+    D_8017EF98[0] = (struct Obj80056EF4 *)&D_801BC4F8;
+    task->unk7C.unkC = (Obj80072C80 *)&D_801BC4F8;
+    task->unk7C.unk1B = arg2;
+    task->unk7C.unk1C = *a59p;
+    task->unk7C.unk1D = D_80031A58[4];
+    task->unk7C.unk1E = D_80031A58[5];
+    task->unk7C.unk32 = 0;
+    task->unk7C.unk34 = D_80039CA0;
+    a58 = D_80031A58[0];
+    a5A = D_80031A58[2];
+    a5B = D_80031A58[3];
+    a63 = D_80031A58[11];
+    a59 = *a59p;
+    a60 = D_80031A58[8];
+    a61 = D_80031A58[9];
+    func_80074A18();
+    sub = &task->unk7C;
+    if (a58 != D_80031A58[0] || a5A != D_80031A58[2] || a5B != D_80031A58[3] || a63 != D_80031A58[11]
+        || a59 != *a59p || a60 != D_80031A58[8] || a61 != D_80031A58[9]) {
+        func_8005DED8((Obj8004DEB0 *)task, func_80078A38, D_8004BED4, 0xC);
+        task->unk74 = func_800507FC;
+    }
+    a5Ap = &D_80031A58[2];
+    if (*a5Ap != 0xFF) {
+        func_8005D15C(D_800B824C, 0x3C0, 0);
+        sub->unk16 = 2;
+        sub->unk18 = 3;
+        sub->unk1A = 0;
+        sub->unk24 = 0x43;
+        sub->unk2C = *a5Ap;
+        sub->unk2A = *a5Ap;
+        sub->unk2F = 0xA;
+        sub->unk30 = D_80039CA2 * 10;
+        sub->unk14 = 4;
+        sub->unk20 = &D_801BC4F8;
+        sub->unk25 = 1;
+        sub->unk26 = 0;
+        sub->unk28 = 0;
+        sub->unkA = D_80031A58[5];
+        sub->unkB = D_80031A58[4];
+        bufp = &D_801F36D8;
+        if (*bufp != 0) {
+            func_80051078(*bufp);
+            *bufp = 0;
+            D_801BC480 = 0;
+        }
+        func_800788C8(1, 3);
+    } else {
+        func_8005D15C(D_800B8250, 0x3C0, 0);
+        sub->unk18 = 4;
+        sub->unk16 = 0;
+        sub->unk1A = 1;
+        sub->unk24 = 0x43;
+        sub->unk2A = sub->unk2C = D_80031A58[0];
+        sub->unk2F = 7;
+        sub->unk30 = D_80039CA2 * 3;
+        sub->unk14 = 0;
+        sub->unk20 = &D_801BC4F8;
+        sub->unk25 = 1;
+        sub->unk26 = 0;
+        sub->unk28 = 0;
+        sub->unkA = D_80031A58[5];
+        sub->unkB = D_80031A58[4];
+        bufp = &D_801F36D8;
+        if (*bufp != 0) {
+            func_80051078(*bufp);
+            *bufp = 0;
+            D_801BC480 = 0;
+        }
+        func_800788C8(1, 4);
+    }
+    func_800740AC(task);
+    return task;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80074A18);
 
