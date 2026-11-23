@@ -1511,6 +1511,41 @@ typedef struct Elem8006D9DC {
     Obj8006D9DC *unk4;
 } Elem8006D9DC;
 
+typedef struct Sub8006F4D8 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+} Sub8006F4D8;
+
+typedef struct Obj8006F4D8 {
+    s32 unk0[16];
+    u8 _pad40[0x8];
+    Elem8006F4D8 **unk48;
+    s32 unk4C;
+    u8 _pad50[0x8];
+    s32 unk58[2];
+    s32 *unk60;
+    Sub8004DE88 unk64;
+    Sub8004DE88 unk6C;
+    Sub8004DE88 unk74;
+    Sub8004DE88 unk7C;
+    Elem8006D9DC *unk84;
+    s32 unk88;
+    s32 unk8C;
+    Elem800730DC *unk90;
+    Elem8006D9DC *unk94;
+    Obj8006D9DC *unk98;
+    u8 _pad9C[0x14];
+    Elem8006F4D8 *unkB0;
+    Elem8006F4D8 *unkB4;
+    u8 _padB8[0x4];
+    s32 unkBC;
+} Obj8006F4D8;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1877,5 +1912,11 @@ void func_80068D00(u8 *arg0);
 void func_8006B0BC(Ent80067EBC *arg0);
 void func_8006BC30(Ent80067EBC *arg0);
 extern Elem8006D9DC D_80091228[];
+extern Elem8006F4D8 *D_801E8B74[];
+void func_8006DEF4(Sub8006F4D8 *arg0, s32 *arg1);
+s32 func_8006FB6C(s32 *arg0, ...);
+void func_8006F83C(Obj8006F4D8 *arg0, Sub8006F4D8 *arg1, s32 arg2);
+s32 func_8006F7A0(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8006F08C(Obj8006F4D8 *arg0);
 
 #endif /* FDAT202_H */

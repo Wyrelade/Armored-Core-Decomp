@@ -3245,7 +3245,43 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006F300);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006F3E0);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8006F4D8);
+s32 func_8006F4D8(Sub8006F4D8 *arg0, s32 arg1, s32 arg2) {
+    Obj8006F4D8 *scr = (Obj8006F4D8 *)0x1F800000;
+
+    func_8006DEF4(arg0, scr->unk0);
+    scr->unk48 = D_801E8B74;
+    scr->unk4C = arg2;
+    scr->unk84 = D_80091228;
+    for (scr->unk88 = func_8006FB6C(scr->unk0, D_801E8B70); scr->unk88 != -1; scr->unk88 = func_8006FB6C(NULL)) {
+        scr->unk90 = &D_801D0B68[scr->unk88];
+        if (func_8006EFFC(arg0->unk0, arg0->unk8, scr->unk90->unk18, scr->unk90->unk20)
+            && func_8006EFFC(arg0->unk2, arg0->unkA, scr->unk90->unk1A, scr->unk90->unk22)
+            && func_8006EFFC(arg0->unk4, arg0->unkC, scr->unk90->unk1C, scr->unk90->unk24)) {
+            if (arg1 == 0) {
+                scr->unk60 = NULL;
+            } else {
+                scr->unk60 = scr->unk58;
+            }
+            func_8006F83C(scr, arg0, arg1);
+            scr->unk94 = &scr->unk84[scr->unk90->unk1E];
+            scr->unk98 = scr->unk94->unk4;
+            scr->unkBC = func_8006F7A0(scr->unk98->unk4, scr->unk64.unk0 - scr->unk74.unk0,
+                                       scr->unk6C.unk0 - scr->unk74.unk0, scr->unk7C.unk0 - scr->unk74.unk0);
+            scr->unkBC &= func_8006F7A0(scr->unk98->unk24, scr->unk64.unk2 - scr->unk74.unk2,
+                                        scr->unk6C.unk2 - scr->unk74.unk2, scr->unk7C.unk2 - scr->unk74.unk2);
+            scr->unkBC &= func_8006F7A0(scr->unk98->unk44, scr->unk64.unk4 - scr->unk74.unk4,
+                                        scr->unk6C.unk4 - scr->unk74.unk4, scr->unk7C.unk4 - scr->unk74.unk4);
+            if (scr->unkBC != 0) {
+                scr->unkB0 = scr->unk98->unk64;
+                scr->unkB4 = &scr->unkB0[scr->unk98->unk0];
+                scr->unk8C = (scr->unk98->unk0 >> 5) + 1;
+                func_8006F08C(scr);
+            }
+        }
+    }
+    *scr->unk48 = NULL;
+    return scr->unk48 != D_801E8B74;
+}
 
 s32 func_8006F7A0(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 result;
