@@ -1005,6 +1005,21 @@ typedef struct Light8005C904 {
     u16 unk66;
 } Light8005C904;
 
+typedef struct Mat80058B04 {
+    s32 unk0[5];
+    s32 unk14[3];
+} Mat80058B04;
+
+typedef struct Obj80062090 {
+    Sub8004DE88 unk0;
+    s16 unk8;
+    u8 unkA;
+    u8 unkB;
+    u8 unkC;
+    u8 unkD;
+    u8 _padE[0x2];
+} Obj80062090;
+
 typedef struct Obj80057A00 {
     u32 *unk0;
     u8 _pad4[0x4];
@@ -1026,6 +1041,9 @@ typedef struct Obj80057A00 {
     u8 _pad7780[0x24];
     Sub8006F234 unk77A4[4];
     Sub8006F234 unk7824[4];
+    Mat80058B04 unk78A4;
+    u8 _pad78C4[0x40];
+    Obj80062090 unk7904[0x100];
 } Obj80057A00;
 
 typedef struct Model80067EBC {
@@ -1237,11 +1255,6 @@ typedef union Pk8005804C {
     PkFt38005804C ft3;
     PkFt48005804C ft4;
 } Pk8005804C;
-
-typedef struct Mat80058B04 {
-    s32 unk0[5];
-    s32 unk14[3];
-} Mat80058B04;
 
 typedef struct Scr80058B04 {
     u8 _pad0[0x38];
@@ -1655,6 +1668,54 @@ typedef struct Scr80061F44 {
     s32 unk300[3];
 } Scr80061F44;
 
+typedef struct Mdl80062090 {
+    u32 unk0;
+    s32 unk4;
+    s32 unk8;
+    u16 unkC;
+    u16 unkE;
+    SVECTOR unk10;
+    SVECTOR unk18;
+    SVECTOR unk20;
+    SVECTOR unk28;
+} Mdl80062090;
+
+typedef struct Ft480062090 {
+    Sub8008C95C tag;
+    u32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u8 _pad1E[0x2];
+    s32 unk20;
+    u16 unk24;
+    u8 _pad26[0x2];
+} Ft480062090;
+
+typedef struct Fog80062090 {
+    u8 unk0;
+    u8 _pad1[0x3F];
+} Fog80062090;
+
+typedef struct Scr80062090 {
+    Ft480062090 *unk0;
+    u8 *unk4;
+    Sub8008C95C *unk8;
+    SVECTOR unkC;
+    SVECTOR unk14;
+    Mat80058B04 unk1C;
+    Mat80058B04 unk3C;
+    u32 unk5C;
+    s32 unk60;
+    s32 unk64;
+    s16 unk68;
+    s16 unk6A;
+    s16 unk6C;
+} Scr80062090;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2046,5 +2107,8 @@ void func_8005BE20(u16 arg0, s32 arg1);
 void func_80064684(u16 arg0, s32 arg1);
 void func_8005F5DC(Node8005EF38 *arg0);
 s32 func_80061F00(s32 arg0, s32 arg1);
+extern Mdl80062090 *D_8008DC90[];
+extern Fog80062090 D_801D0B98[];
+s32 func_80061F44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT202_H */
