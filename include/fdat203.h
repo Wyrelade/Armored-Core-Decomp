@@ -1534,6 +1534,11 @@ typedef struct Mode8005E758 {
     u8 _pad4[0x8];
 } Mode8005E758;
 
+typedef struct Arg8005EAEC {
+    u8 _pad0[0x2];
+    u16 unk2;
+} Arg8005EAEC;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
