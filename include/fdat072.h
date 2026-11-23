@@ -108,7 +108,7 @@ typedef struct Sub801C5EFC {
 
 typedef struct Obj8007A19C {
     u8 _pad0[0x1000];
-    u8 unk1000[1];
+    u8 unk1000[0x100];
 } Obj8007A19C;
 
 typedef struct Sub801A2828 {

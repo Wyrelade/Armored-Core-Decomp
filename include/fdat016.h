@@ -188,7 +188,7 @@ typedef struct Obj801C7AB8 {
 
 typedef struct Obj801C5458 {
     u8 _pad0[0x1000];
-    u8 unk1000[1];
+    u8 unk1000[0x100];
 } Obj801C5458;
 
 typedef struct Elem801C52C0 {
