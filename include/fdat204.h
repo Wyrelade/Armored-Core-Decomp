@@ -2012,5 +2012,11 @@ Obj800852B0 *func_800852B0(s32 arg0, Obj8008800C *arg1, u32 *arg2);
 void func_800665A8(void);
 void func_80063F94(s32 arg0);
 void func_80064040(Spad800640A4 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80064FD4(Spad800640A4 *arg0, u16 arg1, s32 arg2);
+void func_80065324(Spad800640A4 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800653D8(Sv8006678C *arg0);
+void func_80065348(Sv8006678C *arg0, s32 *arg1, s32 arg2);
+void func_8006537C(u8 *arg0, s32 *arg1, s32 arg2);
+void func_800653A0(u8 *arg0, u8 *arg1, u8 *arg2, s32 *arg3, s32 arg4);
 
 #endif /* FDAT204_H */
