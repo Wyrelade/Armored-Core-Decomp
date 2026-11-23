@@ -1840,6 +1840,22 @@ typedef struct Scr800658B8 {
     s32 unkDC;
 } Scr800658B8;
 
+typedef struct Tr800659EC {
+    u8 _pad0[0xC];
+    Sub8006F234 unkC;
+} Tr800659EC;
+
+typedef union Un800659EC {
+    Sub8006F234 rot;
+    Tr800659EC tr;
+} Un800659EC;
+
+typedef struct Scr800659EC {
+    u8 _pad0[0xEC];
+    Mat80058B04 unkEC;
+    Un800659EC unk10C;
+} Scr800659EC;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);

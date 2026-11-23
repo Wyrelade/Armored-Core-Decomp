@@ -3179,7 +3179,56 @@ void func_800658B8(u32 arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800659EC);
+void func_800659EC(Obj80055A24 *arg0, Obj80053908 *arg1, s32 arg2, u32 arg3, u16 arg4, s32 arg5, s32 arg6) {
+    Scr800659EC *sp;
+    Part80055A24 *p;
+    s32 n;
+    s32 i;
+    s32 idx;
+    s32 *src;
+    s32 *dst;
+
+    sp = (Scr800659EC *)0x1F800000;
+    p = arg0->unk20;
+    n = arg1->unk5;
+    func_800658B8(arg3);
+    src = D_800B1228.unk0;
+    dst = sp->unkEC.unk0;
+    for (i = 5; i != 0; i--) {
+        *dst++ = *src++;
+    }
+    sp->unkEC.unk14[0] = D_800B1228.unk14[0];
+    sp->unkEC.unk14[1] = D_800B1228.unk14[1];
+    sp->unkEC.unk14[2] = D_800B1228.unk14[2];
+    for (n--; n != -1; p++, n--) {
+        if (p->unk12 < 0) {
+            continue;
+        }
+        gte_SetRotMatrix(&sp->unkEC);
+        gte_SetTransMatrix(&sp->unkEC);
+        gte_ldlv0(p->unk28.unk14);
+        gte_rtv0tr();
+        gte_stlvnl(sp->unk10C.tr.unkC.unk14);
+        gte_ldclmv(&p->unk28.unk0[0][0]);
+        gte_rtir();
+        gte_stclmv(&sp->unk10C.rot.unk0[0][0]);
+        gte_ldclmv(&p->unk28.unk0[0][1]);
+        gte_rtir();
+        gte_stclmv(&sp->unk10C.rot.unk0[0][1]);
+        gte_ldclmv(&p->unk28.unk0[0][2]);
+        gte_rtir();
+        gte_stclmv(&sp->unk10C.rot.unk0[0][2]);
+        gte_SetRotMatrix(&sp->unk10C.rot);
+        gte_SetTransMatrix(&sp->unk10C.tr.unkC);
+        idx = p->unk12 + arg6;
+        D_801A5F28.unk61C = (SVECTOR *)((Elem80055A24 *)((u8 *)D_801A5F28.unk8->unkC + idx * 0x20 - idx * 4))->unk0;
+        if (arg4 == 0) {
+            func_80064DC8(idx, arg2, (1 << p->unk12) & arg5);
+        } else {
+            func_8006611C(idx, arg2, arg4, (1 << p->unk12) & arg5);
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80065CF8);
 
