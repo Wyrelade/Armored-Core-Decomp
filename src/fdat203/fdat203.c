@@ -1793,7 +1793,112 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005C020);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005C100);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005C2F4);
+void func_8005C2F4(Elem8006DC20 *arg0, s32 arg1, Rec8005C2F4 **arg2, Rec8005C2F4 **arg3, Sv8005C2F4 *arg4) {
+    Vec8004CE38 out;
+    Vec8004CE38 in;
+    Light8005C2F4 *light;
+    s32 rot;
+    s32 model;
+    s32 hit;
+    Mdl800573FC *el;
+    Rec8005C2F4 *pa;
+    Rec8005C2F4 *pb;
+    s32 h;
+    s32 id;
+
+    SetRotMatrix(&D_8019D960.unk72A4);
+    SetTransMatrix((Obj80013A88 *)((u8 *)D_8019D960.unk72C4 - (u32)&((Obj80013A88 *)0)->unk14));
+    if (func_8005C100(&arg0->unk10.unk8, &arg0->unk20) == 0) {
+        return;
+    }
+    arg0->unk34_24 = 1;
+    light = &D_8019D960.unk658C[arg0->unk30_0];
+    rot = -arg0->unk10.unk6 & 3;
+    in.unk0 = (arg0->unk10.unk0 - arg4->unk0) * 4;
+    in.unk4 = (arg0->unk10.unk2 - arg4->unk2) * 4;
+    in.unk8 = (arg0->unk10.unk4 - arg4->unk4) * 4;
+    if (arg1 == 0 && arg0->unk30_13) {
+        h = arg0->unk34_12 << 4;
+        if (!(arg0->unk10.unk8 - h < arg4->unk0 && arg4->unk0 < arg0->unk20 + h &&
+              arg0->unk10.unkA - h < arg4->unk2 && arg4->unk2 < arg0->unk22 + h &&
+              arg0->unk10.unkC - h < arg4->unk4 && arg4->unk4 < arg0->unk24 + h)) {
+            arg1 = 1;
+        }
+    }
+    id = arg0->unk1E + 0x104;
+    D_8019D960.unk8 = (Lod800584F4 *)((u8 *)D_8019D960.unkC[id] + D_8019D960.unkC[id]->unk8);
+    model = arg1;
+    if (D_8019D960.unk8->unk8 < 2) {
+        model = 0;
+    }
+    el = (Mdl800573FC *)((u8 *)D_8019D960.unk8->unkC + (model << 5) - (model << 2));
+    D_8019D960.unk61C = el->unk0;
+    hit = func_80066950(arg0, el->unk4);
+    if (arg1 == 0 &&
+        arg0->unk10.unk8 - 0x514 < arg4->unk0 && arg4->unk0 < arg0->unk20 + 0x514 &&
+        arg0->unk10.unkA - 0x514 < arg4->unk2 && arg4->unk2 < arg0->unk22 + 0x514 &&
+        arg0->unk10.unkC - 0x514 < arg4->unk4 && arg4->unk4 < arg0->unk24 + 0x514) {
+        SetColorMatrix((Obj80013A88 *)light->unk50);
+        SetBackColor(light->unk62, light->unk63, light->unk64);
+        SetLightMatrix(&light->unk0[rot]);
+        ApplyMatrixLV(D_8019D960.unk7374, &in, &out);
+        SetRotMatrix(&D_8019D960.unk7374[rot]);
+        SetTransMatrix((Obj80013A88 *)((u8 *)&out - (u32)&((Obj80013A88 *)0)->unk14));
+        if (hit != 0) {
+            func_8006735C(model);
+        } else {
+            func_800681B8(model, arg0->unk30_28);
+        }
+        return;
+    }
+    ApplyMatrixLV(D_8019D960.unk72F4, &in, &out);
+    if (arg1 == 0) {
+        if (hit != 0) {
+            SetColorMatrix((Obj80013A88 *)light->unk50);
+            SetBackColor(light->unk62, light->unk63, light->unk64);
+            SetLightMatrix(&light->unk0[rot]);
+            if (light->unk66 != 0) {
+                SetFogNearFar((light->unk66 * 2) >> 5, (light->unk66 * 2) >> 3, 0xA0);
+            }
+            D_8019D960.unk728C = light->unk66;
+            SetRotMatrix(&D_8019D960.unk72F4[rot]);
+            SetTransMatrix((Obj80013A88 *)((u8 *)&out - (u32)&((Obj80013A88 *)0)->unk14));
+            func_8005B810(model, 0x78);
+        } else {
+            pa = *arg2;
+            pa->unk0 = out.unk0;
+            pa->unk4 = out.unk4;
+            pa->unk8 = out.unk8;
+            pa->unkC = rot;
+            pa->unk14 = light;
+            pa->unk10 = arg0;
+            *arg2 = ++pa;
+        }
+    } else {
+        if (hit != 0) {
+            SetColorMatrix((Obj80013A88 *)light->unk50);
+            SetBackColor(light->unk62, light->unk63, light->unk64);
+            SetLightMatrix(&light->unk0[rot]);
+            SetRotMatrix(&D_8019D960.unk72F4[rot]);
+            if (light->unk66 != 0) {
+                SetFogNearFar((light->unk66 * 2) >> 5, (light->unk66 * 2) >> 3, 0xA0);
+            }
+            D_8019D960.unk728C = light->unk66;
+            SetTransMatrix((Obj80013A88 *)((u8 *)&out - (u32)&((Obj80013A88 *)0)->unk14));
+            func_80063B24(model, 0x78);
+        } else {
+            pb = *arg3;
+            pb->unk0 = out.unk0;
+            pb->unk4 = out.unk4;
+            pb->unk8 = out.unk8;
+            pb->unkC = rot;
+            pb->unkE = model ? 0x28 : 0xC;
+            pb->unk14 = light;
+            pb->unk10 = arg0;
+            *arg3 = ++pb;
+        }
+    }
+}
 
 void func_8005C82C(void) {
     Sv8005C2F4 cam;

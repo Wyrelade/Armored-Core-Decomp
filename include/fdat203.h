@@ -2136,5 +2136,16 @@ void func_80058AD8(Sub8004F1D4 *arg0, s32 *arg1, s32 arg2);
 void func_80058B0C(Sv800584F4 *arg0, s32 *arg1, s32 arg2);
 void func_80058B30(Sv800584F4 *arg0, Sv800584F4 *arg1, Sv800584F4 *arg2, Col800573FC *arg3, s32 arg4);
 void func_80058B68(Sub8004F1D4 *arg0);
+void SetColorMatrix(Obj80013A88 *m);
+void SetBackColor(s32 arg0, s32 arg1, s32 arg2);
+void SetLightMatrix(Rot8005C2F4 *m);
+void SetFogNearFar(s32 arg0, s32 arg1, s32 arg2);
+void ApplyMatrixLV(Obj80013A88 *m, Vec8004CE38 *v0, Vec8004CE38 *v1);
+s32 func_8005C100(s16 *arg0, s16 *arg1);
+s32 func_80066950(Elem8006DC20 *arg0, s32 arg1);
+void func_8006735C(u16 arg0);
+void func_800681B8(u16 arg0, s32 arg1);
+void func_8005B810(u16 arg0, s32 arg1);
+void func_80063B24(u16 arg0, s32 arg1);
 
 #endif /* FDAT203_H */
