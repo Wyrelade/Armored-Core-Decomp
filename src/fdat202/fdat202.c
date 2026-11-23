@@ -4637,7 +4637,7 @@ void func_80079CDC(Obj8007618C *arg0) {
     }
     y = &arg0->unk10.unk2;
     *y += arg0->unkCC.unk0;
-    func_8004CC30(D_80040FEC->unk11, D_801A5DC0->unk1200, &arg0->unk8, 0x28, 0x1F40, 0x2710, 0);
+    func_8004CC30(D_80040FEC[0]->unk11, D_801A5DC0->unk1200, &arg0->unk8, 0x28, 0x1F40, 0x2710, 0);
 }
 
 void func_80079DB0(Obj8007618C *arg0) {
