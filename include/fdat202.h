@@ -1285,6 +1285,206 @@ typedef struct Pk8005D76C {
     u16 unk1A;
 } Pk8005D76C;
 
+typedef struct Tag80069A5C {
+    u32 unk0_0 : 24;
+    u32 unk0_24 : 8;
+} Tag80069A5C;
+
+typedef struct Col80069A5C {
+    u32 unk0_0 : 8;
+    u32 unk0_8 : 8;
+    u32 unk0_16 : 8;
+    u32 unk0_24 : 8;
+} Col80069A5C;
+
+typedef struct Prim80069A5C {
+    Tag80069A5C unk0;
+    Col80069A5C unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u8 _pad1E[0x2];
+} Prim80069A5C;
+
+typedef struct Prim8006A13C {
+    Tag80069A5C unk0;
+    Col80069A5C unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u8 _pad1E[0x2];
+    s32 unk20;
+    u16 unk24;
+    u8 _pad26[0x2];
+} Prim8006A13C;
+
+typedef struct Prim8006AAC8 {
+    Tag80069A5C unk0;
+    Col80069A5C unk4;
+    s32 unk8;
+    s32 unkC;
+    Col80069A5C unk10;
+    s32 unk14;
+    s32 unk18;
+    Col80069A5C unk1C;
+    s32 unk20;
+    u16 unk24;
+    u8 _pad26[0x2];
+} Prim8006AAC8;
+
+typedef struct Prim8006B384 {
+    Tag80069A5C unk0;
+    Col80069A5C unk4;
+    s32 unk8;
+    s32 unkC;
+    Col80069A5C unk10;
+    s32 unk14;
+    s32 unk18;
+    Col80069A5C unk1C;
+    s32 unk20;
+    u16 unk24;
+    u8 _pad26[0x2];
+    Col80069A5C unk28;
+    s32 unk2C;
+    u16 unk30;
+    u8 _pad32[0x2];
+} Prim8006B384;
+
+typedef union Uv80069A5C {
+    u16 unk0;
+    struct {
+        u8 unk0;
+        u8 unk1;
+    } b;
+} Uv80069A5C;
+
+typedef union Rgb80069A5C {
+    Col80069A5C unk0;
+    struct {
+        u8 unk0;
+        u8 unk1;
+        u8 unk2;
+        u8 unk3;
+    } b;
+} Rgb80069A5C;
+
+typedef struct Vtx80069A5C {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    u8 _pad6[0x2];
+    Uv80069A5C unk8;
+    u8 _padA[0x2];
+    Rgb80069A5C unkC;
+    s32 unk10;
+    u32 unk14;
+} Vtx80069A5C;
+
+typedef struct Obj80069A5C {
+    Vtx80069A5C unk0[3];
+    Vtx80069A5C *unk48;
+    Vtx80069A5C *unk4C;
+    Vtx80069A5C *unk50;
+    u8 _pad54[0x4];
+} Obj80069A5C;
+
+typedef struct Obj8006A13C {
+    Vtx80069A5C unk0[5];
+    Vtx80069A5C *unk78;
+    Vtx80069A5C *unk7C;
+    Vtx80069A5C *unk80;
+    Vtx80069A5C *unk84;
+    u8 _pad88[0x4];
+} Obj8006A13C;
+
+typedef union Un80069A5C {
+    Prim80069A5C *ft3;
+    Prim8006A13C *ft4;
+    Prim8006AAC8 *gt3;
+    Prim8006B384 *gt4;
+} Un80069A5C;
+
+typedef struct Cv80067EBC {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+} Cv80067EBC;
+
+typedef struct Vtx80067EBC {
+    s32 unk0;
+    s16 unk4;
+    u8 unk6;
+    u8 unk7;
+    Cv80067EBC unk8;
+} Vtx80067EBC;
+
+typedef struct Poly80067EBC {
+    u32 unk0;
+    u32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+} Poly80067EBC;
+
+typedef union Hdr80067EBC {
+    u32 w;
+    struct {
+        u8 unk0;
+        u8 unk1;
+        u8 unk2;
+        u8 unk3;
+    } b;
+} Hdr80067EBC;
+
+typedef struct Ent80067EBC {
+    u32 *unk0;
+    u32 unk4;
+} Ent80067EBC;
+
+typedef struct Nrm80068D18 {
+    u8 _pad0[0x6];
+    s16 unk6;
+} Nrm80068D18;
+
+typedef struct Scr80069A5C {
+    u8 _pad0[0x4];
+    Un80069A5C unk4;
+    s32 unk8;
+    u8 _padC[0x20];
+    Col80069A5C unk2C;
+    u8 _pad30[0x320];
+    Hdr80067EBC unk350;
+    Model80067EBC *unk354;
+    u8 *unk358;
+    u8 *unk35C;
+    s32 unk360;
+    s32 unk364;
+    s32 unk368;
+    Tag80069A5C *unk36C;
+    Tag80069A5C *unk370;
+    u8 *unk374;
+    s32 unk378;
+    s32 unk37C;
+    Ent80067EBC *unk380;
+    Ent80067EBC *unk384;
+    Ent80067EBC *unk388;
+    Ent80067EBC *unk38C;
+    Cv80067EBC unk390;
+} Scr80069A5C;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1635,5 +1835,14 @@ void Square0(Vec8004C98C *v0, Vec8004C98C *v1);
 void func_8005C904(Elem800730DC *arg0, s32 arg1, Elem8005C904 **arg2, Elem8005C904 **arg3, Sub8004DE88 *arg4);
 void func_8005AF90(Elem8005C904 *arg0);
 void func_800639D8(Elem8005C904 *arg0);
+extern u8 *D_801A6544;
+void func_80067BE0(u16 arg0);
+s32 func_80067E54(s32 arg0, s32 arg1, s32 arg2);
+void func_80067E84(u8 *arg0, Cv80067EBC *arg1);
+void func_80067EA4(Cv80067EBC *arg0);
+void func_80069F04(Ent80067EBC *arg0);
+void func_8006A7EC(Ent80067EBC *arg0);
+void func_8006C580(Ent80067EBC *arg0);
+void func_8006D0C0(Ent80067EBC *arg0);
 
 #endif /* FDAT202_H */

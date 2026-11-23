@@ -2018,7 +2018,287 @@ INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80067E84);
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80067EA4);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80067EBC);
+void func_80067EBC(u16 arg0) {
+    Scr80069A5C *scr = (Scr80069A5C *)0x1F800000;
+    Ent80067EBC lists[4][0x100];
+    Obj80067EBC *d;
+    Model80067EBC *model;
+    Vtx80067EBC *v1;
+    Vtx80067EBC *v0;
+    Vtx80067EBC *v2;
+    Vtx80067EBC *v3;
+    u32 *p;
+    u8 *vtx;
+    u32 t;
+    s32 n;
+    s32 otz;
+    Un80069A5C prim;
+
+    d = &D_801A5F30;
+    model = (Model80067EBC *)((u32 *)d->unk0 + 3 + arg0 * 8 - arg0);
+    scr->unk354 = model;
+    if (model->unk14 == 0) {
+        return;
+    }
+    scr->unk368 = model->unk14;
+    scr->unk390.unk0 = scr->unk390.unk1 = scr->unk390.unk2 = 0x40;
+    scr->unk380 = lists[0];
+    scr->unk384 = lists[1];
+    scr->unk388 = lists[2];
+    scr->unk38C = lists[3];
+    scr->unk378 = D_801987C8 + 0xF;
+    scr->unk37C = D_801987C8 + 3;
+    scr->unk36C = (Tag80069A5C *)&D_801A5F28.unk0[0x78];
+    vtx = d->unkB18;
+    func_80067BE0(model->unk4);
+    scr->unk358 = scr->unk354->unk8;
+    scr->unk35C = D_801A6544;
+    p = scr->unk354->unk10;
+    scr->unk4.ft3 = (Prim80069A5C *)D_801A5F24[0]->unk8;
+    scr->unk8 = D_801A5F24[0]->unk4;
+    do {
+        scr->unk350.w = *p++;
+        switch (scr->unk350.b.unk3 & 0xFC) {
+        case 0x24:
+            v0 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unkE);
+            v1 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk10);
+            v2 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk12);
+            if (v0->unk6 & v1->unk6 & v2->unk6) {
+                break;
+            }
+            t = v0->unk7 | v1->unk7 | v2->unk7;
+            if (t == 0) {
+            draw3:
+                if ((v0->unk6 | v1->unk6 | v2->unk6) == 0x1F) {
+                    break;
+                }
+                if (func_80067E54(v0->unk0, v1->unk0, v2->unk0) <= 0) {
+                    break;
+                }
+                if ((v0->unk8.unk3 | v1->unk8.unk3 | v2->unk8.unk3) == 0) {
+                    gte_ldv0(scr->unk358 + ((Poly80067EBC *)p)->unkC);
+                    gte_ldrgb(&scr->unk390);
+                    gte_nccs();
+                    prim.ft3 = scr->unk4.ft3;
+                    scr->unk4.ft3 = prim.ft3 + 1;
+                    prim.ft3->unk8 = v0->unk0;
+                    prim.ft3->unk10 = v1->unk0;
+                    prim.ft3->unk18 = v2->unk0;
+                    prim.ft3->unkC = ((Poly80067EBC *)p)->unk0;
+                    prim.ft3->unk14 = ((Poly80067EBC *)p)->unk4;
+                    prim.ft3->unk1C = ((Poly80067EBC *)p)->unk8;
+                    prim.ft3->unk0.unk0_24 = 7;
+                    gte_strgb(&prim.ft3->unk4);
+                    prim.ft3->unk4.unk0_24 = scr->unk350.b.unk3;
+                    otz = (((v0->unk4 + v1->unk4 + v2->unk4) * 0x1555) >> scr->unk378) + (s8)scr->unk350.b.unk0 * 4;
+                    prim.ft3->unk0.unk0_0 = scr->unk36C[otz].unk0_0;
+                    scr->unk36C[otz].unk0_0 = (u32)prim.ft3;
+                } else {
+                    func_80067E84(scr->unk358 + ((Poly80067EBC *)p)->unkC, &v0->unk8);
+                    prim.gt3 = scr->unk4.gt3;
+                    scr->unk4.gt3 = prim.gt3 + 1;
+                    gte_strgb(&prim.gt3->unk4);
+                    func_80067EA4(&v1->unk8);
+                    prim.gt3->unk8 = v0->unk0;
+                    prim.gt3->unk14 = v1->unk0;
+                    prim.gt3->unk20 = v2->unk0;
+                    gte_strgb(&prim.gt3->unk10);
+                    func_80067EA4(&v2->unk8);
+                    prim.gt3->unkC = ((Poly80067EBC *)p)->unk0;
+                    prim.gt3->unk18 = ((Poly80067EBC *)p)->unk4;
+                    prim.gt3->unk24 = ((Poly80067EBC *)p)->unk8;
+                    prim.gt3->unk0.unk0_24 = 9;
+                    prim.gt3->unk4.unk0_24 = (scr->unk350.b.unk3 & 2) | 0x34;
+                    gte_strgb(&prim.gt3->unk1C);
+                    otz = (((v0->unk4 + v1->unk4 + v2->unk4) * 0x1555) >> scr->unk378) + (s8)scr->unk350.b.unk0 * 4;
+                    prim.ft3->unk0.unk0_0 = scr->unk36C[otz].unk0_0;
+                    scr->unk36C[otz].unk0_0 = (u32)prim.ft3;
+                }
+                break;
+            }
+            if (t < 2) {
+                n = scr->unk350.b.unk2 & 7;
+                if (n == 0) {
+                    goto draw3;
+                }
+                if (func_80067E54(v0->unk0, v1->unk0, v2->unk0) <= 0) {
+                    break;
+                }
+            } else {
+                n = scr->unk350.b.unk2 >> 3;
+                if (n == 0) {
+                    goto draw3;
+                }
+            }
+            if ((v0->unk8.unk3 | v1->unk8.unk3 | v2->unk8.unk3) == 0) {
+                scr->unk384->unk0 = p;
+                scr->unk350.b.unk2 = n;
+                scr->unk384->unk4 = scr->unk350.w;
+                scr->unk384++;
+            } else {
+                scr->unk38C->unk0 = p;
+                scr->unk350.b.unk2 = n;
+                scr->unk38C->unk4 = scr->unk350.w;
+                scr->unk38C++;
+            }
+            break;
+        case 0x2C:
+            v0 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk12);
+            v1 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk14);
+            v2 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk16);
+            v3 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk18);
+            if (v0->unk6 & v1->unk6 & v2->unk6 & v3->unk6) {
+                break;
+            }
+            t = v0->unk7 | v1->unk7 | v2->unk7 | v3->unk7;
+            if (t == 0) {
+            draw2C:
+                if ((v0->unk6 | v1->unk6 | v2->unk6 | v3->unk6) == 0x1F) {
+                    break;
+                }
+                if (func_80067E54(v0->unk0, v1->unk0, v2->unk0) <= 0) {
+                    break;
+                }
+                if ((v0->unk8.unk3 | v1->unk8.unk3 | v2->unk8.unk3 | v3->unk8.unk3) == 0) {
+                    gte_ldv0(scr->unk358 + ((Poly80067EBC *)p)->unk10);
+                    gte_ldrgb(&scr->unk390);
+                    gte_nccs();
+                    prim.ft4 = scr->unk4.ft4;
+                    scr->unk4.ft4 = prim.ft4 + 1;
+                    prim.ft4->unk8 = v0->unk0;
+                    prim.ft4->unk10 = v1->unk0;
+                    prim.ft4->unk18 = v2->unk0;
+                    prim.ft4->unk20 = v3->unk0;
+                    prim.ft4->unkC = ((Poly80067EBC *)p)->unk0;
+                    prim.ft4->unk14 = ((Poly80067EBC *)p)->unk4;
+                    prim.ft4->unk1C = ((Poly80067EBC *)p)->unk8;
+                    prim.ft4->unk24 = ((Poly80067EBC *)p)->unkC;
+                    prim.ft4->unk0.unk0_24 = 9;
+                    gte_strgb(&prim.ft4->unk4);
+                    prim.ft4->unk4.unk0_24 = scr->unk350.b.unk3;
+                    otz = ((v0->unk4 + v1->unk4 + v2->unk4 + v3->unk4) >> scr->unk37C) + (s8)scr->unk350.b.unk0 * 4;
+                    prim.ft3->unk0.unk0_0 = scr->unk36C[otz].unk0_0;
+                    scr->unk36C[otz].unk0_0 = (u32)prim.ft3;
+                    break;
+                }
+            gour4:
+                func_80067E84(scr->unk358 + ((Poly80067EBC *)p)->unk10, &v0->unk8);
+                prim.gt4 = scr->unk4.gt4;
+                scr->unk4.gt4 = prim.gt4 + 1;
+                gte_strgb(&prim.gt4->unk4);
+                func_80067EA4(&v1->unk8);
+                prim.gt4->unk8 = v0->unk0;
+                prim.gt4->unk14 = v1->unk0;
+                prim.gt4->unk20 = v2->unk0;
+                prim.gt4->unk2C = v3->unk0;
+                gte_strgb(&prim.gt4->unk10);
+                func_80067EA4(&v2->unk8);
+                prim.gt4->unkC = ((Poly80067EBC *)p)->unk0;
+                prim.gt4->unk18 = ((Poly80067EBC *)p)->unk4;
+                prim.gt4->unk24 = ((Poly80067EBC *)p)->unk8;
+                prim.gt4->unk30 = ((Poly80067EBC *)p)->unkC;
+                gte_strgb(&prim.gt4->unk1C);
+                func_80067EA4(&v3->unk8);
+                prim.gt4->unk0.unk0_24 = 0xC;
+                prim.gt4->unk4.unk0_24 = (scr->unk350.b.unk3 & 2) | 0x3C;
+                gte_strgb(&prim.gt4->unk28);
+                otz = ((v0->unk4 + v1->unk4 + v2->unk4 + v3->unk4) >> scr->unk37C) + (s8)scr->unk350.b.unk0 * 4;
+                prim.ft3->unk0.unk0_0 = scr->unk36C[otz].unk0_0;
+                scr->unk36C[otz].unk0_0 = (u32)prim.ft3;
+                break;
+            }
+            if (t < 2) {
+                n = scr->unk350.b.unk2 & 7;
+                if (n == 0) {
+                    goto draw2C;
+                }
+                if (func_80067E54(v0->unk0, v1->unk0, v2->unk0) <= 0) {
+                    break;
+                }
+            } else {
+                n = scr->unk350.b.unk2 >> 3;
+                if (n == 0) {
+                    goto draw2C;
+                }
+            }
+            if ((v0->unk8.unk3 | v1->unk8.unk3 | v2->unk8.unk3 | v3->unk8.unk3) == 0) {
+                goto list0;
+            }
+            goto list2;
+        case 0x6C:
+            v0 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk12);
+            v1 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk14);
+            v2 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk16);
+            v3 = (Vtx80067EBC *)(vtx + ((Poly80067EBC *)p)->unk18);
+            if (v0->unk6 & v1->unk6 & v2->unk6 & v3->unk6) {
+                break;
+            }
+            t = v0->unk7 | v1->unk7 | v2->unk7 | v3->unk7;
+            if (t == 0) {
+            draw6C:
+                if ((v0->unk6 | v1->unk6 | v2->unk6 | v3->unk6) == 0x1F) {
+                    break;
+                }
+                if ((v0->unk8.unk3 | v1->unk8.unk3 | v2->unk8.unk3 | v3->unk8.unk3) != 0) {
+                    goto gour4;
+                }
+                gte_ldv0(scr->unk358 + ((Poly80067EBC *)p)->unk10);
+                gte_ldrgb(&scr->unk390);
+                gte_nccs();
+                prim.ft4 = scr->unk4.ft4;
+                scr->unk4.ft4 = prim.ft4 + 1;
+                prim.ft4->unk8 = v0->unk0;
+                prim.ft4->unk10 = v1->unk0;
+                prim.ft4->unk18 = v2->unk0;
+                prim.ft4->unk20 = v3->unk0;
+                prim.ft4->unkC = ((Poly80067EBC *)p)->unk0;
+                prim.ft4->unk14 = ((Poly80067EBC *)p)->unk4;
+                prim.ft4->unk1C = ((Poly80067EBC *)p)->unk8;
+                prim.ft4->unk24 = ((Poly80067EBC *)p)->unkC;
+                prim.ft4->unk0.unk0_24 = 9;
+                gte_strgb(&prim.ft4->unk4);
+                prim.ft4->unk4.unk0_24 = scr->unk350.b.unk3 & 0xBF;
+                otz = ((v0->unk4 + v1->unk4 + v2->unk4 + v3->unk4) >> scr->unk37C) + (s8)scr->unk350.b.unk0 * 4;
+                prim.ft3->unk0.unk0_0 = scr->unk36C[otz].unk0_0;
+                scr->unk36C[otz].unk0_0 = (u32)prim.ft3;
+                break;
+            }
+            if (t < 2) {
+                n = scr->unk350.b.unk2 & 7;
+            } else {
+                n = scr->unk350.b.unk2 >> 3;
+            }
+            if (n == 0) {
+                goto draw6C;
+            }
+            if ((v0->unk8.unk3 | v1->unk8.unk3 | v2->unk8.unk3 | v3->unk8.unk3) == 0) {
+            list0:
+                scr->unk380->unk0 = p;
+                scr->unk350.b.unk2 = n;
+                scr->unk380->unk4 = scr->unk350.w;
+                scr->unk380++;
+            } else {
+            list2:
+                scr->unk388->unk0 = p;
+                scr->unk350.b.unk2 = n;
+                scr->unk388->unk4 = scr->unk350.w;
+                scr->unk388++;
+            }
+            break;
+        }
+        p += scr->unk350.b.unk1;
+    } while (--scr->unk368 != 0);
+    scr->unk378 -= 0xE;
+    scr->unk384->unk0 = NULL;
+    func_80069F04(lists[1]);
+    scr->unk380->unk0 = NULL;
+    func_8006A7EC(lists[0]);
+    scr->unk38C->unk0 = NULL;
+    func_8006C580(lists[3]);
+    scr->unk388->unk0 = NULL;
+    func_8006D0C0(lists[2]);
+    D_801A5F24[0]->unk8 = (s32)scr->unk4.ft3;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80068A10);
 
