@@ -1206,6 +1206,23 @@ typedef struct Scr80058B04 {
     Sub8006F234 unk84;
 } Scr80058B04;
 
+typedef struct Half8005A364 {
+    u16 unk0;
+    u16 unk2;
+} Half8005A364;
+
+typedef union Un8005A364 {
+    s32 w;
+    Half8005A364 h;
+} Un8005A364;
+
+typedef struct Scr8005A364 {
+    u8 _pad0[0xC];
+    Un8005A364 unkC;
+    s32 unk10;
+    s32 unk14;
+} Scr8005A364;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1550,5 +1567,6 @@ void func_80058028(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 extern Mat80058B04 D_800B1228;
 void func_8005804C(u16 arg0, s32 arg1, s32 arg2);
 void func_80059198(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
+void func_8005A330(SVECTOR *arg0, Un8005A364 *arg1, s32 *arg2, s32 *arg3);
 
 #endif /* FDAT202_H */
