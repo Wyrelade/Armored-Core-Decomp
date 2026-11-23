@@ -2525,7 +2525,101 @@ void func_80068D38(Obj80069A5C *arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800691E0);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80069418);
+void func_80069418(Obj8006A13C *arg0, s32 arg1) {
+    Prim8006A13C *prim;
+    Obj8006A13C *child;
+    Scr80069A5C *scr = (Scr80069A5C *)0x1F800000;
+
+    if ((arg0->unk78->unk14 | arg0->unk7C->unk14 | arg0->unk80->unk14 | arg0->unk84->unk14) == 0) {
+        return;
+    }
+    if (arg1 == 0) {
+        if (arg0->unk78->unk14 < 0x28 || arg0->unk7C->unk14 < 0x28 || arg0->unk80->unk14 < 0x28
+            || arg0->unk84->unk14 < 0x28) {
+            return;
+        }
+        prim = scr->unk4.ft4;
+        scr->unk4.ft4 = prim + 1;
+        prim->unk8 = arg0->unk78->unk10;
+        prim->unk10 = arg0->unk7C->unk10;
+        prim->unk18 = arg0->unk80->unk10;
+        prim->unk20 = arg0->unk84->unk10;
+        prim->unkC = arg0->unk78->unk8.unk0 | scr->unk360;
+        prim->unk14 = arg0->unk7C->unk8.unk0 | scr->unk364;
+        prim->unk1C = arg0->unk80->unk8.unk0;
+        prim->unk24 = arg0->unk84->unk8.unk0;
+        prim->unk4 = scr->unk2C;
+        prim->unk0.unk0_24 = 9;
+        prim->unk4.unk0_24 = scr->unk390.unk3;
+        prim->unk0.unk0_0 = scr->unk370[(arg0->unk78->unk14 + arg0->unk7C->unk14 + arg0->unk80->unk14 + arg0->unk84->unk14) >> scr->unk37C].unk0_0;
+        scr->unk370[(arg0->unk78->unk14 + arg0->unk7C->unk14 + arg0->unk80->unk14 + arg0->unk84->unk14) >> scr->unk37C].unk0_0 = (u32)prim;
+        return;
+    }
+    arg0->unk0[0].unk0 = (arg0->unk78->unk0 + arg0->unk7C->unk0) >> 1;
+    arg0->unk0[0].unk2 = (arg0->unk78->unk2 + arg0->unk7C->unk2) >> 1;
+    arg0->unk0[0].unk4 = (arg0->unk78->unk4 + arg0->unk7C->unk4) >> 1;
+    gte_ldv0(&arg0->unk0[0]);
+    gte_rtps();
+    arg0->unk0[0].unk8.b.unk0 = (arg0->unk78->unk8.b.unk0 + arg0->unk7C->unk8.b.unk0) >> 1;
+    arg0->unk0[0].unk8.b.unk1 = (arg0->unk78->unk8.b.unk1 + arg0->unk7C->unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[0].unk10);
+    gte_stszotz(&arg0->unk0[0].unk14);
+    arg0->unk0[1].unk0 = (arg0->unk78->unk0 + arg0->unk80->unk0) >> 1;
+    arg0->unk0[1].unk2 = (arg0->unk78->unk2 + arg0->unk80->unk2) >> 1;
+    arg0->unk0[1].unk4 = (arg0->unk78->unk4 + arg0->unk80->unk4) >> 1;
+    gte_ldv0(&arg0->unk0[1]);
+    gte_rtps();
+    arg0->unk0[1].unk8.b.unk0 = (arg0->unk78->unk8.b.unk0 + arg0->unk80->unk8.b.unk0) >> 1;
+    arg0->unk0[1].unk8.b.unk1 = (arg0->unk78->unk8.b.unk1 + arg0->unk80->unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[1].unk10);
+    gte_stszotz(&arg0->unk0[1].unk14);
+    arg0->unk0[2].unk0 = (arg0->unk84->unk0 + arg0->unk7C->unk0) >> 1;
+    arg0->unk0[2].unk2 = (arg0->unk84->unk2 + arg0->unk7C->unk2) >> 1;
+    arg0->unk0[2].unk4 = (arg0->unk84->unk4 + arg0->unk7C->unk4) >> 1;
+    gte_ldv0(&arg0->unk0[2]);
+    gte_rtps();
+    arg0->unk0[2].unk8.b.unk0 = (arg0->unk84->unk8.b.unk0 + arg0->unk7C->unk8.b.unk0) >> 1;
+    arg0->unk0[2].unk8.b.unk1 = (arg0->unk84->unk8.b.unk1 + arg0->unk7C->unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[2].unk10);
+    gte_stszotz(&arg0->unk0[2].unk14);
+    arg0->unk0[3].unk0 = (arg0->unk84->unk0 + arg0->unk80->unk0) >> 1;
+    arg0->unk0[3].unk2 = (arg0->unk84->unk2 + arg0->unk80->unk2) >> 1;
+    arg0->unk0[3].unk4 = (arg0->unk84->unk4 + arg0->unk80->unk4) >> 1;
+    gte_ldv0(&arg0->unk0[3]);
+    gte_rtps();
+    arg0->unk0[3].unk8.b.unk0 = (arg0->unk84->unk8.b.unk0 + arg0->unk80->unk8.b.unk0) >> 1;
+    arg0->unk0[3].unk8.b.unk1 = (arg0->unk84->unk8.b.unk1 + arg0->unk80->unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[3].unk10);
+    gte_stszotz(&arg0->unk0[3].unk14);
+    arg0->unk0[4].unk0 = (arg0->unk0[0].unk0 + arg0->unk0[3].unk0) >> 1;
+    arg0->unk0[4].unk2 = (arg0->unk0[0].unk2 + arg0->unk0[3].unk2) >> 1;
+    arg0->unk0[4].unk4 = (arg0->unk0[0].unk4 + arg0->unk0[3].unk4) >> 1;
+    gte_ldv0(&arg0->unk0[4]);
+    gte_rtps();
+    arg0->unk0[4].unk8.b.unk0 = (arg0->unk0[0].unk8.b.unk0 + arg0->unk0[3].unk8.b.unk0) >> 1;
+    arg0->unk0[4].unk8.b.unk1 = (arg0->unk0[0].unk8.b.unk1 + arg0->unk0[3].unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[4].unk10);
+    gte_stszotz(&arg0->unk0[4].unk14);
+    arg1--;
+    child = arg0 + 1;
+    child->unk78 = &arg0->unk0[0];
+    child->unk7C = &arg0->unk0[4];
+    child->unk80 = arg0->unk78;
+    child->unk84 = &arg0->unk0[1];
+    func_80069418(child, arg1);
+    child->unk7C = arg0->unk7C;
+    child->unk80 = &arg0->unk0[4];
+    child->unk84 = &arg0->unk0[2];
+    func_80069418(child, arg1);
+    child->unk78 = &arg0->unk0[3];
+    child->unk7C = &arg0->unk0[4];
+    child->unk80 = arg0->unk84;
+    func_80069418(child, arg1);
+    child->unk7C = arg0->unk80;
+    child->unk80 = &arg0->unk0[4];
+    child->unk84 = &arg0->unk0[1];
+    func_80069418(child, arg1);
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80069AC8);
 
