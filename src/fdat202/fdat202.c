@@ -5490,7 +5490,41 @@ void func_80072180(Obj80072180 *arg0) {
     arg0->unk20.unk4 += parent->unk8.unk4;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_800722B4);
+s32 func_800722B4(Elem800730DC *arg0, Sub8006F4D8 *arg1, s32 arg2, s32 arg3) {
+    Obj8006F4D8 *scr = (Obj8006F4D8 *)0x1F800000;
+
+    if (func_8006EFFC(arg1->unk0, arg1->unk8, arg0->unk18, arg0->unk20)
+        && func_8006EFFC(arg1->unk2, arg1->unkA, arg0->unk1A, arg0->unk22)
+        && func_8006EFFC(arg1->unk4, arg1->unkC, arg0->unk1C, arg0->unk24)) {
+        scr->unk48 = D_801E8B74;
+        scr->unk4C = arg3;
+        scr->unk84 = D_80091228;
+        scr->unk90 = arg0;
+        if (arg2 == 0) {
+            scr->unk60 = NULL;
+        } else {
+            scr->unk60 = scr->unk58;
+        }
+        func_8006F83C(scr, arg1, arg2);
+        scr->unk94 = &scr->unk84[scr->unk90->unk1E];
+        scr->unk98 = scr->unk94->unk4;
+        scr->unkBC = func_8006F7A0(scr->unk98->unk4, scr->unk64.unk0 - scr->unk74.unk0,
+                                   scr->unk6C.unk0 - scr->unk74.unk0, scr->unk7C.unk0 - scr->unk74.unk0);
+        scr->unkBC &= func_8006F7A0(scr->unk98->unk24, scr->unk64.unk2 - scr->unk74.unk2,
+                                    scr->unk6C.unk2 - scr->unk74.unk2, scr->unk7C.unk2 - scr->unk74.unk2);
+        scr->unkBC &= func_8006F7A0(scr->unk98->unk44, scr->unk64.unk4 - scr->unk74.unk4,
+                                    scr->unk6C.unk4 - scr->unk74.unk4, scr->unk7C.unk4 - scr->unk74.unk4);
+        if (scr->unkBC != 0) {
+            scr->unkB0 = scr->unk98->unk64;
+            scr->unkB4 = &scr->unkB0[scr->unk98->unk0];
+            scr->unk8C = (scr->unk98->unk0 >> 5) + 1;
+            func_8006F08C(scr);
+        }
+        *scr->unk48 = NULL;
+        return scr->unk48 != D_801E8B74;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80072548);
 

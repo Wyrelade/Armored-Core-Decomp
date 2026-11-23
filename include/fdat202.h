@@ -2353,5 +2353,6 @@ s32 func_80070168(s32 arg0, Elem8006F4D8 *arg1, s32 *arg2, Sub8004DE88 *arg3);
 void func_8006FA30(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2);
 void func_80071904(Scr80071ADC *arg0, Sub8006F4D8 *arg1);
 void func_80071768(Scr80071ADC *arg0);
+s32 func_800722B4(Elem800730DC *arg0, Sub8006F4D8 *arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT202_H */
