@@ -1785,6 +1785,61 @@ typedef union Prim80064684 {
     Gt480064684 g4;
 } Prim80064684;
 
+typedef struct Elem800658B8 {
+    Elem800730DC *unk0;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    s16 unkE;
+    s16 unk10;
+    u8 _pad12[0x2];
+    s16 unk14;
+    s16 unk16;
+    s16 unk18;
+    u8 _pad1A[0x2];
+    s16 unk1C;
+    s16 unk1E;
+    s16 unk20;
+    u8 _pad22[0x2];
+    s32 unk24;
+    u8 _pad28[0x2];
+    u16 unk2A;
+    s16 unk2C;
+    u8 _pad2E[0x2];
+} Elem800658B8;
+
+typedef struct Tbl800658B8 {
+    Elem800658B8 unk0[16];
+    s32 unk300;
+    s32 unk304;
+} Tbl800658B8;
+
+typedef struct Light800658B8 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    u8 _pad6[0x2];
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    u8 _padE[0x2];
+    s16 unk10;
+    s16 unk12;
+    s16 unk14;
+    u8 _pad16[0x2];
+    s32 unk18;
+    s16 unk1C;
+    u8 _pad1E[0x2];
+} Light800658B8;
+
+typedef struct Scr800658B8 {
+    u8 _pad0[0x5C];
+    Light800658B8 unk5C[4];
+    s32 unkDC;
+} Scr800658B8;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2188,5 +2243,6 @@ void func_80064628(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_800672CC(void);
 void func_80064CB8(s32 arg0);
 void func_80064D64(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+extern Tbl800658B8 D_801AE82C;
 
 #endif /* FDAT202_H */
