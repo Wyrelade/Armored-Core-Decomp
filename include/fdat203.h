@@ -82,7 +82,7 @@ typedef struct Obj800732FC {
     Sub8004F1D4 unk18;
     u8 _pad1E[0xE];
     s16 unk2C;
-    u8 _pad2E[0x2];
+    s16 unk2E;
     s16 unk30;
     u16 unk32;
     u8 _pad34[0x2];
@@ -1827,6 +1827,13 @@ typedef union Pk80058B88 {
     PkFt480058B88 ft4;
 } Pk80058B88;
 
+typedef struct Sub800772E8 {
+    u8 _pad0[0x4];
+    Elem8006DC20 *unk4;
+    u8 _pad8[0x6];
+    u16 unkE;
+} Sub800772E8;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2155,5 +2162,7 @@ extern u16 D_8008A20A;
 Obj800732FC *func_8007352C(Obj800732FC *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, s32 arg3);
 extern Sub8004DE88 D_8008A210;
 extern u16 D_8008A212;
+Sub800772E8 *func_80073D5C(Obj800732FC *arg0, s32 arg1);
+Sub800772E8 *func_8006C95C(s32 arg0);
 
 #endif /* FDAT203_H */
