@@ -1443,6 +1443,97 @@ typedef union Prim80057A3C {
     Gt480057A3C *g4;
 } Prim80057A3C;
 
+typedef struct Sv8005E758 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv8005E758;
+
+typedef struct Node8005E758 {
+    Sv8005E758 unk0;
+    Sv8005E758 unk8;
+    u8 unk10;
+    u8 unk11;
+    u8 _pad12[0x2];
+    s32 unk14;
+    s32 unk18;
+} Node8005E758;
+
+typedef struct Xy8005E758 {
+    s16 x;
+    s16 y;
+} Xy8005E758;
+
+typedef union Sxy8005E758 {
+    s32 w;
+    Xy8005E758 h;
+} Sxy8005E758;
+
+typedef struct Rgbc8005E758 {
+    u8 r;
+    u8 g;
+    u8 b;
+    u8 code;
+} Rgbc8005E758;
+
+typedef union Col8005E758 {
+    s32 w;
+    Rgbc8005E758 c;
+} Col8005E758;
+
+typedef struct Gt48005EDFC {
+    Tag800573FC tag;
+    Col8005E758 unk4;
+    Sxy8005E758 unk8;
+    u8 unkC;
+    u8 unkD;
+    u16 unkE;
+    Sxy8005E758 unk10;
+    u8 unk14;
+    u8 unk15;
+    u16 unk16;
+    Sxy8005E758 unk18;
+    u8 unk1C;
+    u8 unk1D;
+    u16 unk1E;
+    Sxy8005E758 unk20;
+    u8 unk24;
+    u8 unk25;
+    u16 unk26;
+} Gt48005EDFC;
+
+typedef struct Spad8005E758 {
+    u32 *unk0;
+    u16 unk4;
+    s16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u8 unkC;
+    u8 unkD;
+    u8 _padE[0x2];
+    s32 unk10;
+    Node8005E758 unk14[3];
+    Sxy8005E758 unk68;
+    Sxy8005E758 unk6C;
+    s32 unk70;
+    s32 unk74;
+    Gt48005EDFC *unk78;
+    s32 unk7C;
+} Spad8005E758;
+
+typedef struct Line8005E758 {
+    Tag800573FC tag;
+    Col8005E758 unk4;
+    s32 unk8;
+    s32 unkC;
+} Line8005E758;
+
+typedef struct Mode8005E758 {
+    Tag800573FC tag;
+    u8 _pad4[0x8];
+} Mode8005E758;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1745,5 +1836,7 @@ void func_80060020(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2, s32 
 void func_8005D500(u16 arg0, u16 arg1, Sub8004F1D4 *arg2, Sub8004DE88 *arg3, Sub8004DE88 *arg4, Sub8004DE88 *arg5, s32 arg6, s32 arg7);
 void func_8005FCD8(Sub8004F1D4 *arg0, Elem8008AA58 *arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_80057A18(Scr800573FC *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8005E758(Node8005E758 *arg0);
+void SetDrawMode(Mode8005E758 *p, s32 dfe, s32 dtd, s32 tpage, void *tw);
 
 #endif /* FDAT203_H */
