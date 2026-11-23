@@ -230,6 +230,56 @@ def rdata_word_align(s_file):
     open(s_file, "w", newline="\n").write("\n".join(lines))
 
 
+def retail_jtbl_pads(unit, func):
+    """For each jump table of `func` in retail order: True when splat ended its dlabel with a
+    `.word 0x00000000` (the 8-alignment pad the retail object put after it). None when the
+    function's asm is not available."""
+    import glob
+    paths = glob.glob(os.path.join(ROOT, "asm/USA", unit, "nonmatchings", "*", func + ".s"))
+    if not paths:
+        return None
+    pads, cur, last = [], False, None
+    for l in open(paths[0], encoding="latin1"):
+        s = re.sub(r"/\*.*?\*/", "", l).strip()
+        if s.startswith("dlabel jtbl_"):
+            cur, last = True, None
+        elif s.startswith("enddlabel jtbl_") and cur:
+            pads.append(last == ".word 0x00000000")
+            cur = False
+        elif cur and s:
+            last = s
+    return pads
+
+
+def jtbl_inner_pads(s_file, unit):
+    """Retail 8-aligned every jump table inside its object, so a table of odd length is followed
+    by a 0 word when another table of the same function comes next. rdata_word_align drops the
+    `.align 3`, so put that 0 word back in front of the next table. (A pad after a function's
+    last table is a `const s32 D_<addr> = 0;` after the function, written by the lander.)"""
+    lines = open(s_file).read().split("\n")
+    out, func, k, pads = [], None, 0, None
+    i = 0
+    while i < len(lines):
+        l = lines[i]
+        s = l.strip()
+        m = re.match(r"^\.ent\s+(\w+)", s)
+        if m:
+            func, k, pads = m.group(1), 0, None
+        out.append(l)
+        if func and s == ".rdata" and i + 3 < len(lines) and re.match(r"^\.align\s+\d$", lines[i + 1].strip()) \
+                and re.match(r"^\$L\d+:$", lines[i + 2].strip()) and lines[i + 3].strip().startswith(".word\t$L"):
+            if pads is None:
+                pads = retail_jtbl_pads(unit, func) or []
+            out.append(lines[i + 1])
+            if 0 < k <= len(pads) and pads[k - 1]:
+                out.append("\t.word\t0")
+            i += 2
+            k += 1
+            continue
+        i += 1
+    open(s_file, "w", newline="\n").write("\n".join(out))
+
+
 def compile_c(unit, cpp, cc1, as_bin):
     root = os.path.join(ROOT, "src", unit)
     if not os.path.isdir(root):
@@ -256,6 +306,7 @@ def compile_c(unit, cpp, cc1, as_bin):
                 print("BUILD FAILED: compiling %s" % rel)
                 return False
             rdata_word_align(s_file)
+            jtbl_inner_pads(s_file, unit)
             mflags = [f for f in MASPSX_FLAGS if not f.startswith("--aspsx-version")]
             mflags.append("--aspsx-version=" + UNIT_ASPSX.get(key, UNIT_ASPSX.get(unit, "2.56")))
             cmd = [sys.executable, maspsx_py()] + mflags + [
