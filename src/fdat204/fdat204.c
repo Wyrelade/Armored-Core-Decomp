@@ -2317,7 +2317,114 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80066580);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800665A8);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8006678C);
+s32 func_8006678C(Obj8006678C *arg0, s32 arg1) {
+    Sv8006678C lo;
+    Sv8006678C hi;
+    s32 lzc;
+    Spad8006678C *sp;
+    Sv8006678C *v;
+    Elem8006678C *c;
+    s32 i;
+    s32 d;
+    s32 x;
+    s32 e;
+
+    sp = (Spad8006678C *)0x1F800000;
+    sp->unk4 = 0;
+    sp->unk0 = D_801B614C.unk304;
+    if (sp->unk0 != 0) {
+        sp->unkC = D_801B614C.unk0;
+        sp->unk18 = arg0->unk18;
+        do {
+            if ((sp->unkC->unk2A & 1) && sp->unkC->unk0 != arg0 && sp->unkC->unkA == 0
+                && sp->unk18.unk0.unk0 < sp->unkC->unk4 + sp->unkC->unk2C
+                && sp->unk18.unk8.unk0 > sp->unkC->unk4 - sp->unkC->unk2C
+                && sp->unk18.unk0.unk2 < sp->unkC->unk6 + sp->unkC->unk2C
+                && sp->unk18.unk8.unk2 > sp->unkC->unk6 - sp->unkC->unk2C
+                && sp->unk18.unk0.unk4 < sp->unkC->unk8 + sp->unkC->unk2C
+                && sp->unk18.unk8.unk4 > sp->unkC->unk8 - sp->unkC->unk2C) {
+                if (sp->unk4 == 0) {
+                    c = D_801AE340;
+                    v = (Sv8006678C *)D_801AE2EC;
+                    sp->unk84 = &D_8008CB48[(arg0->unk30 >> 28) << 7];
+                    sp->unk10 = arg0->unk10;
+                    i = arg1;
+                    do {
+                        c->unk8.w = *(s32 *)(sp->unk84 + v->unk6);
+                        if (v->unk6 != 0) {
+                            c->unk8.c[3] = 1;
+                        }
+                        c++;
+                        v++;
+                    } while (--i != 0);
+                    func_80013AFC(sp->unk10.unk6 << 10, &sp->unk64);
+                    SetRotMatrix(&sp->unk64);
+                    sp->unk64.t[2] = 0;
+                    sp->unk64.t[1] = 0;
+                    sp->unk64.t[0] = 0;
+                    SetTransMatrix(&sp->unk64);
+                }
+                sp->unk28.unk0 = (sp->unkC->unk4 - sp->unk10.unk0) << 2;
+                sp->unk28.unk2 = (sp->unkC->unk6 - sp->unk10.unk2) << 2;
+                sp->unk28.unk4 = (sp->unkC->unk8 - sp->unk10.unk4) << 2;
+                gte_ldv0(&sp->unk28);
+                gte_rtv0tr();
+                gte_stlvnl(sp->unk30);
+                v = (Sv8006678C *)D_801AE2EC;
+                lo.unk0 = sp->unk30[0] - (sp->unkC->unk2C << 2);
+                hi.unk0 = sp->unk30[0] + (sp->unkC->unk2C << 2);
+                lo.unk2 = sp->unk30[1] - (sp->unkC->unk2C << 2);
+                hi.unk2 = sp->unk30[1] + (sp->unkC->unk2C << 2);
+                lo.unk4 = sp->unk30[2] - (sp->unkC->unk2C << 2);
+                hi.unk4 = sp->unk30[2] + (sp->unkC->unk2C << 2);
+                sp->unk40 = D_801AE340;
+                sp->unk8 = arg1;
+                do {
+                    if (v->unk0 > lo.unk0 && v->unk0 < hi.unk0
+                        && v->unk2 > lo.unk2 && v->unk2 < hi.unk2
+                        && v->unk4 > lo.unk4 && v->unk4 < hi.unk4) {
+                        sp->unk44[0] = v->unk0 - sp->unk30[0];
+                        sp->unk44[1] = v->unk2 - sp->unk30[1];
+                        sp->unk44[2] = v->unk4 - sp->unk30[2];
+                        gte_ldlvl(sp->unk44);
+                        gte_sqr0();
+                        gte_stlvnl(sp->unk54);
+                        d = sp->unk54[0] + sp->unk54[1] + sp->unk54[2];
+                        gte_ldlzc(d);
+                        gte_nop();
+                        gte_stlzc(&lzc);
+                        lzc &= ~1;
+                        x = lzc - 24;
+                        e = (31 - lzc) >> 1;
+                        if (x <= 0) {
+                            x = d >> (24 - lzc);
+                        } else {
+                            x = d << x;
+                        }
+                        d = D_80031564[x] << e;
+                        d = (d >> 2) / sp->unkC->unk2C;
+                        if (d > 0x1000) {
+                            d = 0x1000;
+                        }
+                        gte_lddp(0x1000 - d);
+                        gte_ldcv(&sp->unkC->unk24);
+                        gte_gpf12();
+                        gte_lddp(d);
+                        gte_ldcv(&sp->unk40->unk8);
+                        gte_gpl12();
+                        gte_stcv(&sp->unk40->unk8);
+                        sp->unk40->unk8.c[3] = 1;
+                    }
+                    v++;
+                    sp->unk40++;
+                } while (--sp->unk8 != 0);
+                sp->unk4 = 1;
+            }
+            sp->unkC++;
+        } while (--sp->unk0 != 0);
+    }
+    return sp->unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80066D90);
 

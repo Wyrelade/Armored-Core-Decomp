@@ -1688,6 +1688,36 @@ typedef struct Spad800640A4 {
     Sv8006678C unkE4;
 } Spad800640A4;
 
+typedef union Col8006678C {
+    s32 w;
+    u8 c[4];
+} Col8006678C;
+
+typedef struct Elem8006678C {
+    u8 _pad0[0x8];
+    Col8006678C unk8;
+    u8 _padC[0x4];
+} Elem8006678C;
+
+typedef struct Spad8006678C {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    Elem80064B94 *unkC;
+    Sv8006678C unk10;
+    Box8006678C unk18;
+    Sv8006678C unk28;
+    s32 unk30[3];
+    u8 _pad3C[0x4];
+    Elem8006678C *unk40;
+    s32 unk44[3];
+    u8 _pad50[0x4];
+    s32 unk54[3];
+    u8 _pad60[0x4];
+    Mat8005BAA8 unk64;
+    u8 *unk84;
+} Spad8006678C;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2018,5 +2048,10 @@ void func_800653D8(Sv8006678C *arg0);
 void func_80065348(Sv8006678C *arg0, s32 *arg1, s32 arg2);
 void func_8006537C(u8 *arg0, s32 *arg1, s32 arg2);
 void func_800653A0(u8 *arg0, u8 *arg1, u8 *arg2, s32 *arg3, s32 arg4);
+extern Elem8006678C D_801AE340[];
+extern u16 D_80031564[];
+void func_80013AFC(s16 arg0, Mat8005BAA8 *arg1);
+void SetRotMatrix(Mat8005BAA8 *m);
+void SetTransMatrix(Mat8005BAA8 *m);
 
 #endif /* FDAT204_H */
