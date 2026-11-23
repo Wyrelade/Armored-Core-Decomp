@@ -1060,8 +1060,8 @@ void func_800573FC(Mdl800573FC *arg0, s32 arg1) {
     n = s->unk10->unk14;
     src = s->unk10->unk10;
     s->unk18 = n;
-    s->unk4 = D_8019D95C->unk8;
-    s->unk8 = D_8019D95C->unk4;
+    s->unk4 = D_8019D95C[0]->unk8;
+    s->unk8 = D_8019D95C[0]->unk4;
     if (s->unk8 >= s->unk4 + (n << 2) + (n << 4) + (n << 5)) {
         while (s->unk18-- != 0) {
             s->unkC = *src;
@@ -1088,7 +1088,7 @@ void func_800573FC(Mdl800573FC *arg0, s32 arg1) {
             }
             src += s->unkC.b[1];
         }
-        D_8019D95C->unk8 = s->unk4;
+        D_8019D95C[0]->unk8 = s->unk4;
     }
 }
 

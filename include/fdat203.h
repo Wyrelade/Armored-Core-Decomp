@@ -1591,7 +1591,7 @@ void func_80055AF0(s32 arg0);
 void func_80055D00(Scr80055EA8 *arg0, s32 arg1);
 void func_80055DD8(Scr80055EA8 *arg0, s32 arg1);
 extern s32 D_80194734;
-extern Buf800573FC *D_8019D95C;
+extern Buf800573FC *D_8019D95C[];
 void func_80057964(s32 arg0);
 void func_8006EBC0(Obj8006E85C *arg0, Obj8006D0DC *arg1, s32 arg2);
 void func_8006E410(Obj8006E85C *arg0);
