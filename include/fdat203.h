@@ -428,9 +428,81 @@ typedef struct Obj80077248 {
     s16 unk2E;
 } Obj80077248;
 
+typedef struct Sub80077894 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+} Sub80077894;
+
+typedef struct Elem80077894 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x22];
+    Sub8004EE14 *unk28;
+} Elem80077894;
+
 typedef struct Obj80077854 {
-    u8 _pad0[0xE];
+    u8 *unk0;
+    Elem80077894 *unk4;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
     s16 unkE;
+    Sub8004DE88 unk10;
+    u8 _pad18[0x6];
+    s16 unk1E;
+    u8 _pad20[0x8];
+    s16 unk28;
+    s16 unk2A;
+    s16 unk2C;
+    s16 unk2E;
+    s16 unk30;
+    s16 unk32;
+    u8 _pad34[0x4];
+    s16 unk38;
+    u8 unk3A;
+    u8 _pad3B[0x1];
+    u8 unk3C;
+    u8 unk3D;
+    u8 unk3E;
+    u8 unk3F;
+    u8 unk40;
+    u8 unk41;
+    u8 _pad42[0x6];
+    struct Obj80077854 *unk48;
+    s32 unk4C;
+    void (*unk50)();
+    void (*unk54)();
+    void (*unk58)();
+    void (*unk5C)();
+    s32 unk60;
+    u8 unk64;
+    u8 unk65;
+    u8 _pad66[0x2];
+    u8 unk68;
+    u8 _pad69[0x1];
+    u16 unk6A;
+    u16 unk6C;
+    s16 unk6E;
+    u8 _pad70[0x2];
+    s16 unk72;
+    u8 _pad74[0x2];
+    Sub8004DE88 unk76;
+    u8 _pad7E[0x2];
+    Sub8004EE14 *unk80;
+    u8 _pad84[0x78];
+    Sub80077894 unkFC;
+    u8 _pad106[0x42];
+    u16 unk148;
+    u8 _pad14A[0x12];
+    s32 unk15C;
+    u16 unk160;
+    u16 unk162;
+    u16 unk164;
+    u8 _pad166[0xA];
 } Obj80077854;
 
 typedef struct Obj80077A7C {
@@ -1834,6 +1906,27 @@ typedef struct Sub800772E8 {
     u16 unkE;
 } Sub800772E8;
 
+typedef struct Desc80077894 {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    s16 unkA;
+    Sub8004DE88 unkC;
+    u16 unk14;
+    u8 _pad16[0x4];
+    u16 unk1A;
+    u8 _pad1C[0x6];
+    Sub80077894 unk22;
+} Desc80077894;
+
+typedef struct Tbl80077894 {
+    Elem80077894 unk0[4];
+    Obj80077854 unkB0[2];
+} Tbl80077894;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2164,5 +2257,6 @@ extern Sub8004DE88 D_8008A210;
 extern u16 D_8008A212;
 Sub800772E8 *func_80073D5C(Obj800732FC *arg0, s32 arg1);
 Sub800772E8 *func_8006C95C(s32 arg0);
+extern Tbl80077894 D_8019B4A0;
 
 #endif /* FDAT203_H */
