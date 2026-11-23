@@ -1174,6 +1174,27 @@ typedef struct Lod800584F4 {
     Mdl800573FC unkC[1];
 } Lod800584F4;
 
+typedef union Rot800584F4 {
+    s16 m[3][3];
+    s32 w[5];
+} Rot800584F4;
+
+typedef struct Mat800584F4 {
+    Rot800584F4 r;
+    s32 t[3];
+} Mat800584F4;
+
+typedef struct Ent800614C8 {
+    Sub8004F1D4 unk0;
+    s16 unk6;
+    s16 unk8;
+    u8 unkA;
+    u8 unkB;
+    u8 unkC;
+    u8 unkD;
+    u8 _padE[0x2];
+} Ent800614C8;
+
 typedef struct Obj800573FC {
     u32 *unk0;
     u8 _pad4[0x4];
@@ -1195,6 +1216,9 @@ typedef struct Obj800573FC {
     u8 _pad72D0[0x24];
     Obj80013A88 unk72F4[4];
     Obj80013A88 unk7374[4];
+    Mat800584F4 unk73F4;
+    u8 _pad7414[0x40];
+    Ent800614C8 unk7454[0x100];
 } Obj800573FC;
 
 typedef struct Elem8004DB1C {
@@ -1406,16 +1430,6 @@ typedef struct Obj80086874 {
     u32 unk30;
     u32 unk34;
 } Obj80086874;
-
-typedef union Rot800584F4 {
-    s16 m[3][3];
-    s32 w[5];
-} Rot800584F4;
-
-typedef struct Mat800584F4 {
-    Rot800584F4 r;
-    s32 t[3];
-} Mat800584F4;
 
 typedef struct Spad800584F4 {
     u8 _pad0[0x38];
@@ -2099,6 +2113,54 @@ typedef struct Scr8006137C {
     s32 unk300[3];
 } Scr8006137C;
 
+typedef struct Mdl800614C8 {
+    u32 unk0;
+    s32 unk4;
+    s32 unk8;
+    u16 unkC;
+    u16 unkE;
+    Sv800584F4 unk10;
+    Sv800584F4 unk18;
+    Sv800584F4 unk20;
+    Sv800584F4 unk28;
+} Mdl800614C8;
+
+typedef struct Ft4800614C8 {
+    Tag800573FC tag;
+    u32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u8 _pad1E[0x2];
+    s32 unk20;
+    u16 unk24;
+    u8 _pad26[0x2];
+} Ft4800614C8;
+
+typedef struct Fog800614C8 {
+    u8 unk0;
+    u8 _pad1[0x3F];
+} Fog800614C8;
+
+typedef struct Scr800614C8 {
+    Ft4800614C8 *unk0;
+    u8 *unk4;
+    Tag800573FC *unk8;
+    Sv800584F4 unkC;
+    Sv800584F4 unk14;
+    Mat800584F4 unk1C;
+    Mat800584F4 unk3C;
+    u32 unk5C;
+    s32 unk60;
+    s32 unk64;
+    s16 unk68;
+    s16 unk6A;
+    s16 unk6C;
+} Scr800614C8;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2477,5 +2539,7 @@ void func_80087E08(Obj800732FC *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, Sub8
 void func_80088C28(s32 arg0, s32 arg1, Obj800732FC *arg2);
 extern Tbl800658B8 D_801A5DB4;
 s32 func_80061338(s32 arg0, s32 arg1);
+extern Mdl800614C8 *D_80089980[];
+extern Fog800614C8 D_801C4120[];
 
 #endif /* FDAT203_H */
