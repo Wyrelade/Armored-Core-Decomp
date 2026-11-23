@@ -1409,6 +1409,32 @@ typedef struct Obj800744A8 {
     Sub800744A8 unk7C;
 } Obj800744A8;
 
+typedef struct Task80078AAC {
+    u8 _pad0[0x42];
+    u16 unk42;
+    u8 _pad44[0x38];
+    u16 unk7C;
+} Task80078AAC;
+
+typedef struct Sub80078AAC {
+    u8 _pad0[0x16];
+    u16 unk16;
+    u8 _pad18[0x8];
+    Task80078AAC *unk20;
+    u8 unk24;
+    u8 unk25;
+    u16 unk26;
+    u16 unk28;
+    u16 unk2A;
+} Sub80078AAC;
+
+typedef struct Obj80078AAC {
+    u8 _pad0[0x74];
+    void (*unk74)();
+    u8 _pad78[0x4];
+    Sub80078AAC unk7C;
+} Obj80078AAC;
+
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
 Obj8004DEB0 *func_80050078(void (*arg0)());
@@ -1541,7 +1567,7 @@ s32 func_80072958(Obj800709D4 *arg0);
 void func_80073740(void);
 void func_80073904(void);
 void func_80075898();
-void func_80078AAC();
+void func_80078AAC(Obj80078AAC *arg0);
 void func_800804F0(Obj8004DEB0 *, s32);
 Obj8004DEB0 *func_8007D738(Obj8004DEB0 *arg0, s32 arg1);
 void func_8007CFC0(Obj8004DEB0 *, s32);
@@ -2551,5 +2577,12 @@ extern Vec80072C80 D_800BC638[];
 extern Vec80072C80 D_800BC6B8[];
 extern Vec80072C80 D_800BC968[];
 void func_800736F0(Obj8004DEB0 *arg0);
+extern Obj80056EF4 *D_8017EF98[];
+extern u8 D_800B8448[];
+Task80078AAC *func_8007BE0C(u8 arg0, Obj80078AAC *arg1, u8 arg2);
+void func_8007509C(Obj80078AAC *arg0);
+void func_800740AC(Obj80078AAC *arg0);
+void func_80075520(void);
+void func_80078D84();
 
 #endif /* FDAT201_H */

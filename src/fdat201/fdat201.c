@@ -3850,7 +3850,91 @@ void func_80078A38(Obj8004DEB0 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80078AAC);
+void func_80078AAC(Obj80078AAC *arg0) {
+    u32 **tbl;
+    u32 **slot;
+    Sub80078AAC *sub;
+    Obj80056EF4 **cur;
+    s16 idx;
+
+    idx = 1;
+    sub = &arg0->unk7C;
+    if (arg0->unk7C.unk25 == 1) {
+        idx = 2;
+    }
+    tbl = (u32 **)D_801F36D0;
+    slot = &tbl[idx];
+    if (*slot != NULL) {
+        func_80051078(*slot);
+        *slot = NULL;
+        D_801BC478[idx] = 0;
+    }
+    arg0->unk7C.unk20 = func_8007BE0C(arg0->unk7C.unk25, arg0, arg0->unk7C.unk24);
+    arg0->unk7C.unk20->unk42 = arg0->unk7C.unk26;
+    arg0->unk7C.unk20->unk7C = arg0->unk7C.unk28;
+    func_8007509C(arg0);
+    func_80075898(arg0);
+    func_800740AC(arg0);
+    func_80075520();
+    D_8017EF98[0]->unk1 = 1;
+    D_8017EF98[0] = (Obj80056EF4 *)&D_801BC4F8;
+    switch (arg0->unk7C.unk16) {
+    case 4:
+    case 5:
+        if (D_80031A5B == 0xFF || D_80031A5B >= 8) {
+            if (sub->unk2A != 0xFF) {
+                D_8017EF98[0] = func_8005CAE0(D_800B8448, 0x14, 0x30, 4);
+            }
+            break;
+        }
+        if (sub->unk2A != 0xF) {
+            break;
+        }
+        switch (D_80031A63) {
+        case 5:
+        case 0x15:
+        case 0x16:
+        case 0x17:
+        case 0x1A:
+        case 0x1B:
+        case 0x1C:
+        case 0x1E:
+        case 0x1F:
+            D_8017EF98[0] = func_8005CAE0(D_800B8448, 0x14, 0x30, 4);
+            break;
+        }
+        break;
+    case 6:
+    case 7:
+        if (D_80031A63 != 0xFF && D_80031A63 >= 0x1B) {
+            switch (sub->unk2A) {
+            case 0x18:
+            case 0x19:
+            case 0x1A:
+            case 0x1C:
+            case 0x1E:
+                D_8017EF98[0] = func_8005CAE0(D_800B8448, 0x14, 0x30, 4);
+                break;
+            }
+        }
+        if (D_80031A5B == 5) {
+            if ((sub->unk2A != 0xFF && sub->unk2A < 0x18) || sub->unk2A == 0x20) {
+                cur = &D_8017EF98[0];
+                if (*cur != (Obj80056EF4 *)&D_801BC4F8) {
+                    D_8017EF98[0]->unk1 = 1;
+                }
+                *cur = func_8005CAE0(D_800B8448, 0x14, 0x30, 4);
+            }
+        }
+        break;
+    case 1:
+        if (D_80031A63 != 0xFF && D_80031A63 >= 0x1B && sub->unk2A != 0xFF) {
+            D_8017EF98[0] = func_8005CAE0(D_800B8448, 0x14, 0x30, 4);
+        }
+        break;
+    }
+    arg0->unk74 = func_80078D84;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80078D84);
 
