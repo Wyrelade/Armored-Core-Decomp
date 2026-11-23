@@ -5,6 +5,14 @@
 #include "gte.h"
 
 /* @types */
+
+typedef struct Vs8004BF94 {
+    s32 unk0;
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+} Vs8004BF94;
+
 typedef struct Sub8004EE14 {
     u8 _pad0[0xC];
     u16 unkC[1];
@@ -2391,10 +2399,9 @@ typedef struct Blk80055A24 {
 
 /* @externs */
 extern u8 D_800895C8;
-void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
+s32 func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
 s32 func_8004BE10(void);
-extern s32 D_8019B48C;
-extern u16 D_8019B490;
+extern Vs8004BF94 D_8019B48C;
 extern u8 D_80041BC0;
 void func_8004DB64(s16 arg0);
 void func_8004DB90(void);
@@ -2443,14 +2450,12 @@ extern s32 D_8019474C;
 void func_80086444(s32 arg0, Obj800825D4 *arg1, Sub8004F1D4 *arg2, u8 arg3, s32 arg4);
 s16 func_8006DB54(s16 arg0, Obj8008825C *arg1);
 void func_80088130(Obj8008825C *arg0, Sub8004F1D4 *arg1, s16 arg2, s16 arg3, s32 arg4, s32 arg5);
-extern s16 D_8019B494;
 extern s8 D_801C40CC;
 extern s16 D_801C40CE;
 extern u8 D_801A3E28;
 extern u8 D_801A3E29;
 extern u8 D_801A3E2A;
 extern u8 D_801A3E2B;
-extern u16 D_8019B492;
 void func_800893A4(void);
 void func_800894B4(void);
 void MulRotMatrix(s32 *arg0);
@@ -2617,7 +2622,7 @@ void func_8007F414();
 void func_8007F938();
 void func_80084040(Obj80085394 *arg0);
 void func_8007FCCC(Obj800732FC *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4);
-extern s32 D_800895C4;
+extern volatile s32 D_800895C4;
 s32 func_80016278(s32);
 extern s32 D_80089744[];
 void func_800608C4(Sub8005218C *arg0, s32 *arg1, s32 arg2, s32 arg3, s32 arg4);
@@ -2630,7 +2635,7 @@ extern s16 D_80041B90;
 extern s16 D_80041B92;
 extern s16 D_80041B94;
 extern s16 D_80041B9A;
-extern s32 D_800895CC;
+extern volatile s32 D_800895CC;
 extern Elem8006CE7C D_8008D190[];
 extern Elem8006E85C *D_801DC0FC[];
 s32 SquareRoot0(s32 arg0);
