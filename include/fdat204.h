@@ -1459,6 +1459,30 @@ typedef struct Spad80064B94 {
     s32 unk12C[3];
 } Spad80064B94;
 
+typedef struct Elem80064CC8 {
+    u8 _pad0[0xC];
+    s32 unkC;
+    u8 _pad10[0xC];
+} Elem80064CC8;
+
+typedef struct Joint80064CC8 {
+    u8 _pad0[0x12];
+    s16 unk12;
+    u8 _pad14[0x14];
+    Mat8005BAA8 unk28;
+    u8 _pad48[0x34];
+} Joint80064CC8;
+
+typedef struct Obj80064CC8 {
+    u8 _pad0[0x20];
+    Joint80064CC8 *unk20;
+} Obj80064CC8;
+
+typedef struct Mdl80064CC8 {
+    u8 _pad0[0x5];
+    u8 unk5;
+} Mdl80064CC8;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1752,5 +1776,6 @@ extern Fr80060C54 *D_800896FC[];
 void SetBackColor(s32 arg0, s32 arg1, s32 arg2);
 void SetFogNearFar(s32 arg0, s32 arg1, s32 arg2);
 extern Tbl80064B94 D_801B614C;
+extern Mat8005BAA8 D_800AD348;
 
 #endif /* FDAT204_H */
