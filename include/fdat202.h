@@ -746,7 +746,8 @@ typedef struct Vtx80055A24 {
 
 typedef struct Elem80055A24 {
     u8 *unk0;
-    u8 _pad4[0x4];
+    u16 unk4;
+    u16 unk6;
     u8 *unk8;
     u8 _padC[0x2];
     u16 unkE;
@@ -991,6 +992,51 @@ typedef struct Obj80067EBC {
     u8 _pad4[0xB14];
     u8 unkB18[1];
 } Obj80067EBC;
+
+typedef struct Rgbc80057A00 {
+    u8 r;
+    u8 g;
+    u8 b;
+    u8 code;
+} Rgbc80057A00;
+
+typedef union Word80057A00 {
+    u32 w;
+    u8 b[4];
+    Rgbc80057A00 c;
+} Word80057A00;
+
+typedef struct Prim80057A00 {
+    Sub8008C95C unk0;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+} Prim80057A00;
+
+typedef struct Pkt80057A00 {
+    u8 _pad0[0x6];
+    u16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+} Pkt80057A00;
+
+typedef struct Scr80057A00 {
+    u8 _pad0[0x4];
+    u8 *unk4;
+    u8 *unk8;
+    Hdr800574D8 unkC;
+    Elem80055A24 *unk10;
+    u8 _pad14[0x4];
+    s32 unk18;
+    Sub8008C95C *unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    Word80057A00 unk2C;
+} Scr80057A00;
 
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
@@ -1330,5 +1376,7 @@ void func_80013BE8(s16 *arg0, Mat8008D3B0 *arg1);
 void func_8008D288();
 void func_8008CB5C();
 void func_8008CC88();
+extern s32 D_801987CC;
+void func_80057F74(s32 arg0);
 
 #endif /* FDAT202_H */

@@ -1253,7 +1253,67 @@ void func_800579D4(u16 arg0) {
     D_801A5F30.unk0 = (Bank80067EBC *)D_801A5F2C[arg0];
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80057A00);
+void func_80057A00(Elem80055A24 *arg0, s32 arg1) {
+    Scr80057A00 *sp;
+    Hdr800574D8 *pkt;
+    u8 *base;
+    Prim80057A00 *p;
+    Pkt80057A00 *body;
+    Elem8005A364 *v0;
+    Elem8005A364 *v1;
+    Elem8005A364 *v2;
+    Elem8005A364 *v3;
+    s32 z;
+    Elem80055A24 *m;
+    Sub8005715C *db;
+    u16 n;
+
+    sp = (Scr80057A00 *)0x1F800000;
+    sp->unk2C.b[0] = sp->unk2C.b[1] = sp->unk2C.b[2] = 10;
+    sp->unk28 = 0;
+    sp->unk10 = arg0;
+    sp->unk20 = D_801987CC + 0xF;
+    sp->unk24 = D_801987CC + 3;
+    sp->unk1C = (Sub8008C95C *)(D_801A5F28.unk0 + arg1);
+    base = (u8 *)D_801A5F28.unkB20;
+    func_80057F74(arg0->unk4);
+    m = sp->unk10;
+    db = D_801A5F24[0];
+    n = m->unk14;
+    pkt = m->unk10;
+    sp->unk18 = n;
+    sp->unk4 = (u8 *)db->unk8;
+    sp->unk8 = (u8 *)db->unk4;
+    if (sp->unk8 < sp->unk4 + sp->unk18 * 4 + sp->unk18 * 0x10 + sp->unk18 * 0x20) {
+        return;
+    }
+    while (sp->unk18-- != 0) {
+        sp->unkC = *pkt++;
+        if ((sp->unkC.b[3] & 0xFC) == 0x28) {
+            p = (Prim80057A00 *)sp->unk4;
+            sp->unk4 = (u8 *)(p + 1);
+            body = (Pkt80057A00 *)pkt;
+            v0 = (Elem8005A364 *)(base + body->unk6);
+            v1 = (Elem8005A364 *)(base + body->unk8);
+            v2 = (Elem8005A364 *)(base + body->unkA);
+            v3 = (Elem8005A364 *)(base + body->unkC);
+            p->unk8 = v0->unk0;
+            p->unkC = v1->unk0;
+            p->unk10 = v2->unk0;
+            p->unk14 = v3->unk0;
+            p->unk4.w = sp->unk2C.w;
+            p->unk4.b[3] = sp->unkC.b[3];
+            p->unk0.unk0_24 = 5;
+            z = (v0->unk4 + v1->unk4 + v2->unk4 + v3->unk4) >> sp->unk24;
+            if (z >= 0) {
+                p->unk0.unk0_0 = sp->unk1C[z].unk0_0;
+                sp->unk1C[z].unk0_0 = (u32)p;
+            }
+        }
+        pkt += sp->unkC.b[1];
+    }
+    D_801A5F24[0]->unk8 = (s32)sp->unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80057C44);
 
