@@ -24,13 +24,16 @@ typedef struct Elem801C6508 {
 
 typedef struct Sub801C7A84 {
     u8 unk0;
-    u8 _pad1[0x5];
+    u8 unk1;
+    u8 _pad2[0x4];
     s16 unk6;
     s16 unk8;
     s16 unkA;
     s16 unkC;
     s16 unkE;
-    u8 _pad10[0x58];
+    u8 _pad10[0x8];
+    s16 unk18;
+    u8 _pad1A[0x4E];
 } Sub801C7A84;
 
 typedef struct Sub801C6800 {
@@ -310,6 +313,101 @@ typedef struct Obj801C5D08 {
     s32 unk15C;
 } Obj801C5D08;
 
+typedef struct Sub801C55B4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C55B4;
+
+typedef struct View801CA094 {
+    u8 _pad0[0x8];
+    Sub801C55B4 unk8;
+    u8 _pad10[0x26];
+    s16 unk36;
+    u8 _pad38[0x4];
+    u8 unk3C;
+    u8 unk3D;
+    u8 unk3E;
+    u8 unk3F;
+    u8 _pad40[0x1];
+    u8 unk41;
+    u8 _pad42[0x6];
+    struct View801CA094 *unk48;
+    u8 _pad4C[0x4];
+    void (*unk50)();
+    u8 _pad54[0xC];
+    struct Mdl801C7DA8 *unk60;
+    Sub801C7A84 unk64;
+    Sub801C55B4 unkCC;
+    u8 _padD4[0x34];
+    Elem801C52C0 *unk108;
+    u8 _pad10C[0x27];
+    u8 unk133;
+    u8 _pad134[0x1];
+    u8 unk135;
+} View801CA094;
+
+typedef struct Sub801C7DA8 {
+    u8 _pad0[0x2];
+    u16 unk2;
+    u8 unk4;
+    u8 unk5;
+    u8 unk6;
+    u8 unk7;
+    u8 unk8;
+    u8 _pad9[0x2];
+    s8 unkB;
+    u8 unkC;
+    u8 _padD[0x2];
+    u8 unkF;
+    u8 unk10;
+    u8 _pad11;
+    s16 unk12;
+    u8 _pad14[0xE];
+    Sub801C55B4 unk22;
+} Sub801C7DA8;
+
+typedef struct Tbl801C7DA8 {
+    u16 unk0;
+    u16 unk2;
+    u8 unk4;
+    u8 unk5;
+} Tbl801C7DA8;
+
+typedef struct View801CA094_1 {
+    Sub801C55B4 unk0;
+    Sub801C55B4 unk8;
+} View801CA094_1;
+
+typedef struct Elem801C7DA8 {
+    u8 _pad0[0x26];
+    u16 unk26;
+    u8 _pad28[0x54];
+} Elem801C7DA8;
+
+typedef struct Mdl801C7DA8 {
+    u8 _pad0[0xE];
+    s16 unkE;
+    u8 _pad10[0x10];
+    Elem801C7DA8 *unk20;
+} Mdl801C7DA8;
+
+typedef struct Hdr801C7DA8 {
+    u8 _pad0[0x14];
+    s32 unk14;
+} Hdr801C7DA8;
+
+typedef struct Slot801C7DA8 {
+    u16 unk0;
+    u8 _pad2[0x12];
+} Slot801C7DA8;
+
+typedef struct Part801C7DA8 {
+    u8 _pad0[0x14];
+    Slot801C7DA8 unk14[1];
+} Part801C7DA8;
+
 /* @externs */
 extern Elem801C6508 D_801CCF68;
 void func_801CCE38(Obj801C6508 *arg0);
@@ -395,5 +493,22 @@ void func_8007790C(Obj801CB8A4 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 
 void func_801C7920(struct Obj801C52C0 *arg0, Sub801C5634 *arg1);
 void func_801C7A84(Obj801C6508 *arg0, s32 arg1);
 s32 func_801CB9E0(Obj801CB8A4 *arg0);
+extern Tbl801C7DA8 D_8008E658[];
+extern Hdr801C7DA8 *D_801A6134[];
+extern s32 D_801CD4C4;
+extern s32 D_801CD4C8;
+extern s32 D_801CD4CC;
+extern s32 D_801CD4D0;
+extern s32 D_801CD4D4;
+extern s32 D_801CD4D8;
+s32 func_801C9E08(View801CA094 *arg0, Sub801C7DA8 *arg1, s32 arg2, s32 arg3);
+void VectorNormalSS(Sub801C55B4 *arg0, Sub801C55B4 *arg1);
+void func_801C7B20(View801CA094 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub801C55B4 *arg4);
+void func_80085E98(View801CA094 *arg0, Sub801C55B4 *arg1, Sub801C55B4 *arg2, Sub801C55B4 *arg3, s32 arg4, s32 arg5, s32 arg6, s32 *arg7, s32 arg8, s32 arg9, s32 arg10, s32 *arg11, s32 *arg12, s32 arg13, s32 arg14);
+void func_800889B4(View801CA094 *arg0, Sub801C55B4 *arg1, Sub801C55B4 *arg2, Sub801C55B4 *arg3, s32 arg4, s32 arg5);
+void func_80014AE4(s32 arg0, s32 arg1, s32 arg2, Sub801C55B4 *arg3);
+void func_80086448(View801CA094 *arg0, Sub801C55B4 *arg1, Sub801C55B4 *arg2, Sub801C55B4 *arg3, Sub801C55B4 *arg4, s32 arg5, s32 arg6, s32 arg7);
+void func_8008840C(View801CA094 *arg0, Sub801C55B4 *arg1, Sub801C55B4 *arg2, Sub801C55B4 *arg3, s32 arg4, s32 arg5);
+void func_8008915C(View801CA094 *arg0, Sub801C55B4 *arg1, Sub801C55B4 *arg2, Sub801C55B4 *arg3, s32 arg4, s32 arg5, s32 arg6, Sub801C55B4 *arg7);
 
 #endif /* FDAT086_H */
