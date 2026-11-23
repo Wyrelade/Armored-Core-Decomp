@@ -54,7 +54,7 @@ INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801C5C40);
 INCLUDE_ASM("asm/USA/fdat082/nonmatchings/fdat082", func_801C5D68);
 
 void func_801C6038(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub801C50B0 vec;
 
     vec.unk0 = func_80014D78(100) - 50;
     vec.unk4 = func_80014D78(100) - 50;

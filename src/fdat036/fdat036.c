@@ -31,7 +31,7 @@ void func_801C5094(Obj801C52C0 *arg0) {
 }
 
 void func_801C51A4(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014D78(500) - 250;
     vec.unk4 = func_80014D78(500) - 250;
@@ -69,7 +69,7 @@ INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C57F0);
 INCLUDE_ASM("asm/USA/fdat036/nonmatchings/fdat036", func_801C58D4);
 
 void func_801C5B38(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014D78(100) - 50;
     vec.unk4 = func_80014D78(100) - 50;
@@ -125,7 +125,7 @@ void func_801C6258(Obj801C52C0 *arg0) {
 }
 
 void func_801C6320(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014D78(2000) - 1000;
     vec.unk4 = func_80014D78(2000) - 1000;
@@ -134,7 +134,7 @@ void func_801C6320(s32 arg0, s32 arg1) {
 }
 
 void func_801C6390(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014DAC(2000);
     vec.unk4 = func_80014DAC(2000);
@@ -143,7 +143,7 @@ void func_801C6390(s32 arg0, s32 arg1) {
 }
 
 void func_801C63F8(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014DAC(2000);
     vec.unk4 = func_80014DAC(2000);

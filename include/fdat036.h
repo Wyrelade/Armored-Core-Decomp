@@ -133,13 +133,6 @@ typedef struct Obj801C4EB8 {
     u16 unk160;
 } Obj801C4EB8;
 
-typedef struct Sub801C4C94 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C4C94;
-
 typedef struct Sub801C4D98 {
     u8 _pad0[0x2];
     u8 unk2;
@@ -150,7 +143,7 @@ typedef struct Sub801C4D98 {
 typedef struct Obj801C4C94 {
     Sub801C4E00 *unk0;
     u8 _pad4[0x4];
-    Sub801C4C94 unk8;
+    Sub8004DE88 unk8;
     u8 _pad10[0x1C];
     s16 unk2C;
     u8 _pad2E[0x8];
@@ -169,7 +162,7 @@ typedef struct Obj801C4C94 {
     u8 _pad60[0x4];
     Sub801C4D98 unk64;
     u8 _pad70[0x5C];
-    Sub801C4C94 unkCC;
+    Sub8004DE88 unkCC;
     u8 _padD4[0x88];
     s32 unk15C;
 } Obj801C4C94;
@@ -213,13 +206,6 @@ typedef struct Elem801C52C0_fdat000 {
     u8 _pad3C[0x508];
 } Elem801C52C0_fdat000;
 
-typedef struct Sub801C55B4 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C55B4;
-
 typedef struct Sub801C5550_fdat000 {
     void (*unk0)();
     void (*unk4)();
@@ -235,7 +221,7 @@ typedef struct Sub801C5798 {
 
 typedef struct Obj801C52C0_fdat000 {
     u8 _pad0[0x8];
-    Sub801C55B4 unk8;
+    Sub8004DE88 unk8;
     u8 _pad10[0x1C];
     Sub801C5550_fdat000 *unk2C;
     u8 _pad30[0x6];
@@ -255,7 +241,7 @@ typedef struct Obj801C52C0_fdat000 {
     void (*unk5C)();
     u8 _pad60[0x4];
     Sub801C5798 unk64;
-    Sub801C55B4 unkCC;
+    Sub8004DE88 unkCC;
     u8 _padD4[0x2C];
     u8 unk100;
     u8 _pad101[0x7];
@@ -329,10 +315,10 @@ void func_801C61AC(Obj801C52C0 *arg0, u8 arg1);
 void func_801C6460();
 extern Elem801C5EA8 D_801D0B68[];
 s32 func_80014D78(s32 arg0);
-void func_800759A4(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+void func_800759A4(s32 arg0, s32 arg1, Sub8004DE88 *arg2);
 s32 func_80014DAC(s32 arg0);
-void func_80075A18(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
-void func_80075A54(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+void func_80075A18(s32 arg0, s32 arg1, Sub8004DE88 *arg2);
+void func_80075A54(s32 arg0, s32 arg1, Sub8004DE88 *arg2);
 extern u16 D_8019F528;
 extern s32 D_801C7364;
 extern s32 D_801C7368;

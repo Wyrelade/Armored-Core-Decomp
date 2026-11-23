@@ -124,13 +124,6 @@ typedef struct Elem801C52C0 {
     u8 _pad3C[0x508];
 } Elem801C52C0;
 
-typedef struct Sub801C55B4 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C55B4;
-
 typedef struct Sub801C5550 {
     void (*unk0)();
     void (*unk4)();
@@ -145,7 +138,7 @@ typedef struct Sub801C5798 {
 
 typedef struct Obj801C52C0 {
     u8 _pad0[0x8];
-    Sub801C55B4 unk8;
+    Sub801C63FC unk8;
     u8 _pad10[0x1C];
     Sub801C5550 *unk2C;
     u8 _pad30[0x6];
@@ -165,7 +158,7 @@ typedef struct Obj801C52C0 {
     void (*unk5C)();
     u8 _pad60[0x4];
     Sub801C5798 unk64;
-    Sub801C55B4 unkCC;
+    Sub801C63FC unkCC;
     u8 _padD4[0x2C];
     u8 unk100;
     u8 _pad101[0x7];
@@ -209,7 +202,7 @@ typedef struct Elem801C80AC {
 
 typedef struct Obj801CA400 {
     u8 _pad0[0x8];
-    Sub801C55B4 unk8;
+    Sub801C63FC unk8;
     u8 _pad10[0x1A];
     u16 unk2A;
     u8 _pad2C[0x2];
@@ -263,9 +256,9 @@ void func_801C57E4();
 void func_80078598(Obj801C58D4 *arg0);
 void func_8007732C(Obj801C58D4 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub801C63FC *arg4, void (*arg5)());
 void func_801C52E0(Obj801C58D4 *arg0);
-extern Sub801C55B4 D_80039C78;
+extern Sub801C63FC D_80039C78;
 extern Elem801C80AC D_80198B08[];
-void func_800759A4(Obj801C52C0 *arg0, s32 arg1, Sub801C55B4 *arg2);
+void func_800759A4(Obj801C52C0 *arg0, s32 arg1, Sub801C63FC *arg2);
 void func_80075B08(Obj801C52C0 *arg0, s32 arg1, Elem801C80AC *arg2);
 s16 func_80075EB4(void);
 s16 func_800132CC(s16 arg0, s16 arg1, s16 arg2);
@@ -274,7 +267,7 @@ void func_80014338(Sub801C63FC *arg0, s32 arg1, Sub801C63FC *arg2);
 void func_800143B8(Sub801C63FC *arg0, s32 arg1, s32 arg2, Sub801C63FC *arg3);
 s32 func_8004F080(Sub801C65E0 *arg0, Sub801C63FC *arg1);
 void func_80075FC0(Obj801CA400 *arg0);
-s32 func_8004F024(Sub801C5798 *arg0, Sub801C55B4 *arg1);
+s32 func_8004F024(Sub801C5798 *arg0, Sub801C63FC *arg1);
 void func_80078250(Obj801CA400 *arg0, u8 arg1, u8 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 void func_8007847C(Obj801CA400 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 

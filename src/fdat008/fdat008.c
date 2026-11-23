@@ -53,7 +53,7 @@ void func_801C5FE8(s32 arg0, s32 arg1) {
     vec.unk0 = func_80014D78(100) - 50;
     vec.unk4 = func_80014D78(100) - 50;
     vec.unk2 = 0;
-    func_800759A4((Obj801C52C0 *)arg0, arg1, (Sub801C55B4 *)&vec);
+    func_800759A4((Obj801C52C0 *)arg0, arg1, (Sub801C4C94 *)&vec);
 }
 
 INCLUDE_ASM("asm/USA/fdat008/nonmatchings/fdat008", func_801C604C);
@@ -286,7 +286,7 @@ INCLUDE_ASM("asm/USA/fdat008/nonmatchings/fdat008", func_801C951C);
 
 void func_801C97A8(Obj801C52C0 *arg0, Sub801C97A8 *arg1) {
     Seg801C97A8 seg;
-    Sub801C55B4 rot;
+    Sub801C4C94 rot;
     Tbl801C97A8 *tbl;
     Elem801C52C0 *sub;
     Mdl801C97A8 *mdl;
@@ -513,7 +513,7 @@ void func_801CB03C(Obj801C52C0 *arg0, s32 arg1) {
     s32 v;
     s32 hit;
     s32 *flag;
-    Sub801C55B4 pos;
+    Sub801C4C94 pos;
 
     info = arg0->unk108;
     state = arg1;
