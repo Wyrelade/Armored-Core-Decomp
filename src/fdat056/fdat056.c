@@ -284,7 +284,20 @@ void func_801C7544(s32 *arg0) {
              D_801CD7F8 * 0x2BC + n * 0x12C + D_801CD760 * 0x2BC + D_801CD764 * 0xDAC;
 }
 
-INCLUDE_ASM("asm/USA/fdat056/nonmatchings/fdat056", func_801C779C);
+void func_801C779C(Obj801C4EB8 *arg0) {
+    s32 idx;
+
+    if (arg0->unk160 == 0) {
+        idx = arg0->unk0 - D_8019FAB8;
+        if (idx >= 4 && idx < 11) {
+            D_801CD760++;
+        }
+        if (idx >= 11 && idx < 18) {
+            D_80049E78 = 0;
+            D_801CD764++;
+        }
+    }
+}
 
 s32 func_801C784C(Sub801C6AE0 *arg0) {
     s32 dx;

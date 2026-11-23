@@ -214,6 +214,7 @@ typedef struct Sub801C4EB8 {
 typedef struct Sub801C6C20 {
     u8 _pad0[0xA];
     s16 unkA;
+    u8 _padC[0x20];
 } Sub801C6C20;
 
 typedef struct Obj801C4EB8 {
@@ -458,5 +459,7 @@ void func_8007790C(Obj801CBB48 *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 
 void func_801C7BC4(struct Obj801C52C0 *arg0, Sub801C5634 *arg1);
 void func_801C7D28(Obj801C4F4C *arg0, s32 arg1);
 s32 func_801CBC84(Obj801CBB48 *arg0);
+extern Sub801C6C20 D_8019FAB8[];
+extern s32 D_80049E78;
 
 #endif /* FDAT056_H */
