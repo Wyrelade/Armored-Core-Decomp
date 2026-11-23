@@ -311,7 +311,7 @@ typedef struct Obj800558A8 {
     s16 unk0;
     u8 _pad2[0x1E];
     struct Elem80054008 *unk20;
-    s32 *unk24;
+    struct Obj800558A8 **unk24;
 } Obj800558A8;
 
 typedef struct Elem8005460C {
