@@ -4,7 +4,6 @@
 #include "common.h"
 
 /* @types */
-
 typedef struct Obj801C5590 {
     u8 _pad0[0x12];
     s16 unk12;
@@ -299,6 +298,47 @@ typedef struct Obj801CBB48 {
     Elem801C52C0 *unk108;
 } Obj801CBB48;
 
+typedef struct Sub801C5D08 {
+    u8 _pad0[0x1C];
+    u16 unk1C;
+    u16 unk1E;
+    u8 unk20;
+    u8 unk21;
+    u8 _pad22[0x2];
+    u8 unk24;
+} Sub801C5D08;
+
+typedef struct Buf801C5D08 {
+    u8 _pad0[0x16];
+    u16 unk16;
+    u8 _pad18[0x18];
+} Buf801C5D08;
+
+typedef struct Obj801C5D08 {
+    Sub801C5D08 *unk0;
+    u8 _pad4[0xE];
+    s16 unk12;
+    u8 _pad14[0x22];
+    u16 unk36;
+    u8 _pad38[0x6];
+    u8 unk3E;
+    u8 unk3F;
+    u8 unk40;
+    u8 _pad41[0x7];
+    s32 unk48;
+    u8 _pad4C[0xB0];
+    u8 unkFC;
+    u8 _padFD[0xB];
+    u8 unk108;
+    u8 _pad109[0x3F];
+    u16 unk148;
+    u8 unk14A;
+    u8 unk14B;
+    u8 unk14C;
+    u8 _pad14D[0xF];
+    s32 unk15C;
+} Obj801C5D08;
+
 /* @externs */
 void func_801C5518(Obj801C4EB8 *arg0);
 void func_801C63EC(Obj801C64C0 *arg0);
@@ -337,7 +377,7 @@ void func_8004ECA8(Sub801C4EB8 *arg0);
 extern s16 D_801A26C0;
 extern s16 D_801A26C2;
 extern s16 D_801A26C4;
-s32 rand();
+s32 rand(void);
 extern Elem801C5F64 D_80198B08[];
 void func_801C6A24();
 void func_801C6A38();
@@ -354,5 +394,15 @@ void func_80075FC0(Obj801CBB48 *arg0);
 s32 func_8004F024(Sub801C69F8 *arg0, Sub8004DE88 *arg1);
 void func_80078250(Obj801CBB48 *arg0, u8 arg1, u8 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 void func_8007847C(Obj801CBB48 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
+extern u8 D_801CD148[][0x20];
+extern u8 D_801CD1C8[];
+extern u8 D_801CD1EC[];
+s32 func_800754D0(Obj801C5D08 *arg0, u8 *arg1);
+void func_80078E1C(Obj801C5D08 *arg0);
+s32 func_800745D0(Obj801C5D08 *arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
+s32 func_80073C2C(s32 arg0, Sub8004DE88 *arg1, s16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, Buf801C5D08 *arg11);
+s32 func_800781E8(Obj801C5D08 *arg0);
+void func_80077B78(Obj801C5D08 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7, ...);
+s32 func_801C5BE0(Obj801C5D08 *arg0, u8 *arg1);
 
 #endif /* FDAT056_H */
