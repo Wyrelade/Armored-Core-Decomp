@@ -4,6 +4,7 @@
 #include "common.h"
 
 /* @types */
+
 typedef struct Sub801C6A5C {
     void (*unk0)();
     void (*unk4)();
@@ -43,7 +44,9 @@ typedef struct Sub8004DE88 {
 
 typedef struct Sub801C605C {
     u8 unk0;
-    u8 _pad1[0x67];
+    u8 _pad1[0x9];
+    s16 unkA;
+    u8 _padC[0x5C];
 } Sub801C605C;
 
 typedef struct Sub801C7788 {
@@ -120,23 +123,11 @@ typedef struct Obj801C53D0 {
     u8 unk1000[1];
 } Obj801C53D0;
 
-typedef struct Sub801C5550 {
-    void (*unk0)();
-    void (*unk4)();
-} Sub801C5550;
-
-typedef struct Sub801C5798 {
-    u8 unk0;
-    u8 _pad1[0x9];
-    s16 unkA;
-    u8 _padC[0x5C];
-} Sub801C5798;
-
 typedef struct Obj801C52C0_fdat000 {
     u8 _pad0[0x8];
     Sub8004DE88 unk8;
     u8 _pad10[0x1C];
-    Sub801C5550 *unk2C;
+    Sub801C6A5C *unk2C;
     u8 _pad30[0x6];
     s16 unk36;
     u8 _pad38[0x4];
@@ -153,7 +144,7 @@ typedef struct Obj801C52C0_fdat000 {
     void (*unk58)();
     void (*unk5C)();
     u8 _pad60[0x4];
-    Sub801C5798 unk64;
+    Sub801C605C unk64;
     Sub8004DE88 unkCC;
     u8 _padD4[0x2C];
     u8 unk100;
@@ -217,7 +208,7 @@ typedef struct Obj801C4EB8 {
     u8 _pad1A[0x8];
     s16 unk22;
     u8 _pad24[0x8];
-    Sub801C5550 *unk2C;
+    Sub801C6A5C *unk2C;
     u8 _pad30[0x6];
     s16 unk36;
     u8 _pad38[0x9];
@@ -376,7 +367,7 @@ typedef struct Obj801C93D4 {
     u8 _pad42[0xE];
     void (*unk50)();
     u8 _pad54[0x10];
-    Sub801C5798 unk64;
+    Sub801C605C unk64;
     u8 _padCC[0x3C];
     Elem801C52C0 *unk108;
 } Obj801C93D4;
@@ -440,7 +431,7 @@ void func_80075B08(Obj801C52C0_fdat000 *arg0, s32 arg1, Elem801C7308 *arg2);
 extern s16 D_801A26CE;
 extern Elem801C6A98 D_801D0B94[];
 void func_80075FC0(Obj801C93D4 *arg0);
-s32 func_8004F024(Sub801C5798 *arg0, Sub8004DE88 *arg1);
+s32 func_8004F024(Sub801C605C *arg0, Sub8004DE88 *arg1);
 void func_80078250(Obj801C93D4 *arg0, u8 arg1, u8 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 void func_8007847C(Obj801C93D4 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 s32 func_801C5BC8(Elem801C5F00 *arg0, u8 arg1);
