@@ -778,7 +778,8 @@ typedef struct Elem8007229C {
     u32 unk30_9 : 3;
     u32 unk30_12 : 1;
     u32 unk30_13 : 1;
-    u32 unk30_14 : 14;
+    u32 unk30_14 : 1;
+    u32 unk30_15 : 13;
     u32 unk30_28 : 4;
     u32 unk34_0 : 12;
     u32 unk34_12 : 12;

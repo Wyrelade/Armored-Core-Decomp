@@ -152,7 +152,7 @@ typedef struct Obj80078CFC {
     s16 unk2C;
     s16 unk2E;
     s16 unk30;
-    s16 unk32;
+    u16 unk32;
     u8 _pad34[0x4];
     s16 unk38;
     u8 unk3A;
@@ -170,7 +170,7 @@ typedef struct Obj80078CFC {
     void (*unk54)();
     void (*unk58)();
     void (*unk5C)();
-    s32 unk60;
+    s16 *unk60;
     u8 unk64;
     u8 unk65;
     u8 _pad66[0x2];
@@ -181,7 +181,7 @@ typedef struct Obj80078CFC {
     s16 unk6E;
     u8 _pad70[0x2];
     s16 unk72;
-    u8 _pad74[0x2];
+    s16 unk74;
     Sub8004DE88 unk76;
     u8 _pad7E[0x2];
     Sub8004ECA8 *unk80;
@@ -591,7 +591,8 @@ typedef struct Elem800730DC {
     u32 unk30_9 : 3;
     u32 unk30_12 : 1;
     u32 unk30_13 : 1;
-    u32 unk30_14 : 14;
+    u32 unk30_14 : 1;
+    u32 unk30_15 : 13;
     u32 unk30_28 : 4;
     u32 unk34_0 : 12;
     u32 unk34_12 : 12;
