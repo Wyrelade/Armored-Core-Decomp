@@ -2659,7 +2659,7 @@ extern u8 D_8004BEC0[];
 extern u8 D_8004BEC8[];
 extern u8 D_8004BECC[];
 extern u8 D_8004BED4[];
-extern u8 *D_800B824C;
+extern u8 *D_800B824C[];
 extern u8 *D_800B8250;
 extern Obj8004DEB0 *D_8017EF80;
 extern Obj8004DEB0 *D_8017EF84;
@@ -2671,6 +2671,6 @@ extern u32 *D_801F36D8;
 extern s32 D_801BC480;
 void func_80078A38(Obj8004DEB0 *arg0);
 void func_8007BCE8(s32 arg0);
-void func_800788C8(s32 arg0, s32 arg1);
+void func_800788C8(s16 arg0, u8 arg1);
 
 #endif /* FDAT201_H */

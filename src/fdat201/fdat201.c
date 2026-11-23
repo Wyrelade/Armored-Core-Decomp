@@ -3899,7 +3899,7 @@ Obj800744A8 *func_800744A8(Obj8004DEB0 *arg0, void (*arg1)(), u8 arg2) {
     }
     a5Ap = &D_80031A58[2];
     if (*a5Ap != 0xFF) {
-        func_8005D15C(D_800B824C, 0x3C0, 0);
+        func_8005D15C(D_800B824C[0], 0x3C0, 0);
         sub->unk16 = 2;
         sub->unk18 = 3;
         sub->unk1A = 0;
