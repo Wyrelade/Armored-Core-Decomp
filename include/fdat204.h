@@ -2247,6 +2247,24 @@ typedef union Prim80057A3C {
     Gt480057A3C *g4;
 } Prim80057A3C;
 
+typedef union Rot800584F4 {
+    s16 m[3][3];
+    s32 w[5];
+} Rot800584F4;
+
+typedef struct Mat800584F4 {
+    Rot800584F4 r;
+    s32 t[3];
+} Mat800584F4;
+
+typedef struct Spad800584F4 {
+    u8 _pad0[0x38];
+    Mat800584F4 unk38;
+    Mat800584F4 unk58;
+    u8 _pad78[0xC];
+    Mat800584F4 unk84;
+} Spad800584F4;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2632,5 +2650,7 @@ void func_80055140(s32 arg0);
 void func_80055350(Scr80055EA8 *arg0, s32 arg1);
 void func_80055428(Scr80055EA8 *arg0, s32 arg1);
 void func_800571CC(Scr800573FC *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800571F0(u16 arg0, s32 arg1, s32 arg2);
+void func_8005833C(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
 
 #endif /* FDAT204_H */
