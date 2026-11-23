@@ -2136,6 +2136,7 @@ typedef struct Scr800573FC {
     s32 unk24;
     s32 unk28;
     Col800573FC unk2C;
+    Sub8004F1D4 unk30;
 } Scr800573FC;
 
 typedef struct Ft380057A3C {
@@ -2264,6 +2265,37 @@ typedef struct Spad800584F4 {
     u8 _pad78[0xC];
     Mat800584F4 unk84;
 } Spad800584F4;
+
+typedef struct PkFt380058B88 {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u32 unkC;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+} PkFt380058B88;
+
+typedef struct PkFt480058B88 {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u32 unk10;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+} PkFt480058B88;
+
+typedef union Pk80058B88 {
+    Pk80057A3C h;
+    PkFt380058B88 ft3;
+    PkFt480058B88 ft4;
+} Pk80058B88;
 
 /* @externs */
 extern s8 D_800893C4;
@@ -2652,5 +2684,11 @@ void func_80055428(Scr80055EA8 *arg0, s32 arg1);
 void func_800571CC(Scr800573FC *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_800571F0(u16 arg0, s32 arg1, s32 arg2);
 void func_8005833C(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
+void func_80057FA8(Scr800573FC *arg0, u16 arg1, s32 arg2);
+void func_80058268(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8005828C(Sub8004F1D4 *arg0, s32 *arg1, s32 arg2);
+void func_800582C0(Sv800584F4 *arg0, s32 *arg1, s32 arg2);
+void func_800582E4(Sv800584F4 *arg0, Sv800584F4 *arg1, Sv800584F4 *arg2, Col800573FC *arg3, s32 arg4);
+void func_8005831C(Sub8004F1D4 *arg0);
 
 #endif /* FDAT204_H */

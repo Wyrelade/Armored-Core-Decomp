@@ -1403,7 +1403,345 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800582E4);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005831C);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005833C);
+void func_8005833C(u16 arg0, s32 arg1, u16 arg2, s32 arg3) {
+    Scr800573FC *sp;
+    Vtx8005C910 *a;
+    Vtx8005C910 *b;
+    Vtx8005C910 *c;
+    Vtx8005C910 *d;
+    Col800573FC *pk;
+    Pk80058B88 *q;
+    Prim80057A3C p;
+    s32 z;
+    u8 *vtx;
+
+    sp = (Scr800573FC *)0x1F800000;
+    sp->unk2C.b[0] = sp->unk2C.b[1] = sp->unk2C.b[2] = 0x40;
+    sp->unk28 = 0;
+    sp->unk20 = D_801A4964 + 0xF;
+    sp->unk24 = D_801A4964 + 3;
+    sp->unk1C = (Tag800573FC *)(D_801ADCD0.unk0 + arg1);
+    sp->unk10 = (Mdl800573FC *)((u8 *)D_801ADCD0.unk8 + 0xC + arg0 * 0x20 - arg0 * 4);
+    vtx = (u8 *)D_801ADCD0.unk670;
+    if (sp->unk10->unk4 == 0) {
+        return;
+    }
+    func_80057FA8(sp, arg2, arg3);
+    sp->unk14 = sp->unk10->unk8;
+    pk = sp->unk10->unk10;
+    if (arg3 != 0) {
+        sp->unk18 = sp->unk10->unk14 + (sp->unk10->unkE & 0x1FF);
+    } else {
+        sp->unk18 = sp->unk10->unk14;
+    }
+    sp->unk4 = D_801ADCCC[0]->unk8;
+    sp->unk8 = D_801ADCCC[0]->unk4;
+    if (sp->unk8 < sp->unk4 + sp->unk18 * 4 + sp->unk18 * 16 + sp->unk18 * 32) {
+        return;
+    }
+    while (sp->unk18-- != 0) {
+        sp->unkC = *pk;
+        pk++;
+        q = (Pk80058B88 *)pk;
+        switch (sp->unkC.b[3] & 0xFD) {
+        case 0x25:
+            a = (Vtx8005C910 *)(vtx + q->h.unkE);
+            b = (Vtx8005C910 *)(vtx + q->h.unk10);
+            c = (Vtx8005C910 *)(vtx + q->h.unk12);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            gte_ldv0(sp->unk14 + q->h.unkC);
+            gte_ncs();
+            p.g3 = (Gt380057A3C *)sp->unk4;
+            sp->unk4 += sizeof(Gt380057A3C);
+            p.g3->unk8 = a->unk0;
+            p.g3->unk14 = b->unk0;
+            p.g3->unk20 = c->unk0;
+            func_8005831C(&sp->unk30);
+            func_8005828C(&sp->unk30, &a->unk8, a->unkC);
+            gte_strgb(&p.g3->unk4);
+            func_8005828C(&sp->unk30, &b->unk8, b->unkC);
+            p.g3->unkC = q->h.unk0;
+            p.g3->unk18 = q->h.unk4;
+            p.g3->unk24 = q->h.unk8;
+            gte_strgb(&p.g3->unk10);
+            func_8005828C(&sp->unk30, &c->unk8, c->unkC);
+            p.g3->tag.len = 9;
+            p.g3->unk4.b[3] = (sp->unkC.b[3] & 2) | 0x34;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p.g3->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.g3;
+                gte_strgb(&p.g3->unk1C);
+            }
+            break;
+        case 0x2D:
+            a = (Vtx8005C910 *)(vtx + q->h.unk12);
+            b = (Vtx8005C910 *)(vtx + q->h.unk14);
+            c = (Vtx8005C910 *)(vtx + q->h.unk16);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            gte_ldv0(sp->unk14 + q->h.unk10);
+            gte_ncs();
+            p.g4 = (Gt480057A3C *)sp->unk4;
+            d = (Vtx8005C910 *)(vtx + q->h.unk18);
+            sp->unk4 += sizeof(Gt480057A3C);
+            p.g4->unk8 = a->unk0;
+            p.g4->unk14 = b->unk0;
+            p.g4->unk20 = c->unk0;
+            p.g4->unk2C = d->unk0;
+            func_8005831C(&sp->unk30);
+            func_8005828C(&sp->unk30, &a->unk8, a->unkC);
+            gte_strgb(&p.g4->unk4);
+            func_8005828C(&sp->unk30, &b->unk8, b->unkC);
+            gte_strgb(&p.g4->unk10);
+            func_8005828C(&sp->unk30, &c->unk8, c->unkC);
+            p.g4->unkC = q->h.unk0;
+            p.g4->unk18 = q->h.unk4;
+            p.g4->unk24 = q->h.unk8;
+            p.g4->unk30 = q->h.unkC;
+            gte_strgb(&p.g4->unk1C);
+            func_8005828C(&sp->unk30, &d->unk8, d->unkC);
+            p.g4->tag.len = 0xC;
+            p.g4->unk4.b[3] = (sp->unkC.b[3] & 2) | 0x3C;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p.g4->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.g4;
+                gte_strgb(&p.g4->unk28);
+            }
+            break;
+        case 0x35:
+            a = (Vtx8005C910 *)(vtx + q->h.unkE);
+            b = (Vtx8005C910 *)(vtx + q->h.unk12);
+            c = (Vtx8005C910 *)(vtx + q->h.unk16);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unkC), &a->unk8, a->unkC);
+            p.g3 = (Gt380057A3C *)sp->unk4;
+            sp->unk4 += sizeof(Gt380057A3C);
+            p.g3->unk8 = a->unk0;
+            p.g3->unk14 = b->unk0;
+            p.g3->unk20 = c->unk0;
+            gte_strgb(&p.g3->unk4);
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk10), &b->unk8, b->unkC);
+            gte_strgb(&p.g3->unk10);
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk14), &c->unk8, c->unkC);
+            p.g3->unkC = q->h.unk0;
+            p.g3->unk18 = q->h.unk4;
+            p.g3->unk24 = q->h.unk8;
+            p.g3->tag.len = 9;
+            p.g3->unk4.b[3] = sp->unkC.b[3] & 0xFE;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p.g3->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.g3;
+                gte_strgb(&p.g3->unk1C);
+            }
+            break;
+        case 0x3D:
+            a = (Vtx8005C910 *)(vtx + q->h.unk12);
+            b = (Vtx8005C910 *)(vtx + q->h.unk16);
+            c = (Vtx8005C910 *)(vtx + q->h.unk1A);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk10), &a->unk8, a->unkC);
+            d = (Vtx8005C910 *)(vtx + q->h.unk1E);
+            p.g4 = (Gt480057A3C *)sp->unk4;
+            sp->unk4 += sizeof(Gt480057A3C);
+            gte_strgb(&p.g4->unk4);
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk14), &b->unk8, b->unkC);
+            p.g4->unk8 = a->unk0;
+            p.g4->unk14 = b->unk0;
+            p.g4->unk20 = c->unk0;
+            p.g4->unk2C = d->unk0;
+            gte_strgb(&p.g4->unk10);
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk18), &c->unk8, c->unkC);
+            gte_strgb(&p.g4->unk1C);
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk1C), &d->unk8, d->unkC);
+            p.g4->unkC = q->h.unk0;
+            p.g4->unk18 = q->h.unk4;
+            p.g4->unk24 = q->h.unk8;
+            p.g4->unk30 = q->h.unkC;
+            p.g4->tag.len = 0xC;
+            p.g4->unk4.b[3] = sp->unkC.b[3] & 0xFE;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p.g4->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.g4;
+                gte_strgb(&p.g4->unk28);
+            }
+            break;
+        case 0x24:
+            a = (Vtx8005C910 *)(vtx + q->h.unkE);
+            b = (Vtx8005C910 *)(vtx + q->h.unk10);
+            c = (Vtx8005C910 *)(vtx + q->h.unk12);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unkC), (s32 *)&sp->unk2C, a->unkC);
+            p.f3 = (Ft380057A3C *)sp->unk4;
+            sp->unk4 += sizeof(Ft380057A3C);
+            p.f3->unk8 = a->unk0;
+            p.f3->unk10 = b->unk0;
+            p.f3->unk18 = c->unk0;
+            p.f3->unkC = q->h.unk0;
+            p.f3->unk14 = q->h.unk4;
+            p.f3->unk1C = q->h.unk8;
+            p.f3->tag.len = 7;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p.f3->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.f3;
+                gte_strgb(&p.f3->unk4);
+                p.f3->unk4.b[3] = sp->unkC.b[3];
+            }
+            break;
+        case 0x2C:
+            a = (Vtx8005C910 *)(vtx + q->h.unk12);
+            b = (Vtx8005C910 *)(vtx + q->h.unk14);
+            c = (Vtx8005C910 *)(vtx + q->h.unk16);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk10), (s32 *)&sp->unk2C, a->unkC);
+            p.f4 = (Ft480057A3C *)sp->unk4;
+            d = (Vtx8005C910 *)(vtx + q->h.unk18);
+            sp->unk4 += sizeof(Ft480057A3C);
+            p.f4->unk8 = a->unk0;
+            p.f4->unk10 = b->unk0;
+            p.f4->unk18 = c->unk0;
+            p.f4->unk20 = d->unk0;
+            p.f4->unkC = q->h.unk0;
+            p.f4->unk14 = q->h.unk4;
+            p.f4->unk1C = q->h.unk8;
+            p.f4->unk24 = q->h.unkC;
+            p.f4->tag.len = 9;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p.f4->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.f4;
+                gte_strgb(&p.f4->unk4);
+                p.f4->unk4.b[3] = sp->unkC.b[3];
+            }
+            break;
+        case 0x34:
+            a = (Vtx8005C910 *)(vtx + q->h.unkE);
+            b = (Vtx8005C910 *)(vtx + q->h.unk12);
+            c = (Vtx8005C910 *)(vtx + q->h.unk16);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800582E4((Sv800584F4 *)(sp->unk14 + q->h.unkC), (Sv800584F4 *)(sp->unk14 + q->h.unk10), (Sv800584F4 *)(sp->unk14 + q->h.unk14), &sp->unk2C, a->unkC);
+            p.g3 = (Gt380057A3C *)sp->unk4;
+            sp->unk4 += sizeof(Gt380057A3C);
+            p.g3->unk8 = a->unk0;
+            p.g3->unk14 = b->unk0;
+            p.g3->unk20 = c->unk0;
+            p.g3->unkC = q->h.unk0;
+            p.g3->unk18 = q->h.unk4;
+            p.g3->unk24 = q->h.unk8;
+            p.g3->tag.len = 9;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p.g3->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.g3;
+                gte_strgb3(&p.g3->unk4, &p.g3->unk10, &p.g3->unk1C);
+                p.g3->unk4.b[3] = sp->unkC.b[3];
+            }
+            break;
+        case 0x3C:
+            a = (Vtx8005C910 *)(vtx + q->h.unk12);
+            b = (Vtx8005C910 *)(vtx + q->h.unk16);
+            c = (Vtx8005C910 *)(vtx + q->h.unk1A);
+            func_80058268(&sp->unk0, a->unk0, b->unk0, c->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_800582E4((Sv800584F4 *)(sp->unk14 + q->h.unk10), (Sv800584F4 *)(sp->unk14 + q->h.unk14), (Sv800584F4 *)(sp->unk14 + q->h.unk18), &sp->unk2C, a->unkC);
+            p.g4 = (Gt480057A3C *)sp->unk4;
+            d = (Vtx8005C910 *)(vtx + q->h.unk1E);
+            sp->unk4 += sizeof(Gt480057A3C);
+            p.g4->unk8 = a->unk0;
+            p.g4->unk14 = b->unk0;
+            p.g4->unk20 = c->unk0;
+            p.g4->unk2C = d->unk0;
+            gte_strgb3(&p.g4->unk4, &p.g4->unk10, &p.g4->unk1C);
+            func_800582C0((Sv800584F4 *)(sp->unk14 + q->h.unk1C), (s32 *)&sp->unk2C, a->unkC);
+            p.g4->unkC = q->h.unk0;
+            p.g4->unk18 = q->h.unk4;
+            p.g4->unk24 = q->h.unk8;
+            p.g4->unk30 = q->h.unkC;
+            p.g4->tag.len = 0xC;
+            p.g4->unk4.b[3] = sp->unkC.b[3];
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p.g4->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.g4;
+                gte_strgb(&p.g4->unk28);
+            }
+            break;
+        case 0xA4:
+            p.f3 = (Ft380057A3C *)sp->unk4;
+            a = (Vtx8005C910 *)(vtx + q->ft3.unk10);
+            b = (Vtx8005C910 *)(vtx + q->ft3.unk12);
+            c = (Vtx8005C910 *)(vtx + q->ft3.unk14);
+            sp->unk4 += sizeof(Ft380057A3C);
+            p.f3->unk8 = a->unk0;
+            p.f3->unk10 = b->unk0;
+            p.f3->unk18 = c->unk0;
+            p.f3->unk4.w = q->ft3.unkC;
+            p.f3->unkC = q->ft3.unk0;
+            p.f3->unk14 = q->ft3.unk4;
+            p.f3->unk1C = q->ft3.unk8;
+            p.f3->tag.len = 7;
+            p.f3->unk4.b[3] = sp->unkC.b[3] & 0x7F;
+            z = ((a->unk4 + b->unk4 + c->unk4) * 0x1555) >> sp->unk20;
+            if (sp->unk28 < z) {
+                p.f3->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.f3;
+            }
+            break;
+        case 0xAC:
+            p.f4 = (Ft480057A3C *)sp->unk4;
+            a = (Vtx8005C910 *)(vtx + q->ft4.unk14);
+            b = (Vtx8005C910 *)(vtx + q->ft4.unk16);
+            c = (Vtx8005C910 *)(vtx + q->ft4.unk18);
+            d = (Vtx8005C910 *)(vtx + q->ft4.unk1A);
+            sp->unk4 += sizeof(Ft480057A3C);
+            p.f4->unk8 = a->unk0;
+            p.f4->unk10 = b->unk0;
+            p.f4->unk18 = c->unk0;
+            p.f4->unk20 = d->unk0;
+            p.f4->unk4.w = q->ft4.unk10;
+            p.f4->unkC = q->ft4.unk0;
+            p.f4->unk14 = q->ft4.unk4;
+            p.f4->unk1C = q->ft4.unk8;
+            p.f4->unk24 = q->ft4.unkC;
+            p.f4->tag.len = 9;
+            p.f4->unk4.b[3] = sp->unkC.b[3] & 0x7F;
+            z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> sp->unk24;
+            if (sp->unk28 < z) {
+                p.f4->tag.addr = sp->unk1C[z].addr;
+                sp->unk1C[z].addr = (u32)p.f4;
+            }
+            break;
+        }
+        pk += sp->unkC.b[1];
+    }
+    D_801ADCCC[0]->unk8 = sp->unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800594D4);
 
