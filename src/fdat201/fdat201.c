@@ -6352,7 +6352,16 @@ void func_8008F978(void) {
     func_800AE30C();
 }
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008FA00);
+INCLUDE_RODATA("asm/USA/fdat201/nonmatchings/fdat201", D_8004CD30);
+
+s32 func_8008FA00(u8 arg0, u16 arg1) {
+    U8x10 tbl = D_8004CD30;
+
+    if (arg0 == 6 || (u8)(arg0 - 8) < 2) {
+        return 0;
+    }
+    return D_80031A58[tbl.b[arg0]] == arg1;
+}
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_8008FA94);
 
