@@ -3509,7 +3509,75 @@ s32 func_800728D8(Obj800709D4 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_800728F8);
 
-INCLUDE_ASM("asm/USA/fdat201/nonmatchings/fdat201", func_80072958);
+s32 func_80072958(Obj800709D4 *arg0) {
+    Obj800744A8 *owner;
+    Obj80072C80 *p6;
+    Obj80072C80 *p4;
+    Obj80072C80 *p5;
+    u32 v;
+
+    owner = (Obj800744A8 *)func_80050078(func_800744A8);
+    p6 = func_80072C80(owner, 6, (Obj80072C80 *)&D_801BC4F8, (Obj80072C80 *)&D_801BC4F8, 0);
+    p4 = func_80072C80(owner, 4, p6, (Obj80072C80 *)&D_801BC4F8, 0);
+    func_80072C80(owner, 3, p6, p4, 0);
+    v = D_80031A58[p6->unk7C.unk0];
+    if (v < 0x15 || v == 0xFF || D_80031A5B >= 8) {
+        p5 = func_80072C80(owner, 5, p6, p4, 0);
+        func_80072C80(owner, 5, p6, p4, 1);
+    } else {
+        p5 = func_80072C80(owner, 5, p6, p4, 2);
+        func_80072C80(owner, 5, p6, p4, 3);
+    }
+    if (D_80031A5B < 8) {
+        func_80072C80(owner, 8, p6, p4, 0);
+    }
+    if (D_80031A5E < 0x1F) {
+        func_80072C80(owner, 9, p6, p4, 0);
+    } else {
+        switch (D_80031A58[0]) {
+        case 0:
+            func_80072C80(owner, 9, p6, p4, 1);
+            break;
+        case 1:
+            func_80072C80(owner, 9, p6, p4, 2);
+            break;
+        case 2:
+            func_80072C80(owner, 9, p6, p4, 3);
+            break;
+        }
+    }
+    if (D_80031A5F < 0x1F) {
+        func_80072C80(owner, 10, p6, p4, 1);
+    } else {
+        switch (D_80031A58[0]) {
+        case 0:
+            func_80072C80(owner, 10, p6, p4, 1);
+            break;
+        case 1:
+            func_80072C80(owner, 10, p6, p4, 2);
+            break;
+        case 2:
+            func_80072C80(owner, 10, p6, p4, 3);
+            break;
+        }
+    }
+    v = D_80031A58[p4->unk7C.unk0];
+    if (v >= 3) {
+        v -= 3;
+    }
+    func_80072C80(owner, 0xE, p6, p4, v);
+    owner->unk7C.unkC = p5;
+    if (owner->unk7C.unk18 == 0xB) {
+        func_80072C80(owner, 0xB, p6, p4, 0);
+    } else if (owner->unk7C.unk18 == 0xC) {
+        func_80072C80(owner, 0xC, p6, p4, 0);
+    } else if (owner->unk7C.unk18 == 0xD) {
+        func_80072C80(owner, 0xD, p6, p4, 0);
+    } else if (owner->unk7C.unk18 == 7) {
+        func_80072C80(owner, 7, p6, p4, 0);
+    }
+    return (s32)p6;
+}
 
 Obj80072C80 *func_80072C80(Obj800744A8 *arg0, u16 arg1, Obj80072C80 *arg2, Obj80072C80 *arg3, u16 arg4) {
     Obj80072C80 *obj;
