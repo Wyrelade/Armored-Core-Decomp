@@ -1059,7 +1059,61 @@ void func_80056B84(u16 arg0) {
     D_801ADCD8 = D_801ADCD4[arg0];
 }
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80056BB0);
+void func_80056BB0(Mdl800573FC *arg0, s32 arg1) {
+    Scr800573FC *s;
+    Col800573FC *src;
+    Poly800573FC *p;
+    Vtx8005C910 *a;
+    Vtx8005C910 *b;
+    Vtx8005C910 *c;
+    Vtx8005C910 *d;
+    u8 *vtx;
+    s32 z;
+    s32 n;
+
+    s = (Scr800573FC *)0x1F800000;
+    s->unk2C.b[0] = s->unk2C.b[1] = s->unk2C.b[2] = 10;
+    s->unk28 = 0;
+    s->unk10 = arg0;
+    s->unk20 = D_801A4964 + 0xF;
+    s->unk24 = D_801A4964 + 3;
+    s->unk1C = (Tag800573FC *)&D_801ADCD0.unk0[arg1];
+    vtx = (u8 *)D_801ADCD0.unk670;
+    func_80057118(arg0->unk4);
+    n = s->unk10->unk14;
+    src = s->unk10->unk10;
+    s->unk18 = n;
+    s->unk4 = D_801ADCCC[0]->unk8;
+    s->unk8 = D_801ADCCC[0]->unk4;
+    if (s->unk8 >= s->unk4 + (n << 2) + (n << 4) + (n << 5)) {
+        while (s->unk18-- != 0) {
+            s->unkC = *src;
+            src++;
+            if ((s->unkC.b[3] & 0xFC) == 0x28) {
+                p = (Poly800573FC *)s->unk4;
+                s->unk4 = (u8 *)(p + 1);
+                a = (Vtx8005C910 *)(vtx + ((Rec800573FC *)src)->unk6);
+                b = (Vtx8005C910 *)(vtx + ((Rec800573FC *)src)->unk8);
+                c = (Vtx8005C910 *)(vtx + ((Rec800573FC *)src)->unkA);
+                d = (Vtx8005C910 *)(vtx + ((Rec800573FC *)src)->unkC);
+                p->unk8 = a->unk0;
+                p->unkC = b->unk0;
+                p->unk10 = c->unk0;
+                p->unk14 = d->unk0;
+                p->unk4 = s->unk2C;
+                p->unk4.b[3] = s->unkC.b[3];
+                p->unk0.len = 5;
+                z = (a->unk4 + b->unk4 + c->unk4 + d->unk4) >> s->unk24;
+                if (z >= 0) {
+                    p->unk0.addr = s->unk1C[z].addr;
+                    s->unk1C[z].addr = (u32)p;
+                }
+            }
+            src += s->unkC.b[1];
+        }
+        D_801ADCCC[0]->unk8 = s->unk4;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80056DF4);
 

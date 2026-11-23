@@ -2078,6 +2078,56 @@ typedef union Hdr80056688 {
     u8 b[4];
 } Hdr80056688;
 
+typedef union Col800573FC {
+    u32 w;
+    u8 b[4];
+} Col800573FC;
+
+typedef struct Rec800573FC {
+    u8 _pad0[0x6];
+    u16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+} Rec800573FC;
+
+typedef struct Tag800573FC {
+    u32 addr : 24;
+    u32 len : 8;
+} Tag800573FC;
+
+typedef struct Poly800573FC {
+    Tag800573FC unk0;
+    Col800573FC unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+} Poly800573FC;
+
+typedef struct Mdl800573FC {
+    u8 _pad0[0x4];
+    u16 unk4;
+    u8 _pad6[0xA];
+    Col800573FC *unk10;
+    u16 unk14;
+} Mdl800573FC;
+
+typedef struct Scr800573FC {
+    u8 _pad0[0x4];
+    u8 *unk4;
+    u8 *unk8;
+    Col800573FC unkC;
+    Mdl800573FC *unk10;
+    u8 _pad14[0x4];
+    s32 unk18;
+    Tag800573FC *unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    Col800573FC unk2C;
+} Scr800573FC;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
