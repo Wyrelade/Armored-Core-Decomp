@@ -1650,6 +1650,11 @@ typedef struct Scr8005F5DC {
     s32 unk7C;
 } Scr8005F5DC;
 
+typedef struct Scr80061F44 {
+    u8 _pad0[0x300];
+    s32 unk300[3];
+} Scr80061F44;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2040,5 +2045,6 @@ void func_80068D18(u16 arg0, s32 arg1);
 void func_8005BE20(u16 arg0, s32 arg1);
 void func_80064684(u16 arg0, s32 arg1);
 void func_8005F5DC(Node8005EF38 *arg0);
+s32 func_80061F00(s32 arg0, s32 arg1);
 
 #endif /* FDAT202_H */
