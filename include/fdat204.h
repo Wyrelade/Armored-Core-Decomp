@@ -795,7 +795,9 @@ typedef struct Elem80051FF8 {
 } Elem80051FF8;
 
 typedef struct Obj80052658 {
-    u8 _pad0[0x8];
+    u8 _pad0[0x5];
+    u8 unk5;
+    u8 _pad6[0x2];
     s32 unk8;
 } Obj80052658;
 
@@ -2022,6 +2024,53 @@ typedef struct Obj80067198 {
     u8 unk668[1];
 } Obj80067198;
 
+typedef struct Sub8004F1D4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+} Sub8004F1D4;
+
+typedef struct Vec80055420 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} Vec80055420;
+
+typedef struct Pair80055420 {
+    Sub8004DE88 unk0[2];
+} Pair80055420;
+
+typedef struct Part80055420 {
+    u8 _pad0[0x14];
+    u16 unk14;
+    u8 _pad16[0x2];
+    Pair80055420 *unk18;
+} Part80055420;
+
+typedef struct Mdl80055420 {
+    s32 unk0;
+    u8 _pad4[0x8];
+    Part80055420 unkC[1];
+} Mdl80055420;
+
+typedef union Un80055EA8 {
+    Mdl80055420 *hdr;
+    Part80055420 *parts;
+} Un80055EA8;
+
+typedef struct Scr80055EA8 {
+    Mat8005BAA8 unk0;
+    Mat8005BAA8 unk20;
+    Vec80055420 unk40;
+    u8 _pad4C[0x4];
+    Obj80052658 *unk50;
+    Un80055EA8 unk54;
+    u8 _pad58[0x28];
+    s32 unk80;
+    s32 unk84;
+    s32 unk88;
+} Scr80055EA8;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2403,5 +2452,8 @@ s32 func_8007D6C8(Obj80073138 *arg0);
 void func_80077FF4();
 void func_80078688();
 void func_80079944();
+void func_80055140(s32 arg0);
+void func_80055350(Scr80055EA8 *arg0, s32 arg1);
+void func_80055428(Scr80055EA8 *arg0, s32 arg1);
 
 #endif /* FDAT204_H */
