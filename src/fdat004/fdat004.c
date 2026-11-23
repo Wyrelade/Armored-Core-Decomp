@@ -70,7 +70,133 @@ void func_801C54CC(s32 arg0, s32 arg1) {
 
 INCLUDE_RODATA("asm/USA/fdat004/nonmatchings/fdat004", D_801C4B40);
 
-INCLUDE_ASM("asm/USA/fdat004/nonmatchings/fdat004", func_801C5534);
+s32 func_801C5534(Obj801C59E8 *arg0, s32 arg1, ...) {
+    s32 dist;
+    s32 r;
+    s32 n;
+    s32 i;
+
+    dist = func_80073714(arg0, 0x7FFFFFFF);
+    switch (arg1) {
+    case 0x8100:
+        return 0;
+    case 5:
+        return 0;
+    case 4:
+        if (arg0->unk40 != 0xFF) {
+            arg0->unk40 = 0;
+        }
+        arg0->unk42 = 0;
+        arg0->unk36 &= ~0x10;
+        arg0->unk44 = func_80073904();
+        goto idle;
+    case 1:
+    case 2:
+        if (arg0->unk42 != 2) {
+            arg0->unk42 = 1;
+            arg0->unk44 = func_80073904();
+        }
+        r = rand() & 0xF;
+        goto pick;
+    }
+    arg0->unk7C = -1;
+    if (dist < 7000) {
+        arg0->unk7C = 0;
+    }
+    switch (arg0->unk42) {
+    case 0:
+        if (dist < 8000 && rand() < 0x6666) {
+        engage:
+            arg0->unk42 = 1;
+            arg0->unk44 = func_80073904();
+            r = rand() & 3;
+            goto pick;
+        }
+        if (dist < 32000) {
+            dist >>= 5;
+            if (func_80014D78((dist * dist * dist) >> 14) < 476) {
+                i = 15;
+                n = 0;
+                do {
+                    if (D_801A2828[0].unk0 != NULL && D_801A2828[0].unk54 == (void (*)())func_801C5534 &&
+                        D_801A2828[0].unk42 != 0) {
+                        n++;
+                    }
+                } while (--i != 0);
+                if (n < 2) {
+                    goto engage;
+                }
+            }
+        }
+    idle:
+        arg0->unk41 = 0;
+        break;
+    case 1:
+    case 2:
+        if (dist > 8000) {
+            arg0->unk42 = 3;
+            arg0->unk44 = func_80073904();
+            goto retreat;
+        }
+        if (arg0->unk42 == 2) {
+            if (func_80073924(arg0->unk44) > 300) {
+                arg0->unk42 = 1;
+                arg0->unk44 = func_80073904();
+            }
+        } else if (arg0->unk2E != 0x7FFF && rand() < 0xCCD) {
+            arg0->unk42 = 2;
+            arg0->unk44 = func_80073904();
+        }
+        r = rand() & 0x3F;
+    pick:
+        switch (r) {
+        case 0:
+        case 1:
+        case 2:
+            func_801C53F4((s32)arg0, 2);
+            break;
+        case 3:
+            func_801C53F4((s32)arg0, 3);
+            break;
+        case 4:
+        case 5:
+            func_801C5464((s32)arg0, 2);
+            return 0;
+        case 6:
+        case 7:
+            func_801C54CC((s32)arg0, 2);
+            return 0;
+        case 8:
+            func_801C5464((s32)arg0, 3);
+            return 0;
+        case 11:
+            func_801C54CC((s32)arg0, 3);
+            return 0;
+        case 12:
+            func_801C53F4((s32)arg0, 4);
+            break;
+        case 13:
+            func_801C53F4((s32)arg0, 5);
+            break;
+        case 14:
+            func_801C53F4((s32)arg0, 1);
+            break;
+        }
+        break;
+    case 3:
+        if (dist < 4000) {
+            arg0->unk42 = 1;
+            arg0->unk44 = func_80073904();
+            goto pick;
+        }
+    retreat:
+        func_801C53F4((s32)arg0, 2);
+        break;
+    default:
+        return 0;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat004/nonmatchings/fdat004", func_801C58AC);
 
