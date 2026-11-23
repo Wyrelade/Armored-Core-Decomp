@@ -4,7 +4,6 @@
 #include "common.h"
 
 /* @types */
-
 typedef struct Obj801C5624 {
     u8 _pad0[0x12];
     u16 unk12;
@@ -350,9 +349,15 @@ typedef struct Buf801C5D08 {
 
 typedef struct Obj801C5D08 {
     Sub801C5D08 *unk0;
-    u8 _pad4[0xE];
+    u8 _pad4[0x4];
+    Sub801C7910 unk8;
+    u8 _pad10[0x2];
     s16 unk12;
-    u8 _pad14[0x22];
+    u8 _pad14[0x18];
+    s16 unk2C;
+    u8 _pad2E[0x2];
+    s16 unk30;
+    u8 _pad32[0x4];
     u16 unk36;
     u8 _pad38[0x6];
     u8 unk3E;
@@ -373,13 +378,20 @@ typedef struct Obj801C5D08 {
     s32 unk15C;
 } Obj801C5D08;
 
+typedef struct Sub8006D4BC {
+    u8 _pad0[0x4];
+    Obj801C712C *unk4;
+    u8 _pad8[0x6];
+    u16 unkE;
+} Sub8006D4BC;
+
 /* @externs */
 void func_801C55AC(Obj801C4EB8 *arg0);
 void func_801C6480(Obj801C6554 *arg0);
 extern Elem801C659C D_801CCFD8;
 void func_801CCEA8(Obj801C52C0 *arg0);
 void func_8004E98C(Sub801C6E3C *arg0, s32 arg1, s32 arg2, s32 arg3);
-void func_801C6D64();
+void func_801C6D64(Obj801C5D08 *arg0);
 Sub801C70F0 *func_80072120(s32 arg0);
 void func_801C6E98();
 void func_801C7240();
@@ -429,5 +441,8 @@ s32 func_80073C2C(s32 arg0, Sub801C7910 *arg1, s16 arg2, s32 arg3, s32 arg4, s32
 s32 func_800781E8(Obj801C5D08 *arg0);
 void func_80077B78(Obj801C5D08 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7, ...);
 s32 func_801C5C74(Obj801C5D08 *arg0, u8 *arg1);
+extern s32 D_801A5DC8;
+extern u8 D_801CD638[];
+Sub8006D4BC *func_80075030(Obj801C5D08 *arg0, s32 arg1);
 
 #endif /* FDAT042_H */
