@@ -39,7 +39,62 @@ INCLUDE_ASM("asm/USA/fdat002/nonmatchings/fdat002", func_801C529C);
 
 INCLUDE_ASM("asm/USA/fdat002/nonmatchings/fdat002", func_801C5580);
 
-INCLUDE_ASM("asm/USA/fdat002/nonmatchings/fdat002", func_801C56A8);
+void func_801C56A8(Obj801C5D08 *arg0) {
+    Buf801C5D08 buf;
+    Sub8004DE88 vec;
+    Sub801C5D08 *sub;
+    u8 *tbl;
+    u8 kind;
+    s32 flags;
+
+    arg0->unk148 = 0;
+    arg0->unk15C = 0;
+    if (arg0->unk40 != 0xFF) {
+        if (func_800754D0(arg0, D_801C6D90) != 0) {
+            func_80078E1C(arg0);
+        }
+        return;
+    }
+    kind = arg0->unkFC;
+    if (kind == 1 && (rand() < 0x148 || (arg0->unk0->unk24 != 0 && rand() < 0x3D8)) &&
+        func_800745D0(arg0, &vec, 0, 10, kind, kind) != 0 &&
+        func_80073C2C(arg0->unk48, &vec, arg0->unk12, 0, 8, arg0->unk36, 10000, -800, 800, -500, 500, &buf) != 0 &&
+        (buf.unk16 & 2) && func_800781E8(arg0) != 0) {
+        sub = arg0->unk0;
+        func_80077B78(arg0, 0x17, sub->unk1E, sub->unk21, D_801C6DB4, kind, 0, kind, 0, 0, arg0->unk48);
+    }
+    if (arg0->unk3F != 0) {
+        arg0->unk3F--;
+        return;
+    }
+    tbl = D_801C6D10[arg0->unkFC];
+    if (func_801C5580(arg0, tbl) == 0) {
+        return;
+    }
+    if (arg0->unk3E == 0) {
+        if (rand() < 0xA3E && (rand() < 0x148 || func_800781E8(arg0) != 0)) {
+            arg0->unk3E = 6;
+        }
+        return;
+    }
+    if (arg0->unk3E & 1) {
+        flags = 0x10;
+        if (arg0->unkFC != 2) {
+            flags = 0x20;
+        }
+        sub = arg0->unk0;
+        func_80077B78(arg0, flags | 7, sub->unk1C, sub->unk20, tbl, 1, arg0->unk108, arg0->unk108 + 1);
+        arg0->unk148 = 0xF;
+        arg0->unk14A = 0xB4;
+        arg0->unk14B = 0xA0;
+        arg0->unk14C = 0x8C;
+        arg0->unk15C = 0x10;
+        arg0->unk108 ^= 2;
+    }
+    if (arg0->unk3E-- == 0) {
+        arg0->unk3F = 10;
+    }
+}
 
 void func_801C5978(s32 arg0, s32 arg1) {
     Sub801C4C94 vec;
