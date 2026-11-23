@@ -5,7 +5,6 @@
 #include "gte.h"
 
 /* @types */
-
 typedef struct Elem80078D84 {
     s32 unk0;
     u8 unk4;
@@ -1162,9 +1161,17 @@ typedef struct Elem8007C240 {
     u8 _pad2[0xE];
 } Elem8007C240;
 
+typedef struct Vec80072C80 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x2];
+} Vec80072C80;
+
 typedef struct Tbl8007C240 {
     Elem8007C240 *unk0;
-    u8 _pad4[0xC];
+    Vec80072C80 *unk4;
+    u8 _pad8[0x8];
 } Tbl8007C240;
 
 typedef struct Obj8007C240 {
@@ -1320,6 +1327,87 @@ typedef struct Obj80071A18 {
 typedef struct Arr80071A18 {
     u16 unk0[12];
 } Arr80071A18;
+
+typedef struct Sub80072C80 {
+    u16 unk0;
+    u8 _pad2[0x2];
+    struct Obj80072C80 *unk4;
+    struct Obj80072C80 *unk8;
+} Sub80072C80;
+
+typedef struct Obj80072C80 {
+    u8 _pad0[0x2];
+    u8 unk2;
+    u8 _pad3[0x3];
+    u8 unk6;
+    u8 _pad7[0x3];
+    s16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u8 _pad10[0x6];
+    s16 unk16;
+    u8 _pad18[0x28];
+    s16 unk40;
+    s16 unk42;
+    s16 unk44;
+    u8 _pad46[0x2];
+    s32 unk48;
+    s32 unk4C;
+    s32 unk50;
+    u8 _pad54[0x18];
+    struct Obj80072C80 *unk6C;
+    void (*unk70)();
+    void (*unk74)();
+    void (*unk78)();
+    Sub80072C80 unk7C;
+} Obj80072C80;
+
+typedef struct Sub800744A8 {
+    Obj8004DEB0 *unk0;
+    void (*unk4)();
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+    Obj80072C80 *unkC;
+    Obj80072C80 *unk10;
+    s16 unk14;
+    s16 unk16;
+    u16 unk18;
+    u8 unk1A;
+    u8 unk1B;
+    u8 unk1C;
+    u8 unk1D;
+    u8 unk1E;
+    u8 _pad1F[0x1];
+    Obj8004DEB0 *unk20;
+    u8 unk24;
+    u8 unk25;
+    s16 unk26;
+    s16 unk28;
+    s16 unk2A;
+    s16 unk2C;
+    u8 _pad2E[0x1];
+    u8 unk2F;
+    s16 unk30;
+    u8 unk32;
+    u8 _pad33[0x1];
+    s16 unk34;
+} Sub800744A8;
+
+typedef struct Obj800744A8 {
+    u8 _pad0[0x2];
+    u8 unk2;
+    u8 unk3;
+    u8 _pad4[0x1];
+    u8 unk5;
+    u8 _pad6[0x66];
+    s32 unk6C;
+    void (*unk70)();
+    void (*unk74)();
+    void (*unk78)();
+    Sub800744A8 unk7C;
+} Obj800744A8;
 
 /* @externs */
 extern Obj8004DEB0 D_801BC4F8;
@@ -2057,7 +2145,7 @@ extern u8 D_8004D350[];
 extern u8 D_800BDCD8[];
 void func_800A7244(Obj800A7244 *arg0);
 Obj8004DEB0 *func_800500EC(void (*arg0)(), Obj8004DEB0 *arg1);
-void func_80072C80(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+Obj80072C80 *func_80072C80(Obj800744A8 *arg0, u16 arg1, Obj80072C80 *arg2, Obj80072C80 *arg3, u16 arg4);
 extern u8 D_8004D358[];
 void func_800A730C();
 void func_800A74B4(Obj8004DEB0 *arg0);
@@ -2457,5 +2545,11 @@ void func_800A6E54();
 extern Obj80071A18 D_8004AC38;
 extern Arr80071A18 D_8004BDC0;
 u8 func_80083C00();
+extern Vec80072C80 D_800BC428[];
+extern Vec80072C80 D_800BC440[][5];
+extern Vec80072C80 D_800BC638[];
+extern Vec80072C80 D_800BC6B8[];
+extern Vec80072C80 D_800BC968[];
+void func_800736F0(Obj8004DEB0 *arg0);
 
 #endif /* FDAT201_H */
