@@ -1601,6 +1601,41 @@ typedef struct Tbl800776B4 {
     Obj8007789C unkB0[2];
 } Tbl800776B4;
 
+typedef struct Elem80086624 {
+    u8 _pad0[0xE];
+    u16 unkE;
+} Elem80086624;
+
+typedef struct Seg80086624 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+} Seg80086624;
+
+typedef struct Obj80086624 {
+    Sub8004DE88 unk0;
+    s32 unk8;
+    u8 _padC[0x2];
+    s16 unkE;
+    u8 _pad10[0x2];
+    s16 unk12;
+    u8 _pad14[0x4];
+    s16 unk18;
+    u8 _pad1A[0x4];
+    s16 unk1E;
+    s16 unk20;
+    s16 unk22;
+    u8 _pad24[0x2];
+    Sub8008800C unk26;
+    s16 unk2C;
+    u8 _pad2E[0x2];
+    u32 unk30;
+    u32 unk34;
+} Obj80086624;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1920,5 +1955,7 @@ void func_800764D0(Obj80073138 *arg0, s32 arg1, s32 arg2, s32 arg3, s16 *arg4, s
 void func_8007647C(Obj80073138 *arg0, s32 arg1, s32 arg2, s16 *arg3, s32 arg4, void (*arg5)());
 void func_8007A078(Obj80073138 *arg0);
 s32 func_800132CC(s32 arg0, s32 arg1, s32 arg2);
+s32 *func_8006F798(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2);
+Obj800852B0 *func_800852B0(s32 arg0, Obj8008800C *arg1, u32 *arg2);
 
 #endif /* FDAT204_H */
