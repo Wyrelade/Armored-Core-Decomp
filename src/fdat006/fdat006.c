@@ -39,7 +39,90 @@ void func_801C50C0(Obj801C52C0 *arg0, s32 arg1) {
     func_800759A4(arg0, arg1, &vec);
 }
 
-INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C5124);
+s32 func_801C5124(Obj801C52C0 *arg0, s32 arg1, ...) {
+    s32 dist;
+    s32 r;
+
+    dist = func_80073714(arg0, 0x7FFFFFFF);
+    switch (arg1) {
+    case 0x8100:
+        return 0;
+    case 5:
+        if (arg0->unk41 == 1) {
+            arg0->unk41 = 2;
+        } else if (arg0->unk41 == 2) {
+            arg0->unk41 = 1;
+        }
+        return 0;
+    case 1:
+    case 2:
+        if (rand() < 0x2A3E) {
+            r = rand() & 0xF;
+            goto pick;
+        }
+        return 0;
+    }
+    if (arg0->unk42 != 1) {
+        return 0;
+    }
+    if (dist > 1000) {
+        func_801C50C0(arg0, 1);
+        return 0;
+    }
+    if (dist < 500) {
+        func_801C50C0(arg0, 2);
+        return 0;
+    }
+    if (arg0->unk41 == 3 || arg0->unk41 == 4) {
+        r = rand() & 7;
+    } else {
+        r = rand() & 0x3F;
+    }
+pick:
+    switch (r) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        func_801C50C0(arg0, 1);
+        break;
+    case 6:
+    case 7:
+        func_801C50C0(arg0, 2);
+        break;
+    case 8:
+    case 9:
+        func_80075A18(arg0, 1, &D_80039C78);
+        return 0;
+    case 10:
+    case 11:
+        func_80075A54(arg0, 1, &D_80039C78);
+        return 0;
+    case 12:
+    case 13:
+        func_80075A18(arg0, 2, &D_80039C78);
+        break;
+    case 14:
+    case 15:
+        func_80075A54(arg0, 2, &D_80039C78);
+        break;
+    case 16:
+    case 17:
+    case 18:
+    case 19:
+        func_801C50C0(arg0, 3);
+        break;
+    case 20:
+    case 21:
+    case 22:
+    case 23:
+        func_801C50C0(arg0, 4);
+        break;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/USA/fdat006/nonmatchings/fdat006", func_801C5320);
 
