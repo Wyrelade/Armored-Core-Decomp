@@ -39,12 +39,12 @@ INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C5A08);
 INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C5AEC);
 
 void func_801C5D50(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub801C55B4 vec;
 
     vec.unk0 = func_80014D78(100) - 50;
     vec.unk4 = func_80014D78(100) - 50;
     vec.unk2 = 0;
-    func_800759A4((Obj801C52C0_fdat000 *)arg0, arg1, (u8 *)&vec);
+    func_800759A4((Obj801C52C0 *)arg0, arg1, (u8 *)&vec);
 }
 
 INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C5DB4);
@@ -249,8 +249,8 @@ void func_801C6E74(Obj801C6730 *arg0) {
 void func_801C6EE0(Obj801C6A40 *arg0) {
     Sub801C6A40 *task;
     Sub801C6568 info;
-    Sub801C6C1C vec;
-    Sub801C6C1C pos;
+    Sub801C55B4 vec;
+    Sub801C55B4 pos;
     s32 hit;
     s32 n;
 
@@ -373,12 +373,12 @@ void func_801C75B4(Obj801C52C0 *arg0) {
     func_8004CC30(arg0->unk108->unk3B, D_801A5DC0->unk1000, &arg0->unk8, 0x64, 0x1F40, 0x2710, -0x30);
 }
 
-void func_801C7634(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C7634(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk148 &= 0xFFF0;
     arg0->unk15C &= ~arg1->unk38;
 }
 
-void func_801C765C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C765C(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     u16 mask;
 
     arg0->unk148 |= 0xF;
@@ -396,31 +396,31 @@ void func_801C765C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
     }
 }
 
-void func_801C76C8(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C76C8(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk2D;
 }
 
-void func_801C76E4(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C76E4(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C &= ~(1 << arg1->unk2D);
 }
 
-void func_801C7704(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C7704(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C |= 1 << arg1->unk6;
 }
 
-void func_801C7720(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C7720(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk6;
 }
 
-void func_801C773C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C773C(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C &= ~(1 << arg1->unk6);
 }
 
-void func_801C775C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C775C(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk9;
 }
 
-void func_801C7778(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C7778(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C &= ~(1 << arg1->unk9);
 }
 
@@ -461,7 +461,7 @@ INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C8D10);
 
 INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801C8ED8);
 
-void func_801C9264(Obj801C52C0_fdat000 *arg0, s32 arg1) {
+void func_801C9264(Obj801C52C0 *arg0, s32 arg1) {
     if (arg0->unk126 == -1) {
         func_800759A4(arg0, arg1, D_80039C78);
     } else {
@@ -491,7 +491,7 @@ INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801CACBC);
 
 INCLUDE_ASM("asm/USA/fdat090/nonmatchings/fdat090", func_801CB1CC);
 
-void func_801CB518(Obj801C52C0_fdat000 *arg0) {
+void func_801CB518(Obj801C52C0 *arg0) {
     s16 val;
 
     arg0->unk42 = 0;

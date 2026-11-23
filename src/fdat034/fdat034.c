@@ -48,16 +48,16 @@ void func_801C585C(Obj801C52C0 *arg0) {
 }
 
 void func_801C59A0(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014D78(2000) - 1000;
     vec.unk4 = func_80014D78(2000) - 1000;
     vec.unk2 = -func_80014D78(2000);
-    func_800759A4((Obj801C52C0_fdat000 *)arg0, arg1, (Sub801C55B4 *)&vec);
+    func_800759A4((Obj801C52C0_fdat000 *)arg0, arg1, (Sub8004DE88 *)&vec);
 }
 
 void func_801C5A10(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014DAC(2000);
     vec.unk4 = func_80014DAC(2000);
@@ -66,7 +66,7 @@ void func_801C5A10(s32 arg0, s32 arg1) {
 }
 
 void func_801C5A78(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014DAC(2000);
     vec.unk4 = func_80014DAC(2000);
@@ -400,7 +400,7 @@ void func_801CAE6C(Obj801C52C0_fdat000 *arg0) {
 }
 
 void func_801CAF0C(Obj801C95A8 *arg0) {
-    Elem801C52C0_fdat000 *elem;
+    Elem801C52C0 *elem;
 
     if (arg0->unk2E <= arg0->unk8.unk2 && arg0->unk2E >= arg0->unk8.unk2 - arg0->unk2A) {
         if (arg0->unk64.unk0 == 0x16) {

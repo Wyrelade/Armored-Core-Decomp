@@ -396,7 +396,7 @@ void func_801CAA04(Obj801C52C0_fdat000 *arg0) {
 }
 
 void func_801CAAA4(Obj801C95A8 *arg0) {
-    Elem801C52C0_fdat000 *elem;
+    Elem801C52C0 *elem;
 
     if (arg0->unk2E <= arg0->unk8.unk2 && arg0->unk2E >= arg0->unk8.unk2 - arg0->unk2A) {
         if (arg0->unk64.unk0 == 0x16) {

@@ -44,7 +44,7 @@ INCLUDE_ASM("asm/USA/fdat080/nonmatchings/fdat080", func_801C5A48);
 
 INCLUDE_RODATA("asm/USA/fdat080/nonmatchings/fdat080", D_801C4B40);
 
-s32 func_801C5AB0(Obj801C52C0_fdat000 *arg0, s32 arg1, ...) {
+s32 func_801C5AB0(Obj801C52C0 *arg0, s32 arg1, ...) {
     s32 dist;
     s32 r;
 

@@ -274,8 +274,8 @@ void func_801C5F98(Obj801C5F98 *arg0) {
 void func_801C5FD4(Obj801C6A40 *arg0) {
     Sub801C6A40 *task;
     Sub801C6568 info;
-    Sub801C6C1C vec;
-    Sub801C6C1C pos;
+    Sub801C4C94 vec;
+    Sub801C4C94 pos;
     s32 hit;
     s32 n;
 

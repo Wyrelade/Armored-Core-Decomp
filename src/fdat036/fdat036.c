@@ -261,7 +261,7 @@ void func_801C6F94(Obj801C52C0_fdat000 *arg0) {
 void func_801C7054(Obj801C52C0_fdat000 *arg0) {
     s32 unused[36];
 
-    arg0->unk2C = (Sub801C5550_fdat000 *)func_80072120(2);
+    arg0->unk2C = (Sub801C5550 *)func_80072120(2);
     arg0->unk2C->unk10 = (Elem801C5EA8 *)arg0 - D_801D0B68;
     arg0->unk2C->unk0 = func_801C6F94;
 }

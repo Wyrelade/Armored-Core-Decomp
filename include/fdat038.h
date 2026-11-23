@@ -4,6 +4,7 @@
 #include "common.h"
 
 /* @types */
+
 typedef struct Sub801C61D0 {
     void (*unk0)();
     void (*unk4)();
@@ -64,6 +65,7 @@ typedef struct Elem801C52C0 {
     u8 _pad0[0x3A];
     u8 unk3A;
     u8 unk3B;
+    u8 _pad3C[0x508];
 } Elem801C52C0;
 
 typedef struct Sub801C4CA0 {
@@ -131,6 +133,9 @@ typedef struct Obj801C52C0 {
 typedef struct Sub801C5550 {
     void (*unk0)();
     void (*unk4)();
+    u8 _pad8[0x8];
+    u16 unk10;
+    u8 _pad12[0x2];
 } Sub801C5550;
 
 typedef struct Sub801C4EB8 {
@@ -170,13 +175,6 @@ typedef struct Obj801C4EB8 {
     u16 unk160;
 } Obj801C4EB8;
 
-typedef struct Sub801C4C94 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C4C94;
-
 typedef struct Sub801C4D98 {
     u8 _pad0[0x2];
     u8 unk2;
@@ -194,7 +192,7 @@ typedef struct Sub801C4E00 {
 typedef struct Obj801C4C94 {
     Sub801C4E00 *unk0;
     u8 _pad4[0x4];
-    Sub801C4C94 unk8;
+    Sub8004DE88 unk8;
     u8 _pad10[0x1C];
     s16 unk2C;
     u8 _pad2E[0x8];
@@ -213,7 +211,7 @@ typedef struct Obj801C4C94 {
     u8 _pad60[0x4];
     Sub801C4D98 unk64;
     u8 _pad70[0x5C];
-    Sub801C4C94 unkCC;
+    Sub8004DE88 unkCC;
     u8 _padD4[0x88];
     s32 unk15C;
 } Obj801C4C94;
@@ -243,28 +241,6 @@ typedef struct Elem801C5EA8 {
     u8 _pad3C[0x4];
 } Elem801C5EA8;
 
-typedef struct Elem801C52C0_fdat000 {
-    u8 _pad0[0x3A];
-    u8 unk3A;
-    u8 unk3B;
-    u8 _pad3C[0x508];
-} Elem801C52C0_fdat000;
-
-typedef struct Sub801C55B4 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C55B4;
-
-typedef struct Sub801C5550_fdat000 {
-    void (*unk0)();
-    void (*unk4)();
-    u8 _pad8[0x8];
-    u16 unk10;
-    u8 _pad12[0x2];
-} Sub801C5550_fdat000;
-
 typedef struct Sub801C5798 {
     u8 unk0;
     u8 _pad1[0x67];
@@ -272,9 +248,9 @@ typedef struct Sub801C5798 {
 
 typedef struct Obj801C52C0_fdat000 {
     u8 _pad0[0x8];
-    Sub801C55B4 unk8;
+    Sub8004DE88 unk8;
     u8 _pad10[0x1C];
-    Sub801C5550_fdat000 *unk2C;
+    Sub801C5550 *unk2C;
     u8 _pad30[0x6];
     s16 unk36;
     struct Sub801C5314 *unk38;
@@ -292,11 +268,11 @@ typedef struct Obj801C52C0_fdat000 {
     void (*unk5C)();
     u8 _pad60[0x4];
     Sub801C5798 unk64;
-    Sub801C55B4 unkCC;
+    Sub8004DE88 unkCC;
     u8 _padD4[0x2C];
     u8 unk100;
     u8 _pad101[0x7];
-    Elem801C52C0_fdat000 *unk108;
+    Elem801C52C0 *unk108;
     u8 _pad10C[0x18];
     s16 unk124;
     s16 unk126;
@@ -387,7 +363,7 @@ void func_80077B78(Obj801C52C0 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, ...
 s32 func_801C5900(Elem801C5EA8 *arg0, u8 arg1);
 void func_8004CC30(s32 arg0, u8 *arg1, Sub8004DE88 *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_8004CE44(s32 arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3);
-Sub801C5550_fdat000 *func_80072120(s32 arg0);
+Sub801C5550 *func_80072120(s32 arg0);
 void func_801C5DA0(Obj801C52C0_fdat000 *arg0);
 
 #endif /* FDAT038_H */

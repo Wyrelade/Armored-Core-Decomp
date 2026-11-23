@@ -44,7 +44,7 @@ void func_801C54B8(Obj801C53A0 *arg0) {
 }
 
 void func_801C5660(Obj801C52C0_fdat000 *arg0, s32 arg1, s32 arg2) {
-    Sub801C4C94 vec;
+    Sub801C6C1C vec;
 
     vec.unk0 = func_80014D78(2000) - 1000;
     vec.unk4 = func_80014D78(2000) - 1000;
@@ -53,7 +53,7 @@ void func_801C5660(Obj801C52C0_fdat000 *arg0, s32 arg1, s32 arg2) {
 }
 
 void func_801C56DC(s32 arg0, s32 arg1, s32 arg2) {
-    Sub801C4C94 vec;
+    Sub801C6C1C vec;
 
     vec.unk0 = func_80014DAC(2000);
     vec.unk4 = func_80014DAC(2000);
@@ -62,7 +62,7 @@ void func_801C56DC(s32 arg0, s32 arg1, s32 arg2) {
 }
 
 void func_801C5750(s32 arg0, s32 arg1, s32 arg2) {
-    Sub801C4C94 vec;
+    Sub801C6C1C vec;
 
     vec.unk0 = func_80014DAC(2000);
     vec.unk4 = func_80014DAC(2000);

@@ -319,7 +319,7 @@ void func_801C6D94(Obj801C52C0 *arg0) {
 
 void func_801C6E54(Elem801C53D4 *arg0) {
     s32 unused[36];
-    Sub801C5550_fdat000 *task;
+    Sub801C5550 *task;
 
     task = func_80072120(2);
     arg0->unk2C = task;

@@ -41,7 +41,7 @@ INCLUDE_ASM("asm/USA/fdat042/nonmatchings/fdat042", func_801C5C74);
 
 void func_801C5D9C(Obj801C5D08 *arg0) {
     Buf801C5D08 buf;
-    Sub8004DE88 vec;
+    Sub801C7910 vec;
     Sub801C5D08 *sub;
     u8 *tbl;
     u8 kind;
@@ -97,12 +97,12 @@ void func_801C5D9C(Obj801C5D08 *arg0) {
 }
 
 void func_801C606C(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub801C7910 vec;
 
     vec.unk0 = func_80014D78(100) - 50;
     vec.unk4 = func_80014D78(100) - 50;
     vec.unk2 = 0;
-    func_800759A4((Obj801C52C0_fdat000 *)arg0, arg1, (Sub801C55B4 *)&vec);
+    func_800759A4((Obj801C52C0_fdat000 *)arg0, arg1, (Sub801C7910 *)&vec);
 }
 
 INCLUDE_ASM("asm/USA/fdat042/nonmatchings/fdat042", func_801C60D0);
@@ -381,7 +381,7 @@ void func_801CB874(Obj801C52C0_fdat000 *arg0) {
 }
 
 void func_801CB914(Obj801C95A8 *arg0) {
-    Elem801C52C0_fdat000 *elem;
+    Elem801C52C0 *elem;
 
     if (arg0->unk2E <= arg0->unk8.unk2 && arg0->unk2E >= arg0->unk8.unk2 - arg0->unk2A) {
         if (arg0->unk64.unk0 == 0x16) {

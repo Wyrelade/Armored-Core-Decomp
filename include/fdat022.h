@@ -136,13 +136,6 @@ typedef struct Obj801C5C4C {
     u8 unkFE;
 } Obj801C5C4C;
 
-typedef struct Sub801C4C94 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C4C94;
-
 typedef struct Task801C6D58 {
     void (*unk0)();
     void (*unk4)();
@@ -201,7 +194,7 @@ void func_801C5C00(Obj801C53A0 *arg0);
 void func_801C5EF8();
 void func_801C5FD0();
 s32 func_80014D78(s32 arg0);
-void func_800759A4(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+void func_800759A4(s32 arg0, s32 arg1, Sub801C6C1C *arg2);
 extern u8 D_801C74CC[];
 extern u8 D_801C74F0[];
 extern u8 D_801C7510[];

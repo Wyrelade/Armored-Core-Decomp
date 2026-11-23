@@ -4,6 +4,7 @@
 #include "common.h"
 
 /* @types */
+
 typedef struct Elem801C52F0 {
     u8 _pad0[0x3A];
     u8 unk3A;
@@ -106,9 +107,15 @@ typedef struct Sub801C5458 {
 } Sub801C5458;
 
 typedef struct Elem801C52C0 {
-    u8 _pad0[0x3A];
+    u8 _pad0[0x30];
+    u8 unk30;
+    u8 unk31;
+    u8 unk32;
+    u8 unk33;
+    u8 _pad34[0x6];
     u8 unk3A;
     u8 unk3B;
+    u8 _pad3C[0x508];
 } Elem801C52C0;
 
 typedef struct Obj801C52C0 {
@@ -171,18 +178,6 @@ typedef struct Obj801C6AA0 {
     u8 unk1000[1];
 } Obj801C6AA0;
 
-typedef struct Elem801C52C0_fdat000 {
-    u8 _pad0[0x30];
-    u8 unk30;
-    u8 unk31;
-    u8 unk32;
-    u8 unk33;
-    u8 _pad34[0x6];
-    u8 unk3A;
-    u8 unk3B;
-    u8 _pad3C[0x508];
-} Elem801C52C0_fdat000;
-
 typedef struct Sub801C5550 {
     void (*unk0)();
     void (*unk4)();
@@ -221,7 +216,7 @@ typedef struct Obj801C52C0_fdat000 {
     u8 _padD4[0x2C];
     u8 unk100;
     u8 _pad101[0x7];
-    Elem801C52C0_fdat000 *unk108;
+    Elem801C52C0 *unk108;
     u8 _pad10C[0x18];
     s16 unk124;
     s16 unk126;
@@ -433,7 +428,7 @@ typedef struct Obj801C95A8 {
     u8 _pad54[0x10];
     Sub801C5798 unk64;
     u8 _padCC[0x3C];
-    Elem801C52C0_fdat000 *unk108;
+    Elem801C52C0 *unk108;
 } Obj801C95A8;
 
 /* @externs */

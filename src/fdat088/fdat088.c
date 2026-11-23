@@ -86,8 +86,8 @@ INCLUDE_RODATA("asm/USA/fdat088/nonmatchings/fdat088", D_801C4B40);
 void func_801C6028(Obj801C6A40 *arg0) {
     Sub801C6A40 *task;
     Sub801C6568 info;
-    Sub801C6C1C vec;
-    Sub801C6C1C pos;
+    Sub8004DE88 vec;
+    Sub8004DE88 pos;
     s32 hit;
     s32 n;
 

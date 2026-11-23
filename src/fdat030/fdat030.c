@@ -86,7 +86,7 @@ INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C50D8);
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C51DC);
 
 void func_801C52CC(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014D78(500) - 250;
     vec.unk4 = func_80014D78(500) - 250;
@@ -211,7 +211,7 @@ INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C5B70);
 INCLUDE_ASM("asm/USA/fdat030/nonmatchings/fdat030", func_801C5C4C);
 
 void func_801C5D3C(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014D78(500) - 250;
     vec.unk4 = func_80014D78(500) - 250;
@@ -316,7 +316,7 @@ void func_801C6F60(Elem801C5EA8 *arg0) {
     case 1:
         id = arg0->unk38->unk8;
         if (id != 0) {
-            func_8004CC30(id, (u8 *)((arg0 - D_801D0B68) + 0x3000), (Sub801C4C94 *)&arg0->unk2C->unk22, 0x64, 0x1F40, 0x2710, 0);
+            func_8004CC30(id, (u8 *)((arg0 - D_801D0B68) + 0x3000), (Sub8004DE88 *)&arg0->unk2C->unk22, 0x64, 0x1F40, 0x2710, 0);
         }
         break;
     case 2:

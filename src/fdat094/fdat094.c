@@ -150,12 +150,12 @@ void func_801C5E78(Obj801C52C0 *arg0) {
     func_8004CC30(arg0->unk108->unk3B, D_801A5DC0->unk1000, &arg0->unk8, 0x64, 0x1F40, 0x2710, -0x30);
 }
 
-void func_801C5EF8(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C5EF8(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk148 &= 0xFFF0;
     arg0->unk15C &= ~arg1->unk38;
 }
 
-void func_801C5F20(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C5F20(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     u16 mask;
 
     arg0->unk148 |= 0xF;
@@ -173,31 +173,31 @@ void func_801C5F20(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
     }
 }
 
-void func_801C5F8C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C5F8C(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk2D;
 }
 
-void func_801C5FA8(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C5FA8(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C &= ~(1 << arg1->unk2D);
 }
 
-void func_801C5FC8(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C5FC8(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C |= 1 << arg1->unk6;
 }
 
-void func_801C5FE4(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C5FE4(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk6;
 }
 
-void func_801C6000(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C6000(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C &= ~(1 << arg1->unk6);
 }
 
-void func_801C6020(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C6020(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C ^= 1 << arg1->unk9;
 }
 
-void func_801C603C(Obj801C52C0_fdat000 *arg0, Sub801C5634 *arg1) {
+void func_801C603C(Obj801C52C0 *arg0, Sub801C5634 *arg1) {
     arg0->unk15C &= ~(1 << arg1->unk9);
 }
 
@@ -240,7 +240,7 @@ INCLUDE_ASM("asm/USA/fdat094/nonmatchings/fdat094", func_801C75D4);
 
 INCLUDE_ASM("asm/USA/fdat094/nonmatchings/fdat094", func_801C779C);
 
-void func_801C7B28(Obj801C52C0_fdat000 *arg0, s32 arg1) {
+void func_801C7B28(Obj801C52C0 *arg0, s32 arg1) {
     if (arg0->unk126 == -1) {
         func_800759A4(arg0, arg1, &D_80039C78);
     } else {
@@ -270,7 +270,7 @@ INCLUDE_ASM("asm/USA/fdat094/nonmatchings/fdat094", func_801C9580);
 
 INCLUDE_ASM("asm/USA/fdat094/nonmatchings/fdat094", func_801C9A90);
 
-void func_801C9DDC(Obj801C52C0_fdat000 *arg0) {
+void func_801C9DDC(Obj801C52C0 *arg0) {
     s16 val;
 
     arg0->unk42 = 0;

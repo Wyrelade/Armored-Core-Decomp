@@ -185,13 +185,6 @@ typedef struct Sub801C54B8 {
     s16 unk12;
 } Sub801C54B8;
 
-typedef struct Sub801C4C94 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C4C94;
-
 typedef struct Task801C6D58 {
     void (*unk0)();
     void (*unk4)();
@@ -229,13 +222,6 @@ typedef struct Elem801C52C0 {
     u8 _pad3C[0x508];
 } Elem801C52C0;
 
-typedef struct Sub801C55B4 {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-    s16 unk6;
-} Sub801C55B4;
-
 typedef struct Sub801C5550 {
     void (*unk0)();
     void (*unk4)();
@@ -250,7 +236,7 @@ typedef struct Sub801C5798 {
 
 typedef struct Obj801C52C0_fdat000 {
     u8 _pad0[0x8];
-    Sub801C55B4 unk8;
+    Sub801C6C1C unk8;
     u8 _pad10[0x1C];
     Sub801C5550 *unk2C;
     u8 _pad30[0x6];
@@ -270,7 +256,7 @@ typedef struct Obj801C52C0_fdat000 {
     void (*unk5C)();
     u8 _pad60[0x4];
     Sub801C5798 unk64;
-    Sub801C55B4 unkCC;
+    Sub801C6C1C unkCC;
     u8 _padD4[0x2C];
     u8 unk100;
     u8 _pad101[0x7];
@@ -339,8 +325,8 @@ Sub801C54B8 *func_80086F20(s32 arg0, Sub801C6C1C *arg1, s32 arg2, s32 arg3, s32 
 s32 func_801C5334(Obj801C53A0 *arg0);
 s16 func_80014DAC(s32 arg0);
 s32 func_80014D30(s32 arg0);
-void func_80075A18(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
-void func_80075A54(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+void func_80075A18(s32 arg0, s32 arg1, Sub801C6C1C *arg2);
+void func_80075A54(s32 arg0, s32 arg1, Sub801C6C1C *arg2);
 void func_80073714(Obj801C53A0 *arg0, s32 arg1);
 void func_800759A4(Obj801C52C0_fdat000 *arg0, s32 arg1, u8 *arg2);
 

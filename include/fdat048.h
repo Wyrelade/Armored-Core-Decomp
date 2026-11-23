@@ -4,6 +4,7 @@
 #include "common.h"
 
 /* @types */
+
 typedef struct Sub8004DE88 {
     s16 unk0;
     s16 unk2;
@@ -78,6 +79,7 @@ typedef struct Elem801C52C0 {
     u8 _pad34[0x6];
     u8 unk3A;
     u8 unk3B;
+    u8 _pad3C[0x508];
 } Elem801C52C0;
 
 typedef struct Sub801C52C0 {
@@ -179,13 +181,6 @@ typedef struct Obj8007A19C {
     u8 unk1000[1];
 } Obj8007A19C;
 
-typedef struct Elem801C52C0_fdat000 {
-    u8 _pad0[0x3A];
-    u8 unk3A;
-    u8 unk3B;
-    u8 _pad3C[0x508];
-} Elem801C52C0_fdat000;
-
 typedef struct Sub801C5550 {
     void (*unk0)();
     void (*unk4)();
@@ -222,7 +217,7 @@ typedef struct Obj801C52C0_fdat000 {
     u8 _padD4[0x2C];
     u8 unk100;
     u8 _pad101[0x7];
-    Elem801C52C0_fdat000 *unk108;
+    Elem801C52C0 *unk108;
     u8 _pad10C[0x18];
     s16 unk124;
     s16 unk126;

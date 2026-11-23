@@ -41,7 +41,7 @@ INCLUDE_ASM("asm/USA/fdat002/nonmatchings/fdat002", func_801C5580);
 
 void func_801C56A8(Obj801C5D08 *arg0) {
     Buf801C5D08 buf;
-    Sub8004DE88 vec;
+    Sub801C4C94 vec;
     Sub801C5D08 *sub;
     u8 *tbl;
     u8 kind;

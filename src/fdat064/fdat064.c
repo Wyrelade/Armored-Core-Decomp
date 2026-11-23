@@ -97,7 +97,7 @@ void func_801C56C4(Obj801C5D08 *arg0) {
 }
 
 void func_801C5994(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub8004DE88 vec;
 
     vec.unk0 = func_80014D78(100) - 50;
     vec.unk4 = func_80014D78(100) - 50;
@@ -195,9 +195,9 @@ void func_801C67B4(Obj801C52C0 *arg0) {
 
 void func_801C6874(Obj801C52C0 *arg0) {
     s32 unused[36];
-    Sub801C5550_fdat000 *task;
+    Sub801C5550 *task;
 
-    task = (Sub801C5550_fdat000 *)func_80072120(2);
+    task = (Sub801C5550 *)func_80072120(2);
     arg0->unk2C = task;
     task->unk10 = (Elem801C5EA8 *)arg0 - D_801D0B68;
     arg0->unk2C->unk0 = func_801C67B4;
@@ -216,8 +216,8 @@ void func_801C69F0(Obj801C4FA0 *arg0) {
 void func_801C6A2C(Obj801C6A40 *arg0) {
     Sub801C6A40 *task;
     Sub801C6568 info;
-    Sub801C6C1C vec;
-    Sub801C6C1C pos;
+    Sub8004DE88 vec;
+    Sub8004DE88 pos;
     s32 hit;
     s32 n;
 

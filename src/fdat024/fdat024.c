@@ -31,7 +31,7 @@ void func_801C4FDC(Obj801C53A0 *arg0) {
 }
 
 void func_801C50EC(s32 arg0, s32 arg1) {
-    Sub801C4C94 vec;
+    Sub801C6C1C vec;
 
     vec.unk0 = func_80014D78(500) - 250;
     vec.unk4 = func_80014D78(500) - 250;
@@ -160,7 +160,7 @@ void func_801C609C(Obj801C52C0 *arg0) {
 void func_801C615C(Obj801C52C0 *arg0) {
     s32 unused[36];
 
-    arg0->unk2C = (Sub801C5550_fdat000 *)func_80072120(2);
+    arg0->unk2C = (Sub801C5550 *)func_80072120(2);
     arg0->unk2C->unk10 = (Elem801C5F00 *)arg0 - D_801D0B68;
     arg0->unk2C->unk0 = func_801C609C;
 }
