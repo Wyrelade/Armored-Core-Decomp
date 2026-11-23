@@ -1910,6 +1910,29 @@ typedef struct Scr800705D8 {
     u32 unkB0;
 } Scr800705D8;
 
+typedef struct Scr80071ADC {
+    s32 unk0[16];
+    u8 _pad40[0x8];
+    Elem8006F4D8 **unk48;
+    s32 unk4C;
+    u8 _pad50[0xC];
+    s32 unk5C[3];
+    s32 unk68[3];
+    Sub8004DE88 unk74;
+    Sub8004DE88 unk7C;
+    Elem8006D9DC *unk84;
+    s32 unk88;
+    s32 unk8C;
+    Elem800730DC *unk90;
+    Elem8006D9DC *unk94;
+    Obj8006D9DC *unk98;
+    u8 _pad9C[0x14];
+    Elem8006F4D8 *unkB0;
+    Elem8006F4D8 *unkB4;
+    u8 _padB8[0x4];
+    s32 unkBC;
+} Scr80071ADC;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2103,7 +2126,7 @@ void func_800154D8(u8 *arg0, u8 *arg1, s32 arg2);
 void func_80057288(void);
 extern s32 D_801A5F2C[];
 void func_8006E718(s32 *arg0, Elem800730DC *arg1);
-s32 func_80071ADC(s32 arg0, s32 arg1);
+s32 func_80071ADC(Sub8006F4D8 *arg0, s32 arg1);
 Elem80071DC4 *func_80071D4C(s32 arg0);
 extern Elem800730DC D_801D0B68[];
 extern s32 D_801E8B6C;
@@ -2328,5 +2351,7 @@ void func_8006FD6C(Scr800705D8 *arg0, Sub80087BC8 *arg1);
 u32 func_80070A58(Obj8006D9DC *arg0, s32 *arg1, s32 *arg2);
 s32 func_80070168(s32 arg0, Elem8006F4D8 *arg1, s32 *arg2, Sub8004DE88 *arg3);
 void func_8006FA30(Sub8004DE88 *arg0, Sub8004DE88 *arg1, s32 arg2);
+void func_80071904(Scr80071ADC *arg0, Sub8006F4D8 *arg1);
+void func_80071768(Scr80071ADC *arg0);
 
 #endif /* FDAT202_H */
