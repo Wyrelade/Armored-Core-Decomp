@@ -1491,6 +1491,26 @@ typedef struct Obj80068D18 {
     u8 unkB20[1];
 } Obj80068D18;
 
+typedef struct Elem8006F4D8 {
+    u8 _pad0[0xE];
+    u16 unkE;
+    u8 _pad10[0x4];
+} Elem8006F4D8;
+
+typedef struct Obj8006D9DC {
+    u16 unk0;
+    u8 _pad2[0x2];
+    s32 unk4[8];
+    s32 unk24[8];
+    s32 unk44[8];
+    Elem8006F4D8 unk64[1];
+} Obj8006D9DC;
+
+typedef struct Elem8006D9DC {
+    s32 unk0;
+    Obj8006D9DC *unk4;
+} Elem8006D9DC;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1856,5 +1876,6 @@ void func_80068CE0(u8 *arg0, u8 *arg1);
 void func_80068D00(u8 *arg0);
 void func_8006B0BC(Ent80067EBC *arg0);
 void func_8006BC30(Ent80067EBC *arg0);
+extern Elem8006D9DC D_80091228[];
 
 #endif /* FDAT202_H */
