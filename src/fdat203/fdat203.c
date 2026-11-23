@@ -27,7 +27,206 @@ void func_8004BF6C(s32 arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8004BF94);
+s32 func_8004BF94(void) {
+    Res8004BF94 res;
+    s32 ret;
+    s32 wait;
+
+    ret = 0;
+    wait = 0;
+    D_8008C490 = D_80040FA0[0];
+    SsSetMVol(0, 0);
+    DrawSync(0);
+    func_80015538(D_801B40C8, 0, 0x1000);
+    InitHeap2(D_801B40C8, 0x4000);
+    SsUtAllKeyOff(0);
+    func_80056D5C();
+    func_8004BE54();
+    func_8006CF18();
+    func_80072C34();
+    func_80016E64();
+    func_8004FE84();
+    func_8008223C();
+    func_80088F84();
+    func_800818C0();
+    func_80056668(0x200, 0x140, 0, 1, 1, 0x40, 0x40);
+    func_8002A4B0(1);
+    func_8004C938();
+    if (D_800895C8 != 0) {
+        goto end;
+    }
+    D_8004A288.unk4.b[0] = D_8004A288.unk4.b[7] = 0;
+    D_8004A288.unk10.b[0] = 0x52;
+    D_8004A288.unk10.b[7] = 0x43;
+    func_80029B70(D_8004A284, &D_8004A288.unk4, 8);
+    D_800895C4 = func_8001628C();
+    while (func_800309A8(3, 1, NULL) == 0) {
+        if (func_80016278(D_800895C4) >= 1800) {
+            D_800895C8 = 1;
+            goto end;
+        }
+    }
+    D_800895C4 = func_8001628C();
+    func_80029B80(D_8004A288.unk0, &D_8004A288.unk10, 8);
+    if (D_800895C8 != 0 || func_8004BEB0() == 0) {
+        goto end;
+    }
+    D_8004A288.unk4.w[0] = D_8004A288.unk4.w[1] = D_8004A288.unkC = D_8004A288.unk10.w[0] =
+        D_8004A288.unk10.w[1] = D_8004A288.unk18 = 0;
+    D_8004A288.unk4.b[0] = D_8004A288.unk10.b[0] = 0x52;
+    D_8004A288.unk4.b[7] = D_8004A288.unk10.b[7] = 0x43;
+    SsSetMVol(D_80041BBB, D_80041BBB);
+    func_80012298();
+    for (;;) {
+        D_80040FA0[0].unk10 &= 0xFFF8;
+        D_80040FA0[1].unk10 &= 0xFFF8;
+        func_80089558();
+        func_80072488();
+        func_80072A30();
+        func_800781BC();
+        func_800865D8();
+        D_8019B484->unk0();
+        if (D_8019B48C.unk4 != 0) {
+            if (D_8019B48C.unk4 == 0x5A && (D_8019B48C.unk0 & 0xB0)) {
+                D_8019B48C.unk0 &= ~0x40;
+            } else if (D_8019B48C.unk4 == 0x1E && D_800895C8 == 0) {
+                D_8019B48C.unk0 &= ~0x80;
+                D_80040FA0[0].unk10 |= 0x30;
+                D_80040FA0[1].unk10 |= 0x30;
+                if (D_80040FA0[0].unk4 == 0) {
+                    if (D_80040FA0[0].unk0 == 0x40) {
+                    over:
+                        func_8004D1D0(0x37, 0x64);
+                        D_80040FA0[0].unk10 &= 0xFFCF;
+                        D_80040FA0[1].unk10 &= 0xFFCF;
+                        func_80062020(NULL);
+                        ret = 1;
+                        func_80062020(NULL);
+                        break;
+                    }
+                    if (D_80040FA0[0].unk0 == 0x20) {
+                        goto lose;
+                    }
+                }
+                if (D_80040FA0[1].unk4 != 0) {
+                    goto next;
+                }
+                if (D_80040FA0[1].unk0 == 0x40) {
+                    goto over;
+                }
+                if (D_80040FA0[1].unk0 != 0x20) {
+                    goto next;
+                }
+            lose:
+                func_8004D1D0(0x36, 0x64);
+            }
+            if (D_8019B48C.unk4 < 0x14) {
+                u8 *vol = &D_80041BBB;
+
+                *vol -= 6;
+                if (*vol > 0x80) {
+                    *vol = 0;
+                }
+                SsSetMVol(*vol, *vol);
+            }
+            if (D_8019B48C.unk4-- == 1) {
+                break;
+            }
+            goto next;
+        }
+        if (D_8019B48C.unk6 >= 0x10 && D_8019B48C.unk8 >= 2) {
+            D_8019B48C.unk8--;
+        }
+        if (D_8019B48C.unk8 == 1) {
+            D_8019B48C.unk4 = 0x1E;
+            D_8019B48C.unk0 |= 0x40;
+            if (D_80039D30->unk394->unk160 > D_80039D34->unk394->unk160) {
+                goto win1;
+            }
+            if (D_80039D30->unk394->unk160 < D_80039D34->unk394->unk160) {
+                goto win0;
+            }
+        draw:
+            D_8019B48C.unk8 = 0;
+            D_8019B48C.unk0 |= 0x80;
+            D_8019B48C.unk4 += 0x5A;
+        } else if ((D_80039D30->unk10 & 7) == 1) {
+            if ((D_80039D34->unk10 & 7) == 1) {
+                goto draw;
+            }
+        win0:
+            D_8019B48C.unk8 = 0;
+            D_8019B48C.unk0 |= 0x30;
+            D_8019B48C.unk4 += 0x5A;
+            D_80039D30->unk10 |= 0x20;
+            D_80039D34->unk10 |= 0x10;
+            D_80039D34->unk390 |= 1 << D_80039D2A;
+            if (++D_80039D08[1] >= 1000) {
+                D_80039D08[1] = 999;
+            }
+            if (++D_80039D08[2] >= 1000) {
+                D_80039D08[2] = 999;
+            }
+            goto count;
+        } else if ((D_80039D34->unk10 & 7) == 1) {
+        win1:
+            D_8019B48C.unk8 = 0;
+            D_8019B48C.unk0 |= 0x30;
+            D_8019B48C.unk4 += 0x5A;
+            D_80039D30->unk10 |= 0x10;
+            D_80039D34->unk10 |= 0x20;
+            D_80039D30->unk390 |= 1 << D_80039D2A;
+            if (++D_80039D08[3] >= 1000) {
+                D_80039D08[3] = 999;
+            }
+            if (++D_80039D08[0] >= 1000) {
+                D_80039D08[0] = 999;
+            }
+        count:
+            D_80039D2A++;
+        } else if (wait == 0) {
+            if (D_80039D30->unk394->unk40 == 0 || D_80039D30->unk394->unk40 == 0xFE
+                || D_80039D34->unk394->unk40 == 0 || D_80039D34->unk394->unk40 == 0xFE) {
+                wait = 12;
+            }
+        } else if (--wait == 0) {
+            if (D_80039D30->unk394->unk40 == 0 || D_80039D30->unk394->unk40 == 0xFE) {
+                if (D_80039D34->unk394->unk40 == 0 || D_80039D34->unk394->unk40 == 0xFE) {
+                    goto draw;
+                }
+                goto win0;
+            }
+            if (D_80039D34->unk394->unk40 == 0 || D_80039D34->unk394->unk40 == 0xFE) {
+                goto win1;
+            }
+        }
+    next:
+        D_80039D18 = D_80039D30;
+        func_80081C9C(&res);
+        func_80062020(&res);
+        func_8004D184(&res);
+        if (D_8019B48C.unk6 < 0x4000) {
+            D_8019B48C.unk6++;
+        }
+    }
+end:
+    if (D_800895CC != 0) {
+        CdSyncCallback(D_800895CC);
+    }
+    SsSetMVol(0, 0);
+    func_8004DD34(0xFFFF);
+    func_80016D64();
+    func_80016DA8();
+    func_8004BE88();
+    D_80040FA0[0] = D_8008C490;
+    if (D_800895C8 != 0) {
+        func_800309A8(2, 3, NULL);
+        D_80039CAC = 1;
+    }
+    DrawSync(0);
+    VSync(0);
+    return ret;
+}
 
 void func_8004C938(void) {
     s32 ff;

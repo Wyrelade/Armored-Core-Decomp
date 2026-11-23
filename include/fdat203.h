@@ -5,7 +5,6 @@
 #include "gte.h"
 
 /* @types */
-
 typedef struct Vs8004BF94 {
     s32 unk0;
     u16 unk4;
@@ -104,7 +103,7 @@ typedef struct Obj800732FC {
     u8 unk3D;
     u8 _pad3E[0x1];
     u8 unk3F;
-    u8 _pad40[0x1];
+    u8 unk40;
     u8 unk41;
     u8 _pad42[0xE];
     void (*unk50)(struct Obj800732FC *, u8);
@@ -168,10 +167,12 @@ typedef struct Elem8007A590 {
 } Elem8007A590;
 
 typedef struct Obj800781F0 {
-    u8 _pad0[0x8];
+    s32 unk0;
+    s32 unk4;
     s32 unk8;
     s32 unkC;
-    u8 _pad10[0xA];
+    u16 unk10;
+    u8 _pad12[0x8];
     u8 unk1A;
     u8 _pad1B[0x5];
     u16 unk20;
@@ -225,7 +226,9 @@ typedef struct Obj800781F0 {
     u8 _pad2AE[0x10];
     u16 unk2BE;
     s32 unk2C0;
-    u8 _pad2C4[0xD0];
+    u8 _pad2C4[0xCC];
+    u8 unk390;
+    u8 _pad391[0x3];
     struct Obj800732FC *unk394;
     u8 _pad398[0x4];
 } Obj800781F0;
@@ -553,7 +556,8 @@ typedef struct Obj80077854 {
 } Obj80077854;
 
 typedef struct Obj80077A7C {
-    u8 _pad0[0x20];
+    void (*unk0)();
+    u8 _pad4[0x1C];
     void (*unk20[1])(Obj80077854 *);
 } Obj80077A7C;
 
@@ -2397,6 +2401,23 @@ typedef struct Blk80055A24 {
     Elem80055A24 unkC[1];
 } Blk80055A24;
 
+typedef struct Res8004BF94 {
+    s32 unk0[4];
+} Res8004BF94;
+
+typedef union Sub8004BF94 {
+    u8 b[8];
+    s32 w[2];
+} Sub8004BF94;
+
+typedef struct Obj8004BF94 {
+    s32 unk0;
+    volatile Sub8004BF94 unk4;
+    volatile s32 unkC;
+    volatile Sub8004BF94 unk10;
+    volatile s32 unk18;
+} Obj8004BF94;
+
 /* @externs */
 extern u8 D_800895C8;
 s32 func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2804,5 +2825,43 @@ void func_80068180(u8 *arg0, u8 *arg1);
 void func_800681A0(u8 *arg0);
 void func_8006A55C(Ent80067EBC *arg0);
 void func_8006B0D0(Ent80067EBC *arg0);
+extern Obj800781F0 D_8008C490;
+extern Obj800781F0 *D_80039D34;
+extern s32 D_8004A284;
+extern Obj8004BF94 D_8004A288;
+extern u16 D_80039D08[];
+extern u8 D_80039D2A;
+extern u8 D_80039CAC;
+extern s32 D_801B40C8[];
+void VSync(s32 arg0);
+void InitHeap2(s32 *arg0, s32 arg1);
+void SsUtAllKeyOff(s32 arg0);
+void func_80056D5C(void);
+void func_8004BE54(void);
+void func_8006CF18(void);
+void func_80072C34(void);
+void func_80016E64(void);
+void func_8004FE84(void);
+void func_8008223C(void);
+void func_80088F84(void);
+void func_800818C0(void);
+void func_80056668(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+void func_8002A4B0(s32 arg0);
+void func_8004C938(void);
+void func_80029B70(s32 arg0, volatile Sub8004BF94 *arg1, s32 arg2);
+void func_80029B80(s32 arg0, volatile Sub8004BF94 *arg1, s32 arg2);
+s32 func_8004BEB0(void);
+void func_80012298(void);
+void func_80089558(void);
+void func_80072488(void);
+void func_80072A30(void);
+void func_800781BC(void);
+void func_800865D8(void);
+void func_8004D1D0(s32 arg0, s32 arg1);
+void func_80062020(Res8004BF94 *arg0);
+void func_80081C9C(Res8004BF94 *arg0);
+void func_8004D184(Res8004BF94 *arg0);
+void func_80016D64(void);
+void func_8004BE88(void);
 
 #endif /* FDAT203_H */
