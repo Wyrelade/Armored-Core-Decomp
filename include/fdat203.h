@@ -2705,5 +2705,11 @@ void func_80063AAC(s32 *arg0, s32 arg1);
 void func_8006676C(void);
 void func_80064158(s32 arg0);
 void func_80064204(Spad80064268 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80065198(Spad80064268 *arg0, u16 arg1, s32 arg2);
+void func_800654E8(Spad80064268 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_8006559C(Sub8004DE88 *arg0);
+void func_8006550C(Sub8004DE88 *arg0, s32 *arg1, s32 arg2);
+void func_80065540(u8 *arg0, s32 *arg1, s32 arg2);
+void func_80065564(u8 *arg0, u8 *arg1, u8 *arg2, s32 *arg3, s32 arg4);
 
 #endif /* FDAT203_H */
