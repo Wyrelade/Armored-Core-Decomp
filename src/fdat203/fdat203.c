@@ -3921,7 +3921,68 @@ s32 func_800736CC(Obj800732FC *arg0, Sub8004F1D4 *arg1, Sub8004DE88 *arg2, Sub80
     return (s32)ret;
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_800739CC);
+s32 func_800739CC(Obj800732FC *arg0, Sub8004F1D4 *arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3) {
+    Sub8004DE88 saved;
+    Sub8004DE88 pos;
+    Obj800732FC *ret;
+    Obj800732FC *hit;
+    Obj800732FC *other;
+    Obj800736CC *obj;
+    Sub800736CC *cb;
+    s32 i;
+
+    ret = NULL;
+    for (i = 6; i != 0; i--) {
+        saved = *arg3;
+        arg2->unk0 = arg1->unk0 + saved.unk0;
+        arg2->unk2 = arg1->unk2 + saved.unk2;
+        arg2->unk4 = arg1->unk4 + saved.unk4;
+        hit = func_8007352C(arg0, arg2, arg3, 0);
+        if (hit == NULL) {
+            pos.unk0 = arg1->unk0 + arg3->unk0;
+            pos.unk2 = arg1->unk2 + arg3->unk2;
+            pos.unk4 = arg1->unk4 + arg3->unk4;
+            obj = func_8007275C(NULL, &pos.unk0, arg0->unk64.unk6, arg0->unk64.unk8, (s32)arg3);
+            if (obj != NULL) {
+                if (obj->unk1C & 0x2000) {
+                    cb = obj->unk14;
+                    if (cb != NULL && cb->unk4 != NULL) {
+                        cb->unk4(obj, &D_8008A210, arg3, &pos, D_8008A212);
+                    }
+                } else {
+                    ret = (Obj800732FC *)obj;
+                }
+            }
+            other = func_8007334C(arg0, &pos.unk0, arg0->unk64.unk6, arg0->unk64.unk8, (s32)arg3);
+            if (other != NULL) {
+                ret = other;
+            }
+            if (obj == NULL && other == NULL) {
+                return (s32)ret;
+            }
+            if (D_8019D844 == 1) {
+                *arg3 = D_80039C78;
+                return (s32)ret;
+            }
+            if (saved.unk0 == arg3->unk0 && saved.unk2 == arg3->unk2 && saved.unk4 == arg3->unk4) {
+                break;
+            }
+        } else {
+            ret = hit;
+            if (D_8019D848.unk0 != 0 && ((ret->unk0->unkC & 7) == 2 || (ret->unk0->unkC & 7) == 3)) {
+                D_8019D848.unk4 = ret;
+                if (arg0->unk54 != NULL) {
+                    ((void (*)(Obj800732FC *, s32))arg0->unk54)(arg0, 7);
+                }
+            }
+        }
+    }
+    arg3->unk0 = arg3->unk4 = 0;
+    arg2->unk0 = arg1->unk0;
+    arg2->unk2 = arg1->unk2 + arg3->unk2;
+    arg2->unk4 = arg1->unk4;
+    return (s32)ret;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80073CD0);
 
