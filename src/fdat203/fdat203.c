@@ -1664,7 +1664,137 @@ void func_8005EAEC(Sv8005E758 *arg0, Sv8005E758 *arg1, Arg8005EAEC *arg2, s32 *a
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005EDFC);
+void func_8005EDFC(Node8005E758 *arg0) {
+    Spad8005E758 *sp;
+    Gt48005EDFC *p;
+    s32 a;
+    s32 b;
+    s32 dx;
+    s32 dy;
+    s32 len;
+    s32 u2;
+    s32 v2;
+    s32 su2;
+    s32 sv2;
+    s32 u;
+    s32 v;
+    s32 su;
+    s32 sv;
+    s32 z;
+
+    sp = (Spad8005E758 *)0x1F800000;
+    if (sp->unk7C == 0) {
+        arg0->unk14 = sp->unk6C.w;
+        arg0->unk18 = sp->unk74;
+        gte_ldv0(&arg0->unk8);
+        gte_rtps();
+        gte_stsxy(&sp->unk6C);
+        gte_stszotz(&sp->unk74);
+    } else {
+        sp->unk68.w = sp->unk6C.w;
+        sp->unk70 = sp->unk74;
+        a = arg0->unk14;
+        b = arg0->unk18;
+        sp->unk6C.w = a;
+        sp->unk74 = b;
+    }
+    if ((sp->unk70 <= 0x140 || sp->unk74 <= 0x140) && (sp->unk4 != 0 || sp->unk70 < 0x10 || sp->unk74 < 0x10)) {
+        if (sp->unk4 != 0) {
+            sp->unk4--;
+            arg0[1].unk0 = arg0->unk0;
+            arg0[1].unk8.unk0 = (arg0->unk0.unk0 + arg0->unk8.unk0) >> 1;
+            arg0[1].unk8.unk2 = (arg0->unk0.unk2 + arg0->unk8.unk2) >> 1;
+            arg0[1].unk8.unk4 = (arg0->unk0.unk4 + arg0->unk8.unk4) >> 1;
+            arg0[1].unk10 = arg0->unk10;
+            arg0[1].unk11 = (arg0->unk10 + arg0->unk11) >> 1;
+            sp->unk7C = 0;
+            func_8005EDFC(&arg0[1]);
+            arg0[1].unk0 = arg0[1].unk8;
+            arg0[1].unk8 = arg0->unk8;
+            arg0[1].unk10 = arg0[1].unk11;
+            arg0[1].unk11 = arg0->unk11;
+            sp->unk7C = 1;
+            func_8005EDFC(&arg0[1]);
+            sp->unk4++;
+        }
+        return;
+    }
+    dx = sp->unk6C.h.x - sp->unk68.h.x;
+    dy = sp->unk6C.h.y - sp->unk68.h.y;
+    len = SquareRoot0(dx * dx + dy * dy);
+    if (len == 0) {
+        len = 1;
+    }
+    p = (Gt48005EDFC *)D_8019D95C[0]->unk8;
+    D_8019D95C[0]->unk8 += sizeof(Gt48005EDFC);
+    if (D_8019D95C[0]->unk8 > D_8019D95C[0]->unk4) {
+        return;
+    }
+    if (sp->unk78 == NULL) {
+        u2 = (dx * ((sp->unk6 * 80) / sp->unk70)) / len;
+        v2 = (dy * ((sp->unk6 * 80) / sp->unk70)) / len;
+        if (u2 <= 0) {
+            su2 = u2;
+            if (su2 < 0) {
+                su2++;
+            }
+        } else {
+            su2 = u2 - 1;
+        }
+        if (v2 <= 0) {
+            sv2 = v2;
+            if (sv2 < 0) {
+                sv2++;
+            }
+        } else {
+            sv2 = v2 - 1;
+        }
+        p->unk8.h.x = sp->unk68.h.x - sv2;
+        p->unk8.h.y = sp->unk68.h.y + u2;
+        p->unk10.h.x = sp->unk68.h.x + v2;
+        p->unk10.h.y = sp->unk68.h.y - su2;
+    } else {
+        p->unk8.w = sp->unk78->unk18.w;
+        p->unk10.w = sp->unk78->unk20.w;
+    }
+    u = (dx * ((sp->unk6 * 80) / sp->unk74)) / len;
+    v = (dy * ((sp->unk6 * 80) / sp->unk74)) / len;
+    sp->unk78 = p;
+    if (u <= 0) {
+        su = u;
+        if (su < 0) {
+            su++;
+        }
+    } else {
+        su = u - 1;
+    }
+    if (v <= 0) {
+        sv = v;
+        if (sv < 0) {
+            sv++;
+        }
+    } else {
+        sv = v - 1;
+    }
+    p->unk18.h.x = sp->unk6C.h.x - sv;
+    p->unk18.h.y = sp->unk6C.h.y + u;
+    p->unk20.h.x = sp->unk6C.h.x + v;
+    p->unk20.h.y = sp->unk6C.h.y - su;
+    p->unk4.w = sp->unk10;
+    p->unkE = sp->unk8;
+    p->unk16 = sp->unkA;
+    p->unkC = p->unk1C = sp->unkC;
+    p->unk14 = p->unk24 = sp->unkD;
+    p->unkD = p->unk15 = arg0->unk10;
+    p->unk1D = p->unk25 = arg0->unk11;
+    p->tag.len = 9;
+    p->unk4.c.code = 0x2E;
+    z = (sp->unk70 + sp->unk74) >> 2;
+    if (z >= 0) {
+        p->tag.addr = sp->unk0[z];
+        sp->unk0[z] = (sp->unk0[z] & 0xFF000000) | ((u32)p & 0xFFFFFF);
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005F3B0);
 

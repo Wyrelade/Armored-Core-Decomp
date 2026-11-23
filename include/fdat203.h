@@ -1843,5 +1843,6 @@ void func_8005FCD8(Sub8004F1D4 *arg0, Elem8008AA58 *arg1, s32 arg2, s32 arg3, s3
 void func_80057A18(Scr800573FC *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8005E758(Node8005E758 *arg0);
 void SetDrawMode(Mode8005E758 *p, s32 dfe, s32 dtd, s32 tpage, void *tw);
+void func_8005EDFC(Node8005E758 *arg0);
 
 #endif /* FDAT203_H */
