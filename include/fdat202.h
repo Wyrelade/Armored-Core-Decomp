@@ -968,11 +968,25 @@ typedef struct Obj8008D3B0 {
     s32 unk144;
 } Obj8008D3B0;
 
+typedef struct Rgbc80057A00 {
+    u8 r;
+    u8 g;
+    u8 b;
+    u8 code;
+} Rgbc80057A00;
+
+typedef union Word80057A00 {
+    u32 w;
+    u8 b[4];
+    Rgbc80057A00 c;
+} Word80057A00;
+
 typedef struct Elem8005A364 {
     s32 unk0;
     s16 unk4;
     u8 unk6;
-    u8 _pad7[0x5];
+    u8 _pad7[0x1];
+    Word80057A00 unk8;
     s32 unkC;
 } Elem8005A364;
 
@@ -1015,19 +1029,6 @@ typedef struct Obj80067EBC {
     u8 unkB18[1];
 } Obj80067EBC;
 
-typedef struct Rgbc80057A00 {
-    u8 r;
-    u8 g;
-    u8 b;
-    u8 code;
-} Rgbc80057A00;
-
-typedef union Word80057A00 {
-    u32 w;
-    u8 b[4];
-    Rgbc80057A00 c;
-} Word80057A00;
-
 typedef struct Prim80057A00 {
     Sub8008C95C unk0;
     Word80057A00 unk4;
@@ -1058,6 +1059,7 @@ typedef struct Scr80057A00 {
     s32 unk24;
     s32 unk28;
     Word80057A00 unk2C;
+    Sub8004C98C unk30;
 } Scr80057A00;
 
 typedef struct Ft38005804C {
@@ -1966,5 +1968,11 @@ s32 func_8006F7A0(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006F08C(Obj8006F4D8 *arg0);
 void SetDrawMode(Mode8005EF38 *p, s32 dfe, s32 dtd, s32 tpage, void *tw);
 void func_8005EF38(Node8005EF38 *arg0);
+void func_80058E04(Scr80057A00 *arg0, u16 arg1, s32 arg2);
+void func_800590C4(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800590E8(Sub8004C98C *arg0, Word80057A00 *arg1, s32 arg2);
+void func_8005911C(SVECTOR *arg0, Word80057A00 *arg1, s32 arg2);
+void func_80059140(SVECTOR *arg0, SVECTOR *arg1, SVECTOR *arg2, Word80057A00 *arg3, s32 arg4);
+void func_80059178(Sub8004C98C *arg0);
 
 #endif /* FDAT202_H */
