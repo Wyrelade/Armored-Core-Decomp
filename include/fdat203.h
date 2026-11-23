@@ -1222,6 +1222,23 @@ typedef struct Vtx80059D54 {
     s32 unkC;
 } Vtx80059D54;
 
+typedef struct Sv8005C2F4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv8005C2F4;
+
+typedef struct Rec8005C2F4 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s16 unkC;
+    s16 unkE;
+    Elem8006DC20 *unk10;
+    Light8005C2F4 *unk14;
+} Rec8005C2F4;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1501,5 +1518,10 @@ void func_80058B88(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
 extern Vtx80059D54 D_8019DFD0[];
 extern Sv800584F4 *D_8019DF7C;
 void func_80059D20(Sv800584F4 *v, Sxy80059D54 *sxy, s32 *p, s32 *z);
+extern s32 D_80194730;
+void Square0(Vec8004CE38 *v0, Vec8004CE38 *v1);
+void func_8005C2F4(Elem8006DC20 *arg0, s32 arg1, Rec8005C2F4 **arg2, Rec8005C2F4 **arg3, Sv8005C2F4 *arg4);
+void func_8005A980(Rec8005C2F4 *arg0);
+void func_80062E78(Rec8005C2F4 *arg0);
 
 #endif /* FDAT203_H */

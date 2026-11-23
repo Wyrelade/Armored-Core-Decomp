@@ -1239,7 +1239,68 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005C100);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005C2F4);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005C82C);
+void func_8005C82C(void) {
+    Sv8005C2F4 cam;
+    s32 unused[8];
+    Rec8005C2F4 recA[129];
+    Rec8005C2F4 recB[193];
+    Rec8005C2F4 *pa;
+    Rec8005C2F4 *pb;
+    Elem8006DC20 *e;
+    u16 *list;
+    u16 *last;
+    s32 n;
+    s32 w;
+    s32 i;
+    s32 f;
+    Elem8006DC20 *nb;
+
+    e = D_8019D960.unk7290;
+    pa = recA;
+    pb = recB;
+    if (e == NULL) {
+        return;
+    }
+    D_80194734 = -1;
+    D_80194730 = 2;
+    cam.unk0 = D_8019D960.unk72A4.unk14;
+    cam.unk2 = D_8019D960.unk72A4.unk18;
+    cam.unk4 = D_8019D960.unk72A4.unk1C;
+    func_8005C2F4(e, 0, &pa, &pb, &cam);
+    w = e - D_801C40F0;
+    D_8019D960.unk6448[w >> 5] = D_8019D960.unk6488[w >> 5] = 1 << (w & 0x1F);
+    n = e->unk26;
+    list = e->unk28;
+    last = list + n - 1;
+    for (n--; n != -1; n--) {
+        w = *list;
+        i = w & 0x1FF;
+        e = &D_801C40F0[i];
+        list++;
+        if (e->unk30_12) {
+            ((Vec8004CE38 *)0x1F800000)->unk0 = (cam.unk0 - e->unk10.unk0) >> 1;
+            ((Vec8004CE38 *)0x1F800000)->unk4 = (cam.unk2 - e->unk10.unk2) >> 1;
+            ((Vec8004CE38 *)0x1F800000)->unk8 = (cam.unk4 - e->unk10.unk4) >> 1;
+            Square0((Vec8004CE38 *)0x1F800000, (Vec8004CE38 *)0x1F800000);
+            if (((((Vec8004CE38 *)0x1F800000)->unk0 + ((Vec8004CE38 *)0x1F800000)->unk4 + ((Vec8004CE38 *)0x1F800000)->unk8) >> 18) >= e->unk34_0) {
+                continue;
+            }
+        }
+        D_8019D960.unk6448[i >> 5] |= 1 << (w & 0x1F);
+        if (w & 0x3800) {
+            nb = &D_801C40F0[last[(w & 0x3800) >> 11]];
+            if (nb->unk30_8) {
+                continue;
+            }
+        }
+        D_8019D960.unk6488[i >> 5] |= 1 << (w & 0x1F);
+        f = w & 0x4000;
+        func_8005C2F4(e, f != 0, &pa, &pb, &cam);
+    }
+    pa->unkC = pb->unkC = -1;
+    func_8005A980(recA);
+    func_80062E78(recB);
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8005CAE0);
 
