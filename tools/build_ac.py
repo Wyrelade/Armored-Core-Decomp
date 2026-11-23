@@ -238,17 +238,29 @@ def retail_jtbl_pads(unit, func):
     paths = glob.glob(os.path.join(ROOT, "asm/USA", unit, "nonmatchings", "*", func + ".s"))
     if not paths:
         return None
-    pads, cur, last = [], False, None
-    for l in open(paths[0], encoding="latin1"):
-        s = re.sub(r"/\*.*?\*/", "", l).strip()
-        if s.startswith("dlabel jtbl_"):
-            cur, last = True, None
-        elif s.startswith("enddlabel jtbl_") and cur:
-            pads.append(last == ".word 0x00000000")
-            cur = False
-        elif cur and s:
-            last = s
-    return pads
+    def scan(path, only=None):
+        out, cur, last, name = {}, False, None, None
+        for l in open(path, encoding="latin1"):
+            s = re.sub(r"/\*.*?\*/", "", l).strip()
+            if s.startswith("dlabel jtbl_"):
+                cur, last, name = True, None, s.split()[1]
+            elif s.startswith("enddlabel jtbl_") and cur:
+                if only is None or name in only:
+                    out[name] = last == ".word 0x00000000"
+                cur = False
+            elif cur and s:
+                last = s
+        return out
+
+    own = scan(paths[0])
+    if not own:
+        # tables split into their own rodata files (nonmatchings/<file>/jtbl_<addr>.s, or several
+        # tables in one such file): the ones this function's code references, in address order
+        text = open(paths[0], encoding="latin1").read()
+        refs = set(re.findall(r"%(?:hi|lo)\((jtbl_[0-9A-F]{8})\)", text))
+        for p in glob.glob(os.path.join(ROOT, "asm/USA", unit, "nonmatchings", "*", "jtbl_*.s")):
+            own.update(scan(p, refs))
+    return [own[k] for k in sorted(own)]
 
 
 def jtbl_inner_pads(s_file, unit):
