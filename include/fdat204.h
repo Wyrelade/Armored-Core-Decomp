@@ -1380,6 +1380,85 @@ typedef struct Spad80060C54 {
     s16 unk6C;
 } Spad80060C54;
 
+typedef struct Sv8006678C {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv8006678C;
+
+typedef struct Box8006678C {
+    Sv8006678C unk0;
+    Sv8006678C unk8;
+} Box8006678C;
+
+typedef struct Obj8006678C {
+    u8 _pad0[0x10];
+    Sv8006678C unk10;
+    Box8006678C unk18;
+    u8 _pad28[0x8];
+    u32 unk30;
+} Obj8006678C;
+
+typedef struct Elem80064B94 {
+    Obj8006678C *unk0;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    s16 unkE;
+    s16 unk10;
+    u8 _pad12[0x2];
+    s16 unk14;
+    s16 unk16;
+    s16 unk18;
+    u8 _pad1A[0x2];
+    s16 unk1C;
+    s16 unk1E;
+    s16 unk20;
+    u8 _pad22[0x2];
+    s32 unk24;
+    u8 _pad28[0x2];
+    u16 unk2A;
+    s16 unk2C;
+    u8 _pad2E[0x2];
+} Elem80064B94;
+
+typedef struct Tbl80064B94 {
+    Elem80064B94 unk0[16];
+    s32 unk300;
+    s32 unk304;
+} Tbl80064B94;
+
+typedef struct Mat80064B94 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    u8 _pad6[0x2];
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
+    u8 _padE[0x2];
+    s16 unk10;
+    s16 unk12;
+    s16 unk14;
+    u8 _pad16[0x2];
+    s32 unk18;
+    s16 unk1C;
+    u8 _pad1E[0x2];
+} Mat80064B94;
+
+typedef struct Spad80064B94 {
+    u8 _pad0[0x5C];
+    Mat80064B94 unk5C[4];
+    s32 unkDC;
+    u8 _padE0[0xC];
+    Mat8005BAA8 unkEC;
+    Mat8005BAA8 unk10C;
+    s32 unk12C[3];
+} Spad80064B94;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1672,5 +1751,6 @@ extern u16 D_8008A03E;
 extern Fr80060C54 *D_800896FC[];
 void SetBackColor(s32 arg0, s32 arg1, s32 arg2);
 void SetFogNearFar(s32 arg0, s32 arg1, s32 arg2);
+extern Tbl80064B94 D_801B614C;
 
 #endif /* FDAT204_H */
