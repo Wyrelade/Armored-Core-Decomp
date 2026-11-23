@@ -33,7 +33,7 @@ typedef struct Obj801C59E8 {
     u8 unk41;
     u8 unk42;
     u8 _pad43[0x1];
-    s16 unk44;
+    u16 unk44;
     u8 _pad46[0xA];
     void (*unk50)();
     void (*unk54)();
