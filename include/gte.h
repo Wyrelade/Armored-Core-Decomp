@@ -40,4 +40,14 @@
 #define gte_nclip() __asm__ volatile ("nop;" "nop;" "nclip")
 #define gte_stopz(r0) __asm__ volatile ("swc2 $24, 0(%0)" : : "r"(r0) : "memory")
 
+#define gte_gpf12() __asm__ volatile ("nop;" "nop;" "gpf 1")
+#define gte_gpl12() __asm__ volatile ("nop;" "nop;" "gpl 1")
+#define gte_ldcv(r0) __asm__ volatile ("lbu $12, 0(%0);" "lbu $13, 1(%0);" "lbu $14, 2(%0);" "mtc2 $12, $9;" "mtc2 $13, $10;" "mtc2 $14, $11" : : "r"(r0) : "$12", "$13", "$14")
+#define gte_ldlzc(r0) __asm__ volatile ("mtc2 %0, $30" : : "r"(r0))
+#define gte_ncdt() __asm__ volatile ("nop;" "nop;" "ncdt")
+#define gte_nop() __asm__ volatile ("nop")
+#define gte_stcv(r0) __asm__ volatile ("mfc2 $12, $9;" "mfc2 $13, $10;" "mfc2 $14, $11;" "sb $12, 0(%0);" "sb $13, 1(%0);" "sb $14, 2(%0)" : : "r"(r0) : "$12", "$13", "$14", "memory")
+#define gte_stlzc(r0) __asm__ volatile ("swc2 $31, 0(%0)" : : "r"(r0) : "memory")
+#define gte_strgb3(r0, r1, r2) __asm__ volatile ("swc2 $20, 0(%0);" "swc2 $21, 0(%1);" "swc2 $22, 0(%2)" : : "r"(r0), "r"(r1), "r"(r2) : "memory")
+
 #endif /* GTE_H */
