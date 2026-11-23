@@ -748,7 +748,10 @@ typedef struct Obj80073170 {
 } Obj80073170;
 
 typedef struct Sub80079CDC {
-    u8 _pad0[0x11];
+    u8 _pad0[0x8];
+    s32 unk8;
+    s32 unkC;
+    u8 _pad10[0x1];
     u8 unk11;
 } Sub80079CDC;
 
@@ -2048,6 +2051,11 @@ typedef struct Tbl80078B14 {
     Obj80078CFC unk3180[1];
 } Tbl80078B14;
 
+typedef union Un8007EF94 {
+    u16 h;
+    s32 w;
+} Un8007EF94;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2261,7 +2269,7 @@ extern s16 D_80040FCE;
 extern Obj80082D04 *D_80041020;
 extern Elem8007BA2C D_80041024[8];
 extern u16 D_800411C0;
-void func_8007EF94();
+void func_8007EF94(Obj8007618C *arg0, s32 arg1);
 void func_8008080C();
 void func_8007DB98();
 void func_80080D00(void);
@@ -2475,5 +2483,38 @@ Obj800749A0 *func_80074800(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *ar
 Elem80078598 *func_80075030(Obj8007618C *arg0, s32 arg1);
 Elem80078598 *func_8006D4BC(s32 arg0);
 extern Tbl80078B14 D_8019F538;
+extern Un8007EF94 D_80040FC0;
+extern u16 D_800411B0;
+extern u16 D_8004123A;
+extern s16 D_80040FB2;
+extern u8 D_80040FBA;
+s32 func_8004EAD0(Sub8007618C *arg0);
+s32 func_8004EBF8(Sub8007618C *arg0);
+s32 func_80074FA4(Obj8007618C *arg0, Sub8004DE88 *arg1);
+void func_80076578(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_800765E8(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80076658(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, void (*arg6)());
+void func_800766E0(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+void func_80076A84(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
+void func_80077170(Obj8007618C *arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3, void (*arg4)());
+void func_800778B8(Obj8007618C *arg0, s32 arg1, s32 arg2, Sub8004DE88 *arg3, s32 arg4, void (*arg5)());
+void func_8007790C(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, s32 arg5, void (*arg6)());
+void func_8007847C(Obj8007618C *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
+void func_80014728(s32 arg0, Sub8004DE88 *arg1);
+void func_8007A02C(Obj8007618C *arg0);
+void func_8007A218(Obj8007618C *arg0, s32 arg1, void (*arg2)());
+void func_8007B8E8(Obj8007618C *arg0, s32 arg1);
+void func_8007B994(Obj8007618C *arg0, s32 arg1, s8 arg2);
+void func_8007BA2C(void);
+s32 func_8007EE44(Obj8007618C *arg0);
+void func_80079888(Obj8007618C *arg0);
+void func_80079904(Obj8007618C *arg0);
+void func_80079980();
+void func_80079DB0(Obj8007618C *arg0);
+void func_80079EC0(Obj8007618C *arg0);
+void func_80079EF4();
+void func_8007A654();
+void func_8007ACC0();
+void func_8007B868(Obj8007618C *arg0);
 
 #endif /* FDAT202_H */
