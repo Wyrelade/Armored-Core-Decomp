@@ -70,8 +70,8 @@ void func_801C5268(Elem801C5EA8 *arg0, s32 arg1) {
 
 INCLUDE_ASM("asm/USA/fdat010/nonmatchings/fdat010", func_801C52B8);
 
-void func_801C53D4(Obj801C4EB8 *arg0) {
-    func_80012794(&arg0->unk22, arg0->unk16, arg0->unk18, 0, D_801A26C0, D_801A26E0, D_801A26E2);
+s32 func_801C53D4(Obj801C4EB8 *arg0) {
+    return func_80012794(&arg0->unk22, arg0->unk16, arg0->unk18, 0, D_801A26C0, D_801A26E0, D_801A26E2);
 }
 
 INCLUDE_ASM("asm/USA/fdat010/nonmatchings/fdat010", func_801C5424);
