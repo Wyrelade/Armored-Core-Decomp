@@ -380,7 +380,7 @@ extern u8 D_801C70F4[];
 s32 rand(void);
 s32 func_800754D0(Obj801C5D08 *arg0, u8 *arg1);
 void func_80078E1C(Obj801C5D08 *arg0);
-s32 func_800745D0(Obj801C5D08 *arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
+s32 func_800745D0(Obj801C5D08 *arg0, Sub8004DE88 *arg1, s32 arg2, s32 arg3, s32 arg4, ...);
 s32 func_80073C2C(s32 arg0, Sub8004DE88 *arg1, s16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, Buf801C5D08 *arg11);
 s32 func_800781E8(Obj801C5D08 *arg0);
 void func_80077B78(Obj801C5D08 *arg0, s32 arg1, u16 arg2, u8 arg3, u8 *arg4, s32 arg5, s32 arg6, s32 arg7, ...);
