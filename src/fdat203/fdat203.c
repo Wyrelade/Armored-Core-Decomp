@@ -3988,7 +3988,52 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80073CD0);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80073D5C);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80073E34);
+void func_80073E34(Obj800732FC *arg0, Sub8004DE88 *arg1) {
+    Sub8004DE88 saved;
+    Sub8004DE88 out;
+    Sub8004F1D4 *pos;
+    Sub8004DE88 *outp;
+    s32 a;
+    s32 b;
+    s32 r;
+
+    arg1->unk2 += SquareRoot0(arg1->unk0 * arg1->unk0 + arg1->unk4 * arg1->unk4) >> 1;
+    pos = &arg0->unk8;
+    outp = &out;
+    saved = *arg1;
+    func_800736CC(arg0, pos, outp, arg1);
+    if (arg1->unk2 <= 0) {
+        a = arg1->unk0;
+        b = saved.unk0;
+        if (a < 0) {
+            a = -a;
+        }
+        if (b < 0) {
+            b = -b;
+        }
+        a = a < b >> 1;
+        if (!a) {
+            a = arg1->unk4;
+            b = saved.unk4;
+            if (a < 0) {
+                a = -a;
+            }
+            if (b < 0) {
+                b = -b;
+            }
+            a = a < b >> 1;
+            if (!a) {
+                return;
+            }
+        }
+        *arg1 = saved;
+        arg1->unk2 = 0;
+        r = func_800736CC(arg0, pos, outp, arg1);
+        if (arg0->unk54 != NULL) {
+            arg0->unk54(arg0, 5, r);
+        }
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80073FAC);
 
