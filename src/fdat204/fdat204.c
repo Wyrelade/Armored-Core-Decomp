@@ -2432,7 +2432,139 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8005FB00);
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80060050);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800602C8);
+void func_800602C8(void) {
+    Sv80060B08 v;
+    Elem80073290 *p;
+    s32 dist;
+    s32 n;
+    s32 idx;
+    s16 k;
+    s32 drawn;
+    Elem8007286C *e;
+    Elem80081FD0 *q;
+    s32 r;
+
+    if (D_801B4F88 == 0) {
+        return;
+    }
+    dist = 0xFFFF;
+    if (D_801ADCD0.unk72B8->unk30_14) {
+        dist = D_801ADCD0.unk72B8->unk34_0 << 4;
+    }
+    p = (Elem80073290 *)D_801AB748;
+    for (n = 2; n != 0; n--) {
+        if (p->unk0 != 0) {
+            idx = p->unk16;
+            drawn = 0;
+            if (D_801ADCD0.unk6488[idx >> 5] & (1 << (idx & 0x1F))) {
+                SetRotMatrix((Mat8005BAA8 *)&D_801ADCD0.unk72CC);
+                SetTransMatrix((Mat8005BAA8 *)((u8 *)D_801ADCD0.unk72EC - (u32)((Mat8005BAA8 *)0)->t));
+                if (func_80060B08(dist, (Sv80060B08 *)&p->unk8, p->unk6A, p->unk6C)) {
+                    func_8005D068(p->unk8.unk6 + 0x80, &p->unk8, &p->unk10, p->unk60, &p->unk148, p->unk15C, idx, 0x64, 0x78, p->unk6A, p->unk6C);
+                    drawn = 1;
+                }
+            }
+            k = p->unk30;
+            if (k != -1 && (D_801ADCD0.unk6488[k >> 5] & (1 << (k & 0x1F)))) {
+                SetRotMatrix((Mat8005BAA8 *)&D_801ADCD0.unk72CC);
+                SetTransMatrix((Mat8005BAA8 *)((u8 *)D_801ADCD0.unk72EC - (u32)((Mat8005BAA8 *)0)->t));
+                v.unk2 = p->unk2C;
+                v.unk0 = p->unk8.unk0;
+                v.unk4 = p->unk8.unk4;
+                if (func_80060B08(dist, &v, p->unk6A, p->unk6C >> 2)) {
+                    func_8005CE20(drawn, p->unk8.unk6 + 0x80, &v, &p->unk10, p->unk60, 0x64, 0x78);
+                }
+            }
+        }
+        p++;
+    }
+    e = D_801A4C68;
+    for (n = 0x200; n != 0; n--) {
+        if (e->unk6 != -1 && !(e->unk1C & 0x8000)) {
+            if (e->unk1C & 1) {
+                if (D_801ADCD0.unk72E0[0] >= e->unk0.unk0 + (e->unk22 << 8)
+                    && e->unk0.unk0 + (e->unk25 << 8) >= D_801ADCD0.unk72E0[0]
+                    && D_801ADCD0.unk72E0[1] >= e->unk0.unk2 + (e->unk23 << 8)
+                    && e->unk0.unk2 + (e->unk26 << 8) >= D_801ADCD0.unk72E0[1]
+                    && D_801ADCD0.unk72E0[2] >= e->unk0.unk4 + (e->unk24 << 8)
+                    && e->unk0.unk4 + (e->unk27 << 8) >= D_801ADCD0.unk72E0[2]) {
+                    if (e->unk1C & 2) {
+                        func_8005DAFC(e->unk0.unk2 - D_801ADCD0.unk72E0[1], e->unk28, e->unk29);
+                    } else if (e->unk1C & 8) {
+                        func_8005D47C(e->unk6 + 0xA0, e, &D_801ADCD0.unk658C[D_801D4488[e->unkE].unk30_0]);
+                    } else if (e->unk1C & 0x20) {
+                        idx = e->unkE;
+                        goto draw;
+                    } else {
+                        func_8005D3A8(e->unk6 + 0xA0, &e->unk8, &D_801ADCD0.unk658C[D_801D4488[e->unkE].unk30_0]);
+                    }
+                }
+            } else {
+                idx = e->unkE;
+                if (D_801ADCD0.unk6488[idx >> 5] & (1 << (idx & 0x1F))) {
+                    SetRotMatrix((Mat8005BAA8 *)&D_801ADCD0.unk72CC);
+                    SetTransMatrix((Mat8005BAA8 *)((u8 *)D_801ADCD0.unk72EC - (u32)((Mat8005BAA8 *)0)->t));
+                    if (func_80060B08(0xFA0, (Sv80060B08 *)&e->unk0, 0x1F4, 0x1F4)) {
+                    draw:
+                        func_8005C340(e->unk6 + 0xA0, &e->unk0, &e->unk8, &e->unk10, e->unk19, e->unk1A, 0, 0xFF, 0, D_80039C70, &D_80089F44, 0, idx, e->unk18 + 0x64, e->unk18 + 0x78, 0, 0);
+                    }
+                }
+            }
+        }
+        e++;
+    }
+    func_80060C54(dist);
+    dist <<= 1;
+    q = D_801B645C;
+    for (n = 0x100; n != 0; n--) {
+        if (q->unk6 == 0) {
+            idx = q->unkE;
+            if (D_801ADCD0.unk6488[idx >> 5] & (1 << (idx & 0x1F))) {
+                SetRotMatrix((Mat8005BAA8 *)&D_801ADCD0.unk72CC);
+                SetTransMatrix((Mat8005BAA8 *)((u8 *)D_801ADCD0.unk72EC - (u32)((Mat8005BAA8 *)0)->t));
+                switch (q->unk10) {
+                case 0:
+                    if (func_80060B08(dist, (Sv80060B08 *)&q->unk0, 0x1F4, 0x1F4)) {
+                        func_8005C340(q->unkB8.p0.unk8, &q->unk0, &q->unkB8.p0.unk0, &q->unkB8.p0.unk24, q->unkB8.p0.unkA, q->unkB8.p0.unkC, 0, 0xFF, 0, D_80039C70, &q->unkB8.p0.unk10, q->unkB8.p0.unkE, idx, 0x64, 0x78, 0, 0);
+                    }
+                    break;
+                case 1:
+                    r = func_8005B7D4(&q->unk0);
+                    if (!(r & func_8005B7D4(&q->unkB8.p1.unk0))) {
+                        func_8005EB3C(&q->unk0, &q->unkB8.p1.unk0, &D_8008A884[q->unkB8.p1.unkC], &q->unkB8.p1.unk8, q->unkB8.p1.unkE);
+                    }
+                    break;
+                case 2:
+                    if (func_80060B08(dist, (Sv80060B08 *)&q->unk0, q->unkB8.p2.unk2, q->unkB8.p2.unk2)) {
+                        func_8005F1E8(&q->unk0, &D_8008A884[q->unkB8.p2.unk0], &D_8008A884[q->unkB8.p2.unk0].unk8, q->unkB8.p2.unk2, q->unkB8.p2.unk4);
+                    }
+                    break;
+                case 3:
+                    if (func_80060B08(dist, (Sv80060B08 *)&q->unk0, q->unkB8.p3.unk16, q->unkB8.p3.unk16)) {
+                        func_8005F7AC(&q->unk0, &q->unkB8.p3.unkE, &q->unkB8.p3.unk0, q->unkB8.p3.unk16);
+                    }
+                    break;
+                case 4:
+                    if (func_80060B08(dist, (Sv80060B08 *)&q->unk0, 0x1F4, 0x1F4)) {
+                        func_8005CCB4(q->unkB8.p4.unk0, q->unkB8.p4.unk2, &q->unk0, &q->unkB8.p4.unk4, &q->unkB8.p4.unkC, &q->unkB8.p4.unk14, 0x64, 0x78);
+                    }
+                    break;
+                case 5:
+                    if (func_80060B08(dist, (Sv80060B08 *)&q->unk0, q->unkB8.p2.unk2, q->unkB8.p2.unk4)) {
+                        func_8005F464(&q->unk0, &D_8008A884[q->unkB8.p2.unk0], q->unkB8.p2.unk2, q->unkB8.p2.unk4, q->unkB8.p2.unk6);
+                    }
+                    break;
+                case 6:
+                    if (func_80060B08(dist, (Sv80060B08 *)&q->unk0, q->unkB8.p6.unk6, q->unkB8.p6.unk6)) {
+                        func_8005F1E8(&q->unk0, &D_8008A884[q->unkB8.p6.unk4], &q->unkB8.p6.unk0, q->unkB8.p6.unk6, q->unkB8.p6.unk8);
+                    }
+                    break;
+                }
+            }
+        }
+        q++;
+    }
+}
 
 s32 func_80060AC4(s32 arg0, s32 arg1) {
     s32 flags;
