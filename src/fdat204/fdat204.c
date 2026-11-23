@@ -1745,7 +1745,56 @@ void func_8005833C(u16 arg0, s32 arg1, u16 arg2, s32 arg3) {
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800594D4);
 
-INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80059508);
+void func_80059508(s32 arg0) {
+    Spad80059508 *sp;
+    Elem8006678C *out;
+    Sv8006678C *v;
+
+    sp = (Spad80059508 *)0x1F800000;
+    out = D_801AE340;
+    v = (Sv8006678C *)D_801AE2EC;
+    func_800594D4(v, &sp->unkC, &sp->unk10, &sp->unk14);
+    v++;
+    for (arg0--; arg0 != 0; arg0--) {
+        gte_ldv0(v);
+        gte_rtps();
+        out->unkC = sp->unk10;
+        out->unk4 = sp->unk14;
+        out->unk0 = sp->unkC.w;
+        if (sp->unkC.h.x < 0) {
+            out->unk6 = 1;
+        } else if (sp->unkC.h.x >= 0x9F) {
+            out->unk6 = 2;
+        } else {
+            out->unk6 = 0;
+        }
+        if (sp->unkC.h.y < 0) {
+            out->unk6 |= 4;
+        } else if (sp->unkC.h.y >= 0x79) {
+            out->unk6 |= 8;
+        }
+        v++;
+        out++;
+        gte_stsxy(&sp->unkC);
+        gte_stdp(&sp->unk10);
+        gte_stszotz(&sp->unk14);
+    }
+    out->unkC = sp->unk10;
+    out->unk4 = sp->unk14;
+    out->unk0 = sp->unkC.w;
+    if (sp->unkC.h.x < 0) {
+        out->unk6 = 1;
+    } else if (sp->unkC.h.x >= 0x9F) {
+        out->unk6 = 2;
+    } else {
+        out->unk6 = 0;
+    }
+    if (sp->unkC.h.y < 0) {
+        out->unk6 |= 4;
+    } else if (sp->unkC.h.y >= 0x79) {
+        out->unk6 |= 8;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80059720);
 

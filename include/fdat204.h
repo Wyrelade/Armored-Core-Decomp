@@ -1733,9 +1733,12 @@ typedef union Col8006678C {
 } Col8006678C;
 
 typedef struct Elem8006678C {
-    u8 _pad0[0x8];
+    s32 unk0;
+    s16 unk4;
+    u8 unk6;
+    u8 _pad7;
     Col8006678C unk8;
-    u8 _padC[0x4];
+    s32 unkC;
 } Elem8006678C;
 
 typedef struct Spad8006678C {
@@ -2297,6 +2300,13 @@ typedef union Pk80058B88 {
     PkFt480058B88 ft4;
 } Pk80058B88;
 
+typedef struct Spad80059508 {
+    u8 _pad0[0xC];
+    Sxy8005DEE4 unkC;
+    s32 unk10;
+    s32 unk14;
+} Spad80059508;
+
 /* @externs */
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2690,5 +2700,6 @@ void func_8005828C(Sub8004F1D4 *arg0, s32 *arg1, s32 arg2);
 void func_800582C0(Sv800584F4 *arg0, s32 *arg1, s32 arg2);
 void func_800582E4(Sv800584F4 *arg0, Sv800584F4 *arg1, Sv800584F4 *arg2, Col800573FC *arg3, s32 arg4);
 void func_8005831C(Sub8004F1D4 *arg0);
+void func_800594D4(Sv8006678C *arg0, Sxy8005DEE4 *arg1, s32 *arg2, s32 *arg3);
 
 #endif /* FDAT204_H */
