@@ -1197,6 +1197,31 @@ typedef struct Cnt800584F4 {
     u8 unk5;
 } Cnt800584F4;
 
+typedef struct Xy80059D54 {
+    s16 x;
+    s16 y;
+} Xy80059D54;
+
+typedef union Sxy80059D54 {
+    s32 w;
+    Xy80059D54 h;
+} Sxy80059D54;
+
+typedef struct Spad80059D54 {
+    u8 _pad0[0xC];
+    Sxy80059D54 unkC;
+    s32 unk10;
+    s32 unk14;
+} Spad80059D54;
+
+typedef struct Vtx80059D54 {
+    s32 unk0;
+    s16 unk4;
+    u8 unk6;
+    u8 _pad7[0x5];
+    s32 unkC;
+} Vtx80059D54;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -1473,5 +1498,8 @@ Elem8006E85C **func_8006F95C(Sub8006D560 *arg0, Sub8004F1D4 *arg1, s32 arg2);
 extern Mat800584F4 D_800AD190;
 void func_80057A3C(u16 arg0, s32 arg1, s32 arg2);
 void func_80058B88(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
+extern Vtx80059D54 D_8019DFD0[];
+extern Sv800584F4 *D_8019DF7C;
+void func_80059D20(Sv800584F4 *v, Sxy80059D54 *sxy, s32 *p, s32 *z);
 
 #endif /* FDAT203_H */
