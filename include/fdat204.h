@@ -5,6 +5,14 @@
 #include "gte.h"
 
 /* @types */
+
+typedef struct Vs8004BF3C {
+    s32 unk0;
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+} Vs8004BF3C;
+
 typedef struct Elem8004EDA8 {
     u8 _pad0[0x10];
     s16 unk10;
@@ -2311,8 +2319,7 @@ typedef struct Spad80059508 {
 extern s8 D_800893C4;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
 s32 func_8004BDB8(void);
-extern s32 D_801AB684;
-extern u16 D_801AB688;
+extern Vs8004BF3C D_801AB684;
 extern u8 D_80041BC0;
 void func_8004DA48(s16 arg0);
 void func_8004DA74(void);
@@ -2351,14 +2358,12 @@ void func_8007C83C(void);
 void func_800861F4(s32 arg0, Obj80082384 *arg1, Sub80082384 *arg2, u8 arg3, s32 arg4);
 s16 func_8006D990(s16 arg0, Obj8008800C *arg1);
 void func_80087EE0(Obj8008800C *arg0, Sub8008800C *arg1, s16 arg2, s16 arg3, s32 arg4, s32 arg5);
-extern s16 D_801AB68C;
 extern s8 D_801D4464;
 extern s16 D_801D4466;
 extern s8 D_801B4198;
 extern s8 D_801B4199;
 extern s8 D_801B419A;
 extern s8 D_801B419B;
-extern u16 D_801AB68A;
 void func_80089154(void);
 void func_800892F0(void);
 extern s32 D_80041BA0;
@@ -2548,7 +2553,7 @@ extern u16 D_801AB668;
 s32 func_80012794(s32 arg0, s32 arg1, s32 arg2, s32 arg3, Sub8004DE88 *arg4, s32 arg5, s32 arg6);
 void func_80054ED0(Sub80054F04 *arg0, Sub80054F04 *arg1);
 extern Elem8004DB1C D_80031764[];
-extern s32 D_800893D0;
+extern volatile s32 D_800893D0;
 s32 CdSyncCallback(s32 arg0);
 s32 CdRead2(s32 arg0);
 s32 CdControl(s32 arg0, u8 *arg1, s32 arg2);

@@ -21,9 +21,9 @@ void func_8004BE30(void) {
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_8004BE58);
 
 void func_8004BF14(s32 arg0) {
-    D_801AB684 = arg0;
-    if (D_801AB688 == 0) {
-        D_801AB688 = 0x5A;
+    D_801AB684.unk0 = arg0;
+    if (D_801AB684.unk4 == 0) {
+        D_801AB684.unk4 = 0x5A;
     }
 }
 
@@ -6022,7 +6022,7 @@ void func_80077C30(void) {
     D_80040FA0[1].unk0 = v >> 16;
     D_80040FA0[0].unkC = D_80040FA0[0].unk8;
     D_80040FA0[1].unkC = D_80040FA0[1].unk8;
-    if (!(D_801AB684 & 0x400)) {
+    if (!(D_801AB684.unk0 & 0x400)) {
         D_80040FA0[0].unk8 = v;
         D_80040FA0[1].unk8 = v >> 16;
     } else {
@@ -8124,7 +8124,7 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80088E54);
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80088FBC);
 
 void func_800890C0(s16 arg0, s16 arg1, s8 arg2) {
-    D_801AB68C = arg0;
+    D_801AB684.unk8 = arg0;
     D_801D4466 = arg1;
     D_801D4464 = arg2;
 }
@@ -8146,13 +8146,13 @@ void func_800890E0(s32 arg0) {
 }
 
 void func_80089154(void) {
-    if (D_801AB68A == 0x2C) {
-        D_801AB684 &= ~0x1400;
+    if (D_801AB684.unk6 == 0x2C) {
+        D_801AB684.unk0 &= ~0x1400;
         if (D_80039C5D != 0xFF) {
             func_8004DC18(D_80039C5D);
         }
     } else {
-        D_801AB684 |= 0x1400;
+        D_801AB684.unk0 |= 0x1400;
     }
 }
 
@@ -8160,16 +8160,16 @@ void func_800891D0(void) {
     u8 full;
     s8 level;
 
-    if (D_801AB688 < 0x16) {
+    if (D_801AB684.unk4 < 0x16) {
         D_801B419B = 2;
-        if (D_801AB688 < 3) {
+        if (D_801AB684.unk4 < 3) {
             full = 0xFF;
             D_801B419A = full;
             D_801B4199 = full;
             D_801B4198 = full;
             return;
         }
-        level = ((0x16 - D_801AB688) << 8) / 20;
+        level = ((0x16 - D_801AB684.unk4) << 8) / 20;
         D_801B419A = level;
         D_801B4199 = level;
         D_801B4198 = level;
@@ -8181,10 +8181,10 @@ INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_80089264);
 INCLUDE_ASM("asm/USA/fdat204/nonmatchings/fdat204", func_800892F0);
 
 void func_80089354(void) {
-    if (D_801AB68A < 0x2D) {
+    if (D_801AB684.unk6 < 0x2D) {
         func_80089154();
     }
-    if (D_801AB688 != 0) {
+    if (D_801AB684.unk4 != 0) {
         func_800892F0();
     }
 }
