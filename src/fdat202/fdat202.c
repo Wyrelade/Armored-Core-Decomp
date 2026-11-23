@@ -6304,7 +6304,57 @@ Obj80078CFC *func_80078A2C(Sub80075350 *arg0) {
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80078ADC);
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80078B14);
+void func_80078B14(Obj80078CFC *arg0, u8 *arg1) {
+    Desc80078B14 *d;
+    Elem80078B14 *e;
+
+    d = (Desc80078B14 *)arg1;
+    e = &D_8019F538.unk0[d->unkA];
+    d->unk0 = 1;
+    d->unk1 = arg0 - D_8019F538.unk3180;
+    arg0->unk0 = (Sub80075350 *)arg1;
+    arg0->unk4 = e;
+    arg0->unk3A = 3;
+    arg0->unk38 = 0;
+    arg0->unk162 = arg0->unk164 = d->unk1A;
+    arg0->unk160 = d->unk2;
+    arg0->unk28 = arg0->unk6A = e->unk0;
+    arg0->unk2A = arg0->unk6C = e->unk2;
+    arg0->unk1E = e->unk4;
+    arg0->unk80 = e->unk28;
+    arg0->unk32 = (d->unk14 >> 4) & 2;
+    arg0->unk8 = d->unk4;
+    arg0->unkA = d->unk6 - 1;
+    arg0->unkC = d->unk8;
+    arg0->unkE = d->unkA;
+    arg0->unkFC = d->unk22;
+    arg0->unk10 = d->unkC;
+    arg0->unk2E = 0x7FFF;
+    arg0->unk48 = NULL;
+    arg0->unk64 = 0;
+    arg0->unk6E = 0;
+    arg0->unk65 = 0xFF;
+    arg0->unk68 = 4;
+    arg0->unk2C = arg0->unkA;
+    arg0->unk30 = arg0->unk10.unk6;
+    arg0->unk76 = D_80039C78;
+    arg0->unk76.unk6 = -1;
+    arg0->unk72 = 0;
+    arg0->unk60 = 0;
+    arg0->unk148 = 0;
+    arg0->unk15C = 0;
+    arg0->unk3E = 0;
+    arg0->unk3F = 0;
+    arg0->unk40 = 0xFF;
+    arg0->unk3D = 0;
+    arg0->unk3C = 0;
+    arg0->unk41 = 0;
+    arg0->unk4C = 0;
+    arg0->unk50 = NULL;
+    arg0->unk54 = NULL;
+    arg0->unk58 = NULL;
+    arg0->unk5C = NULL;
+}
 
 void func_80078CFC(u8 *arg0) {
     Obj80078CFC *obj;

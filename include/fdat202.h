@@ -115,11 +115,81 @@ typedef struct Obj8007618C {
     u16 unk162;
 } Obj8007618C;
 
+typedef struct Sub80078B14 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+} Sub80078B14;
+
+typedef struct Elem80078B14 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u8 _pad6[0x22];
+    Sub8004ECA8 *unk28;
+} Elem80078B14;
+
 typedef struct Obj80078CFC {
     Sub80075350 *unk0;
-    u8 _pad4[0xA];
+    Elem80078B14 *unk4;
+    s16 unk8;
+    s16 unkA;
+    s16 unkC;
     s16 unkE;
-    u8 _pad10[0x160];
+    Sub8004DE88 unk10;
+    u8 _pad18[0x6];
+    s16 unk1E;
+    u8 _pad20[0x8];
+    s16 unk28;
+    s16 unk2A;
+    s16 unk2C;
+    s16 unk2E;
+    s16 unk30;
+    s16 unk32;
+    u8 _pad34[0x4];
+    s16 unk38;
+    u8 unk3A;
+    u8 _pad3B[0x1];
+    u8 unk3C;
+    u8 unk3D;
+    u8 unk3E;
+    u8 unk3F;
+    u8 unk40;
+    u8 unk41;
+    u8 _pad42[0x6];
+    struct Obj80078CFC *unk48;
+    s32 unk4C;
+    void (*unk50)();
+    void (*unk54)();
+    void (*unk58)();
+    void (*unk5C)();
+    s32 unk60;
+    u8 unk64;
+    u8 unk65;
+    u8 _pad66[0x2];
+    u8 unk68;
+    u8 _pad69[0x1];
+    u16 unk6A;
+    u16 unk6C;
+    s16 unk6E;
+    u8 _pad70[0x2];
+    s16 unk72;
+    u8 _pad74[0x2];
+    Sub8004DE88 unk76;
+    u8 _pad7E[0x2];
+    Sub8004ECA8 *unk80;
+    u8 _pad84[0x78];
+    Sub80078B14 unkFC;
+    u8 _pad106[0x42];
+    u16 unk148;
+    u8 _pad14A[0x12];
+    s32 unk15C;
+    u16 unk160;
+    u16 unk162;
+    u16 unk164;
+    u8 _pad166[0xA];
 } Obj80078CFC;
 
 typedef struct Sub80078CFC {
@@ -1957,6 +2027,27 @@ typedef struct Elem80078598 {
     u16 unkE;
 } Elem80078598;
 
+typedef struct Desc80078B14 {
+    u8 unk0;
+    u8 unk1;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    s16 unkA;
+    Sub8004DE88 unkC;
+    u16 unk14;
+    u8 _pad16[0x4];
+    u16 unk1A;
+    u8 _pad1C[0x6];
+    Sub80078B14 unk22;
+} Desc80078B14;
+
+typedef struct Tbl80078B14 {
+    Elem80078B14 unk0[288];
+    Obj80078CFC unk3180[1];
+} Tbl80078B14;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2383,5 +2474,6 @@ extern u16 D_8008E51A;
 Obj800749A0 *func_80074800(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, s32 arg3);
 Elem80078598 *func_80075030(Obj8007618C *arg0, s32 arg1);
 Elem80078598 *func_8006D4BC(s32 arg0);
+extern Tbl80078B14 D_8019F538;
 
 #endif /* FDAT202_H */
