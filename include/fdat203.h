@@ -2161,6 +2161,94 @@ typedef struct Scr800614C8 {
     s16 unk6C;
 } Scr800614C8;
 
+typedef struct Pk80063B24 {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+} Pk80063B24;
+
+typedef struct Part80063B24 {
+    s32 unk0;
+    u16 unk4;
+    u16 unk6;
+    u8 *unk8;
+    u8 _padC[0x2];
+    u16 unkE;
+    u32 *unk10;
+    u16 unk14;
+    u8 _pad16[0x6];
+} Part80063B24;
+
+typedef struct PkHdr80063B24 {
+    u8 unk0;
+    u8 len;
+    u8 unk2;
+    u8 mode;
+} PkHdr80063B24;
+
+typedef union PkWord80063B24 {
+    u32 w;
+    PkHdr80063B24 b;
+} PkWord80063B24;
+
+typedef struct Gt380063B24 {
+    Tag800573FC tag;
+    Col8005E758 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Gt380063B24;
+
+typedef struct Gt480063B24 {
+    Tag800573FC tag;
+    Col8005E758 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+    s32 unk28;
+    s32 unk2C;
+    u16 unk30;
+    u16 unk32;
+} Gt480063B24;
+
+typedef struct Spad80063B24 {
+    s32 unk0;
+    u8 *unk4;
+    u8 *unk8;
+    PkWord80063B24 unkC;
+    Part80063B24 *unk10;
+    u8 *unk14;
+    Sv800584F4 *unk18;
+    s32 unk1C;
+    u32 *unk20;
+    s32 unk24;
+    s32 unk28;
+    u8 unk2C;
+    u8 unk2D;
+    u8 unk2E;
+} Spad80063B24;
+
 /* @externs */
 extern u8 D_800895C8;
 void func_800309A8(s32 arg0, s32 arg1, void (*arg2)(void));
@@ -2541,5 +2629,11 @@ extern Tbl800658B8 D_801A5DB4;
 s32 func_80061338(s32 arg0, s32 arg1);
 extern Mdl800614C8 *D_80089980[];
 extern Fog800614C8 D_801C4120[];
+extern s32 D_801A4BEC;
+void func_80064088(s32 arg0, u16 arg1);
+void func_80063034(s32 arg0, u16 arg1);
+void func_80063AC8(Spad80063B24 *arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_80063A88(u8 *arg0, s32 *arg1, s32 arg2);
+void func_80063AAC(s32 *arg0, s32 arg1);
 
 #endif /* FDAT203_H */

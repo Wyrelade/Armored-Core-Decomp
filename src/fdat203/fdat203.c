@@ -2587,7 +2587,117 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80063AEC);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80063B0C);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80063B24);
+void func_80063B24(u16 arg0, s32 arg1) {
+    Spad80063B24 *sp;
+    u8 *vtx;
+    Vtx800573FC *v0;
+    Vtx800573FC *v1;
+    Vtx800573FC *v2;
+    Vtx800573FC *v3;
+    u32 *pk;
+    Gt480063B24 *p;
+    s32 z;
+    u8 *nrm;
+
+    sp = (Spad80063B24 *)0x1F800000;
+    sp->unk10 = (Part80063B24 *)(((u8 *)D_8019D960.unk8 + 0xC + arg0 * 0x20) - arg0 * 4);
+    if (sp->unk10->unk14 == 0) {
+        return;
+    }
+    sp->unk1C = sp->unk10->unk14;
+    sp->unk2C = sp->unk2D = sp->unk2E = 0x40;
+    sp->unk24 = D_80194734 + 0xF;
+    sp->unk28 = D_80194734 + 3;
+    sp->unk20 = D_8019D960.unk0 + arg1;
+    vtx = D_8019D960.unk670;
+    if (D_801A4BEC == 0) {
+        func_80064088(sp->unk10->unk0, sp->unk10->unk4);
+    } else {
+        func_80063034(sp->unk10->unk0, sp->unk10->unk4);
+    }
+    nrm = sp->unk10->unk8;
+    sp->unk18 = D_8019DF7C;
+    sp->unk14 = nrm;
+    pk = sp->unk10->unk10;
+    sp->unk4 = D_8019D95C[0]->unk8;
+    sp->unk8 = D_8019D95C[0]->unk4;
+    do {
+        sp->unkC.w = *pk;
+        pk++;
+        switch (sp->unkC.b.mode & 0xFC) {
+        case 0x24:
+            v0 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unkE);
+            v1 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk10);
+            v2 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk12);
+            func_80063AC8(sp, v0->unk0, v1->unk0, v2->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_80063A88(sp->unk14 + ((Pk80063B24 *)pk)->unkC, &v0->unk8, v0->unkC);
+            p = (Gt480063B24 *)sp->unk4;
+            sp->unk4 += sizeof(Gt380063B24);
+            gte_strgb(&p->unk4);
+            func_80063AAC(&v1->unk8, v1->unkC);
+            p->unk8 = v0->unk0;
+            p->unk14 = v1->unk0;
+            p->unk20 = v2->unk0;
+            gte_strgb(&p->unk10);
+            func_80063AAC(&v2->unk8, v2->unkC);
+            p->unkC = ((Pk80063B24 *)pk)->unk0;
+            p->unk18 = ((Pk80063B24 *)pk)->unk4;
+            p->unk24 = ((Pk80063B24 *)pk)->unk8;
+            p->tag.len = 9;
+            p->unk4.c.code = (sp->unkC.b.mode & 2) | 0x34;
+            z = (((v0->unk4 + v1->unk4 + v2->unk4) * 0x1555) >> sp->unk24) + (s8)sp->unkC.b.unk0 * 4;
+            p->tag.addr = sp->unk20[z];
+            sp->unk20[z] = (sp->unk20[z] & 0xFF000000) | ((u32)p & 0xFFFFFF);
+            gte_strgb(&p->unk1C);
+            break;
+        case 0x2C:
+            v0 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk12);
+            v1 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk14);
+            v2 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk16);
+            func_80063AC8(sp, v0->unk0, v1->unk0, v2->unk0);
+            if (sp->unk0 <= 0) {
+                break;
+            }
+            func_80063A88(sp->unk14 + ((Pk80063B24 *)pk)->unk10, &v0->unk8, v0->unkC);
+        quad:
+            p = (Gt480063B24 *)sp->unk4;
+            v3 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk18);
+            sp->unk4 += sizeof(Gt480063B24);
+            gte_strgb(&p->unk4);
+            func_80063AAC(&v1->unk8, v1->unkC);
+            p->unk8 = v0->unk0;
+            p->unk14 = v1->unk0;
+            p->unk20 = v2->unk0;
+            p->unk2C = v3->unk0;
+            gte_strgb(&p->unk10);
+            func_80063AAC(&v2->unk8, v2->unkC);
+            p->unkC = ((Pk80063B24 *)pk)->unk0;
+            p->unk18 = ((Pk80063B24 *)pk)->unk4;
+            p->unk24 = ((Pk80063B24 *)pk)->unk8;
+            p->unk30 = ((Pk80063B24 *)pk)->unkC;
+            gte_strgb(&p->unk1C);
+            func_80063AAC(&v3->unk8, v3->unkC);
+            p->tag.len = 0xC;
+            p->unk4.c.code = (sp->unkC.b.mode & 2) | 0x3C;
+            z = ((v0->unk4 + v1->unk4 + v2->unk4 + v3->unk4) >> sp->unk28) + (s8)sp->unkC.b.unk0 * 4;
+            p->tag.addr = sp->unk20[z];
+            sp->unk20[z] = (sp->unk20[z] & 0xFF000000) | ((u32)p & 0xFFFFFF);
+            gte_strgb(&p->unk28);
+            break;
+        case 0x6C:
+            v0 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk12);
+            func_80063A88(sp->unk14 + ((Pk80063B24 *)pk)->unk10, &v0->unk8, v0->unkC);
+            v1 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk14);
+            v2 = (Vtx800573FC *)((u8 *)vtx + ((Pk80063B24 *)pk)->unk16);
+            goto quad;
+        }
+        pk += sp->unkC.b.len;
+    } while (--sp->unk1C != 0);
+    D_8019D95C[0]->unk8 = sp->unk4;
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80064088);
 
