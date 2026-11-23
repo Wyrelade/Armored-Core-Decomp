@@ -885,17 +885,6 @@ typedef struct Obj800558B4 {
     Sub800558B4 unk78;
 } Obj800558B4;
 
-typedef struct Obj800573FC {
-    u32 *unk0;
-    u8 _pad4[0x66C];
-    u8 unk670[1];
-} Obj800573FC;
-
-typedef struct Elem8004DB1C {
-    u16 unk0[16];
-    u8 unk20[4];
-} Elem8004DB1C;
-
 typedef struct Obj80013A88 {
     s16 unk0;
     s16 unk2;
@@ -911,6 +900,62 @@ typedef struct Obj80013A88 {
     s32 unk18;
     s32 unk1C;
 } Obj80013A88;
+
+typedef struct Rot8005C2F4 {
+    s16 m[3][3];
+    s16 pad;
+} Rot8005C2F4;
+
+typedef struct Light8005C2F4 {
+    Rot8005C2F4 unk0[4];
+    s16 unk50[3][3];
+    u8 unk62;
+    u8 unk63;
+    u8 unk64;
+    u8 _pad65;
+    u16 unk66;
+} Light8005C2F4;
+
+typedef struct Sv800584F4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv800584F4;
+
+typedef struct Lod800584F4 {
+    s32 unk0;
+    s32 unk4;
+    u32 unk8;
+} Lod800584F4;
+
+typedef struct Obj800573FC {
+    u32 *unk0;
+    u8 _pad4[0x4];
+    Lod800584F4 *unk8;
+    u8 _padC[0x610];
+    Sv800584F4 *unk61C;
+    u8 _pad620[0x50];
+    u8 unk670[1];
+    u8 _pad671[0x5DD7];
+    u32 unk6448[16];
+    u32 unk6488[16];
+    u8 _pad64C8[0xC4];
+    Light8005C2F4 unk658C[32];
+    s32 unk728C;
+    Elem8006DC20 *unk7290;
+    u8 _pad7294[0x10];
+    Obj80013A88 unk72A4;
+    s32 unk72C4[3];
+    u8 _pad72D0[0x24];
+    Obj80013A88 unk72F4[4];
+    Obj80013A88 unk7374[4];
+} Obj800573FC;
+
+typedef struct Elem8004DB1C {
+    u16 unk0[16];
+    u8 unk20[4];
+} Elem8004DB1C;
 
 typedef struct Joint80055420 {
     u8 _pad0[0x12];
@@ -1012,9 +1057,12 @@ typedef struct Poly800573FC {
 } Poly800573FC;
 
 typedef struct Mdl800573FC {
-    u8 _pad0[0x4];
+    Sv800584F4 *unk0;
     u16 unk4;
-    u8 _pad6[0xA];
+    u16 unk6;
+    u8 *unk8;
+    u8 _padC[0x2];
+    u16 unkE;
     Col800573FC *unk10;
     u16 unk14;
 } Mdl800573FC;
@@ -1125,6 +1173,29 @@ typedef struct Obj80086874 {
     u32 unk30;
     u32 unk34;
 } Obj80086874;
+
+typedef union Rot800584F4 {
+    s16 m[3][3];
+    s32 w[5];
+} Rot800584F4;
+
+typedef struct Mat800584F4 {
+    Rot800584F4 r;
+    s32 t[3];
+} Mat800584F4;
+
+typedef struct Spad800584F4 {
+    u8 _pad0[0x38];
+    Mat800584F4 unk38;
+    Mat800584F4 unk58;
+    u8 _pad78[0xC];
+    Mat800584F4 unk84;
+} Spad800584F4;
+
+typedef struct Cnt800584F4 {
+    u8 _pad0[0x5];
+    u8 unk5;
+} Cnt800584F4;
 
 /* @externs */
 extern u8 D_800895C8;
@@ -1399,5 +1470,8 @@ void func_8006EDB4(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, s32 arg2);
 void func_80070C88(Obj80070994 *arg0, Obj8006D0DC *arg1);
 void func_80070AEC(Obj80070994 *arg0);
 Elem8006E85C **func_8006F95C(Sub8006D560 *arg0, Sub8004F1D4 *arg1, s32 arg2);
+extern Mat800584F4 D_800AD190;
+void func_80057A3C(u16 arg0, s32 arg1, s32 arg2);
+void func_80058B88(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
 
 #endif /* FDAT203_H */
