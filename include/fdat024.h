@@ -4,7 +4,6 @@
 #include "common.h"
 
 /* @types */
-
 typedef struct Sub801C73EC {
     u8 _pad0[0xA];
     s16 unkA;
@@ -322,10 +321,17 @@ typedef struct Task801C6CCC {
     void (*unk14)();
 } Task801C6CCC;
 
+typedef struct Sub801C4C94 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sub801C4C94;
+
 /* @externs */
 s16 func_80073904(void);
 void func_801C4D04(Obj801C53A0 *arg0, u8 arg1);
-void func_801C5150(Obj801C53A0 *arg0, s32 arg1);
+s32 func_801C5150(Obj801C53A0 *arg0, s32 arg1, ...);
 void func_801C4FDC(Obj801C53A0 *arg0);
 void func_801C534C();
 Sub801C6060 *func_80072120(s32 arg0);
@@ -376,5 +382,11 @@ Task801C6CCC *func_80086F20(s32 arg0, Sub801C6C1C *arg1, s32 arg2, s32 arg3, s32
 s32 func_801C5968(Elem801C5F00 *arg0, u8 arg1);
 void func_8004CC30(s32 arg0, u8 *arg1, Sub801C6C1C *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_801C609C(Obj801C52C0 *arg0);
+s32 func_80073714(Obj801C53A0 *arg0, s32 arg1);
+s32 rand(void);
+void func_801C50EC(s32 arg0, s32 arg1);
+void func_80075A18(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+void func_80075A54(s32 arg0, s32 arg1, Sub801C4C94 *arg2);
+extern Sub801C4C94 D_80039C78;
 
 #endif /* FDAT024_H */
