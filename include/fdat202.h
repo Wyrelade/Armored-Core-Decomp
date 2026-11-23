@@ -1546,6 +1546,47 @@ typedef struct Obj8006F4D8 {
     s32 unkBC;
 } Obj8006F4D8;
 
+typedef struct Node8005EF38 {
+    Sub8004DE88 unk0;
+    Sub8004DE88 unk8;
+    u8 unk10;
+    u8 unk11;
+    u8 _pad12[0x2];
+    s32 unk14;
+    s32 unk18;
+} Node8005EF38;
+
+typedef struct Scr8005EF38 {
+    Sub8008C95C *unk0;
+    u16 unk4;
+    s16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u8 unkC;
+    u8 unkD;
+    u8 _padE[0x2];
+    s32 unk10;
+    Node8005EF38 unk14[3];
+    s32 unk68;
+    s32 unk6C;
+    s32 unk70;
+    s32 unk74;
+    u8 _pad78[0x4];
+    s32 unk7C;
+} Scr8005EF38;
+
+typedef struct Line8005EF38 {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+} Line8005EF38;
+
+typedef struct Mode8005EF38 {
+    Sub8008C95C tag;
+    u8 _pad4[0x8];
+} Mode8005EF38;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1918,5 +1959,6 @@ s32 func_8006FB6C(s32 *arg0, ...);
 void func_8006F83C(Obj8006F4D8 *arg0, Sub8006F4D8 *arg1, s32 arg2);
 s32 func_8006F7A0(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006F08C(Obj8006F4D8 *arg0);
+void SetDrawMode(Mode8005EF38 *p, s32 dfe, s32 dtd, s32 tpage, void *tw);
 
 #endif /* FDAT202_H */
