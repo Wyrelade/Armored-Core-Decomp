@@ -601,14 +601,37 @@ typedef struct Elem800730DC {
     u8 _pad38[0x8];
 } Elem800730DC;
 
+typedef struct Sub8004F1D4 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+} Sub8004F1D4;
+
+typedef struct Pair8006131C {
+    s16 unk0;
+    s16 unk2;
+} Pair8006131C;
+
 typedef struct Elem800736AC {
-    u8 _pad0[0x6];
+    Sub8004F1D4 unk0;
     s16 unk6;
-    u8 _pad8[0xC];
+    Sub8004F1D4 unk8;
+    s16 unkE;
+    Pair8006131C unk10;
     Sub80073104 *unk14;
-    u8 _pad18[0x4];
+    s8 unk18;
+    u8 unk19;
+    s16 unk1A;
     u16 unk1C;
-    u8 _pad1E[0x16];
+    u8 _pad1E[0x4];
+    s8 unk22;
+    s8 unk23;
+    s8 unk24;
+    s8 unk25;
+    s8 unk26;
+    s8 unk27;
+    u8 unk28;
+    u8 unk29[0xB];
 } Elem800736AC;
 
 typedef struct Elem80074728 {
@@ -646,10 +669,73 @@ typedef struct Elem8007BA2C {
     s32 unk28[2];
 } Elem8007BA2C;
 
-typedef struct Elem800835A0 {
-    u8 _pad0[0x6];
+typedef struct PrmA8006131C {
+    Sub8004F1D4 unk0;
+    u8 _pad6[0x2];
+    u16 unk8;
+    s16 unkA;
+    s16 unkC;
+    u16 unkE;
+    Sub8004DE88 unk10;
+    u8 _pad18[0xC];
+    Pair8006131C unk24;
+} PrmA8006131C;
+
+typedef struct PrmB8006131C {
+    Sub8004F1D4 unk0;
+    u8 _pad6[0x2];
+    Pair8006131C unk8;
+    u16 unkC;
+    s16 unkE;
+} PrmB8006131C;
+
+typedef struct PrmC8006131C {
+    u16 unk0;
+    s16 unk2;
+    s16 unk4;
     s16 unk6;
-    u8 _pad8[0xD8];
+} PrmC8006131C;
+
+typedef struct PrmD8006131C {
+    Sub8004F1D4 unk0;
+    u8 _pad6[0x8];
+    Sub8004F1D4 unkE;
+    u8 _pad14[0x2];
+    s16 unk16;
+} PrmD8006131C;
+
+typedef struct PrmE8006131C {
+    u16 unk0;
+    u16 unk2;
+    Sub8004DE88 unk4;
+    Sub8004DE88 unkC;
+    Sub8004DE88 unk14;
+} PrmE8006131C;
+
+typedef struct PrmG8006131C {
+    Pair8006131C unk0;
+    u16 unk4;
+    s16 unk6;
+    s16 unk8;
+} PrmG8006131C;
+
+typedef union Prm8006131C {
+    PrmA8006131C p0;
+    PrmB8006131C p1;
+    PrmC8006131C p2;
+    PrmD8006131C p3;
+    PrmE8006131C p4;
+    PrmG8006131C p6;
+} Prm8006131C;
+
+typedef struct Elem800835A0 {
+    Sub8004F1D4 unk0;
+    s16 unk6;
+    u8 _pad8[0x6];
+    s16 unkE;
+    u8 unk10;
+    u8 _pad11[0xA7];
+    Prm8006131C unkB8;
 } Elem800835A0;
 
 typedef struct Elem80085580 {
@@ -2110,6 +2196,17 @@ typedef struct Seg8007D2F8 {
     Sub8004DE88 unk8;
 } Seg8007D2F8;
 
+typedef struct Elem8006131C {
+    u8 _pad0[0x8];
+    Pair8006131C unk8;
+} Elem8006131C;
+
+typedef struct Ent8006131C {
+    Sub8004F1D4 unk0;
+    s16 unk6;
+    u8 _pad8[0x10];
+} Ent8006131C;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2600,5 +2697,24 @@ void func_80086448(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, Sub8
 void func_8008840C(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, s32 arg4, s32 arg5);
 void func_8008915C(Obj8007618C *arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, s32 arg4, s32 arg5, s32 arg6, Sub8004DE88 *arg7);
 void func_80089F7C(s32 arg0, s32 arg1, Obj8007618C *arg2);
+extern Ent8006131C D_80198808[];
+extern u8 D_80039C70[];
+extern Sub8004DE88 D_8008E4D8;
+extern Elem8006131C D_8008ED68[];
+s32 func_80054750(s16 **arg0, s32 arg1, u8 arg2, s32 arg3, s32 arg4, u8 arg5, s32 arg6, Sub8004DE88 *arg7);
+void func_8005DEC4(u16 arg0, Sub8004DE88 *arg1, Sub8004DE88 *arg2, s16 *arg3, u16 *arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10);
+void func_8005DC7C(s8 arg0, u16 arg1, Sub8004DE88 *arg2, Sub8004DE88 *arg3, s16 *arg4, s32 arg5, s32 arg6);
+void func_8005E434(Elem800736AC *arg0);
+void func_8005EB50(s32 arg0, u8 arg1, u8 *arg2);
+void func_8005E300(u16 arg0, Elem800736AC *arg1, Light8005C904 *arg2);
+void func_8005E22C(u16 arg0, Sub8004F1D4 *arg1, Light8005C904 *arg2);
+void func_8005D19C(u16 arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2, Pair8006131C *arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, u8 *arg9, Sub8004DE88 *arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15, s32 arg16);
+void func_80062090(s32 arg0);
+s32 func_8005C630(Sub8004F1D4 *arg0);
+void func_8005FB90(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, Elem8006131C *arg2, Pair8006131C *arg3, s32 arg4);
+void func_8006023C(Sub8004F1D4 *arg0, Elem8006131C *arg1, Pair8006131C *arg2, s32 arg3, s32 arg4);
+void func_80060800(Sub8004F1D4 *arg0, Sub8004F1D4 *arg1, Sub8004F1D4 *arg2, s32 arg3);
+void func_8005DB10(u16 arg0, u16 arg1, Sub8004F1D4 *arg2, Sub8004DE88 *arg3, Sub8004DE88 *arg4, Sub8004DE88 *arg5, s32 arg6, s32 arg7);
+void func_800604B8(Sub8004F1D4 *arg0, Elem8006131C *arg1, s32 arg2, s32 arg3, s32 arg4);
 
 #endif /* FDAT202_H */
