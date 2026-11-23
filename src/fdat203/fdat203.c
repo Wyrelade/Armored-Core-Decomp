@@ -2469,7 +2469,43 @@ INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_8006424C);
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80064268);
 
-INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80064D58);
+void func_80064D58(u32 arg0) {
+    Scr800658B8 *scr;
+    s32 shift = 0;
+    s32 v;
+    Light800658B8 *d;
+    Elem800658B8 *src;
+    s32 i;
+
+    scr = (Scr800658B8 *)0x1F800000;
+    d = scr->unk5C;
+    src = D_801A5DB4.unk0;
+    i = D_801A5DB4.unk304;
+    scr->unkDC = 0;
+    for (i--; i != -1; i--) {
+        if (arg0 & 1) {
+            v = src->unkC;
+            shift = D_80194734;
+            d->unk0 = v << shift;
+            d->unk2 = src->unkE << shift;
+            d->unk4 = src->unk10 << shift;
+            d->unk8 = src->unk14 << shift;
+            d->unk10 = src->unk1C << shift;
+            d->unkA = src->unk16 << shift;
+            d->unk12 = src->unk1E << shift;
+            d->unkC = src->unk18 << shift;
+            d->unk14 = src->unk20 << shift;
+            d->unk18 = src->unk24;
+            d->unk1C = src->unk2C << shift;
+            d++;
+            if (++scr->unkDC >= 4) {
+                return;
+            }
+        }
+        arg0 >>= 1;
+        src++;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat203/nonmatchings/fdat203", func_80064E8C);
 
