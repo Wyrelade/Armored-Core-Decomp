@@ -2413,7 +2413,141 @@ void func_8005F2CC(Sub8004DE88 *arg0, Sub8004DE88 *arg1, Arg8005F2CC *arg2, s32 
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8005F5DC);
+void func_8005F5DC(Node8005EF38 *arg0) {
+    Scr8005F5DC *sp;
+    Poly8005F5DC *prim;
+    s32 dx;
+    s32 dy;
+    s32 len;
+    s32 ox;
+    s32 oy;
+    s32 ax;
+    s32 ay;
+    s32 px;
+    s32 py;
+    s32 qx;
+    s32 qy;
+    s32 a;
+    s32 b;
+    s32 z;
+
+    sp = (Scr8005F5DC *)0x1F800000;
+    if (sp->unk7C == 0) {
+        arg0->unk14 = sp->unk6C.w;
+        arg0->unk18 = sp->unk74;
+        gte_ldv0(&arg0->unk8);
+        gte_rtps();
+        gte_stsxy(&sp->unk6C);
+        gte_stszotz(&sp->unk74);
+    } else {
+        sp->unk68.w = sp->unk6C.w;
+        sp->unk70 = sp->unk74;
+        a = arg0->unk14;
+        b = arg0->unk18;
+        sp->unk6C.w = a;
+        sp->unk74 = b;
+    }
+    if ((sp->unk70 <= 0x140 || sp->unk74 <= 0x140) && (sp->unk4 != 0 || sp->unk70 < 0x10 || sp->unk74 < 0x10)) {
+        if (sp->unk4 != 0) {
+            sp->unk4--;
+            arg0[1].unk0 = arg0->unk0;
+            arg0[1].unk8.unk0 = (arg0->unk0.unk0 + arg0->unk8.unk0) >> 1;
+            arg0[1].unk8.unk2 = (arg0->unk0.unk2 + arg0->unk8.unk2) >> 1;
+            arg0[1].unk8.unk4 = (arg0->unk0.unk4 + arg0->unk8.unk4) >> 1;
+            arg0[1].unk10 = arg0->unk10;
+            arg0[1].unk11 = (arg0->unk10 + arg0->unk11) >> 1;
+            sp->unk7C = 0;
+            func_8005F5DC(&arg0[1]);
+            arg0[1].unk0 = arg0[1].unk8;
+            arg0[1].unk8 = arg0->unk8;
+            arg0[1].unk10 = arg0[1].unk11;
+            arg0[1].unk11 = arg0->unk11;
+            sp->unk7C = 1;
+            func_8005F5DC(&arg0[1]);
+            sp->unk4++;
+        }
+        return;
+    }
+    dx = sp->unk6C.v.x - sp->unk68.v.x;
+    dy = sp->unk6C.v.y - sp->unk68.v.y;
+    len = SquareRoot0(dx * dx + dy * dy);
+    if (len == 0) {
+        len = 1;
+    }
+    prim = (Poly8005F5DC *)D_801A5F24[0]->unk8;
+    D_801A5F24[0]->unk8 += sizeof(Poly8005F5DC);
+    if ((u32)D_801A5F24[0]->unk8 > (u32)D_801A5F24[0]->unk4) {
+        return;
+    }
+    if (sp->unk78 == NULL) {
+        ox = dx * (sp->unk6 * 80 / sp->unk70) / len;
+        oy = dy * (sp->unk6 * 80 / sp->unk70) / len;
+        if (ox <= 0) {
+            if (ox < 0) {
+                ax = ox + 1;
+            } else {
+                ax = ox;
+            }
+        } else {
+            ax = ox - 1;
+        }
+        if (oy <= 0) {
+            if (oy < 0) {
+                ay = oy + 1;
+            } else {
+                ay = oy;
+            }
+        } else {
+            ay = oy - 1;
+        }
+        prim->unk8.v.x = sp->unk68.v.x - ay;
+        prim->unk8.v.y = sp->unk68.v.y + ox;
+        prim->unk10.v.x = sp->unk68.v.x + oy;
+        prim->unk10.v.y = sp->unk68.v.y - ax;
+    } else {
+        prim->unk8.w = sp->unk78->unk18.w;
+        prim->unk10.w = sp->unk78->unk20.w;
+    }
+    px = dx * (sp->unk6 * 80 / sp->unk74) / len;
+    py = dy * (sp->unk6 * 80 / sp->unk74) / len;
+    sp->unk78 = prim;
+    if (px <= 0) {
+        if (px < 0) {
+            qx = px + 1;
+        } else {
+            qx = px;
+        }
+    } else {
+        qx = px - 1;
+    }
+    if (py <= 0) {
+        if (py < 0) {
+            qy = py + 1;
+        } else {
+            qy = py;
+        }
+    } else {
+        qy = py - 1;
+    }
+    prim->unk18.v.x = sp->unk6C.v.x - qy;
+    prim->unk18.v.y = sp->unk6C.v.y + px;
+    prim->unk20.v.x = sp->unk6C.v.x + py;
+    prim->unk20.v.y = sp->unk6C.v.y - qx;
+    prim->unk4.w = sp->unk10;
+    prim->unkE = sp->unk8;
+    prim->unk16 = sp->unkA;
+    prim->unkC = prim->unk1C = sp->unkC;
+    prim->unk14 = prim->unk24 = sp->unkD;
+    prim->unkD = prim->unk15 = arg0->unk10;
+    prim->unk1D = prim->unk25 = arg0->unk11;
+    prim->tag.unk0_24 = 9;
+    prim->unk4.b[3] = 0x2E;
+    z = (sp->unk70 + sp->unk74) >> 2;
+    if (z >= 0) {
+        prim->tag.unk0_0 = sp->unk0[z].unk0_0;
+        sp->unk0[z].unk0_0 = (u32)prim;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8005FB90);
 

@@ -1600,6 +1600,56 @@ typedef struct Arg8005F2CC {
     u16 unk2;
 } Arg8005F2CC;
 
+typedef struct Xy8005F5DC {
+    s16 x;
+    s16 y;
+} Xy8005F5DC;
+
+typedef union Pt8005F5DC {
+    s32 w;
+    Xy8005F5DC v;
+} Pt8005F5DC;
+
+typedef struct Poly8005F5DC {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    Pt8005F5DC unk8;
+    u8 unkC;
+    u8 unkD;
+    u16 unkE;
+    Pt8005F5DC unk10;
+    u8 unk14;
+    u8 unk15;
+    u16 unk16;
+    Pt8005F5DC unk18;
+    u8 unk1C;
+    u8 unk1D;
+    u8 _pad1E[0x2];
+    Pt8005F5DC unk20;
+    u8 unk24;
+    u8 unk25;
+    u8 _pad26[0x2];
+} Poly8005F5DC;
+
+typedef struct Scr8005F5DC {
+    Sub8008C95C *unk0;
+    u16 unk4;
+    s16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u8 unkC;
+    u8 unkD;
+    u8 _padE[0x2];
+    s32 unk10;
+    Node8005EF38 unk14[3];
+    Pt8005F5DC unk68;
+    Pt8005F5DC unk6C;
+    s32 unk70;
+    s32 unk74;
+    Poly8005F5DC *unk78;
+    s32 unk7C;
+} Scr8005F5DC;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1989,5 +2039,6 @@ void func_80067EBC(u16 arg0);
 void func_80068D18(u16 arg0, s32 arg1);
 void func_8005BE20(u16 arg0, s32 arg1);
 void func_80064684(u16 arg0, s32 arg1);
+void func_8005F5DC(Node8005EF38 *arg0);
 
 #endif /* FDAT202_H */
