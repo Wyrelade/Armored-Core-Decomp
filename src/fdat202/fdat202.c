@@ -1920,7 +1920,55 @@ void func_8005EF38(Node8005EF38 *arg0) {
     }
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8005F2CC);
+void func_8005F2CC(Sub8004DE88 *arg0, Sub8004DE88 *arg1, Arg8005F2CC *arg2, s32 *arg3) {
+    Scr8005EF38 *sp;
+    Line8005EF38 *line;
+    Mode8005EF38 *mode;
+    s32 z;
+
+    sp = (Scr8005EF38 *)0x1F800000;
+    if (sp->unk70 <= 0x140 || sp->unk74 <= 0x140) {
+        sp->unk4 = 2;
+        sp->unk10 = *arg3;
+        sp->unk14[0].unk0 = *arg0;
+        sp->unk14[0].unk8.unk0 = (arg0->unk0 + arg1->unk0) >> 1;
+        sp->unk14[0].unk8.unk2 = (arg0->unk2 + arg1->unk2) >> 1;
+        sp->unk14[0].unk8.unk4 = (arg0->unk4 + arg1->unk4) >> 1;
+        sp->unkA = arg2->unk2;
+        sp->unk7C = 0;
+        func_8005EF38(sp->unk14);
+        sp->unk14[0].unk0 = sp->unk14[0].unk8;
+        sp->unk14[0].unk8 = *arg1;
+        sp->unk7C = 1;
+        func_8005EF38(sp->unk14);
+        return;
+    }
+    line = (Line8005EF38 *)D_801A5F24[0]->unk8;
+    D_801A5F24[0]->unk8 += sizeof(Line8005EF38);
+    if ((u32)D_801A5F24[0]->unk8 > (u32)D_801A5F24[0]->unk4) {
+        return;
+    }
+    line->unk8 = sp->unk68;
+    line->unkC = sp->unk6C;
+    line->unk4.w = *arg3;
+    line->tag.unk0_24 = 3;
+    line->unk4.b[3] = 0x42;
+    z = (sp->unk70 + sp->unk74) >> 2;
+    if (z >= 0) {
+        line->tag.unk0_0 = sp->unk0[z].unk0_0;
+        sp->unk0[z].unk0_0 = (u32)line;
+    }
+    mode = (Mode8005EF38 *)D_801A5F24[0]->unk8;
+    D_801A5F24[0]->unk8 += sizeof(Mode8005EF38);
+    if ((u32)D_801A5F24[0]->unk8 > (u32)D_801A5F24[0]->unk4) {
+        return;
+    }
+    SetDrawMode(mode, 0, 1, arg2->unk2, NULL);
+    if (z >= 0) {
+        mode->tag.unk0_0 = sp->unk0[z].unk0_0;
+        sp->unk0[z].unk0_0 = (u32)mode;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_8005F5DC);
 

@@ -1587,6 +1587,11 @@ typedef struct Mode8005EF38 {
     u8 _pad4[0x8];
 } Mode8005EF38;
 
+typedef struct Arg8005F2CC {
+    u8 _pad0[0x2];
+    u16 unk2;
+} Arg8005F2CC;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1960,5 +1965,6 @@ void func_8006F83C(Obj8006F4D8 *arg0, Sub8006F4D8 *arg1, s32 arg2);
 s32 func_8006F7A0(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_8006F08C(Obj8006F4D8 *arg0);
 void SetDrawMode(Mode8005EF38 *p, s32 dfe, s32 dtd, s32 tpage, void *tw);
+void func_8005EF38(Node8005EF38 *arg0);
 
 #endif /* FDAT202_H */
