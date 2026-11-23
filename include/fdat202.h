@@ -1856,6 +1856,37 @@ typedef struct Scr800659EC {
     Un800659EC unk10C;
 } Scr800659EC;
 
+typedef struct Sv800674B0 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+} Sv800674B0;
+
+typedef struct Box800674B0 {
+    Sv800674B0 unk0;
+    Sv800674B0 unk8;
+} Box800674B0;
+
+typedef struct Scr800674B0 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    Elem800658B8 *unkC;
+    Sv800674B0 unk10;
+    Box800674B0 unk18;
+    Sv800674B0 unk28;
+    s32 unk30[3];
+    u8 _pad3C[0x4];
+    Elem8005A364 *unk40;
+    s32 unk44[3];
+    u8 _pad50[0x4];
+    s32 unk54[3];
+    u8 _pad60[0x4];
+    Sub8006F234 unk64;
+    u8 *unk84;
+} Scr800674B0;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -2266,5 +2297,7 @@ void func_8006606C(Sub8004C98C *arg0, Word80057A00 *arg1, s32 arg2);
 void func_800660A0(SVECTOR *arg0, Word80057A00 *arg1, s32 arg2);
 void func_800660C4(SVECTOR *arg0, SVECTOR *arg1, SVECTOR *arg2, Word80057A00 *arg3, s32 arg4);
 void func_800660FC(Sub8004C98C *arg0);
+extern Elem8005A364 D_801A6A48[];
+extern u16 D_80031564[];
 
 #endif /* FDAT202_H */
