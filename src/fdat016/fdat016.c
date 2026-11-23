@@ -20,7 +20,7 @@ void func_801C5B7C(Obj801C52C0 *arg0) {
             func_80078E1C(arg0);
         }
         if (D_801A5DC4 & 3) {
-            func_80086F20(0, &arg0->unk8, 0x29, 0x50, (rand() & 3) + 6, D_80039C78, D_8019F52E, D_801CDC44, D_801CDC48)->unk12 = 0x14;
+            func_80086F20(0, &arg0->unk8, 0x29, 0x50, (rand() & 3) + 6, &D_80039C78, D_8019F52E, D_801CDC44, D_801CDC48)->unk12 = 0x14;
         }
     } else if (func_801C59F8(arg0) != 0) {
         if ((*(s32 *)&arg0->unk3C & 0xFFFF00) == 0xC000) {
@@ -362,7 +362,7 @@ INCLUDE_ASM("asm/USA/fdat016/nonmatchings/fdat016", func_801C9F60);
 
 void func_801CA2EC(Obj801C52C0_fdat000 *arg0, s32 arg1) {
     if (arg0->unk126 == -1) {
-        func_800759A4(arg0, arg1, D_80039C78);
+        func_800759A4(arg0, arg1, &D_80039C78);
         return;
     }
     func_80075B08(arg0, arg1, &D_80198B08[arg0->unk126]);
