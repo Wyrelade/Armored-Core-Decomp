@@ -1193,6 +1193,19 @@ typedef union Pk8005804C {
     PkFt48005804C ft4;
 } Pk8005804C;
 
+typedef struct Mat80058B04 {
+    s32 unk0[5];
+    s32 unk14[3];
+} Mat80058B04;
+
+typedef struct Scr80058B04 {
+    u8 _pad0[0x38];
+    Mat80058B04 unk38;
+    Sub8006F234 unk58;
+    u8 _pad78[0xC];
+    Sub8006F234 unk84;
+} Scr80058B04;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);
@@ -1534,5 +1547,8 @@ void func_8008CC88();
 extern s32 D_801987CC;
 void func_80057F74(s32 arg0);
 void func_80058028(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
+extern Mat80058B04 D_800B1228;
+void func_8005804C(u16 arg0, s32 arg1, s32 arg2);
+void func_80059198(u16 arg0, s32 arg1, u16 arg2, s32 arg3);
 
 #endif /* FDAT202_H */
