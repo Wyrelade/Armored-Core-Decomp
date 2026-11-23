@@ -171,7 +171,172 @@ INCLUDE_ASM("asm/USA/fdat000/nonmatchings/fdat000", func_801C75BC);
 
 INCLUDE_ASM("asm/USA/fdat000/nonmatchings/fdat000", func_801C7B1C);
 
-INCLUDE_ASM("asm/USA/fdat000/nonmatchings/fdat000", func_801C7DA8);
+void func_801C7DA8(Obj801C52C0 *arg0, Sub801C7DA8 *arg1) {
+    Seg801C7DA8 seg;
+    Sub801C55B4 rot;
+    Tbl801C7DA8 *tbl;
+    Elem801C52C0 *sub;
+    Mdl801C7DA8 *mdl;
+    Hdr801C7DA8 *hdr;
+    Part801C7DA8 *part;
+    Slot801C7DA8 *slot;
+    Elem801C7DA8 *elem;
+    Obj801C52C0 *target;
+    s32 ok;
+    s32 scale;
+    s32 time;
+    s32 dx;
+    s32 dy;
+    s32 dz;
+    s32 hit;
+    s32 unused[2];
+
+    tbl = &D_8008E658[arg1->unk2 & 0xF];
+    sub = arg0->unk108;
+    ok = func_801C7B1C(arg0, arg1, 0, tbl->unk0);
+    if (sub->unk0 != 0
+        || (arg0->unk3C == 0x22 && arg0->unk64.unk0 == arg0->unk135 && func_8004EBF8(&arg0->unk64))) {
+        arg0->unk64.unk18 = arg1->unkB;
+        mdl = arg0->unk60;
+        if (mdl != NULL && mdl->unkE == arg1->unkB) {
+            hdr = D_801A6134[arg0->unk8.unk6];
+            part = (Part801C7DA8 *)((u8 *)hdr + ((s32 *)((u8 *)hdr + hdr->unk14))[arg1->unkB]);
+            slot = &part->unk14[arg1->unk4];
+            elem = &mdl->unk20[slot->unk0];
+            if (elem->unk26 & 4) {
+                goto tail;
+            }
+        }
+        if (arg0->unk3F != 0) {
+            goto tail;
+        }
+        if (arg0->unk3E == 0) {
+            if (ok == 0) {
+                goto tail;
+            }
+            if (arg1->unkF < (rand() & 0xFF)) {
+                goto tail;
+            }
+            arg0->unk3E = arg1->unk10;
+        }
+        if (!(arg1->unk2 & 0x40)) {
+            hit = func_800745D0(arg0, &seg, arg1->unk5, arg1->unk6, 2, 0, 1);
+        } else if (arg0->unk3E & 1) {
+            hit = func_800745D0(arg0, &seg, arg1->unk5, arg1->unk6, 2, 0, 1);
+        } else {
+            hit = func_800745D0(arg0, &seg, arg1->unk7, arg1->unk8, 2, 0, 1);
+        }
+        if (hit != 0) {
+            seg.unk8.unk0 -= seg.unk0.unk0;
+            seg.unk8.unk2 -= seg.unk0.unk2;
+            seg.unk8.unk4 -= seg.unk0.unk4;
+            VectorNormalSS(&seg.unk8, &seg.unk8);
+            scale = (arg0->unk108->unk24 * tbl->unk2) >> 8;
+            if (scale != 0) {
+                arg0->unkCC.unk0 -= (seg.unk8.unk0 * scale) >> 6;
+                arg0->unkCC.unk2 -= (seg.unk8.unk2 * scale) >> 6;
+                arg0->unkCC.unk4 -= (seg.unk8.unk4 * scale) >> 6;
+                if (arg0->unk3D == 2 || arg0->unk3D == 3) {
+                    func_801C5834(arg0, 0, 0, 0x100, &arg0->unkCC);
+                }
+            }
+            switch (arg1->unk2 & 0xF) {
+            case 0:
+                func_80085E98(arg0, &arg1->unk22, &seg.unk0, &seg.unk8, tbl->unk0, arg1->unk12, 7, &D_801CBB64, 0x14, 3, 0x78, &D_801CBB68, &D_801CBB6C, 0, 4);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 1:
+                func_800889B4(arg0, &seg.unk0, &seg.unk8, &arg1->unk22, arg1->unk12, 7);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 2:
+                func_800889B4(arg0, &seg.unk0, &seg.unk8, &arg1->unk22, arg1->unk12, 6);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 3:
+                if (func_800781E8(arg0) == 0) {
+                    goto done;
+                }
+                seg.unk8.unk0 = (seg.unk8.unk0 * 75) >> 9;
+                seg.unk8.unk2 = (seg.unk8.unk2 * 75) >> 9;
+                seg.unk8.unk4 = (seg.unk8.unk4 * 75) >> 9;
+                target = arg0->unk48;
+                if (target != NULL) {
+                    dx = (target->unk8.unk0 - arg0->unk8.unk0) >> 1;
+                    dy = (target->unk8.unk2 - arg0->unk8.unk2) >> 1;
+                    dz = (target->unk8.unk4 - arg0->unk8.unk4) >> 1;
+                    time = (SquareRoot0(dx * dx + dy * dy + dz * dz) << 2) / 600;
+                } else {
+                    time = (s16)(arg1->unk12 / 600);
+                }
+                func_80014AE4(seg.unk8.unk0, seg.unk8.unk2, seg.unk8.unk4, &rot);
+                func_80086448(arg0, &arg1->unk22, &seg.unk0, &rot, &seg.unk8, 0x31, 0, time);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 4:
+                func_800889B4(arg0, &seg.unk0, &seg.unk8, &arg1->unk22, arg1->unk12, 5);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 5:
+                func_8008840C(arg0, &seg.unk0, &seg.unk8, &arg1->unk22, arg1->unk12, 1);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 6:
+                func_80014AE4(seg.unk8.unk0, seg.unk8.unk2, seg.unk8.unk4, &rot);
+                func_8008915C(arg0, &seg.unk0, &seg.unk8, &arg1->unk22, arg1->unk12, 3, 0x31, &rot);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 7:
+                func_80014AE4(seg.unk8.unk0, seg.unk8.unk2, seg.unk8.unk4, &rot);
+                func_8008915C(arg0, &seg.unk0, &seg.unk8, &arg1->unk22, arg1->unk12, 1, 0, &rot);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 8:
+                func_80014AE4(seg.unk8.unk0, seg.unk8.unk2, seg.unk8.unk4, &rot);
+                func_8008915C(arg0, &seg.unk0, &seg.unk8, &arg1->unk22, arg1->unk12, 2, 0, &rot);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            case 9:
+                func_80085E98(arg0, &arg1->unk22, &seg.unk0, &seg.unk8, tbl->unk0, arg1->unk12, 7, &D_801CBB70, 0x14, 3, 0x78, &D_801CBB74, &D_801CBB78, 0, 4);
+                if (arg0->unk50 != NULL) {
+                    arg0->unk50(arg0, arg0->unk41);
+                }
+                break;
+            }
+        }
+    done:
+        arg0->unk3E--;
+        arg0->unk64.unk1 = arg1->unkC;
+        arg0->unk3F = tbl->unk5;
+    } else if (ok != 0 && arg0->unk3D != 0xC0 && arg0->unk3C != 0x22) {
+        arg0->unk135 = arg1->unkB + 0x2A;
+        arg0->unk3C = 0x22;
+        arg0->unk133 = 0;
+        arg0->unk36 |= 0x10;
+    }
+tail:
+    if (arg0->unk3F != 0) {
+        arg0->unk3F--;
+    }
+}
 
 INCLUDE_ASM("asm/USA/fdat000/nonmatchings/fdat000", func_801C857C);
 
