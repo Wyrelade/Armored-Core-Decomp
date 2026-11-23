@@ -1024,12 +1024,12 @@ typedef struct Pkt80057A00 {
 } Pkt80057A00;
 
 typedef struct Scr80057A00 {
-    u8 _pad0[0x4];
+    s32 unk0;
     u8 *unk4;
     u8 *unk8;
     Hdr800574D8 unkC;
     Elem80055A24 *unk10;
-    u8 _pad14[0x4];
+    u8 *unk14;
     s32 unk18;
     Sub8008C95C *unk1C;
     s32 unk20;
@@ -1037,6 +1037,161 @@ typedef struct Scr80057A00 {
     s32 unk28;
     Word80057A00 unk2C;
 } Scr80057A00;
+
+typedef struct Ft38005804C {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+} Ft38005804C;
+
+typedef struct Ft48005804C {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u16 unk1C;
+    u16 unk1E;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Ft48005804C;
+
+typedef struct Gt38005804C {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+    Word80057A00 unk10;
+    s32 unk14;
+    s32 unk18;
+    Word80057A00 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+} Gt38005804C;
+
+typedef struct Gt48005804C {
+    Sub8008C95C tag;
+    Word80057A00 unk4;
+    s32 unk8;
+    s32 unkC;
+    Word80057A00 unk10;
+    s32 unk14;
+    s32 unk18;
+    Word80057A00 unk1C;
+    s32 unk20;
+    u16 unk24;
+    u16 unk26;
+    Word80057A00 unk28;
+    s32 unk2C;
+    u16 unk30;
+    u16 unk32;
+} Gt48005804C;
+
+typedef union Prim8005804C {
+    Ft38005804C f3;
+    Ft48005804C f4;
+    Gt38005804C g3;
+    Gt48005804C g4;
+} Prim8005804C;
+
+typedef struct PkLf38005804C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+} PkLf38005804C;
+
+typedef struct PkLf48005804C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+} PkLf48005804C;
+
+typedef struct PkLg38005804C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+} PkLg38005804C;
+
+typedef struct PkLg48005804C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+    u16 unk1C;
+    u16 unk1E;
+} PkLg48005804C;
+
+typedef struct PkFt38005804C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    s32 unkC;
+    u16 unk10;
+    u16 unk12;
+    u16 unk14;
+} PkFt38005804C;
+
+typedef struct PkFt48005804C {
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u16 unkE;
+    s32 unk10;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+} PkFt48005804C;
+
+typedef union Pk8005804C {
+    PkLf38005804C lf3;
+    PkLf48005804C lf4;
+    PkLg38005804C lg3;
+    PkLg48005804C lg4;
+    PkFt38005804C ft3;
+    PkFt48005804C ft4;
+} Pk8005804C;
 
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
@@ -1378,5 +1533,6 @@ void func_8008CB5C();
 void func_8008CC88();
 extern s32 D_801987CC;
 void func_80057F74(s32 arg0);
+void func_80058028(s32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 
 #endif /* FDAT202_H */
