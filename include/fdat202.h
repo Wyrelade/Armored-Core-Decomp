@@ -1485,6 +1485,12 @@ typedef struct Scr80069A5C {
     Cv80067EBC unk390;
 } Scr80069A5C;
 
+typedef struct Obj80068D18 {
+    u32 *unk0;
+    u8 _pad4[0xB1C];
+    u8 unkB20[1];
+} Obj80068D18;
+
 /* @externs */
 void func_80075FC0(Obj8007618C *arg0);
 s32 func_8004F080(Sub8007618C *arg0, Sub8004DE88 *arg1);

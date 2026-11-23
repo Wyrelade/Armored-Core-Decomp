@@ -2640,7 +2640,76 @@ void func_80068D18(u16 arg0, s32 arg1) {
     D_801A5F24[0]->unk8 = (s32)scr->unk4.ft3;
 }
 
-INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80069A5C);
+void func_80069A5C(Obj80069A5C *arg0, s32 arg1) {
+    Prim80069A5C *prim;
+    Obj80069A5C *child;
+    Scr80069A5C *scr = (Scr80069A5C *)0x1F800000;
+
+    if ((arg0->unk48->unk14 | arg0->unk4C->unk14 | arg0->unk50->unk14) == 0) {
+        return;
+    }
+    if (arg1 == 0) {
+        if (arg0->unk48->unk14 < 0x28 || arg0->unk4C->unk14 < 0x28 || arg0->unk50->unk14 < 0x28) {
+            return;
+        }
+        prim = scr->unk4.ft3;
+        scr->unk4.ft3 = prim + 1;
+        prim->unk8 = arg0->unk48->unk10;
+        prim->unk10 = arg0->unk4C->unk10;
+        prim->unk18 = arg0->unk50->unk10;
+        prim->unkC = arg0->unk48->unk8.unk0 | scr->unk360;
+        prim->unk14 = arg0->unk4C->unk8.unk0 | scr->unk364;
+        prim->unk1C = arg0->unk50->unk8.unk0;
+        prim->unk4 = scr->unk2C;
+        prim->unk0.unk0_24 = 7;
+        prim->unk4.unk0_24 = scr->unk390.unk3;
+        prim->unk0.unk0_0 = scr->unk370[arg0->unk48->unk14 >> scr->unk378].unk0_0;
+        scr->unk370[arg0->unk48->unk14 >> scr->unk378].unk0_0 = (u32)prim;
+        return;
+    }
+    arg0->unk0[0].unk0 = (arg0->unk48->unk0 + arg0->unk4C->unk0) >> 1;
+    arg0->unk0[0].unk2 = (arg0->unk48->unk2 + arg0->unk4C->unk2) >> 1;
+    arg0->unk0[0].unk4 = (arg0->unk48->unk4 + arg0->unk4C->unk4) >> 1;
+    gte_ldv0(&arg0->unk0[0]);
+    gte_rtps();
+    arg0->unk0[0].unk8.b.unk0 = (arg0->unk48->unk8.b.unk0 + arg0->unk4C->unk8.b.unk0) >> 1;
+    arg0->unk0[0].unk8.b.unk1 = (arg0->unk48->unk8.b.unk1 + arg0->unk4C->unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[0].unk10);
+    gte_stszotz(&arg0->unk0[0].unk14);
+    arg0->unk0[1].unk0 = (arg0->unk4C->unk0 + arg0->unk50->unk0) >> 1;
+    arg0->unk0[1].unk2 = (arg0->unk4C->unk2 + arg0->unk50->unk2) >> 1;
+    arg0->unk0[1].unk4 = (arg0->unk4C->unk4 + arg0->unk50->unk4) >> 1;
+    gte_ldv0(&arg0->unk0[1]);
+    gte_rtps();
+    arg0->unk0[1].unk8.b.unk0 = (arg0->unk4C->unk8.b.unk0 + arg0->unk50->unk8.b.unk0) >> 1;
+    arg0->unk0[1].unk8.b.unk1 = (arg0->unk4C->unk8.b.unk1 + arg0->unk50->unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[1].unk10);
+    gte_stszotz(&arg0->unk0[1].unk14);
+    arg0->unk0[2].unk0 = (arg0->unk50->unk0 + arg0->unk48->unk0) >> 1;
+    arg0->unk0[2].unk2 = (arg0->unk50->unk2 + arg0->unk48->unk2) >> 1;
+    arg0->unk0[2].unk4 = (arg0->unk50->unk4 + arg0->unk48->unk4) >> 1;
+    gte_ldv0(&arg0->unk0[2]);
+    gte_rtps();
+    arg0->unk0[2].unk8.b.unk0 = (arg0->unk50->unk8.b.unk0 + arg0->unk48->unk8.b.unk0) >> 1;
+    arg0->unk0[2].unk8.b.unk1 = (arg0->unk50->unk8.b.unk1 + arg0->unk48->unk8.b.unk1) >> 1;
+    gte_stsxy(&arg0->unk0[2].unk10);
+    gte_stszotz(&arg0->unk0[2].unk14);
+    arg1--;
+    child = arg0 + 1;
+    child->unk48 = &arg0->unk0[0];
+    child->unk4C = &arg0->unk0[2];
+    child->unk50 = arg0->unk48;
+    func_80069A5C(child, arg1);
+    child->unk4C = arg0->unk4C;
+    child->unk50 = &arg0->unk0[1];
+    func_80069A5C(child, arg1);
+    child->unk48 = arg0->unk50;
+    child->unk4C = &arg0->unk0[2];
+    func_80069A5C(child, arg1);
+    child->unk48 = &arg0->unk0[2];
+    child->unk4C = &arg0->unk0[0];
+    func_80069A5C(child, arg1);
+}
 
 INCLUDE_ASM("asm/USA/fdat202/nonmatchings/fdat202", func_80069F04);
 
