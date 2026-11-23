@@ -339,7 +339,7 @@ typedef struct Obj8004DE88 {
 typedef struct Obj800558A8 {
     s16 unk0;
     u8 _pad2[0x2];
-    s16 unk4;
+    u16 unk4;
     u8 _pad6[0x8];
     s16 unkE;
     s16 unk10;
