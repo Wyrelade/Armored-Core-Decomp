@@ -4,7 +4,6 @@
 #include "common.h"
 
 /* @types */
-
 typedef struct Sub801C4C94 {
     s16 unk0;
     s16 unk2;
@@ -284,6 +283,38 @@ typedef struct Elem801C53D4 {
     u8 _pad30[0x10];
 } Elem801C53D4;
 
+typedef struct Sub801C6A40 {
+    void (*unk0)();
+    u8 _pad4[0x4];
+    s32 unk8;
+} Sub801C6A40;
+
+typedef struct Obj801C6A40 {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    u8 _pad6[0x2];
+    Sub801C4C94 unk8;
+    u8 _pad10[0x4];
+    Sub801C6A40 *unk14;
+    u8 _pad18[0xA];
+    u8 unk22;
+    u8 _pad23;
+    u16 unk24;
+    u16 unk26;
+    u8 unk28;
+    u8 unk29;
+    u16 unk2A;
+} Obj801C6A40;
+
+typedef struct Sub801C6568 {
+    u8 unk0;
+    u8 _pad1;
+    u16 unk2;
+    u8 unk4;
+    u8 _pad5[0x3];
+} Sub801C6568;
+
 /* @externs */
 void func_8004EC4C(Sub801C4D98 *arg0);
 void func_80075FC0();
@@ -314,7 +345,7 @@ s32 func_801C7844(u8 arg0, u16 arg1);
 void func_801C7704();
 void func_801C7900();
 s32 func_80014D78(s32 arg0);
-void func_801C7A70();
+void func_801C7A70(Obj801C6A40 *arg0);
 void func_801C7FB4();
 extern s32 D_801C8540;
 extern s32 D_801C8544;
@@ -346,5 +377,19 @@ extern Elem801C5314 D_801D0B94[];
 s32 func_8008A0B0(u8 arg0, u8 arg1, u16 arg2, u8 arg3, s32 arg4);
 extern Elem801C53D4 D_801D0B68[];
 void func_801C6D94();
+extern s32 D_801AC860[];
+extern u8 D_801C8528[];
+extern u8 D_801C852C[];
+extern u8 D_801C8530[];
+extern u8 D_801C8534[];
+extern u8 D_801C8538[];
+extern u8 D_801C853C[];
+void func_80014774(Sub801C4C94 *arg0, Sub801C4C94 *arg1);
+void func_80086598(s32 arg0, Sub801C6568 *arg1, u8 *arg2, u8 *arg3, Obj801C6A40 *arg4, Sub801C4C94 *arg5, Sub801C4C94 *arg6, s32 arg7, s32 arg8);
+void func_800889B4(s32 arg0, Obj801C6A40 *arg1, Sub801C4C94 *arg2, Sub801C6568 *arg3, s32 arg4, s32 arg5);
+void func_80089628(Obj801C6A40 *arg0, Sub801C4C94 *arg1, s32 arg2, u8 arg3);
+void func_800898A4(Sub801C6568 *arg0, u8 *arg1, u8 *arg2, Obj801C6A40 *arg3, Sub801C4C94 *arg4, Sub801C4C94 *arg5, s32 arg6);
+void func_80089A80(Obj801C6A40 *arg0, Sub801C4C94 *arg1);
+void func_80089C30(Sub801C4C94 *arg0, Sub801C4C94 *arg1, s32 arg2);
 
 #endif /* FDAT014_H */

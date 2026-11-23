@@ -401,7 +401,84 @@ void func_801C7A24(Obj801C7A24 *arg0) {
     arg0->unk14->unk8 = rand() & 7;
 }
 
-INCLUDE_ASM("asm/USA/fdat014/nonmatchings/fdat014", func_801C7A70);
+void func_801C7A70(Obj801C6A40 *arg0) {
+    Sub801C6A40 *task;
+    Sub801C6568 info;
+    Sub801C4C94 vec;
+    Sub801C4C94 pos;
+    s32 hit;
+    s32 n;
+
+    task = arg0->unk14;
+    if (task->unk8 == -1) {
+        return;
+    }
+    if (task->unk8 == 0) {
+        info.unk0 = 7;
+        info.unk2 = arg0->unk2A;
+        info.unk4 = arg0->unk29;
+        task->unk8 = arg0->unk28;
+        func_80014774(&arg0->unk8, &vec);
+        switch (arg0->unk22) {
+        case 0:
+            arg0->unk24 = 0x240;
+            vec.unk0 = (arg0->unk24 * vec.unk0) >> 12;
+            vec.unk2 = (arg0->unk24 * vec.unk2) >> 12;
+            vec.unk4 = (arg0->unk24 * vec.unk4) >> 12;
+            func_80086598(0, &info, D_801C8528, D_801C852C, arg0, &arg0->unk8, &vec, 0x37, 0x7530);
+            func_800889B4(0, arg0, &vec, &info, 0x7530, 9);
+            break;
+        case 1:
+        case 3:
+            hit = D_801AC860[arg0->unk8.unk6 >> 5] & (1 << (arg0->unk8.unk6 & 0x1F));
+            if (hit != 0) {
+                vec.unk0 = (arg0->unk24 * vec.unk0) >> 12;
+                vec.unk2 = (arg0->unk24 * vec.unk2) >> 12;
+                vec.unk4 = (arg0->unk24 * vec.unk4) >> 12;
+                func_80089628(arg0, &vec, 0xC, arg0->unk22);
+            }
+            break;
+        case 2:
+            hit = D_801AC860[arg0->unk8.unk6 >> 5] & (1 << (arg0->unk8.unk6 & 0x1F));
+            if (hit != 0) {
+                vec.unk0 = (vec.unk0 * 0x80) >> 12;
+                vec.unk2 = (vec.unk2 * 0x80) >> 12;
+                vec.unk4 = (vec.unk4 * 0x80) >> 12;
+                func_800898A4(&info, D_801C8530, D_801C8534, arg0, &vec, &arg0->unk8, 6);
+            }
+            break;
+        case 4:
+            vec.unk0 = (arg0->unk24 * vec.unk0) >> 12;
+            vec.unk2 = (arg0->unk24 * vec.unk2) >> 12;
+            vec.unk4 = (arg0->unk24 * vec.unk4) >> 12;
+            func_80086598(0, &info, D_801C8538, D_801C853C, arg0, &arg0->unk8, &vec, 0x3B, 0x7530);
+            break;
+        case 5:
+            hit = D_801AC860[arg0->unk8.unk6 >> 5] & (1 << (arg0->unk8.unk6 & 0x1F));
+            if (hit != 0) {
+                vec.unk0 = (arg0->unk24 * vec.unk0) >> 12;
+                vec.unk2 = (arg0->unk24 * vec.unk2) >> 12;
+                vec.unk4 = (arg0->unk24 * vec.unk4) >> 12;
+                func_80089A80(arg0, &vec);
+            }
+            break;
+        case 6:
+            n = arg0->unk26;
+            vec.unk0 = (arg0->unk24 * vec.unk0) >> 12;
+            vec.unk2 = (arg0->unk24 * vec.unk2) >> 12;
+            vec.unk4 = (arg0->unk24 * vec.unk4) >> 12;
+            for (n--; n != -1; n--) {
+                pos.unk0 = arg0->unk0 + (((rand() * 14000) >> 15) - 7000);
+                pos.unk2 = arg0->unk2 + (((rand() * 2800) >> 15) - 2000);
+                pos.unk4 = arg0->unk4;
+                func_80089C30(&pos, &vec, 0x60);
+            }
+            break;
+        }
+    } else {
+        task->unk8--;
+    }
+}
 
 void func_801C7F48(Obj801C788C *arg0) {
     Task801C788C *task;
